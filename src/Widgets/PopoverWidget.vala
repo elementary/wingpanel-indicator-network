@@ -88,10 +88,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         // FIXME: Support more than one ethernet item
         ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
+        ethernet_item.get_style_context ().add_class ("h4");
         this.pack_start (ethernet_item);
         this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
         wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
+        wifi_item.get_style_context ().add_class ("h4");
         wifi_item.activate.connect (() => {
             if (updating_rfkill)
                 return;
