@@ -67,7 +67,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private int frame_number = 0;
     private uint animate_timeout = 0;
 
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard power";
+	private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
 
 	private Wingpanel.Widgets.IndicatorSwitch show_percent_switch;
 
