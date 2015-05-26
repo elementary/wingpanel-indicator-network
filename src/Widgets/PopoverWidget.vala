@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.Widgets.WifiMenuItem : Wingpanel.Widgets.IndicatorSwitch {
+public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
     private NM.AccessPoint _ap;
     public NM.AccessPoint ap
     {
@@ -29,8 +29,8 @@ public class Network.Widgets.WifiMenuItem : Wingpanel.Widgets.IndicatorSwitch {
 
 	public signal void wifi_activate(WifiMenuItem item);
 
-	public WifiMenuItem () {
-		base("");
+	public WifiMenuItem (Gtk.RadioButton? radio = null) {
+		if(radio != null) set_group(radio.get_group());
 	}
 
     private void update ()
@@ -40,7 +40,7 @@ public class Network.Widgets.WifiMenuItem : Wingpanel.Widgets.IndicatorSwitch {
         if (ap == null)
             return;
 
-        get_label ().label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+        label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
         /*var icon_name = signal_strength_to_icon_name (ap.strength);
 
         if ((ap.flags & NM.@80211ApFlags.PRIVACY) != 0 || ap.wpa_flags != 0 || ap.rsn_flags != 0)
@@ -48,7 +48,7 @@ public class Network.Widgets.WifiMenuItem : Wingpanel.Widgets.IndicatorSwitch {
 
         property_set (Dbusmenu.MENUITEM_PROP_ICON_NAME, icon_name);*/
 
-		activate.connect( () => { wifi_activate (this); });
+		clicked.connect( () => { wifi_activate (this); });
     }
 }
 
@@ -63,9 +63,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
     private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
-    private WifiMenuItem[] wifi_items;
-    private Wingpanel.Widgets.IndicatorButton wifi_overflow_item;
-	Wingpanel.Widgets.IndicatorSeparator wifi_separator;
+
+	Gtk.Box wifi_list;
 
     private int frame_number = 0;
     private uint animate_timeout = 0;
@@ -91,6 +90,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 		// FIXME: Support more than one ethernet item
         ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
 		this.pack_start (ethernet_item);
+		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
         
 		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
 		wifi_item.activate.connect (() =>
@@ -102,25 +102,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         });
 		
 		this.pack_start (wifi_item);
-		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
-        wifi_items = new WifiMenuItem[5];
-        for (var i = 0; i < 5; i++)
-        {
-			wifi_items[i] = new WifiMenuItem ();
-            wifi_items[i].wifi_activate.connect (wifi_activate_cb);
-			this.pack_start (wifi_items[i]);
-        }
+		var scrolled_window = new Gtk.ScrolledWindow(null, null);
+		scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
+
+		wifi_list = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
+
+
+		scrolled_window.add_with_viewport(wifi_list);
+
+		this.pack_start(scrolled_window);
 		
-		wifi_separator =new Wingpanel.Widgets.IndicatorSeparator ();
-
-		pack_start (wifi_separator);
-
-        /*wifi_overflow_item = new Dbusmenu.Menuitem ();
-        wifi_overflow_item.property_set (Dbusmenu.MENUITEM_PROP_LABEL, _("More Networks"));
-        menu.child_append (wifi_overflow_item);*/
-
-
 		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
 
@@ -170,7 +162,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private void update_wifi_cb ()
     {
 		/* Ethernet */
-		ethernet_item.set_active(ethernet_device != null && ethernet_device.get_state() == NM.DeviceState.ACTIVATED);
+		bool ethernet_available = ethernet_device != null && ethernet_device.get_state() == NM.DeviceState.ACTIVATED;
+		ethernet_item.set_active(ethernet_available);
 
 		/* Wifi */
         var have_lock = false;
@@ -195,12 +188,15 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         updating_rfkill = false;
 
         var animate = false;
+
+		wifi_list.forall( (w) => {
+			w.destroy();
+		});
+
         if (locked)
         {
-            for (var i = 0; i < wifi_items.length; i++)
-                wifi_items[i].set_visible(false);
-            //wifi_overflow_item.set_visible(Dbusmenu.MENUITEM_PROP_VISIBLE, false);
             //network_service._icon_name = "nm-no-connection";
+
         }
         else
         {
@@ -258,6 +254,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         if (aps != null)
             n_aps = aps.length;
         var n = 0;
+
+		WifiMenuItem? previous_item = null;
         for (var i = 0; i < n_aps; i++)
         {
             var ap = aps.get (i);
@@ -278,9 +276,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 continue;
 
             /* Put the first N items into the menu, and any others into an overflow menu */
-            WifiMenuItem item;
-            if (n < wifi_items.length) {
-                item = wifi_items[n];
+            WifiMenuItem item = new WifiMenuItem(previous_item);
+			previous_item = item;
         /*    else
             {
                 item = new WifiMenuItem();
@@ -290,11 +287,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             }*/
 			item.set_visible(true);
             item.set_active(ap == active_ap);
-            item.ap = ap;}
-            n++;
+            item.ap = ap;
+            item.wifi_activate.connect (wifi_activate_cb);
+
+			wifi_list.pack_end(item);
+			wifi_list.show_all();
         }
-        for (; n < wifi_items.length; n++)
-            wifi_items[n].set_visible(false);
         //wifi_overflow_item.property_set_bool (Dbusmenu.MENUITEM_PROP_VISIBLE, n > wifi_items.length);
 
     }
