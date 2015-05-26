@@ -9,7 +9,7 @@
  * license.
  */
 
-public class NetworkIndicator
+public class NetworkIndicator:Gtk.Widget
 {
     private DBusConnection bus;
     private Indicator.Service indicator_service;
@@ -32,8 +32,6 @@ public class NetworkIndicator
 
     public NetworkIndicator () throws Error
     {
-        bus = Bus.get_sync (BusType.SESSION);
-
         indicator_service = new Indicator.Service ("com.canonical.indicator.network");
         menu_server = new Dbusmenu.Server ("/com/canonical/indicator/network/menu");
 

@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Power.Widgets.DisplayWidget : Gtk.Box {
+public class Network.Widgets.DisplayWidget : Gtk.Box {
 	private Gtk.Image image;
 
 	private Gtk.Revealer percent_revealer;
@@ -35,21 +35,21 @@ public class Power.Widgets.DisplayWidget : Gtk.Box {
 
 		this.pack_start (image);
 
-		percent_revealer = new Gtk.Revealer ();
+		/*percent_revealer = new Gtk.Revealer ();
 		percent_revealer.reveal_child = Services.SettingsManager.get_default ().show_percentage;
-		percent_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;
+		percent_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_RIGHT;*/
 
-		percent_label = new Gtk.Label ("");
+/*		percent_label = new Gtk.Label ("");
 		percent_label.margin_start = 6;
 
 		percent_revealer.add (percent_label);
 
-		this.pack_start (percent_revealer);
+		this.pack_start (percent_revealer);*/
 	}
 
 	private void connect_signals () {
 		Services.SettingsManager.get_default ().notify["show-percentage"].connect (() => {
-			percent_revealer.set_reveal_child (Services.SettingsManager.get_default ().show_percentage);
+//			percent_revealer.set_reveal_child (Services.SettingsManager.get_default ().show_percentage);
 		});
 	}
 

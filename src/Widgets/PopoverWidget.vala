@@ -15,10 +15,59 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Power.Widgets.PopoverWidget : Gtk.Box {
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard power";
+public class Network.Widgets.WifiMenuItem : Wingpanel.Widgets.IndicatorSwitch {
+    private NM.AccessPoint _ap;
+    public NM.AccessPoint ap
+    {
+        get { return _ap; }
+        set
+        {
+            _ap = value;
+            update ();
+        }
+    }
 
-	private DeviceList device_list;
+	public signal void wifi_activate(WifiMenuItem item);
+
+	public WifiMenuItem () {
+		base("");
+	}
+
+    private void update ()
+    {
+		set_visible(_ap != null);
+
+        if (ap == null)
+            return;
+
+        get_label ().label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+        /*var icon_name = signal_strength_to_icon_name (ap.strength);
+
+        if ((ap.flags & NM.@80211ApFlags.PRIVACY) != 0 || ap.wpa_flags != 0 || ap.rsn_flags != 0)
+            icon_name += "-secure";
+
+        property_set (Dbusmenu.MENUITEM_PROP_ICON_NAME, icon_name);*/
+
+		activate.connect( () => { wifi_activate (this); });
+    }
+}
+
+public class Network.Widgets.PopoverWidget : Gtk.Box {
+    private RFKillManager rfkill;
+    private bool updating_rfkill = false;
+    private NM.Client nm_client;
+    private NM.RemoteSettings nm_settings;
+    private NM.DeviceWifi? wifi_device;
+    private NM.AccessPoint? active_ap;
+
+    private Wingpanel.Widgets.IndicatorSwitch wifi_item;
+    private WifiMenuItem[] wifi_items;
+    private Wingpanel.Widgets.IndicatorButton wifi_overflow_item;
+
+    private int frame_number = 0;
+    private uint animate_timeout = 0;
+
+	private const string SETTINGS_EXEC = "/usr/bin/switchboard power";
 
 	private Wingpanel.Widgets.IndicatorSwitch show_percent_switch;
 
@@ -31,27 +80,252 @@ public class Power.Widgets.PopoverWidget : Gtk.Box {
 
 		build_ui ();
 		connect_signals ();
+		show_all();
 	}
 
 	private void build_ui () {
-		device_list = new DeviceList ();
-
-		this.pack_start (device_list);
-
+        
+		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
+		wifi_item.activate.connect (() =>
+        {
+            if (updating_rfkill)
+                return;
+            var active = wifi_item.get_active();
+            rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
+        });
+		
+		this.pack_start (wifi_item);
 		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
-		show_percent_switch = new Wingpanel.Widgets.IndicatorSwitch (_("Show Percentage"), Services.SettingsManager.get_default ().show_percentage);
-		show_percent_switch.margin_start = 10;
+        wifi_items = new WifiMenuItem[5];
+        for (var i = 0; i < 5; i++)
+        {
+			wifi_items[i] = new WifiMenuItem ();
+            wifi_items[i].wifi_activate.connect (wifi_activate_cb);
+			this.pack_start (wifi_items[i]);
+        }
+		
+		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
-		this.pack_start (show_percent_switch);
+        /*wifi_overflow_item = new Dbusmenu.Menuitem ();
+        wifi_overflow_item.property_set (Dbusmenu.MENUITEM_PROP_LABEL, _("More Networks"));
+        menu.child_append (wifi_overflow_item);*/
 
-		show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Power Settings") + "…");
+
+        // FIXME: Support more than one ethernet item
+        var ethernet_status_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
+		this.pack_start (ethernet_status_item);
+		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
+
+
+        /* Monitor killswitch status */
+        rfkill = new RFKillManager ();
+        rfkill.open ();
+        rfkill.device_added.connect (update_wifi_cb);
+        rfkill.device_changed.connect (update_wifi_cb);
+        rfkill.device_deleted.connect (update_wifi_cb);
+
+        /* Monitor network manager */
+        nm_client = new NM.Client ();
+        nm_settings = new NM.RemoteSettings (null);
+
+        nm_client.device_added.connect (device_added_cb);
+        var devices = nm_client.get_devices ();
+        for (var i = 0; i < devices.length; i++)
+            device_added_cb (devices.get (i));
+
+		show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings") + "…");
 
 		this.pack_start (show_settings_button);
+
+		update_wifi_cb();
 	}
+    
+	private void device_added_cb (NM.Device device)
+    {
+        if (device is NM.DeviceWifi)
+        {
+            wifi_device = device as NM.DeviceWifi;
+            wifi_device.notify["active-access-point"].connect (() => { update_wifi_cb (); });
+            wifi_device.access_point_added.connect (update_wifi_cb);
+            wifi_device.access_point_removed.connect (update_wifi_cb);
+            wifi_device.state_changed.connect (update_wifi_cb);
+            update_wifi_cb ();
+        }
+        else if (device is NM.DeviceEthernet)
+        {
+        }
+        else
+            stderr.printf ("Unknown device: %s\n", device.driver);
+    }
+
+    private void update_wifi_cb ()
+    {
+        var have_lock = false;
+        var software_locked = false;
+        var hardware_locked = false;
+        foreach (var device in rfkill.get_devices ())
+        {
+            if (device.device_type != RFKillDeviceType.WLAN)
+                continue;
+
+            have_lock = true;
+            if (device.software_lock)
+                software_locked = true;
+            if (device.hardware_lock)
+                hardware_locked = true;
+        }
+        var locked = hardware_locked || software_locked;
+
+        updating_rfkill = true;
+        wifi_item.set_sensitive(!hardware_locked);
+        wifi_item.set_active(!locked);
+        updating_rfkill = false;
+
+        var animate = false;
+        if (locked)
+        {
+            for (var i = 0; i < wifi_items.length; i++)
+                wifi_items[i].set_visible(false);
+            //wifi_overflow_item.set_visible(Dbusmenu.MENUITEM_PROP_VISIBLE, false);
+            //network_service._icon_name = "nm-no-connection";
+        }
+        else
+        {
+            switch (wifi_device.state)
+            {
+            case NM.DeviceState.PREPARE:
+                //network_service._icon_name = "nm-stage01-connecting%02d".printf (frame_number + 1);
+                animate = true;
+                break;
+            case NM.DeviceState.CONFIG:
+            case NM.DeviceState.NEED_AUTH:
+                //network_service._icon_name = "nm-stage02-connecting%02d".printf (frame_number + 1);
+                animate = true;
+                break;
+            case NM.DeviceState.IP_CONFIG:
+                //network_service._icon_name = "nm-stage03-connecting%02d".printf (frame_number + 1);
+                animate = true;
+                break;
+            default:
+                active_ap = wifi_device.get_active_access_point ();
+       /*         if (active_ap != null)
+                    network_service._icon_name = signal_strength_to_icon_name (active_ap.strength);
+                else
+                    network_service._icon_name = "nm-no-connection";*/
+                break;
+            }
+        }
+
+
+		// TODO: looks like a bad way to do it, isn't it?
+        if (animate)
+        {
+            if (animate_timeout == 0)
+                animate_timeout = Timeout.add (100, () =>
+                {
+                    frame_number = (frame_number + 1) % 11;
+                    animate_timeout = 0;
+                    update_wifi_cb ();
+                    return false;
+                });
+        }
+        else
+        {
+            frame_number = 0;
+            if (animate_timeout != 0)
+                Source.remove (animate_timeout);
+        }
+
+        active_ap = wifi_device.get_active_access_point ();
+
+        // FIXME: Sort by known networks, signal strength
+
+        var aps = wifi_device.get_access_points ();
+        var n_aps = 0;
+        if (aps != null)
+            n_aps = aps.length;
+        var n = 0;
+        for (var i = 0; i < n_aps; i++)
+        {
+            var ap = aps.get (i);
+
+            /* Ignore duplicate APs */
+            // FIXME: Should show the AP with the best strength and highest security
+            var duplicate = false;
+            for (var j = 0; j < i; j++)
+            {
+                var ap2 = aps.get (j);
+                if (NM.Utils.same_ssid (ap2.get_ssid (), ap.get_ssid (), true))
+                {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if (duplicate)
+                continue;
+
+            /* Put the first N items into the menu, and any others into an overflow menu */
+            WifiMenuItem item;
+            if (n < wifi_items.length) {
+                item = wifi_items[n];
+        /*    else
+            {
+                item = new WifiMenuItem();
+                item.wifi_activate.connect (wifi_activate_cb);
+				this.pack_start(item);
+                //wifi_overflow_item.child_append (item);
+            }*/
+			item.set_visible(true);
+            item.set_active(ap == active_ap);
+            item.ap = ap;}
+            n++;
+        }
+        for (; n < wifi_items.length; n++)
+            wifi_items[n].set_visible(false);
+        //wifi_overflow_item.property_set_bool (Dbusmenu.MENUITEM_PROP_VISIBLE, n > wifi_items.length);
+
+    }
+
+    private void wifi_activate_cb (WifiMenuItem item)
+    {
+        var i = item;
+        
+        NM.Connection? connection = null;
+
+        var connections = nm_settings.list_connections ();
+        var device_connections = wifi_device.filter_connections (connections);
+        var ap_connections = i.ap.filter_connections (device_connections);
+
+        if (ap_connections.length () > 0)
+            nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
+        else
+        {
+            connection = new NM.Connection ();
+            var s_con = new NM.SettingConnection ();
+            s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
+            connection.add_setting (s_con);
+            var s_wifi = new NM.SettingWireless ();
+            s_wifi.set (NM.SettingWireless.SSID, i.ap.get_ssid (), NM.SettingWireless.SEC, NM.SettingWirelessSecurity.SETTING_NAME);
+            connection.add_setting (s_wifi);
+            var s_wsec = new NM.SettingWirelessSecurity ();
+            s_wsec.set (NM.SettingWirelessSecurity.KEY_MGMT, "wpa-eap");
+            connection.add_setting (s_wsec);
+            var s_8021x = new NM.Setting8021x ();
+            s_8021x.add_eap_method ("ttls");
+            s_8021x.set (NM.Setting8021x.PHASE2_AUTH, "mschapv2");
+            connection.add_setting (s_8021x);
+            var dialog = new NMAWifiDialog (nm_client, nm_settings, connection, wifi_device, i.ap, false);
+            dialog.response.connect (() =>
+            {
+                nm_client.add_and_activate_connection (new NM.Connection (), wifi_device, i.ap.get_path (), null); dialog.destroy ();
+            });
+            dialog.present ();
+        }
+    }
 
 	private void connect_signals () {
-		Services.SettingsManager.get_default ().schema.bind ("show-percentage", show_percent_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+		//Services.SettingsManager.get_default ().schema.bind ("show-percentage", show_percent_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
 		show_settings_button.clicked.connect (show_settings);
 	}

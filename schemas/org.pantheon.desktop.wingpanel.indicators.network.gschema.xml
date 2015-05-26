@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<schema path="/org/pantheon/desktop/wingpanel/indicators/network/" id="org.pantheon.desktop.wingpanel.indicators.network" gettext-domain="network-indicator">
+	</schema>
+</schemalist>

@@ -1,2 +1,2 @@
 include(GSettings)
-add_schema("org.pantheon.desktop.wingpanel.indicators.power.gschema.xml")
+add_schema("org.pantheon.desktop.wingpanel.indicators.network.gschema.xml")

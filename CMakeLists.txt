@@ -5,13 +5,13 @@ cmake_minimum_required (VERSION 2.6)
 cmake_policy (VERSION 2.6)
 
 # Set the Title to use for the Indicator (May be used in future features)
-set (INDICATORTITLE "Power")
+set (INDICATORTITLE "Network")
 
 # The description of what your Indicator is
-set (INDICATORDESCRIPTION "Power indicator")
+set (INDICATORDESCRIPTION "Network indicator")
 
 # Projectname
-project (power)
+project (network)
 
 #########################################################
 # Only alter stuff below if you know what you are doing #

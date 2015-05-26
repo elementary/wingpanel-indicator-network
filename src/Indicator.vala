@@ -15,17 +15,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Power.Indicator : Wingpanel.Indicator {
-	private Widgets.DisplayWidget? display_widget = null;
+public class Network.Indicator : Wingpanel.Indicator {
+	private Gtk.Widget? display_widget = null;
 
-	private Widgets.PopoverWidget? popover_widget = null;
-
-	private Services.Device primary_battery;
+	private Gtk.Widget? popover_widget = null;
 
 	public Indicator () {
-		Object (code_name: Wingpanel.Indicator.POWER,
-				display_name: _("Power"),
-				description:_("Power indicator"));
+		Object (code_name: Wingpanel.Indicator.NETWORK,
+				display_name: _("Network"),
+				description:_("Network indicator"));
 	}
 
 	public override Gtk.Widget get_display_widget () {
@@ -33,20 +31,14 @@ public class Power.Indicator : Wingpanel.Indicator {
 			display_widget = new Widgets.DisplayWidget ();
 		}
 
+		this.visible = true;
+
 		return display_widget;
 	}
 
 	public override Gtk.Widget? get_widget () {
 		if (popover_widget == null) {
 			popover_widget = new Widgets.PopoverWidget ();
-			popover_widget.settings_shown.connect (() => this.close ());
-
-			// No need to display the indicator when the device is completely in AC mode
-			Services.DeviceManager.get_default ().notify["has-battery"].connect (update_visibility);
-			Services.DeviceManager.get_default ().notify["primary-battery"].connect (update_primary_battery);
-
-			// Start the device-search after connecting the signals
-			Services.DeviceManager.get_default ().init ();
 		}
 
 		return popover_widget;
@@ -60,37 +52,10 @@ public class Power.Indicator : Wingpanel.Indicator {
 		// TODO
 	}
 
-	private void update_visibility () {
-		if (this.visible != Services.DeviceManager.get_default ().has_battery)
-			this.visible = Services.DeviceManager.get_default ().has_battery;
-	}
-
-	private void update_primary_battery () {
-		primary_battery = Services.DeviceManager.get_default ().primary_battery;
-
-		show_battery_data (primary_battery);
-
-		primary_battery.properties_updated.connect (() => {
-			show_battery_data (primary_battery);
-		});
-	}
-
-	private void show_battery_data (Services.Device battery) {
-		if (display_widget != null) {
-			var icon_name = Utils.get_symbolic_icon_name_for_battery (battery);
-
-			display_widget.set_icon_name (icon_name);
-
-			// Debug output for designers
-			debug ("Icon changed to \"%s\"", icon_name);
-
-			display_widget.set_percent ((int)Math.round (battery.percentage));
-		}
-	}
 }
 
 public Wingpanel.Indicator get_indicator (Module module) {
 	debug ("Activating Power Indicator");
-	var indicator = new Power.Indicator ();
+	var indicator = new Network.Indicator ();
 	return indicator;
 }
