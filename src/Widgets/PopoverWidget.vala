@@ -27,15 +27,15 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
         }
     }
 
-	public signal void wifi_activate(WifiMenuItem item);
+    public signal void wifi_activate(WifiMenuItem item);
 
-	public WifiMenuItem (Gtk.RadioButton? radio = null) {
-		if(radio != null) set_group(radio.get_group());
-	}
+    public WifiMenuItem (Gtk.RadioButton? radio = null) {
+        if(radio != null) set_group(radio.get_group());
+    }
 
     private void update ()
     {
-		set_visible(_ap != null);
+        set_visible(_ap != null);
 
         if (ap == null)
             return;
@@ -48,7 +48,7 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
 
         property_set (Dbusmenu.MENUITEM_PROP_ICON_NAME, icon_name);*/
 
-		clicked.connect( () => { wifi_activate (this); });
+        clicked.connect( () => { wifi_activate (this); });
     }
 }
 
@@ -59,61 +59,61 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private NM.RemoteSettings nm_settings;
     private NM.DeviceWifi? wifi_device;
     private NM.AccessPoint? active_ap;
-	NM.Device? ethernet_device = null;
+    NM.Device? ethernet_device = null;
 
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
     private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
 
-	Gtk.Box wifi_list;
+    Gtk.Box wifi_list;
 
     private int frame_number = 0;
     private uint animate_timeout = 0;
 
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
+    private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
 
-	private Wingpanel.Widgets.IndicatorSwitch show_percent_switch;
+    private Wingpanel.Widgets.IndicatorSwitch show_percent_switch;
 
-	private Wingpanel.Widgets.IndicatorButton show_settings_button;
+    private Wingpanel.Widgets.IndicatorButton show_settings_button;
 
-	public signal void settings_shown ();
+    public signal void settings_shown ();
 
-	public PopoverWidget () {
-		Object (orientation: Gtk.Orientation.VERTICAL);
+    public PopoverWidget () {
+        Object (orientation: Gtk.Orientation.VERTICAL);
 
-		build_ui ();
-		connect_signals ();
-		show_all();
-	}
+        build_ui ();
+        connect_signals ();
+        show_all();
+    }
 
-	private void build_ui () {
-        
-		// FIXME: Support more than one ethernet item
+    private void build_ui () {
+
+        // FIXME: Support more than one ethernet item
         ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
-		this.pack_start (ethernet_item);
-		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
-        
-		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
-		wifi_item.activate.connect (() =>
+        this.pack_start (ethernet_item);
+        this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
+
+        wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
+        wifi_item.activate.connect (() =>
         {
             if (updating_rfkill)
                 return;
             var active = wifi_item.get_active();
             rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
         });
-		
-		this.pack_start (wifi_item);
 
-		var scrolled_window = new Gtk.ScrolledWindow(null, null);
-		scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
+        this.pack_start (wifi_item);
 
-		wifi_list = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
+        var scrolled_window = new Gtk.ScrolledWindow(null, null);
+        scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
+
+        wifi_list = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
 
 
-		scrolled_window.add_with_viewport(wifi_list);
+        scrolled_window.add_with_viewport(wifi_list);
 
-		this.pack_start(scrolled_window);
-		
-		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
+        this.pack_start(scrolled_window);
+
+        this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
 
         /* Monitor killswitch status */
@@ -132,14 +132,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         for (var i = 0; i < devices.length; i++)
             device_added_cb (devices.get (i));
 
-		show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings") + "…");
+        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings") + "…");
 
-		this.pack_start (show_settings_button);
+        this.pack_start (show_settings_button);
 
-		update_wifi_cb();
-	}
-    
-	private void device_added_cb (NM.Device device)
+        update_wifi_cb();
+    }
+
+    private void device_added_cb (NM.Device device)
     {
         if (device is NM.DeviceWifi)
         {
@@ -151,21 +151,21 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
         else if (device is NM.DeviceEthernet)
         {
-			ethernet_device = device;
-			device.state_changed.connect(() => { update_wifi_cb(); });
+            ethernet_device = device;
+            device.state_changed.connect(() => { update_wifi_cb(); });
         }
         else
             stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
-		update_wifi_cb ();
+        update_wifi_cb ();
     }
 
     private void update_wifi_cb ()
     {
-		/* Ethernet */
-		bool ethernet_available = ethernet_device != null && ethernet_device.get_state() == NM.DeviceState.ACTIVATED;
-		ethernet_item.set_active(ethernet_available);
+        /* Ethernet */
+        bool ethernet_available = ethernet_device != null && ethernet_device.get_state() == NM.DeviceState.ACTIVATED;
+        ethernet_item.set_active(ethernet_available);
 
-		/* Wifi */
+        /* Wifi */
         var have_lock = false;
         var software_locked = false;
         var hardware_locked = false;
@@ -189,9 +189,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         var animate = false;
 
-		wifi_list.forall( (w) => {
-			w.destroy();
-		});
+        wifi_list.forall( (w) => {
+            w.destroy();
+        });
 
         if (locked)
         {
@@ -226,7 +226,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
 
 
-		// TODO: looks like a bad way to do it, isn't it?
+        // TODO: looks like a bad way to do it, isn't it?
         if (animate)
         {
             if (animate_timeout == 0)
@@ -255,7 +255,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             n_aps = aps.length;
         var n = 0;
 
-		WifiMenuItem? previous_item = null;
+        WifiMenuItem? previous_item = null;
         for (var i = 0; i < n_aps; i++)
         {
             var ap = aps.get (i);
@@ -277,21 +277,21 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
             /* Put the first N items into the menu, and any others into an overflow menu */
             WifiMenuItem item = new WifiMenuItem(previous_item);
-			previous_item = item;
+            previous_item = item;
         /*    else
             {
                 item = new WifiMenuItem();
                 item.wifi_activate.connect (wifi_activate_cb);
-				this.pack_start(item);
+                this.pack_start(item);
                 //wifi_overflow_item.child_append (item);
             }*/
-			item.set_visible(true);
+            item.set_visible(true);
             item.set_active(ap == active_ap);
             item.ap = ap;
             item.wifi_activate.connect (wifi_activate_cb);
 
-			wifi_list.pack_end(item);
-			wifi_list.show_all();
+            wifi_list.pack_end(item);
+            wifi_list.show_all();
         }
         //wifi_overflow_item.property_set_bool (Dbusmenu.MENUITEM_PROP_VISIBLE, n > wifi_items.length);
 
@@ -334,16 +334,16 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
     }
 
-	private void connect_signals () {
-		//Services.SettingsManager.get_default ().schema.bind ("show-percentage", show_percent_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+    private void connect_signals () {
+        //Services.SettingsManager.get_default ().schema.bind ("show-percentage", show_percent_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
 
-		show_settings_button.clicked.connect (show_settings);
-	}
+        show_settings_button.clicked.connect (show_settings);
+    }
 
-	private void show_settings () {
-		var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
-		cmd.run ();
+    private void show_settings () {
+        var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
+        cmd.run ();
 
-		settings_shown ();
-	}
+        settings_shown ();
+    }
 }
