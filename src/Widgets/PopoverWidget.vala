@@ -59,10 +59,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private NM.RemoteSettings nm_settings;
     private NM.DeviceWifi? wifi_device;
     private NM.AccessPoint? active_ap;
+	NM.Device? ethernet_device = null;
 
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
+    private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
     private WifiMenuItem[] wifi_items;
     private Wingpanel.Widgets.IndicatorButton wifi_overflow_item;
+	Wingpanel.Widgets.IndicatorSeparator wifi_separator;
 
     private int frame_number = 0;
     private uint animate_timeout = 0;
@@ -85,6 +88,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
 	private void build_ui () {
         
+		// FIXME: Support more than one ethernet item
+        ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
+		this.pack_start (ethernet_item);
+        
 		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
 		wifi_item.activate.connect (() =>
         {
@@ -105,16 +112,15 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 			this.pack_start (wifi_items[i]);
         }
 		
-		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
+		wifi_separator =new Wingpanel.Widgets.IndicatorSeparator ();
+
+		pack_start (wifi_separator);
 
         /*wifi_overflow_item = new Dbusmenu.Menuitem ();
         wifi_overflow_item.property_set (Dbusmenu.MENUITEM_PROP_LABEL, _("More Networks"));
         menu.child_append (wifi_overflow_item);*/
 
 
-        // FIXME: Support more than one ethernet item
-        var ethernet_status_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
-		this.pack_start (ethernet_status_item);
 		this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
 
@@ -150,17 +156,23 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             wifi_device.access_point_added.connect (update_wifi_cb);
             wifi_device.access_point_removed.connect (update_wifi_cb);
             wifi_device.state_changed.connect (update_wifi_cb);
-            update_wifi_cb ();
         }
         else if (device is NM.DeviceEthernet)
         {
+			ethernet_device = device;
+			device.state_changed.connect(() => { update_wifi_cb(); });
         }
         else
-            stderr.printf ("Unknown device: %s\n", device.driver);
+            stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
+		update_wifi_cb ();
     }
 
     private void update_wifi_cb ()
     {
+		/* Ethernet */
+		ethernet_item.set_active(ethernet_device != null && ethernet_device.get_state() == NM.DeviceState.ACTIVATED);
+
+		/* Wifi */
         var have_lock = false;
         var software_locked = false;
         var hardware_locked = false;
