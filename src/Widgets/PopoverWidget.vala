@@ -59,7 +59,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
     private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
 
-    Gtk.Box wifi_list;
+    Gtk.ListBox wifi_list;
 
     private int frame_number = 0;
     private uint animate_timeout = 0;
@@ -102,7 +102,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
 
-        wifi_list = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
+        wifi_list = new Gtk.ListBox ();
 
 
         scrolled_window.add_with_viewport (wifi_list);
@@ -269,8 +269,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             item.ap = ap;
             item.clicked.connect (wifi_activate_cb);
 
-            wifi_list.pack_end(item);
-            wifi_list.show_all();
+            wifi_list.add(item);
         }
         //wifi_overflow_item.property_set_bool (Dbusmenu.MENUITEM_PROP_VISIBLE, n > wifi_items.length);
 
