@@ -27,8 +27,6 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
         }
     }
 
-    public signal void wifi_activate (WifiMenuItem item);
-
     public WifiMenuItem (Gtk.RadioButton? radio = null) {
         if (radio != null) set_group (radio.get_group ());
     }
@@ -46,8 +44,6 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
             icon_name += "-secure";
 
         property_set (Dbusmenu.MENUITEM_PROP_ICON_NAME, icon_name);*/
-
-        clicked.connect ( () => { wifi_activate (this); });
     }
 }
 
@@ -271,7 +267,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             item.set_visible(true);
             item.set_active(ap == active_ap);
             item.ap = ap;
-            item.wifi_activate.connect (wifi_activate_cb);
+            item.clicked.connect (wifi_activate_cb);
 
             wifi_list.pack_end(item);
             wifi_list.show_all();
@@ -280,8 +276,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
     }
 
-    private void wifi_activate_cb (WifiMenuItem item) {
-        var i = item;
+    private void wifi_activate_cb (Gtk.Button item) {
+        var i = item as WifiMenuItem;
         
         NM.Connection? connection = null;
 
