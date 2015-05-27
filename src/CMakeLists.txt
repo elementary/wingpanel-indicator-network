@@ -17,13 +17,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Utils.vala
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
-  Widgets/DeviceList.vala
   Services/SettingsManager.vala
-  Services/DeviceManager.vala
-  Services/Device.vala
-  Services/DBusInterfaces/Properties.vala
-  Services/DBusInterfaces/UPower.vala
-  Services/DBusInterfaces/Device.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   #indicator-network-service.vala
   rfkill.vala
