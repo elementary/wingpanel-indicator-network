@@ -15,8 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
+public class Network.WifiMenuItem : Gtk.RadioButton {
     private NM.AccessPoint _ap;
+	public signal void user_action();
     public NM.AccessPoint ap {
         get {
             return _ap;
@@ -29,6 +30,10 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
 
     public WifiMenuItem (Gtk.RadioButton? radio = null) {
         if (radio != null) set_group (radio.get_group ());
+		this.button_release_event.connect ( (b, ev) => {
+			user_action();
+			return false;
+		});
     }
 
     private void update () {
@@ -47,48 +52,34 @@ public class Network.Widgets.WifiMenuItem : Gtk.RadioButton {
     }
 }
 
-public class Network.Widgets.PopoverWidget : Gtk.Box {
-    private RFKillManager rfkill;
-    private bool updating_rfkill = false;
-    private NM.Client nm_client;
-    private NM.RemoteSettings nm_settings;
-    private NM.DeviceWifi? wifi_device;
+public abstract class Network.WidgetInterface : Gtk.ListBox {
+	public abstract void update ();
+
+	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
+}
+
+public class Network.WifiInterface : Network.WidgetInterface {
+    RFKillManager rfkill;
+    bool updating_rfkill = false;
+    NM.DeviceWifi? wifi_device;
+	NM.Device? device;
     private NM.AccessPoint? active_ap;
-    NM.Device? ethernet_device = null;
-
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
-    private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
-
     Gtk.ListBox wifi_list;
-
     private int frame_number = 0;
     private uint animate_timeout = 0;
 
-    private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
+    
+	private NM.Client nm_client;
+    private NM.RemoteSettings nm_settings;
 
-    private Wingpanel.Widgets.IndicatorSwitch show_percent_switch;
-
-    private Wingpanel.Widgets.IndicatorButton show_settings_button;
-
-    public signal void settings_shown ();
-
-    public PopoverWidget () {
-        Object (orientation: Gtk.Orientation.VERTICAL);
-
-        build_ui ();
-        connect_signals ();
-        show_all();
-    }
-
-    private void build_ui () {
-
-        // FIXME: Support more than one ethernet item
-        ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
-        ethernet_item.get_style_context ().add_class ("h4");
-        this.pack_start (ethernet_item);
-        this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
-
-        wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
+	public WifiInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
+		this.nm_client = nm_client;
+		this.nm_settings = nm_settings;
+		device = _device;
+		wifi_device = device as NM.DeviceWifi;
+        
+		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
         wifi_item.get_style_context ().add_class ("h4");
         wifi_item.activate.connect (() => {
             if (updating_rfkill)
@@ -97,8 +88,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
         });
 
-        this.pack_start (wifi_item);
-
+        add (wifi_item);
         var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
 
@@ -107,56 +97,25 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         scrolled_window.add_with_viewport (wifi_list);
 
-        this.pack_start (scrolled_window);
-
-        this.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
-
-
-        /* Monitor killswitch status */
+        add (scrolled_window);
+        
+		/* Monitor killswitch status */
         rfkill = new RFKillManager ();
         rfkill.open ();
-        rfkill.device_added.connect (update_wifi_cb);
-        rfkill.device_changed.connect (update_wifi_cb);
-        rfkill.device_deleted.connect (update_wifi_cb);
+        rfkill.device_added.connect (update);
+        rfkill.device_changed.connect (update);
+        rfkill.device_deleted.connect (update);
+            
+		wifi_device.notify["active-access-point"].connect (() => { update (); });
+		wifi_device.access_point_added.connect (update);
+		wifi_device.access_point_removed.connect (update);
+		wifi_device.state_changed.connect (update);
 
-        /* Monitor network manager */
-        nm_client = new NM.Client ();
-        nm_settings = new NM.RemoteSettings (null);
+	}
 
-        nm_client.device_added.connect (device_added_cb);
-        var devices = nm_client.get_devices ();
-        for (var i = 0; i < devices.length; i++)
-            device_added_cb (devices.get (i));
-
-        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
-
-        this.pack_start (show_settings_button);
-
-        update_wifi_cb();
-    }
-
-    private void device_added_cb (NM.Device device) {
-        if (device is NM.DeviceWifi) {
-            wifi_device = device as NM.DeviceWifi;
-            wifi_device.notify["active-access-point"].connect (() => { update_wifi_cb (); });
-            wifi_device.access_point_added.connect (update_wifi_cb);
-            wifi_device.access_point_removed.connect (update_wifi_cb);
-            wifi_device.state_changed.connect (update_wifi_cb);
-        } else if (device is NM.DeviceEthernet) {
-            ethernet_device = device;
-            device.state_changed.connect (() => { update_wifi_cb(); });
-        } else {
-            stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
-        }
-        update_wifi_cb ();
-    }
-
-    private void update_wifi_cb () {
-        /* Ethernet */
-        bool ethernet_available = ethernet_device != null && ethernet_device.get_state () == NM.DeviceState.ACTIVATED;
-        ethernet_item.set_active (ethernet_available);
-
-        /* Wifi */
+    public override void update () {
+        
+		/* Wifi */
         var have_lock = false;
         var software_locked = false;
         var hardware_locked = false;
@@ -218,7 +177,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 animate_timeout = Timeout.add (100, () => {
                     frame_number = (frame_number + 1) % 11;
                     animate_timeout = 0;
-                    update_wifi_cb ();
+                    update ();
                     return false;
                 });
         } else {
@@ -260,18 +219,16 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             WifiMenuItem item = new WifiMenuItem(previous_item);
             previous_item = item;
             item.set_visible(true);
-            //item.set_active(ap == active_ap);
+            item.set_active(ap == active_ap);
             item.ap = ap;
-			item.clicked.connect( () => { critical("here"); });
-            item.clicked.connect (wifi_activate_cb);
+            item.user_action.connect(wifi_activate_cb);
 
             wifi_list.add(item);
         }
-        //wifi_overflow_item.property_set_bool (Dbusmenu.MENUITEM_PROP_VISIBLE, n > wifi_items.length);
 
     }
 
-    private void wifi_activate_cb (Gtk.Button item) {
+	private void wifi_activate_cb (Gtk.Button item) {
         var i = item as WifiMenuItem;
         
         NM.Connection? connection = null;
@@ -305,9 +262,103 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
     }
 
-    private void connect_signals () {
-        //Services.SettingsManager.get_default ().schema.bind ("show-percentage", show_percent_switch.get_switch (), "active", SettingsBindFlags.DEFAULT);
+}
 
+public class Network.EtherInterface : Network.WidgetInterface {
+    NM.Device? device = null;
+    private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
+
+	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
+		device = _device;
+        ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
+        ethernet_item.get_style_context ().add_class ("h4");
+        add (ethernet_item);
+        
+		device.state_changed.connect (() => { update (); });
+	}
+    
+	public override void update () {
+        /* Ethernet */
+        bool ethernet_available = device.get_state () == NM.DeviceState.ACTIVATED;
+        ethernet_item.set_active (ethernet_available);
+	}
+
+}
+
+public class Network.Widgets.PopoverWidget : Gtk.Box {
+    private NM.Client nm_client;
+    private NM.RemoteSettings nm_settings;
+
+	GLib.List<WidgetInterface>? network_interface;
+
+
+    private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
+
+    private Wingpanel.Widgets.IndicatorButton show_settings_button;
+
+    public signal void settings_shown ();
+
+    public PopoverWidget () {
+        Object (orientation: Gtk.Orientation.VERTICAL);
+
+		network_interface = new GLib.List<WidgetInterface>();
+
+        build_ui ();
+        connect_signals ();
+        show_all();
+    }
+
+    private void build_ui () {
+
+
+        /* Monitor network manager */
+        nm_client = new NM.Client ();
+        nm_settings = new NM.RemoteSettings (null);
+
+        nm_client.device_added.connect (device_added_cb);
+        
+		var devices = nm_client.get_devices ();
+        for (var i = 0; i < devices.length; i++)
+            device_added_cb (devices.get (i));
+
+        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
+
+        pack_start (show_settings_button);
+    }
+
+    private void device_added_cb (NM.Device device) {
+        if (device is NM.DeviceWifi) {
+			var inter = new WifiInterface (nm_client, nm_settings, device);
+			if (network_interface.length() > 0) {
+				inter.sep = new Wingpanel.Widgets.IndicatorSeparator ();
+				pack_start (inter.sep);
+			}
+			pack_start (inter);
+			network_interface.append (inter);
+			debug ("Wifi interface added");
+        } else if (device is NM.DeviceEthernet) {
+			var inter = new EtherInterface (nm_client, nm_settings, device);
+			if (network_interface.length() > 0) {
+				inter.sep = new Wingpanel.Widgets.IndicatorSeparator ();
+				pack_start (inter.sep);
+			}
+			pack_start (inter);
+			network_interface.append (inter);
+			debug ("Etherner interface added");
+        } else {
+            stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
+        }
+
+		update_all();
+    }
+
+	void update_all () {
+		foreach(var inter in network_interface) {
+			inter.update ();
+		}
+	}
+
+    private void connect_signals () {
         show_settings_button.clicked.connect (show_settings);
     }
 
