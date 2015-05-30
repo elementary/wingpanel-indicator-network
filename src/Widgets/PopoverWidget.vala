@@ -223,8 +223,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 });
         } else {
             frame_number = 0;
-            if (animate_timeout != 0)
+            if (animate_timeout != 0) {
                 Source.remove (animate_timeout);
+				animate_timeout = 0;
+			}
         }
 
         active_ap = wifi_device.get_active_access_point ();
