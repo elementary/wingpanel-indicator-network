@@ -257,16 +257,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             /* Put the first N items into the menu, and any others into an overflow menu */
             WifiMenuItem item = new WifiMenuItem(previous_item);
             previous_item = item;
-        /*    else
-            {
-                item = new WifiMenuItem();
-                item.wifi_activate.connect (wifi_activate_cb);
-                this.pack_start(item);
-                //wifi_overflow_item.child_append (item);
-            }*/
             item.set_visible(true);
-            item.set_active(ap == active_ap);
+            //item.set_active(ap == active_ap);
             item.ap = ap;
+			item.clicked.connect( () => { critical("here"); });
             item.clicked.connect (wifi_activate_cb);
 
             wifi_list.add(item);
