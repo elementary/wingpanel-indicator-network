@@ -363,6 +363,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 		var tmp_hbox = new Gtk.HBox(false, 5);
 		tmp_hbox.pack_start(back_button, false, false);
 		secondary_box.pack_start(tmp_hbox, false, false);
+		secondary_box.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
 
 		add (main_box);
 
