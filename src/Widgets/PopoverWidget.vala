@@ -68,13 +68,17 @@ public abstract class Network.WidgetInterface : Gtk.ListBox {
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 
 	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
+	protected NM.Device? device;
+
+	public bool is_device (NM.Device device) {
+		return device == this.device;
+	}
 }
 
 public class Network.WifiInterface : Network.WidgetInterface {
     RFKillManager rfkill;
     bool updating_rfkill = false;
     NM.DeviceWifi? wifi_device;
-	NM.Device? device;
     private NM.AccessPoint? active_ap;
     private Wingpanel.Widgets.IndicatorSwitch wifi_item;
     Gtk.ListBox wifi_list;
@@ -259,7 +263,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 }
 
 public class Network.EtherInterface : Network.WidgetInterface {
-    NM.Device? device = null;
     private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
 
 	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
@@ -331,7 +334,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         show_all();
     }
 
-    private void build_ui () {
+    void build_ui () {
+        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
+        pack_end (show_settings_button);
 
 
         /* Monitor network manager */
@@ -339,15 +344,27 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         nm_settings = new NM.RemoteSettings (null);
 
         nm_client.device_added.connect (device_added_cb);
+        nm_client.device_removed.connect (device_removed_cb);
         
 		var devices = nm_client.get_devices ();
         for (var i = 0; i < devices.length; i++)
             device_added_cb (devices.get (i));
-
-        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
-
-        pack_start (show_settings_button);
     }
+
+    void device_removed_cb (NM.Device device) {
+		foreach (var widget_interface in network_interface) {
+			if (widget_interface.is_device (device)) {
+				network_interface.remove (widget_interface);
+				
+				if (widget_interface.sep != null) {
+					widget_interface.sep.destroy ();
+				}
+
+				widget_interface.destroy ();
+				break;
+			}
+		}
+	}
 
     private void device_added_cb (NM.Device device) {
 		WidgetInterface? widget_interface = null;
@@ -363,17 +380,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
 
 		if (widget_interface != null) {
-			if (network_interface.length() > 0) {
-				widget_interface.sep = new Wingpanel.Widgets.IndicatorSeparator ();
-				pack_start (widget_interface.sep);
-			}
-			pack_start (widget_interface);
+			widget_interface.sep = new Wingpanel.Widgets.IndicatorSeparator ();
+			pack_end (widget_interface.sep);
+			pack_end (widget_interface);
 			network_interface.append (widget_interface);
 
 			widget_interface.notify["state"].connect(update_state);
 		}
 
 		update_all();
+
+		show_all();
     }
 
 	void update_all () {
