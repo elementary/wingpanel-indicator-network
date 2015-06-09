@@ -62,7 +62,7 @@ public enum Network.State {
 	FAILED_WIFI
 }
 
-public abstract class Network.WidgetInterface : Gtk.ListBox {
+public abstract class Network.WidgetInterface : Gtk.Box {
 	public abstract void update ();
 
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
@@ -90,6 +90,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
     private NM.RemoteSettings nm_settings;
 
 	public WifiInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
+		
+		set_orientation(Gtk.Orientation.VERTICAL);
+
 		this.nm_client = nm_client;
 		this.nm_settings = nm_settings;
 		device = _device;
@@ -104,7 +107,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
             rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
         });
 
-        add (wifi_item);
+        pack_start (wifi_item);
         
 		var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
@@ -114,7 +117,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
         scrolled_window.add_with_viewport (wifi_list);
 
-        add (scrolled_window);
+        pack_start (scrolled_window);
         
 		/* Monitor killswitch status */
         rfkill = new RFKillManager ();
@@ -152,8 +155,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.set_active (!locked);
         updating_rfkill = false;
-
-        var animate = false;
 
         wifi_list.forall ( (w) => {
             w.destroy();
@@ -213,11 +214,13 @@ public class Network.WifiInterface : Network.WidgetInterface {
             if (duplicate)
                 continue;
 
+			assert(ap is NM.AccessPoint);
+
             /* Put the first N items into the menu, and any others into an overflow menu */
             WifiMenuItem item = new WifiMenuItem(previous_item);
             previous_item = item;
             item.set_visible(true);
-            item.set_active(ap == active_ap);
+            item.set_active(NM.Utils.same_ssid (ap.get_ssid (), active_ap.get_ssid (), true));
             item.ap = ap;
             item.user_action.connect(wifi_activate_cb);
 
@@ -235,10 +238,12 @@ public class Network.WifiInterface : Network.WidgetInterface {
         var device_connections = wifi_device.filter_connections (connections);
         var ap_connections = i.ap.filter_connections (device_connections);
 
-        /*if (ap_connections.length () > 0) {
+		bool already_connected = ap_connections.length () > 0;
+
+        if (already_connected) {
             nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
         } else {
-            connection = new NM.Connection ();
+        /*    connection = new NM.Connection ();
             var s_con = new NM.SettingConnection ();
             s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
             connection.add_setting (s_con);
@@ -256,8 +261,10 @@ public class Network.WifiInterface : Network.WidgetInterface {
             dialog.response.connect (() => {
                 nm_client.add_and_activate_connection (new NM.Connection (), wifi_device, i.ap.get_path (), null); dialog.destroy ();
             });
-            dialog.present ();
-        }*/
+            dialog.present ();*/
+        }
+
+		update ();
     }
 
 }
