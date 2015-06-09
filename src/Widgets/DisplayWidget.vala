@@ -45,6 +45,23 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 	public void update_state (Network.State state) {
 		switch(state) {
 		case Network.State.CONNECTING_WIRED:
+			image.icon_name = "network-wired-acquiring-symbolic";
+			break;
+		case Network.State.CONNECTED_WIRED:
+			image.icon_name = "network-wired-symbolic";
+			break;
+		case Network.State.CONNECTED_WIFI:
+			image.icon_name = "network-wireless-connected-symbolic";
+			break;
+		case Network.State.CONNECTING_WIFI:
+			image.icon_name = "network-wireless-acquiring-symbolic";
+			break;
+		case Network.State.DISCONNECTED:
+			image.icon_name = "network-offline-symbolic";
+			break;
+		default:
+			image.icon_name = "network-offline-symbolic";
+			critical("Unknown network state, cannot show the good icon");
 			break;
 		}
 	}

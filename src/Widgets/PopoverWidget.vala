@@ -52,17 +52,22 @@ public class Network.WifiMenuItem : Gtk.RadioButton {
     }
 }
 
+public enum Network.State {
+	DISCONNECTED,
+	CONNECTED_WIRED,
+	CONNECTED_WIFI,
+	CONNECTING_WIFI,
+	CONNECTING_WIRED,
+	FAILED_WIRED,
+	FAILED_WIFI
+}
+
 public abstract class Network.WidgetInterface : Gtk.ListBox {
 	public abstract void update ();
 
-	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
-}
+	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 
-public enum Network.State {
-	DISCONNECTED,
-	CONNECTED,
-	CONNECTING_WIFI,
-	CONNECTING_WIRED
+	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
 }
 
 public class Network.WifiInterface : Network.WidgetInterface {
@@ -150,51 +155,32 @@ public class Network.WifiInterface : Network.WidgetInterface {
             w.destroy();
         });
 
-        if (locked) {
-            //network_service._icon_name = "nm-no-connection";
+		switch (wifi_device.state) {
+		case NM.DeviceState.UNKNOWN:
+		case NM.DeviceState.UNMANAGED:
+		case NM.DeviceState.DEACTIVATING:
+		case NM.DeviceState.FAILED:
+			state = State.FAILED_WIFI;
+			break;
 
-        } else {
-            switch (wifi_device.state) {
-            case NM.DeviceState.PREPARE:
-                //network_service._icon_name = "nm-stage01-connecting%02d".printf (frame_number + 1);
-                animate = true;
-                break;
-            case NM.DeviceState.CONFIG:
-            case NM.DeviceState.NEED_AUTH:
-                //network_service._icon_name = "nm-stage02-connecting%02d".printf (frame_number + 1);
-                animate = true;
-                break;
-            case NM.DeviceState.IP_CONFIG:
-                //network_service._icon_name = "nm-stage03-connecting%02d".printf (frame_number + 1);
-                animate = true;
-                break;
-            default:
-                active_ap = wifi_device.get_active_access_point ();
-       /*         if (active_ap != null)
-                    network_service._icon_name = signal_strength_to_icon_name (active_ap.strength);
-                else
-                    network_service._icon_name = "nm-no-connection";*/
-                break;
-            }
-        }
+		case NM.DeviceState.UNAVAILABLE:
+		case NM.DeviceState.DISCONNECTED:
+			state = State.DISCONNECTED;
+			break;
 
-
-        // TODO: looks like a bad way to do it, isn't it?
-        if (animate) {
-            if (animate_timeout == 0)
-                animate_timeout = Timeout.add (100, () => {
-                    frame_number = (frame_number + 1) % 11;
-                    animate_timeout = 0;
-                    update ();
-                    return false;
-                });
-        } else {
-            frame_number = 0;
-            if (animate_timeout != 0) {
-                Source.remove (animate_timeout);
-				animate_timeout = 0;
-			}
-        }
+		case NM.DeviceState.PREPARE:
+		case NM.DeviceState.CONFIG:
+		case NM.DeviceState.NEED_AUTH:
+		case NM.DeviceState.IP_CONFIG:
+		case NM.DeviceState.IP_CHECK:
+		case NM.DeviceState.SECONDARIES:
+			state = State.CONNECTING_WIFI;
+			break;
+		
+		case NM.DeviceState.ACTIVATED:
+			state = State.CONNECTED_WIFI;
+			break;
+		}
 
         active_ap = wifi_device.get_active_access_point ();
 
@@ -289,6 +275,33 @@ public class Network.EtherInterface : Network.WidgetInterface {
         /* Ethernet */
         bool ethernet_available = device.get_state () == NM.DeviceState.ACTIVATED;
         ethernet_item.set_active (ethernet_available);
+
+		switch (device.get_state ()) {
+		case NM.DeviceState.UNKNOWN:
+		case NM.DeviceState.UNMANAGED:
+		case NM.DeviceState.DEACTIVATING:
+		case NM.DeviceState.FAILED:
+			state = State.FAILED_WIRED;
+			break;
+
+		case NM.DeviceState.UNAVAILABLE:
+		case NM.DeviceState.DISCONNECTED:
+			state = State.DISCONNECTED;
+			break;
+
+		case NM.DeviceState.PREPARE:
+		case NM.DeviceState.CONFIG:
+		case NM.DeviceState.NEED_AUTH:
+		case NM.DeviceState.IP_CONFIG:
+		case NM.DeviceState.IP_CHECK:
+		case NM.DeviceState.SECONDARIES:
+			state = State.CONNECTING_WIRED;
+			break;
+		
+		case NM.DeviceState.ACTIVATED:
+			state = State.CONNECTED_WIRED;
+			break;
+		}
 	}
 
 }
@@ -337,27 +350,28 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void device_added_cb (NM.Device device) {
+		WidgetInterface? widget_interface = null;
+
         if (device is NM.DeviceWifi) {
-			var inter = new WifiInterface (nm_client, nm_settings, device);
-			if (network_interface.length() > 0) {
-				inter.sep = new Wingpanel.Widgets.IndicatorSeparator ();
-				pack_start (inter.sep);
-			}
-			pack_start (inter);
-			network_interface.append (inter);
+			widget_interface = new WifiInterface (nm_client, nm_settings, device);
 			debug ("Wifi interface added");
         } else if (device is NM.DeviceEthernet) {
-			var inter = new EtherInterface (nm_client, nm_settings, device);
-			if (network_interface.length() > 0) {
-				inter.sep = new Wingpanel.Widgets.IndicatorSeparator ();
-				pack_start (inter.sep);
-			}
-			pack_start (inter);
-			network_interface.append (inter);
+			widget_interface = new EtherInterface (nm_client, nm_settings, device);
 			debug ("Etherner interface added");
         } else {
             stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
         }
+
+		if (widget_interface != null) {
+			if (network_interface.length() > 0) {
+				widget_interface.sep = new Wingpanel.Widgets.IndicatorSeparator ();
+				pack_start (widget_interface.sep);
+			}
+			pack_start (widget_interface);
+			network_interface.append (widget_interface);
+
+			widget_interface.notify["state"].connect(update_state);
+		}
 
 		update_all();
     }
@@ -366,6 +380,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 		foreach(var inter in network_interface) {
 			inter.update ();
 		}
+	}
+
+	void update_state () {
+		var next_state = Network.State.DISCONNECTED;
+		foreach (var inter in network_interface) {
+			if (inter.state != Network.State.DISCONNECTED) {
+				next_state = inter.state;
+			}
+		}
+
+		state = next_state;
 	}
 
     private void connect_signals () {
