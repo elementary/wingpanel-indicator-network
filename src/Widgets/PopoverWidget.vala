@@ -58,6 +58,13 @@ public abstract class Network.WidgetInterface : Gtk.ListBox {
 	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
 }
 
+public enum Network.State {
+	DISCONNECTED,
+	CONNECTED,
+	CONNECTING_WIFI,
+	CONNECTING_WIRED
+}
+
 public class Network.WifiInterface : Network.WidgetInterface {
     RFKillManager rfkill;
     bool updating_rfkill = false;
@@ -89,7 +96,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
         });
 
         add (wifi_item);
-        var scrolled_window = new Gtk.ScrolledWindow (null, null);
+        
+		var scrolled_window = new Gtk.ScrolledWindow (null, null);
         scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
 
         wifi_list = new Gtk.ListBox ();
@@ -290,6 +298,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private NM.RemoteSettings nm_settings;
 
 	GLib.List<WidgetInterface>? network_interface;
+
+	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
 
     private const string SETTINGS_EXEC = "/usr/bin/switchboard network";

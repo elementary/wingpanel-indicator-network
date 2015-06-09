@@ -16,9 +16,9 @@
  */
 
 public class Network.Indicator : Wingpanel.Indicator {
-	private Gtk.Widget? display_widget = null;
+	Network.Widgets.DisplayWidget? display_widget = null;
 
-	private Gtk.Widget? popover_widget = null;
+	Network.Widgets.PopoverWidget? popover_widget = null;
 
 	public Indicator () {
 		Object (code_name: Wingpanel.Indicator.NETWORK,
@@ -39,9 +39,20 @@ public class Network.Indicator : Wingpanel.Indicator {
 	public override Gtk.Widget? get_widget () {
 		if (popover_widget == null) {
 			popover_widget = new Widgets.PopoverWidget ();
+
+			popover_widget.notify["state"].connect(on_state_changed);
+
+			on_state_changed ();
 		}
 
 		return popover_widget;
+	}
+
+	void on_state_changed () {
+		assert(popover_widget != null);
+		assert(display_widget != null);
+
+		display_widget.update_state (popover_widget.state);
 	}
 
 	public override void opened () {

@@ -38,8 +38,15 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 	private void connect_signals () {
 	}
 
-	public void set_icon_name (string icon_name) {
+	void set_icon_name (string icon_name) {
 		image.icon_name = icon_name;
+	}
+
+	public void update_state (Network.State state) {
+		switch(state) {
+		case Network.State.CONNECTING_WIRED:
+			break;
+		}
 	}
 
 	public void set_percent (int percentage) {
