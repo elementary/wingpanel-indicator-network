@@ -245,7 +245,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
         var device_connections = wifi_device.filter_connections (connections);
         var ap_connections = i.ap.filter_connections (device_connections);
 
-        if (ap_connections.length () > 0) {
+        /*if (ap_connections.length () > 0) {
             nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
         } else {
             connection = new NM.Connection ();
@@ -267,7 +267,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
                 nm_client.add_and_activate_connection (new NM.Connection (), wifi_device, i.ap.get_path (), null); dialog.destroy ();
             });
             dialog.present ();
-        }
+        }*/
     }
 
 }
