@@ -70,6 +70,8 @@ public abstract class Network.WidgetInterface : Gtk.Box {
 	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
 	protected NM.Device? device;
 
+	public signal void show_dialog (Gtk.Widget w);
+
 	public bool is_device (NM.Device device) {
 		return device == this.device;
 	}
@@ -243,6 +245,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
         if (already_connected) {
             nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
         } else {
+			var w = new Gtk.Label ("wwwww");
+			show_dialog (w);
         /*    connection = new NM.Connection ();
             var s_con = new NM.SettingConnection ();
             s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
@@ -316,9 +320,13 @@ public class Network.EtherInterface : Network.WidgetInterface {
 
 }
 
-public class Network.Widgets.PopoverWidget : Gtk.Box {
+public class Network.Widgets.PopoverWidget : Gtk.Stack {
     private NM.Client nm_client;
     private NM.RemoteSettings nm_settings;
+
+	Gtk.VBox main_box;
+	Gtk.VBox secondary_box;
+	Gtk.Widget? secondary_widget = null;
 
 	GLib.List<WidgetInterface>? network_interface;
 
@@ -332,8 +340,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     public signal void settings_shown ();
 
     public PopoverWidget () {
-        Object (orientation: Gtk.Orientation.VERTICAL);
-
 		network_interface = new GLib.List<WidgetInterface>();
 
         build_ui ();
@@ -342,8 +348,30 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     }
 
     void build_ui () {
+		
+		main_box = new Gtk.VBox (false, 0);
+
+		secondary_box = new Gtk.VBox (false, 0);
+
+		var back_button = new Gtk.Button.with_label ("Networks");
+		back_button.get_style_context().add_class("back-button");
+
+		back_button.clicked.connect ( () => {
+			set_visible_child (main_box);
+		});
+
+		var tmp_hbox = new Gtk.HBox(false, 5);
+		tmp_hbox.pack_start(back_button, false, false);
+		secondary_box.pack_start(tmp_hbox, false, false);
+
+		add (main_box);
+
+		add (secondary_box);
+
+		transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
+
         show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
-        pack_end (show_settings_button);
+        main_box.pack_end (show_settings_button);
 
 
         /* Monitor network manager */
@@ -388,17 +416,30 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
 		if (widget_interface != null) {
 			widget_interface.sep = new Wingpanel.Widgets.IndicatorSeparator ();
-			pack_end (widget_interface.sep);
-			pack_end (widget_interface);
+			main_box.pack_end (widget_interface.sep);
+			main_box.pack_end (widget_interface);
 			network_interface.append (widget_interface);
 
 			widget_interface.notify["state"].connect(update_state);
+
+			widget_interface.show_dialog.connect (show_inplace_dialog);
 		}
 
 		update_all();
 
 		show_all();
     }
+
+	void show_inplace_dialog(Gtk.Widget w) {
+		if (secondary_widget != null) {
+			secondary_widget.destroy ();
+		}
+		secondary_widget = w;
+		secondary_box.pack_end(w);
+
+		secondary_box.show_all ();
+		set_visible_child (secondary_box);
+	}
 
 	void update_all () {
 		foreach(var inter in network_interface) {
