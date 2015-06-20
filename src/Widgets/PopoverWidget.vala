@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.WifiMenuItem : Gtk.RadioButton {
+public class Network.WifiMenuItem : Gtk.Box {
     private List<NM.AccessPoint> _ap;
 	public signal void user_action();
     public GLib.ByteArray ssid {
@@ -24,25 +24,73 @@ public class Network.WifiMenuItem : Gtk.RadioButton {
         }
     }
 
+	public uint8 strength {
+		get {
+			uint8 strength = 0;
+			foreach(var ap in _ap) {
+				strength = uint8.max(strength, ap.get_strength());
+			}
+			return strength;
+		}
+	}
+
 	public NM.AccessPoint ap { get { return _ap.nth_data(0); } }
 
-    public WifiMenuItem (Gtk.RadioButton? radio = null) {
-        if (radio != null) set_group (radio.get_group ());
+	Gtk.RadioButton radio_button;
+	Gtk.Image img_strength;
+
+    public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
+
+		radio_button = new Gtk.RadioButton(null);
+        if (previous != null) radio_button.set_group (previous.get_group ());
 
 		_ap = new List<NM.AccessPoint>();
 
-		this.button_release_event.connect ( (b, ev) => {
+		add_ap(ap);
+
+		radio_button.button_release_event.connect ( (b, ev) => {
 			user_action();
 			return false;
 		});
+
+		update();
+
+		pack_start(radio_button);
     }
 
+	public void set_active (bool active) {
+		radio_button.set_active (active);
+	}
+
+	SList get_group () {
+		return radio_button.get_group().copy();
+	}
+
     private void update () {
+        radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+
+		if (img_strength == null) {
+			img_strength = new Gtk.Image ();
+		}
+
+		img_strength.set_from_icon_name("network-cellular-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
     }
 
 	public void add_ap(NM.AccessPoint ap) {
 		_ap.append(ap);
-        label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+
+		update();
+	}
+
+	string strength_to_string(uint8 strength) {
+		if(0 <= strength <= 0x20)
+			return "weak";
+		else if(0x20 < strength <= 0x40)
+			return "ok";
+		else if(0x40 < strength <= 0x60)
+			return "good";
+		else
+			return "excellent";
 	}
 
 	public bool remove_ap(NM.AccessPoint ap) {
@@ -50,6 +98,8 @@ public class Network.WifiMenuItem : Gtk.RadioButton {
 
 		return _ap.length() > 0;
 	}
+
+
 }
 
 public enum Network.State {
@@ -160,10 +210,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		}
 
 		if(!found) {
-			WifiMenuItem item = new WifiMenuItem(previous_wifi_item);
+			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
 			previous_wifi_item = item;
 			item.set_visible(true);
-			item.add_ap(ap);
 			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
 			item.user_action.connect(wifi_activate_cb);
 
@@ -259,9 +308,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
     }
 
-	private void wifi_activate_cb (Gtk.Button item) {
-        var i = item as WifiMenuItem;
-        
+	private void wifi_activate_cb (WifiMenuItem i) {
         NM.Connection? connection = null;
 
         var connections = nm_settings.list_connections ();
@@ -352,10 +399,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
     private NM.Client nm_client;
     private NM.RemoteSettings nm_settings;
 
-	Gtk.VBox main_box;
-	Gtk.VBox secondary_box;
-	Gtk.Widget? secondary_widget = null;
-
+	Gtk.Box main_box;
+	
 	GLib.List<WidgetInterface>? network_interface;
 
 	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
@@ -377,27 +422,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 
     void build_ui () {
 		
-		main_box = new Gtk.VBox (false, 0);
-
-		secondary_box = new Gtk.VBox (false, 0);
-
-		var back_button = new Gtk.Button.with_label ("Networks");
-		back_button.get_style_context().add_class("back-button");
-
-		back_button.clicked.connect ( () => {
-			set_visible_child (main_box);
-		});
-
-		var tmp_hbox = new Gtk.HBox(false, 5);
-		tmp_hbox.pack_start(back_button, false, false);
-		secondary_box.pack_start(tmp_hbox, false, false);
-		secondary_box.pack_start (new Wingpanel.Widgets.Separator ());
+		main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
 		add (main_box);
-
-		add (secondary_box);
-
-		transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
         show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
         main_box.pack_end (show_settings_button);
@@ -450,25 +477,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 			network_interface.append (widget_interface);
 
 			widget_interface.notify["state"].connect(update_state);
-
-			widget_interface.show_dialog.connect (show_inplace_dialog);
 		}
 
 		update_all();
 
 		show_all();
     }
-
-	void show_inplace_dialog(Gtk.Widget w) {
-		if (secondary_widget != null) {
-			secondary_widget.destroy ();
-		}
-		secondary_widget = w;
-		secondary_box.pack_end(w);
-
-		secondary_box.show_all ();
-		set_visible_child (secondary_box);
-	}
 
 	void update_all () {
 		foreach(var inter in network_interface) {
