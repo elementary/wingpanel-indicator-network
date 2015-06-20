@@ -52,6 +52,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 			animation_timeout = 0;
 		}
 
+
 		switch (state) {
 		case Network.State.CONNECTING_WIRED:
 			image.icon_name = "network-wired-acquiring-symbolic";
@@ -61,6 +62,18 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 			break;
 		case Network.State.CONNECTED_WIFI:
 			image.icon_name = "network-wireless-connected-symbolic";
+			break;
+		case Network.State.CONNECTED_WIFI_WEAK:
+			image.icon_name = "network-wireless-signal-weak-symbolic";
+			break;
+		case Network.State.CONNECTED_WIFI_OK:
+			image.icon_name = "network-wireless-signal-ok-symbolic";
+			break;
+		case Network.State.CONNECTED_WIFI_GOOD:
+			image.icon_name = "network-wireless-signal-good-symbolic";
+			break;
+		case Network.State.CONNECTED_WIFI_EXCELLENT:
+			image.icon_name = "network-wireless-signal-excellent-symbolic";
 			break;
 		case Network.State.CONNECTING_WIFI:
 			animation_timeout = Timeout.add (300, () => {
@@ -89,7 +102,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 			break;
 		default:
 			image.icon_name = "network-offline-symbolic";
-			critical("Unknown network state, cannot show the good icon");
+			critical("Unknown network state, cannot show the good icon: %s", state.to_string());
 			break;
 		}
 	}

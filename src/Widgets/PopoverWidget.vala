@@ -20,7 +20,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 	public signal void user_action();
     public GLib.ByteArray ssid {
         get {
-            return _ap.nth_data(0).get_ssid();
+            return _tmp_ap.get_ssid();
         }
     }
 
@@ -34,7 +34,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 		}
 	}
 
-	public NM.AccessPoint ap { get { return _ap.nth_data(0); } }
+	public NM.AccessPoint ap { get { return _tmp_ap; } }
+	NM.AccessPoint _tmp_ap;
 
 	Gtk.RadioButton radio_button;
 	Gtk.Image img_strength;
@@ -59,12 +60,20 @@ public class Network.WifiMenuItem : Gtk.Box {
 		pack_start(img_strength, false, false);
     }
 
+	void update_tmp_ap () {
+		uint8 strength = 0;
+		foreach(var ap in _ap) {
+			_tmp_ap = strength > ap.get_strength () ? _tmp_ap : ap;
+			strength = uint8.max (strength, ap.get_strength ());
+		}
+	}
+
 	public void set_active (bool active) {
 		radio_button.set_active (active);
 	}
 
-	SList get_group () {
-		return radio_button.get_group().copy();
+	unowned SList get_group () {
+		return radio_button.get_group();
 	}
 
     private void update () {
@@ -80,6 +89,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 	public void add_ap(NM.AccessPoint ap) {
 		_ap.append(ap);
+		update_tmp_ap();
 
 		update();
 	}
@@ -98,6 +108,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 	public bool remove_ap(NM.AccessPoint ap) {
 		_ap.remove(ap);
 
+		update_tmp_ap();
+
 		return _ap.length() > 0;
 	}
 
@@ -108,6 +120,10 @@ public enum Network.State {
 	DISCONNECTED,
 	CONNECTED_WIRED,
 	CONNECTED_WIFI,
+	CONNECTED_WIFI_WEAK,
+	CONNECTED_WIFI_OK,
+	CONNECTED_WIFI_GOOD,
+	CONNECTED_WIFI_EXCELLENT,
 	CONNECTING_WIFI,
 	CONNECTING_WIRED,
 	FAILED_WIRED,
@@ -250,6 +266,17 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 	}
 
+	Network.State strength_to_state (uint8 strength) {
+		if(0 <= strength <= 0x20)
+			return Network.State.CONNECTED_WIFI_WEAK;
+		else if(0x20 < strength <= 0x40)
+			return Network.State.CONNECTED_WIFI_OK;
+		else if(0x40 < strength <= 0x60)
+			return Network.State.CONNECTED_WIFI_GOOD;
+		else
+			return Network.State.CONNECTED_WIFI_EXCELLENT;
+	}
+
     public override void update () {
         
 		/* Wifi */
@@ -272,6 +299,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.set_active (!locked);
         updating_rfkill = false;
+
+        active_ap = wifi_device.get_active_access_point ();
 
 		switch (wifi_device.state) {
 		case NM.DeviceState.UNKNOWN:
@@ -296,16 +325,19 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			break;
 		
 		case NM.DeviceState.ACTIVATED:
-			state = State.CONNECTED_WIFI;
+			state = strength_to_state(active_ap.get_strength());
 			break;
 		}
 
-        active_ap = wifi_device.get_active_access_point ();
-
-		foreach(var w in wifi_list.get_children()) {
+		foreach (var w in wifi_list.get_children()) {
 			var item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
-			
-			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+		
+			if (active_ap != null) {
+				item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+			}
+			else {
+				item.set_active (false);
+			}
 		}
 
     }
@@ -322,8 +354,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
         if (already_connected) {
             nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
         } else {
-			var w = new Gtk.Label ("wwwww");
-			show_dialog (w);
         /*    connection = new NM.Connection ();
             var s_con = new NM.SettingConnection ();
             s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
