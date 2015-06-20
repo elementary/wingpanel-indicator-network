@@ -184,9 +184,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
 				found_item = menu_item;
-			/*	if(!menu_item.remove_ap(ap)) {
-					menu_item.destroy ();
-				}*/
 				break;
 			}
 		}
