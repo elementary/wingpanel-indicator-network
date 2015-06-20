@@ -67,7 +67,7 @@ public abstract class Network.WidgetInterface : Gtk.Box {
 
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 
-	public Wingpanel.Widgets.IndicatorSeparator? sep = null;
+	public Wingpanel.Widgets.Separator? sep = null;
 	protected NM.Device? device;
 
 	public signal void show_dialog (Gtk.Widget w);
@@ -82,7 +82,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
     bool updating_rfkill = false;
     NM.DeviceWifi? wifi_device;
     private NM.AccessPoint? active_ap;
-    private Wingpanel.Widgets.IndicatorSwitch wifi_item;
+    private Wingpanel.Widgets.Switch wifi_item;
     Gtk.ListBox wifi_list;
     private int frame_number = 0;
     private uint animate_timeout = 0;
@@ -100,7 +100,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		device = _device;
 		wifi_device = device as NM.DeviceWifi;
         
-		wifi_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wi-Fi"));
+		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
         wifi_item.get_style_context ().add_class ("h4");
         wifi_item.activate.connect (() => {
             if (updating_rfkill)
@@ -274,11 +274,11 @@ public class Network.WifiInterface : Network.WidgetInterface {
 }
 
 public class Network.EtherInterface : Network.WidgetInterface {
-    private Wingpanel.Widgets.IndicatorSwitch ethernet_item;
+    private Wingpanel.Widgets.Switch ethernet_item;
 
 	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
 		device = _device;
-        ethernet_item = new Wingpanel.Widgets.IndicatorSwitch (_("Wired Connection"));
+        ethernet_item = new Wingpanel.Widgets.Switch (_("Wired Connection"));
         ethernet_item.get_style_context ().add_class ("h4");
         add (ethernet_item);
         
@@ -335,7 +335,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 
     private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
 
-    private Wingpanel.Widgets.IndicatorButton show_settings_button;
+    private Wingpanel.Widgets.Button show_settings_button;
 
     public signal void settings_shown ();
 
@@ -363,7 +363,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 		var tmp_hbox = new Gtk.HBox(false, 5);
 		tmp_hbox.pack_start(back_button, false, false);
 		secondary_box.pack_start(tmp_hbox, false, false);
-		secondary_box.pack_start (new Wingpanel.Widgets.IndicatorSeparator ());
+		secondary_box.pack_start (new Wingpanel.Widgets.Separator ());
 
 		add (main_box);
 
@@ -371,7 +371,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 
 		transition_type = Gtk.StackTransitionType.SLIDE_LEFT_RIGHT;
 
-        show_settings_button = new Wingpanel.Widgets.IndicatorButton (_("Network Settings…"));
+        show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
         main_box.pack_end (show_settings_button);
 
 
@@ -416,7 +416,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
         }
 
 		if (widget_interface != null) {
-			widget_interface.sep = new Wingpanel.Widgets.IndicatorSeparator ();
+			widget_interface.sep = new Wingpanel.Widgets.Separator ();
 			main_box.pack_end (widget_interface.sep);
 			main_box.pack_end (widget_interface);
 			network_interface.append (widget_interface);
