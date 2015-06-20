@@ -16,20 +16,21 @@
  */
 
 public class Network.WifiMenuItem : Gtk.RadioButton {
-    private NM.AccessPoint _ap;
+    private List<NM.AccessPoint> _ap;
 	public signal void user_action();
-    public NM.AccessPoint ap {
+    public GLib.ByteArray ssid {
         get {
-            return _ap;
-        }
-        set {
-            _ap = value;
-            update ();
+            return _ap.nth_data(0).get_ssid();
         }
     }
 
+	public NM.AccessPoint ap { get { return _ap.nth_data(0); } }
+
     public WifiMenuItem (Gtk.RadioButton? radio = null) {
         if (radio != null) set_group (radio.get_group ());
+
+		_ap = new List<NM.AccessPoint>();
+
 		this.button_release_event.connect ( (b, ev) => {
 			user_action();
 			return false;
@@ -37,19 +38,18 @@ public class Network.WifiMenuItem : Gtk.RadioButton {
     }
 
     private void update () {
-        set_visible (_ap != null);
-
-        if (ap == null)
-            return;
-
-        label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
-        /*var icon_name = signal_strength_to_icon_name (ap.strength);
-
-        if ((ap.flags & NM.@80211ApFlags.PRIVACY) != 0 || ap.wpa_flags != 0 || ap.rsn_flags != 0)
-            icon_name += "-secure";
-
-        property_set (Dbusmenu.MENUITEM_PROP_ICON_NAME, icon_name);*/
     }
+
+	public void add_ap(NM.AccessPoint ap) {
+		_ap.append(ap);
+        label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+	}
+
+	public bool remove_ap(NM.AccessPoint ap) {
+		_ap.remove(ap);
+
+		return _ap.length() > 0;
+	}
 }
 
 public enum Network.State {
@@ -84,6 +84,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
     private NM.AccessPoint? active_ap;
     private Wingpanel.Widgets.Switch wifi_item;
     Gtk.ListBox wifi_list;
+
     private int frame_number = 0;
     private uint animate_timeout = 0;
 
@@ -94,7 +95,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	public WifiInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
 		
 		set_orientation(Gtk.Orientation.VERTICAL);
-
+	
 		this.nm_client = nm_client;
 		this.nm_settings = nm_settings;
 		device = _device;
@@ -129,9 +130,75 @@ public class Network.WifiInterface : Network.WidgetInterface {
         rfkill.device_deleted.connect (update);
             
 		wifi_device.notify["active-access-point"].connect (() => { update (); });
-		wifi_device.access_point_added.connect (update);
-		wifi_device.access_point_removed.connect (update);
+		wifi_device.access_point_added.connect (access_point_added_cb);
+		wifi_device.access_point_removed.connect (access_point_removed_cb);
 		wifi_device.state_changed.connect (update);
+        
+		update();
+		var aps = wifi_device.get_access_points ();
+		aps.foreach(access_point_added_cb);
+
+		update();
+
+
+	}
+
+	WifiMenuItem? previous_wifi_item = null;
+	void access_point_added_cb (Object ap_) {
+		NM.AccessPoint ap = (NM.AccessPoint)ap_;
+
+		bool found = false;
+
+		foreach(var w in wifi_list.get_children()) {
+			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+
+			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
+				found = true;
+				menu_item.add_ap(ap);
+				break;
+			}
+		}
+
+		if(!found) {
+			WifiMenuItem item = new WifiMenuItem(previous_wifi_item);
+			previous_wifi_item = item;
+			item.set_visible(true);
+			item.add_ap(ap);
+			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+			item.user_action.connect(wifi_activate_cb);
+
+			wifi_list.add(item);
+		}
+
+	}
+	
+	void access_point_removed_cb (Object ap_) {
+		NM.AccessPoint ap = (NM.AccessPoint)ap_;
+
+		WifiMenuItem found_item = null;
+
+		foreach(var w in wifi_list.get_children()) {
+			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+
+			assert(menu_item != null);
+
+			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
+				found_item = menu_item;
+			/*	if(!menu_item.remove_ap(ap)) {
+					menu_item.destroy ();
+				}*/
+				break;
+			}
+		}
+
+		if(found_item == null) {
+			critical("Couldn't remove an access point which has not been added.");
+		}
+		else {
+			if(!found_item.remove_ap(ap)) {
+				found_item.get_parent().destroy ();
+			}
+		}
 
 	}
 
@@ -157,10 +224,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.set_active (!locked);
         updating_rfkill = false;
-
-        wifi_list.forall ( (w) => {
-            w.destroy();
-        });
 
 		switch (wifi_device.state) {
 		case NM.DeviceState.UNKNOWN:
@@ -191,43 +254,11 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
         active_ap = wifi_device.get_active_access_point ();
 
-        // FIXME: Sort by known networks, signal strength
-
-        var aps = wifi_device.get_access_points ();
-        var n_aps = 0;
-        if (aps != null)
-            n_aps = aps.length;
-        var n = 0;
-
-        WifiMenuItem? previous_item = null;
-        for (var i = 0; i < n_aps; i++) {
-            var ap = aps.get (i);
-
-            /* Ignore duplicate APs */
-            // FIXME: Should show the AP with the best strength and highest security
-            var duplicate = false;
-            for (var j = 0; j < i; j++) {
-                var ap2 = aps.get (j);
-                if (NM.Utils.same_ssid (ap2.get_ssid (), ap.get_ssid (), true)) {
-                    duplicate = true;
-                    break;
-                }
-            }
-            if (duplicate)
-                continue;
-
-			assert(ap is NM.AccessPoint);
-
-            /* Put the first N items into the menu, and any others into an overflow menu */
-            WifiMenuItem item = new WifiMenuItem(previous_item);
-            previous_item = item;
-            item.set_visible(true);
-            item.set_active(NM.Utils.same_ssid (ap.get_ssid (), active_ap.get_ssid (), true));
-            item.ap = ap;
-            item.user_action.connect(wifi_activate_cb);
-
-            wifi_list.add(item);
-        }
+		foreach(var w in wifi_list.get_children()) {
+			var item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+			
+			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+		}
 
     }
 
