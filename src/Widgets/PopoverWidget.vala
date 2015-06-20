@@ -55,7 +55,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		update();
 
-		pack_start(radio_button);
+		pack_start(radio_button, true, true);
+		pack_start(img_strength, false, false);
     }
 
 	public void set_active (bool active) {
@@ -70,10 +71,11 @@ public class Network.WifiMenuItem : Gtk.Box {
         radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
 
 		if (img_strength == null) {
-			img_strength = new Gtk.Image ();
+			img_strength = new Gtk.Image();
 		}
 
-		img_strength.set_from_icon_name("network-cellular-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+		img_strength.show_all();
     }
 
 	public void add_ap(NM.AccessPoint ap) {
