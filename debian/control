@@ -1,4 +1,4 @@
-Source: wingpanel-indicator-datetime
+Source: wingpanel-indicator-network
 Section: x11
 Priority: optional
 Maintainer: Cody Garver <cody@elementary.io>
@@ -11,22 +11,22 @@ Build-Depends: cmake,
                libwingpanel-dev,
                valac (>= 0.28)
 Standards-Version: 3.9.6
-Homepage: https://launchpad.net/wingpanel-indicator-datetime
+Homepage: https://launchpad.net/wingpanel-indicator-network
 
-Package: wingpanel-indicator-datetime
+Package: wingpanel-indicator-network
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Enhances: wingpanel
-Description: WingPanel Date & Time Indicator
- WingPanel Date & Time Indicator
+Description: WingPanel Network Indicator
+ WingPanel Network Indicator
 
-Package: wingpanel-indicator-datetime-dbg
+Package: wingpanel-indicator-network-dbg
 Architecture: any
 Section: debug
 Priority: extra
-Depends: wingpanel-indicator-datetime (= ${binary:Version}), ${misc:Depends}
-Enhances: wingpanel-indicator-datetime
-Description: WingPanel Date & Time Indicator (debugging symbols)
- WingPanel Date & Time Indicator
+Depends: wingpanel-indicator-network (= ${binary:Version}), ${misc:Depends}
+Enhances: wingpanel-indicator-network
+Description: WingPanel Network Indicator (debugging symbols)
+ WingPanel Network Indicator
  .
- This package contains debugging symbols for wingpanel-indicator-datetime.
+ This package contains debugging symbols for wingpanel-indicator-network.
