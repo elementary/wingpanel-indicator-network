@@ -173,7 +173,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
         
 		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
         wifi_item.get_style_context ().add_class ("h4");
-        wifi_item.activate.connect (() => {
+        wifi_item.switched.connect (() => {
             if (updating_rfkill)
                 return;
             var active = wifi_item.get_active ();
@@ -236,7 +236,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
 			item.user_action.connect(wifi_activate_cb);
 
-			wifi_list.add(item);
+			wifi_list.add (item);
+
+			wifi_list.show_all ();
 		}
 
 	}
