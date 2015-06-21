@@ -231,12 +231,18 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 		if(!found) {
 			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
+
+			var row = new Gtk.ListBoxRow ();
+
+			row.add (item);
+			row.get_style_context ().add_class ("menuitem");
+
 			previous_wifi_item = item;
 			item.set_visible(true);
 			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
 			item.user_action.connect(wifi_activate_cb);
 
-			wifi_list.add (item);
+			wifi_list.add (row);
 
 			wifi_list.show_all ();
 		}
