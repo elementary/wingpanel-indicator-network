@@ -507,7 +507,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 			debug ("Wifi interface added");
 		} else if (device is NM.DeviceEthernet) {
 			widget_interface = new EtherInterface (nm_client, nm_settings, device);
-			debug ("Etherner interface added");
+			debug ("Ethernet interface added");
 		} else {
 			stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
 		}
