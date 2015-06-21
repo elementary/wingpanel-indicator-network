@@ -80,7 +80,7 @@ public class NetworkIndicator:Gtk.Widget
         menu.child_append (sep);
 
         var settings_item = new Dbusmenu.Menuitem ();
-        settings_item.property_set (Dbusmenu.MENUITEM_PROP_LABEL, _("Network Settings..."));
+        settings_item.property_set (Dbusmenu.MENUITEM_PROP_LABEL, _("Network Settings…"));
         settings_item.item_activated.connect (() => { Process.spawn_command_line_async ("gnome-control-center network"); });
         menu.child_append (settings_item);
 
