@@ -43,6 +43,7 @@ public class Network.WifiMenuItem : Gtk.Box {
     public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
 
 		radio_button = new Gtk.RadioButton(null);
+        radio_button.margin_start = 6;
         if (previous != null) radio_button.set_group (previous.get_group ());
 
 		_ap = new List<NM.AccessPoint>();
@@ -81,9 +82,10 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		if (img_strength == null) {
 			img_strength = new Gtk.Image();
+            img_strength.margin_end = 6;
 		}
 
-		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
 		img_strength.show_all();
     }
 
