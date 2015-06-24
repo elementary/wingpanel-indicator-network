@@ -97,11 +97,11 @@ public class Network.WifiMenuItem : Gtk.Box {
 	}
 
 	string strength_to_string(uint8 strength) {
-		if(0 <= strength <= 0x20)
+		if(0 <= strength < 30)
 			return "weak";
-		else if(0x20 < strength <= 0x40)
+		else if(strength < 55)
 			return "ok";
-		else if(0x40 < strength <= 0x60)
+		else if(strength < 80)
 			return "good";
 		else
 			return "excellent";
@@ -277,11 +277,11 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	Network.State strength_to_state (uint8 strength) {
-		if(0 <= strength <= 0x20)
+		if(0 <= strength < 30)
 			return Network.State.CONNECTED_WIFI_WEAK;
-		else if(0x20 < strength <= 0x40)
+		else if(strength < 55)
 			return Network.State.CONNECTED_WIFI_OK;
-		else if(0x40 < strength <= 0x60)
+		else if(strength < 80)
 			return Network.State.CONNECTED_WIFI_GOOD;
 		else
 			return Network.State.CONNECTED_WIFI_EXCELLENT;
