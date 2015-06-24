@@ -233,7 +233,10 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 			previous_wifi_item = item;
 			item.set_visible(true);
-			item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+			if (active_ap != null)
+				item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
+			else
+				item.set_active(false);
 			item.user_action.connect(wifi_activate_cb);
 
 			wifi_list.add (row);
