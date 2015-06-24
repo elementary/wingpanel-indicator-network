@@ -182,15 +182,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 		pack_start (wifi_item);
 		
-		var scrolled_window = new Gtk.ScrolledWindow (null, null);
-		scrolled_window.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.NEVER);
-
 		wifi_list = new Gtk.ListBox ();
 
-
-		scrolled_window.add_with_viewport (wifi_list);
-
-		pack_start (scrolled_window);
+		pack_start (wifi_list);
 		
 		/* Monitor killswitch status */
 		rfkill = new RFKillManager ();
