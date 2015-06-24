@@ -61,6 +61,10 @@ public class Network.WifiMenuItem : Gtk.Box {
 		pack_start(img_strength, false, false);
 	}
 
+	public WifiMenuItem.blank () {
+		radio_button = new Gtk.RadioButton(null);
+	}
+
 	void update_tmp_ap () {
 		uint8 strength = 0;
 		foreach(var ap in _ap) {
@@ -170,6 +174,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		this.nm_settings = nm_settings;
 		device = _device;
 		wifi_device = device as NM.DeviceWifi;
+	
+		previous_wifi_item = new WifiMenuItem.blank ();
+		blank_item = previous_wifi_item;
 		
 		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
 		wifi_item.get_style_context ().add_class ("h4");
@@ -208,6 +215,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	WifiMenuItem? previous_wifi_item = null;
+	WifiMenuItem? blank_item = null;
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
 
@@ -233,17 +241,37 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 			previous_wifi_item = item;
 			item.set_visible(true);
-			if (active_ap != null)
-				item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
-			else
-				item.set_active(false);
 			item.user_action.connect(wifi_activate_cb);
 
 			wifi_list.add (row);
 
 			wifi_list.show_all ();
+
+			update_active_ap ();
 		}
 
+	}
+
+	void update_active_ap () {
+		
+		if(active_ap == null) {
+			blank_item.set_active (true);
+			return;
+		}
+		
+		bool found = false;
+		foreach(var w in wifi_list.get_children()) {
+			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+
+			if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
+				found = true;
+				menu_item.set_active (true);
+			}
+		}
+
+		if (!found) {
+			critical ("Active AP not added");
+		}
 	}
 	
 	void access_point_removed_cb (Object ap_) {
@@ -336,17 +364,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			break;
 		}
 
-		foreach (var w in wifi_list.get_children()) {
-			var item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
-		
-			if (active_ap != null) {
-				item.set_active(NM.Utils.same_ssid (item.ssid, active_ap.get_ssid (), true));
-			}
-			else {
-				item.set_active (false);
-			}
-		}
-
+		update_active_ap ();
 	}
 
 	private void wifi_activate_cb (WifiMenuItem i) {
