@@ -39,6 +39,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 	Gtk.RadioButton radio_button;
 	Gtk.Image img_strength;
+	Gtk.Image lock_img;
 
 	public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
 
@@ -46,21 +47,30 @@ public class Network.WifiMenuItem : Gtk.Box {
 		radio_button.margin_start = 6;
 		if (previous != null) radio_button.set_group (previous.get_group ());
 
-		_ap = new List<NM.AccessPoint>();
-
-		add_ap(ap);
-
 		radio_button.button_release_event.connect ( (b, ev) => {
 			user_action();
 			return false;
 		});
 
-		update();
-
+		img_strength = new Gtk.Image();
+		img_strength.margin_end = 6;
+		
+		lock_img = new Gtk.Image.from_icon_name ("channel-secure-symbolic", Gtk.IconSize.MENU);
+		lock_img.margin_start = 6;
+		
 		pack_start(radio_button, true, true);
+		pack_start(lock_img, false, false);
 		pack_start(img_strength, false, false);
+		
+		_ap = new List<NM.AccessPoint>();
+
+		/* Adding the access point triggers update */
+		add_ap(ap);
 	}
 
+	/**
+	 * Only used for an item which is not displayed: hacky way to have no radio button selected.
+	 **/
 	public WifiMenuItem.blank () {
 		radio_button = new Gtk.RadioButton(null);
 	}
@@ -84,13 +94,11 @@ public class Network.WifiMenuItem : Gtk.Box {
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
 
-		if (img_strength == null) {
-			img_strength = new Gtk.Image();
-			img_strength.margin_end = 6;
-		}
-
 		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
 		img_strength.show_all();
+
+		lock_img.visible = ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
+		lock_img.no_show_all = !lock_img.visible;
 	}
 
 	public void add_ap(NM.AccessPoint ap) {
@@ -205,7 +213,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		wifi_device.access_point_removed.connect (access_point_removed_cb);
 		wifi_device.state_changed.connect (update);
 		
-		update();
 		var aps = wifi_device.get_access_points ();
 		aps.foreach(access_point_added_cb);
 
