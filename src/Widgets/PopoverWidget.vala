@@ -630,8 +630,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 	}
 
 	private void show_settings () {
-		var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
-		cmd.run ();
+		Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
+		//var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
+		//cmd.run();
 
 		settings_shown ();
 	}
