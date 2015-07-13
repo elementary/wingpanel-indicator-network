@@ -24,6 +24,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 		}
 	}
 
+	public Network.State state { get; set; default=Network.State.DISCONNECTED; }
+
 	public uint8 strength {
 		get {
 			uint8 strength = 0;
@@ -40,6 +42,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 	Gtk.RadioButton radio_button;
 	Gtk.Image img_strength;
 	Gtk.Image lock_img;
+	Gtk.Image error_img;
+	Gtk.Spinner spinner;
 
 	public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
 
@@ -58,7 +62,17 @@ public class Network.WifiMenuItem : Gtk.Box {
 		lock_img = new Gtk.Image.from_icon_name ("channel-secure-symbolic", Gtk.IconSize.MENU);
 		lock_img.margin_start = 6;
 		
+		/* TODO: investigate this, it has not been tested yet. */
+		error_img = new Gtk.Image.from_icon_name ("error-symbolic", Gtk.IconSize.MENU);
+		error_img.margin_start = 6;
+		
 		pack_start(radio_button, true, true);
+		spinner = new Gtk.Spinner();
+		spinner.start();
+		spinner.visible = false;
+		spinner.no_show_all = !spinner.visible;
+		pack_start(spinner, false, false);
+		pack_start(error_img, false, false);
 		pack_start(lock_img, false, false);
 		pack_start(img_strength, false, false);
 		
@@ -66,6 +80,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		/* Adding the access point triggers update */
 		add_ap(ap);
+
+		notify["state"].connect (update);
 	}
 
 	/**
@@ -99,6 +115,30 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		lock_img.visible = ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
 		lock_img.no_show_all = !lock_img.visible;
+
+		hide_item(error_img);
+		hide_item(spinner);
+		switch (state) {
+		case State.DISCONNECTED:
+			if(radio_button.active) {
+				show_item(error_img);
+			}
+			break;
+		case State.CONNECTING_WIFI:
+			show_item(spinner);
+		break;
+		}
+	}
+
+	void show_item(Gtk.Widget w) {
+		w.visible = true;
+		w.no_show_all = !w.visible;
+	}
+
+	void hide_item(Gtk.Widget w) {
+		w.visible = false;
+		w.no_show_all = !w.visible;
+		w.hide();
 	}
 
 	public void add_ap(NM.AccessPoint ap) {
@@ -223,6 +263,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	WifiMenuItem? previous_wifi_item = null;
+	WifiMenuItem? active_wifi_item = null;
 	WifiMenuItem? blank_item = null;
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
@@ -262,6 +303,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	void update_active_ap () {
+
+		debug("Update active AP");
 		
 		if(active_ap == null) {
 			blank_item.set_active (true);
@@ -269,12 +312,18 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		}
 		
 		bool found = false;
+		if (active_wifi_item != null) {
+			active_wifi_item.state = Network.State.DISCONNECTED;
+			active_wifi_item = null;
+		}
 		foreach(var w in wifi_list.get_children()) {
 			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
 
 			if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
 				found = true;
 				menu_item.set_active (true);
+				active_wifi_item = menu_item;
+				active_wifi_item.state = state;
 			}
 		}
 
@@ -373,6 +422,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			break;
 		}
 
+		debug("New network state: %s", state.to_string ());
+
 		update_active_ap ();
 	}
 
@@ -388,7 +439,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		if (already_connected) {
 			nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
 		} else {
-			debug("Tryint to connect to %s", NM.Utils.ssid_to_utf8(i.ap.get_ssid()));
+			debug("Trying to connect to %s", NM.Utils.ssid_to_utf8(i.ap.get_ssid()));
 			need_settings ();
 		/*	connection = new NM.Connection ();
 			var s_con = new NM.SettingConnection ();
@@ -411,7 +462,10 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			dialog.present ();*/
 		}
 
-		update ();
+		/* Do an update at the next iteration of the main loop, so as every
+		 * signal is flushed (for instance signals responsible for radio button
+		 * checked) */
+		Idle.add( () => { update (); return false; });
 	}
 
 }
