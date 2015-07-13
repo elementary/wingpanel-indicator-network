@@ -238,7 +238,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			}
 		}
 
-		if(!found) {
+		/* Sometimes network manager sends a (fake?) AP without a valid ssid. */
+		if(!found && ap.get_ssid() != null) {
 			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
 
 			var row = new Gtk.ListBoxRow ();
