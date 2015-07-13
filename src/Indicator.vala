@@ -42,6 +42,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
 			popover_widget.notify["state"].connect(on_state_changed);
 
+			popover_widget.settings_shown.connect (() => { close (); });
+
 			on_state_changed ();
 		}
 

@@ -153,6 +153,7 @@ public abstract class Network.WidgetInterface : Gtk.Box {
 	protected NM.Device? device;
 
 	public signal void show_dialog (Gtk.Widget w);
+	public signal void need_settings ();
 
 	public bool is_device (NM.Device device) {
 		return device == this.device;
@@ -387,6 +388,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		if (already_connected) {
 			nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
 		} else {
+			debug("Tryint to connect to %s", NM.Utils.ssid_to_utf8(i.ap.get_ssid()));
+			need_settings ();
 		/*	connection = new NM.Connection ();
 			var s_con = new NM.SettingConnection ();
 			s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
@@ -471,7 +474,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
 
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard network";
+	private const string SETTINGS_EXEC = "/usr/bin/switchboard -o network-plug";
 
 	private Wingpanel.Widgets.Button show_settings_button;
 
@@ -542,6 +545,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 			network_interface.append (widget_interface);
 
 			widget_interface.notify["state"].connect(update_state);
+
+			widget_interface.need_settings.connect (show_settings);
 		}
 
 		update_all();
