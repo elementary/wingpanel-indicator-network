@@ -19,6 +19,8 @@
  * If it is actually higher than 512, then it will stick to 512.
  * Reparenting the child is not supported (you have to destroy the
  * AutomaticScrollBox that held it if it must be used elsewhere).
+ *
+ * Adding with something different from add_with_viewport is not supported yet.
  **/
 public class AutomaticScrollBox : Gtk.ScrolledWindow {
 
@@ -33,22 +35,33 @@ public class AutomaticScrollBox : Gtk.ScrolledWindow {
 		/* Listen to the add signal. Every widget added directly to the ScrolledWindow
 		 * is supposed to be a Gtk.Bin, which is ATM always verified. */
 		add.connect( (w) => {
-			Gtk.Bin bin = (Gtk.Bin)w;
+			if (w is Gtk.Scrollable && w is Gtk.Bin) {
+				Gtk.Bin bin = (Gtk.Bin)w;
 
-			Gtk.Widget child = bin.get_child();
-			
-			if (child != null) {
-				monitor_size(child);
-			}
-			else {
-				bin.add.connect(monitor_size);
+				Gtk.Widget child = bin.get_child();
+				
+				if (child != null) {
+					monitor_size(child);
+				}
+				else {
+					bin.add.connect(monitor_size);
+				}
 			}
 		});
 	}
 
 	void monitor_size (Gtk.Widget child) {
-		child.size_allocate.connect( (rect) => {
-			height_request = int.min(512, rect.height);
+
+		child.size_allocate.connect_after( (rect) => {
+
+			/* Let's wait for all the signals to be flushed */
+			Idle.add( () => {
+				int height;
+				child.get_preferred_height(out height, null);
+				height_request = int.min(512, height);
+				queue_resize();
+				return false;
+			});
 		});
 	}
 }

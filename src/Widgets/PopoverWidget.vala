@@ -257,7 +257,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		pack_start (wifi_item);
 		
 		var scrolled_box = new AutomaticScrollBox (null, null);
-		
+
 		wifi_list = new Gtk.ListBox ();
 		
 		scrolled_box.add_with_viewport(wifi_list);
