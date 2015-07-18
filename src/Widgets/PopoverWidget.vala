@@ -129,7 +129,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 			if(!radio_button.active) {
 				critical("An access point is being connected but not active.");
 			}
-		break;
+			break;
 		}
 	}
 
@@ -480,26 +480,39 @@ public class Network.EtherInterface : Network.WidgetInterface {
 		device = _device;
 		ethernet_item = new Wingpanel.Widgets.Switch (_("Wired Connection"));
 		ethernet_item.get_style_context ().add_class ("h4");
+		ethernet_item.switched.connect( () => {
+			if(ethernet_item.get_active()) {
+				device.set_autoconnect(true);
+			}
+			else {
+				device.disconnect(() => { debug("Successfully disconnected."); });
+			}
+		});
 		add (ethernet_item);
 		
 		device.state_changed.connect (() => { update (); });
 	}
 	
 	public override void update () {
-		/* Ethernet */
-		bool ethernet_available = device.get_state () == NM.DeviceState.ACTIVATED;
-		ethernet_item.set_active (ethernet_available);
 
 		switch (device.get_state ()) {
 		case NM.DeviceState.UNKNOWN:
 		case NM.DeviceState.UNMANAGED:
 		case NM.DeviceState.DEACTIVATING:
 		case NM.DeviceState.FAILED:
+			ethernet_item.sensitive = false;
+			ethernet_item.set_active(false);
 			state = State.FAILED_WIRED;
 			break;
 
 		case NM.DeviceState.UNAVAILABLE:
+			ethernet_item.sensitive = false;
+			ethernet_item.set_active(false);
+			state = State.DISCONNECTED;
+			break;
 		case NM.DeviceState.DISCONNECTED:
+			ethernet_item.sensitive = true;
+			ethernet_item.set_active(false);
 			state = State.DISCONNECTED;
 			break;
 
@@ -509,10 +522,14 @@ public class Network.EtherInterface : Network.WidgetInterface {
 		case NM.DeviceState.IP_CONFIG:
 		case NM.DeviceState.IP_CHECK:
 		case NM.DeviceState.SECONDARIES:
+			ethernet_item.sensitive = true;
+			ethernet_item.set_active(true);
 			state = State.CONNECTING_WIRED;
 			break;
 		
 		case NM.DeviceState.ACTIVATED:
+			ethernet_item.sensitive = true;
+			ethernet_item.set_active(true);
 			state = State.CONNECTED_WIRED;
 			break;
 		}
