@@ -63,7 +63,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 		lock_img.margin_start = 6;
 		
 		/* TODO: investigate this, it has not been tested yet. */
-		error_img = new Gtk.Image.from_icon_name ("error-symbolic", Gtk.IconSize.MENU);
+		error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU);
 		error_img.margin_start = 6;
 
 		error_img.set_tooltip_text (_("This wireless network could not be connected to."));
