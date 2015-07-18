@@ -19,7 +19,6 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/PopoverWidget.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
-  #indicator-network-service.vala
   rfkill.vala
 
 PACKAGES
