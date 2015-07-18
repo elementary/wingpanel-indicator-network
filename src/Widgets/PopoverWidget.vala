@@ -126,6 +126,9 @@ public class Network.WifiMenuItem : Gtk.Box {
 			break;
 		case State.CONNECTING_WIFI:
 			show_item(spinner);
+			if(!radio_button.active) {
+				critical("An access point is being connected but not active.");
+			}
 		break;
 		}
 	}
