@@ -256,9 +256,13 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 		pack_start (wifi_item);
 		
+		var scrolled_box = new AutomaticScrollBox (null, null);
+		
 		wifi_list = new Gtk.ListBox ();
+		
+		scrolled_box.add_with_viewport(wifi_list);
 
-		pack_start (wifi_list);
+		pack_start (scrolled_box);
 		
 		/* Monitor killswitch status */
 		rfkill = new RFKillManager ();

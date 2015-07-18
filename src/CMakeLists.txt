@@ -17,6 +17,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Utils.vala
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
+  Widgets/AutomaticScrollBox.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   rfkill.vala
