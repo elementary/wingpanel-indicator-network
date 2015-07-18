@@ -66,7 +66,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 		error_img = new Gtk.Image.from_icon_name ("error-symbolic", Gtk.IconSize.MENU);
 		error_img.margin_start = 6;
 
-		error_img.set_tooltip_text (_("This wifi network could not be connected to."));
+		error_img.set_tooltip_text (_("This wireless network could not be connected to."));
 		
 		pack_start(radio_button, true, true);
 		spinner = new Gtk.Spinner();
@@ -110,6 +110,20 @@ public class Network.WifiMenuItem : Gtk.Box {
 		return radio_button.get_group();
 	}
 
+	void set_lock_img_tooltip (NM.@80211ApSecurityFlags flags) {
+		if((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
+			lock_img.set_tooltip_text(_("This network uses 40/64-bit WEP encryption."));
+		}
+		else if((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
+			lock_img.set_tooltip_text(_("This network uses 104/128-bit WEP encryption."));
+		}
+		else if((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
+			lock_img.set_tooltip_text(_("This network uses WPA encryption."));
+		} else {
+			lock_img.set_tooltip_text(_("This network uses encryption."));
+		}
+	}
+
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
 
@@ -117,6 +131,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 		img_strength.show_all();
 
 		lock_img.visible = ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
+		set_lock_img_tooltip(ap.get_wpa_flags ());
 		lock_img.no_show_all = !lock_img.visible;
 
 		hide_item(error_img);
@@ -507,7 +522,7 @@ public class Network.EtherInterface : Network.WidgetInterface {
 
 	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
 		device = _device;
-		ethernet_item = new Wingpanel.Widgets.Switch (_("Wired Connection"));
+		ethernet_item = new Wingpanel.Widgets.Switch (_("Wired"));
 		ethernet_item.get_style_context ().add_class ("h4");
 		ethernet_item.switched.connect( () => {
 			debug("update");
