@@ -65,6 +65,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 		/* TODO: investigate this, it has not been tested yet. */
 		error_img = new Gtk.Image.from_icon_name ("error-symbolic", Gtk.IconSize.MENU);
 		error_img.margin_start = 6;
+
+		error_img.set_tooltip_text (_("This wifi network could not be connected to."));
 		
 		pack_start(radio_button, true, true);
 		spinner = new Gtk.Spinner();
@@ -82,6 +84,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 		add_ap(ap);
 
 		notify["state"].connect (update);
+		radio_button.notify["active"].connect (update);
 	}
 
 	/**
@@ -119,10 +122,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 		hide_item(error_img);
 		hide_item(spinner);
 		switch (state) {
-		case State.DISCONNECTED:
-			if(radio_button.active) {
-				show_item(error_img);
-			}
+		case State.FAILED_WIFI:
+			show_item(error_img);
 			break;
 		case State.CONNECTING_WIFI:
 			show_item(spinner);
@@ -227,8 +228,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		device = _device;
 		wifi_device = device as NM.DeviceWifi;
 	
-		previous_wifi_item = new WifiMenuItem.blank ();
-		blank_item = previous_wifi_item;
+		blank_item = new WifiMenuItem.blank ();
 		
 		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
 		wifi_item.get_style_context ().add_class ("h4");
@@ -265,11 +265,11 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 	}
 
-	WifiMenuItem? previous_wifi_item = null;
 	WifiMenuItem? active_wifi_item = null;
 	WifiMenuItem? blank_item = null;
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
+		WifiMenuItem? previous_wifi_item = blank_item;
 
 		bool found = false;
 
@@ -281,6 +281,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 				menu_item.add_ap(ap);
 				break;
 			}
+
+			previous_wifi_item = menu_item;
 		}
 
 		/* Sometimes network manager sends a (fake?) AP without a valid ssid. */
@@ -309,29 +311,44 @@ public class Network.WifiInterface : Network.WidgetInterface {
 
 		debug("Update active AP");
 		
-		if(active_ap == null) {
-			blank_item.set_active (true);
-			return;
-		}
+		active_ap = wifi_device.get_active_access_point ();
 		
-		bool found = false;
 		if (active_wifi_item != null) {
-			active_wifi_item.state = Network.State.DISCONNECTED;
+			if(active_wifi_item.state == Network.State.CONNECTING_WIFI) {
+				active_wifi_item.state = Network.State.DISCONNECTED;
+			}
 			active_wifi_item = null;
 		}
-		foreach(var w in wifi_list.get_children()) {
-			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
 
-			if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
-				found = true;
-				menu_item.set_active (true);
-				active_wifi_item = menu_item;
-				active_wifi_item.state = state;
+		if(active_ap == null) {
+			debug("No active AP");
+			blank_item.set_active (true);
+		}
+		else {
+			debug("Active ap: %s", NM.Utils.ssid_to_utf8(active_ap.get_ssid()));
+			
+			bool found = false;
+			foreach(var w in wifi_list.get_children()) {
+				var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+
+				if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
+					found = true;
+					menu_item.set_active (true);
+					active_wifi_item = menu_item;
+					active_wifi_item.state = state;
+				}
+			}
+
+			if (!found) {
+				critical ("Active AP not added");
 			}
 		}
-
-		if (!found) {
-			critical ("Active AP not added");
+	}
+	
+	void clean_failed_items () {
+		foreach(var w in wifi_list.get_children()) {
+			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+			menu_item.state = Network.State.DISCONNECTED;
 		}
 	}
 	
@@ -359,6 +376,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 				found_item.get_parent().destroy ();
 			}
 		}
+
+		update_active_ap ();
 
 	}
 
@@ -404,6 +423,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		case NM.DeviceState.DEACTIVATING:
 		case NM.DeviceState.FAILED:
 			state = State.FAILED_WIFI;
+			if(active_wifi_item != null) {
+				active_wifi_item.state = state;
+			}
 			break;
 
 		case NM.DeviceState.UNAVAILABLE:
@@ -443,7 +465,14 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
 		} else {
 			debug("Trying to connect to %s", NM.Utils.ssid_to_utf8(i.ap.get_ssid()));
-			need_settings ();
+			if(i.ap.get_wpa_flags () == NM.@80211ApSecurityFlags.NONE) {
+				debug("Directly, as it is an insecure network.");
+				nm_client.add_and_activate_connection (new NM.Connection (), device, i.ap.get_path (), null);
+			}
+			else {
+				debug("Needs a password or a certificate, let's open switchboard.");
+				need_settings ();
+			}
 		/*	connection = new NM.Connection ();
 			var s_con = new NM.SettingConnection ();
 			s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
@@ -481,6 +510,7 @@ public class Network.EtherInterface : Network.WidgetInterface {
 		ethernet_item = new Wingpanel.Widgets.Switch (_("Wired Connection"));
 		ethernet_item.get_style_context ().add_class ("h4");
 		ethernet_item.switched.connect( () => {
+			debug("update");
 			if(ethernet_item.get_active()) {
 				device.set_autoconnect(true);
 			}
