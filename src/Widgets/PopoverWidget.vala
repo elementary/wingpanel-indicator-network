@@ -359,8 +359,9 @@ public class Network.WifiInterface : Network.WidgetInterface {
 				}
 			}
 
+			/* This can happen at start, when the access point list is populated. */
 			if (!found) {
-				critical ("Active AP not added");
+				debug ("Active AP not added");
 			}
 		}
 	}
@@ -659,7 +660,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 			widget_interface = new EtherInterface (nm_client, nm_settings, device);
 			debug ("Ethernet interface added");
 		} else {
-			stderr.printf ("Unknown device: %s\n", device.get_device_type().to_string());
+			debug ("Unknown device: %s\n", device.get_device_type().to_string());
 		}
 
 		if (widget_interface != null) {
