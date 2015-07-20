@@ -440,7 +440,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		switch (wifi_device.state) {
 		case NM.DeviceState.UNKNOWN:
 		case NM.DeviceState.UNMANAGED:
-		case NM.DeviceState.DEACTIVATING:
 		case NM.DeviceState.FAILED:
 			state = State.FAILED_WIFI;
 			if(active_wifi_item != null) {
@@ -448,6 +447,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 			}
 			break;
 
+		case NM.DeviceState.DEACTIVATING:
 		case NM.DeviceState.UNAVAILABLE:
 		case NM.DeviceState.DISCONNECTED:
 			state = State.DISCONNECTED;
