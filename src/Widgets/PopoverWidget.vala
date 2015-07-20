@@ -168,7 +168,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 	}
 
 	string strength_to_string(uint8 strength) {
-		if(0 <= strength < 30)
+		if(strength < 30)
 			return "weak";
 		else if(strength < 55)
 			return "ok";
@@ -227,10 +227,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	private Wingpanel.Widgets.Switch wifi_item;
 	Gtk.ListBox wifi_list;
 
-	private int frame_number = 0;
-	private uint animate_timeout = 0;
-
-	
 	private NM.Client nm_client;
 	private NM.RemoteSettings nm_settings;
 
@@ -366,13 +362,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		}
 	}
 	
-	void clean_failed_items () {
-		foreach(var w in wifi_list.get_children()) {
-			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
-			menu_item.state = Network.State.DISCONNECTED;
-		}
-	}
-	
 	void access_point_removed_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
 
@@ -403,7 +392,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	Network.State strength_to_state (uint8 strength) {
-		if(0 <= strength < 30)
+		if(strength < 30)
 			return Network.State.CONNECTED_WIFI_WEAK;
 		else if(strength < 55)
 			return Network.State.CONNECTED_WIFI_OK;
@@ -474,7 +463,6 @@ public class Network.WifiInterface : Network.WidgetInterface {
 	}
 
 	private void wifi_activate_cb (WifiMenuItem i) {
-		NM.Connection? connection = null;
 
 		var connections = nm_settings.list_connections ();
 		var device_connections = wifi_device.filter_connections (connections);
@@ -494,7 +482,8 @@ public class Network.WifiInterface : Network.WidgetInterface {
 				debug("Needs a password or a certificate, let's open switchboard.");
 				need_settings ();
 			}
-		/*	connection = new NM.Connection ();
+			/* NM.Connection? connection = null;
+			connection = new NM.Connection ();
 			var s_con = new NM.SettingConnection ();
 			s_con.set (NM.SettingConnection.UUID, NM.Utils.uuid_generate ());
 			connection.add_setting (s_con);
@@ -701,7 +690,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 	}
 
 	private void show_settings () {
-		Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
+		try {
+			Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
+		}
+		catch (SpawnError e) {
+			critical ("Could not launch settings.");
+		}
 		//var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
 		//cmd.run();
 

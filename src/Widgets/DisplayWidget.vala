@@ -18,10 +18,6 @@
 public class Network.Widgets.DisplayWidget : Gtk.Box {
 	private Gtk.Image image;
 
-	private Gtk.Revealer percent_revealer;
-
-	private Gtk.Label percent_label;
-
 	public DisplayWidget () {
 		Object (orientation: Gtk.Orientation.HORIZONTAL);
 
@@ -33,13 +29,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 		image.icon_name = "network-wired-symbolic";
 
 		this.pack_start (image);
-	}
-
-	private void connect_signals () {
-	}
-
-	void set_icon_name (string icon_name) {
-		image.icon_name = icon_name;
 	}
 
 	uint animation_timeout;
@@ -105,9 +94,5 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 			critical("Unknown network state, cannot show the good icon: %s", state.to_string());
 			break;
 		}
-	}
-
-	public void set_percent (int percentage) {
-		percent_label.set_label ("%i%%".printf (percentage));
 	}
 }
