@@ -257,6 +257,7 @@ public class Network.WifiInterface : Network.WidgetInterface {
 		pack_start (wifi_item);
 		
 		var scrolled_box = new AutomaticScrollBox (null, null);
+		scrolled_box.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
 
 		wifi_list = new Gtk.ListBox ();
 		
