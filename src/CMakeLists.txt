@@ -18,6 +18,10 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
   Widgets/AutomaticScrollBox.vala
+  Widgets/EtherInterface.vala
+  Widgets/WifiInterface.vala
+  Widgets/WidgetNMInterface.vala
+  Widgets/WifiMenuItem.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   rfkill.vala

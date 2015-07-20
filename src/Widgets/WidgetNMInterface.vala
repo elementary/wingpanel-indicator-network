@@ -15,17 +15,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public enum Network.State {
-	DISCONNECTED,
-	CONNECTED_WIRED,
-	CONNECTED_WIFI,
-	CONNECTED_WIFI_WEAK,
-	CONNECTED_WIFI_OK,
-	CONNECTED_WIFI_GOOD,
-	CONNECTED_WIFI_EXCELLENT,
-	CONNECTING_WIFI,
-	CONNECTING_WIRED,
-	FAILED_WIRED,
-	FAILED_WIFI
+public abstract class Network.WidgetNMInterface : Gtk.Box {
+	public abstract void update ();
+
+	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
+
+	public Wingpanel.Widgets.Separator? sep = null;
+	protected NM.Device? device;
+
+	public signal void show_dialog (Gtk.Widget w);
+	public signal void need_settings ();
+
+	public bool is_device (NM.Device device) {
+		return device == this.device;
+	}
 }
 
