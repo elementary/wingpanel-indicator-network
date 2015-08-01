@@ -25,7 +25,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   common/Widgets/WidgetNMInterface.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
-  rfkill.vala
+  common/rfkill.vala
 
 PACKAGES
   wingpanel-2.0
