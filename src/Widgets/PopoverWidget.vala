@@ -51,7 +51,6 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 		widget_interface.sep = new Wingpanel.Widgets.Separator ();
 		main_box.pack_end (widget_interface.sep);
 		main_box.pack_end (widget_interface);
-		network_interface.append (widget_interface);
 
 		widget_interface.need_settings.connect (show_settings);
 	}

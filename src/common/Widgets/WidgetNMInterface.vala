@@ -15,9 +15,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#if INDICATOR_NETWORK
 public abstract class Network.WidgetNMInterface : Gtk.Box {
-	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 	protected NM.Device? device;
+#else
+public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
+#endif
+	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 
 #if INDICATOR_NETWORK
 	public Wingpanel.Widgets.Separator? sep = null;
@@ -30,5 +34,9 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
 		return device == this.device;
 	}
 	
-	public abstract void update ();
+	public virtual void update () {
+#if PLUG_NETWORK
+		base.update (info_box);
+#endif
+	}
 }
