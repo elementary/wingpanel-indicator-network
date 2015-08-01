@@ -34,9 +34,11 @@ public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
 		return device == this.device;
 	}
 	
-	public virtual void update () {
 #if PLUG_NETWORK
-		base.update (info_box);
+	public override void update () {
+		base.update ();
+#else
+	public virtual void update () {
 #endif
 	}
 }
