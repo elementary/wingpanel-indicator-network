@@ -20,9 +20,9 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/AutomaticScrollBox.vala
   Widgets/EtherInterface.vala
   Widgets/WifiInterface.vala
-  Widgets/WidgetNMInterface.vala
   Widgets/WifiMenuItem.vala
   Widgets/common/NMVisualizer.vala
+  Widgets/common/WidgetNMInterface.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   rfkill.vala
@@ -37,6 +37,7 @@ CUSTOM_VAPIS
   libnm-gtk.vapi
 OPTIONS
   --thread
+  --define=INDICATOR_NETWORK
 )
 
 add_library (${CMAKE_PROJECT_NAME} MODULE ${VALA_C})

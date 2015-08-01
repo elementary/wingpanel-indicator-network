@@ -16,18 +16,19 @@
  */
 
 public abstract class Network.WidgetNMInterface : Gtk.Box {
-	public abstract void update ();
-
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
-
-	public Wingpanel.Widgets.Separator? sep = null;
 	protected NM.Device? device;
+
+#if INDICATOR_NETWORK
+	public Wingpanel.Widgets.Separator? sep = null;
 
 	public signal void show_dialog (Gtk.Widget w);
 	public signal void need_settings ();
+#endif
 
 	public bool is_device (NM.Device device) {
 		return device == this.device;
 	}
+	
+	public abstract void update ();
 }
-
