@@ -14,15 +14,15 @@ include (ValaPrecompile)
 # Add all your vala files and requires packages to the List below to include them in the build
 vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Indicator.vala
-  Utils.vala
+  common/Utils.vala
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
   Widgets/AutomaticScrollBox.vala
   Widgets/EtherInterface.vala
   Widgets/WifiInterface.vala
-  Widgets/WifiMenuItem.vala
-  Widgets/common/NMVisualizer.vala
-  Widgets/common/WidgetNMInterface.vala
+  common/Widgets/WifiMenuItem.vala
+  common/Widgets/NMVisualizer.vala
+  common/Widgets/WidgetNMInterface.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   rfkill.vala
