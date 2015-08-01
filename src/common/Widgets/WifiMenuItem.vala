@@ -38,7 +38,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 	public bool is_secured {
 		get {
-			return ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
+			return ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE;
 		}
 	}
 
