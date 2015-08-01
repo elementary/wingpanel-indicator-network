@@ -36,6 +36,12 @@ public class Network.WifiMenuItem : Gtk.Box {
 		}
 	}
 
+	public bool is_secured {
+		get {
+			return ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
+		}
+	}
+
 	public NM.AccessPoint ap { get { return _tmp_ap; } }
 	NM.AccessPoint _tmp_ap;
 
@@ -130,7 +136,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
 		img_strength.show_all();
 
-		lock_img.visible = ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE;
+		lock_img.visible = is_secured;
 		set_lock_img_tooltip(ap.get_wpa_flags ());
 		lock_img.no_show_all = !lock_img.visible;
 
