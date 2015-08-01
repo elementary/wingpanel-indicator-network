@@ -15,17 +15,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.Widgets.PopoverWidget : Gtk.Stack {
-	private NM.Client nm_client;
-	private NM.RemoteSettings nm_settings;
-
+public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 	Gtk.Box main_box;
 	
-	GLib.List<WidgetNMInterface>? network_interface;
-
-	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
-
-
 	private const string SETTINGS_EXEC = "/usr/bin/switchboard -o network-plug";
 
 	private Wingpanel.Widgets.Button show_settings_button;
@@ -33,14 +25,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 	public signal void settings_shown ();
 
 	public PopoverWidget () {
-		network_interface = new GLib.List<WidgetNMInterface>();
-
-		build_ui ();
 		connect_signals ();
-		show_all();
 	}
 
-	void build_ui () {
+
+	protected override void build_ui () {
 		
 		main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
@@ -48,86 +37,30 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 
 		show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
 		main_box.pack_end (show_settings_button);
-
-
-		/* Monitor network manager */
-		nm_client = new NM.Client ();
-		nm_settings = new NM.RemoteSettings (null);
-
-		nm_client.device_added.connect (device_added_cb);
-		nm_client.device_removed.connect (device_removed_cb);
-		
-		var devices = nm_client.get_devices ();
-		for (var i = 0; i < devices.length; i++)
-			device_added_cb (devices.get (i));
 	}
-
-	void device_removed_cb (NM.Device device) {
-		foreach (var widget_interface in network_interface) {
-			if (widget_interface.is_device (device)) {
-				network_interface.remove (widget_interface);
-				
-				if (widget_interface.sep != null) {
-					widget_interface.sep.destroy ();
-				}
-
-				widget_interface.destroy ();
-				break;
-			}
-		}
-	}
-
-	private void device_added_cb (NM.Device device) {
-		WidgetNMInterface? widget_interface = null;
-
-		if (device is NM.DeviceWifi) {
-			widget_interface = new WifiInterface (nm_client, nm_settings, device);
-			debug ("Wifi interface added");
-		} else if (device is NM.DeviceEthernet) {
-			widget_interface = new EtherInterface (nm_client, nm_settings, device);
-			debug ("Ethernet interface added");
-		} else {
-			debug ("Unknown device: %s\n", device.get_device_type().to_string());
+	
+	protected override void remove_interface (WidgetNMInterface widget_interface) {
+		if (widget_interface.sep != null) {
+			widget_interface.sep.destroy ();
 		}
 
-		if (widget_interface != null) {
-			widget_interface.sep = new Wingpanel.Widgets.Separator ();
-			main_box.pack_end (widget_interface.sep);
-			main_box.pack_end (widget_interface);
-			network_interface.append (widget_interface);
-
-			widget_interface.notify["state"].connect(update_state);
-
-			widget_interface.need_settings.connect (show_settings);
-		}
-
-		update_all();
-
-		show_all();
+		widget_interface.destroy ();
 	}
 
-	void update_all () {
-		foreach(var inter in network_interface) {
-			inter.update ();
-		}
+	protected override void add_interface (WidgetNMInterface widget_interface) {
+		widget_interface.sep = new Wingpanel.Widgets.Separator ();
+		main_box.pack_end (widget_interface.sep);
+		main_box.pack_end (widget_interface);
+		network_interface.append (widget_interface);
+
+		widget_interface.need_settings.connect (show_settings);
 	}
-
-	void update_state () {
-		var next_state = Network.State.DISCONNECTED;
-		foreach (var inter in network_interface) {
-			if (inter.state != Network.State.DISCONNECTED) {
-				next_state = inter.state;
-			}
-		}
-
-		state = next_state;
-	}
-
-	private void connect_signals () {
+	
+	void connect_signals () {
 		show_settings_button.clicked.connect (show_settings);
 	}
 
-	private void show_settings () {
+	void show_settings () {
 		try {
 			Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
 		}
@@ -139,4 +72,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Stack {
 
 		settings_shown ();
 	}
+
+
 }
