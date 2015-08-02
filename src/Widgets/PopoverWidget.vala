@@ -18,7 +18,7 @@
 public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 	Gtk.Box main_box;
 	
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard -o network-plug";
+	private const string SETTINGS_EXEC = "/usr/bin/switchboard -o pantheon-network";
 
 	private Wingpanel.Widgets.Button show_settings_button;
 
