@@ -17,6 +17,7 @@
 
 public class Network.WifiInterface : Network.AbstractWifiInterface {
 	Wingpanel.Widgets.Switch wifi_item;
+	Gtk.Revealer revealer;
 	
 	public WifiInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
 		set_orientation(Gtk.Orientation.VERTICAL);
@@ -26,11 +27,11 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
 		wifi_item.get_style_context ().add_class ("h4");
 		wifi_item.switched.connect (() => {
-			if (updating_rfkill)
-				return;
 			var active = wifi_item.get_active ();
-			rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
-			nm_client.wireless_set_enabled (active);
+			if (active != !software_locked) {
+				rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
+				nm_client.wireless_set_enabled (active);
+			}
 		});
 
 		pack_start (wifi_item);
@@ -40,36 +41,27 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 		
 		scrolled_box.add_with_viewport(wifi_list);
 
-		pack_start (scrolled_box);
+		revealer = new Gtk.Revealer ();
+		revealer.add (scrolled_box);
+
+		pack_start (revealer);
 
 		
 	}
 
 	public override void update () {
 		base.update ();
-		
-		/* Wifi */
-		var have_lock = false;
-		var software_locked = false;
-		var hardware_locked = false;
-		foreach (var device in rfkill.get_devices ()) {
-			if (device.device_type != RFKillDeviceType.WLAN)
-				continue;
 
-			have_lock = true;
-			if (device.software_lock)
-				software_locked = true;
-			if (device.hardware_lock)
-				hardware_locked = true;
-		}
-		var locked = hardware_locked || software_locked;
-
-		updating_rfkill = true;
 		wifi_item.set_sensitive (!hardware_locked);
 		wifi_item.set_active (!locked);
-		updating_rfkill = false;
 
 		active_ap = wifi_device.get_active_access_point ();
+
+		if (wifi_device.state == NM.DeviceState.UNAVAILABLE || state == Network.State.FAILED_WIFI) {
+			revealer.reveal_child = false;
+		} else {
+			revealer.reveal_child = true;
+		}
 	}
 	
 	protected override void wifi_activate_cb (WifiMenuItem i) {

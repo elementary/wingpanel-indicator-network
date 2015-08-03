@@ -119,11 +119,9 @@ public class Network.WifiMenuItem : Gtk.Box {
 	void set_lock_img_tooltip (NM.@80211ApSecurityFlags flags) {
 		if((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
 			lock_img.set_tooltip_text(_("This network uses 40/64-bit WEP encryption."));
-		}
-		else if((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
+		} else if((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
 			lock_img.set_tooltip_text(_("This network uses 104/128-bit WEP encryption."));
-		}
-		else if((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
+		} else if((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
 			lock_img.set_tooltip_text(_("This network uses WPA encryption."));
 		} else {
 			lock_img.set_tooltip_text(_("This network uses encryption."));

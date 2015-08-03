@@ -23,7 +23,6 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 
 	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-
 	construct {
 		network_interface = new GLib.List<WidgetNMInterface>();
 
