@@ -30,6 +30,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 				return;
 			var active = wifi_item.get_active ();
 			rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
+			nm_client.wireless_set_enabled (active);
 		});
 
 		pack_start (wifi_item);
