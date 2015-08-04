@@ -256,6 +256,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 		case NM.DeviceState.DEACTIVATING:
 		case NM.DeviceState.UNAVAILABLE:
+			cancel_scan ();
 			placeholder.visible_child_name = "wireless-off";
 			state = State.DISCONNECTED;
 			break;
@@ -304,6 +305,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	void cancel_scan () {
 		if (timeout_scan > 0) {
 			Source.remove (timeout_scan);
+			timeout_scan = 0;
 		}
 	}
 
