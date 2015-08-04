@@ -46,32 +46,32 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		placeholder.visible = true;
 
 		var no_aps_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        no_aps_box.visible = true;
-        no_aps_box.valign = Gtk.Align.CENTER; 
+		no_aps_box.visible = true;
+		no_aps_box.valign = Gtk.Align.CENTER; 
 
 		var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
 
-        no_aps_box.add (no_aps);
+		no_aps_box.add (no_aps);
 #if PLUG_NETWORK
-        var no_aps_desc = construct_placeholder_label (_("There are no wireless access points within range."), false);
-        no_aps_box.add (no_aps_desc);
+		var no_aps_desc = construct_placeholder_label (_("There are no wireless access points within range."), false);
+		no_aps_box.add (no_aps_desc);
 #endif
 
-        var wireless_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        wireless_off_box.visible = true;
-        wireless_off_box.valign = Gtk.Align.CENTER;        
+		var wireless_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+		wireless_off_box.visible = true;
+		wireless_off_box.valign = Gtk.Align.CENTER;		
 
 #if PLUG_NETWORK
 		var wireless_off = construct_placeholder_label (_("Wireless Is Disabled"), true);
-        var wireless_off_desc = construct_placeholder_label (_("Enable wireless to discover nearby wireless access points."), false);
-        wireless_off_box.add (wireless_off);
-        wireless_off_box.add (wireless_off_desc);
+		var wireless_off_desc = construct_placeholder_label (_("Enable wireless to discover nearby wireless access points."), false);
+		wireless_off_box.add (wireless_off);
+		wireless_off_box.add (wireless_off_desc);
 #endif
 
 		var spinner = new Gtk.Spinner ();
-        spinner.visible = true;
-        spinner.halign = spinner.valign = Gtk.Align.CENTER;
-        spinner.start ();
+		spinner.visible = true;
+		spinner.halign = spinner.valign = Gtk.Align.CENTER;
+		spinner.start ();
 		
 		var scanning_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
 		var scanning = construct_placeholder_label (_("Scanning for Access Points..."), true);
@@ -79,8 +79,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		scanning_box.add (scanning);
 		scanning_box.add (spinner);
 		scanning_box.visible = true;
-        scanning_box.valign = Gtk.Align.CENTER;        
-        
+		scanning_box.valign = Gtk.Align.CENTER;		
+		
 
 		placeholder.add_named (no_aps_box, "no-aps");
 		placeholder.add_named (wireless_off_box, "wireless-off");
@@ -109,23 +109,23 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		update();
 	}
 
-    Gtk.Label construct_placeholder_label (string text, bool title) {
-        var label = new Gtk.Label (text);
-        label.visible = true;
-        label.use_markup = true;
-        label.wrap = true;
-        label.wrap_mode = Pango.WrapMode.WORD_CHAR;
-        label.max_width_chars = 30;
-        label.justify = Gtk.Justification.CENTER;
+	Gtk.Label construct_placeholder_label (string text, bool title) {
+		var label = new Gtk.Label (text);
+		label.visible = true;
+		label.use_markup = true;
+		label.wrap = true;
+		label.wrap_mode = Pango.WrapMode.WORD_CHAR;
+		label.max_width_chars = 30;
+		label.justify = Gtk.Justification.CENTER;
 
-        if (title) {
+		if (title) {
 #if PLUG_NETWORK
-            label.get_style_context ().add_class ("h2");
+			label.get_style_context ().add_class ("h2");
 #endif
-        }
+		}
 
-        return label;
-    }
+		return label;
+	}
 
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
