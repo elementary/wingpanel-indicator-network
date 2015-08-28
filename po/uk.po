@@ -3,38 +3,38 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-08-20 19:07+0200\n"
-"PO-Revision-Date: 2015-08-14 02:53+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2015-08-27 08:46+0000\n"
+"Last-Translator: zigi21 <huckier78@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-08-24 05:24+0000\n"
+"X-Launchpad-Export-Date: 2015-08-28 05:56+0000\n"
 "X-Generator: Launchpad (build 17690)\n"
 
 #: ../src/Indicator.vala:25
 msgid "Network"
-msgstr ""
+msgstr "Мережа"
 
 #: ../src/Indicator.vala:26
 msgid "Network indicator"
-msgstr ""
+msgstr "Індикатор мережі"
 
 #: ../src/Widgets/WifiInterface.vala:27
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ../src/Widgets/PopoverWidget.vala:38
 msgid "Network Settings…"
-msgstr ""
+msgstr "Налаштування мережі..."
 
 #: ../src/Widgets/EtherInterface.vala:23
 msgid "Wired"
-msgstr ""
+msgstr "Дротове"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:52
 msgid "No Access Points Available"
-msgstr ""
+msgstr "Відсутні точки доступу"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:56
 msgid "There are no wireless access points within range."
@@ -50,24 +50,24 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:77
 msgid "Scanning for Access Points..."
-msgstr ""
+msgstr "Пошук доступних точок..."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:75
 msgid "This wireless network could not be connected to."
-msgstr ""
+msgstr "Неможливо підключитись до цієї мережі"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:121
 msgid "This network uses 40/64-bit WEP encryption."
-msgstr ""
+msgstr "Ця мережа використовує 40/60-бітне WEP кодування"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:123
 msgid "This network uses 104/128-bit WEP encryption."
-msgstr ""
+msgstr "Ця мережа використовує 104/128-бітне WEP кодування"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:125
 msgid "This network uses WPA encryption."
-msgstr ""
+msgstr "Ця мережа використовує WPA кодування"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses encryption."
-msgstr ""
+msgstr "Ця мережа використовую кодування"
