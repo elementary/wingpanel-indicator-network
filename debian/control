@@ -10,8 +10,7 @@ Build-Depends: cmake,
                libnm-glib-dev,
                libnm-gtk-dev,
                libnm-util-dev,
-               libvala-0.28-dev,
-               libwingpanel-dev,
+               libwingpanel-2.0-dev,
                valac (>= 0.28)
 Standards-Version: 3.9.6
 Homepage: https://launchpad.net/wingpanel-indicator-network
