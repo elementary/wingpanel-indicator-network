@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.WifiMenuItem : Gtk.Box {
+public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	private List<NM.AccessPoint> _ap;
 	public signal void user_action();
 	public GLib.ByteArray ssid {
@@ -42,6 +42,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 		}
 	}
 
+	private bool show_icons = true;
+
 	public NM.AccessPoint ap { get { return _tmp_ap; } }
 	NM.AccessPoint _tmp_ap;
 
@@ -52,7 +54,7 @@ public class Network.WifiMenuItem : Gtk.Box {
 	Gtk.Spinner spinner;
 
 	public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
-
+		var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
 		radio_button = new Gtk.RadioButton(null);
 		radio_button.margin_start = 6;
 		if (previous != null) radio_button.set_group (previous.get_group ());
@@ -74,15 +76,15 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		error_img.set_tooltip_text (_("This wireless network could not be connected to."));
 		
-		pack_start(radio_button, true, true);
+		main_box.pack_start(radio_button, true, true);
 		spinner = new Gtk.Spinner();
 		spinner.start();
 		spinner.visible = false;
 		spinner.no_show_all = !spinner.visible;
-		pack_start(spinner, false, false);
-		pack_start(error_img, false, false);
-		pack_start(lock_img, false, false);
-		pack_start(img_strength, false, false);
+		main_box.pack_start(spinner, false, false);
+		main_box.pack_start(error_img, false, false);
+		main_box.pack_start(lock_img, false, false);
+		main_box.pack_start(img_strength, false, false);
 		
 		_ap = new List<NM.AccessPoint>();
 
@@ -91,6 +93,8 @@ public class Network.WifiMenuItem : Gtk.Box {
 
 		notify["state"].connect (update);
 		radio_button.notify["active"].connect (update);
+		this.add (main_box);
+		this.get_style_context ().add_class ("menuitem");
 	}
 
 	/**
@@ -131,15 +135,21 @@ public class Network.WifiMenuItem : Gtk.Box {
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
 
-		img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
-		img_strength.show_all();
+#if PLUG_NETWORK
+		if (show_icons) {
+#endif
+			img_strength.set_from_icon_name("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
+			img_strength.show_all();
 
-		lock_img.visible = is_secured;
-		set_lock_img_tooltip(ap.get_wpa_flags ());
-		lock_img.no_show_all = !lock_img.visible;
+			lock_img.visible = is_secured;
+			set_lock_img_tooltip(ap.get_wpa_flags ());
+			lock_img.no_show_all = !lock_img.visible;
 
-		hide_item(error_img);
-		hide_item(spinner);
+			hide_item(error_img);
+			hide_item(spinner);
+#if PLUG_NETWORK
+		}
+#endif
 		switch (state) {
 		case State.FAILED_WIFI:
 			show_item(error_img);
@@ -151,6 +161,15 @@ public class Network.WifiMenuItem : Gtk.Box {
 			}
 			break;
 		}
+	}
+
+	public void hide_icons () {
+#if PLUG_NETWORK	
+		show_icons = false;
+		hide_item (error_img);
+		hide_item (lock_img);
+		hide_item (img_strength);			
+#endif		
 	}
 
 	void show_item(Gtk.Widget w) {

@@ -9,8 +9,7 @@
  * license.
  */
 
-public enum RFKillDeviceType
-{
+public enum RFKillDeviceType {
     ALL = 0,
     WLAN,
     BLUETOOTH,
@@ -18,16 +17,13 @@ public enum RFKillDeviceType
     WIMAX,
     WMAN
 }
- 
-public class RFKillDevice
-{
+
+public class RFKillDevice {
     public signal void changed ();
 
-    public bool software_lock
-    {
+    public bool software_lock {
         get { return _software_lock; }
-        set
-        {
+        set {
             var event = RFKillEvent ();
             event.idx = idx;
             event.op = RFKillOperation.CHANGE;
@@ -36,7 +32,7 @@ public class RFKillDevice
                 return;
         }
     }
-    
+
     public bool hardware_lock { get { return _hardware_lock; } }
 
     public RFKillDeviceType device_type { get { return _device_type; } }
@@ -47,8 +43,7 @@ public class RFKillDevice
     internal bool _software_lock;
     internal bool _hardware_lock;
 
-    internal RFKillDevice (RFKillManager manager, uint32 idx, RFKillDeviceType device_type, bool software_lock, bool hardware_lock)
-    {
+    internal RFKillDevice (RFKillManager manager, uint32 idx, RFKillDeviceType device_type, bool software_lock, bool hardware_lock) {
         this.manager = manager;
         this.idx = idx;
         _device_type = device_type;
@@ -57,19 +52,16 @@ public class RFKillDevice
     }
 }
 
-public class RFKillManager : Object
-{
+public class RFKillManager : Object {
     public signal void device_added (RFKillDevice device);
     public signal void device_changed (RFKillDevice device);
     public signal void device_deleted (RFKillDevice device);
 
-    public RFKillManager ()
-    {
+    public RFKillManager () {
         _devices = new List<RFKillDevice> ();
     }
-    
-    public void open ()
-    {
+
+    public void open () {
         fd = Posix.open ("/dev/rfkill", Posix.O_RDWR);
         Posix.fcntl (fd, Posix.F_SETFL, Posix.O_NONBLOCK);
 
@@ -81,16 +73,14 @@ public class RFKillManager : Object
         channel.add_watch (IOCondition.IN | IOCondition.HUP | IOCondition.ERR, () => { return read_event (); });
     }
 
-    public List<RFKillDevice> get_devices ()
-    {
+    public List<RFKillDevice> get_devices () {
         var devices = new List<RFKillDevice> ();
         foreach (var device in _devices)
             devices.append (device);
         return devices;
     }
 
-    public void set_software_lock (RFKillDeviceType type, bool lock_enabled)
-    {
+    public void set_software_lock (RFKillDeviceType type, bool lock_enabled) {
         var event = RFKillEvent ();
         event.type = type;
         event.op = RFKillOperation.CHANGE_ALL;
@@ -102,14 +92,12 @@ public class RFKillManager : Object
     internal int fd = -1;
     private List<RFKillDevice> _devices;
 
-    private bool read_event ()
-    {
+    private bool read_event () {
         var event = RFKillEvent ();
         if (Posix.read (fd, &event, 8) != 8)
             return false;
 
-        switch (event.op)
-        {
+        switch (event.op) {
         case RFKillOperation.ADD:
             var device = new RFKillDevice (this, event.idx, (RFKillDeviceType) event.type, event.soft != 0, event.hard != 0);
             _devices.append (device);
@@ -117,16 +105,14 @@ public class RFKillManager : Object
             break;
         case RFKillOperation.DELETE:
             var device = get_device (event.idx);
-            if (device != null)
-            {
+            if (device != null) {
                 _devices.remove (device);
                 device_deleted (device);
             }
             break;
         case RFKillOperation.CHANGE:
             var device = get_device (event.idx);
-            if (device != null)
-            {
+            if (device != null) {
                 device._software_lock = event.soft != 0;
                 device._hardware_lock = event.hard != 0;
                 device.changed ();
@@ -137,10 +123,8 @@ public class RFKillManager : Object
         return true;
     }
 
-    private RFKillDevice? get_device (uint32 idx)
-    {
-        foreach (var device in _devices)
-        {
+    private RFKillDevice? get_device (uint32 idx) {
+        foreach (var device in _devices) {
             if (device.idx == idx)
                 return device;
         }
@@ -149,8 +133,7 @@ public class RFKillManager : Object
     }
 }
 
-private struct RFKillEvent
-{
+private struct RFKillEvent {
     uint32 idx;
     uint8 type;
     uint8 op;
@@ -158,8 +141,7 @@ private struct RFKillEvent
     uint8 hard;
 }
 
-private enum RFKillOperation
-{
+private enum RFKillOperation {
     ADD = 0,
     DELETE,
     CHANGE,

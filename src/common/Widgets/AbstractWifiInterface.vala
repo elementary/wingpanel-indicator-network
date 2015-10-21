@@ -25,7 +25,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	protected NM.Client nm_client;
 	protected NM.RemoteSettings nm_settings;
 	
-	protected WifiMenuItem? active_wifi_item = null;
+	protected WifiMenuItem? active_wifi_item { get; set; }
 	protected WifiMenuItem? blank_item = null;
 	protected Gtk.Stack placeholder;
 
@@ -41,6 +41,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		device = _device;
 		wifi_device = device as NM.DeviceWifi;
 		blank_item = new WifiMenuItem.blank ();
+		active_wifi_item = null;
 		
 		placeholder = new Gtk.Stack ();
 		placeholder.visible = true;
@@ -134,7 +135,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		bool found = false;
 
 		foreach(var w in wifi_list.get_children()) {
-			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+			var menu_item = (WifiMenuItem) w;
 
 			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
 				found = true;
@@ -149,20 +150,15 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		if(!found && ap.get_ssid() != null) {
 			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
 
-			var row = new Gtk.ListBoxRow ();
-
-			row.add (item);
-			row.get_style_context ().add_class ("menuitem");
-
 			previous_wifi_item = item;
 			item.set_visible(true);
-			item.user_action.connect(wifi_activate_cb);
+			item.user_action.connect (wifi_activate_cb);
 
-			wifi_list.add (row);
+			wifi_list.add (item);
 
 			wifi_list.show_all ();
 
-			update_active_ap ();
+			update ();
 		}
 
 	}
@@ -187,7 +183,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			
 			bool found = false;
 			foreach(var w in wifi_list.get_children()) {
-				var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+				var menu_item = (WifiMenuItem) w;
 
 				if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
 					found = true;
@@ -210,7 +206,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		WifiMenuItem found_item = null;
 
 		foreach(var w in wifi_list.get_children()) {
-			var menu_item = (WifiMenuItem) ((Gtk.Bin)w).get_child();
+			var menu_item = (WifiMenuItem) w;
 
 			assert(menu_item != null);
 
@@ -224,11 +220,11 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			critical("Couldn't remove an access point which has not been added.");
 		} else {
 			if(!found_item.remove_ap(ap)) {
-				found_item.get_parent().destroy ();
+				found_item.destroy ();
 			}
 		}
 		
-		update_active_ap ();
+		update ();
 	}
 
 	Network.State strength_to_state (uint8 strength) {
@@ -277,7 +273,12 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		
 		case NM.DeviceState.ACTIVATED:
 			set_scan_placeholder ();
-			state = strength_to_state(active_ap.get_strength());
+			/* That can happen if active_ap has not been added yet, at startup. */
+			if (active_ap != null) {
+				state = strength_to_state(active_ap.get_strength());
+			} else {
+				state = State.CONNECTED_WIFI_WEAK;
+			}
 			break;
 		}
 
@@ -330,8 +331,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			return 0;
 		}
 
-		var w1 = (WifiMenuItem)r1.get_child ();
-		var w2 = (WifiMenuItem)r2.get_child ();
+		var w1 = (WifiMenuItem)r1;
+		var w2 = (WifiMenuItem)r2;
 
 		if (w1.ap.get_strength () > w2.ap.get_strength ()) {
 			return -1;
