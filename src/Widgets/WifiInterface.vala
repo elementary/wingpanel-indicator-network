@@ -25,7 +25,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 		init_wifi_interface (nm_client, nm_settings, _device);
 		
 		wifi_item = new Wingpanel.Widgets.Switch (display_title);
-		notify["display_title"].connect ( () => {
+		notify["display-title"].connect ( () => {
 			wifi_item.set_caption (display_title);
 		});
 

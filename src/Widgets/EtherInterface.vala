@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.EtherInterface : Network.WidgetNMInterface {
+public class Network.EtherInterface : Network.AbstractEtherInterface {
 	private Wingpanel.Widgets.Switch ethernet_item;
 
 	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {

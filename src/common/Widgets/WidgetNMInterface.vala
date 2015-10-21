@@ -43,4 +43,8 @@ public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
 	public virtual void update () {
 #endif
 	}
+
+	public virtual void update_name (int count) {
+		display_title = _("Unknown type: %s ").printf(device.get_description ());
+	}
 }

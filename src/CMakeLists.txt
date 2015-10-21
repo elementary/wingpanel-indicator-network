@@ -27,6 +27,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   common/rfkill.vala
   common/Widgets/AbstractWifiInterface.vala
+  common/Widgets/AbstractEtherInterface.vala
 
 PACKAGES
   wingpanel-2.0

@@ -107,9 +107,16 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		var aps = wifi_device.get_access_points ();
 		aps.foreach(access_point_added_cb);
 
-		display_title = _("Wi-Fi");
-
 		update();
+	}
+
+	public override void update_name (int count) {
+		if (count <= 1) {
+			display_title = _("Wi-Fi");
+		}
+		else {
+			display_title = _("Wi-Fi: %s ").printf(device.get_description ());
+		}
 	}
 
 	Gtk.Label construct_placeholder_label (string text, bool title) {
