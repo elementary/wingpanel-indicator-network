@@ -107,6 +107,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		var aps = wifi_device.get_access_points ();
 		aps.foreach(access_point_added_cb);
 
+		display_title = _("Wi-Fi");
+
 		update();
 	}
 

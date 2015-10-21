@@ -23,6 +23,8 @@ public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
 #endif
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
 
+	public string display_title { get; protected set; default = "Unknown interface"; }
+
 #if INDICATOR_NETWORK
 	public Wingpanel.Widgets.Separator? sep = null;
 

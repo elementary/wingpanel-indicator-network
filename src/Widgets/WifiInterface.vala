@@ -24,7 +24,11 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 	
 		init_wifi_interface (nm_client, nm_settings, _device);
 		
-		wifi_item = new Wingpanel.Widgets.Switch (_("Wi-Fi"));
+		wifi_item = new Wingpanel.Widgets.Switch (display_title);
+		notify["display_title"].connect ( () => {
+			wifi_item.set_caption (display_title);
+		});
+
 		wifi_item.get_style_context ().add_class ("h4");
 		wifi_item.switched.connect (() => {
 			var active = wifi_item.get_active ();
