@@ -20,16 +20,13 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 	Gtk.Revealer revealer;
 	
 	public WifiInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
-		set_orientation(Gtk.Orientation.VERTICAL);
-	
 		init_wifi_interface (nm_client, nm_settings, _device);
-		
-		wifi_item = new Wingpanel.Widgets.Switch (display_title);
+
+		wifi_item.set_caption (display_title);
 		notify["display-title"].connect ( () => {
 			wifi_item.set_caption (display_title);
 		});
 
-		wifi_item.get_style_context ().add_class ("h4");
 		wifi_item.switched.connect (() => {
 			var active = wifi_item.get_active ();
 			if (active != !software_locked) {
@@ -37,20 +34,22 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 				nm_client.wireless_set_enabled (active);
 			}
 		});
+	}
 
+	construct {
+		orientation = Gtk.Orientation.VERTICAL;
+		wifi_item = new Wingpanel.Widgets.Switch ("");
+		wifi_item.get_style_context ().add_class ("h4");
 		pack_start (wifi_item);
-		
+
 		var scrolled_box = new AutomaticScrollBox (null, null);
 		scrolled_box.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
-		
-		scrolled_box.add_with_viewport(wifi_list);
+		scrolled_box.add_with_viewport (wifi_list);
 
 		revealer = new Gtk.Revealer ();
 		revealer.add (scrolled_box);
 
 		pack_start (revealer);
-
-		
 	}
 
 	public override void update () {
