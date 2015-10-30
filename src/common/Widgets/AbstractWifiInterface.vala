@@ -105,7 +105,9 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		wifi_device.state_changed.connect (update);
 		
 		var aps = wifi_device.get_access_points ();
-		aps.foreach(access_point_added_cb);
+		if (aps != null && aps.length > 0) {
+			aps.foreach(access_point_added_cb);
+		}
 
 		update();
 	}
@@ -115,7 +117,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			display_title = _("Wi-Fi");
 		}
 		else {
-			display_title = _("Wi-Fi: %s ").printf(device.get_description ());
+			display_title = device.get_description ();
 		}
 	}
 

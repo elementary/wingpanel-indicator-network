@@ -19,10 +19,10 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
 
 	public override void update_name (int count) {
 		if (count <= 1) {
-			display_title = _("Wired");
+			display_title = _("Ethernet");
 		}
 		else {
-			display_title = _("Wired: %s ").printf(device.get_description ());
+			display_title = device.get_description ();
 		}
 	}
 }

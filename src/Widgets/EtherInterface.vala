@@ -20,7 +20,12 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
 
 	public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
 		device = _device;
-		ethernet_item = new Wingpanel.Widgets.Switch (_("Wired"));
+		ethernet_item = new Wingpanel.Widgets.Switch (display_title);
+
+		notify["display-title"].connect ( () => {
+			ethernet_item.set_caption (display_title);
+		});
+
 		ethernet_item.get_style_context ().add_class ("h4");
 		ethernet_item.switched.connect( () => {
 			debug("update");
