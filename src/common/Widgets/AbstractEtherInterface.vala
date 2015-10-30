@@ -18,11 +18,19 @@
 public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface {
 
 	public override void update_name (int count) {
-		if (count <= 1) {
-			display_title = _("Ethernet");
+		var name = device.get_description ();
+
+		/* At least for docker related interfaces, which can be fairly common */
+		if (name.has_prefix ("veth")) {
+			display_title = "Virtual wired: %s".printf(name);
 		}
 		else {
-			display_title = device.get_description ();
+			if (count <= 1) {
+				display_title = _("Ethernet");
+			}
+			else {
+				display_title = name;
+			}
 		}
 	}
 }
