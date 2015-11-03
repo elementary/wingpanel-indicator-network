@@ -18,6 +18,8 @@
 public class Network.Services.SettingsManager : Granite.Services.Settings {
 	private static SettingsManager? instance = null;
 
+	public string desktopmanager_user {protected set; get;}
+
 	public SettingsManager () {
 		base ("org.pantheon.desktop.wingpanel.indicators.network");
 	}

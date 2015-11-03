@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
 	<schema path="/org/pantheon/desktop/wingpanel/indicators/network/" id="org.pantheon.desktop.wingpanel.indicators.network" gettext-domain="network-indicator">
+    <key type="s" name="desktopmanager-user">
+      <default>'lightdm'</default>
+      <summary>Username of the user under which is launched the desktop manager.</summary>
+      <description>Note that, as this is a gsettings key, it must be changed in the
+	  appropriate user accounts. Setting it system wide is probably the best option.
+	  When the username matches, the indicator will not launch any external
+	  command (such as switchboard).</description>
+    </key>
 	</schema>
 </schemalist>

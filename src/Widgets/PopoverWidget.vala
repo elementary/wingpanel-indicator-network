@@ -28,6 +28,9 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 		connect_signals ();
 	}
 
+	bool is_dm () {
+		return Environment.get_user_name () == Services.SettingsManager.get_default ().desktopmanager_user;
+	}
 
 	protected override void build_ui () {
 		
@@ -35,8 +38,10 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
 		add (main_box);
 
-		show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
-		main_box.pack_end (show_settings_button);
+		if(!is_dm ()) {
+			show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
+			main_box.pack_end (show_settings_button);
+		}
 	}
 	
 	protected override void remove_interface (WidgetNMInterface widget_interface) {
@@ -48,8 +53,10 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 	}
 
 	protected override void add_interface (WidgetNMInterface widget_interface) {
-		widget_interface.sep = new Wingpanel.Widgets.Separator ();
-		main_box.pack_end (widget_interface.sep);
+		if (!is_dm () || main_box.get_children ().length () > 0) {
+			widget_interface.sep = new Wingpanel.Widgets.Separator ();
+			main_box.pack_end (widget_interface.sep);
+		}
 		main_box.pack_end (widget_interface);
 
 		widget_interface.need_settings.connect (show_settings);
@@ -60,16 +67,16 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 	}
 
 	void show_settings () {
-		try {
-			Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
-		}
-		catch (SpawnError e) {
-			critical ("Could not launch settings.");
-		}
-		//var cmd = new Granite.Services.SimpleCommand ("/usr/bin", SETTINGS_EXEC);
-		//cmd.run();
+		if (!is_dm ()) {
+			try {
+				Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
+			}
+			catch (SpawnError e) {
+				critical ("Could not launch settings.");
+			}
 
-		settings_shown ();
+			settings_shown ();
+		}
 	}
 
 
