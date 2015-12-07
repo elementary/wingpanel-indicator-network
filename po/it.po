@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-30 22:34+0100\n"
-"PO-Revision-Date: 2015-11-20 19:58+0000\n"
-"Last-Translator: Fabio Zaramella <FFabio.96.X@Gmail.com>\n"
+"PO-Revision-Date: 2015-12-06 08:38+0000\n"
+"Last-Translator: Alessandro <depasquale.a@tuta.io>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-21 05:37+0000\n"
-"X-Generator: Launchpad (build 17850)\n"
+"X-Launchpad-Export-Date: 2015-12-07 05:40+0000\n"
+"X-Generator: Launchpad (build 17862)\n"
 
 #: ../src/Indicator.vala:25
 msgid "Network"
@@ -22,7 +22,7 @@ msgstr "Indicatore di rete"
 
 #: ../src/Widgets/PopoverWidget.vala:38
 msgid "Network Settings…"
-msgstr "Impostazioni di rete ..."
+msgstr "Impostazioni di rete..."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:53
 msgid "No Access Points Available"
@@ -43,7 +43,7 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:78
 msgid "Scanning for Access Points..."
-msgstr "Ricerca di punti di accesso ..."
+msgstr "Ricerca di punti di accesso..."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:117
 msgid "Wi-Fi"
