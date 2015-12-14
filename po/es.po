@@ -3,18 +3,18 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-30 22:34+0100\n"
-"PO-Revision-Date: 2015-11-02 17:19+0000\n"
-"Last-Translator: Juan Mantilla <judamalo77@gmail.com>\n"
+"PO-Revision-Date: 2015-12-13 05:49+0000\n"
+"Last-Translator: Daniel Fore <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2015-11-04 06:18+0000\n"
-"X-Generator: Launchpad (build 17838)\n"
+"X-Launchpad-Export-Date: 2015-12-14 05:37+0000\n"
+"X-Generator: Launchpad (build 17865)\n"
 
 #: ../src/Indicator.vala:25
 msgid "Network"
-msgstr ""
+msgstr "Red"
 
 #: ../src/Indicator.vala:26
 msgid "Network indicator"
@@ -46,7 +46,7 @@ msgstr "Buscando puntos de acceso"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:117
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:25
 msgid "Virtual network: %s"
@@ -66,16 +66,16 @@ msgstr ""
 
 #: ../src/common/Widgets/WifiMenuItem.vala:125
 msgid "This network uses 40/64-bit WEP encryption."
-msgstr ""
+msgstr "Esta red usa cifrado WEP de 40/64-bit"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses 104/128-bit WEP encryption."
-msgstr ""
+msgstr "Esta red usa cifrado WEP de 104/128-bit"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses WPA encryption."
-msgstr ""
+msgstr "Esta red usa cifrado WPA"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:131
 msgid "This network uses encryption."
-msgstr ""
+msgstr "Esta red usa cifrado"
