@@ -80,9 +80,15 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 
 	private void device_added_cb (NM.Device device) {
 		WidgetNMInterface? widget_interface = null;
+#if PLUG_NETWORK
+		WidgetNMInterface? hotspot_interface = null;
+#endif
 
 		if (device is NM.DeviceWifi) {
 			widget_interface = new WifiInterface (nm_client, nm_settings, device);
+#if PLUG_NETWORK
+			hotspot_interface = new HotspotInterface((WifiInterface)widget_interface);
+#endif
 
 			debug ("Wifi interface added");
 		} else if (device is NM.DeviceEthernet) {
@@ -99,6 +105,16 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 			widget_interface.notify["state"].connect(update_state);
 
 		}
+
+#if PLUG_NETWORK
+		if (hotspot_interface != null) {
+			// Implementation call
+			network_interface.append (hotspot_interface);
+			add_interface(hotspot_interface);
+			hotspot_interface.notify["state"].connect(update_state);
+
+		}
+#endif
 			
 		update_interfaces_names ();
 

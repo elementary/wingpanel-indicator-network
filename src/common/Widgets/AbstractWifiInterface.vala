@@ -17,13 +17,13 @@
 
 public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface {
 	protected RFKillManager rfkill;
-	protected NM.DeviceWifi? wifi_device;
+	public NM.DeviceWifi? wifi_device;
 	protected NM.AccessPoint? active_ap;
 	
 	protected Gtk.ListBox wifi_list;
 
 	protected NM.Client nm_client;
-	protected NM.RemoteSettings nm_settings;
+	public NM.RemoteSettings nm_settings;
 	
 	protected WifiMenuItem? active_wifi_item { get; set; }
 	protected WifiMenuItem? blank_item = null;
@@ -39,35 +39,13 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		this.nm_client = nm_client;
 		this.nm_settings = nm_settings;
 		device = _device;
-		wifi_device = device as NM.DeviceWifi;
+		wifi_device = (NM.DeviceWifi)device;
 		blank_item = new WifiMenuItem.blank ();
 		active_wifi_item = null;
-
-		/* Monitor killswitch status */
-		rfkill = new RFKillManager ();
-		rfkill.open ();
-		rfkill.device_added.connect (update);
-		rfkill.device_changed.connect (update);
-		rfkill.device_deleted.connect (update);
-
-		wifi_device.notify["active-access-point"].connect (() => { update (); });
-		wifi_device.access_point_added.connect (access_point_added_cb);
-		wifi_device.access_point_removed.connect (access_point_removed_cb);
-		wifi_device.state_changed.connect (update);
-
-		var aps = wifi_device.get_access_points ();
-		aps.foreach (access_point_added_cb);
-
-		update ();
-	}
-
-	construct {
-		placeholder = new Gtk.Stack ();
-		placeholder.visible = true;
-
+		
 		var no_aps_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
 		no_aps_box.visible = true;
-		no_aps_box.valign = Gtk.Align.CENTER;
+		no_aps_box.valign = Gtk.Align.CENTER; 
 
 		var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
 
@@ -79,7 +57,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 		var wireless_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 		wireless_off_box.visible = true;
-		wireless_off_box.valign = Gtk.Align.CENTER;
+		wireless_off_box.valign = Gtk.Align.CENTER;		
 
 #if PLUG_NETWORK
 		var wireless_off = construct_placeholder_label (_("Wireless Is Disabled"), true);
@@ -92,19 +70,45 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		spinner.visible = true;
 		spinner.halign = spinner.valign = Gtk.Align.CENTER;
 		spinner.start ();
-
+		
 		var scanning_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-		var scanning = construct_placeholder_label (_("Scanning for Access Points…"), true);
-
+		var scanning = construct_placeholder_label (_("Scanning for Access Points..."), true);
+		
 		scanning_box.add (scanning);
 		scanning_box.add (spinner);
 		scanning_box.visible = true;
-		scanning_box.valign = Gtk.Align.CENTER;
-
+		scanning_box.valign = Gtk.Align.CENTER;		
+		
 		placeholder.add_named (no_aps_box, "no-aps");
 		placeholder.add_named (wireless_off_box, "wireless-off");
 		placeholder.add_named (scanning_box, "scanning");
 		placeholder.visible_child_name = "no-aps";
+
+		/* Monitor killswitch status */
+		rfkill = new RFKillManager ();
+		rfkill.open ();
+		rfkill.device_added.connect (update);
+		rfkill.device_changed.connect (update);
+		rfkill.device_deleted.connect (update);
+		
+		nm_settings.connections_read.connect (update);
+
+		wifi_device.notify["active-access-point"].connect (update);
+		wifi_device.access_point_added.connect (access_point_added_cb);
+		wifi_device.access_point_removed.connect (access_point_removed_cb);
+		wifi_device.state_changed.connect (update);
+		
+		var aps = wifi_device.get_access_points ();
+		if (aps != null && aps.length > 0) {
+			aps.foreach(access_point_added_cb);
+		}
+
+		update();
+	}
+
+	construct {
+		placeholder = new Gtk.Stack ();
+		placeholder.visible = true;
 
 		wifi_list = new Gtk.ListBox ();
 		wifi_list.set_sort_func (sort_func);
@@ -120,7 +124,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		}
 	}
 
-	Gtk.Label construct_placeholder_label (string text, bool title) {
+	protected Gtk.Label construct_placeholder_label (string text, bool title) {
 		var label = new Gtk.Label (text);
 		label.visible = true;
 		label.use_markup = true;
@@ -165,7 +169,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			item.user_action.connect (wifi_activate_cb);
 
 			wifi_list.add (item);
-
 			wifi_list.show_all ();
 
 			update ();
@@ -249,6 +252,13 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	}
 
 	public override void update () {
+#if PLUG_NETWORK
+		if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_settings)) {
+			state = State.DISCONNECTED;
+			return;
+		}
+#endif
+
 		switch (wifi_device.state) {
 		case NM.DeviceState.UNKNOWN:
 		case NM.DeviceState.UNMANAGED:
@@ -283,6 +293,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		
 		case NM.DeviceState.ACTIVATED:
 			set_scan_placeholder ();
+			
 			/* That can happen if active_ap has not been added yet, at startup. */
 			if (active_ap != null) {
 				state = strength_to_state(active_ap.get_strength());
@@ -306,6 +317,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			if (device.hardware_lock)
 				hardware_locked = true;
 		}
+
 		locked = hardware_locked || software_locked;
 
 		update_active_ap ();
@@ -327,6 +339,12 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			cancel_scan ();
 			wifi_device.request_scan_simple (null);
 			timeout_scan = Timeout.add(5000, () => {
+#if PLUG_NETWORK
+				if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_settings)) {
+					return false;
+				}
+#endif
+
 				timeout_scan = 0;
 				placeholder.visible_child_name = "no-aps";
 				return false;

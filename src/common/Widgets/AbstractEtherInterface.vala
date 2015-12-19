@@ -33,4 +33,38 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
 			}
 		}
 	}
+
+	public override void update () {
+		base.update ();
+		switch (device.state) {
+		/* physically not connected */
+		case NM.DeviceState.UNKNOWN:
+		case NM.DeviceState.UNMANAGED:
+		case NM.DeviceState.UNAVAILABLE:
+			state = State.DISCONNECTED_WIRED;
+			break;
+
+		/* virtually not working */
+		case NM.DeviceState.DISCONNECTED:
+		case NM.DeviceState.DEACTIVATING:
+		case NM.DeviceState.FAILED:
+			state = State.FAILED_WIRED;
+			break;
+
+		/* configuration */
+		case NM.DeviceState.PREPARE:
+		case NM.DeviceState.CONFIG:
+		case NM.DeviceState.NEED_AUTH:
+		case NM.DeviceState.IP_CONFIG:
+		case NM.DeviceState.IP_CHECK:
+		case NM.DeviceState.SECONDARIES:
+			state = State.CONNECTING_WIRED;
+			break;
+
+		/* working */
+		case NM.DeviceState.ACTIVATED:
+			state = State.CONNECTED_WIRED;
+			break;
+		}
+	}
 }
