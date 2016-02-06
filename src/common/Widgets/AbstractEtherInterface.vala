@@ -26,7 +26,7 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
 		}
 		else {
 			if (count <= 1) {
-				display_title = _("Ethernet");
+				display_title = _("Wired");
 			}
 			else {
 				display_title = name;
