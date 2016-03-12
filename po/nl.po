@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-06 20:09-0600\n"
-"PO-Revision-Date: 2015-09-05 19:19+0000\n"
-"Last-Translator: Philip Goto <philip.goto@live.nl>\n"
+"PO-Revision-Date: 2016-03-11 17:49+0000\n"
+"Last-Translator: kay van der Zander <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-02-08 05:39+0000\n"
-"X-Generator: Launchpad (build 17908)\n"
+"X-Launchpad-Export-Date: 2016-03-12 06:19+0000\n"
+"X-Generator: Launchpad (build 17939)\n"
 
 #: ../src/Indicator.vala:25
 msgid "Network"
@@ -26,19 +26,19 @@ msgstr "Netwerkinstellingen..."
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
-msgstr ""
+msgstr "Hotspot"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:26
 msgid "Hotspot %s"
-msgstr ""
+msgstr "Hotspot %s"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
-msgstr ""
+msgstr "Onbekend apparaat"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:56
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "Onbekend type: %s "
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
@@ -50,7 +50,7 @@ msgstr "Er bevinden zich geen draadloze toegangspunten binnen bereik."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr ""
+msgstr "Draadloos is uitgeschakeld"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
@@ -87,32 +87,32 @@ msgstr "Dit netwerk gebruikt encryptie."
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:25
 msgid "Virtual network: %s"
-msgstr ""
+msgstr "Virtueel netwerk: %s"
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:29
 msgid "Wired"
-msgstr ""
+msgstr "Bekabeld"
 
 #: ../src/common/Utils.vala:37
 msgid "Disconnected"
-msgstr ""
+msgstr "Niet verbonden"
 
 #: ../src/common/Utils.vala:44
 msgid "Connected"
-msgstr ""
+msgstr "Verbonden"
 
 #: ../src/common/Utils.vala:47
 msgid "Failed"
-msgstr ""
+msgstr "Mislukt"
 
 #: ../src/common/Utils.vala:50
 msgid "Connecting"
-msgstr ""
+msgstr "Verbinding maken"
 
 #: ../src/common/Utils.vala:52
 msgid "Cable unplugged"
-msgstr ""
+msgstr "Kabel niet verbonden"
 
 #: ../src/common/Utils.vala:54
 msgid "Unknown"
-msgstr ""
+msgstr "Onbekend"
