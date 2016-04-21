@@ -20,6 +20,9 @@ public class Network.Indicator : Wingpanel.Indicator {
 
 	Network.Widgets.PopoverWidget? popover_widget = null;
 
+	NetworkMonitor network_monitor;
+	bool captive_started = false;
+
 	public Indicator () {
 		Object (code_name: Wingpanel.Indicator.NETWORK,
 				display_name: _("Network"),
@@ -45,6 +48,7 @@ public class Network.Indicator : Wingpanel.Indicator {
 			popover_widget.settings_shown.connect (() => { close (); });
 
 			on_state_changed ();
+			start_monitor ();
 		}
 
 		return popover_widget;
@@ -56,6 +60,23 @@ public class Network.Indicator : Wingpanel.Indicator {
 
 		display_widget.update_state (popover_widget.state);
 	}
+
+    private void start_monitor () {
+        network_monitor = NetworkMonitor.get_default ();
+
+        network_monitor.network_changed.connect ((availabe) => {
+            if (!captive_started) {
+                if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
+                    var command = new Granite.Services.SimpleCommand ("/usr/bin/", "captive-login");
+                    command.done.connect (() => { captive_started = false; });
+
+                    captive_started = true;
+
+                    command.run ();
+                }
+            }
+        });
+    }
 
 	public override void opened () {
 		// TODO
