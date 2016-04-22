@@ -16,6 +16,7 @@
  */
 
 public class Network.WifiInterface : Network.AbstractWifiInterface {
+	public bool hidden_sensitivity { get; set; default = true; }
 	Wingpanel.Widgets.Switch wifi_item;
 	Gtk.Revealer revealer;
 	
@@ -48,7 +49,6 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 
 		revealer = new Gtk.Revealer ();
 		revealer.add (scrolled_box);
-
 		pack_start (revealer);
 	}
 
@@ -62,8 +62,10 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 
 		if (wifi_device.state == NM.DeviceState.UNAVAILABLE || state == Network.State.FAILED_WIFI) {
 			revealer.reveal_child = false;
+			hidden_sensitivity = false;
 		} else {
 			revealer.reveal_child = true;
+			hidden_sensitivity = true;
 		}
 	}
 	
@@ -115,5 +117,52 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 		Idle.add( () => { update (); return false; });
 	}
 
+	public void connect_to_hidden () {
+		var hidden_dialog = new NMAWifiDialog.for_other (nm_client, nm_settings);
+		hidden_dialog.response.connect ((response) => {
+			if (response == Gtk.ResponseType.OK) {
+				NM.Connection? fuzzy = null;
+				NM.Device dialog_device;
+				NM.AccessPoint? dialog_ap = null;
+				var dialog_connection = hidden_dialog.get_connection (out dialog_device, out dialog_ap);
+
+				foreach (var possible in nm_settings.list_connections ()) {
+					if (dialog_connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
+						fuzzy = possible;
+					}
+				}
+
+				string? path = null;
+				if (dialog_ap != null) {
+					path = dialog_ap.get_path ();
+				}
+
+				if (fuzzy != null) {
+					nm_client.activate_connection (fuzzy, wifi_device, path, null);
+				} else {
+					var connection_setting = dialog_connection.get_setting (typeof (NM.Setting));;
+
+					string? mode = null;
+					var setting_wireless = (NM.SettingWireless) dialog_connection.get_setting (typeof (NM.SettingWireless));
+					if (setting_wireless != null) {
+						mode = setting_wireless.get_mode ();
+					}
+
+					if (mode == "adhoc") {
+						if (connection_setting == null) {
+							connection_setting = new NM.SettingConnection ();
+						}
+
+						dialog_connection.add_setting (connection_setting);
+					}
+
+					nm_client.add_and_activate_connection (dialog_connection, dialog_device, path, null);
+				}
+			}
+		});
+
+		hidden_dialog.run ();
+		hidden_dialog.destroy ();
+	}
 }
 
