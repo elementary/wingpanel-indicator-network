@@ -2,15 +2,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-06 20:09-0600\n"
+"POT-Creation-Date: 2016-04-22 02:56+0200\n"
 "PO-Revision-Date: 2015-09-13 14:24+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-02-08 05:39+0000\n"
-"X-Generator: Launchpad (build 17908)\n"
+"X-Launchpad-Export-Date: 2016-04-22 05:47+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
+
+#: ../src/Widgets/PopoverWidget.vala:52
+msgid "Network Settings…"
+msgstr "網路設定值…"
+
+#: ../src/Widgets/PopoverWidget.vala:55
+msgid "Connect to Hidden Network…"
+msgstr ""
 
 #: ../src/Indicator.vala:25
 msgid "Network"
@@ -20,24 +28,12 @@ msgstr "網路"
 msgid "Network indicator"
 msgstr "網路指示器"
 
-#: ../src/Widgets/PopoverWidget.vala:42
-msgid "Network Settings…"
-msgstr "網路設定值…"
-
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
 msgstr ""
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:26
 msgid "Hotspot %s"
-msgstr ""
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
-msgid "Unknown device"
-msgstr ""
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
-msgid "Unknown type: %s "
 msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
@@ -57,12 +53,20 @@ msgid "Enable wireless to discover nearby wireless access points."
 msgstr "啟用無線網路來探查附近的無線網路存取點。"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
-msgid "Scanning for Access Points..."
-msgstr "正在掃描存取點…"
+msgid "Scanning for Access Points…"
+msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
-msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgid "Wireless"
+msgstr ""
+
+#: ../src/common/Widgets/AbstractEtherInterface.vala:25
+msgid "Virtual network: %s"
+msgstr ""
+
+#: ../src/common/Widgets/AbstractEtherInterface.vala:29
+msgid "Wired"
+msgstr ""
 
 #: ../src/common/Widgets/WifiMenuItem.vala:77
 msgid "This wireless network could not be connected to."
@@ -84,12 +88,12 @@ msgstr "這個網路使用 WPA 加密。"
 msgid "This network uses encryption."
 msgstr "這個網路有加密。"
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
-msgid "Virtual network: %s"
+#: ../src/common/Widgets/WidgetNMInterface.vala:26
+msgid "Unknown device"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:29
-msgid "Wired"
+#: ../src/common/Widgets/WidgetNMInterface.vala:56
+msgid "Unknown type: %s "
 msgstr ""
 
 #: ../src/common/Utils.vala:37
@@ -115,3 +119,9 @@ msgstr ""
 #: ../src/common/Utils.vala:54
 msgid "Unknown"
 msgstr ""
+
+#~ msgid "Scanning for Access Points..."
+#~ msgstr "正在掃描存取點…"
+
+#~ msgid "Wi-Fi"
+#~ msgstr "Wi-Fi"
