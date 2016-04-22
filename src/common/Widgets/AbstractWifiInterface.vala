@@ -72,7 +72,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		spinner.start ();
 		
 		var scanning_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-		var scanning = construct_placeholder_label (_("Scanning for Access Points..."), true);
+		var scanning = construct_placeholder_label (_("Scanning for Access Points…"), true);
 		
 		scanning_box.add (scanning);
 		scanning_box.add (spinner);
