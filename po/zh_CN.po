@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-22 02:56+0200\n"
-"PO-Revision-Date: 2016-02-18 00:43+0000\n"
+"PO-Revision-Date: 2016-04-24 00:47+0000\n"
 "Last-Translator: colindemian <dengmengpc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-04-23 05:40+0000\n"
+"X-Launchpad-Export-Date: 2016-04-24 06:10+0000\n"
 "X-Generator: Launchpad (build 17995)\n"
 
 #: ../src/Widgets/PopoverWidget.vala:52
@@ -18,7 +18,7 @@ msgstr "网络设置..."
 
 #: ../src/Widgets/PopoverWidget.vala:55
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "连接到隐藏网络..."
 
 #: ../src/Indicator.vala:25
 msgid "Network"
@@ -54,11 +54,11 @@ msgstr "启用无线网络来发现附近的无线接入点。"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "正在扫描接入点..."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
-msgstr ""
+msgstr "无线"
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:25
 msgid "Virtual network: %s"
