@@ -73,7 +73,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                             captive_started = false;
                         });
 
-                        var appinfo = AppInfo.create_from_commandline ("bluetooth-wizard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+                        var appinfo = AppInfo.create_from_commandline ("captive-login", null, AppInfoCreateFlags.SUPPORTS_URIS);
                         appinfo.launch (null, context);
                         captive_started = true;
                     } catch (Error e) {
