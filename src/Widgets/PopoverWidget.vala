@@ -106,15 +106,15 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
 	void show_settings () {
 		if (!is_dm ()) {
-	        var list = new List<string> ();
-	        list.append ("network");
+			var list = new List<string> ();
+			list.append ("network");
 
-	        try {
-	            var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
-	            appinfo.launch_uris (list, null);
-	        } catch (Error e) {
-	            warning ("%s\n", e.message);
-	        }
+			try {
+				var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+				appinfo.launch_uris (list, null);
+			} catch (Error e) {
+				warning ("%s\n", e.message);
+			}
 
 			settings_shown ();
 		}
