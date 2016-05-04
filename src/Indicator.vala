@@ -67,12 +67,18 @@ public class Network.Indicator : Wingpanel.Indicator {
         network_monitor.network_changed.connect ((availabe) => {
             if (!captive_started) {
                 if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
-                    var command = new Granite.Services.SimpleCommand ("/usr/bin/", "captive-login");
-                    command.done.connect (() => { captive_started = false; });
+                    try {
+                        var context = new AppLaunchContext ();
+                        context.launched.connect (() => {
+                            captive_started = false;
+                        });
 
-                    captive_started = true;
-
-                    command.run ();
+                        var appinfo = AppInfo.create_from_commandline ("bluetooth-wizard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+                        appinfo.launch (null, context);
+                        captive_started = true;
+                    } catch (Error e) {
+                        warning ("%s\n", e.message);
+                    }
                 }
             }
         });
