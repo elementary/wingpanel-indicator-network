@@ -21,8 +21,6 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 	Gtk.Box wifi_box;
 	Gtk.Box settings_box;
 	
-	private const string SETTINGS_EXEC = "/usr/bin/switchboard -o pantheon-network";
-
 	private Wingpanel.Widgets.Button show_settings_button;
 	private Wingpanel.Widgets.Button hidden_item;
 
@@ -108,16 +106,17 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
 	void show_settings () {
 		if (!is_dm ()) {
-			try {
-				Process.spawn_async(null, (SETTINGS_EXEC).split(" "), null, 0, null, null);
-			}
-			catch (SpawnError e) {
-				critical ("Could not launch settings.");
-			}
+	        var list = new List<string> ();
+	        list.append ("network");
+
+	        try {
+	            var appinfo = AppInfo.create_from_commandline ("switchboard", null, AppInfoCreateFlags.SUPPORTS_URIS);
+	            appinfo.launch_uris (list, null);
+	        } catch (Error e) {
+	            warning ("%s\n", e.message);
+	        }
 
 			settings_shown ();
 		}
 	}
-
-
 }
