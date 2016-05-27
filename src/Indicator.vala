@@ -22,11 +22,13 @@ public class Network.Indicator : Wingpanel.Indicator {
 
 	NetworkMonitor network_monitor;
 	bool captive_started = false;
+	bool is_in_session = false;
 
-	public Indicator () {
+	public Indicator (bool is_in_session) {
 		Object (code_name: Wingpanel.Indicator.NETWORK,
 				display_name: _("Network"),
 				description:_("Network indicator"));
+		this.is_in_session = is_in_session;
 	}
 
 	public override Gtk.Widget get_display_widget () {
@@ -65,7 +67,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         network_monitor = NetworkMonitor.get_default ();
 
         network_monitor.network_changed.connect ((availabe) => {
-            if (!captive_started) {
+            if (is_in_session && !captive_started) {
                 if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
                     var command = new Granite.Services.SimpleCommand ("/usr/bin/", "captive-login");
                     command.done.connect (() => { captive_started = false; });
@@ -88,8 +90,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
 }
 
-public Wingpanel.Indicator get_indicator (Module module) {
+public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
 	debug ("Activating Power Indicator");
-	var indicator = new Network.Indicator ();
+	var indicator = new Network.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
 	return indicator;
 }
