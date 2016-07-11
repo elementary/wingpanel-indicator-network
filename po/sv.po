@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-04-30 23:54-0500\n"
-"PO-Revision-Date: 2016-06-27 19:07+0000\n"
+"PO-Revision-Date: 2016-07-10 15:17+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-06-28 06:10+0000\n"
+"X-Launchpad-Export-Date: 2016-07-11 05:39+0000\n"
 "X-Generator: Launchpad (build 18115)\n"
 
 #: ../src/Indicator.vala:28
@@ -18,7 +18,7 @@ msgstr "Nätverk"
 
 #: ../src/Indicator.vala:29
 msgid "Network indicator"
-msgstr ""
+msgstr "Nätverksindikator"
 
 #: ../src/Widgets/PopoverWidget.vala:52
 msgid "Network Settings…"
@@ -38,15 +38,15 @@ msgstr "Surfzon %s"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
-msgstr ""
+msgstr "Okänd enhet"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:56
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "Okänd typ: %s "
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
-msgstr ""
+msgstr "Inga åtkomstpunkter tillgängliga"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:54
 msgid "There are no wireless access points within range."
@@ -54,47 +54,48 @@ msgstr "Det finns inga trådlösa accesspunkter inom räckhåll."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr ""
+msgstr "Tråslöst är inaktiverat"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
 msgstr ""
+"Aktivera trådlöst för att upptäcka närliggande trådlösa åtkomstpunkter."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "Söker efter åtkomstpunkter…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
-msgstr ""
+msgstr "Trådlöst"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:77
 msgid "This wireless network could not be connected to."
-msgstr ""
+msgstr "Kunde inte ansluta till detta trådlösa nätverk."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:125
 msgid "This network uses 40/64-bit WEP encryption."
-msgstr ""
+msgstr "Detta nätverk använder 40/60-bitars WEP-kryptering."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses 104/128-bit WEP encryption."
-msgstr ""
+msgstr "Detta nätverk använder 104/128-bitars WEP-kryptering."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses WPA encryption."
-msgstr ""
+msgstr "Detta nätverk använder WPA-kryptering."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:131
 msgid "This network uses encryption."
-msgstr ""
+msgstr "Detta nätverk använder kryptering."
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:25
 msgid "Virtual network: %s"
-msgstr ""
+msgstr "Virtuellt nätverk: %s"
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:29
 msgid "Wired"
-msgstr ""
+msgstr "Trådbundet"
 
 #: ../src/common/Utils.vala:37
 msgid "Disconnected"
@@ -106,7 +107,7 @@ msgstr "Ansluten"
 
 #: ../src/common/Utils.vala:47
 msgid "Failed"
-msgstr ""
+msgstr "Misslyckades"
 
 #: ../src/common/Utils.vala:50
 msgid "Connecting"
@@ -114,7 +115,7 @@ msgstr "Ansluter"
 
 #: ../src/common/Utils.vala:52
 msgid "Cable unplugged"
-msgstr ""
+msgstr "Kabeln är frånkopplad"
 
 #: ../src/common/Utils.vala:54
 msgid "Unknown"
