@@ -79,6 +79,11 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 	}
 
 	private void device_added_cb (NM.Device device) {
+		if (device.get_iface ().has_prefix ("vmnet") ||
+			device.get_iface ().has_prefix ("lo")) {
+			return;
+		}
+
 		WidgetNMInterface? widget_interface = null;
 #if PLUG_NETWORK
 		WidgetNMInterface? hotspot_interface = null;
@@ -117,11 +122,8 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 #endif
 			
 		update_interfaces_names ();
-
-
-		update_all();
-
-		show_all();
+		update_all ();
+		show_all ();
 	}
 
 	void update_all () {
