@@ -69,12 +69,12 @@ public class Network.Indicator : Wingpanel.Indicator {
         network_monitor.network_changed.connect ((availabe) => {
             if (is_in_session && !captive_started) {
                 if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
-                    var command = new Granite.Services.SimpleCommand ("/usr/bin/", "captive-login");
-                    command.done.connect (() => { captive_started = false; });
-
-                    captive_started = true;
-
-                    command.run ();  
+                    try {
+                        var appinfo = AppInfo.create_from_commandline ("captive-login", null, AppInfoCreateFlags.NONE);
+                        appinfo.launch (null, null);
+                    } catch (Error e) {
+                        warning ("%s\n", e.message);
+                    }
                 }
             }
         });
