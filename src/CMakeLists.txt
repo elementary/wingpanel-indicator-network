@@ -16,7 +16,6 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Indicator.vala
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
-  Widgets/AutomaticScrollBox.vala
   Widgets/EtherInterface.vala
   Widgets/WifiInterface.vala
   common/Utils.vala
