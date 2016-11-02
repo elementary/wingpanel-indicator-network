@@ -43,7 +43,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
 		wifi_item.get_style_context ().add_class ("h4");
 		pack_start (wifi_item);
 
-		var scrolled_box = new AutomaticScrollBox (null, null);
+		var scrolled_box = new Wingpanel.Widgets.AutomaticScrollBox (null, null);
 		scrolled_box.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
 		scrolled_box.add_with_viewport (wifi_list);
 
