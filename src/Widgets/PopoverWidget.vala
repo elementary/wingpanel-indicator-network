@@ -31,9 +31,6 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
         return Environment.get_user_name () == Services.SettingsManager.get_default ().desktopmanager_user;
     }
 
-    public PopoverWidget () {
-    }
-
     construct {
         show_settings_button.clicked.connect (show_settings);
 
