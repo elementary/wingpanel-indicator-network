@@ -18,18 +18,18 @@
 
 public class Network.Indicator : Wingpanel.Indicator {
     Network.Widgets.DisplayWidget? display_widget = null;
-
     Network.Widgets.PopoverWidget? popover_widget = null;
 
     NetworkMonitor network_monitor;
     bool captive_started = false;
-    bool is_in_session = false;
+
+    public bool is_in_session { get; set; default = false; }
 
     public Indicator (bool is_in_session) {
         Object (code_name: Wingpanel.Indicator.NETWORK,
                 display_name: _("Network"),
-                description:_("Network indicator"));
-        this.is_in_session = is_in_session;
+                description: _("Network indicator"),
+                is_in_session: is_in_session);
     }
 
     public override Gtk.Widget get_display_widget () {
@@ -37,7 +37,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             display_widget = new Widgets.DisplayWidget ();
         }
 
-        this.visible = true;
+        visible = true;
 
         return display_widget;
     }
@@ -45,9 +45,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     public override Gtk.Widget? get_widget () {
         if (popover_widget == null) {
             popover_widget = new Widgets.PopoverWidget ();
-
-            popover_widget.notify["state"].connect(on_state_changed);
-
+            popover_widget.notify["state"].connect (on_state_changed);
             popover_widget.settings_shown.connect (() => { close (); });
 
             on_state_changed ();
@@ -58,8 +56,8 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     void on_state_changed () {
-        assert(popover_widget != null);
-        assert(display_widget != null);
+        assert (popover_widget != null);
+        assert (display_widget != null);
 
         display_widget.update_state (popover_widget.state);
     }
@@ -88,11 +86,10 @@ public class Network.Indicator : Wingpanel.Indicator {
     public override void closed () {
         // TODO
     }
-
 }
 
 public Wingpanel.Indicator get_indicator (Module module, Wingpanel.IndicatorManager.ServerType server_type) {
-    debug ("Activating Power Indicator");
+    debug ("Activating Network Indicator");
     var indicator = new Network.Indicator (server_type == Wingpanel.IndicatorManager.ServerType.SESSION);
     return indicator;
 }

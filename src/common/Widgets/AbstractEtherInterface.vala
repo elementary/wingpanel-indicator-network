@@ -23,12 +23,10 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
 		/* At least for docker related interfaces, which can be fairly common */
 		if (name.has_prefix ("veth")) {
 			display_title = _("Virtual network: %s").printf(name);
-		}
-		else {
+		} else {
 			if (count <= 1) {
 				display_title = _("Wired");
-			}
-			else {
+			} else {
 				display_title = name;
 			}
 		}
