@@ -32,6 +32,9 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     }
 
     public PopoverWidget () {
+    }
+
+    construct {
         show_settings_button.clicked.connect (show_settings);
 
         hidden_item.clicked.connect (() => {
