@@ -66,8 +66,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
 			var type = iface.get_type ().name ();
 			if (count_type.has_key (type)) {
 				count_type[type] = count_type[type] + 1;
-			}
-			else {
+			} else {
 				count_type[type] = 1;
 			}
 		}

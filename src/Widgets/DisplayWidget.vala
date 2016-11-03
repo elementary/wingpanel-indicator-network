@@ -19,21 +19,19 @@
 public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
 
+    uint animation_timeout;
+    int animation_state = 0;
+
     public DisplayWidget () {
         Object (orientation: Gtk.Orientation.HORIZONTAL);
-
-        build_ui ();
     }
 
-    private void build_ui () {
+    construct {
         image = new Gtk.Image ();
         image.icon_name = "network-wired-symbolic";
 
-        this.pack_start (image);
+        pack_start (image);
     }
-
-    uint animation_timeout;
-    int animation_state = 0;
 
     public void update_state (Network.State state) {
 
@@ -41,7 +39,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             Source.remove (animation_timeout);
             animation_timeout = 0;
         }
-
 
         switch (state) {
         case Network.State.CONNECTING_WIRED:

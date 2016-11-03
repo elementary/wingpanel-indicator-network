@@ -21,8 +21,7 @@ public abstract class Network.AbstractHotspotInterface : Network.WidgetNMInterfa
 	public override void update_name (int count) {
 		if (count <= 1) {
 			display_title = _("Hotspot");
-		}
-		else {
+		} else {
 			display_title = _("Hotspot %s").printf (device.get_description ());
 		}
 	}
@@ -31,8 +30,7 @@ public abstract class Network.AbstractHotspotInterface : Network.WidgetNMInterfa
 #if PLUG_NETWORK
 		if (Utils.Hotspot.get_device_is_hotspot (root_iface.wifi_device, root_iface.nm_settings)) {
 			state = State.CONNECTED_WIFI;
-		}
-		else {
+		} else {
 			state = State.DISCONNECTED;
 		}
 #endif

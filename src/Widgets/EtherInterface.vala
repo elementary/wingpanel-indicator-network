@@ -19,31 +19,29 @@
 public class Network.EtherInterface : Network.AbstractEtherInterface {
     private Wingpanel.Widgets.Switch ethernet_item;
 
-    public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
-        device = _device;
+    public EtherInterface(NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? device) {
         ethernet_item = new Wingpanel.Widgets.Switch (display_title);
 
-        notify["display-title"].connect ( () => {
+        notify["display-title"].connect (() => {
             ethernet_item.set_caption (display_title);
         });
 
         ethernet_item.get_style_context ().add_class ("h4");
         ethernet_item.switched.connect( () => {
             debug("update");
-            if(ethernet_item.get_active()) {
+            if (ethernet_item.get_active()) {
                 device.set_autoconnect(true);
-            }
-            else {
+            } else {
                 device.disconnect(() => { debug("Successfully disconnected."); });
             }
         });
+
         add (ethernet_item);
 
         device.state_changed.connect (() => { update (); });
     }
 
     public override void update () {
-
         switch (device.get_state ()) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:
@@ -83,5 +81,4 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
             break;
         }
     }
-
 }

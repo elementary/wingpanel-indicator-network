@@ -27,27 +27,37 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
     public signal void settings_shown ();
 
-    public PopoverWidget () {
-        connect_signals ();
-    }
-
     bool is_dm () {
         return Environment.get_user_name () == Services.SettingsManager.get_default ().desktopmanager_user;
     }
 
-    protected override void build_ui () {
+    public PopoverWidget () {
+        show_settings_button.clicked.connect (show_settings);
 
-        main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        hidden_item.clicked.connect (() => {
+            bool found = false;
+            wifi_box.get_children ().foreach ((child) => {
+                if (child is Network.WifiInterface && ((Network.WifiInterface) child).hidden_sensitivity && !found) {
+                    ((Network.WifiInterface) child).connect_to_hidden ();
+                    found = true;
+                }
+            });
+        });
+    }
+
+    protected override void build_ui () {
         other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         settings_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+
+        main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         main_box.add (other_box);
         main_box.add (wifi_box);
         main_box.add (settings_box);
 
         add (main_box);
 
-        if(!is_dm ()) {
+        if (!is_dm ()) {
             show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
             settings_box.pack_end (show_settings_button);
 
@@ -67,12 +77,15 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
     protected override void add_interface (WidgetNMInterface widget_interface) {
         Gtk.Box container_box = other_box;
+
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
             hidden_item.no_show_all = false;
             hidden_item.show_all ();
+
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
+
                 wifi_box.get_children ().foreach ((child) => {
                     if (child is Network.WifiInterface) {
                         hidden_sensitivity = hidden_sensitivity || ((Network.WifiInterface) child).hidden_sensitivity;
@@ -87,22 +100,10 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
             widget_interface.sep = new Wingpanel.Widgets.Separator ();
             container_box.pack_end (widget_interface.sep);
         }
+
         container_box.pack_end (widget_interface);
 
         widget_interface.need_settings.connect (show_settings);
-    }
-
-    void connect_signals () {
-        show_settings_button.clicked.connect (show_settings);
-        hidden_item.clicked.connect (() => {
-            bool found = false;
-            wifi_box.get_children ().foreach ((child) => {
-                if (child is Network.WifiInterface && ((Network.WifiInterface) child).hidden_sensitivity && !found) {
-                    ((Network.WifiInterface) child).connect_to_hidden ();
-                    found = true;
-                }
-            });
-        });
     }
 
     void show_settings () {
