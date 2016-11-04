@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public abstract class Network.Widgets.NMVisualizer : Gtk.Box {
+public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 	protected NM.Client nm_client;
 	protected NM.RemoteSettings nm_settings;
 

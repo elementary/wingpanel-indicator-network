@@ -17,11 +17,8 @@
 */
 
 public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
-    Gtk.Box main_box;
-    Gtk.Box other_box;
-    Gtk.Box wifi_box;
-    Gtk.Box settings_box;
-
+    private Gtk.Box other_box;
+    private Gtk.Box wifi_box;
     private Wingpanel.Widgets.Button show_settings_button;
     private Wingpanel.Widgets.Button hidden_item;
 
@@ -46,24 +43,21 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     }
 
     protected override void build_ui () {
+        orientation = Gtk.Orientation.VERTICAL;
+
         other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        settings_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-
-        main_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        main_box.add (other_box);
-        main_box.add (wifi_box);
-        main_box.add (settings_box);
-
-        add (main_box);
+        add (other_box);
+        add (wifi_box);
 
         if (!is_dm ()) {
-            show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
-            settings_box.pack_end (show_settings_button);
-
             hidden_item = new Wingpanel.Widgets.Button (_("Connect to Hidden Network…"));
             hidden_item.no_show_all = true;
-            settings_box.pack_start (hidden_item);
+
+            show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
+
+            add (hidden_item);
+            add (show_settings_button);
         }
     }
 
@@ -96,7 +90,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
             });
         }
 
-        if (!is_dm () || main_box.get_children ().length () > 0) {
+        if (!is_dm () || this.get_children ().length () > 0) {
             widget_interface.sep = new Wingpanel.Widgets.Separator ();
             container_box.pack_end (widget_interface.sep);
         }
