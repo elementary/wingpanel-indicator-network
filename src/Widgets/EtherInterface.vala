@@ -19,7 +19,8 @@
 public class Network.EtherInterface : Network.AbstractEtherInterface {
     private Wingpanel.Widgets.Switch ethernet_item;
 
-    public EtherInterface (NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? device) {
+    public EtherInterface (NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
+        device = _device;
         ethernet_item = new Wingpanel.Widgets.Switch (display_title);
 
         notify["display-title"].connect (() => {
