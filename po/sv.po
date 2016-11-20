@@ -2,37 +2,37 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-30 23:54-0500\n"
+"POT-Creation-Date: 2016-11-19 11:51-0600\n"
 "PO-Revision-Date: 2016-07-20 14:00+0000\n"
 "Last-Translator: Mikael Nyberg <mikanybe@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-11-11 06:44+0000\n"
-"X-Generator: Launchpad (build 18255)\n"
+"X-Launchpad-Export-Date: 2016-11-20 06:32+0000\n"
+"X-Generator: Launchpad (build 18269)\n"
 
-#: ../src/Indicator.vala:28
+#: ../src/Indicator.vala:30
 msgid "Network"
 msgstr "Nätverk"
 
-#: ../src/Indicator.vala:29
+#: ../src/Indicator.vala:31
 msgid "Network indicator"
 msgstr "Nätverksindikator"
 
-#: ../src/Widgets/PopoverWidget.vala:52
-msgid "Network Settings…"
-msgstr "Nätverksinställningar…"
-
-#: ../src/Widgets/PopoverWidget.vala:55
+#: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
 msgstr "Anslut till dolt nätverk…"
+
+#: ../src/Widgets/PopoverWidget.vala:57
+msgid "Network Settings…"
+msgstr "Nätverksinställningar…"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
 msgstr "Surfzon"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:26
+#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
 msgid "Hotspot %s"
 msgstr "Surfzon %s"
 
@@ -69,23 +69,23 @@ msgstr "Söker efter åtkomstpunkter…"
 msgid "Wireless"
 msgstr "Trådlöst"
 
-#: ../src/common/Widgets/WifiMenuItem.vala:77
+#: ../src/common/Widgets/WifiMenuItem.vala:74
 msgid "This wireless network could not be connected to."
 msgstr "Kunde inte ansluta till detta trådlösa nätverk."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:125
+#: ../src/common/Widgets/WifiMenuItem.vala:123
 msgid "This network uses 40/64-bit WEP encryption."
 msgstr "Detta nätverk använder 40/60-bitars WEP-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:127
+#: ../src/common/Widgets/WifiMenuItem.vala:125
 msgid "This network uses 104/128-bit WEP encryption."
 msgstr "Detta nätverk använder 104/128-bitars WEP-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:129
+#: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses WPA encryption."
 msgstr "Detta nätverk använder WPA-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:131
+#: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses encryption."
 msgstr "Detta nätverk använder kryptering."
 
@@ -93,30 +93,30 @@ msgstr "Detta nätverk använder kryptering."
 msgid "Virtual network: %s"
 msgstr "Virtuellt nätverk: %s"
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:29
+#: ../src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Trådbundet"
 
-#: ../src/common/Utils.vala:37
+#: ../src/common/Utils.vala:38
 msgid "Disconnected"
 msgstr "Frånkopplad"
 
-#: ../src/common/Utils.vala:44
+#: ../src/common/Utils.vala:45
 msgid "Connected"
 msgstr "Ansluten"
 
-#: ../src/common/Utils.vala:47
+#: ../src/common/Utils.vala:48
 msgid "Failed"
 msgstr "Misslyckades"
 
-#: ../src/common/Utils.vala:50
+#: ../src/common/Utils.vala:51
 msgid "Connecting"
 msgstr "Ansluter"
 
-#: ../src/common/Utils.vala:52
+#: ../src/common/Utils.vala:53
 msgid "Cable unplugged"
 msgstr "Kabeln är frånkopplad"
 
-#: ../src/common/Utils.vala:54
+#: ../src/common/Utils.vala:55
 msgid "Unknown"
 msgstr "Okänt"
