@@ -33,8 +33,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         pack_start (image);
     }
 
-    public void update_state (Network.State state) {
-
+    public void update_state (Network.State state, bool secure) {
         if (animation_timeout > 0) {
             Source.remove (animation_timeout);
             animation_timeout = 0;
@@ -45,22 +44,22 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             image.icon_name = "network-wired-acquiring-symbolic";
             break;
         case Network.State.CONNECTED_WIRED:
-            image.icon_name = "network-wired-symbolic";
+            image.icon_name = "network-wired-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_WIFI:
             image.icon_name = "network-wireless-connected-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_WEAK:
-            image.icon_name = "network-wireless-signal-weak-symbolic";
+            image.icon_name = "network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_WIFI_OK:
-            image.icon_name = "network-wireless-signal-ok-symbolic";
+            image.icon_name = "network-wireless-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_WIFI_GOOD:
-            image.icon_name = "network-wireless-signal-good-symbolic";
+            image.icon_name = "network-wireless-signal-good-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_WIFI_EXCELLENT:
-            image.icon_name = "network-wireless-signal-excellent-symbolic";
+            image.icon_name = "network-wireless-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTING_WIFI:
             animation_timeout = Timeout.add (300, () => {
@@ -80,7 +79,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     strength = "excellent";
                     break;
                 }
-                image.icon_name = "network-wireless-signal-" + strength + "-symbolic";
+                image.icon_name = "network-wireless-signal-" + strength + (secure? "-secure" : "") + "-symbolic";
                 return true;
             });
             break;
