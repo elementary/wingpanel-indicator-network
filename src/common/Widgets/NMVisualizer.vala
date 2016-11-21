@@ -18,28 +18,33 @@
 public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 	protected NM.Client nm_client;
 	protected NM.RemoteSettings nm_settings;
+	protected NM.VPNConnection? active_vpn_connection = null;
 
 	protected GLib.List<WidgetNMInterface>? network_interface;
 
+	public bool secure { private set; get; default = false; }
 	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
 	construct {
 		network_interface = new GLib.List<WidgetNMInterface>();
 
 		build_ui ();
-		
+
 		/* Monitor network manager */
 		nm_client = new NM.Client ();
 		nm_settings = new NM.RemoteSettings (null);
 
+		nm_client.notify["active-connections"].connect (update_vpn_connection);
+
 		nm_client.device_added.connect (device_added_cb);
 		nm_client.device_removed.connect (device_removed_cb);
-		
+
 		var devices = nm_client.get_devices ();
 		for (var i = 0; i < devices.length; i++)
 			device_added_cb (devices.get (i));
-		
+
 		show_all();
+		update_vpn_connection ();
 	}
 
 	protected abstract void build_ui ();
@@ -50,13 +55,13 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 		foreach (var widget_interface in network_interface) {
 			if (widget_interface.is_device (device)) {
 				network_interface.remove (widget_interface);
-		
+
 				// Implementation call
 				remove_interface (widget_interface);
 				break;
 			}
 		}
-		
+
 		update_interfaces_names ();
 	}
 
@@ -119,7 +124,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
 		}
 #endif
-			
+
 		update_interfaces_names ();
 		update_all ();
 		show_all ();
@@ -142,4 +147,32 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 		state = next_state;
 	}
 
+	void update_vpn_connection () {
+		active_vpn_connection = null;
+
+		nm_client.get_active_connections ().foreach ((ac) => {
+			if (active_vpn_connection == null && ac.get_vpn ()) {
+				active_vpn_connection = (NM.VPNConnection) ac;
+				update_vpn_state (active_vpn_connection.get_vpn_state ());
+				active_vpn_connection.vpn_state_changed.connect (() => {
+					update_vpn_state (active_vpn_connection.get_vpn_state ());
+				});
+			}
+		});
+	}
+
+	void update_vpn_state (NM.VPNConnectionState state) {
+		switch (state) {
+			case NM.VPNConnectionState.DISCONNECTED:
+			case NM.VPNConnectionState.PREPARE:
+			case NM.VPNConnectionState.IP_CONFIG_GET:
+			case NM.VPNConnectionState.CONNECT:
+			case NM.VPNConnectionState.FAILED:
+				secure = false;
+				break;
+			case NM.VPNConnectionState.ACTIVATED:
+				secure = true;
+				break;
+		}
+	}
 }
