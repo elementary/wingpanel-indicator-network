@@ -56,12 +56,12 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         case NM.DeviceState.UNAVAILABLE:
             ethernet_item.sensitive = false;
             ethernet_item.set_active (false);
-            state = State.DISCONNECTED;
+            state = State.WIRED_UNPLUGGED;
             break;
         case NM.DeviceState.DISCONNECTED:
             ethernet_item.sensitive = true;
             ethernet_item.set_active (false);
-            state = State.DISCONNECTED;
+            state = State.WIRED_UNPLUGGED;
             break;
 
         case NM.DeviceState.PREPARE:

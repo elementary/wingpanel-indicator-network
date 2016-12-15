@@ -39,7 +39,7 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
 		case NM.DeviceState.UNKNOWN:
 		case NM.DeviceState.UNMANAGED:
 		case NM.DeviceState.UNAVAILABLE:
-			state = State.DISCONNECTED_WIRED;
+			state = State.WIRED_UNPLUGGED;
 			break;
 
 		/* virtually not working */

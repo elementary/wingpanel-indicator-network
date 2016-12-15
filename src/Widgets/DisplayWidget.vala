@@ -84,7 +84,10 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             });
             break;
         case Network.State.DISCONNECTED:
-            image.icon_name = "network-offline-symbolic";
+            image.icon_name = "network-wireless-offline-symbolic";
+            break;
+        case Network.State.WIRED_UNPLUGGED:
+            image.icon_name = "network-wired-offline-symbolic";
             break;
         default:
             image.icon_name = "network-offline-symbolic";
