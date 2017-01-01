@@ -84,7 +84,8 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
 	private void device_added_cb (NM.Device device) {
 		if (device.get_iface ().has_prefix ("vmnet") ||
-			device.get_iface ().has_prefix ("lo")) {
+			device.get_iface ().has_prefix ("lo") ||
+			device.get_iface ().has_prefix ("veth")){
 			return;
 		}
 
