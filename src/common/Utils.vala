@@ -19,6 +19,7 @@
 public enum Network.State {
     DISCONNECTED,
     DISCONNECTED_WIRED,
+    DISCONNECTED_AIRPLANE_MODE,
     CONNECTED_WIRED,
     CONNECTED_WIFI,
     CONNECTED_WIFI_WEAK,
@@ -51,6 +52,8 @@ namespace Network.Common.Utils {
             return _("Connecting");
         case Network.State.DISCONNECTED_WIRED:
             return _("Cable unplugged");
+        case Network.State.DISCONNECTED_AIRPLANE_MODE:
+            return _("Airplane mode enabled");
         }
         return _("Unknown");
     }

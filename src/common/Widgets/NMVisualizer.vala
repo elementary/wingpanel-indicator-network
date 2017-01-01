@@ -38,6 +38,8 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
 		nm_client.device_added.connect (device_added_cb);
 		nm_client.device_removed.connect (device_removed_cb);
+		
+		nm_client.notify["networking-enabled"].connect (update_state);
 
 		var devices = nm_client.get_devices ();
 		for (var i = 0; i < devices.length; i++)
@@ -137,14 +139,18 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 	}
 
 	void update_state () {
-		var next_state = Network.State.DISCONNECTED;
-		foreach (var inter in network_interface) {
-			if (inter.state != Network.State.DISCONNECTED) {
-				next_state = inter.state;
+		if (!nm_client.networking_get_enabled ()) {
+			state = Network.State.DISCONNECTED_AIRPLANE_MODE;
+		} else {
+			var next_state = Network.State.DISCONNECTED;
+			foreach (var inter in network_interface) {
+				if (inter.state != Network.State.DISCONNECTED) {
+					next_state = inter.state;
+				}
 			}
-		}
 
-		state = next_state;
+			state = next_state;
+		}
 	}
 
 	void update_vpn_connection () {
