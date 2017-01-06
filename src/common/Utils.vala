@@ -29,7 +29,33 @@ public enum Network.State {
     CONNECTING_WIFI,
     CONNECTING_WIRED,
     FAILED_WIRED,
-    FAILED_WIFI
+    FAILED_WIFI;
+
+    public int get_priority()
+    {
+        switch(this) {
+            case Network.State.CONNECTING_WIRED:
+                return 0;
+            case Network.State.CONNECTING_WIFI:
+                return 1;
+            case Network.State.CONNECTED_WIRED:
+                return 2;
+            case Network.State.CONNECTED_WIFI:
+            case Network.State.CONNECTED_WIFI_WEAK:
+            case Network.State.CONNECTED_WIFI_OK:
+            case Network.State.CONNECTED_WIFI_GOOD:
+            case Network.State.CONNECTED_WIFI_EXCELLENT:
+                return 3;
+            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED_WIFI:
+                return 4;
+            case Network.State.DISCONNECTED_WIRED:
+            case Network.State.DISCONNECTED_AIRPLANE_MODE:
+                return 5;
+            default:
+                return 6;
+        }
+    }
 }
 
 namespace Network.Common.Utils {

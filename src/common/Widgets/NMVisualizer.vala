@@ -25,23 +25,6 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 	public bool secure { private set; get; default = false; }
 	public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-	protected Network.State[] state_prioritization =
-	{
-		Network.State.CONNECTING_WIRED,
-		Network.State.CONNECTING_WIFI,
-		Network.State.CONNECTED_WIRED,
-		Network.State.CONNECTED_WIFI,
-		Network.State.CONNECTED_WIFI_WEAK,
-		Network.State.CONNECTED_WIFI_OK,
-		Network.State.CONNECTED_WIFI_GOOD,
-		Network.State.CONNECTED_WIFI_EXCELLENT,
-		Network.State.FAILED_WIRED,
-		Network.State.FAILED_WIFI,
-		Network.State.DISCONNECTED_WIRED,
-		Network.State.DISCONNECTED_AIRPLANE_MODE,
-	    Network.State.DISCONNECTED
-	};
-
 	construct {
 		network_interface = new GLib.List<WidgetNMInterface>();
 
@@ -164,13 +147,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 			var best_score = int.MAX;
 
 			foreach (var inter in network_interface) {
-				var score = int.MAX;
-
-				for (var i = 0; i < state_prioritization.length; i++) {
-					if (inter.state == state_prioritization[i]) {
-						score = i;
-					}
-				}
+				var score = inter.state.get_priority();
 
 				if (score < best_score) {
 					next_state = inter.state;
