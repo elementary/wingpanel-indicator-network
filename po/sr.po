@@ -1,121 +1,123 @@
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2015-08-14 02:53+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2017-01-07 00:04+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <(nothing)>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
+"X-Launchpad-Export-Date: 2017-01-07 06:46+0000\n"
+"X-Generator: Launchpad (build 18302)\n"
+"Language: sr\n"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
-msgstr ""
+msgstr "Мрежа"
 
 #: ../src/Indicator.vala:31
 msgid "Network indicator"
-msgstr ""
+msgstr "Указивач мреже"
 
 #: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "Повежи се на скривену мрежу…"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Network Settings…"
-msgstr ""
+msgstr "Подешавања мреже…"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
-msgstr ""
+msgstr "Врућа тачка"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:25
 msgid "Hotspot %s"
-msgstr ""
+msgstr "Врућа тачка „%s“"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
-msgstr ""
+msgstr "Непознати уређај"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:56
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "Непозната врста: %s "
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
-msgstr ""
+msgstr "Нема доступних приступних тачака"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:54
 msgid "There are no wireless access points within range."
-msgstr ""
+msgstr "Нема бежичних тачака приступа у опсегу."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr ""
+msgstr "Бежична је искључена"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
-msgstr ""
+msgstr "Укључите бежичну да откријете бежичне приступне тачке у суседству."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "Тражим приступне тачке…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
-msgstr ""
+msgstr "Бежична"
 
 #: ../src/common/Widgets/WifiMenuItem.vala:74
 msgid "This wireless network could not be connected to."
-msgstr ""
+msgstr "Није могуже повезивање на ову бежичну мрежу."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:123
 msgid "This network uses 40/64-bit WEP encryption."
-msgstr ""
+msgstr "Ова мрежа користи 40/64-битно ВЕП шифровање."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:125
 msgid "This network uses 104/128-bit WEP encryption."
-msgstr ""
+msgstr "Ова мрежа користи 104/128-битно ВЕП шифровање."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses WPA encryption."
-msgstr ""
+msgstr "Ова мрежа користи ВЕП шифровање."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses encryption."
-msgstr ""
+msgstr "Ова мрежа користи шифровање."
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:25
 msgid "Virtual network: %s"
-msgstr ""
+msgstr "Виртуелна мрежа: %s"
 
 #: ../src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
-msgstr ""
+msgstr "Жичана"
 
 #: ../src/common/Utils.vala:38
 msgid "Disconnected"
-msgstr ""
+msgstr "Неповезан"
 
 #: ../src/common/Utils.vala:45
 msgid "Connected"
-msgstr ""
+msgstr "Повезан"
 
 #: ../src/common/Utils.vala:48
 msgid "Failed"
-msgstr ""
+msgstr "Није успело"
 
 #: ../src/common/Utils.vala:51
 msgid "Connecting"
-msgstr ""
+msgstr "Повезујем се"
 
 #: ../src/common/Utils.vala:53
 msgid "Cable unplugged"
-msgstr ""
+msgstr "Кабал је искључен"
 
 #: ../src/common/Utils.vala:55
 msgid "Unknown"
-msgstr ""
+msgstr "Непознато"
