@@ -19,6 +19,7 @@
 public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     private Gtk.Box other_box;
     private Gtk.Box wifi_box;
+    private Gtk.Box vpn_box;
     private Wingpanel.Widgets.Button show_settings_button;
     private Wingpanel.Widgets.Button hidden_item;
 
@@ -47,8 +48,10 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
         other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         add (other_box);
         add (wifi_box);
+        add (vpn_box);
 
         if (!is_dm ()) {
             hidden_item = new Wingpanel.Widgets.Button (_("Connect to Hidden Network…"));
@@ -88,6 +91,10 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
                     hidden_item.sensitive = hidden_sensitivity;
                 });
             });
+        }
+
+        if (widget_interface is Network.VpnInterface) {
+            container_box = vpn_box;
         }
 
         if (!is_dm () || get_children ().length () > 0) {

@@ -17,15 +17,18 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
   Widgets/EtherInterface.vala
+  Widgets/VpnInterface.vala
   Widgets/WifiInterface.vala
   common/Utils.vala
   common/Widgets/WifiMenuItem.vala
+  common/Widgets/VpnMenuItem.vala
   common/Widgets/NMVisualizer.vala
   common/Widgets/WidgetNMInterface.vala
   Services/SettingsManager.vala
   ${CMAKE_CURRENT_BINARY_DIR}/config.vala
   common/rfkill.vala
   common/Widgets/AbstractWifiInterface.vala
+  common/Widgets/AbstractVpnInterface.vala
   common/Widgets/AbstractEtherInterface.vala
 
 PACKAGES

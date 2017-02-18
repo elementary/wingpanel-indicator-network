@@ -38,12 +38,15 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
 		nm_client.device_added.connect (device_added_cb);
 		nm_client.device_removed.connect (device_removed_cb);
-		
+
 		nm_client.notify["networking-enabled"].connect (update_state);
 
 		var devices = nm_client.get_devices ();
 		for (var i = 0; i < devices.length; i++)
 			device_added_cb (devices.get (i));
+
+		// Vpn interface
+		vpn_settings ();
 
 		show_all();
 		update_vpn_connection ();
@@ -131,6 +134,13 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 		update_interfaces_names ();
 		update_all ();
 		show_all ();
+	}
+
+	private void vpn_settings () {
+		WidgetNMInterface widget_interface = new VpnInterface (nm_client, nm_settings);
+		network_interface.append (widget_interface);
+		add_interface(widget_interface);
+		widget_interface.notify["state"].connect(update_state);
 	}
 
 	void update_all () {
