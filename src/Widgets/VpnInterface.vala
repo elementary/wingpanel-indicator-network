@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Library General Public License as published by
+ * the Free Software Foundation, either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 public class Network.VpnInterface : Network.AbstractVpnInterface {
     private Wingpanel.Widgets.Switch vpn_item;
     Gtk.Revealer revealer;
@@ -14,9 +31,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
                 vpn_deactivate_cb ();
             }
         });
-        // active_vpn_connection.notify["vpn_state"].connect (update);
-
-        update ();
+        notify["vpn_state"].connect (update);
     }
 
     construct {
@@ -35,16 +50,12 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     }
 
     public override void update () {
-        critical ("Current vpn : %s, %s", active_vpn_connection.get_id (), active_vpn_connection.vpn_state.to_string ());
-        if (active_vpn_connection.get_vpn()) {
-            if (active_vpn_connection.vpn_state <= NM.VPNConnectionState.ACTIVATED) {
-                critical ("Active vpn item %s", active_vpn_item.connection.get_id ());
-                vpn_item.set_active (true);
-            }
+        base.update ();
+
+        if (active_vpn_connection != null && active_vpn_connection is NM.VPNConnection) {
+            vpn_item.set_active (true);
         }
         revealer.reveal_child = vpn_item.get_active ();
-
-        base.update ();
     }
 
     protected override void vpn_activate_cb (VpnMenuItem item) {
@@ -55,16 +66,13 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
         nm_client.activate_connection (item.connection, null, null, null);
         active_vpn_item = item;
         update ();
-        // Idle.add (() => { update (); return false; });
     }
 
     protected override void vpn_deactivate_cb () {
-        debug ("Deactivating vpn : %s", active_vpn_connection.get_id());
         if (active_vpn_connection == null) {
             return;
         }
+        debug ("Deactivating vpn : %s", active_vpn_connection.get_id());
         nm_client.deactivate_connection (active_vpn_connection);
-        // TODO: Remove this
-        critical ("VPN after %s", active_vpn_connection.get_id ());
     }
 }

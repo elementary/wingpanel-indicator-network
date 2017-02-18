@@ -1,26 +1,40 @@
-// TODO: Put header
+/*
+ * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Library General Public License as published by
+ * the Free Software Foundation, either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 public class Network.VpnMenuItem : Gtk.ListBoxRow {
-    private List<NM.RemoteConnection> _vpn;
+    // A shared list between all vpn connections menu itens
+    private static List<NM.RemoteConnection> item_list;
+
     public signal void user_action ();
     public NM.RemoteConnection? connection = null;
     public string id {
         get {
-            return _tmp_vpn.get_id ();
+            return vpn.get_id ();
         }
     }
-    public Network.State state { get; set; default = Network.State.DISCONNECTED; }
+    public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
 
     Gtk.RadioButton radio_button;
     Gtk.Spinner spinner;
     Gtk.Image error_img;
 
-    public NM.RemoteConnection vpn { get { return _tmp_vpn; } }
-    NM.RemoteConnection _tmp_vpn;
+    public NM.RemoteConnection vpn { get; private set; }
 
     public VpnMenuItem (NM.RemoteConnection? _connection, VpnMenuItem? previous = null) {
-        debug ("[VpnMenuItem] Got instantiated");
-
         connection = _connection;
         var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         main_box.margin_start = main_box.margin_end = 6;
@@ -45,17 +59,15 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         main_box.pack_start (spinner, false, false);
         main_box.pack_start (error_img, false, false);
 
-        _vpn = new List<NM.RemoteConnection>();
+        item_list = new List<NM.RemoteConnection>();
 
         add_vpn (connection);
 
-        notify["state"].connect (update);
-        // radio_button.notify["active"].connect (update);
+        notify["vpn_state"].connect (update);
+        radio_button.notify["active"].connect (update);
+
         add (main_box);
         get_style_context ().add_class ("menuitem");
-
-        connection.changed.connect (update);
-        update ();
     }
 
     /**
@@ -83,29 +95,38 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     private void update () {
         radio_button.label = connection.get_id ();
 
-        switch (state) {
+#if PLUG_NETWORK
+        if (show_icons) {
+#endif
+            hide_item (error_img);
+            hide_item (spinner);
+#if PLUG_NETWORK
+        }
+#endif
+        switch (vpn_state) {
         case State.FAILED_VPN:
             show_item (error_img);
-            hide_item (spinner);
             break;
         case State.CONNECTING_VPN:
             show_item (spinner);
-            break;
-        default:
-            hide_icons ();
+            if (!radio_button.active) {
+                critical ("An access point is being connected but not active.");
+            }
             break;
         }
     }
 
     public void hide_icons (bool show_remove_button = true) {
+#if PLUG_NETWORK
+        show_icons = false;
         hide_item (error_img);
         hide_item (spinner);
-#if PLUG_NETWORK
         if (!show_remove_button) {
             hide_item (remove_button);
         }
 #endif
     }
+
     void show_item (Gtk.Widget w) {
         w.visible = true;
         w.no_show_all = w.visible;
@@ -124,12 +145,12 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     }
 
     public void add_vpn (NM.RemoteConnection? vpn) {
-        _vpn.append (vpn);
+        item_list.append (vpn);
         update ();
     }
 
     public bool remove_vpn (NM.RemoteConnection vpn) {
-        _vpn.remove (vpn);
-        return _vpn.length () > 0;
+        item_list.remove (vpn);
+        return item_list.length () > 0;
     }
 }

@@ -1,4 +1,19 @@
-// TODO: Place a header
+/*
+ * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Library General Public License as published by
+ * the Free Software Foundation, either version 2.1 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
 
 public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     protected NM.VPNConnection? active_vpn_connection = null;
@@ -12,24 +27,25 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     protected VpnMenuItem? blank_item = null;
     protected Gtk.Stack placeholder;
 
-    /** Overriding Network.WidgetNMInterface state,
-    *   else it would mess with DisplayWidget icons.
-    */
-    protected Network.State state { get; set; default = Network.State.DISCONNECTED; }
+    /**
+     * If we want to add a visual feedback on DisplayWidget later,
+     * we just need to remove vpn_state and swap it to state on the code
+    **/
+    public Network.State vpn_state { get; protected set; default = Network.State.DISCONNECTED; }
 
     /* TODO:
-     3: Show vpn list [x]
-      3.1: Show vpn itens on vpn list [x]
-     4: Connect vpns [x]
      5: Polish usability [x]
       5.1: User click [x]
+        - (got worse lately)
       5.2: Spinner shows while connection get ready [x]
-      5.3: User receive visual feedback [x](could be better)
+        - (a bit buggy)
+      5.3: User receive visual feedback [x]
+        - (could be better)
      6: Cleanup
       6.1: Remove dead methods
      7: Check coding standards [x]
      7.1: Look the comments
-     8: Complete any todo's and submit
+     8: Complete any todo's & fixmes and submit
     */
     public void init_vpn_interface (NM.Client _nm_client, NM.RemoteSettings _nm_settings) {
         nm_client = _nm_client;
@@ -73,7 +89,8 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         placeholder.visible = true;
 
         vpn_list = new Gtk.ListBox ();
-        vpn_list.activate_on_single_click = true;
+        // Single click is disabled because it's being handled by VpnMenuItem ;)
+        vpn_list.activate_on_single_click = false;
         vpn_list.visible = true;
         vpn_list.set_placeholder (placeholder);
     }
@@ -84,10 +101,10 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         VpnMenuItem? item = null;
 
         if (active_vpn_connection != null){
-            switch (active_vpn_connection.get_vpn_state ()) {
+            switch (active_vpn_connection.vpn_state) {
                 case NM.VPNConnectionState.UNKNOWN:
                 case NM.VPNConnectionState.DISCONNECTED:
-                    state = State.DISCONNECTED;
+                    vpn_state = State.DISCONNECTED;
                     if (active_vpn_item != null) {
                         item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                         placeholder.visible_child_name = "vpn-off";
@@ -96,20 +113,20 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
                 case NM.VPNConnectionState.PREPARE:
                 case NM.VPNConnectionState.IP_CONFIG_GET:
                 case NM.VPNConnectionState.CONNECT:
-                    state = State.CONNECTING_VPN;
+                    vpn_state = State.CONNECTING_VPN;
                     item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                     break;
                 case NM.VPNConnectionState.FAILED:
-                    state = State.FAILED_VPN;
+                    vpn_state = State.FAILED_VPN;
                     break;
                 case NM.VPNConnectionState.ACTIVATED:
-                    state = State.CONNECTED_VPN;
+                    vpn_state = State.CONNECTED_VPN;
                     item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                     sensitive = true;
                     break;
                 }
         } else {
-            state = State.DISCONNECTED;
+            vpn_state = State.DISCONNECTED;
         }
 
         if (item == null) {
@@ -118,7 +135,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
             if (active_vpn_item != null) {
                 active_vpn_item.no_show_all = false;
                 active_vpn_item.visible = true;
-                active_vpn_item.state = state;
+                active_vpn_item.vpn_state = vpn_state;
             }
         }
 
@@ -143,11 +160,19 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         return label;
     }
 
+    /**
+      * The vpn_added_cb is called on new_connection signal,
+      * (yep, we get the vpn connections from there)
+      * then we filter the connection that make sense for us.
+    */
     void vpn_added_cb (Object obj) {
         var vpn = (NM.RemoteConnection)obj;
         switch (vpn.get_connection_type ()) {
             case NM.SettingVpn.SETTING_NAME:
+                // Remove vpn when it's removed in switchboard-plug-networking
                 vpn.removed.connect(vpn_removed_cb);
+
+                // Add the item to vpn_list
                 var item = new VpnMenuItem (vpn, get_previous_menu_item ());
                 item.set_visible (true);
                 item.user_action.connect (vpn_activate_cb);
@@ -160,6 +185,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         }
     }
 
+    // Removed vpn, from removed signal attached to connection when it get added.
     void vpn_removed_cb (NM.RemoteConnection vpn_) {
         var item = get_item_by_uuid (vpn_.get_uuid ());
         item.destroy ();
@@ -186,6 +212,9 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         return (VpnMenuItem)children.last ().data;
     }
 
+    /**
+      * Loop through each active connection to find out the vpn one.
+    */
     protected void update_active_connection () {
         active_vpn_connection = null;
 
@@ -200,7 +229,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
                     if (menu_item.connection.get_uuid () == active_vpn_connection.uuid) {
                         menu_item.set_active (true);
                         active_vpn_item = menu_item;
-                        active_vpn_item.state = state;
+                        active_vpn_item.vpn_state = vpn_state;
                     }
                 }
             }
