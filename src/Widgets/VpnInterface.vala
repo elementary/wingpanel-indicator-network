@@ -26,10 +26,11 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
         vpn_item.get_style_context ().add_class ("h4");
         vpn_item.switched.connect (() => {
-            revealer.reveal_child = vpn_item.get_active();
+            revealer.reveal_child = vpn_item.get_active ();
             if (!vpn_item.get_active ()) {
                 vpn_deactivate_cb ();
             }
+            update ();
         });
         notify["vpn_state"].connect (update);
     }
@@ -52,16 +53,17 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     public override void update () {
         base.update ();
 
-        if (active_vpn_connection != null && active_vpn_connection is NM.VPNConnection) {
+        if (active_vpn_item != null) {
             vpn_item.set_active (true);
         }
         revealer.reveal_child = vpn_item.get_active ();
     }
 
     protected override void vpn_activate_cb (VpnMenuItem item) {
+        warning ("Activating connection");
         vpn_deactivate_cb ();
 
-        debug ("Connecting to vpn : %s", item.connection.get_id());
+        debug ("Connecting to vpn : %s", item.connection.get_id ());
 
         nm_client.activate_connection (item.connection, null, null, null);
         active_vpn_item = item;
@@ -70,9 +72,11 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
     protected override void vpn_deactivate_cb () {
         if (active_vpn_connection == null) {
+            update ();
             return;
         }
-        debug ("Deactivating vpn : %s", active_vpn_connection.get_id());
+        warning ("Deactivating vpn : %s", active_vpn_connection.get_id ());
         nm_client.deactivate_connection (active_vpn_connection);
+        update ();
     }
 }

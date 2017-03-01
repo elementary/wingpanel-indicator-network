@@ -16,32 +16,32 @@
  */
 
 public class Network.VpnMenuItem : Gtk.ListBoxRow {
-    // A shared list between all vpn connections menu itens
-    private static List<NM.RemoteConnection> item_list;
+    private static unowned SList<Gtk.RadioButton> group;
 
     public signal void user_action ();
-    public NM.RemoteConnection? connection = null;
+    public NM.RemoteConnection? connection { get; private set; }
     public string id {
         get {
-            return vpn.get_id ();
+            return connection.get_id ();
         }
     }
     public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
 
-    Gtk.RadioButton radio_button;
+    public Gtk.RadioButton radio_button { get; private set; }
     Gtk.Spinner spinner;
     Gtk.Image error_img;
 
-    public NM.RemoteConnection vpn { get; private set; }
-
-    public VpnMenuItem (NM.RemoteConnection? _connection, VpnMenuItem? previous = null) {
+    public VpnMenuItem (NM.RemoteConnection? _connection) {
         connection = _connection;
+        connection.changed.connect (update);
+
         var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         main_box.margin_start = main_box.margin_end = 6;
-        radio_button = new Gtk.RadioButton (null);
-        if (previous != null) radio_button.set_group (previous.get_group ());
 
-        radio_button.button_release_event.connect ( (b, ev) => {
+        radio_button = new Gtk.RadioButton (group);
+        group = radio_button.get_group ();
+
+        radio_button.button_release_event.connect ((b, ev) => {
             user_action ();
             return false;
         });
@@ -50,7 +50,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         error_img.margin_start = 6;
         error_img.set_tooltip_text (_("This Virtual Private Network could not be connected to."));
 
-        spinner = new Gtk.Spinner();
+        spinner = new Gtk.Spinner ();
         spinner.start ();
         spinner.visible = false;
         spinner.no_show_all = !spinner.visible;
@@ -59,37 +59,21 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         main_box.pack_start (spinner, false, false);
         main_box.pack_start (error_img, false, false);
 
-        item_list = new List<NM.RemoteConnection>();
-
-        add_vpn (connection);
-
         notify["vpn_state"].connect (update);
         radio_button.notify["active"].connect (update);
 
         add (main_box);
         get_style_context ().add_class ("menuitem");
+
+        update ();
     }
 
     /**
-     * Only used for an item which is not displayed: hacky way to have no radio button selected.
-     **/
+    * Only used for an item which is not displayed: hacky way to have no radio button selected.
+    **/
     public VpnMenuItem.blank () {
-        radio_button = new Gtk.RadioButton(null);
-    }
-
-    private string get_service_type () {
-        var setting_vpn = connection.get_setting_vpn ();
-        string service_type = setting_vpn.get_service_type ();
-        string[] arr = service_type.split (".");
-        return arr[arr.length - 1];
-    }
-
-    unowned SList get_group () {
-        return radio_button.get_group();
-    }
-
-    public void set_active (bool active) {
-        radio_button.set_active (active);
+        radio_button = new Gtk.RadioButton (group);
+        group = radio_button.get_group ();
     }
 
     private void update () {
@@ -100,20 +84,25 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
 #endif
             hide_item (error_img);
             hide_item (spinner);
+
 #if PLUG_NETWORK
         }
 #endif
         switch (vpn_state) {
-        case State.FAILED_VPN:
-            show_item (error_img);
-            break;
-        case State.CONNECTING_VPN:
-            show_item (spinner);
-            if (!radio_button.active) {
-                critical ("An access point is being connected but not active.");
-            }
-            break;
+            case State.FAILED_VPN:
+                show_item (error_img);
+                break;
+            case State.CONNECTING_VPN:
+                show_item (spinner);
+                if (!radio_button.active) {
+                    critical ("An access point is being connected but not active.");
+                }
+                break;
         }
+    }
+
+    public void set_active (bool active) {
+        radio_button.set_active (active);
     }
 
     public void hide_icons (bool show_remove_button = true) {
@@ -136,21 +125,5 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         w.visible = false;
         w.no_show_all = !w.visible;
         w.hide ();
-    }
-
-    public void set_connection (NM.RemoteConnection _connection) {
-        connection = _connection;
-        connection.changed.connect (update);
-        update ();
-    }
-
-    public void add_vpn (NM.RemoteConnection? vpn) {
-        item_list.append (vpn);
-        update ();
-    }
-
-    public bool remove_vpn (NM.RemoteConnection vpn) {
-        item_list.remove (vpn);
-        return item_list.length () > 0;
     }
 }

@@ -34,17 +34,12 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     public Network.State vpn_state { get; protected set; default = Network.State.DISCONNECTED; }
 
     /* TODO:
-     5: Polish usability [x]
-      5.1: User click [x]
-        - (got worse lately)
       5.2: Spinner shows while connection get ready [x]
-        - (a bit buggy)
-      5.3: User receive visual feedback [x]
-        - (could be better)
-     6: Cleanup
-      6.1: Remove dead methods
-     7: Check coding standards [x]
-     7.1: Look the comments
+        - (a bit buggy),
+        - Issue has relation with the state machine of vpn
+      5.4: VPN switch don't turn off on first attempt
+        - The state machine is still up when Vpn get disabled
+      5.5: Warn when there's no connectivity
      8: Complete any todo's & fixmes and submit
     */
     public void init_vpn_interface (NM.Client _nm_client, NM.RemoteSettings _nm_settings) {
@@ -53,6 +48,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         display_title = _("Vpn");
 
         blank_item = new VpnMenuItem.blank ();
+        vpn_list.add (blank_item);
         active_vpn_item = null;
 
         /* Advices that no Vpn has been configured */
@@ -63,18 +59,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         var no_vpn = construct_placeholder_label (_("No Vpn Available"), true);
         no_vpn_box.add (no_vpn);
 
-        var vpn_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        vpn_off_box.visible = true;
-        vpn_off_box.valign = Gtk.Align.CENTER;
-
-    #if PLUG_NETWORK
-        var vpn_off = contruct_placeholder_label (_("Vpn is Disabled"), true);
-        var vpn_off_desc = construct_placeholder_label (_("Enable Vpn to get a list with saved Vpn connections"));
-        vpn_off_box.add (vpn_off);
-        vpn_off_box.add (vpn_off_desc);
-#endif
         placeholder.add_named (no_vpn_box, "no-vpn");
-        placeholder.add_named (vpn_off_box, "vpn-off");
         placeholder.visible_child_name = "no-vpn";
 
         nm_settings.connections_read.connect (update);
@@ -100,15 +85,17 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
 
         VpnMenuItem? item = null;
 
-        if (active_vpn_connection != null){
+        // Todo: alert about being disconnected
+        if (nm_client.primary_connection == null) {
+            warning ("Primary connection is off");
+        }
+
+        if (active_vpn_connection != null) {
             switch (active_vpn_connection.vpn_state) {
                 case NM.VPNConnectionState.UNKNOWN:
                 case NM.VPNConnectionState.DISCONNECTED:
                     vpn_state = State.DISCONNECTED;
-                    if (active_vpn_item != null) {
-                        item = get_item_by_uuid (active_vpn_connection.get_uuid ());
-                        placeholder.visible_child_name = "vpn-off";
-                    }
+                    active_vpn_item = null;
                     break;
                 case NM.VPNConnectionState.PREPARE:
                 case NM.VPNConnectionState.IP_CONFIG_GET:
@@ -118,6 +105,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
                     break;
                 case NM.VPNConnectionState.FAILED:
                     vpn_state = State.FAILED_VPN;
+                    active_vpn_item = null;
                     break;
                 case NM.VPNConnectionState.ACTIVATED:
                     vpn_state = State.CONNECTED_VPN;
@@ -139,7 +127,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
             }
         }
 
-        base.update();
+        base.update ();
     }
 
     protected Gtk.Label construct_placeholder_label (string text, bool title = false) {
@@ -162,7 +150,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
 
     /**
       * The vpn_added_cb is called on new_connection signal,
-      * (yep, we get the vpn connections from there)
+      * (we get the vpn connections from there)
       * then we filter the connection that make sense for us.
     */
     void vpn_added_cb (Object obj) {
@@ -170,10 +158,10 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         switch (vpn.get_connection_type ()) {
             case NM.SettingVpn.SETTING_NAME:
                 // Remove vpn when it's removed in switchboard-plug-networking
-                vpn.removed.connect(vpn_removed_cb);
+                vpn.removed.connect (vpn_removed_cb);
 
                 // Add the item to vpn_list
-                var item = new VpnMenuItem (vpn, get_previous_menu_item ());
+                var item = new VpnMenuItem (vpn);
                 item.set_visible (true);
                 item.user_action.connect (vpn_activate_cb);
 
@@ -203,17 +191,8 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         return item;
     }
 
-    private VpnMenuItem? get_previous_menu_item () {
-        var children = vpn_list.get_children ();
-        if (children.length () == 0) {
-            return blank_item;
-        }
-
-        return (VpnMenuItem)children.last ().data;
-    }
-
     /**
-      * Loop through each active connection to find out the vpn one.
+     * Loop through each active connection to find out the vpn.
     */
     protected void update_active_connection () {
         active_vpn_connection = null;
@@ -223,7 +202,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
                 active_vpn_connection = (NM.VPNConnection)ac;
                 active_vpn_connection.vpn_state_changed.connect (update);
 
-                foreach(var v in vpn_list.get_children()) {
+                foreach (var v in vpn_list.get_children ()) {
                     var menu_item = (VpnMenuItem) v;
 
                     if (menu_item.connection.get_uuid () == active_vpn_connection.uuid) {
