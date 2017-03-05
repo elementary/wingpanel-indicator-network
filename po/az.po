@@ -3,30 +3,30 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2015-08-14 02:53+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2017-03-03 11:46+0000\n"
+"Last-Translator: Ramiz Demiurge <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
+"X-Launchpad-Export-Date: 2017-03-05 06:27+0000\n"
+"X-Generator: Launchpad (build 18329)\n"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
-msgstr ""
+msgstr "Şəbəkə"
 
 #: ../src/Indicator.vala:31
 msgid "Network indicator"
-msgstr ""
+msgstr "Şəbəkə göstərici"
 
 #: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "Gizli şəbəkəyə qoşul..."
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Network Settings…"
-msgstr ""
+msgstr "Şəbəkə ayarları..."
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -38,19 +38,19 @@ msgstr ""
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
-msgstr ""
+msgstr "Naməlum cihaz"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:56
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "Naməlum növ: %s "
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
-msgstr ""
+msgstr "Mövcud Giriş nöqtələsi yoxdur"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:54
 msgid "There are no wireless access points within range."
-msgstr ""
+msgstr "Yaxında heç bir simsiz giriş nöqtəsi yoxdur."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
