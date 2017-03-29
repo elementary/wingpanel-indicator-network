@@ -30,7 +30,6 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
             if (!vpn_item.get_active ()) {
                 vpn_deactivate_cb ();
             }
-            update ();
         });
         notify["vpn_state"].connect (update);
     }
@@ -56,7 +55,6 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
         if (active_vpn_item != null) {
             vpn_item.set_active (true);
         }
-        revealer.reveal_child = vpn_item.get_active ();
     }
 
     protected override void vpn_activate_cb (VpnMenuItem item) {
@@ -67,7 +65,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
         nm_client.activate_connection (item.connection, null, null, null);
         active_vpn_item = item;
-        update ();
+        Idle.add (() => { update (); return false; });
     }
 
     protected override void vpn_deactivate_cb () {
@@ -75,8 +73,8 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
             update ();
             return;
         }
-        warning ("Deactivating vpn : %s", active_vpn_connection.get_id ());
+        debug ("Deactivating vpn : %s", active_vpn_connection.get_id ());
         nm_client.deactivate_connection (active_vpn_connection);
-        update ();
+        Idle.add (() => { update (); return false; });
     }
 }

@@ -33,15 +33,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     **/
     public Network.State vpn_state { get; protected set; default = Network.State.DISCONNECTED; }
 
-    /* TODO:
-      5.2: Spinner shows while connection get ready [x]
-        - (a bit buggy),
-        - Issue has relation with the state machine of vpn
-      5.4: VPN switch don't turn off on first attempt
-        - The state machine is still up when Vpn get disabled
-      5.5: Warn when there's no connectivity
-     8: Complete any todo's & fixmes and submit
-    */
     public void init_vpn_interface (NM.Client _nm_client, NM.RemoteSettings _nm_settings) {
         nm_client = _nm_client;
         nm_settings = _nm_settings;
@@ -74,7 +65,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         placeholder.visible = true;
 
         vpn_list = new Gtk.ListBox ();
-        // Single click is disabled because it's being handled by VpnMenuItem ;)
+        // Single click is disabled because it's being handled by VpnMenuItem
         vpn_list.activate_on_single_click = false;
         vpn_list.visible = true;
         vpn_list.set_placeholder (placeholder);
@@ -84,11 +75,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         update_active_connection ();
 
         VpnMenuItem? item = null;
-
-        // Todo: alert about being disconnected
-        if (nm_client.primary_connection == null) {
-            warning ("Primary connection is off");
-        }
 
         if (active_vpn_connection != null) {
             switch (active_vpn_connection.vpn_state) {
