@@ -36,7 +36,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     public void init_vpn_interface (NM.Client _nm_client, NM.RemoteSettings _nm_settings) {
         nm_client = _nm_client;
         nm_settings = _nm_settings;
-        display_title = _("Vpn");
+        display_title = _("VPN");
 
         blank_item = new VpnMenuItem.blank ();
         vpn_list.add (blank_item);
@@ -47,7 +47,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         no_vpn_box.visible = true;
         no_vpn_box.valign = Gtk.Align.CENTER;
 
-        var no_vpn = construct_placeholder_label (_("No Vpn Available"), true);
+        var no_vpn = construct_placeholder_label (_("No VPN Available"), true);
         no_vpn_box.add (no_vpn);
 
         placeholder.add_named (no_vpn_box, "no-vpn");

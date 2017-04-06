@@ -22,7 +22,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     public VpnInterface (NM.Client nm_client, NM.RemoteSettings nm_settings) {
         init_vpn_interface (nm_client, nm_settings);
         vpn_item.set_caption (display_title);
-        debug ("Starting Vpn Interface");
+        debug ("Starting VPN Interface");
 
         vpn_item.get_style_context ().add_class ("h4");
         vpn_item.switched.connect (() => {
@@ -61,7 +61,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
         warning ("Activating connection");
         vpn_deactivate_cb ();
 
-        debug ("Connecting to vpn : %s", item.connection.get_id ());
+        debug ("Connecting to VPN : %s", item.connection.get_id ());
 
         nm_client.activate_connection (item.connection, null, null, null);
         active_vpn_item = item;
@@ -73,7 +73,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
             update ();
             return;
         }
-        debug ("Deactivating vpn : %s", active_vpn_connection.get_id ());
+        debug ("Deactivating VPN : %s", active_vpn_connection.get_id ());
         nm_client.deactivate_connection (active_vpn_connection);
         Idle.add (() => { update (); return false; });
     }

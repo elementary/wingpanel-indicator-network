@@ -95,7 +95,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
             case State.CONNECTING_VPN:
                 show_item (spinner);
                 if (!radio_button.active) {
-                    critical ("An access point is being connected but not active.");
+                    critical ("An VPN is being connected but not active.");
                 }
                 break;
         }
