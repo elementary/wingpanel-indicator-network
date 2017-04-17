@@ -38,7 +38,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
 		nm_client.device_added.connect (device_added_cb);
 		nm_client.device_removed.connect (device_removed_cb);
-		
+
 		nm_client.notify["networking-enabled"].connect (update_state);
 
 		var devices = nm_client.get_devices ();
@@ -144,9 +144,14 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 			state = Network.State.DISCONNECTED_AIRPLANE_MODE;
 		} else {
 			var next_state = Network.State.DISCONNECTED;
+			var best_score = int.MAX;
+
 			foreach (var inter in network_interface) {
-				if (inter.state != Network.State.DISCONNECTED) {
+				var score = inter.state.get_priority();
+
+				if (score < best_score) {
 					next_state = inter.state;
+					best_score = score;
 				}
 			}
 
