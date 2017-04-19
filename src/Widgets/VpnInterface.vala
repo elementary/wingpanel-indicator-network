@@ -31,6 +31,10 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
                 vpn_deactivate_cb ();
             }
         });
+
+        vpn_list.add.connect (check_vpn_availability);
+        vpn_list.remove.connect (check_vpn_availability);
+
         notify["vpn_state"].connect (update);
     }
 
@@ -52,9 +56,21 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     public override void update () {
         base.update ();
 
+        check_vpn_availability ();
         if (active_vpn_item != null) {
             vpn_item.set_active (true);
         }
+    }
+
+    private void check_vpn_availability () {
+        var length = vpn_list.get_children ().length ();
+        // The first item is the blank item
+        show_vpn (length > 1);
+    }
+
+    private void show_vpn (bool show) {
+        no_show_all = sep.no_show_all = !show;
+        visible = sep.visible = show;
     }
 
     protected override void vpn_activate_cb (VpnMenuItem item) {

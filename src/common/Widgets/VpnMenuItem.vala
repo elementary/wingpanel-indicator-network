@@ -16,7 +16,7 @@
  */
 
 public class Network.VpnMenuItem : Gtk.ListBoxRow {
-    private static unowned SList<Gtk.RadioButton> group;
+    private static unowned Gtk.RadioButton? blank_button = null;
 
     public signal void user_action ();
     public NM.RemoteConnection? connection { get; private set; }
@@ -38,8 +38,10 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
         main_box.margin_start = main_box.margin_end = 6;
 
-        radio_button = new Gtk.RadioButton (group);
-        group = radio_button.get_group ();
+        radio_button = new Gtk.RadioButton (null);
+        if (blank_button != null) {
+            radio_button.join_group (blank_button);
+        }
 
         radio_button.button_release_event.connect ((b, ev) => {
             user_action ();
@@ -72,8 +74,8 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     * Only used for an item which is not displayed: hacky way to have no radio button selected.
     **/
     public VpnMenuItem.blank () {
-        radio_button = new Gtk.RadioButton (group);
-        group = radio_button.get_group ();
+        radio_button = new Gtk.RadioButton (null);
+        blank_button = radio_button;
     }
 
     private void update () {

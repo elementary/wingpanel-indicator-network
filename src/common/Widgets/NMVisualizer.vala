@@ -139,8 +139,8 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 	private void vpn_settings () {
 		WidgetNMInterface widget_interface = new VpnInterface (nm_client, nm_settings);
 		network_interface.append (widget_interface);
-		add_interface(widget_interface);
-		widget_interface.notify["state"].connect(update_state);
+		add_interface (widget_interface);
+		widget_interface.notify["state"].connect (update_state);
 	}
 
 	void update_all () {
