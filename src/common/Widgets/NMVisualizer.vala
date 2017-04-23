@@ -46,7 +46,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 			device_added_cb (devices.get (i));
 
 		// Vpn interface
-		vpn_settings ();
+		create_vpn_interface ();
 
 		show_all();
 		update_vpn_connection ();
@@ -136,7 +136,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 		show_all ();
 	}
 
-	private void vpn_settings () {
+	private void create_vpn_interface () {
 		WidgetNMInterface widget_interface = new VpnInterface (nm_client, nm_settings);
 		network_interface.append (widget_interface);
 		add_interface (widget_interface);
