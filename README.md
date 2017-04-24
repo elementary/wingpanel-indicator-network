@@ -1,4 +1,4 @@
-# Wingpanel Session Indicator
+# Wingpanel Network Indicator
 [![l10n](https://l10n.elementary.io/widgets/wingpanel/wingpanel-indicator-network/svg-badge.svg)](https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-network)
 
 ## Building and Installation
