@@ -56,7 +56,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         radio_button.hexpand = true;
 		radio_button.margin_start = 6;
 
-		if (previous != null) {
+        if (previous != null) {
             radio_button.set_group (previous.get_group ());
         }
 
