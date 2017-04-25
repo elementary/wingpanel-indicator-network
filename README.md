@@ -6,8 +6,8 @@
 You'll need the following dependencies:
 
 * cmake
-* gobject-introspection,
-* ibgranite-dev
+* gobject-introspection
+* libgranite-dev
 * libnm-glib-dev
 * libnm-gtk-dev
 * libnm-util-dev
