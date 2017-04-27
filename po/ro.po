@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2017-04-27 14:39+0000\n"
+"PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/ro/>\n"
@@ -26,11 +26,11 @@ msgstr "Indicator reţea"
 
 #: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
-msgstr "Conectare la o rețea ascunsă..."
+msgstr "Conectare la o rețea ascunsă…"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Network Settings…"
-msgstr "Setări de reţea..."
+msgstr "Setări de reţea…"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -68,7 +68,7 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Se caută punctele de acces..."
+msgstr "Se caută punctele de acces…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
