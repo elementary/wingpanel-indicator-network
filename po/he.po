@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2017-04-25 17:18+0000\n"
+"PO-Revision-Date: 2017-04-27 08:24+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/he/>\n"
@@ -37,7 +37,7 @@ msgstr "נקודה חמה"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:25
 msgid "Hotspot %s"
-msgstr "הנקודה החמה %s"
+msgstr "נקודה חמה להתקן %s"
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
@@ -85,7 +85,7 @@ msgstr "רשת זו משתמשת בהצפנת WEP בחוזק 104/128 סיביו�
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses WPA encryption."
-msgstr "רשת זו משתמשת בהצפנת WEP."
+msgstr "רשת זו משתמשת בהצפנת WPA."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses encryption."
