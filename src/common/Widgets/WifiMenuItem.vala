@@ -52,25 +52,21 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	Gtk.Spinner spinner;
 
 	public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
-		var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
 		radio_button = new Gtk.RadioButton (null);
+        radio_button.hexpand = true;
 		radio_button.margin_start = 6;
-		if (previous != null) radio_button.set_group (previous.get_group ());
 
-		radio_button.button_release_event.connect ((b, ev) => {
-			user_action ();
-			return false;
-		});
+        if (previous != null) {
+            radio_button.set_group (previous.get_group ());
+        }
 
 		img_strength = new Gtk.Image ();
 		img_strength.margin_end = 6;
 		
 		lock_img = new Gtk.Image.from_icon_name ("channel-secure-symbolic", Gtk.IconSize.MENU);
-		lock_img.margin_start = 6;
 		
 		/* TODO: investigate this, it has not been tested yet. */
 		error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU);
-		error_img.margin_start = 6;
 		error_img.set_tooltip_text (_("This wireless network could not be connected to."));
 		
 		spinner = new Gtk.Spinner();
@@ -78,12 +74,14 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 		spinner.visible = false;
 		spinner.no_show_all = !spinner.visible;
 
-		main_box.pack_start (radio_button, true, true);
-		main_box.pack_start (spinner, false, false);
-		main_box.pack_start (error_img, false, false);
-		main_box.pack_start (lock_img, false, false);
-		main_box.pack_start (img_strength, false, false);
-		
+        var grid = new Gtk.Grid ();
+        grid.column_spacing = 6;
+        grid.add (radio_button);
+        grid.add (spinner);
+        grid.add (error_img);
+        grid.add (lock_img);
+        grid.add (img_strength);
+
 		_ap = new List<NM.AccessPoint>();
 
 		/* Adding the access point triggers update */
@@ -91,7 +89,13 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
 		notify["state"].connect (update);
 		radio_button.notify["active"].connect (update);
-		this.add (main_box);
+
+        radio_button.button_release_event.connect ((b, ev) => {
+            user_action ();
+            return false;
+        });
+
+        add (grid);
 		this.get_style_context ().add_class ("menuitem");
 	}
 
