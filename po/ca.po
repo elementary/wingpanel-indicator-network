@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2016-12-19 16:14+0000\n"
-"Last-Translator: Davidmp <rbndavid@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-05-03 14:25+0000\n"
+"Last-Translator: David M <rbndavid@gmail.com>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2016-12-20 05:12+0000\n"
-"X-Generator: Launchpad (build 18298)\n"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -23,11 +25,11 @@ msgstr "Indicador de xarxa"
 
 #: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
-msgstr "Connecta a una xarxa oculta..."
+msgstr "Connecta't a una xarxa oculta…"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Network Settings…"
-msgstr "Paràmetres de la xarxa..."
+msgstr "Paràmetres de la xarxa…"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -51,7 +53,7 @@ msgstr "No hi ha punts d'accés disponibles"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:54
 msgid "There are no wireless access points within range."
-msgstr "No hi ha punts d'accés sense fil disponibles"
+msgstr "No hi ha punts d'accés sense fil a l'abast."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
@@ -63,7 +65,7 @@ msgstr "Habiliteu el sense fil per descobrir els punts d'accés propers."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "S'explora si hi ha punts d'accés..."
+msgstr "S'explora si hi ha punts d'accés…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
