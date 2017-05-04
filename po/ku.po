@@ -8,15 +8,17 @@ msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-19 11:51-0600\n"
-"PO-Revision-Date: 2017-04-07 12:30+0000\n"
-"Last-Translator: Rokar ✌ <Unknown>\n"
-"Language-Team: Kurdish <ku@li.org>\n"
+"PO-Revision-Date: 2017-05-04 20:02+0000\n"
+"Last-Translator: Rokar <rokartv10@gmail.com>\n"
+"Language-Team: ku (generated) <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/ku/>\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:10+0000\n"
-"X-Generator: Launchpad (build 18343)\n"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -28,11 +30,11 @@ msgstr "nîşane Tor"
 
 #: ../src/Widgets/PopoverWidget.vala:54
 msgid "Connect to Hidden Network…"
-msgstr "le girê dan bo Tore veşartinê..."
+msgstr "le girê dan bo Tore veşartinê…"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Network Settings…"
-msgstr "Mîhenge torê..."
+msgstr "Mîhenge torê…"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -68,7 +70,7 @@ msgstr "Bêtêl vê xine bo nuqte dergeh bêtêl nêzik vedîtine."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "sehkirin bo nuqte dergeh..."
+msgstr "sehkirin bo nuqte dergeh…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
