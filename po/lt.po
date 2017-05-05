@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-05 21:13+0000\n"
+"PO-Revision-Date: 2017-05-05 21:14+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/lt/>\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
-msgstr "Prisijungti prie paslėpto tinklo..."
+msgstr "Prisijungti prie paslėpto tinklo…"
 
 #: ../src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "Tinklo nustatymai..."
+msgstr "Tinklo nustatymai…"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -52,7 +52,7 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Ieškoma prieigos taškų..."
+msgstr "Ieškoma prieigos taškų…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
