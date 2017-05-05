@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-19 11:51-0600\n"
+"POT-Creation-Date: 2017-05-04 23:36-0700\n"
 "PO-Revision-Date: 2017-01-07 00:04+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <(nothing)>\n"
@@ -14,6 +14,14 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-07 06:46+0000\n"
 "X-Generator: Launchpad (build 18302)\n"
 
+#: ../src/Widgets/PopoverWidget.vala:57
+msgid "Connect to Hidden Network…"
+msgstr "Повежи се на скривену мрежу…"
+
+#: ../src/Widgets/PopoverWidget.vala:60
+msgid "Network Settings…"
+msgstr "Подешавања мреже…"
+
 #: ../src/Indicator.vala:30
 msgid "Network"
 msgstr "Мрежа"
@@ -21,30 +29,6 @@ msgstr "Мрежа"
 #: ../src/Indicator.vala:31
 msgid "Network indicator"
 msgstr "Указивач мреже"
-
-#: ../src/Widgets/PopoverWidget.vala:54
-msgid "Connect to Hidden Network…"
-msgstr "Повежи се на скривену мрежу…"
-
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Network Settings…"
-msgstr "Подешавања мреже…"
-
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
-msgstr "Врућа тачка"
-
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
-msgstr "Врућа тачка „%s“"
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
-msgid "Unknown device"
-msgstr "Непознати уређај"
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
-msgid "Unknown type: %s "
-msgstr "Непозната врста: %s "
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
@@ -70,23 +54,53 @@ msgstr "Тражим приступне тачке…"
 msgid "Wireless"
 msgstr "Бежична"
 
-#: ../src/common/Widgets/WifiMenuItem.vala:74
+#: ../src/common/Widgets/AbstractVpnInterface.vala:39
+msgid "VPN"
+msgstr ""
+
+#: ../src/common/Widgets/AbstractVpnInterface.vala:50
+#, fuzzy
+msgid "No VPN Available"
+msgstr "Нема доступних приступних тачака"
+
+#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
+msgid "Hotspot"
+msgstr "Врућа тачка"
+
+#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
+msgid "Hotspot %s"
+msgstr "Врућа тачка „%s“"
+
+#: ../src/common/Widgets/VpnMenuItem.vala:53
+#, fuzzy
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Није могуже повезивање на ову бежичну мрежу."
+
+#: ../src/common/Widgets/WidgetNMInterface.vala:26
+msgid "Unknown device"
+msgstr "Непознати уређај"
+
+#: ../src/common/Widgets/WidgetNMInterface.vala:56
+msgid "Unknown type: %s "
+msgstr "Непозната врста: %s "
+
+#: ../src/common/Widgets/WifiMenuItem.vala:70
 msgid "This wireless network could not be connected to."
 msgstr "Није могуже повезивање на ову бежичну мрежу."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:123
+#: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses 40/64-bit WEP encryption."
 msgstr "Ова мрежа користи 40/64-битно ВЕП шифровање."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:125
+#: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses 104/128-bit WEP encryption."
 msgstr "Ова мрежа користи 104/128-битно ВЕП шифровање."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:127
+#: ../src/common/Widgets/WifiMenuItem.vala:131
 msgid "This network uses WPA encryption."
 msgstr "Ова мрежа користи ВЕП шифровање."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:129
+#: ../src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses encryption."
 msgstr "Ова мрежа користи шифровање."
 
@@ -98,26 +112,30 @@ msgstr "Виртуелна мрежа: %s"
 msgid "Wired"
 msgstr "Жичана"
 
-#: ../src/common/Utils.vala:38
+#: ../src/common/Utils.vala:69
 msgid "Disconnected"
 msgstr "Неповезан"
 
-#: ../src/common/Utils.vala:45
+#: ../src/common/Utils.vala:77
 msgid "Connected"
 msgstr "Повезан"
 
-#: ../src/common/Utils.vala:48
+#: ../src/common/Utils.vala:81
 msgid "Failed"
 msgstr "Није успело"
 
-#: ../src/common/Utils.vala:51
+#: ../src/common/Utils.vala:85
 msgid "Connecting"
 msgstr "Повезујем се"
 
-#: ../src/common/Utils.vala:53
+#: ../src/common/Utils.vala:87
 msgid "Cable unplugged"
 msgstr "Кабал је искључен"
 
-#: ../src/common/Utils.vala:55
+#: ../src/common/Utils.vala:89
+msgid "Airplane mode enabled"
+msgstr ""
+
+#: ../src/common/Utils.vala:91
 msgid "Unknown"
 msgstr "Непознато"
