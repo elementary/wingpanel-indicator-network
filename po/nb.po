@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-05 11:15+0000\n"
+"PO-Revision-Date: 2017-05-05 12:42+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål "
 "<https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-"
@@ -61,9 +61,8 @@ msgid "VPN"
 msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "Ingen aksesspunkter tilgjengelige"
+msgstr "Ingen VPN tilgjengelig"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -74,9 +73,8 @@ msgid "Hotspot %s"
 msgstr "Trådløst aksesspunkt %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Dette trådløse nettverket kan ikke kobles til."
+msgstr "Dette virtuelle private nettverket kan ikke kobles til."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
