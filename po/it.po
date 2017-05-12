@@ -17,11 +17,11 @@ msgstr ""
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
-msgstr "Connettiti a una rete nascosta..."
+msgstr "Connettiti a una rete nascosta…"
 
 #: ../src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "Impostazioni di rete..."
+msgstr "Impostazioni di rete…"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Ricerca di un punto di accesso..."
+msgstr "Ricerca di un punto di accesso…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
