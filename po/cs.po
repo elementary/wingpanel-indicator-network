@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-18 19:53+0000\n"
+"PO-Revision-Date: 2017-05-18 19:56+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/cs/>\n"
@@ -49,7 +49,7 @@ msgstr "Pro nalezení blízkých přístupových bodů povolte Wi-Fi."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Hledání přístupových bodů"
+msgstr "Hledání přístupových bodů…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
