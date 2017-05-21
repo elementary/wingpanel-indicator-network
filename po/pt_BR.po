@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-21 02:29+0000\n"
+"PO-Revision-Date: 2017-06-03 16:04+0000\n"
 "Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-"
@@ -57,7 +57,6 @@ msgid "Wireless"
 msgstr "Rede sem fio"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
-#, fuzzy
 msgid "VPN"
 msgstr "VPN"
 
