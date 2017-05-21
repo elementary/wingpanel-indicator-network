@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-21 20:13+0000\n"
+"PO-Revision-Date: 2017-05-21 20:14+0000\n"
 "Last-Translator: Uwe S <saabisto@gmx.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/de/>\n"
@@ -33,7 +33,7 @@ msgstr "Netzwerkindikator"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
-msgstr "Keine Zugangspunkte verfügbar."
+msgstr "Keine Zugangspunkte verfügbar"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:54
 msgid "There are no wireless access points within range."
@@ -41,7 +41,7 @@ msgstr "Es befinden sich keine Drahtloszugangspunkte in Reichweite."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr "Drahtloszugang deaktiviert."
+msgstr "Drahtloszugang deaktiviert"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
