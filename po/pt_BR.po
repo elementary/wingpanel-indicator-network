@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-17 16:52+0000\n"
+"PO-Revision-Date: 2017-05-21 02:29+0000\n"
 "Last-Translator: Fernando da Silva Sousa <wild.nando@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) "
 "<https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
@@ -57,8 +57,9 @@ msgid "Wireless"
 msgstr "Rede sem fio"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
+#, fuzzy
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
 msgid "No VPN Available"
@@ -134,7 +135,7 @@ msgstr "Cabo desconectado"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Modo Avião ativado"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"
