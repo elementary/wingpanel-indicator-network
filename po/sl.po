@@ -18,11 +18,11 @@ msgstr ""
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
-msgstr "Poveži se na skrito omrežje..."
+msgstr "Poveži se na skrito omrežje…"
 
 #: ../src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "Omrežne nastavitve..."
+msgstr "Omrežne nastavitve…"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -42,7 +42,7 @@ msgstr "V dosegu ni brezžičnih omrežij."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr "Brezžično omrežje je onemogočeno."
+msgstr "Brezžično omrežje je onemogočeno"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
@@ -50,7 +50,7 @@ msgstr "Vklopite brezžično mrežno kartico za prikaz omrežij."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Iščem dostopne točke..."
+msgstr "Iščem dostopne točke…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
