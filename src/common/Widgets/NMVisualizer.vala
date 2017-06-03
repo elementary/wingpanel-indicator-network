@@ -154,9 +154,14 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
             state = Network.State.DISCONNECTED_AIRPLANE_MODE;
         } else {
             var next_state = Network.State.DISCONNECTED;
+            var best_score = int.MAX;
+
             foreach (var inter in network_interface) {
-                if (inter.state != Network.State.DISCONNECTED) {
+                var score = inter.state.get_priority();
+
+                if (score < best_score) {
                     next_state = inter.state;
+                    best_score = score;
                 }
             }
 
