@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-04-27 08:24+0000\n"
+"PO-Revision-Date: 2017-05-20 22:56+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
-"wingpanel-indicator-network/he/>\n"
+"Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=plural=n==1 ? 0 : (n>2||n==0) ? 1 : 2;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
@@ -57,12 +57,11 @@ msgstr "אלחוטי"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "אין נקודות גישה זמינות"
+msgstr "אין VPN זמין"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -73,9 +72,8 @@ msgid "Hotspot %s"
 msgstr "נקודה חמה להתקן %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "לא ניתן להתחבר לרשת אלחוטית זו."
+msgstr "לא ניתן להתחבר לרשת הווירטואלית הפרטית (VPN) הזו."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
@@ -135,7 +133,7 @@ msgstr "הכבל מנותק"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "מצב טיסה מופעל"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"

@@ -3,23 +3,25 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2016-03-11 17:49+0000\n"
-"Last-Translator: kay van der Zander <Unknown>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2017-06-01 20:55+0000\n"
+"Last-Translator: Dieter Debast <dieter_debast@hotmail.com>\n"
+"Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "Connecteer met onzichtbaar netwerk…"
 
 #: ../src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "Netwerkinstellingen..."
+msgstr "Netwerkinstellingen…"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -48,20 +50,19 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "Scannen naar toegangspunten…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
-msgstr ""
+msgstr "Draadloos"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "Geen Toegangspunten Beschikbaar"
+msgstr "Geen VPN beschikbaar"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -72,9 +73,8 @@ msgid "Hotspot %s"
 msgstr "Hotspot %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Kan geen verbinding met dit wifi-netwerk maken."
+msgstr "Kon geen verbinding maken met dit Virtueel Privaat Netwerk."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
@@ -134,7 +134,7 @@ msgstr "Kabel niet verbonden"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Vliegtuigmodus ingeschakeld"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"

@@ -3,15 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2016-06-20 23:03+0000\n"
+"PO-Revision-Date: 2017-05-23 09:48+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Estonian <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/et/>\n"
+"Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.14\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
@@ -55,12 +57,11 @@ msgstr "Juhtmevaba"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "Ühenduspunktid puuduvad"
+msgstr "VPN-id puuduvad"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -71,9 +72,8 @@ msgid "Hotspot %s"
 msgstr "Võrgu jagamine - %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Juhtmevabassee võrku ühendamine ebaõnnestus."
+msgstr "Valitud virtuaalsesse privaatvõrku ühendamine ebaõnnestus."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
@@ -133,7 +133,7 @@ msgstr "Juhe eemaldatud"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Lennurežiim lubatud"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"

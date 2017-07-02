@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-03 14:25+0000\n"
+"PO-Revision-Date: 2017-05-05 11:59+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
-"Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
-"wingpanel-indicator-network/ca/>\n"
+"Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,12 +57,11 @@ msgstr "Sense fil"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:39
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "No hi ha punts d'accés disponibles"
+msgstr "No hi ha cap xarxa privada virtual disponible"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -73,9 +72,8 @@ msgid "Hotspot %s"
 msgstr "Punt d'accés %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "No s'ha pogut connectar amb aquesta xarxa sense fil."
+msgstr "No s'ha pogut connectar amb aquesta xarxa privada virtual."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
@@ -135,7 +133,7 @@ msgstr "Cable desconnectat"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr ""
+msgstr "Mode d'avió activat"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"
