@@ -18,11 +18,11 @@ msgstr ""
 
 #: ../src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
-msgstr "连接隐藏网络..."
+msgstr "连接隐藏网络…"
 
 #: ../src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "网络设置..."
+msgstr "网络设置…"
 
 #: ../src/Indicator.vala:30
 msgid "Network"
@@ -50,7 +50,7 @@ msgstr "启用无线网络来发现附近的无线接入点。"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "正在扫描接入点..."
+msgstr "正在扫描接入点…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
