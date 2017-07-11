@@ -97,7 +97,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
             container_box = vpn_box;
         }
 
-        if (!is_dm () || get_children ().length () > 0) {
+        if (!is_dm () && get_children ().length () > 0) {
             widget_interface.sep = new Wingpanel.Widgets.Separator ();
             container_box.pack_end (widget_interface.sep);
         }
