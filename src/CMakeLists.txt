@@ -19,6 +19,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Widgets/EtherInterface.vala
   Widgets/VpnInterface.vala
   Widgets/WifiInterface.vala
+  Widgets/ModemInterface.vala
   common/Utils.vala
   common/Widgets/WifiMenuItem.vala
   common/Widgets/VpnMenuItem.vala
@@ -30,6 +31,7 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   common/Widgets/AbstractWifiInterface.vala
   common/Widgets/AbstractVpnInterface.vala
   common/Widgets/AbstractEtherInterface.vala
+  common/Widgets/AbstractModemInterface.vala
 
 PACKAGES
   wingpanel-2.0

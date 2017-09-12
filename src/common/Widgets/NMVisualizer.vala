@@ -109,6 +109,9 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         } else if (device is NM.DeviceEthernet) {
             widget_interface = new EtherInterface (nm_client, nm_settings, device);
             debug ("Wired interface added");
+        } else if (device is NM.DeviceModem) {
+            widget_interface = new ModemInterface (nm_client, nm_settings, device);
+            debug ("Modem interface added");
         } else {
             debug ("Unknown device: %s\n", device.get_device_type().to_string());
         }

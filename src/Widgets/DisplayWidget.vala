@@ -87,6 +87,46 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                 return true;
             });
             break;
+        case Network.State.CONNECTED_MOBILE:
+            image.icon_name = "network-cellular-connected-symbolic";
+            break;
+        case Network.State.CONNECTED_MOBILE_WEAK:
+            image.icon_name = "network-cellular-signal-weak-symbolic";
+            break;
+        case Network.State.CONNECTED_MOBILE_OK:
+            image.icon_name = "network-cellular-signal-ok-symbolic";
+            break;
+        case Network.State.CONNECTED_MOBILE_GOOD:
+            image.icon_name = "network-cellular-signal-good-symbolic";
+            break;
+        case Network.State.CONNECTED_MOBILE_EXCELLENT:
+            image.icon_name = "network-cellular-signal-excellent-symbolic";
+            break;
+        case Network.State.CONNECTING_MOBILE:
+            animation_timeout = Timeout.add (300, () => {
+                animation_state = (animation_state + 1) % 4;
+                string strength = "";
+                switch (animation_state) {
+                case 0:
+                    strength = "weak";
+                    break;
+                case 1:
+                    strength = "ok";
+                    break;
+                case 2:
+                    strength = "good";
+                    break;
+                case 3:
+                    strength = "excellent";
+                    break;
+                }
+                image.icon_name = "network-cellular-signal-" + strength  + "-symbolic";
+                return true;
+            });
+            break;
+        case Network.State.FAILED_MOBILE:
+            image.icon_name = "network-cellular-offline-symbolic";
+            break;
         case Network.State.DISCONNECTED:
             image.icon_name = "network-wireless-offline-symbolic";
             break;
