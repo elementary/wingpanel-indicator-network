@@ -1,3 +1,9 @@
+wingpanel-indicator-network (2.1.0) xenial; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Mon, 11 Sep 2017 21:31:06 -0500
+
 wingpanel-indicator-network (2.0.2) xenial; urgency=medium
 
   * New upstream release.
