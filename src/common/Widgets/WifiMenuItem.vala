@@ -36,12 +36,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 		}
 	}
 
-	public bool is_secured {
-		get {
-			return ap.get_wpa_flags () != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE;
-		}
-	}
-
 	public NM.AccessPoint ap { get { return _tmp_ap; } }
 	NM.AccessPoint _tmp_ap;
 
@@ -63,7 +57,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 		img_strength = new Gtk.Image ();
 		img_strength.margin_end = 6;
 		
-		lock_img = new Gtk.Image.from_icon_name ("channel-secure-symbolic", Gtk.IconSize.MENU);
+		lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
 		
 		/* TODO: investigate this, it has not been tested yet. */
 		error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU);
@@ -122,18 +116,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 		return radio_button.get_group ();
 	}
 
-	void set_lock_img_tooltip (NM.@80211ApSecurityFlags flags) {
-		if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
-			lock_img.set_tooltip_text(_("This network uses 40/64-bit WEP encryption."));
-		} else if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
-			lock_img.set_tooltip_text(_("This network uses 104/128-bit WEP encryption."));
-		} else if ((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
-			lock_img.set_tooltip_text(_("This network uses WPA encryption."));
-		} else {
-			lock_img.set_tooltip_text(_("This network uses encryption."));
-		}
-	}
-
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
 
@@ -143,8 +125,26 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 			img_strength.set_from_icon_name ("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
 			img_strength.show_all ();
 
-			lock_img.visible = is_secured;
-			set_lock_img_tooltip (ap.get_wpa_flags ());
+            var flags = ap.get_wpa_flags ();
+            var is_secured = false;
+
+            if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
+                is_secured = true;
+                tooltip_text = _("This network uses 40/64-bit WEP encryption");
+            } else if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
+                is_secured = true;
+                tooltip_text = _("This network uses 104/128-bit WEP encryption");
+            } else if ((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
+                is_secured = true;
+                tooltip_text = _("This network uses WPA encryption");
+            } else if (flags != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE) {
+                is_secured = true;
+                tooltip_text = _("This network uses encryption");
+            } else {
+                tooltip_text = _("This network is unsecured");
+            }
+
+			lock_img.visible = !is_secured;
 			lock_img.no_show_all = !lock_img.visible;
 
 			hide_item (error_img);
