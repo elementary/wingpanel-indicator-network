@@ -134,6 +134,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
         update_interfaces_names ();
         update_all ();
+        update_state ();
         show_all ();
     }
 
