@@ -32,7 +32,7 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         modem_item.get_style_context ().add_class ("h4");
         modem_item.switched.connect (() => {
             if (modem_item.get_active ()) {
-                device.set_autoconnect (true);
+                nm_client.activate_connection (null, device, null, null);
             } else {
                 device.disconnect (() => { debug("Successfully disconnected."); });
             }
@@ -45,38 +45,38 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
 
     public override void update () {
         switch (device.state) {
-		    /* physically not connected */
-		    case NM.DeviceState.UNKNOWN:
-		    case NM.DeviceState.UNMANAGED:
-		    case NM.DeviceState.UNAVAILABLE:
-		    case NM.DeviceState.FAILED:
+            /* physically not connected */
+            case NM.DeviceState.UNKNOWN:
+            case NM.DeviceState.UNMANAGED:
+            case NM.DeviceState.UNAVAILABLE:
+            case NM.DeviceState.FAILED:
                 modem_item.sensitive = false;
                 modem_item.set_active (false);
                 state = State.FAILED_MOBILE;
                 break;    
-		    case NM.DeviceState.DISCONNECTED:            
-		    case NM.DeviceState.DEACTIVATING:
+            case NM.DeviceState.DISCONNECTED:
+            case NM.DeviceState.DEACTIVATING:
+                modem_item.sensitive = true;
+                modem_item.set_active (false);
+                state = State.FAILED_MOBILE;
+                break;
+            /* configuration */
+            case NM.DeviceState.PREPARE:
+            case NM.DeviceState.CONFIG:
+            case NM.DeviceState.NEED_AUTH:
+            case NM.DeviceState.IP_CONFIG:
+            case NM.DeviceState.IP_CHECK:
+            case NM.DeviceState.SECONDARIES:
                 modem_item.sensitive = true;
                 modem_item.set_active (true);
-			    state = State.FAILED_MOBILE;
-			    break;
-		    /* configuration */
-		    case NM.DeviceState.PREPARE:
-		    case NM.DeviceState.CONFIG:
-		    case NM.DeviceState.NEED_AUTH:
-		    case NM.DeviceState.IP_CONFIG:
-		    case NM.DeviceState.IP_CHECK:
-		    case NM.DeviceState.SECONDARIES:
+                state = State.CONNECTING_MOBILE;
+                break;
+            /* working */
+            case NM.DeviceState.ACTIVATED:
                 modem_item.sensitive = true;
                 modem_item.set_active (true);
-			    state = State.CONNECTING_MOBILE;
-			    break;
-		    /* working */
-		    case NM.DeviceState.ACTIVATED:
-                modem_item.sensitive = true;
-                modem_item.set_active (true);
-			    state = State.CONNECTED_MOBILE;
-			    break;
-		}
+                state = State.CONNECTED_MOBILE;
+                break;
+        }
     }
 }
