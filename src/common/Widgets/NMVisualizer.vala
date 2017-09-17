@@ -68,6 +68,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         }
 
         update_interfaces_names ();
+        update_state ();
     }
 
     void update_interfaces_names () {
@@ -134,6 +135,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
         update_interfaces_names ();
         update_all ();
+        update_state ();
         show_all ();
     }
 
