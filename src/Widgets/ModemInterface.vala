@@ -20,6 +20,20 @@
 
 public class Network.ModemInterface : Network.AbstractModemInterface {
     private Wingpanel.Widgets.Switch modem_item;
+    private DBusObjectManagerClient? modem_manager;
+
+    private uint32 _signal_quality;
+    public uint32 signal_quality {
+        get {
+            return _signal_quality;
+        }
+        private set {
+            _signal_quality = value;
+            if (device.state == NM.DeviceState.ACTIVATED) {
+                state = strength_to_state (value);
+            }
+        }
+    }
 
     public ModemInterface (NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
         device = _device;
@@ -41,11 +55,11 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         add (modem_item);
 
         device.state_changed.connect (() => { update (); });
+        prepare.begin ();
     }
 
     public override void update () {
         switch (device.state) {
-            /* physically not connected */
             case NM.DeviceState.UNKNOWN:
             case NM.DeviceState.UNMANAGED:
             case NM.DeviceState.UNAVAILABLE:
@@ -60,7 +74,6 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
                 modem_item.set_active (false);
                 state = State.FAILED_MOBILE;
                 break;
-            /* configuration */
             case NM.DeviceState.PREPARE:
             case NM.DeviceState.CONFIG:
             case NM.DeviceState.NEED_AUTH:
@@ -71,12 +84,44 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
                 modem_item.set_active (true);
                 state = State.CONNECTING_MOBILE;
                 break;
-            /* working */
             case NM.DeviceState.ACTIVATED:
                 modem_item.sensitive = true;
                 modem_item.set_active (true);
-                state = State.CONNECTED_MOBILE;
+                state = strength_to_state (signal_quality);
                 break;
         }
+    }
+
+    private Network.State strength_to_state (uint32 strength) {
+        if (strength < 30) {
+            return Network.State.CONNECTED_MOBILE_WEAK;
+        } else if (strength < 55) {
+            return Network.State.CONNECTED_MOBILE_OK;
+        } else if (strength < 80) {
+            return Network.State.CONNECTED_MOBILE_GOOD;
+        } else {
+            return Network.State.CONNECTED_MOBILE_EXCELLENT;
+        }
+    }
+
+    private void device_properties_changed (Variant changed) {
+        var signal_variant = changed.lookup_value ("SignalQuality", VariantType.TUPLE);
+        bool recent;
+        uint32 quality;
+        if (signal_variant != null) {
+            signal_variant.get ("(ub)", out quality, out recent);
+            signal_quality = quality;
+        }
+    }
+
+    public async void prepare () {
+        modem_manager = yield new DBusObjectManagerClient.for_bus (BusType.SYSTEM,
+            DBusObjectManagerClientFlags.NONE, "org.freedesktop.ModemManager1", "/org/freedesktop/ModemManager1", null);
+
+        modem_manager.interface_proxy_properties_changed.connect ((obj_proxy, interface_proxy, changed, invalidated) => {
+            if (interface_proxy.g_object_path == device.get_udi ()) {
+                device_properties_changed (changed);
+            }
+        });
     }
 }

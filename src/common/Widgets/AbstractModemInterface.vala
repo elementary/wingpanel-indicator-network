@@ -19,8 +19,6 @@
  */
 
 public abstract class Network.AbstractModemInterface : Network.WidgetNMInterface {
-    protected NM.Client nm_client;
-
     public override void update_name (int count) {
         var name = device.get_description ();
         if (count > 1) {
