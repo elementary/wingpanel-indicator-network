@@ -48,7 +48,7 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
             if (modem_item.get_active ()) {
                 nm_client.activate_connection (null, device, null, null);
             } else {
-                device.disconnect (() => { debug("Successfully disconnected."); });
+                device.disconnect (() => { debug ("Successfully disconnected."); });
             }
         });
 
