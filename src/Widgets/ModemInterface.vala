@@ -106,17 +106,22 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
 
     private void device_properties_changed (Variant changed) {
         var signal_variant = changed.lookup_value ("SignalQuality", VariantType.TUPLE);
-        bool recent;
-        uint32 quality;
         if (signal_variant != null) {
+            bool recent;
+            uint32 quality;
             signal_variant.get ("(ub)", out quality, out recent);
             signal_quality = quality;
         }
     }
 
     public async void prepare () {
-        modem_manager = yield new DBusObjectManagerClient.for_bus (BusType.SYSTEM,
-            DBusObjectManagerClientFlags.NONE, "org.freedesktop.ModemManager1", "/org/freedesktop/ModemManager1", null);
+        try {
+            modem_manager = yield new DBusObjectManagerClient.for_bus (BusType.SYSTEM,
+                DBusObjectManagerClientFlags.NONE, "org.freedesktop.ModemManager1", "/org/freedesktop/ModemManager1", null);
+        } catch (Error e) {
+            warning ("Unable to connect to ModemManager1 to check cellular internet signal quality: %s", e.message);
+            return;
+        }
 
         modem_manager.interface_proxy_properties_changed.connect ((obj_proxy, interface_proxy, changed, invalidated) => {
             if (interface_proxy.g_object_path == device.get_udi ()) {
