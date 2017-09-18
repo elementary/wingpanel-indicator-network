@@ -87,20 +87,17 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                 return true;
             });
             break;
-        case Network.State.CONNECTED_MOBILE:
-            image.icon_name = "network-cellular-connected-symbolic";
-            break;
         case Network.State.CONNECTED_MOBILE_WEAK:
-            image.icon_name = "network-cellular-signal-weak-symbolic";
+            image.icon_name = "network-cellular-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_OK:
-            image.icon_name = "network-cellular-signal-ok-symbolic";
+            image.icon_name = "network-cellular-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_GOOD:
-            image.icon_name = "network-cellular-signal-good-symbolic";
+            image.icon_name = "network-cellular-signal-good-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            image.icon_name = "network-cellular-signal-excellent-symbolic";
+            image.icon_name = "network-cellular-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTING_MOBILE:
             animation_timeout = Timeout.add (300, () => {
@@ -120,7 +117,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     strength = "excellent";
                     break;
                 }
-                image.icon_name = "network-cellular-signal-" + strength  + "-symbolic";
+                image.icon_name = "network-cellular-signal-" + strength + (secure? "secure-" : "")  + "-symbolic";
                 return true;
             });
             break;

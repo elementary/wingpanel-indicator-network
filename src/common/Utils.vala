@@ -28,7 +28,6 @@ public enum Network.State {
     CONNECTED_WIFI_OK,
     CONNECTED_WIFI_GOOD,
     CONNECTED_WIFI_EXCELLENT,
-    CONNECTED_MOBILE,
     CONNECTED_MOBILE_WEAK,
     CONNECTED_MOBILE_OK,
     CONNECTED_MOBILE_GOOD,
@@ -58,7 +57,6 @@ public enum Network.State {
             case Network.State.CONNECTED_WIFI_GOOD:
             case Network.State.CONNECTED_WIFI_EXCELLENT:
                 return 4;
-            case Network.State.CONNECTED_MOBILE:
             case Network.State.CONNECTED_MOBILE_WEAK:
             case Network.State.CONNECTED_MOBILE_OK:
             case Network.State.CONNECTED_MOBILE_GOOD:
@@ -90,7 +88,6 @@ namespace Network.Common.Utils {
         case Network.State.CONNECTED_WIFI_EXCELLENT:
         case Network.State.CONNECTED_WIRED:
         case Network.State.CONNECTED_VPN:
-        case Network.State.CONNECTED_MOBILE:
         case Network.State.CONNECTED_MOBILE_WEAK:
         case Network.State.CONNECTED_MOBILE_OK:
         case Network.State.CONNECTED_MOBILE_GOOD:
