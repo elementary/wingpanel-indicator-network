@@ -19,8 +19,10 @@
 public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
 
-    uint animation_timeout;
-    int animation_state = 0;
+    uint wifi_animation_timeout;
+    int wifi_animation_state = 0;
+    uint cellular_animation_timeout;
+    int cellular_animation_state = 0;
 
     public DisplayWidget () {
         Object (orientation: Gtk.Orientation.HORIZONTAL);
@@ -35,9 +37,14 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     }
 
     public void update_state (Network.State state, bool secure) {
-        if (animation_timeout > 0) {
-            Source.remove (animation_timeout);
-            animation_timeout = 0;
+        if (wifi_animation_timeout > 0) {
+            Source.remove (wifi_animation_timeout);
+            wifi_animation_timeout = 0;
+        }
+
+        if (cellular_animation_timeout > 0) {
+            Source.remove (cellular_animation_timeout);
+            cellular_animation_timeout = 0;
         }
 
         switch (state) {
@@ -66,10 +73,10 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             image.icon_name = "network-wireless-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
             break;
         case Network.State.CONNECTING_WIFI:
-            animation_timeout = Timeout.add (300, () => {
-                animation_state = (animation_state + 1) % 4;
+            wifi_animation_timeout = Timeout.add (300, () => {
+                wifi_animation_state = (wifi_animation_state + 1) % 4;
                 string strength = "";
-                switch (animation_state) {
+                switch (wifi_animation_state) {
                 case 0:
                     strength = "weak";
                     break;
@@ -88,22 +95,22 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             });
             break;
         case Network.State.CONNECTED_MOBILE_WEAK:
-            image.icon_name = "network-cellular-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "network-cellular-signal-weak-%ssymbolic".printf (secure ? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_OK:
-            image.icon_name = "network-cellular-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "network-cellular-signal-ok-%ssymbolic".printf (secure ? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_GOOD:
-            image.icon_name = "network-cellular-signal-good-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "network-cellular-signal-good-%ssymbolic".printf (secure ? "secure-" : "");
             break;
         case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            image.icon_name = "network-cellular-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "network-cellular-signal-excellent-%ssymbolic".printf (secure ? "secure-" : "");
             break;
         case Network.State.CONNECTING_MOBILE:
-            animation_timeout = Timeout.add (300, () => {
-                animation_state = (animation_state + 1) % 4;
+            cellular_animation_timeout = Timeout.add (300, () => {
+                cellular_animation_state = (cellular_animation_state + 1) % 4;
                 string strength = "";
-                switch (animation_state) {
+                switch (cellular_animation_state) {
                 case 0:
                     strength = "weak";
                     break;
@@ -117,7 +124,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     strength = "excellent";
                     break;
                 }
-                image.icon_name = "network-cellular-signal-" + strength + (secure? "secure-" : "")  + "-symbolic";
+
+                image.icon_name = "network-cellular-signal-" + strength + (secure ? "secure-" : "")  + "-symbolic";
                 return true;
             });
             break;
