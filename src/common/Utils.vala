@@ -28,11 +28,17 @@ public enum Network.State {
     CONNECTED_WIFI_OK,
     CONNECTED_WIFI_GOOD,
     CONNECTED_WIFI_EXCELLENT,
+    CONNECTED_MOBILE_WEAK,
+    CONNECTED_MOBILE_OK,
+    CONNECTED_MOBILE_GOOD,
+    CONNECTED_MOBILE_EXCELLENT,
     CONNECTING_WIFI,
+    CONNECTING_MOBILE,
     CONNECTING_WIRED,
     CONNECTING_VPN,
     FAILED_WIRED,
     FAILED_WIFI,
+    FAILED_MOBILE,
     FAILED_VPN;
 
     public int get_priority () {
@@ -41,23 +47,31 @@ public enum Network.State {
                 return 0;
             case Network.State.CONNECTING_WIFI:
                 return 1;
-            case Network.State.CONNECTED_WIRED:
+            case Network.State.CONNECTING_MOBILE:
                 return 2;
+            case Network.State.CONNECTED_WIRED:
+                return 3;
             case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
             case Network.State.CONNECTED_WIFI_GOOD:
             case Network.State.CONNECTED_WIFI_EXCELLENT:
-                return 3;
+                return 4;
+            case Network.State.CONNECTED_MOBILE_WEAK:
+            case Network.State.CONNECTED_MOBILE_OK:
+            case Network.State.CONNECTED_MOBILE_GOOD:
+            case Network.State.CONNECTED_MOBILE_EXCELLENT:
+                return 5;
             case Network.State.FAILED_WIRED:
             case Network.State.FAILED_WIFI:
             case Network.State.FAILED_VPN:
-                return 4;
+            case Network.State.FAILED_MOBILE:
+                return 6;
             case Network.State.DISCONNECTED_WIRED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
-                return 5;
+                return 7;
             default:
-                return 6;
+                return 8;
         }
     }
 }
@@ -74,14 +88,20 @@ namespace Network.Common.Utils {
         case Network.State.CONNECTED_WIFI_EXCELLENT:
         case Network.State.CONNECTED_WIRED:
         case Network.State.CONNECTED_VPN:
+        case Network.State.CONNECTED_MOBILE_WEAK:
+        case Network.State.CONNECTED_MOBILE_OK:
+        case Network.State.CONNECTED_MOBILE_GOOD:
+        case Network.State.CONNECTED_MOBILE_EXCELLENT:
             return _("Connected");
         case Network.State.FAILED_WIRED:
         case Network.State.FAILED_WIFI:
         case Network.State.FAILED_VPN:
+        case Network.State.FAILED_MOBILE:
             return _("Failed");
         case Network.State.CONNECTING_WIFI:
         case Network.State.CONNECTING_WIRED:
         case Network.State.CONNECTING_VPN:
+        case Network.State.CONNECTING_MOBILE:
             return _("Connecting");
         case Network.State.WIRED_UNPLUGGED:
             return _("Cable unplugged");
