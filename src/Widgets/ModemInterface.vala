@@ -45,9 +45,9 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
 
         modem_item.get_style_context ().add_class ("h4");
         modem_item.switched.connect (() => {
-            if (modem_item.get_active ()) {
+            if (modem_item.get_active () && device.state == NM.DeviceState.DISCONNECTED) {
                 nm_client.activate_connection (null, device, null, null);
-            } else {
+            } else if (!modem_item.get_active () && device.state == NM.DeviceState.ACTIVATED) {
                 device.disconnect (() => { debug ("Successfully disconnected."); });
             }
         });
