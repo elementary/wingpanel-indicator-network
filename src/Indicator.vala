@@ -47,6 +47,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             popover_widget = new Widgets.PopoverWidget ();
             popover_widget.notify["state"].connect (on_state_changed);
             popover_widget.notify["secure"].connect (on_state_changed);
+            popover_widget.notify["extra-info"].connect (on_state_changed);
             popover_widget.settings_shown.connect (() => { close (); });
 
             on_state_changed ();
@@ -60,7 +61,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (popover_widget != null);
         assert (display_widget != null);
 
-        display_widget.update_state (popover_widget.state, popover_widget.secure);
+        display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
     }
 
     private void start_monitor () {
