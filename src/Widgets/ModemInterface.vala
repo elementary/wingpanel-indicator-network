@@ -35,7 +35,7 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         }
     }
 
-    enum ModemAccessTechnology{
+    enum ModemAccessTechnology {
         UNKNOWN     = 0,
         POTS        = 1 << 0,
         GSM         = 1 << 1,
