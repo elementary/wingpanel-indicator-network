@@ -22,7 +22,7 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
 public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
 #endif
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
-
+    public string? extra_info { protected set; get; default = null; }
 	public string display_title { get; protected set; default = _("Unknown device"); }
 
 #if PLUG_NETWORK

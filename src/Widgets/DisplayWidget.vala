@@ -18,6 +18,8 @@
 
 public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
+    private Gtk.Label extra_info_label;
+    private Gtk.Revealer extra_info_revealer;
 
     uint wifi_animation_timeout;
     int wifi_animation_state = 0;
@@ -33,10 +35,23 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         image.icon_name = "network-wired-symbolic";
         image.icon_size = Gtk.IconSize.LARGE_TOOLBAR;
 
+        extra_info_label = new Gtk.Label (null);
+        extra_info_label.margin_left = 4;
+        extra_info_label.valign = Gtk.Align.CENTER;
+        extra_info_label.vexpand = true;
+
+        extra_info_revealer = new Gtk.Revealer ();
+        extra_info_revealer.transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+        extra_info_revealer.add (extra_info_label);
+
         pack_start (image);
+        pack_start (extra_info_revealer);
     }
 
-    public void update_state (Network.State state, bool secure) {
+    public void update_state (Network.State state, bool secure, string? extra_info = null) {
+        extra_info_revealer.reveal_child = extra_info != null;
+        extra_info_label.label = extra_info;
+
         if (wifi_animation_timeout > 0) {
             Source.remove (wifi_animation_timeout);
             wifi_animation_timeout = 0;

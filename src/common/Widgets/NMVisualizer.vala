@@ -23,6 +23,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
     protected GLib.List<WidgetNMInterface>? network_interface;
 
     public bool secure { private set; get; default = false; }
+    public string? extra_info { protected set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
     construct {
@@ -123,6 +124,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
             network_interface.append (widget_interface);
             add_interface(widget_interface);
             widget_interface.notify["state"].connect(update_state);
+            widget_interface.notify["extra-info"].connect (update_state);
 
         }
 
@@ -168,6 +170,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
                 if (score < best_score) {
                     next_state = inter.state;
                     best_score = score;
+                    extra_info = inter.extra_info;
                 }
             }
 
