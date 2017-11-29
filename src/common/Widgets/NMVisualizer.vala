@@ -17,8 +17,7 @@
 
 public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
     protected NM.Client nm_client;
-    protected NM.RemoteSettings nm_settings;
-    protected NM.VPNConnection? active_vpn_connection = null;
+    protected NM.VpnConnection? active_vpn_connection = null;
 
     protected GLib.List<WidgetNMInterface>? network_interface;
 
@@ -33,7 +32,6 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
         /* Monitor network manager */
         nm_client = new NM.Client ();
-        nm_settings = new NM.RemoteSettings (null);
 
         nm_client.notify["active-connections"].connect (update_vpn_connection);
 
@@ -103,17 +101,17 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 #endif
 
         if (device is NM.DeviceWifi) {
-            widget_interface = new WifiInterface (nm_client, nm_settings, device);
+            widget_interface = new WifiInterface (nm_client, device);
 #if PLUG_NETWORK
             hotspot_interface = new HotspotInterface((WifiInterface)widget_interface);
 #endif
 
             debug ("Wifi interface added");
         } else if (device is NM.DeviceEthernet) {
-            widget_interface = new EtherInterface (nm_client, nm_settings, device);
+            widget_interface = new EtherInterface (nm_client, device);
             debug ("Wired interface added");
         } else if (device is NM.DeviceModem) {
-            widget_interface = new ModemInterface (nm_client, nm_settings, device);
+            widget_interface = new ModemInterface (nm_client, device);
             debug ("Modem interface added");
         } else {
             debug ("Unknown device: %s\n", device.get_device_type().to_string());
@@ -145,7 +143,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
     }
 
     private void create_vpn_interface () {
-        WidgetNMInterface widget_interface = new VpnInterface (nm_client, nm_settings);
+        WidgetNMInterface widget_interface = new VpnInterface (nm_client);
         network_interface.append (widget_interface);
         add_interface (widget_interface);
         widget_interface.notify["state"].connect (update_state);
@@ -183,7 +181,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
 
         nm_client.get_active_connections ().foreach ((ac) => {
             if (active_vpn_connection == null && ac.get_vpn ()) {
-                active_vpn_connection = (NM.VPNConnection) ac;
+                active_vpn_connection = (NM.VpnConnection)ac;
                 update_vpn_state (active_vpn_connection.get_vpn_state ());
                 active_vpn_connection.vpn_state_changed.connect (() => {
                     update_vpn_state (active_vpn_connection.get_vpn_state ());
@@ -192,16 +190,16 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         });
     }
 
-    void update_vpn_state (NM.VPNConnectionState state) {
+    void update_vpn_state (NM.VpnConnectionState state) {
         switch (state) {
-            case NM.VPNConnectionState.DISCONNECTED:
-            case NM.VPNConnectionState.PREPARE:
-            case NM.VPNConnectionState.IP_CONFIG_GET:
-            case NM.VPNConnectionState.CONNECT:
-            case NM.VPNConnectionState.FAILED:
+            case NM.VpnConnectionState.DISCONNECTED:
+            case NM.VpnConnectionState.PREPARE:
+            case NM.VpnConnectionState.IP_CONFIG_GET:
+            case NM.VpnConnectionState.CONNECT:
+            case NM.VpnConnectionState.FAILED:
                 secure = false;
                 break;
-            case NM.VPNConnectionState.ACTIVATED:
+            case NM.VpnConnectionState.ACTIVATED:
                 secure = true;
                 break;
         }

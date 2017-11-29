@@ -28,7 +28,7 @@ public abstract class Network.AbstractHotspotInterface : Network.WidgetNMInterfa
 
 	public override void update () {
 #if PLUG_NETWORK
-		if (Utils.Hotspot.get_device_is_hotspot (root_iface.wifi_device, root_iface.nm_settings)) {
+		if (Utils.Hotspot.get_device_is_hotspot (root_iface.wifi_device, root_iface.nm_client)) {
 			state = State.CONNECTED_WIFI;
 		} else {
 			state = State.DISCONNECTED;

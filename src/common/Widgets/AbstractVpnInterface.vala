@@ -16,12 +16,11 @@
  */
 
 public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
-    protected NM.VPNConnection? active_vpn_connection = null;
+    protected NM.VpnConnection? active_vpn_connection = null;
 
     protected Gtk.ListBox vpn_list;
 
     protected NM.Client nm_client;
-    public NM.RemoteSettings nm_settings;
 
     protected VpnMenuItem? active_vpn_item { get; set; }
     protected VpnMenuItem? blank_item = null;
@@ -33,9 +32,8 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     **/
     public Network.State vpn_state { get; protected set; default = Network.State.DISCONNECTED; }
 
-    public void init_vpn_interface (NM.Client _nm_client, NM.RemoteSettings _nm_settings) {
+    public void init_vpn_interface (NM.Client _nm_client) {
         nm_client = _nm_client;
-        nm_settings = _nm_settings;
         display_title = _("VPN");
 
         blank_item = new VpnMenuItem.blank ();
@@ -53,9 +51,11 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         placeholder.add_named (no_vpn_box, "no-vpn");
         placeholder.visible_child_name = "no-vpn";
 
-        nm_settings.connections_read.connect (update);
         nm_client.notify["active-connections"].connect (update);
-        nm_settings.new_connection.connect (vpn_added_cb);
+        nm_client.connection_added.connect (vpn_added_cb);
+        nm_client.connection_removed.connect (vpn_removed_cb);
+
+        nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
 
         update ();
     }
@@ -82,22 +82,22 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
 
         if (active_vpn_connection != null) {
             switch (active_vpn_connection.vpn_state) {
-                case NM.VPNConnectionState.UNKNOWN:
-                case NM.VPNConnectionState.DISCONNECTED:
+                case NM.VpnConnectionState.UNKNOWN:
+                case NM.VpnConnectionState.DISCONNECTED:
                     vpn_state = State.DISCONNECTED;
                     active_vpn_item = null;
                     break;
-                case NM.VPNConnectionState.PREPARE:
-                case NM.VPNConnectionState.IP_CONFIG_GET:
-                case NM.VPNConnectionState.CONNECT:
+                case NM.VpnConnectionState.PREPARE:
+                case NM.VpnConnectionState.IP_CONFIG_GET:
+                case NM.VpnConnectionState.CONNECT:
                     vpn_state = State.CONNECTING_VPN;
                     item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                     break;
-                case NM.VPNConnectionState.FAILED:
+                case NM.VpnConnectionState.FAILED:
                     vpn_state = State.FAILED_VPN;
                     active_vpn_item = null;
                     break;
-                case NM.VPNConnectionState.ACTIVATED:
+                case NM.VpnConnectionState.ACTIVATED:
                     vpn_state = State.CONNECTED_VPN;
                     item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                     sensitive = true;
@@ -147,9 +147,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         var vpn = (NM.RemoteConnection)obj;
         switch (vpn.get_connection_type ()) {
             case NM.SettingVpn.SETTING_NAME:
-                // Remove vpn when it's removed in switchboard-plug-networking
-                vpn.removed.connect (vpn_removed_cb);
-
                 // Add the item to vpn_list
                 var item = new VpnMenuItem (vpn);
                 item.set_visible (true);
@@ -189,7 +186,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
 
         nm_client.get_active_connections ().foreach ((ac) => {
             if (ac.get_vpn () && active_vpn_connection == null) {
-                active_vpn_connection = (NM.VPNConnection)ac;
+                active_vpn_connection = (NM.VpnConnection)ac;
                 active_vpn_connection.vpn_state_changed.connect (update);
 
                 foreach (var v in vpn_list.get_children ()) {

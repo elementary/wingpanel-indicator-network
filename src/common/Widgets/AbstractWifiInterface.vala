@@ -23,7 +23,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	protected Gtk.ListBox wifi_list;
 
 	protected NM.Client nm_client;
-	public NM.RemoteSettings nm_settings;
 	
 	protected WifiMenuItem? active_wifi_item { get; set; }
 	protected WifiMenuItem? blank_item = null;
@@ -35,9 +34,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	
 	uint timeout_scan = 0;
 
-	public void init_wifi_interface (NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
+	public void init_wifi_interface (NM.Client nm_client, NM.Device? _device) {
 		this.nm_client = nm_client;
-		this.nm_settings = nm_settings;
 		device = _device;
 		wifi_device = (NM.DeviceWifi)device;
 		blank_item = new WifiMenuItem.blank ();
@@ -91,8 +89,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		rfkill.device_changed.connect (update);
 		rfkill.device_deleted.connect (update);
 		
-		nm_settings.connections_read.connect (update);
-
 		wifi_device.notify["active-access-point"].connect (update);
 		wifi_device.access_point_added.connect (access_point_added_cb);
 		wifi_device.access_point_removed.connect (access_point_removed_cb);
@@ -151,7 +147,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		foreach(var w in wifi_list.get_children()) {
 			var menu_item = (WifiMenuItem) w;
 
-			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
+			if (ap.get_ssid () == menu_item.ssid) {
 				found = true;
 				menu_item.add_ap(ap);
 				break;
@@ -192,13 +188,13 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			debug("No active AP");
 			blank_item.set_active (true);
 		} else {
-			debug("Active ap: %s", NM.Utils.ssid_to_utf8(active_ap.get_ssid()));
+			debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap.get_ssid ().get_data ()));
 			
 			bool found = false;
 			foreach(var w in wifi_list.get_children()) {
 				var menu_item = (WifiMenuItem) w;
 
-				if(NM.Utils.same_ssid (active_ap.get_ssid (), menu_item.ssid, true)) {
+				if (active_ap.get_ssid () == menu_item.ssid) {
 					found = true;
 					menu_item.set_active (true);
 					active_wifi_item = menu_item;
@@ -223,7 +219,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 			assert(menu_item != null);
 
-			if(NM.Utils.same_ssid (ap.get_ssid (), menu_item.ssid, true)) {
+			if (ap.get_ssid () == menu_item.ssid) {
 				found_item = menu_item;
 				break;
 			}
@@ -253,7 +249,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 	public override void update () {
 #if PLUG_NETWORK
-		if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_settings)) {
+		if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_client)) {
 			state = State.DISCONNECTED;
 			return;
 		}
@@ -337,10 +333,10 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		if (state == State.DISCONNECTED) {
 			placeholder.visible_child_name = "scanning";
 			cancel_scan ();
-			wifi_device.request_scan_simple (null);
+			wifi_device.request_scan_async (null, null);
 			timeout_scan = Timeout.add(5000, () => {
 #if PLUG_NETWORK
-				if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_settings)) {
+				if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_client)) {
 					return false;
 				}
 #endif

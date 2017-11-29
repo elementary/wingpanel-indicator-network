@@ -19,8 +19,8 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     private Wingpanel.Widgets.Switch vpn_item;
     Gtk.Revealer revealer;
 
-    public VpnInterface (NM.Client nm_client, NM.RemoteSettings nm_settings) {
-        init_vpn_interface (nm_client, nm_settings);
+    public VpnInterface (NM.Client nm_client) {
+        init_vpn_interface (nm_client);
         vpn_item.set_caption (display_title);
         debug ("Starting VPN Interface");
 
@@ -79,7 +79,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
         debug ("Connecting to VPN : %s", item.connection.get_id ());
 
-        nm_client.activate_connection (item.connection, null, null, null);
+        nm_client.activate_connection_async (item.connection, null, null, null, null);
         active_vpn_item = item;
         Idle.add (() => { update (); return false; });
     }
