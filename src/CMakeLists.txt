@@ -36,9 +36,9 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
 PACKAGES
   wingpanel-2.0
   granite
-  libnm
   posix
 CUSTOM_VAPIS
+  libnm.vapi
   libnma.vapi
 OPTIONS
   --thread
