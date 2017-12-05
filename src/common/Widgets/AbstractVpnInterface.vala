@@ -191,6 +191,9 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
                 foreach (var v in vpn_list.get_children ()) {
                     var menu_item = (VpnMenuItem) v;
 
+                    if (menu_item.connection == null)
+                        continue;
+
                     if (menu_item.connection.get_uuid () == active_vpn_connection.uuid) {
                         menu_item.set_active (true);
                         active_vpn_item = menu_item;
