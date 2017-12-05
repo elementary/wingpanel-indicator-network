@@ -71,6 +71,10 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         vpn_list.set_placeholder (placeholder);
     }
 
+    public override void update_name (int count) {
+        display_title = _("VPN");
+    }
+
     public override void update () {
         update_active_connection ();
 
