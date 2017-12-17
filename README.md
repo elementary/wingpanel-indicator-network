@@ -10,9 +10,8 @@ You'll need the following dependencies:
 * cmake
 * gobject-introspection
 * libgranite-dev
-* libnm-glib-dev
-* libnm-gtk-dev
-* libnm-util-dev
+* libnm-dev
+* libnma-dev
 * libwingpanel-2.0-dev
 * valac
 

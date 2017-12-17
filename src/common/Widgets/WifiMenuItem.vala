@@ -18,7 +18,7 @@
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	private List<NM.AccessPoint> _ap;
 	public signal void user_action();
-	public GLib.ByteArray ssid {
+	public GLib.Bytes ssid {
 		get {
 			return _tmp_ap.get_ssid();
 		}
@@ -117,7 +117,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	}
 
 	private void update () {
-		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ());
+		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
 
 #if PLUG_NETWORK
 		if (show_icons) {
