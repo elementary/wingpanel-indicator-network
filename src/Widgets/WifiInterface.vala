@@ -21,8 +21,8 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     Wingpanel.Widgets.Switch wifi_item;
     Gtk.Revealer revealer;
 
-    public WifiInterface (NM.Client nm_client, NM.RemoteSettings nm_settings, NM.Device? _device) {
-        init_wifi_interface (nm_client, nm_settings, _device);
+    public WifiInterface (NM.Client nm_client, NM.Device? _device) {
+        init_wifi_interface (nm_client, _device);
 
         wifi_item.set_caption (display_title);
         notify["display-title"].connect ( () => {
@@ -71,20 +71,20 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     }
 
     protected override void wifi_activate_cb (WifiMenuItem i) {
-        var connections = nm_settings.list_connections ();
+        var connections = nm_client.get_connections ();
         var device_connections = wifi_device.filter_connections (connections);
         var ap_connections = i.ap.filter_connections (device_connections);
 
-        bool already_connected = ap_connections.length () > 0;
+        bool already_connected = ap_connections.length > 0;
 
         if (already_connected) {
-            nm_client.activate_connection (ap_connections.nth_data (0), wifi_device, i.ap.get_path (), null);
+            nm_client.activate_connection_async (ap_connections.get (0), wifi_device, i.ap.get_path (), null, null);
         } else {
-            debug("Trying to connect to %s", NM.Utils.ssid_to_utf8(i.ap.get_ssid()));
+            debug ("Trying to connect to %s", NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ()));
 
             if (i.ap.get_wpa_flags () == NM.@80211ApSecurityFlags.NONE) {
                 debug ("Directly, as it is an insecure network.");
-                nm_client.add_and_activate_connection (new NM.Connection (), device, i.ap.get_path (), null);
+                nm_client.add_and_activate_connection_async (NM.SimpleConnection.new (), device, i.ap.get_path (), null, null);
             } else {
                 debug ("Needs a password or a certificate, let's open switchboard.");
                 need_settings ();
@@ -98,7 +98,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     }
 
     public void connect_to_hidden () {
-        var hidden_dialog = new NMAWifiDialog.for_other (nm_client, nm_settings);
+        var hidden_dialog = new NMAWifiDialog.for_other (nm_client);
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
@@ -107,11 +107,12 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
                 NM.AccessPoint? dialog_ap = null;
                 var dialog_connection = hidden_dialog.get_connection (out dialog_device, out dialog_ap);
 
-                foreach (var possible in nm_settings.list_connections ()) {
+		nm_client.get_connections ().foreach ((possible) => {
+
                     if (dialog_connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
                         fuzzy = possible;
                     }
-                }
+                });
 
                 string? path = null;
                 if (dialog_ap != null) {
@@ -119,7 +120,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
                 }
 
                 if (fuzzy != null) {
-                    nm_client.activate_connection (fuzzy, wifi_device, path, null);
+                    nm_client.activate_connection_async (fuzzy, wifi_device, path, null, null);
                 } else {
                     var connection_setting = dialog_connection.get_setting (typeof (NM.Setting));;
 
@@ -137,7 +138,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
                         dialog_connection.add_setting (connection_setting);
                     }
 
-                    nm_client.add_and_activate_connection (dialog_connection, dialog_device, path, null);
+                    nm_client.add_and_activate_connection_async (dialog_connection, dialog_device, path, null, null);
                 }
             }
         });

@@ -1,7 +1,7 @@
 find_package (PkgConfig)
 
 # Add all your dependencies to the list below
-pkg_check_modules (DEPS REQUIRED gthread-2.0 gtk+-3.0 libnm-glib libnm-gtk libnm-util wingpanel-2.0 granite)
+pkg_check_modules (DEPS REQUIRED gthread-2.0 gtk+-3.0 libnm libnma wingpanel-2.0 granite)
 
 add_definitions (${DEPS_CFLAGS})
 link_directories (${DEPS_LIBRARY_DIRS})
@@ -36,11 +36,10 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
 PACKAGES
   wingpanel-2.0
   granite
-  libnm-glib
-  libnm-util
   posix
 CUSTOM_VAPIS
-  libnm-gtk.vapi
+  libnm.vapi
+  libnma.vapi
 OPTIONS
   --thread
   --define=INDICATOR_NETWORK

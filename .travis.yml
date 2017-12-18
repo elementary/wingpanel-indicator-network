@@ -4,7 +4,7 @@ services:
  - docker
 
 env:
- - DEPENDENCY_PACKAGES="cmake gobject-introspection libgranite-dev libnm-glib-dev libnm-gtk-dev libnm-util-dev libwingpanel-2.0-dev valac"
+ - DEPENDENCY_PACKAGES="cmake gobject-introspection libgranite-dev libnm-dev libnma-dev libwingpanel-2.0-dev valac"
 
 install:
  - docker pull elementary/docker:loki
