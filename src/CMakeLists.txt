@@ -38,8 +38,8 @@ PACKAGES
   granite
   posix
 CUSTOM_VAPIS
-  libnm.vapi
-  libnma.vapi
+  ../vapi/libnm.vapi
+  ../vapi/libnma.vapi
 OPTIONS
   --thread
   --define=INDICATOR_NETWORK
