@@ -66,9 +66,9 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         modem_item.get_style_context ().add_class ("h4");
         modem_item.switched.connect (() => {
             if (modem_item.get_active () && device.state == NM.DeviceState.DISCONNECTED) {
-                nm_client.activate_connection_async (null, device, null, null, null);
+                nm_client.activate_connection_async.begin (null, device, null, null, null);
             } else if (!modem_item.get_active () && device.state == NM.DeviceState.ACTIVATED) {
-                device.disconnect_async (null, () => { debug ("Successfully disconnected."); });
+                device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
         });
 
