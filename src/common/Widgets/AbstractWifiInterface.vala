@@ -1,19 +1,20 @@
 /*
- * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Library General Public License as published by
+* the Free Software Foundation, either version 2.1 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU Library General Public License for more details.
+*
+* You should have received a copy of the GNU Library General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
+*/
 
 public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface {
 	protected RFKillManager rfkill;
@@ -333,7 +334,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		if (state == State.DISCONNECTED) {
 			placeholder.visible_child_name = "scanning";
 			cancel_scan ();
-			wifi_device.request_scan_async (null, null);
+			wifi_device.request_scan_async.begin (null, null);
 			timeout_scan = Timeout.add(5000, () => {
 #if PLUG_NETWORK
 				if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_client)) {
