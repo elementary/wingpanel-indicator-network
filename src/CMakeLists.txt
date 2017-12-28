@@ -37,12 +37,12 @@ PACKAGES
   wingpanel-2.0
   granite
   posix
-CUSTOM_VAPIS
-  libnm.vapi
-  libnma.vapi
+  libnm
+  libnma
 OPTIONS
   --thread
   --define=INDICATOR_NETWORK
+  --vapidir=${CMAKE_SOURCE_DIR}/vapi
 )
 
 add_library (${CMAKE_PROJECT_NAME} MODULE ${VALA_C})
