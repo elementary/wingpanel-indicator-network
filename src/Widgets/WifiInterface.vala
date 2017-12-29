@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2016 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -78,13 +78,21 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
         bool already_connected = ap_connections.length > 0;
 
         if (already_connected) {
-            nm_client.activate_connection_async (ap_connections.get (0), wifi_device, i.ap.get_path (), null, null);
+            nm_client.activate_connection_async.begin (ap_connections.get (0),
+                                                       wifi_device,
+                                                       i.ap.get_path (),
+                                                       null,
+                                                       null);
         } else {
             debug ("Trying to connect to %s", NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ()));
 
             if (i.ap.get_wpa_flags () == NM.@80211ApSecurityFlags.NONE) {
                 debug ("Directly, as it is an insecure network.");
-                nm_client.add_and_activate_connection_async (NM.SimpleConnection.new (), device, i.ap.get_path (), null, null);
+                nm_client.add_and_activate_connection_async.begin (NM.SimpleConnection.new (),
+                                                                   device,
+                                                                   i.ap.get_path (),
+                                                                   null,
+                                                                   null);
             } else {
                 debug ("Needs a password or a certificate, let's open switchboard.");
                 need_settings ();
@@ -120,9 +128,9 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
                 }
 
                 if (fuzzy != null) {
-                    nm_client.activate_connection_async (fuzzy, wifi_device, path, null, null);
+                    nm_client.activate_connection_async.begin (fuzzy, wifi_device, path, null, null);
                 } else {
-                    var connection_setting = dialog_connection.get_setting (typeof (NM.Setting));;
+                    var connection_setting = dialog_connection.get_setting (typeof (NM.Setting));
 
                     string? mode = null;
                     var setting_wireless = (NM.SettingWireless) dialog_connection.get_setting (typeof (NM.SettingWireless));
@@ -138,7 +146,11 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
                         dialog_connection.add_setting (connection_setting);
                     }
 
-                    nm_client.add_and_activate_connection_async (dialog_connection, dialog_device, path, null, null);
+                    nm_client.add_and_activate_connection_async.begin (dialog_connection,
+                                                                       dialog_device,
+                                                                       path,
+                                                                       null,
+                                                                       null);
                 }
             }
         });

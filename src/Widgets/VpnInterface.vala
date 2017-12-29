@@ -79,7 +79,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
         debug ("Connecting to VPN : %s", item.connection.get_id ());
 
-        nm_client.activate_connection_async (item.connection, null, null, null, null);
+        nm_client.activate_connection_async.begin (item.connection, null, null, null, null);
         active_vpn_item = item;
         Idle.add (() => { update (); return false; });
     }

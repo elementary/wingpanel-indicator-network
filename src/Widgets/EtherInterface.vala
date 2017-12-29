@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2016 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -33,7 +33,7 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
             if (ethernet_item.get_active()) {
                 device.set_autoconnect(true);
             } else {
-                device.disconnect_async (null, () => { debug ("Successfully disconnected."); });
+                device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
         });
 
