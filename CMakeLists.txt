@@ -42,7 +42,7 @@ add_subdirectory (po)
 add_subdirectory (src)
 
 # GSettings schema
-add_subdirectory (schemas)
+add_subdirectory (data)
 
 # Uninstall target
 configure_file(
