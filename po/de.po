@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-12-31 00:22+0000\n"
+"PO-Revision-Date: 2018-01-04 00:18+0000\n"
 "Last-Translator: Jörg Arnold <j0ar@posteo.de>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/de/>\n"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:75
 msgid "Scanning for Access Points…"
-msgstr "Zugangspunkte werden gesucht …"
+msgstr "Zugangspunkte werden gesucht…"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:120
 msgid "Wireless"
@@ -137,7 +137,7 @@ msgstr "Kabel nicht angeschlossen"
 
 #: ../src/common/Utils.vala:89
 msgid "Airplane mode enabled"
-msgstr "Flugmodus aktiviert"
+msgstr "Flugzeugmodus  aktiviert"
 
 #: ../src/common/Utils.vala:91
 msgid "Unknown"
