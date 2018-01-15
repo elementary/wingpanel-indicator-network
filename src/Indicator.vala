@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2016 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -71,7 +71,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             if (is_in_session && !captive_started) {
                 if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
                     try {
-                        var appinfo = AppInfo.create_from_commandline ("captive-login", null, AppInfoCreateFlags.NONE);
+                        var appinfo = AppInfo.create_from_commandline ("io.elementary.capnet-assist", null, AppInfoCreateFlags.NONE);
                         appinfo.launch (null, null);
                     } catch (Error e) {
                         warning ("%s\n", e.message);
