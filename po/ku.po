@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-05-04 20:02+0000\n"
-"Last-Translator: Rokar <rokartv10@gmail.com>\n"
-"Language-Team: ku (generated) <https://l10n.elementary.io/projects/wingpanel/"
-"wingpanel-indicator-network/ku/>\n"
+"PO-Revision-Date: 2018-02-04 00:09+0000\n"
+"Last-Translator: Rokar <mail@rokar.de>\n"
+"Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/ku/>\n"
 "Language: ku\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.13-dev\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:10+0000\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
@@ -65,9 +65,8 @@ msgid "VPN"
 msgstr ""
 
 #: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
 msgid "No VPN Available"
-msgstr "na nuqte dergeh kêrhatî"
+msgstr "Na nuqte dergeh kêrhatî"
 
 #: ../src/common/Widgets/AbstractHotspotInterface.vala:23
 msgid "Hotspot"
@@ -78,9 +77,8 @@ msgid "Hotspot %s"
 msgstr "têketina bêtêl %s"
 
 #: ../src/common/Widgets/VpnMenuItem.vala:53
-#, fuzzy
 msgid "This Virtual Private Network could not be connected to."
-msgstr "ev torê bêtêl na dikarî bi girêdayî."
+msgstr "Ev torê bêtêl na dikarî bi girêdayî."
 
 #: ../src/common/Widgets/WidgetNMInterface.vala:26
 msgid "Unknown device"
