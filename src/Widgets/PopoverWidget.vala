@@ -20,8 +20,8 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     private Gtk.Box other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
-    private Wingpanel.Widgets.Button show_settings_button;
-    private Wingpanel.Widgets.Button hidden_item;
+    private Gtk.ModelButton show_settings_button;
+    private Gtk.ModelButton hidden_item;
 
     public signal void settings_shown ();
 
@@ -54,10 +54,12 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
         add (vpn_box);
 
         if (!is_dm ()) {
-            hidden_item = new Wingpanel.Widgets.Button (_("Connect to Hidden Network…"));
+            hidden_item = new Gtk.ModelButton ();
+            hidden_item.text = _("Connect to Hidden Network…");
             hidden_item.no_show_all = true;
 
-            show_settings_button = new Wingpanel.Widgets.Button (_("Network Settings…"));
+            show_settings_button = new Gtk.ModelButton ();
+            show_settings_button.text = _("Network Settings…");
 
             add (hidden_item);
             add (show_settings_button);
