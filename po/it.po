@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2018-03-12 00:11+0000\n"
+"PO-Revision-Date: 2018-03-14 00:04+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/it/>\n"
@@ -41,7 +41,7 @@ msgstr "Non ci sono punti di accesso wireless nel raggio d'azione."
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Wireless Is Disabled"
-msgstr "La rete wireless è disabilitata"
+msgstr "Il wireless è disabilitato"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:64
 msgid "Enable wireless to discover nearby wireless access points."
@@ -89,11 +89,11 @@ msgstr "Non è possibile connettersi a questa rete wireless."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:127
 msgid "This network uses 40/64-bit WEP encryption."
-msgstr "Questa rete usa la crittografia WEP 40/64-bit."
+msgstr "Questa rete usa la crittografia WEP a 40/64-bit."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:129
 msgid "This network uses 104/128-bit WEP encryption."
-msgstr "Questa rete usa la crittografia WEP 104/128-bit."
+msgstr "Questa rete usa la crittografia WEP a 104/128-bit."
 
 #: ../src/common/Widgets/WifiMenuItem.vala:131
 msgid "This network uses WPA encryption."
@@ -125,7 +125,7 @@ msgstr "Non riuscito"
 
 #: ../src/common/Utils.vala:85
 msgid "Connecting"
-msgstr "Connessione"
+msgstr "Connessione in corso"
 
 #: ../src/common/Utils.vala:87
 msgid "Cable unplugged"
