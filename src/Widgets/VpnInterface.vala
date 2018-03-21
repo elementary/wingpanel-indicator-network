@@ -90,7 +90,11 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
             return;
         }
         debug ("Deactivating VPN : %s", active_vpn_connection.get_id ());
-        nm_client.deactivate_connection (active_vpn_connection);
+        try {
+            nm_client.deactivate_connection (active_vpn_connection);
+        } catch (Error e) {
+            warning (e.message);
+        }
         Idle.add (() => { update (); return false; });
     }
 }
