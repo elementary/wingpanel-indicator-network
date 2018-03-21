@@ -36,7 +36,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         image.icon_size = Gtk.IconSize.LARGE_TOOLBAR;
 
         extra_info_label = new Gtk.Label (null);
-        extra_info_label.margin_left = 4;
+        extra_info_label.margin_start = 4;
         extra_info_label.valign = Gtk.Align.CENTER;
         extra_info_label.vexpand = true;
 
