@@ -25,7 +25,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
 
     public signal void settings_shown ();
 
-    bool is_dm () {
+    static bool is_dm () {
         return Environment.get_user_name () == Services.SettingsManager.get_default ().desktopmanager_user;
     }
 
@@ -67,10 +67,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     }
 
     protected override void remove_interface (WidgetNMInterface widget_interface) {
-        if (widget_interface.sep != null) {
-            widget_interface.sep.destroy ();
-        }
-
+        widget_interface.sep.destroy ();
         widget_interface.destroy ();
     }
 
@@ -100,7 +97,6 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
         }
 
         if (!is_dm () && get_children ().length () > 0) {
-            widget_interface.sep = new Wingpanel.Widgets.Separator ();
             container_box.pack_end (widget_interface.sep);
         }
 

@@ -34,7 +34,7 @@ public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
 #endif
 
 #if INDICATOR_NETWORK
-	public Wingpanel.Widgets.Separator? sep = null;
+	public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
 
 	public signal void show_dialog (Gtk.Widget w);
 	public signal void need_settings ();
