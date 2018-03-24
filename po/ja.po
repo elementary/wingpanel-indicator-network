@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-04 23:36-0700\n"
-"PO-Revision-Date: 2017-09-03 00:14+0000\n"
-"Last-Translator: Ryo Nakano <rmfmada3q@gmail.com>\n"
+"PO-Revision-Date: 2018-03-25 00:11+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.16\n"
+"X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: ../src/Widgets/PopoverWidget.vala:57
@@ -29,7 +29,7 @@ msgstr "ネットワーク"
 
 #: ../src/Indicator.vala:31
 msgid "Network indicator"
-msgstr "ネットワーク通知"
+msgstr "ネットワークインジケーター"
 
 #: ../src/common/Widgets/AbstractWifiInterface.vala:50
 msgid "No Access Points Available"
