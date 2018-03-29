@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -49,21 +49,10 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
 
 		no_aps_box.add (no_aps);
-#if PLUG_NETWORK
-		var no_aps_desc = construct_placeholder_label (_("There are no wireless access points within range."), false);
-		no_aps_box.add (no_aps_desc);
-#endif
 
 		var wireless_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 		wireless_off_box.visible = true;
 		wireless_off_box.valign = Gtk.Align.CENTER;		
-
-#if PLUG_NETWORK
-		var wireless_off = construct_placeholder_label (_("Wireless Is Disabled"), true);
-		var wireless_off_desc = construct_placeholder_label (_("Enable wireless to discover nearby wireless access points."), false);
-		wireless_off_box.add (wireless_off);
-		wireless_off_box.add (wireless_off_desc);
-#endif
 
 		var spinner = new Gtk.Spinner ();
 		spinner.visible = true;
@@ -129,12 +118,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		label.wrap_mode = Pango.WrapMode.WORD_CHAR;
 		label.max_width_chars = 30;
 		label.justify = Gtk.Justification.CENTER;
-
-		if (title) {
-#if PLUG_NETWORK
-			label.get_style_context ().add_class ("h2");
-#endif
-		}
 
 		return label;
 	}
@@ -249,13 +232,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	}
 
 	public override void update () {
-#if PLUG_NETWORK
-		if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_client)) {
-			state = State.DISCONNECTED;
-			return;
-		}
-#endif
-
 		switch (wifi_device.state) {
 		case NM.DeviceState.UNKNOWN:
 		case NM.DeviceState.UNMANAGED:
@@ -336,12 +312,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			cancel_scan ();
 			wifi_device.request_scan_async.begin (null, null);
 			timeout_scan = Timeout.add(5000, () => {
-#if PLUG_NETWORK
-				if (Utils.Hotspot.get_device_is_hotspot (wifi_device, nm_client)) {
-					return false;
-				}
-#endif
-
 				timeout_scan = 0;
 				placeholder.visible_child_name = "no-aps";
 				return false;

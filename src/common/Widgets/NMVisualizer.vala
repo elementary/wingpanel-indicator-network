@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ * Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -96,16 +96,9 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         }
 
         WidgetNMInterface? widget_interface = null;
-#if PLUG_NETWORK
-        WidgetNMInterface? hotspot_interface = null;
-#endif
 
         if (device is NM.DeviceWifi) {
             widget_interface = new WifiInterface (nm_client, device);
-#if PLUG_NETWORK
-            hotspot_interface = new HotspotInterface((WifiInterface)widget_interface);
-#endif
-
             debug ("Wifi interface added");
         } else if (device is NM.DeviceEthernet) {
             widget_interface = new EtherInterface (nm_client, device);
@@ -125,16 +118,6 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
             widget_interface.notify["extra-info"].connect (update_state);
 
         }
-
-#if PLUG_NETWORK
-        if (hotspot_interface != null) {
-            // Implementation call
-            network_interface.append (hotspot_interface);
-            add_interface(hotspot_interface);
-            hotspot_interface.notify["state"].connect(update_state);
-
-        }
-#endif
 
         update_interfaces_names ();
         update_all ();

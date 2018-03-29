@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 elementary LLC. (http://launchpad.net/elementary)
+ * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -128,12 +128,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         label.wrap_mode = Pango.WrapMode.WORD_CHAR;
         label.max_width_chars = 30;
         label.justify = Gtk.Justification.CENTER;
-
-        if (title) {
-#if PLUG_NETWORK
-            label.get_style_context ().add_class ("h2");
-#endif
-        }
 
         return label;
     }
