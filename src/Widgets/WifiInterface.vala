@@ -24,13 +24,10 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         init_wifi_interface (nm_client, _device);
 
-        wifi_item.set_caption (display_title);
-        notify["display-title"].connect ( () => {
-            wifi_item.set_caption (display_title);
-        });
+        wifi_item.bind_property ("caption", this, "display_title");
 
-        wifi_item.switched.connect (() => {
-            var active = wifi_item.get_active ();
+        wifi_item.notify["active"].connect (() => {
+            var active = wifi_item.active;
             if (active != !software_locked) {
                 rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
                 nm_client.wireless_set_enabled (active);
@@ -56,8 +53,8 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     public override void update () {
         base.update ();
 
-        wifi_item.set_sensitive (!hardware_locked);
-        wifi_item.set_active (!locked);
+        wifi_item.sensitive = !hardware_locked;
+        wifi_item.active = !locked;
 
         active_ap = wifi_device.get_active_access_point ();
 

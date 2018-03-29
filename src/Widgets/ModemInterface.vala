@@ -57,17 +57,15 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
 
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
+
         modem_item = new Wingpanel.Widgets.Switch (display_title);
-
-        notify["display-title"].connect (() => {
-            modem_item.set_caption (display_title);
-        });
-
+        modem_item.bind_property ("caption", this, "display_title");
         modem_item.get_style_context ().add_class ("h4");
-        modem_item.switched.connect (() => {
-            if (modem_item.get_active () && device.state == NM.DeviceState.DISCONNECTED) {
+
+        modem_item.notify["active"].connect (() => {
+            if (modem_item.active && device.state == NM.DeviceState.DISCONNECTED) {
                 nm_client.activate_connection_async.begin (null, device, null, null, null);
-            } else if (!modem_item.get_active () && device.state == NM.DeviceState.ACTIVATED) {
+            } else if (!modem_item.active && device.state == NM.DeviceState.ACTIVATED) {
                 device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
         });
@@ -85,13 +83,13 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
             case NM.DeviceState.UNAVAILABLE:
             case NM.DeviceState.FAILED:
                 modem_item.sensitive = false;
-                modem_item.set_active (false);
+                modem_item.active = false;
                 state = State.FAILED_MOBILE;
                 break;    
             case NM.DeviceState.DISCONNECTED:
             case NM.DeviceState.DEACTIVATING:
                 modem_item.sensitive = true;
-                modem_item.set_active (false);
+                modem_item.active = false;
                 state = State.FAILED_MOBILE;
                 break;
             case NM.DeviceState.PREPARE:
@@ -101,12 +99,12 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
             case NM.DeviceState.IP_CHECK:
             case NM.DeviceState.SECONDARIES:
                 modem_item.sensitive = true;
-                modem_item.set_active (true);
+                modem_item.active = true;
                 state = State.CONNECTING_MOBILE;
                 break;
             case NM.DeviceState.ACTIVATED:
                 modem_item.sensitive = true;
-                modem_item.set_active (true);
+                modem_item.active = true;
                 state = strength_to_state (signal_quality);
                 break;
         }

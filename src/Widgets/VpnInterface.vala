@@ -21,13 +21,13 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
     public VpnInterface (NM.Client nm_client) {
         init_vpn_interface (nm_client);
-        vpn_item.set_caption (display_title);
-        debug ("Starting VPN Interface");
 
+        vpn_item.bind_property ("caption", this, "display_title");
         vpn_item.get_style_context ().add_class ("h4");
-        vpn_item.switched.connect (() => {
-            revealer.reveal_child = vpn_item.get_active ();
-            if (!vpn_item.get_active ()) {
+
+        vpn_item.notify["active"].connect (() => {
+            revealer.reveal_child = vpn_item.active;
+            if (!vpn_item.active) {
                 vpn_deactivate_cb ();
             }
         });
@@ -58,7 +58,7 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
 
         check_vpn_availability ();
         if (active_vpn_item != null) {
-            vpn_item.set_active (true);
+            vpn_item.active = true;
         }
     }
 
