@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 elementary LLC. (http://launchpad.net/elementary)
+ * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -80,16 +80,9 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
 
     private void update () {
         radio_button.label = connection.get_id ();
+        hide_item (error_img);
+        hide_item (spinner);
 
-#if PLUG_NETWORK
-        if (show_icons) {
-#endif
-            hide_item (error_img);
-            hide_item (spinner);
-
-#if PLUG_NETWORK
-        }
-#endif
         switch (vpn_state) {
             case State.FAILED_VPN:
                 show_item (error_img);
@@ -105,17 +98,6 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
 
     public void set_active (bool active) {
         radio_button.set_active (active);
-    }
-
-    public void hide_icons (bool show_remove_button = true) {
-#if PLUG_NETWORK
-        show_icons = false;
-        hide_item (error_img);
-        hide_item (spinner);
-        if (!show_remove_button) {
-            hide_item (remove_button);
-        }
-#endif
     }
 
     void show_item (Gtk.Widget w) {

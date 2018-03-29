@@ -41,7 +41,6 @@ PACKAGES
   libnma
 OPTIONS
   --thread
-  --define=INDICATOR_NETWORK
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
 )
 
