@@ -1,6 +1,6 @@
 // -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright (c) 2017-2018 elementary LLC. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -59,8 +59,11 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         device = _device;
 
         modem_item = new Wingpanel.Widgets.Switch (display_title);
-        modem_item.bind_property ("caption", this, "display_title");
         modem_item.get_style_context ().add_class ("h4");
+
+        notify["display-title"].connect (() => {
+            modem_item_item.caption = display_title;
+        });
 
         modem_item.notify["active"].connect (() => {
             if (modem_item.active && device.state == NM.DeviceState.DISCONNECTED) {

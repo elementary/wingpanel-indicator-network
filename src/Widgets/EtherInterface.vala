@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -24,7 +24,10 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
 
         ethernet_item = new Wingpanel.Widgets.Switch (display_title);
         ethernet_item.get_style_context ().add_class ("h4");
-        ethernet_item.bind_property ("caption", this, "display_title");
+
+        notify["display-title"].connect (() => {
+            ethernet_item.caption = display_title;
+        });
 
         ethernet_item.notify["active"].connect (() => {
             debug("update");

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 elementary LLC. (http://launchpad.net/elementary)
+ * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -22,8 +22,12 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
     public VpnInterface (NM.Client nm_client) {
         init_vpn_interface (nm_client);
 
-        vpn_item.bind_property ("caption", this, "display_title");
+        vpn_item.caption = display_title;
         vpn_item.get_style_context ().add_class ("h4");
+
+        notify["display-title"].connect (() => {
+            vpn_item.caption = display_title;
+        });
 
         vpn_item.notify["active"].connect (() => {
             revealer.reveal_child = vpn_item.active;

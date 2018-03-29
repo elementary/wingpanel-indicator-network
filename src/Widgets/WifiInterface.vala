@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -18,13 +18,15 @@
 
 public class Network.WifiInterface : Network.AbstractWifiInterface {
     public bool hidden_sensitivity { get; set; default = true; }
-    Wingpanel.Widgets.Switch wifi_item;
-    Gtk.Revealer revealer;
+    private Wingpanel.Widgets.Switch wifi_item;
+    private Gtk.Revealer revealer;
 
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         init_wifi_interface (nm_client, _device);
 
-        wifi_item.bind_property ("caption", this, "display_title");
+        notify["display-title"].connect (() => {
+            wifi_item.caption = display_title;
+        });
 
         wifi_item.notify["active"].connect (() => {
             var active = wifi_item.active;
