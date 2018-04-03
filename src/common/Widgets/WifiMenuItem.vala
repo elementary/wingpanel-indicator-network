@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ * Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -119,39 +119,34 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
 
-#if PLUG_NETWORK
-		if (show_icons) {
-#endif
-			img_strength.set_from_icon_name ("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
-			img_strength.show_all ();
+		img_strength.set_from_icon_name ("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
+		img_strength.show_all ();
 
-            var flags = ap.get_wpa_flags ();
-            var is_secured = false;
+        var flags = ap.get_wpa_flags ();
+        var is_secured = false;
 
-            if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
-                is_secured = true;
-                tooltip_text = _("This network uses 40/64-bit WEP encryption");
-            } else if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
-                is_secured = true;
-                tooltip_text = _("This network uses 104/128-bit WEP encryption");
-            } else if ((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
-                is_secured = true;
-                tooltip_text = _("This network uses WPA encryption");
-            } else if (flags != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE) {
-                is_secured = true;
-                tooltip_text = _("This network uses encryption");
-            } else {
-                tooltip_text = _("This network is unsecured");
-            }
+        if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
+            is_secured = true;
+            tooltip_text = _("This network uses 40/64-bit WEP encryption");
+        } else if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
+            is_secured = true;
+            tooltip_text = _("This network uses 104/128-bit WEP encryption");
+        } else if ((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0)  {
+            is_secured = true;
+            tooltip_text = _("This network uses WPA encryption");
+        } else if (flags != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE) {
+            is_secured = true;
+            tooltip_text = _("This network uses encryption");
+        } else {
+            tooltip_text = _("This network is unsecured");
+        }
 
-			lock_img.visible = !is_secured;
-			lock_img.no_show_all = !lock_img.visible;
+		lock_img.visible = !is_secured;
+		lock_img.no_show_all = !lock_img.visible;
 
-			hide_item (error_img);
-			hide_item (spinner);
-#if PLUG_NETWORK
-		}
-#endif
+		hide_item (error_img);
+		hide_item (spinner);
+
 		switch (state) {
 		case State.FAILED_WIFI:
 			show_item (error_img);
@@ -163,15 +158,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 			}
 			break;
 		}
-	}
-
-	public void hide_icons () {
-#if PLUG_NETWORK	
-		show_icons = false;
-		hide_item (error_img);
-		hide_item (lock_img);
-		hide_item (img_strength);			
-#endif		
 	}
 
 	void show_item (Gtk.Widget w) {

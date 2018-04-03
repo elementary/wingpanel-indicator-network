@@ -14,13 +14,13 @@ include (ValaPrecompile)
 # Add all your vala files and requires packages to the List below to include them in the build
 vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   Indicator.vala
+  Utils.vala
   Widgets/DisplayWidget.vala
   Widgets/PopoverWidget.vala
   Widgets/EtherInterface.vala
   Widgets/VpnInterface.vala
   Widgets/WifiInterface.vala
   Widgets/ModemInterface.vala
-  common/Utils.vala
   common/Widgets/WifiMenuItem.vala
   common/Widgets/VpnMenuItem.vala
   common/Widgets/NMVisualizer.vala
@@ -41,7 +41,6 @@ PACKAGES
   libnma
 OPTIONS
   --thread
-  --define=INDICATOR_NETWORK
   --vapidir=${CMAKE_SOURCE_DIR}/vapi
 )
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 elementary LLC. (http://launchpad.net/elementary)
+ * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -24,7 +24,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
 
     protected VpnMenuItem? active_vpn_item { get; set; }
     protected VpnMenuItem? blank_item = null;
-    protected Gtk.Stack placeholder;
 
     /**
      * If we want to add a visual feedback on DisplayWidget later,
@@ -40,17 +39,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         vpn_list.add (blank_item);
         active_vpn_item = null;
 
-        /* Advices that no Vpn has been configured */
-        var no_vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        no_vpn_box.visible = true;
-        no_vpn_box.valign = Gtk.Align.CENTER;
-
-        var no_vpn = construct_placeholder_label (_("No VPN Available"), true);
-        no_vpn_box.add (no_vpn);
-
-        placeholder.add_named (no_vpn_box, "no-vpn");
-        placeholder.visible_child_name = "no-vpn";
-
         nm_client.notify["active-connections"].connect (update);
         nm_client.connection_added.connect (vpn_added_cb);
         nm_client.connection_removed.connect (vpn_removed_cb);
@@ -61,14 +49,10 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        placeholder = new Gtk.Stack ();
-        placeholder.visible = true;
-
         vpn_list = new Gtk.ListBox ();
         // Single click is disabled because it's being handled by VpnMenuItem
         vpn_list.activate_on_single_click = false;
         vpn_list.visible = true;
-        vpn_list.set_placeholder (placeholder);
     }
 
     public override void update_name (int count) {
@@ -118,24 +102,6 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         }
 
         base.update ();
-    }
-
-    protected Gtk.Label construct_placeholder_label (string text, bool title = false) {
-        var label = new Gtk.Label (text);
-        label.visible = true;
-        label.use_markup = true;
-        label.wrap = true;
-        label.wrap_mode = Pango.WrapMode.WORD_CHAR;
-        label.max_width_chars = 30;
-        label.justify = Gtk.Justification.CENTER;
-
-        if (title) {
-#if PLUG_NETWORK
-            label.get_style_context ().add_class ("h2");
-#endif
-        }
-
-        return label;
     }
 
     /**

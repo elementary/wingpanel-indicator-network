@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2016 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -73,41 +73,5 @@ public enum Network.State {
             default:
                 return 8;
         }
-    }
-}
-
-namespace Network.Common.Utils {
-    public string network_state_to_string (Network.State state) {
-        switch(state) {
-        case Network.State.DISCONNECTED:
-            return _("Disconnected");
-        case Network.State.CONNECTED_WIFI:
-        case Network.State.CONNECTED_WIFI_WEAK:
-        case Network.State.CONNECTED_WIFI_OK:
-        case Network.State.CONNECTED_WIFI_GOOD:
-        case Network.State.CONNECTED_WIFI_EXCELLENT:
-        case Network.State.CONNECTED_WIRED:
-        case Network.State.CONNECTED_VPN:
-        case Network.State.CONNECTED_MOBILE_WEAK:
-        case Network.State.CONNECTED_MOBILE_OK:
-        case Network.State.CONNECTED_MOBILE_GOOD:
-        case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            return _("Connected");
-        case Network.State.FAILED_WIRED:
-        case Network.State.FAILED_WIFI:
-        case Network.State.FAILED_VPN:
-        case Network.State.FAILED_MOBILE:
-            return _("Failed");
-        case Network.State.CONNECTING_WIFI:
-        case Network.State.CONNECTING_WIRED:
-        case Network.State.CONNECTING_VPN:
-        case Network.State.CONNECTING_MOBILE:
-            return _("Connecting");
-        case Network.State.WIRED_UNPLUGGED:
-            return _("Cable unplugged");
-        case Network.State.DISCONNECTED_AIRPLANE_MODE:
-            return _("Airplane mode enabled");
-        }
-        return _("Unknown");
     }
 }

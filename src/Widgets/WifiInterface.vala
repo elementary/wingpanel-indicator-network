@@ -105,7 +105,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     }
 
     public void connect_to_hidden () {
-        var hidden_dialog = new NMAWifiDialog.for_other (nm_client);
+        var hidden_dialog = new NMA.WifiDialog.for_other (nm_client);
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {

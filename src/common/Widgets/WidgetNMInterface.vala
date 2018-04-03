@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015 Wingpanel Developers (http://launchpad.net/wingpanel)
+ * Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -15,41 +15,22 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#if INDICATOR_NETWORK
 public abstract class Network.WidgetNMInterface : Gtk.Box {
 	protected NM.Device? device;
-#else
-public abstract class Network.WidgetNMInterface : Network.Widgets.Page {
-#endif
 	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
     public string? extra_info { protected set; get; default = null; }
 	public string display_title { get; protected set; default = _("Unknown device"); }
 
-#if PLUG_NETWORK
-	construct {
-		notify["display-title"].connect ( () => {
-			device_label.label = display_title;
-		});
-	}
-#endif
-
-#if INDICATOR_NETWORK
 	public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
 
 	public signal void show_dialog (Gtk.Widget w);
 	public signal void need_settings ();
-#endif
 
 	public bool is_device (NM.Device device) {
 		return device == this.device;
 	}
-	
-#if PLUG_NETWORK
-	public override void update () {
-		base.update ();
-#else
+
 	public virtual void update () {
-#endif
 	}
 
 	public virtual void update_name (int count) {
