@@ -62,7 +62,7 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
         modem_item.get_style_context ().add_class ("h4");
 
         notify["display-title"].connect (() => {
-            modem_item_item.caption = display_title;
+            modem_item.caption = display_title;
         });
 
         modem_item.notify["active"].connect (() => {
