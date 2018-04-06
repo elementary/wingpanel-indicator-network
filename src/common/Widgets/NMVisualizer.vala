@@ -31,7 +31,11 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         build_ui ();
 
         /* Monitor network manager */
-        nm_client = new NM.Client ();
+        try {
+            nm_client = new NM.Client ();
+        } catch (Error e) {
+            critical (e.message);
+        }
 
         nm_client.notify["active-connections"].connect (update_vpn_connection);
 
