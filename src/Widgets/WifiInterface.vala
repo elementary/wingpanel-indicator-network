@@ -24,13 +24,13 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         init_wifi_interface (nm_client, _device);
 
-        wifi_item.set_caption (display_title);
+        wifi_item.caption = display_title;
         notify["display-title"].connect ( () => {
-            wifi_item.set_caption (display_title);
+            wifi_item.caption = display_title;
         });
 
-        wifi_item.switched.connect (() => {
-            var active = wifi_item.get_active ();
+        wifi_item.notify["active"].connect (() => {
+            var active = wifi_item.active;
             if (active != !software_locked) {
                 rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
                 nm_client.wireless_set_enabled (active);
@@ -44,7 +44,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
         wifi_item.get_style_context ().add_class ("h4");
         pack_start (wifi_item);
 
-        var scrolled_box = new Wingpanel.Widgets.AutomaticScrollBox (null, null);
+        var scrolled_box = new Gtk.ScrolledWindow (null, null);
         scrolled_box.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
         scrolled_box.add (wifi_list);
 
@@ -57,7 +57,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
         base.update ();
 
         wifi_item.set_sensitive (!hardware_locked);
-        wifi_item.set_active (!locked);
+        wifi_item.active = !locked;
 
         active_ap = wifi_device.get_active_access_point ();
 
