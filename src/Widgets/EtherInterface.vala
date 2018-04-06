@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -21,17 +21,18 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
+
         ethernet_item = new Wingpanel.Widgets.Switch (display_title);
+        ethernet_item.get_style_context ().add_class ("h4");
 
         notify["display-title"].connect (() => {
-            ethernet_item.set_caption (display_title);
+            ethernet_item.caption = display_title;
         });
 
-        ethernet_item.get_style_context ().add_class ("h4");
-        ethernet_item.switched.connect( () => {
+        ethernet_item.notify["active"].connect (() => {
             debug("update");
-            if (ethernet_item.get_active()) {
-                device.set_autoconnect(true);
+            if (ethernet_item.active) {
+                device.set_autoconnect (true);
             } else {
                 device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
@@ -49,18 +50,18 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         case NM.DeviceState.DEACTIVATING:
         case NM.DeviceState.FAILED:
             ethernet_item.sensitive = false;
-            ethernet_item.set_active (false);
+            ethernet_item.active = false;
             state = State.FAILED_WIRED;
             break;
 
         case NM.DeviceState.UNAVAILABLE:
             ethernet_item.sensitive = false;
-            ethernet_item.set_active (false);
+            ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
             break;
         case NM.DeviceState.DISCONNECTED:
             ethernet_item.sensitive = true;
-            ethernet_item.set_active (false);
+            ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
             break;
 
@@ -71,13 +72,13 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         case NM.DeviceState.IP_CHECK:
         case NM.DeviceState.SECONDARIES:
             ethernet_item.sensitive = true;
-            ethernet_item.set_active (true);
+            ethernet_item.active = true;
             state = State.CONNECTING_WIRED;
             break;
 
         case NM.DeviceState.ACTIVATED:
             ethernet_item.sensitive = true;
-            ethernet_item.set_active (true);
+            ethernet_item.active = true;
             state = State.CONNECTED_WIRED;
             break;
         }
