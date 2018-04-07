@@ -43,7 +43,7 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget? get_widget () {
         if (popover_widget == null) {
-            popover_widget = new Widgets.PopoverWidget ();
+            popover_widget = new Widgets.PopoverWidget (is_in_session);
             popover_widget.notify["state"].connect (on_state_changed);
             popover_widget.notify["secure"].connect (on_state_changed);
             popover_widget.notify["extra-info"].connect (on_state_changed);
