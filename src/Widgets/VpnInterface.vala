@@ -45,7 +45,9 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
         pack_start (vpn_item);
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null);
-        scrolled_box.set_policy (Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC);
+        scrolled_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
+        scrolled_box.max_content_height = 512;
+        scrolled_box.propagate_natural_height = true;
         scrolled_box.add (vpn_list);
 
         revealer = new Gtk.Revealer ();
