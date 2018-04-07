@@ -25,7 +25,6 @@ vala_precompile (VALA_C ${CMAKE_PROJECT_NAME}
   common/Widgets/VpnMenuItem.vala
   common/Widgets/NMVisualizer.vala
   common/Widgets/WidgetNMInterface.vala
-  Services/SettingsManager.vala
   common/rfkill.vala
   common/Widgets/AbstractWifiInterface.vala
   common/Widgets/AbstractVpnInterface.vala

@@ -40,9 +40,6 @@ add_subdirectory (po)
 # Code
 add_subdirectory (src)
 
-# GSettings schema
-add_subdirectory (data)
-
 # Uninstall target
 configure_file(
     "${CMAKE_SOURCE_DIR}/cmake/Uninstall.cmake"

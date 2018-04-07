@@ -23,10 +23,12 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     private Gtk.ModelButton show_settings_button;
     private Gtk.ModelButton hidden_item;
 
+    public bool is_in_session { get; construct; }
+
     public signal void settings_shown ();
 
-    static bool is_dm () {
-        return Environment.get_user_name () == Services.SettingsManager.get_default ().desktopmanager_user;
+    public PopoverWidget (bool is_in_session) {
+        Object (is_in_session: is_in_session);
     }
 
     construct {
@@ -53,7 +55,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
         add (wifi_box);
         add (vpn_box);
 
-        if (!is_dm ()) {
+        if (is_in_session) {
             hidden_item = new Gtk.ModelButton ();
             hidden_item.text = _("Connect to Hidden Network…");
             hidden_item.no_show_all = true;
@@ -96,7 +98,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
             container_box = vpn_box;
         }
 
-        if (!is_dm () && get_children ().length () > 0) {
+        if (is_in_session && get_children ().length () > 0) {
             container_box.pack_end (widget_interface.sep);
         }
 
@@ -106,7 +108,7 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
     }
 
     void show_settings () {
-        if (!is_dm ()) {
+        if (is_in_session) {
             try {
                 AppInfo.launch_default_for_uri ("settings://network", null);
             } catch (Error e) {
