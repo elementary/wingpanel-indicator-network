@@ -103,7 +103,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         if(wifi_device != null){
             try {
-                wifi_device.request_scan_simple (null);
+                //wifi_device.request_scan_simple (null);
+                wifi_device.request_scan_async.begin (null, null);
             } catch (Error e){
                 critical (e.message);
             }
