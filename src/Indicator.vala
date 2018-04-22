@@ -84,8 +84,13 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     public override void opened () {
-        if(nm_client == null)
-            nm_client = new NM.Client ();
+        if(nm_client == null){
+            try {
+                nm_client = new NM.Client ();
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
         
         var devices = nm_client.get_devices ();
         NM.DeviceWifi wifi_device = null;
@@ -97,7 +102,11 @@ public class Network.Indicator : Wingpanel.Indicator {
         }
 
         if(wifi_device != null){
-            wifi_device.request_scan_simple (null);
+            try {
+                wifi_device.request_scan_simple (null);
+            } catch (Error e){
+                critical (e.message);
+            }
             on_state_changed ();
         }
     }
