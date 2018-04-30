@@ -29,31 +29,26 @@ public class Network.Indicator : Wingpanel.Indicator {
         Object (code_name: Wingpanel.Indicator.NETWORK,
                 display_name: _("Network"),
                 description: _("Network indicator"),
-                is_in_session: is_in_session);
+                is_in_session: is_in_session,
+                visible: true);
+
+        display_widget = new Widgets.DisplayWidget ();
+
+        popover_widget = new Widgets.PopoverWidget (is_in_session);
+        popover_widget.notify["state"].connect (on_state_changed);
+        popover_widget.notify["secure"].connect (on_state_changed);
+        popover_widget.notify["extra-info"].connect (on_state_changed);
+        popover_widget.settings_shown.connect (() => { close (); });
+
+        on_state_changed ();
+        start_monitor ();
     }
 
     public override Gtk.Widget get_display_widget () {
-        if (display_widget == null) {
-            display_widget = new Widgets.DisplayWidget ();
-        }
-
-        visible = true;
-
         return display_widget;
     }
 
     public override Gtk.Widget? get_widget () {
-        if (popover_widget == null) {
-            popover_widget = new Widgets.PopoverWidget (is_in_session);
-            popover_widget.notify["state"].connect (on_state_changed);
-            popover_widget.notify["secure"].connect (on_state_changed);
-            popover_widget.notify["extra-info"].connect (on_state_changed);
-            popover_widget.settings_shown.connect (() => { close (); });
-
-            on_state_changed ();
-            start_monitor ();
-        }
-
         return popover_widget;
     }
 
