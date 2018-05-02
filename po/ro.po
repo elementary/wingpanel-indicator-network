@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-04 23:36-0700\n"
+"POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,130 +16,139 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-01-27 06:18+0000\n"
 
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Connect to Hidden Network…"
-msgstr "Conectare la o rețea ascunsă…"
-
-#: ../src/Widgets/PopoverWidget.vala:60
-msgid "Network Settings…"
-msgstr "Setări de reţea…"
-
-#: ../src/Indicator.vala:30
+#: src/Indicator.vala:29
 msgid "Network"
 msgstr "Rețea"
 
-#: ../src/Indicator.vala:31
+#: src/Indicator.vala:30
 msgid "Network indicator"
 msgstr "Indicator reţea"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:50
-msgid "No Access Points Available"
-msgstr "Nici un punct de acces valabil"
+#: src/common/Widgets/AbstractEtherInterface.vala:25
+#, c-format
+msgid "Virtual network: %s"
+msgstr "Rețea virtuală: %s"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:54
-msgid "There are no wireless access points within range."
-msgstr "Nu există nici un punct de acces fără fir în rază."
+#: src/common/Widgets/AbstractEtherInterface.vala:28
+msgid "Wired"
+msgstr "Cu fir"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:63
-msgid "Wireless Is Disabled"
-msgstr "Conexiunea fără fir este dezactivată"
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:64
-msgid "Enable wireless to discover nearby wireless access points."
+#: src/common/Widgets/AbstractModemInterface.vala:25
+#, c-format
+msgid "Mobile Broadband: %s"
 msgstr ""
-"Activează conexiunea fără fir pentru a descoperii punctele de acces din "
-"apropiere."
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:75
-msgid "Scanning for Access Points…"
-msgstr "Se caută punctele de acces…"
+#: src/common/Widgets/AbstractModemInterface.vala:27
+msgid "Mobile Broadband"
+msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:120
-msgid "Wireless"
-msgstr "Fără fir"
+#: src/common/Widgets/AbstractModemInterface.vala:33
+msgid "Modem"
+msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:39
+#: src/common/Widgets/AbstractVpnInterface.vala:36
+#: src/common/Widgets/AbstractVpnInterface.vala:59
 msgid "VPN"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
-msgid "No VPN Available"
+#: src/common/Widgets/AbstractWifiInterface.vala:49
+msgid "No Access Points Available"
 msgstr "Nici un punct de acces valabil"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
-msgstr "Hotspot"
+#: src/common/Widgets/AbstractWifiInterface.vala:63
+msgid "Scanning for Access Points…"
+msgstr "Se caută punctele de acces…"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
-msgstr "Hotspot %s"
+#: src/common/Widgets/AbstractWifiInterface.vala:106
+msgid "Wireless"
+msgstr "Fără fir"
 
-#: ../src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:53
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Nu se poate conecta la această rețea fără fir."
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
+#: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
+#: src/common/Widgets/WidgetNMInterface.vala:37
+#, c-format
 msgid "Unknown type: %s "
 msgstr "Tip necunoscut: %s "
 
-#: ../src/common/Widgets/WifiMenuItem.vala:70
+#: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
 msgstr "Nu se poate conecta la această rețea fără fir."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:127
-msgid "This network uses 40/64-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:130
+#, fuzzy
+msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Această rețea folosește cripare WEP 40/64-bit."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:129
-msgid "This network uses 104/128-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:133
+#, fuzzy
+msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Această rețea folosește cripare WEP 105/128-bit."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:131
-msgid "This network uses WPA encryption."
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+msgid "This network uses WPA encryption"
 msgstr "Această rețea folosește cripare WPA."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses encryption."
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+msgid "This network uses encryption"
 msgstr "Această rețea folosește cripare."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
-msgid "Virtual network: %s"
-msgstr "Rețea virtuală: %s"
+#: src/common/Widgets/WifiMenuItem.vala:141
+#, fuzzy
+msgid "This network is unsecured"
+msgstr "Această rețea folosește cripare."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "Cu fir"
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Connect to Hidden Network…"
+msgstr "Conectare la o rețea ascunsă…"
 
-#: ../src/common/Utils.vala:69
-msgid "Disconnected"
-msgstr "Deconectat"
+#: src/Widgets/PopoverWidget.vala:64
+msgid "Network Settings…"
+msgstr "Setări de reţea…"
 
-#: ../src/common/Utils.vala:77
-msgid "Connected"
-msgstr "Conectat"
+#~ msgid "There are no wireless access points within range."
+#~ msgstr "Nu există nici un punct de acces fără fir în rază."
 
-#: ../src/common/Utils.vala:81
-msgid "Failed"
-msgstr "Eșuat"
+#~ msgid "Wireless Is Disabled"
+#~ msgstr "Conexiunea fără fir este dezactivată"
 
-#: ../src/common/Utils.vala:85
-msgid "Connecting"
-msgstr "Conectare"
+#~ msgid "Enable wireless to discover nearby wireless access points."
+#~ msgstr ""
+#~ "Activează conexiunea fără fir pentru a descoperii punctele de acces din "
+#~ "apropiere."
 
-#: ../src/common/Utils.vala:87
-msgid "Cable unplugged"
-msgstr "Cablu deconectat"
+#, fuzzy
+#~ msgid "No VPN Available"
+#~ msgstr "Nici un punct de acces valabil"
 
-#: ../src/common/Utils.vala:89
-msgid "Airplane mode enabled"
-msgstr ""
+#~ msgid "Hotspot"
+#~ msgstr "Hotspot"
 
-#: ../src/common/Utils.vala:91
-msgid "Unknown"
-msgstr "Necunoscut"
+#~ msgid "Hotspot %s"
+#~ msgstr "Hotspot %s"
+
+#~ msgid "Disconnected"
+#~ msgstr "Deconectat"
+
+#~ msgid "Connected"
+#~ msgstr "Conectat"
+
+#~ msgid "Failed"
+#~ msgstr "Eșuat"
+
+#~ msgid "Connecting"
+#~ msgstr "Conectare"
+
+#~ msgid "Cable unplugged"
+#~ msgstr "Cablu deconectat"
+
+#~ msgid "Unknown"
+#~ msgstr "Necunoscut"

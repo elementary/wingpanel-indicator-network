@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-04 23:36-0700\n"
+"POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2017-04-30 09:24+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -15,128 +15,138 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-04-19 06:41+0000\n"
 
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Connect to Hidden Network…"
-msgstr "Kople til skjult nettverk…"
-
-#: ../src/Widgets/PopoverWidget.vala:60
-msgid "Network Settings…"
-msgstr "Nettverksinnstillingar…"
-
-#: ../src/Indicator.vala:30
+#: src/Indicator.vala:29
 msgid "Network"
 msgstr "Nettverk"
 
-#: ../src/Indicator.vala:31
+#: src/Indicator.vala:30
 msgid "Network indicator"
 msgstr "Nettverksindikator"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:50
-msgid "No Access Points Available"
-msgstr "Ingen åpne trådlause nettverk tilgjengeleg"
+#: src/common/Widgets/AbstractEtherInterface.vala:25
+#, c-format
+msgid "Virtual network: %s"
+msgstr "Virtuelt nettverk: %s"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:54
-msgid "There are no wireless access points within range."
-msgstr "Det er ingen åpne trådlause nettverk innanfor rekkevidde."
+#: src/common/Widgets/AbstractEtherInterface.vala:28
+msgid "Wired"
+msgstr "Kabla"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:63
-msgid "Wireless Is Disabled"
-msgstr "Trådlaust er deaktivert"
+#: src/common/Widgets/AbstractModemInterface.vala:25
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:64
-msgid "Enable wireless to discover nearby wireless access points."
-msgstr "Aktiver trådlaust for å oppdaga åpne trådlause nettverk i nærleiken."
+#: src/common/Widgets/AbstractModemInterface.vala:27
+msgid "Mobile Broadband"
+msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:75
-msgid "Scanning for Access Points…"
-msgstr "Sjekkar etter åpne trådlause nettverk…"
+#: src/common/Widgets/AbstractModemInterface.vala:33
+msgid "Modem"
+msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:120
-msgid "Wireless"
-msgstr "Trådlaust"
-
-#: ../src/common/Widgets/AbstractVpnInterface.vala:39
+#: src/common/Widgets/AbstractVpnInterface.vala:36
+#: src/common/Widgets/AbstractVpnInterface.vala:59
 msgid "VPN"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
-msgid "No VPN Available"
+#: src/common/Widgets/AbstractWifiInterface.vala:49
+msgid "No Access Points Available"
 msgstr "Ingen åpne trådlause nettverk tilgjengeleg"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
-msgstr "Åpent trådlaust nettverk"
+#: src/common/Widgets/AbstractWifiInterface.vala:63
+msgid "Scanning for Access Points…"
+msgstr "Sjekkar etter åpne trådlause nettverk…"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
-msgstr "Åpent trådlaust nettverk %s"
+#: src/common/Widgets/AbstractWifiInterface.vala:106
+msgid "Wireless"
+msgstr "Trådlaust"
 
-#: ../src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:53
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Dette trådlause nettverket kan ikkje koplast til."
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
+#: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
 msgstr "Ukjend eining"
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
+#: src/common/Widgets/WidgetNMInterface.vala:37
+#, c-format
 msgid "Unknown type: %s "
 msgstr "Ukjend type: %s "
 
-#: ../src/common/Widgets/WifiMenuItem.vala:70
+#: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
 msgstr "Dette trådlause nettverket kan ikkje koplast til."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:127
-msgid "This network uses 40/64-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:130
+#, fuzzy
+msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Dette nettverket brukar 40/64-bits WEP-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:129
-msgid "This network uses 104/128-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:133
+#, fuzzy
+msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Dette nettverket brukar 104/128-bit WEP-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:131
-msgid "This network uses WPA encryption."
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+msgid "This network uses WPA encryption"
 msgstr "Dette nettverket brukar WPA-kryptering."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses encryption."
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+msgid "This network uses encryption"
 msgstr "Dette nettverket brukar kryptering."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
-msgid "Virtual network: %s"
-msgstr "Virtuelt nettverk: %s"
+#: src/common/Widgets/WifiMenuItem.vala:141
+#, fuzzy
+msgid "This network is unsecured"
+msgstr "Dette nettverket brukar kryptering."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "Kabla"
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Connect to Hidden Network…"
+msgstr "Kople til skjult nettverk…"
 
-#: ../src/common/Utils.vala:69
-msgid "Disconnected"
-msgstr "Fråkopla"
+#: src/Widgets/PopoverWidget.vala:64
+msgid "Network Settings…"
+msgstr "Nettverksinnstillingar…"
 
-#: ../src/common/Utils.vala:77
-msgid "Connected"
-msgstr "Tilkopla"
+#~ msgid "There are no wireless access points within range."
+#~ msgstr "Det er ingen åpne trådlause nettverk innanfor rekkevidde."
 
-#: ../src/common/Utils.vala:81
-msgid "Failed"
-msgstr "Feila"
+#~ msgid "Wireless Is Disabled"
+#~ msgstr "Trådlaust er deaktivert"
 
-#: ../src/common/Utils.vala:85
-msgid "Connecting"
-msgstr "Koplar til"
+#~ msgid "Enable wireless to discover nearby wireless access points."
+#~ msgstr ""
+#~ "Aktiver trådlaust for å oppdaga åpne trådlause nettverk i nærleiken."
 
-#: ../src/common/Utils.vala:87
-msgid "Cable unplugged"
-msgstr "Kabel fråkopla"
+#, fuzzy
+#~ msgid "No VPN Available"
+#~ msgstr "Ingen åpne trådlause nettverk tilgjengeleg"
 
-#: ../src/common/Utils.vala:89
-msgid "Airplane mode enabled"
-msgstr ""
+#~ msgid "Hotspot"
+#~ msgstr "Åpent trådlaust nettverk"
 
-#: ../src/common/Utils.vala:91
-msgid "Unknown"
-msgstr "Ukjend"
+#~ msgid "Hotspot %s"
+#~ msgstr "Åpent trådlaust nettverk %s"
+
+#~ msgid "Disconnected"
+#~ msgstr "Fråkopla"
+
+#~ msgid "Connected"
+#~ msgstr "Tilkopla"
+
+#~ msgid "Failed"
+#~ msgstr "Feila"
+
+#~ msgid "Connecting"
+#~ msgstr "Koplar til"
+
+#~ msgid "Cable unplugged"
+#~ msgstr "Kabel fråkopla"
+
+#~ msgid "Unknown"
+#~ msgstr "Ukjend"
