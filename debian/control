@@ -2,17 +2,17 @@ Source: wingpanel-indicator-network
 Section: x11
 Priority: optional
 Maintainer: Cody Garver <cody@elementary.io>
-Build-Depends: cmake,
-               debhelper (>= 9),
+Build-Depends: debhelper (>= 10.5.1),
                gobject-introspection,
                libgranite-dev,
-               libgtk-3-dev (>= 3.12),
+               libgtk-3-dev (>= 3.22),
                libnm-dev,
                libnma-dev,
                libwingpanel-2.0-dev,
+               meson,
                valac (>= 0.28)
-Standards-Version: 3.9.6
-Homepage: https://launchpad.net/wingpanel-indicator-network
+Standards-Version: 4.1.1
+Homepage: https://github.com/elementary/wingpanel-indicator-network
 
 Package: wingpanel-indicator-network
 Architecture: any
