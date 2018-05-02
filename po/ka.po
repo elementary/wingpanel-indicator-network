@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-04 23:36-0700\n"
+"POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2015-11-17 00:31+0000\n"
 "Last-Translator: Beqa Arabuli <arabulibeqa@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,128 +13,113 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Connect to Hidden Network…"
-msgstr ""
-
-#: ../src/Widgets/PopoverWidget.vala:60
-msgid "Network Settings…"
-msgstr "ქსელის პარამეტრები..."
-
-#: ../src/Indicator.vala:30
+#: src/Indicator.vala:29
 msgid "Network"
 msgstr "ქსელი"
 
-#: ../src/Indicator.vala:31
+#: src/Indicator.vala:30
 msgid "Network indicator"
 msgstr "ქსელის მაჩვენებელი"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:50
-msgid "No Access Points Available"
-msgstr "წვდომის წერტილები ხელმიუწვდომელია"
+#: src/common/Widgets/AbstractEtherInterface.vala:25
+#, c-format
+msgid "Virtual network: %s"
+msgstr "ვირტუალური ქსელი: %s"
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:54
-msgid "There are no wireless access points within range."
-msgstr "არეში არ არის უსადენო წვდომის წერტილი."
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:63
-msgid "Wireless Is Disabled"
-msgstr "უსადენო გამორთულია"
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:64
-msgid "Enable wireless to discover nearby wireless access points."
-msgstr "ახლომდებარე უსადენო წვდომის წერტილების აღმოსაჩენად ჩართეთ უსადენო."
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:75
-msgid "Scanning for Access Points…"
+#: src/common/Widgets/AbstractEtherInterface.vala:28
+msgid "Wired"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:120
-msgid "Wireless"
+#: src/common/Widgets/AbstractModemInterface.vala:25
+#, c-format
+msgid "Mobile Broadband: %s"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:39
+#: src/common/Widgets/AbstractModemInterface.vala:27
+msgid "Mobile Broadband"
+msgstr ""
+
+#: src/common/Widgets/AbstractModemInterface.vala:33
+msgid "Modem"
+msgstr ""
+
+#: src/common/Widgets/AbstractVpnInterface.vala:36
+#: src/common/Widgets/AbstractVpnInterface.vala:59
 msgid "VPN"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:50
-#, fuzzy
-msgid "No VPN Available"
+#: src/common/Widgets/AbstractWifiInterface.vala:49
+msgid "No Access Points Available"
 msgstr "წვდომის წერტილები ხელმიუწვდომელია"
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
+#: src/common/Widgets/AbstractWifiInterface.vala:63
+msgid "Scanning for Access Points…"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
+#: src/common/Widgets/AbstractWifiInterface.vala:106
+msgid "Wireless"
 msgstr ""
 
-#: ../src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:53
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "ამ უსადენო ქსელთან დაკავშირება ვერ მოხერხდა."
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
+#: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
 msgstr ""
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
+#: src/common/Widgets/WidgetNMInterface.vala:37
+#, c-format
 msgid "Unknown type: %s "
 msgstr "უცნობი ტიპი: %s "
 
-#: ../src/common/Widgets/WifiMenuItem.vala:70
+#: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
 msgstr "ამ უსადენო ქსელთან დაკავშირება ვერ მოხერხდა."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:127
-msgid "This network uses 40/64-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:130
+#, fuzzy
+msgid "This network uses 40/64-bit WEP encryption"
 msgstr "ეს ქსელი იყენებს 40/64 ბიტიან WEP დაშიფვრას."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:129
-msgid "This network uses 104/128-bit WEP encryption."
+#: src/common/Widgets/WifiMenuItem.vala:133
+#, fuzzy
+msgid "This network uses 104/128-bit WEP encryption"
 msgstr "ეს ქსელი იყენებს 104/128 ბიტიან WEP დაშიფვრას."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:131
-msgid "This network uses WPA encryption."
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+msgid "This network uses WPA encryption"
 msgstr "ეს ქსელი იყენებს WPA დაშიფვრას."
 
-#: ../src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses encryption."
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+msgid "This network uses encryption"
 msgstr "ეს ქსელი იყენებს დაშიფვრას."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
-msgid "Virtual network: %s"
-msgstr "ვირტუალური ქსელი: %s"
+#: src/common/Widgets/WifiMenuItem.vala:141
+#, fuzzy
+msgid "This network is unsecured"
+msgstr "ეს ქსელი იყენებს დაშიფვრას."
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: ../src/common/Utils.vala:69
-msgid "Disconnected"
-msgstr ""
+#: src/Widgets/PopoverWidget.vala:64
+msgid "Network Settings…"
+msgstr "ქსელის პარამეტრები..."
 
-#: ../src/common/Utils.vala:77
-msgid "Connected"
-msgstr ""
+#~ msgid "There are no wireless access points within range."
+#~ msgstr "არეში არ არის უსადენო წვდომის წერტილი."
 
-#: ../src/common/Utils.vala:81
-msgid "Failed"
-msgstr ""
+#~ msgid "Wireless Is Disabled"
+#~ msgstr "უსადენო გამორთულია"
 
-#: ../src/common/Utils.vala:85
-msgid "Connecting"
-msgstr ""
+#~ msgid "Enable wireless to discover nearby wireless access points."
+#~ msgstr "ახლომდებარე უსადენო წვდომის წერტილების აღმოსაჩენად ჩართეთ უსადენო."
 
-#: ../src/common/Utils.vala:87
-msgid "Cable unplugged"
-msgstr ""
-
-#: ../src/common/Utils.vala:89
-msgid "Airplane mode enabled"
-msgstr ""
-
-#: ../src/common/Utils.vala:91
-msgid "Unknown"
-msgstr ""
+#, fuzzy
+#~ msgid "No VPN Available"
+#~ msgstr "წვდომის წერტილები ხელმიუწვდომელია"

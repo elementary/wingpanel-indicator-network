@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-04 23:36-0700\n"
+"POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2015-11-03 19:49+0000\n"
 "Last-Translator: Indrit Bashkimi <indrit.bashkimi@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,126 +13,99 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Connect to Hidden Network…"
-msgstr ""
-
-#: ../src/Widgets/PopoverWidget.vala:60
-msgid "Network Settings…"
-msgstr ""
-
-#: ../src/Indicator.vala:30
+#: src/Indicator.vala:29
 msgid "Network"
 msgstr "Rrjeti"
 
-#: ../src/Indicator.vala:31
+#: src/Indicator.vala:30
 msgid "Network indicator"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:50
-msgid "No Access Points Available"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:54
-msgid "There are no wireless access points within range."
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:63
-msgid "Wireless Is Disabled"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:64
-msgid "Enable wireless to discover nearby wireless access points."
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:75
-msgid "Scanning for Access Points…"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:120
-msgid "Wireless"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractVpnInterface.vala:39
-msgid "VPN"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractVpnInterface.vala:50
-msgid "No VPN Available"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
-msgstr ""
-
-#: ../src/common/Widgets/VpnMenuItem.vala:53
-msgid "This Virtual Private Network could not be connected to."
-msgstr ""
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
-msgid "Unknown device"
-msgstr ""
-
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
-msgid "Unknown type: %s "
-msgstr ""
-
-#: ../src/common/Widgets/WifiMenuItem.vala:70
-msgid "This wireless network could not be connected to."
-msgstr ""
-
-#: ../src/common/Widgets/WifiMenuItem.vala:127
-msgid "This network uses 40/64-bit WEP encryption."
-msgstr "Ky rrjet përdor shifrim WEP 40/64-bit."
-
-#: ../src/common/Widgets/WifiMenuItem.vala:129
-msgid "This network uses 104/128-bit WEP encryption."
-msgstr "Ky rrjet përdor shifrim WEP 104/128-bit."
-
-#: ../src/common/Widgets/WifiMenuItem.vala:131
-msgid "This network uses WPA encryption."
-msgstr "Ky rrjet përdor shifrim WPA."
-
-#: ../src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses encryption."
-msgstr "Ky rrjet përdor shifrim."
-
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
+#: src/common/Widgets/AbstractEtherInterface.vala:25
+#, c-format
 msgid "Virtual network: %s"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:28
+#: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr ""
 
-#: ../src/common/Utils.vala:69
-msgid "Disconnected"
+#: src/common/Widgets/AbstractModemInterface.vala:25
+#, c-format
+msgid "Mobile Broadband: %s"
 msgstr ""
 
-#: ../src/common/Utils.vala:77
-msgid "Connected"
+#: src/common/Widgets/AbstractModemInterface.vala:27
+msgid "Mobile Broadband"
 msgstr ""
 
-#: ../src/common/Utils.vala:81
-msgid "Failed"
+#: src/common/Widgets/AbstractModemInterface.vala:33
+msgid "Modem"
 msgstr ""
 
-#: ../src/common/Utils.vala:85
-msgid "Connecting"
+#: src/common/Widgets/AbstractVpnInterface.vala:36
+#: src/common/Widgets/AbstractVpnInterface.vala:59
+msgid "VPN"
 msgstr ""
 
-#: ../src/common/Utils.vala:87
-msgid "Cable unplugged"
+#: src/common/Widgets/AbstractWifiInterface.vala:49
+msgid "No Access Points Available"
 msgstr ""
 
-#: ../src/common/Utils.vala:89
-msgid "Airplane mode enabled"
+#: src/common/Widgets/AbstractWifiInterface.vala:63
+msgid "Scanning for Access Points…"
 msgstr ""
 
-#: ../src/common/Utils.vala:91
-msgid "Unknown"
+#: src/common/Widgets/AbstractWifiInterface.vala:106
+msgid "Wireless"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:53
+msgid "This Virtual Private Network could not be connected to."
+msgstr ""
+
+#: src/common/Widgets/WidgetNMInterface.vala:22
+msgid "Unknown device"
+msgstr ""
+
+#: src/common/Widgets/WidgetNMInterface.vala:37
+#, c-format
+msgid "Unknown type: %s "
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "This wireless network could not be connected to."
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:130
+#, fuzzy
+msgid "This network uses 40/64-bit WEP encryption"
+msgstr "Ky rrjet përdor shifrim WEP 40/64-bit."
+
+#: src/common/Widgets/WifiMenuItem.vala:133
+#, fuzzy
+msgid "This network uses 104/128-bit WEP encryption"
+msgstr "Ky rrjet përdor shifrim WEP 104/128-bit."
+
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+msgid "This network uses WPA encryption"
+msgstr "Ky rrjet përdor shifrim WPA."
+
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+msgid "This network uses encryption"
+msgstr "Ky rrjet përdor shifrim."
+
+#: src/common/Widgets/WifiMenuItem.vala:141
+#, fuzzy
+msgid "This network is unsecured"
+msgstr "Ky rrjet përdor shifrim."
+
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Connect to Hidden Network…"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:64
+msgid "Network Settings…"
 msgstr ""
