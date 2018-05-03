@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the network-indicator package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-18 14:29-0800\n"
+"POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,143 +17,94 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/Indicator.vala:30
+#: src/Indicator.vala:29
 msgid "Network"
 msgstr ""
 
-#: ../src/Indicator.vala:31
+#: src/Indicator.vala:30
 msgid "Network indicator"
 msgstr ""
 
-#: ../src/Widgets/PopoverWidget.vala:57
-msgid "Connect to Hidden Network…"
-msgstr ""
-
-#: ../src/Widgets/PopoverWidget.vala:60
-msgid "Network Settings…"
-msgstr ""
-
-#: ../src/common/Utils.vala:83
-msgid "Disconnected"
-msgstr ""
-
-#: ../src/common/Utils.vala:95
-msgid "Connected"
-msgstr ""
-
-#: ../src/common/Utils.vala:100
-msgid "Failed"
-msgstr ""
-
-#: ../src/common/Utils.vala:105
-msgid "Connecting"
-msgstr ""
-
-#: ../src/common/Utils.vala:107
-msgid "Cable unplugged"
-msgstr ""
-
-#: ../src/common/Utils.vala:109
-msgid "Airplane mode enabled"
-msgstr ""
-
-#: ../src/common/Utils.vala:111
-msgid "Unknown"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractEtherInterface.vala:25
+#: src/common/Widgets/AbstractEtherInterface.vala:25
+#, c-format
 msgid "Virtual network: %s"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractEtherInterface.vala:28
+#: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:23
-msgid "Hotspot"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractHotspotInterface.vala:25
-msgid "Hotspot %s"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractModemInterface.vala:25
+#: src/common/Widgets/AbstractModemInterface.vala:25
+#, c-format
 msgid "Mobile Broadband: %s"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractModemInterface.vala:27
+#: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractModemInterface.vala:33
+#: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:37
-#: ../src/common/Widgets/AbstractVpnInterface.vala:75
+#: src/common/Widgets/AbstractVpnInterface.vala:36
+#: src/common/Widgets/AbstractVpnInterface.vala:59
 msgid "VPN"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractVpnInterface.vala:48
-msgid "No VPN Available"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:48
+#: src/common/Widgets/AbstractWifiInterface.vala:49
 msgid "No Access Points Available"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:52
-msgid "There are no wireless access points within range."
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:61
-msgid "Wireless Is Disabled"
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:62
-msgid "Enable wireless to discover nearby wireless access points."
-msgstr ""
-
-#: ../src/common/Widgets/AbstractWifiInterface.vala:73
+#: src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Scanning for Access Points…"
 msgstr ""
 
-#: ../src/common/Widgets/AbstractWifiInterface.vala:116
+#: src/common/Widgets/AbstractWifiInterface.vala:106
 msgid "Wireless"
 msgstr ""
 
-#: ../src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
 msgstr ""
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:26
+#: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
 msgstr ""
 
-#: ../src/common/Widgets/WidgetNMInterface.vala:56
+#: src/common/Widgets/WidgetNMInterface.vala:37
+#, c-format
 msgid "Unknown type: %s "
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:133
+#: src/common/Widgets/WifiMenuItem.vala:130
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses WPA encryption"
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses encryption"
 msgstr ""
 
-#: ../src/common/Widgets/WifiMenuItem.vala:144
+#: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network is unsecured"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:60
+msgid "Connect to Hidden Network…"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:64
+msgid "Network Settings…"
 msgstr ""
