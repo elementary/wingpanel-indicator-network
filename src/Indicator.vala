@@ -21,6 +21,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     Network.Widgets.PopoverWidget? popover_widget = null;
 
     NetworkMonitor network_monitor;
+    protected NM.Client nm_client;
 
     public bool is_in_session { get; set; default = false; }
 
@@ -78,7 +79,32 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     public override void opened () {
-        // TODO
+        if(nm_client == null){
+            try {
+                nm_client = new NM.Client ();
+            } catch (Error e) {
+                critical (e.message);
+            }
+        }
+        
+        var devices = nm_client.get_devices ();
+        NM.DeviceWifi wifi_device = null;
+
+        for (var i = 0; i < devices.length; i++){
+            if (devices.get(i) is NM.DeviceWifi) {
+                wifi_device = (NM.DeviceWifi)devices.get(i);
+            }    
+        }
+
+        if(wifi_device != null){
+            try {
+                //wifi_device.request_scan_simple (null);
+                wifi_device.request_scan_async.begin (null, null);
+            } catch (Error e){
+                critical (e.message);
+            }
+            on_state_changed ();
+        }
     }
 
     public override void closed () {
