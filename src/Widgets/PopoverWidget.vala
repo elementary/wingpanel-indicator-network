@@ -107,6 +107,22 @@ public class Network.Widgets.PopoverWidget : Network.Widgets.NMVisualizer {
         widget_interface.need_settings.connect (show_settings);
     }
 
+    public void opened () {
+        foreach (var widget in wifi_box.get_children ()) {
+            if (widget is WifiInterface) {
+                ((WifiInterface)widget).start_scanning ();
+            }
+        }
+    }
+
+    public void closed () {
+        foreach (var widget in wifi_box.get_children ()) {
+            if (widget is WifiInterface) {
+                ((WifiInterface)widget).cancel_scanning ();
+            }
+        }
+    }
+
     void show_settings () {
         if (is_in_session) {
             try {

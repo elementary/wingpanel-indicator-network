@@ -21,6 +21,8 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     Wingpanel.Widgets.Switch wifi_item;
     Gtk.Revealer revealer;
 
+    Cancellable wifi_scan_cancellable = new Cancellable ();
+
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         init_wifi_interface (nm_client, _device);
 
@@ -105,6 +107,15 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
          * signal is flushed (for instance signals responsible for radio button
          * checked) */
         Idle.add (() => { update (); return false; });
+    }
+
+    public void start_scanning () {
+        wifi_scan_cancellable.reset ();
+        wifi_device.request_scan_async.begin (wifi_scan_cancellable, null);
+    }
+
+    public void cancel_scanning () {
+        wifi_scan_cancellable.cancel ();
     }
 
     public void connect_to_hidden () {
