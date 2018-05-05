@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-05 07:38+0000\n"
+"PO-Revision-Date: 2018-05-05 20:57+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/he/>\n"
@@ -97,7 +97,7 @@ msgstr "רשת זו משתמשת בהצפנה"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network is unsecured"
-msgstr "רשת זו אינה מוצפנת"
+msgstr "רשת זו אינה מאובטחת"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
