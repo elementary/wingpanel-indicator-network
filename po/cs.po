@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-10 09:12+0000\n"
+"PO-Revision-Date: 2018-05-11 00:07+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/cs/>\n"
@@ -64,7 +64,7 @@ msgstr "Bezdrátová síť"
 
 #: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Nelze se připojit k této VPN síti."
+msgstr "Nelze se připojit k této Virtuální privátní síti."
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
