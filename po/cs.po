@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-08 00:13+0000\n"
+"PO-Revision-Date: 2018-05-11 00:07+0000\n"
 "Last-Translator: Jan Marek <janmarek28@gmail.com>\n"
 "Language-Team: Czech <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/cs/>\n"
@@ -35,15 +35,15 @@ msgstr "Drátová síť"
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr ""
+msgstr "Mobilní širokopásmové připojení: %s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Mobilní širokopásmové připojení"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
-msgstr ""
+msgstr "Modem"
 
 #: src/common/Widgets/AbstractVpnInterface.vala:36
 #: src/common/Widgets/AbstractVpnInterface.vala:59
@@ -64,7 +64,7 @@ msgstr "Bezdrátová síť"
 
 #: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Nelze se připojit k této VPN síti."
+msgstr "Nelze se připojit k této Virtuální privátní síti."
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
@@ -80,29 +80,24 @@ msgid "This wireless network could not be connected to."
 msgstr "Nelze se připojit k této bezdrátové síti."
 
 #: src/common/Widgets/WifiMenuItem.vala:130
-#, fuzzy
 msgid "This network uses 40/64-bit WEP encryption"
-msgstr "Tato síť používá 40/64-bitové WEP šifrování."
+msgstr "Tato síť používá 40/64-bitové WEP šifrování"
 
 #: src/common/Widgets/WifiMenuItem.vala:133
-#, fuzzy
 msgid "This network uses 104/128-bit WEP encryption"
-msgstr "Tato síť používá 104/128-bitové WEP šifrování."
+msgstr "Tato síť používá 104/128-bitové WEP šifrování"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
-#, fuzzy
 msgid "This network uses WPA encryption"
-msgstr "Tato síť používá šifrování WPA."
+msgstr "Tato síť používá šifrování WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-#, fuzzy
 msgid "This network uses encryption"
-msgstr "Tato síť používá šifrování."
+msgstr "Tato síť používá šifrování"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
-#, fuzzy
 msgid "This network is unsecured"
-msgstr "Tato síť používá šifrování."
+msgstr "Tato síť není zabezpečená"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
