@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-09 00:09+0000\n"
+"PO-Revision-Date: 2018-05-20 15:10+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/ru/>\n"
@@ -36,11 +36,11 @@ msgstr "Проводное"
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr ""
+msgstr "Мобильная сеть: %s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Мобильная сеть"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
