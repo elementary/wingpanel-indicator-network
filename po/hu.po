@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2018-05-28 17:09+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/hu/>\n"
 "Language: hu\n"
@@ -101,7 +101,7 @@ msgstr "Ez a hálózat nem biztonságos"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
-msgstr "Csatlakozás rejtett hálózathoz..."
+msgstr "Csatlakozás a rejtett hálózathoz…"
 
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
