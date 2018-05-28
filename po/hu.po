@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2018-05-28 17:06+0000\n"
-"Last-Translator: anonymous <noreply@weblate.org>\n"
+"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
 "Language-Team: Hungarian <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/hu/>\n"
 "Language: hu\n"
@@ -73,7 +73,7 @@ msgstr "Ismeretlen eszköz"
 #: src/common/Widgets/WidgetNMInterface.vala:37
 #, c-format
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "Ismeretlen típus: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
