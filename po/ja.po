@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-05 08:12+0000\n"
+"PO-Revision-Date: 2018-05-29 00:15+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/ja/>\n"
@@ -52,7 +52,7 @@ msgstr "VPN"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:49
 msgid "No Access Points Available"
-msgstr "アクセスポイントが見つかりません"
+msgstr "アクセスポイントが利用できません"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Scanning for Access Points…"
