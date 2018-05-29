@@ -30,9 +30,16 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         ethernet_item.get_style_context ().add_class ("h4");
         ethernet_item.notify["active"].connect( () => {
             debug("update");
-            if (ethernet_item.active) {
-                device.set_autoconnect(true);
-            } else {
+            if (ethernet_item.active && device.get_state () == NM.DeviceState.DISCONNECTED) {
+                var connection = NM.SimpleConnection.new ();
+                var remote_array = device.get_available_connections ();
+                if (remote_array == null) {
+                    critical ("Unable to find an ethernet connection to activate");
+                } else {
+                    connection.set_path (remote_array.get (0).get_path ());
+                    nm_client.activate_connection_async.begin (connection, device, null, null, null);
+                }
+            } else if (!ethernet_item.active && device.get_state () == NM.DeviceState.ACTIVATED) {
                 device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
         });

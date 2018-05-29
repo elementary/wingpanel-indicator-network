@@ -131,7 +131,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		foreach(var w in wifi_list.get_children()) {
 			var menu_item = (WifiMenuItem) w;
 
-			if (ap.get_ssid () == menu_item.ssid) {
+			if (ap.get_ssid ().compare (menu_item.ssid) == 0) {
 				found = true;
 				menu_item.add_ap(ap);
 				break;
@@ -178,7 +178,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			foreach(var w in wifi_list.get_children()) {
 				var menu_item = (WifiMenuItem) w;
 
-				if (active_ap.get_ssid () == menu_item.ssid) {
+				if (active_ap.get_ssid ().compare (menu_item.ssid) == 0) {
 					found = true;
 					menu_item.set_active (true);
 					active_wifi_item = menu_item;
@@ -203,7 +203,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 			assert(menu_item != null);
 
-			if (ap.get_ssid () == menu_item.ssid) {
+			if (ap.get_ssid ().compare(menu_item.ssid) == 0) {
 				found_item = menu_item;
 				break;
 			}
