@@ -13,4 +13,4 @@
 	dh $@ --buildsystem=meson
 
 override_dh_strip:
-	dh_strip --dbg-package=wingpanel-indicator-network-dbg
+	dh_strip -p wingpanel-indicator-network --dbgsym-migration='wingpanel-indicator-network-dbg (<< 2.1.1)'

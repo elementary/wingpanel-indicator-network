@@ -20,14 +20,3 @@ Depends: ${misc:Depends}, ${shlibs:Depends}
 Enhances: wingpanel
 Description: WingPanel Network Indicator
  WingPanel Network Indicator
-
-Package: wingpanel-indicator-network-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Depends: wingpanel-indicator-network (= ${binary:Version}), ${misc:Depends}
-Enhances: wingpanel-indicator-network
-Description: WingPanel Network Indicator (debugging symbols)
- WingPanel Network Indicator
- .
- This package contains debugging symbols for wingpanel-indicator-network.
