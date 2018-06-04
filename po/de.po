@@ -3,10 +3,10 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-03-28 00:06+0000\n"
-"Last-Translator: Justin <justin.hucke@t-online.de>\n"
-"Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
-"wingpanel-indicator-network/de/>\n"
+"PO-Revision-Date: 2018-06-02 19:59+0000\n"
+"Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
+"Language-Team: German <https://weblate.elementary.io/projects/wingpanel"
+"/wingpanel-indicator-network/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,15 +35,15 @@ msgstr "Verbunden"
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr ""
+msgstr "Mobiles Breitband: %s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Mobiles Breitband"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
-msgstr ""
+msgstr "Modem"
 
 #: src/common/Widgets/AbstractVpnInterface.vala:36
 #: src/common/Widgets/AbstractVpnInterface.vala:59
@@ -82,29 +82,24 @@ msgid "This wireless network could not be connected to."
 msgstr "Es konnte keine Verbindung zum Drahtlosnetzwerk aufgebaut werden."
 
 #: src/common/Widgets/WifiMenuItem.vala:130
-#, fuzzy
 msgid "This network uses 40/64-bit WEP encryption"
-msgstr "Das Netzwerk verwendet eine 40/64-Bit WEP-Verschlüsselung."
+msgstr "Dieses Netzwerk verwendet eine 40/64-Bit WEP-Verschlüsselung"
 
 #: src/common/Widgets/WifiMenuItem.vala:133
-#, fuzzy
 msgid "This network uses 104/128-bit WEP encryption"
-msgstr "Das Netzwerk verwendet eine 104/128-Bit-WEP-Verschlüsselung."
+msgstr "Dieses Netzwerk verwendet eine 104/128-Bit-WEP-Verschlüsselung"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
-#, fuzzy
 msgid "This network uses WPA encryption"
-msgstr "Das Netzwerk verwendet eine WPA-Verschlüsselung."
+msgstr "Dieses Netzwerk verwendet eine WPA-Verschlüsselung"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-#, fuzzy
 msgid "This network uses encryption"
-msgstr "Das Netzwerk ist verschlüsselt."
+msgstr "Dieses Netzwerk ist verschlüsselt"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
-#, fuzzy
 msgid "This network is unsecured"
-msgstr "Das Netzwerk ist verschlüsselt."
+msgstr "Dieses Netzwerk ist unverschlüsselt"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
