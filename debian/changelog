@@ -1,8 +1,8 @@
-wingpanel-indicator-network (2.1.2) UNRELEASED; urgency=medium
+wingpanel-indicator-network (2.2.0) bionic; urgency=medium
 
-  * Pre-release version bump.
+  * New upstream release.
 
- -- Cody Garver <cody@elementary.io>  Mon, 04 Jun 2018 07:22:52 -0500
+ -- Cody Garver <cody@elementary.io>  Thu, 07 Jun 2018 04:25:06 -0500
 
 wingpanel-indicator-network (2.1.1) xenial; urgency=medium
 
