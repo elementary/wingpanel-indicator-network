@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-05-29 00:15+0000\n"
+"PO-Revision-Date: 2018-06-17 00:10+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel"
 "/wingpanel-indicator-network/ja/>\n"
@@ -101,7 +101,7 @@ msgstr "このネットワークは安全ではありません"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
-msgstr "非表示ネットワークの接続…"
+msgstr "非公開のネットワークに接続…"
 
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
