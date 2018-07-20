@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-07-20 19:21+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
+"PO-Revision-Date: 2018-07-21 00:08+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/nb/>\n"
 "Language: nb\n"
@@ -55,6 +55,7 @@ msgid "No Access Points Available"
 msgstr "Ingen aksesspunkter tilgjengelige"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:63
+#, fuzzy
 msgid "Scanning for Access Points…"
 msgstr "Ser etter trådløse nettverk…"
 
@@ -81,11 +82,11 @@ msgstr "Kan ikke koble til dette trådløse nettverket."
 
 #: src/common/Widgets/WifiMenuItem.vala:130
 msgid "This network uses 40/64-bit WEP encryption"
-msgstr "Dette nettverket bruker 40/64-bits WEP-kryptering"
+msgstr "Dette nettverket bruker 40/64-biters WEP-kryptering"
 
 #: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 104/128-bit WEP encryption"
-msgstr "Dette nettverket bruker 104/128-bit WEP-kryptering"
+msgstr "Dette nettverket bruker 104/128-biters WEP-kryptering"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses WPA encryption"
@@ -97,7 +98,7 @@ msgstr "Dette nettverket bruker kryptering"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network is unsecured"
-msgstr "Dette nettverket er ikke sikret"
+msgstr "Dette nettverket er åpent"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
