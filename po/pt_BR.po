@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
 "PO-Revision-Date: 2018-08-29 05:38+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
+"Last-Translator: dnc0 <marlonslbr@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -39,11 +39,11 @@ msgstr "Operadora Móvel: %s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "Operadora Móvel"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
-msgstr ""
+msgstr "Modem"
 
 #: src/common/Widgets/AbstractVpnInterface.vala:36
 #: src/common/Widgets/AbstractVpnInterface.vala:59
@@ -100,9 +100,8 @@ msgid "This network uses encryption"
 msgstr "Esta rede usa criptografia."
 
 #: src/common/Widgets/WifiMenuItem.vala:141
-#, fuzzy
 msgid "This network is unsecured"
-msgstr "Esta rede usa criptografia."
+msgstr "Esta rede não é criptografada."
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
