@@ -93,6 +93,9 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
                     critical ("An VPN is being connected but not active.");
                 }
                 break;
+            case State.CONNECTED_VPN:
+                hide_item (spinner);
+                break;
         }
     }
 
