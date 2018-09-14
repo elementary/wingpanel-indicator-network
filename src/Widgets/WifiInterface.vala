@@ -60,7 +60,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     public override void update () {
         base.update ();
 
-        wifi_item.set_sensitive (!hardware_locked);
+        wifi_item.sensitive = !hardware_locked;
         wifi_item.active = !locked;
 
         active_ap = wifi_device.get_active_access_point ();
@@ -77,24 +77,25 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     protected override void wifi_activate_cb (WifiMenuItem i) {
         var connections = nm_client.get_connections ();
         var device_connections = wifi_device.filter_connections (connections);
-        var ap_connections = i.ap.filter_connections (device_connections);
+        var ap = i.get_nearest_ap ();
+        var ap_connections = ap.filter_connections (device_connections);
 
         bool already_connected = ap_connections.length > 0;
 
         if (already_connected) {
             nm_client.activate_connection_async.begin (ap_connections.get (0),
                                                        wifi_device,
-                                                       i.ap.get_path (),
+                                                       ap.get_path (),
                                                        null,
                                                        null);
         } else {
-            debug ("Trying to connect to %s", NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ()));
+            debug ("Trying to connect to %s", NM.Utils.ssid_to_utf8 (ap.ssid.get_data ()));
 
-            if (i.ap.get_wpa_flags () == NM.@80211ApSecurityFlags.NONE) {
+            if (ap.wpa_flags == NM.@80211ApSecurityFlags.NONE) {
                 debug ("Directly, as it is an insecure network.");
                 nm_client.add_and_activate_connection_async.begin (NM.SimpleConnection.new (),
                                                                    device,
-                                                                   i.ap.get_path (),
+                                                                   ap.get_path (),
                                                                    null,
                                                                    null);
             } else {

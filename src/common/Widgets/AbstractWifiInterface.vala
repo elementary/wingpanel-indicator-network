@@ -99,6 +99,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		wifi_list = new Gtk.ListBox ();
 		wifi_list.set_sort_func (sort_func);
 		wifi_list.set_placeholder (placeholder);
+
+		map.connect (() => wifi_list.invalidate_sort ());
 	}
 
 	public override void update_name (int count) {
@@ -126,15 +128,19 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
 		WifiMenuItem? previous_wifi_item = blank_item;
 
-		bool found = false;
+		if (ap.ssid == null) {
+			debug ("NULL AP SSID");
+			return;
+		}
 
-		foreach(var w in wifi_list.get_children()) {
+		bool found = false;
+		foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
 			var menu_item = (WifiMenuItem) w;
 
-			GLib.Bytes menu_ssid = menu_item.ssid;
-			if (menu_ssid != null && ap.get_ssid ().compare (menu_ssid) == 0) {
+			var menu_ssid = menu_item.ssid;
+			if (menu_ssid != null && ap.ssid.compare (menu_ssid) == 0) {
 				found = true;
-				menu_item.add_ap(ap);
+				menu_item.add_ap (ap);
 				break;
 			}
 
@@ -142,15 +148,12 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		}
 
 		/* Sometimes network manager sends a (fake?) AP without a valid ssid. */
-		if(!found && ap.get_ssid() != null) {
-			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
-
-			previous_wifi_item = item;
-			item.set_visible(true);
+		if (!found && ap.ssid != null) {
+			var item = new WifiMenuItem (ap, previous_wifi_item);
 			item.user_action.connect (wifi_activate_cb);
 
+			previous_wifi_item = item;
 			wifi_list.add (item);
-			wifi_list.show_all ();
 
 			update ();
 		}
@@ -160,7 +163,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	void update_active_ap () {
 		debug("Update active AP");
 		
-		active_ap = wifi_device.get_active_access_point ();
+		active_ap = wifi_device.active_access_point;
 		
 		if (active_wifi_item != null) {
 			if(active_wifi_item.state == Network.State.CONNECTING_WIFI) {
@@ -169,28 +172,38 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			active_wifi_item = null;
 		}
 
-		if(active_ap == null) {
+		if (active_ap == null) {
 			debug("No active AP");
 			blank_item.set_active (true);
-		} else {
-			debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap.get_ssid ().get_data ()));
-			
-			bool found = false;
-			foreach(var w in wifi_list.get_children()) {
-				var menu_item = (WifiMenuItem) w;
+			return;
+		}
 
-				if (active_ap.get_ssid ().compare (menu_item.ssid) == 0) {
-					found = true;
-					menu_item.set_active (true);
-					active_wifi_item = menu_item;
-					active_wifi_item.state = state;
-				}
-			}
+		var ssid = active_ap.ssid;
+		if (ssid == null) {
+			debug ("NULL active AP SSID");
+			blank_item.set_active (true);
+			return;
+		}
 
-			/* This can happen at start, when the access point list is populated. */
-			if (!found) {
-				debug ("Active AP not added");
+		debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (ssid.get_data ()));
+
+		bool found = false;
+		foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
+			var menu_item = (WifiMenuItem) w;
+			if (menu_item.ssid == null)
+				continue;
+
+			if (ssid.compare (menu_item.ssid) == 0) {
+				found = true;
+				menu_item.set_active (true);
+				active_wifi_item = menu_item;
+				active_wifi_item.state = state;
 			}
+		}
+
+		/* This can happen at start, when the access point list is populated. */
+		if (!found) {
+			debug ("Active AP not added");
 		}
 	}
 	
@@ -199,12 +212,12 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 		WifiMenuItem found_item = null;
 
-		foreach(var w in wifi_list.get_children()) {
+		foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
 			var menu_item = (WifiMenuItem) w;
+			if (menu_item.ssid == null)
+				continue;
 
-			assert(menu_item != null);
-
-			if (ap.get_ssid ().compare(menu_item.ssid) == 0) {
+			if (ap.ssid.compare (menu_item.ssid) == 0) {
 				found_item = menu_item;
 				break;
 			}
@@ -212,6 +225,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
 		if(found_item == null) {
 			critical("Couldn't remove an access point which has not been added.");
+			return;
 		} else {
 			if(!found_item.remove_ap(ap)) {
 				found_item.destroy ();
@@ -330,12 +344,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		var w1 = (WifiMenuItem)r1;
 		var w2 = (WifiMenuItem)r2;
 
-		if (w1.ap.get_strength () > w2.ap.get_strength ()) {
-			return -1;
-		} else if (w1.ap.get_strength () < w2.ap.get_strength ()) {
-			return 1;
-		} else {
-			return 0;
-		}
+		return w2.strength - w1.strength;
 	}
 }
