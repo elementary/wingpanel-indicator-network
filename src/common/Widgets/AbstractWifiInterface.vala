@@ -131,7 +131,8 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		foreach(var w in wifi_list.get_children()) {
 			var menu_item = (WifiMenuItem) w;
 
-			if (ap.get_ssid ().compare (menu_item.ssid) == 0) {
+			GLib.Bytes menu_ssid = menu_item.ssid;
+			if (menu_ssid != null && ap.get_ssid ().compare (menu_ssid) == 0) {
 				found = true;
 				menu_item.add_ap(ap);
 				break;
