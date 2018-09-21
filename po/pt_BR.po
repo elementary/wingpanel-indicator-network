@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 11:10-0700\n"
-"PO-Revision-Date: 2018-08-29 05:42+0000\n"
+"PO-Revision-Date: 2018-09-22 00:11+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/pt_BR/>\n"
@@ -105,7 +105,7 @@ msgstr "Conectar à rede oculta…"
 
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
-msgstr "Configurações de rede…"
+msgstr "Configurações de Rede…"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Não há redes sem fio ao alcance."
