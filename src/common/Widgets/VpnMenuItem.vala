@@ -94,6 +94,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
                 if (!radio_button.active) {
                     critical ("An VPN is being connected but not active.");
                 }
+                check_vpn_connectivity ();
                 break;
         }
     }
