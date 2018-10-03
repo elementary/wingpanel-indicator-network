@@ -1,3 +1,9 @@
+wingpanel-indicator-network (2.2.1) bionic; urgency=medium
+
+  * New upstream release.
+
+ -- Cody Garver <cody@elementary.io>  Wed, 03 Oct 2018 03:03:51 -0500
+
 wingpanel-indicator-network (2.2.0) bionic; urgency=medium
 
   * New upstream release.
