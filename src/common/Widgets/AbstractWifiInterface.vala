@@ -125,14 +125,15 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
 		WifiMenuItem? previous_wifi_item = blank_item;
+		unowned GLib.Bytes ap_ssid = ap.ssid;
 
 		bool found = false;
 
-		foreach(var w in wifi_list.get_children()) {
+		foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
 			var menu_item = (WifiMenuItem) w;
 
-			GLib.Bytes menu_ssid = menu_item.ssid;
-			if (menu_ssid != null && ap.get_ssid ().compare (menu_ssid) == 0) {
+			unowned GLib.Bytes menu_ssid = menu_item.ssid;
+			if (menu_ssid != null  && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
 				found = true;
 				menu_item.add_ap(ap);
 				break;
@@ -142,7 +143,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		}
 
 		/* Sometimes network manager sends a (fake?) AP without a valid ssid. */
-		if(!found && ap.get_ssid() != null) {
+		if(!found && ap_ssid != null) {
 			WifiMenuItem item = new WifiMenuItem(ap, previous_wifi_item);
 
 			previous_wifi_item = item;
@@ -173,13 +174,14 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			debug("No active AP");
 			blank_item.set_active (true);
 		} else {
-			debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap.get_ssid ().get_data ()));
+			unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
+			debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ()));
 			
 			bool found = false;
-			foreach(var w in wifi_list.get_children()) {
+			foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
 				var menu_item = (WifiMenuItem) w;
 
-				if (active_ap.get_ssid ().compare (menu_item.ssid) == 0) {
+				if (active_ap_ssid.compare (menu_item.ssid) == 0) {
 					found = true;
 					menu_item.set_active (true);
 					active_wifi_item = menu_item;
