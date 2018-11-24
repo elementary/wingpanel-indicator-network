@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2018-06-17 00:10+0000\n"
-"Last-Translator: Ryo Nakano <ryonakaknock@gmail.com>\n"
+"PO-Revision-Date: 2018-11-24 11:10+0000\n"
+"Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
 "Language: ja\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:29
@@ -26,7 +26,7 @@ msgstr "ネットワークインジケーター"
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
 msgid "Virtual network: %s"
-msgstr "仮想ネットワーク: %s"
+msgstr "仮想ネットワーク：%s"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
@@ -35,7 +35,7 @@ msgstr "有線接続"
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr "モバイルブロードバンド: %s"
+msgstr "モバイルブロードバンド：%s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
@@ -73,7 +73,7 @@ msgstr "不明なデバイス"
 #: src/common/Widgets/WidgetNMInterface.vala:37
 #, c-format
 msgid "Unknown type: %s "
-msgstr "不明な種類: %s "
+msgstr "不明な種類：%s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
