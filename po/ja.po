@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2018-11-24 11:10+0000\n"
+"PO-Revision-Date: 2018-11-29 12:06+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
@@ -52,7 +52,7 @@ msgstr "VPN"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:49
 msgid "No Access Points Available"
-msgstr "アクセスポイントが利用できません"
+msgstr "利用できるアクセスポイントがありません"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Scanning for Access Points…"
@@ -64,7 +64,7 @@ msgstr "無線接続"
 
 #: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
-msgstr "この仮想プライベートネットワークに接続することができませんでした。"
+msgstr "この仮想プライベートネットワークに接続できませんでした。"
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
@@ -77,7 +77,7 @@ msgstr "不明な種類：%s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
-msgstr "このワイヤレスネットワークへ接続することができませんでした。"
+msgstr "この無線ネットワークに接続できませんでした。"
 
 #: src/common/Widgets/WifiMenuItem.vala:130
 msgid "This network uses 40/64-bit WEP encryption"
