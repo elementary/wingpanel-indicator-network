@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2018-12-02 05:01+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -90,20 +90,20 @@ msgstr "هذه الشبكة تستعمل 104/128-بت WEP للتشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses WPA encryption"
-msgstr ""
+msgstr "هذه الشبكة تستعمل WPA للتشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses encryption"
-msgstr ""
+msgstr "هذه الشبكة تستعمل التشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network is unsecured"
-msgstr ""
+msgstr "هذه الشبكة غير مؤمنة"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "الإتصال بشبكة مخفية..."
 
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
-msgstr ""
+msgstr "إعدادات الشبكة..."
