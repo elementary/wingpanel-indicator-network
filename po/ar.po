@@ -3,50 +3,53 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2015-08-14 02:53+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-12-02 04:56+0000\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
+"Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
+"wingpanel-indicator-network/ar/>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-"X-Generator: Launchpad (build 18282)\n"
 
 #: src/Indicator.vala:29
 msgid "Network"
-msgstr ""
+msgstr "الشبكة"
 
 #: src/Indicator.vala:30
 msgid "Network indicator"
-msgstr ""
+msgstr "مؤشر الشبكة"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
 msgid "Virtual network: %s"
-msgstr ""
+msgstr "شبكة وهمية: s%"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
-msgstr ""
+msgstr "سلكي"
 
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr ""
+msgstr "نطاق عريض محمول: s%"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "نطاق عريض محمول "
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
-msgstr ""
+msgstr "مودم"
 
 #: src/common/Widgets/AbstractVpnInterface.vala:36
 #: src/common/Widgets/AbstractVpnInterface.vala:59
 msgid "VPN"
-msgstr ""
+msgstr "شبكة خاصة افتراضية"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:49
 msgid "No Access Points Available"
