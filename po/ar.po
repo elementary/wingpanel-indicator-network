@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2018-12-02 04:57+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -53,11 +53,11 @@ msgstr "شبكة خاصة إفتراضية"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:49
 msgid "No Access Points Available"
-msgstr ""
+msgstr "لا نقاط ولوج متاحة"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:63
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "بحث عن نقاط ولوج..."
 
 #: src/common/Widgets/AbstractWifiInterface.vala:106
 msgid "Wireless"
