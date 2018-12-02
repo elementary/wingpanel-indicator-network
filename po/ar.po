@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2018-12-02 04:58+0000\n"
-"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
+"PO-Revision-Date: 2018-12-02 04:59+0000\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -74,7 +74,7 @@ msgstr "جهاز غير معروف"
 #: src/common/Widgets/WidgetNMInterface.vala:37
 #, c-format
 msgid "Unknown type: %s "
-msgstr "غير معروف: %s "
+msgstr "نوع غير معروف: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
