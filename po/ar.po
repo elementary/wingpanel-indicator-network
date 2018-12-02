@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2018-12-02 05:00+0000\n"
-"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
+"PO-Revision-Date: 2018-12-02 05:01+0000\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -40,7 +40,7 @@ msgstr "نطاق عريض محمول: s%"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr "نطاق عريض محمول "
+msgstr "نطاق عريض محمول"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
@@ -65,7 +65,7 @@ msgstr "لاسلكي"
 
 #: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
-msgstr "لا يمكن الإتصال بهذه الشبكة الإفتراضية الخاصة"
+msgstr "لا يمكن الإتصال بهذه الشبكة الإفتراضية الخاصة."
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
@@ -86,7 +86,7 @@ msgstr "هذه الشبكة تستعمل 40/64-بت WEP للتشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 104/128-bit WEP encryption"
-msgstr "هذه الشبكة تستعمل 64/40-بت WEP للتشفير"
+msgstr "هذه الشبكة تستعمل 104/128-بت WEP للتشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses WPA encryption"
