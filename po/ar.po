@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2018-12-02 05:00+0000\n"
-"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
+"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -82,7 +82,7 @@ msgstr "لا يمكن الإتصال بهذه الشبكة اللاسلكية."
 
 #: src/common/Widgets/WifiMenuItem.vala:130
 msgid "This network uses 40/64-bit WEP encryption"
-msgstr "هذه الشبكة تستعمل 64/40-بت للتشفير"
+msgstr "هذه الشبكة تستعمل 40/64-بت WEP للتشفير"
 
 #: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 104/128-bit WEP encryption"
