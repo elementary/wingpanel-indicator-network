@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2018-12-02 04:59+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -78,7 +78,7 @@ msgstr "نوع غير معروف: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
-msgstr ""
+msgstr "لا يمكن الإتصال بهذه الشبكة اللاسلكية"
 
 #: src/common/Widgets/WifiMenuItem.vala:130
 msgid "This network uses 40/64-bit WEP encryption"
