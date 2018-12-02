@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2018-12-02 04:58+0000\n"
-"Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
+"Last-Translator: Yassine MRABET <yassine.mrabet@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -61,20 +61,20 @@ msgstr "جاري البحث عن نقاط ولوج…"
 
 #: src/common/Widgets/AbstractWifiInterface.vala:106
 msgid "Wireless"
-msgstr ""
+msgstr "لاسلكي"
 
 #: src/common/Widgets/VpnMenuItem.vala:53
 msgid "This Virtual Private Network could not be connected to."
-msgstr ""
+msgstr "لا يمكن الإتصال بهذه الشبكة الإفتراضية الخاصة"
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
-msgstr ""
+msgstr "جهاز غير معروف"
 
 #: src/common/Widgets/WidgetNMInterface.vala:37
 #, c-format
 msgid "Unknown type: %s "
-msgstr ""
+msgstr "غير معروف: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "This wireless network could not be connected to."
