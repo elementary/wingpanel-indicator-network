@@ -127,6 +127,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 	void access_point_added_cb (Object ap_) {
 		NM.AccessPoint ap = (NM.AccessPoint)ap_;
 		WifiMenuItem? previous_wifi_item = blank_item;
+		unowned GLib.Bytes ap_ssid = ap.ssid;
 
 		if (ap.ssid == null) {
 			debug ("NULL AP SSID");
@@ -138,7 +139,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 			var menu_item = (WifiMenuItem) w;
 
 			var menu_ssid = menu_item.ssid;
-			if (menu_ssid != null && ap.ssid.compare (menu_ssid) == 0) {
+			if (menu_ssid != null  && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
 				found = true;
 				menu_item.add_ap (ap);
 				break;
@@ -148,7 +149,6 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 		}
 
 		/* Sometimes network manager sends a (fake?) AP without a valid ssid. */
-		if (!found && ap.ssid != null) {
 			var item = new WifiMenuItem (ap, previous_wifi_item);
 			item.user_action.connect (wifi_activate_cb);
 
