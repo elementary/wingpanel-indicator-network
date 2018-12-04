@@ -55,6 +55,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
 
 		img_strength = new Gtk.Image ();
+        img_strength.icon_size = Gtk.IconSize.MENU;
 		img_strength.margin_end = 6;
 		
 		lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
@@ -119,7 +120,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 	private void update () {
 		radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
 
-		img_strength.set_from_icon_name ("network-wireless-signal-" + strength_to_string(strength) + "-symbolic", Gtk.IconSize.MENU);
+        img_strength.icon_name = get_strength_symbolic_icon ();
 		img_strength.show_all ();
 
         var flags = ap.get_wpa_flags ();
@@ -178,17 +179,19 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 		update ();
 	}
 
-	string strength_to_string (uint8 strength) {
-		if (strength < 30) {
-			return "weak";
-		} else if (strength < 55) {
-			return "ok";
-		} else if (strength < 80) {
-			return "good";
-		} else {
-			return "excellent";
+    private const string BASE_ICON_NAME = "network-wireless-signal-";
+    private const string SYMBOLIC = "-symbolic";
+    private unowned string get_strength_symbolic_icon () {
+        if (strength < 30) {
+            return BASE_ICON_NAME + "weak" + SYMBOLIC;
+        } else if (strength < 55) {
+            return BASE_ICON_NAME + "ok" + SYMBOLIC;
+        } else if (strength < 80) {
+            return BASE_ICON_NAME + "good" + SYMBOLIC;
+        } else {
+            return BASE_ICON_NAME + "excellent" + SYMBOLIC;
         }
-	}
+    }
 
 	public bool remove_ap(NM.AccessPoint ap) {
 		_ap.remove (ap);
