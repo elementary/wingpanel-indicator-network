@@ -147,6 +147,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         case Network.State.FAILED_MOBILE:
             image.icon_name = "network-cellular-offline-symbolic";
             break;
+        case Network.State.FAILED_WIFI:
         case Network.State.DISCONNECTED:
             image.icon_name = "network-wireless-offline-symbolic";
             break;
