@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
-"PO-Revision-Date: 2018-09-06 04:20+0000\n"
-"Last-Translator: strozzascotte <marco.depaolini@gmail.com>\n"
+"PO-Revision-Date: 2018-12-11 11:03+0000\n"
+"Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://weblate.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/it/>\n"
 "Language: it\n"
@@ -35,11 +35,11 @@ msgstr "Cablata"
 #: src/common/Widgets/AbstractModemInterface.vala:25
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr "Banda amplia mobile: %s"
+msgstr "Banda larga mobile: %s"
 
 #: src/common/Widgets/AbstractModemInterface.vala:27
 msgid "Mobile Broadband"
-msgstr "Banda amplia mobile"
+msgstr "Banda larga mobile"
 
 #: src/common/Widgets/AbstractModemInterface.vala:33
 msgid "Modem"
