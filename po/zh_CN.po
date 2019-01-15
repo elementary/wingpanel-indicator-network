@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-13 10:15-0700\n"
 "PO-Revision-Date: 2019-01-15 13:41+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
+"Last-Translator: WANG, Wei <ww460160885@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://weblate.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -97,7 +97,7 @@ msgstr "此网络已加密"
 
 #: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network is unsecured"
-msgstr "此网络未加密"
+msgstr "此网络未加密。"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
