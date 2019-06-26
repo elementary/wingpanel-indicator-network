@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-13 10:15-0700\n"
+"POT-Creation-Date: 2019-06-26 22:47+0200\n"
 "PO-Revision-Date: 2018-06-02 19:59+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
@@ -50,15 +50,15 @@ msgstr "Modem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:49
+#: src/common/Widgets/AbstractWifiInterface.vala:46
 msgid "No Access Points Available"
 msgstr "Keine Netzwerke verfügbar"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:63
+#: src/common/Widgets/AbstractWifiInterface.vala:60
 msgid "Scanning for Access Points…"
 msgstr "Drahtlose Netzwerke werden gesucht…"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:106
+#: src/common/Widgets/AbstractWifiInterface.vala:103
 msgid "Wireless"
 msgstr "Drahtlosnetzwerk"
 
@@ -77,27 +77,27 @@ msgstr "Unbekanntes Gerät"
 msgid "Unknown type: %s "
 msgstr "Unbekannter Typ: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:65
 msgid "This wireless network could not be connected to."
 msgstr "Es konnte keine Verbindung zum Drahtlosnetzwerk aufgebaut werden."
 
-#: src/common/Widgets/WifiMenuItem.vala:130
+#: src/common/Widgets/WifiMenuItem.vala:132
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Dieses Netzwerk verwendet eine 40/64-Bit WEP-Verschlüsselung"
 
-#: src/common/Widgets/WifiMenuItem.vala:133
+#: src/common/Widgets/WifiMenuItem.vala:135
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Dieses Netzwerk verwendet eine 104/128-Bit-WEP-Verschlüsselung"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:138
 msgid "This network uses WPA encryption"
 msgstr "Dieses Netzwerk verwendet eine WPA-Verschlüsselung"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:141
 msgid "This network uses encryption"
 msgstr "Dieses Netzwerk ist verschlüsselt"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:143
 msgid "This network is unsecured"
 msgstr "Dieses Netzwerk ist unverschlüsselt"
 
