@@ -173,4 +173,3 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
         hidden_dialog.destroy ();
     }
 }
-
