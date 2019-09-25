@@ -36,23 +36,23 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
     }
 
     enum ModemAccessTechnology {
-        UNKNOWN     = 0,
-        POTS        = 1 << 0,
-        GSM         = 1 << 1,
+        UNKNOWN = 0,
+        POTS = 1 << 0,
+        GSM = 1 << 1,
         GSM_COMPACT = 1 << 2,
-        GPRS        = 1 << 3,
-        EDGE        = 1 << 4,
-        UMTS        = 1 << 5,
-        HSDPA       = 1 << 6,
-        HSUPA       = 1 << 7,
-        HSPA        = 1 << 8,
-        HSPA_PLUS   = 1 << 9,
-        1XRTT       = 1 << 10,
-        EVDO0       = 1 << 11,
-        EVDOA       = 1 << 12,
-        EVDOB       = 1 << 13,
-        LTE         = 1 << 14,
-        ANY         = 0xFFFFFFFF
+        GPRS = 1 << 3,
+        EDGE = 1 << 4,
+        UMTS = 1 << 5,
+        HSDPA = 1 << 6,
+        HSUPA = 1 << 7,
+        HSPA = 1 << 8,
+        HSPA_PLUS = 1 << 9,
+        1XRTT = 1 << 10,
+        EVDO0 = 1 << 11,
+        EVDOA = 1 << 12,
+        EVDOB = 1 << 13,
+        LTE = 1 << 14,
+        ANY = 0xFFFFFFFF
     }
 
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
@@ -87,7 +87,7 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
                 modem_item.sensitive = false;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
-                break;    
+                break;
             case NM.DeviceState.DISCONNECTED:
             case NM.DeviceState.DEACTIVATING:
                 modem_item.sensitive = true;

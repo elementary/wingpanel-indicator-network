@@ -83,10 +83,10 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
         var aps = wifi_device.get_access_points ();
         if (aps != null && aps.length > 0) {
-            aps.foreach(access_point_added_cb);
+            aps.foreach (access_point_added_cb);
         }
 
-        update();
+        update ();
     }
 
     construct {
@@ -130,7 +130,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
             var menu_item = (WifiMenuItem) w;
 
             var menu_ssid = menu_item.ssid;
-            if (menu_ssid != null  && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
+            if (menu_ssid != null && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
                 found = true;
                 menu_item.add_ap (ap);
                 break;
@@ -270,14 +270,14 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
             /* That can happen if active_ap has not been added yet, at startup. */
             if (active_ap != null) {
-                state = strength_to_state(active_ap.get_strength());
+                state = strength_to_state (active_ap.get_strength ());
             } else {
                 state = State.CONNECTED_WIFI_WEAK;
             }
             break;
         }
 
-        debug("New network state: %s", state.to_string ());
+        debug ("New network state: %s", state.to_string ());
 
         /* Wifi */
         software_locked = false;
@@ -316,7 +316,7 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
             placeholder.visible_child_name = "scanning";
             cancel_scan ();
             wifi_device.request_scan_async.begin (null, null);
-            timeout_scan = Timeout.add(5000, () => {
+            timeout_scan = Timeout.add (5000, () => {
                 timeout_scan = 0;
                 placeholder.visible_child_name = "no-aps";
                 return false;
