@@ -16,24 +16,24 @@
  */
 
 public abstract class Network.WidgetNMInterface : Gtk.Box {
-	protected NM.Device? device;
-	public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
+    protected NM.Device? device;
+    public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
     public string? extra_info { protected set; get; default = null; }
-	public string display_title { get; protected set; default = _("Unknown device"); }
+    public string display_title { get; protected set; default = _("Unknown device"); }
 
-	public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
+    public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
 
-	public signal void show_dialog (Gtk.Widget w);
-	public signal void need_settings ();
+    public signal void show_dialog (Gtk.Widget w);
+    public signal void need_settings ();
 
-	public bool is_device (NM.Device device) {
-		return device == this.device;
-	}
+    public bool is_device (NM.Device device) {
+        return device == this.device;
+    }
 
-	public virtual void update () {
-	}
+    public virtual void update () {
+    }
 
-	public virtual void update_name (int count) {
-		display_title = _("Unknown type: %s ").printf (device.get_description ());
-	}
+    public virtual void update_name (int count) {
+        display_title = _("Unknown type: %s ").printf (device.get_description ());
+    }
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-02 11:10-0700\n"
+"POT-Creation-Date: 2019-06-26 22:47+0200\n"
 "PO-Revision-Date: 2018-02-07 03:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -50,15 +50,15 @@ msgstr ""
 msgid "VPN"
 msgstr "VPN"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:49
+#: src/common/Widgets/AbstractWifiInterface.vala:46
 msgid "No Access Points Available"
 msgstr "沒有可用的存取點"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:63
+#: src/common/Widgets/AbstractWifiInterface.vala:60
 msgid "Scanning for Access Points…"
 msgstr "掃描無線存取點…"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:106
+#: src/common/Widgets/AbstractWifiInterface.vala:103
 msgid "Wireless"
 msgstr "無線網路"
 
@@ -75,31 +75,31 @@ msgstr "未知裝置"
 msgid "Unknown type: %s "
 msgstr "未知類型：%s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:65
 msgid "This wireless network could not be connected to."
 msgstr "無法連到這個無線網路。"
 
-#: src/common/Widgets/WifiMenuItem.vala:130
+#: src/common/Widgets/WifiMenuItem.vala:132
 #, fuzzy
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "這個網路使用 40/64 位元 WEP 加密。"
 
-#: src/common/Widgets/WifiMenuItem.vala:133
+#: src/common/Widgets/WifiMenuItem.vala:135
 #, fuzzy
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "這個網路使用 104/128 位元 WEP 加密。"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:138
 #, fuzzy
 msgid "This network uses WPA encryption"
 msgstr "這個網路使用 WPA 加密。"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:141
 #, fuzzy
 msgid "This network uses encryption"
 msgstr "這個網路有加密。"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:143
 #, fuzzy
 msgid "This network is unsecured"
 msgstr "這個網路有加密。"

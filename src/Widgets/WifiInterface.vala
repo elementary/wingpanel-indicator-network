@@ -121,6 +121,7 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     public void connect_to_hidden () {
         var hidden_dialog = new NMA.WifiDialog.for_other (nm_client);
         hidden_dialog.deletable = false;
+        hidden_dialog.transient_for = (Gtk.Window) get_toplevel ();
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
@@ -172,4 +173,3 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
         hidden_dialog.destroy ();
     }
 }
-
