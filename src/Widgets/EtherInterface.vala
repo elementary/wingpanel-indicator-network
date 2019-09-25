@@ -28,8 +28,8 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         });
 
         ethernet_item.get_style_context ().add_class ("h4");
-        ethernet_item.notify["active"].connect( () => {
-            debug("update");
+        ethernet_item.notify["active"].connect (() => {
+            debug ("update");
             if (ethernet_item.active && device.get_state () == NM.DeviceState.DISCONNECTED) {
                 var connection = NM.SimpleConnection.new ();
                 var remote_array = device.get_available_connections ();

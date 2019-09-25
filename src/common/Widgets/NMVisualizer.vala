@@ -26,7 +26,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
     construct {
-        network_interface = new GLib.List<WidgetNMInterface>();
+        network_interface = new GLib.List<WidgetNMInterface> ();
 
         build_ui ();
 
@@ -51,7 +51,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
         // Vpn interface
         create_vpn_interface ();
 
-        show_all();
+        show_all ();
         update_vpn_connection ();
     }
 
@@ -111,14 +111,14 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
             widget_interface = new ModemInterface (nm_client, device);
             debug ("Modem interface added");
         } else {
-            debug ("Unknown device: %s\n", device.get_device_type().to_string());
+            debug ("Unknown device: %s\n", device.get_device_type ().to_string ());
         }
 
         if (widget_interface != null) {
             // Implementation call
             network_interface.append (widget_interface);
-            add_interface(widget_interface);
-            widget_interface.notify["state"].connect(update_state);
+            add_interface (widget_interface);
+            widget_interface.notify["state"].connect (update_state);
             widget_interface.notify["extra-info"].connect (update_state);
 
         }
@@ -137,7 +137,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
     }
 
     void update_all () {
-        foreach(var inter in network_interface) {
+        foreach (var inter in network_interface) {
             inter.update ();
         }
     }
@@ -150,7 +150,7 @@ public abstract class Network.Widgets.NMVisualizer : Gtk.Grid {
             var best_score = int.MAX;
 
             foreach (var inter in network_interface) {
-                var score = inter.state.get_priority();
+                var score = inter.state.get_priority ();
 
                 if (score < best_score) {
                     next_state = inter.state;

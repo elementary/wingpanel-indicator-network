@@ -140,7 +140,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     break;
                 }
 
-                image.icon_name = "network-cellular-signal-" + strength + (secure ? "secure-" : "")  + "-symbolic";
+                image.icon_name = "network-cellular-signal-" + strength + (secure ? "secure-" : "") + "-symbolic";
                 return true;
             });
             break;
@@ -156,7 +156,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             break;
         default:
             image.icon_name = "network-offline-symbolic";
-            critical("Unknown network state, cannot show the good icon: %s", state.to_string());
+            critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
         }
     }
