@@ -17,9 +17,12 @@ jobs:
         apt update
         apt install -y gobject-introspection libgranite-dev libnm-dev libnma-dev libwingpanel-2.0-dev meson valac
     - name: Build
+      env:
+        DESTDIR: out
       run: |
         meson build
         ninja -C build
+        ninja -C build install
 
   lint:
 
