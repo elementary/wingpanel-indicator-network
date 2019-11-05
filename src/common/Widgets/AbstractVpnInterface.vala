@@ -16,11 +16,11 @@
  */
 
 public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
+    public NM.Client nm_client { get; construct set; }
+
     protected NM.VpnConnection? active_vpn_connection = null;
 
     protected Gtk.ListBox vpn_list;
-
-    protected NM.Client nm_client;
 
     protected VpnMenuItem? active_vpn_item { get; set; }
     protected VpnMenuItem? blank_item = null;

@@ -16,33 +16,22 @@
  */
 
 public class Network.VpnInterface : Network.AbstractVpnInterface {
-    private Wingpanel.Widgets.Switch vpn_item;
-    Gtk.Revealer revealer;
-
     public VpnInterface (NM.Client nm_client) {
-        init_vpn_interface (nm_client);
-        vpn_item.caption = display_title;
-        debug ("Starting VPN Interface");
+        Object (nm_client: nm_client);
+    }
 
-        vpn_item.get_style_context ().add_class ("h4");
-        vpn_item.notify["active"].connect (() => {
-            revealer.reveal_child = vpn_item.active;
-            if (!vpn_item.active) {
-                vpn_deactivate_cb ();
-            }
-        });
+    construct {
+        init_vpn_interface (nm_client);
+
+        debug ("Starting VPN Interface");
 
         vpn_list.add.connect (check_vpn_availability);
         vpn_list.remove.connect (check_vpn_availability);
 
         notify["vpn_state"].connect (update);
-    }
 
-    construct {
-        orientation = Gtk.Orientation.VERTICAL;
-        vpn_item = new Wingpanel.Widgets.Switch ("");
-        vpn_item.get_style_context ().add_class ("h4");
-        pack_start (vpn_item);
+        var vpn_item = new Granite.HeaderLabel (display_title);
+        vpn_item.margin_start = 12;
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null);
         scrolled_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
@@ -50,18 +39,15 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
         scrolled_box.propagate_natural_height = true;
         scrolled_box.add (vpn_list);
 
-        revealer = new Gtk.Revealer ();
-        revealer.add (scrolled_box);
-        pack_start (revealer);
+        orientation = Gtk.Orientation.VERTICAL;
+        pack_start (vpn_item);
+        pack_start (scrolled_box);
     }
 
     public override void update () {
         base.update ();
 
         check_vpn_availability ();
-        if (active_vpn_item != null) {
-            vpn_item.active = true;
-        }
     }
 
     private void check_vpn_availability () {
