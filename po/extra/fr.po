@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-07 12:50-0800\n"
 "PO-Revision-Date: 2019-11-09 15:24+0000\n"
-"Last-Translator: Corentin Noël <corentin@elementary.io>\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
 "Language: fr\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
-msgstr ""
+msgstr "Indicateur Réseau"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 
 #: data/network.appdata.xml.in:11
 msgid "Updated translations"
