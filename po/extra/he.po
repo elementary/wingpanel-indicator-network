@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-11-07 12:50-0800\n"
-"PO-Revision-Date: 2020-03-01 14:09+0000\n"
+"PO-Revision-Date: 2020-03-26 22:09+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/he/>\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
-msgstr ""
+msgstr "מחוון רשת"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN"
 
 #: data/network.appdata.xml.in:11
 msgid "Updated translations"
