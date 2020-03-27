@@ -1,3 +1,26 @@
+wingpanel-indicator-network (2.2.3) bionic; urgency=medium
+
+  * Release 2.2.3 (#151)
+  * Update network.appdata.xml.in
+  * Update translation files
+  * Update translation template
+  * Update network.appdata.xml.in
+  * AbstractWifiInterface: Ensure that we are not using null ssid (#148)
+  * Add AppData (#142)
+  * Add Release to Actions
+  * Delete CODE_OF_CONDUCT.md
+  * Add Gettext Updates to Actions
+  * run installation in CI (#138)
+  * Add Lint to CI (#136)
+  * :shirt: lint using vala-lint (#137)
+  * Build with GitHub CI (#135)
+  * Fix Wingpanel icon appears in the dock when showing hidden_dialog
+    (#132)
+  * build: fix install path for wingpanel indicator (#130)
+  * Add Silesian and update translation template
+
+ -- Cody Garver <cody@elementary.io>  Fri, 27 Mar 2020 21:16:18 +0000
+
 wingpanel-indicator-network (2.2.2) bionic; urgency=medium
 
   * New upstream release.
