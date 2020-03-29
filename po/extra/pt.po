@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-27 19:24+0000\n"
-"PO-Revision-Date: 2019-11-09 15:24+0000\n"
+"PO-Revision-Date: 2020-03-30 18:09+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -25,11 +25,11 @@ msgstr "Indicador de rede"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr "Conecte-se a redes sem fio e gira VPNs"
+msgstr "Ligar-se a redes sem fio e gerir VPNs"
 
 #: data/network.appdata.xml.in:11
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Impedir que o ícone do painel apareça na doca"
 
 #: data/network.appdata.xml.in:12
 msgid "Updated translations"
