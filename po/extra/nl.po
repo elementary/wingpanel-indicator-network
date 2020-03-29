@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-27 19:24+0000\n"
-"PO-Revision-Date: 2020-01-03 21:07+0000\n"
+"PO-Revision-Date: 2020-03-30 18:09+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/nl/>\n"
@@ -29,7 +29,7 @@ msgstr "Maak verbinding met draadloze netwerken en beheer VPNs"
 
 #: data/network.appdata.xml.in:11
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Voorkom dat het paneel icoon wordt getoond in het dock"
 
 #: data/network.appdata.xml.in:12
 msgid "Updated translations"
