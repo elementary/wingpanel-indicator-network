@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-27 19:24+0000\n"
-"PO-Revision-Date: 2019-11-28 21:24+0000\n"
+"PO-Revision-Date: 2020-04-06 15:10+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/mr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.7.1\n"
+"X-Generator: Weblate 3.9.1\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -29,7 +29,7 @@ msgstr "वायरलेस नेटवर्कशी कनेक्ट व
 
 #: data/network.appdata.xml.in:11
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "पॅनेल चिन्ह डॉकमध्ये दाखविण्यापासून प्रतिबंधित करा"
 
 #: data/network.appdata.xml.in:12
 msgid "Updated translations"
