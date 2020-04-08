@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-27 19:24+0000\n"
-"PO-Revision-Date: 2020-03-26 22:09+0000\n"
+"PO-Revision-Date: 2020-04-09 07:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/he/>\n"
@@ -29,7 +29,7 @@ msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN
 
 #: data/network.appdata.xml.in:11
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "למנוע מסמל בלוח מלהופיע במעגן"
 
 #: data/network.appdata.xml.in:12
 msgid "Updated translations"
