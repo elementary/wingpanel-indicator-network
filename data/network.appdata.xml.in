@@ -11,8 +11,6 @@
         <p>Updated translations</p>
       </description>
     </release>
-  </releases>
-  <releases>
     <release version="2.2.3" date="2020-03-27" urgency="medium">
       <description>
         <p>Prevent panel icon from showing in the dock</p>
