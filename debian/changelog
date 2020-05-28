@@ -1,3 +1,12 @@
+wingpanel-indicator-network (2.2.4) bionic; urgency=medium
+
+  * Fix extra releases tag (#154)
+  * Update translation files
+  * Update translation template
+  * Release 2.2.4 (#153)
+
+ -- Cody Garver <cody@elementary.io>  Thu, 28 May 2020 22:54:11 +0000
+
 wingpanel-indicator-network (2.2.3) bionic; urgency=medium
 
   * Release 2.2.3 (#151)
