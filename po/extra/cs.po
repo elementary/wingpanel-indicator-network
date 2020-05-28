@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-27 19:24+0000\n"
-"PO-Revision-Date: 2020-05-08 13:10+0000\n"
+"PO-Revision-Date: 2020-05-28 20:10+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/cs/>\n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
-msgstr ""
+msgstr "Indikátor sítě"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "Připojování se k bezdrátovým sítím a správa VPN připojení"
 
 #: data/network.appdata.xml.in:11
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Zabránění ikony panelu aby se objevovala v doku"
 
 #: data/network.appdata.xml.in:12
 msgid "Updated translations"
@@ -37,4 +37,4 @@ msgstr "Aktualizovány překlady"
 
 #: data/network.appdata.xml.in:21
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
