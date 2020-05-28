@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-27 19:24+0000\n"
+"POT-Creation-Date: 2020-05-28 20:11+0000\n"
 "PO-Revision-Date: 2020-03-30 18:09+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,14 +27,14 @@ msgstr "Indicador de la xarxa"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connecteu amb xarxes sense fil i gestioneu XPV."
 
-#: data/network.appdata.xml.in:11
-msgid "Prevent panel icon from showing in the dock"
-msgstr "S'evita que la icona del plafó es vegi a l'acoblador."
-
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:11 data/network.appdata.xml.in:19
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/network.appdata.xml.in:21
+#: data/network.appdata.xml.in:18
+msgid "Prevent panel icon from showing in the dock"
+msgstr "S'evita que la icona del plafó es vegi a l'acoblador."
+
+#: data/network.appdata.xml.in:28
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

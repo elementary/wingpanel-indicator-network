@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-27 19:24+0000\n"
+"POT-Creation-Date: 2020-05-28 20:11+0000\n"
 "PO-Revision-Date: 2020-04-09 07:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,14 +27,14 @@ msgstr "מחוון רשת"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN"
 
-#: data/network.appdata.xml.in:11
-msgid "Prevent panel icon from showing in the dock"
-msgstr "למנוע מסמל בלוח מלהופיע במעגן"
-
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:11 data/network.appdata.xml.in:19
 msgid "Updated translations"
 msgstr "התרגומים עודכנו"
 
-#: data/network.appdata.xml.in:21
+#: data/network.appdata.xml.in:18
+msgid "Prevent panel icon from showing in the dock"
+msgstr "למנוע מסמל בלוח מלהופיע במעגן"
+
+#: data/network.appdata.xml.in:28
 msgid "elementary, Inc."
 msgstr "elementary בע״מ."
