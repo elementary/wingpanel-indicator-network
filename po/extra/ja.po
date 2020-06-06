@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 20:11+0000\n"
-"PO-Revision-Date: 2020-04-03 04:09+0000\n"
+"PO-Revision-Date: 2020-06-07 20:11+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -33,7 +33,7 @@ msgstr "翻訳の更新"
 
 #: data/network.appdata.xml.in:18
 msgid "Prevent panel icon from showing in the dock"
-msgstr "パネルのアイコンがドックに表示される問題を修正"
+msgstr "パネルのアイコンがドックに表示される不具合を修正"
 
 #: data/network.appdata.xml.in:28
 msgid "elementary, Inc."
