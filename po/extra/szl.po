@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-05-28 20:11+0000\n"
-"PO-Revision-Date: 2020-02-23 00:08+0000\n"
-"Last-Translator: gkkulik <g.kulik@o2.pl>\n"
+"PO-Revision-Date: 2020-06-12 22:11+0000\n"
+"Last-Translator: Grzegorz Kulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/szl/>\n"
 "Language: szl\n"
@@ -34,7 +34,7 @@ msgstr "Zaktualizowane przekłady"
 
 #: data/network.appdata.xml.in:18
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Zabroniynie ikōnōm panelu pokazowanio sie we doku"
 
 #: data/network.appdata.xml.in:28
 msgid "elementary, Inc."
