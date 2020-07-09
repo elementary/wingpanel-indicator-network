@@ -75,3 +75,16 @@ public enum Network.State {
         }
     }
 }
+
+private const int MAX_WINDOW_NAME_LENGTH = 24;
+
+public string short_name_ellipsizee (string name) {
+    // Middle-ellipsize
+    string short_window_name = name;
+    if (name.length > MAX_WINDOW_NAME_LENGTH) {
+        string first_half = name.substring (0, (int)(MAX_WINDOW_NAME_LENGTH / 2));
+        string second_half = name.substring (- (int)(MAX_WINDOW_NAME_LENGTH / 2));
+        short_window_name = "%s…%s".printf (first_half, second_half);
+    }
+    return short_window_name;
+}

@@ -79,7 +79,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     }
 
     private void update () {
-        radio_button.label = connection.get_id ();
+        radio_button.label = short_name_ellipsizee (connection.get_id ());
         hide_item (error_img);
         hide_item (spinner);
 

@@ -26,6 +26,7 @@ public abstract class Network.AbstractModemInterface : Network.WidgetNMInterface
         } else {
             display_title = _("Mobile Broadband");
         }
+        display_title = short_name_ellipsizee (display_title);
 
         if (device is NM.DeviceModem) {
             var capabilities = (device as NM.DeviceModem).get_current_capabilities ();

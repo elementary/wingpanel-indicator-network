@@ -30,6 +30,7 @@ public abstract class Network.AbstractEtherInterface : Network.WidgetNMInterface
                 display_title = name;
             }
         }
+        display_title = short_name_ellipsizee (display_title);
     }
 
     public override void update () {

@@ -17,6 +17,7 @@
 
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private List<NM.AccessPoint> _ap;
+
     public signal void user_action ();
     public GLib.Bytes ssid {
         get {
@@ -119,7 +120,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     private void update () {
-        radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
+        string ssid_name = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
+        radio_button.label = short_name_ellipsizee (ssid_name);
 
         img_strength.icon_name = get_strength_symbolic_icon ();
         img_strength.show_all ();
