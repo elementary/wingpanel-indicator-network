@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-06-01 00:11+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel/"
@@ -19,14 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:10+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Tor"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "nîşane Tor"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -111,6 +103,12 @@ msgstr "le girê dan bo Tore veşartinê…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Mîhenge torê…"
+
+#~ msgid "Network"
+#~ msgstr "Tor"
+
+#~ msgid "Network indicator"
+#~ msgstr "nîşane Tor"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "wê derê na nuqte dergeh bêtêl tê de berdestê."

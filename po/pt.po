@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2019-11-14 15:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,14 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.7.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Rede"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Indicador de Rede"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -106,6 +98,12 @@ msgstr "Ligar a rede escondida…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Definições de Rede…"
+
+#~ msgid "Network"
+#~ msgstr "Rede"
+
+#~ msgid "Network indicator"
+#~ msgstr "Indicador de Rede"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Sem pontos de acesso sem fios no alcance."

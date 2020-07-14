@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-05-07 15:49+0000\n"
 "Last-Translator: Shawn <syst3mfailur3@gmail.com>\n"
 "Language-Team: English (Canada) <https://weblate.elementary.io/projects/"
@@ -14,14 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Network"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Network indicator"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -106,6 +98,12 @@ msgstr "Connect to Hidden Network…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Network Settings…"
+
+#~ msgid "Network"
+#~ msgstr "Network"
+
+#~ msgid "Network indicator"
+#~ msgstr "Network indicator"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "There are no wireless access points within range."

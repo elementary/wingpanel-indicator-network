@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-05-31 08:26+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -18,14 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Rețea"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Indicador de rețea"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -110,3 +102,9 @@ msgstr "Conectați-vă la rețeaua ascunsă …"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Setări de rețea…"
+
+#~ msgid "Network"
+#~ msgstr "Rețea"
+
+#~ msgid "Network indicator"
+#~ msgstr "Indicador de rețea"

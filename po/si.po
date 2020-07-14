@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2016-06-09 17:48+0000\n"
 "Last-Translator: Bhanuka Mahanama <bhanuka.14@cse.mrt.ac.lk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,14 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "ජාලය"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "ජාල දර්ශකය"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -104,6 +96,12 @@ msgstr "සැඟවුණු ජාලයකට සම්බන්ධ වන්
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "ජාල සැකසුම්..."
+
+#~ msgid "Network"
+#~ msgstr "ජාලය"
+
+#~ msgid "Network indicator"
+#~ msgstr "ජාල දර්ශකය"
 
 #~ msgid "Disconnected"
 #~ msgstr "විසන්ධි විය"

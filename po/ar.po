@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-12-06 05:05+0000\n"
 "Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,14 +15,6 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "الشبكة"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "مؤشر الشبكة"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -107,3 +99,9 @@ msgstr "الإتصال بشبكة مخفية…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "إعدادات الشبكة…"
+
+#~ msgid "Network"
+#~ msgstr "الشبكة"
+
+#~ msgid "Network indicator"
+#~ msgstr "مؤشر الشبكة"

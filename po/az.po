@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2017-12-17 19:27+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/wingpanel/"
@@ -14,14 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-05 06:27+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Şəbəkə"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Şəbəkə indikatoru"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -111,6 +103,12 @@ msgstr "Gizli şəbəkəyə qoşul..."
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Şəbəkə ayarları..."
+
+#~ msgid "Network"
+#~ msgstr "Şəbəkə"
+
+#~ msgid "Network indicator"
+#~ msgstr "Şəbəkə indikatoru"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Yaxında heç bir simsiz giriş nöqtəsi yoxdur."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-05-20 15:10+0000\n"
 "Last-Translator: Kirill Romanov <djaler1@gmail.com>\n"
 "Language-Team: Russian <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,14 +15,6 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Сеть"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Индикатор сети"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -107,6 +99,12 @@ msgstr "Подключиться к скрытой сети…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Параметры сети…"
+
+#~ msgid "Network"
+#~ msgstr "Сеть"
+
+#~ msgid "Network indicator"
+#~ msgstr "Индикатор сети"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "В пределах диапазона нет точек доступа."
