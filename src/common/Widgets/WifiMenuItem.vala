@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
+ * Copyright 2015-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -37,26 +37,28 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     public NM.AccessPoint ap { get { return _tmp_ap; } }
-    NM.AccessPoint _tmp_ap;
+    private NM.AccessPoint _tmp_ap;
 
-    Gtk.RadioButton radio_button;
-    Gtk.Image img_strength;
-    Gtk.Image lock_img;
-    Gtk.Image error_img;
-    Gtk.Spinner spinner;
+    private Gtk.RadioButton radio_button;
+    private Gtk.Image img_strength;
+    private Gtk.Image lock_img;
+    private Gtk.Image error_img;
+    private Gtk.Spinner spinner;
 
     public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
-        radio_button = new Gtk.RadioButton (null);
-        radio_button.hexpand = true;
-        radio_button.margin_start = 6;
+        radio_button = new Gtk.RadioButton (null) {
+            hexpand = true,
+            margin_start = 6
+        };
 
         if (previous != null) {
             radio_button.set_group (previous.get_group ());
         }
 
-        img_strength = new Gtk.Image ();
-        img_strength.icon_size = Gtk.IconSize.MENU;
-        img_strength.margin_end = 6;
+        img_strength = new Gtk.Image () {
+            icon_size = Gtk.IconSize.MENU,
+            margin_end = 6
+        };
 
         lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
 
@@ -64,13 +66,15 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU);
         error_img.set_tooltip_text (_("This wireless network could not be connected to."));
 
-        spinner = new Gtk.Spinner ();
+        spinner = new Gtk.Spinner () {
+            no_show_all = true,
+            visible = false
+        };
         spinner.start ();
-        spinner.visible = false;
-        spinner.no_show_all = !spinner.visible;
 
-        var grid = new Gtk.Grid ();
-        grid.column_spacing = 6;
+        var grid = new Gtk.Grid () {
+            column_spacing = 6
+        };
         grid.add (radio_button);
         grid.add (spinner);
         grid.add (error_img);
@@ -91,8 +95,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         });
 
         add (grid);
-
-        this.get_style_context ().add_class ("menuitem");
     }
 
     /**
@@ -102,7 +104,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         radio_button = new Gtk.RadioButton (null);
     }
 
-    void update_tmp_ap () {
+    private void update_tmp_ap () {
         uint8 strength = 0;
         foreach (var ap in _ap) {
             _tmp_ap = strength > ap.get_strength () ? _tmp_ap : ap;
@@ -114,7 +116,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         radio_button.set_active (active);
     }
 
-    unowned SList get_group () {
+    private unowned SList get_group () {
         return radio_button.get_group ();
     }
 
@@ -162,12 +164,12 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
     }
 
-    void show_item (Gtk.Widget w) {
+    private void show_item (Gtk.Widget w) {
         w.visible = true;
         w.no_show_all = !w.visible;
     }
 
-    void hide_item (Gtk.Widget w) {
+    private void hide_item (Gtk.Widget w) {
         w.visible = false;
         w.no_show_all = !w.visible;
         w.hide ();
