@@ -47,8 +47,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
     public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
         radio_button = new Gtk.RadioButton (null) {
-            hexpand = true,
-            margin_start = 6
+            hexpand = true
         };
 
         if (previous != null) {
@@ -56,8 +55,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
 
         img_strength = new Gtk.Image () {
-            icon_size = Gtk.IconSize.MENU,
-            margin_end = 6
+            icon_size = Gtk.IconSize.MENU
         };
 
         lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
@@ -95,6 +93,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         });
 
         add (grid);
+        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
     }
 
     /**
