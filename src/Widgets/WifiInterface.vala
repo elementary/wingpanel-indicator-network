@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -18,10 +18,11 @@
 
 public class Network.WifiInterface : Network.AbstractWifiInterface {
     public bool hidden_sensitivity { get; set; default = true; }
-    Wingpanel.Widgets.Switch wifi_item;
-    Gtk.Revealer revealer;
 
-    Cancellable wifi_scan_cancellable = new Cancellable ();
+    private Wingpanel.Widgets.Switch wifi_item;
+    private Gtk.Revealer revealer;
+
+    private Cancellable wifi_scan_cancellable = new Cancellable ();
 
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         init_wifi_interface (nm_client, _device);
@@ -41,19 +42,21 @@ public class Network.WifiInterface : Network.AbstractWifiInterface {
     }
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
         wifi_item = new Wingpanel.Widgets.Switch ("");
-        wifi_item.get_style_context ().add_class ("h4");
-        pack_start (wifi_item);
+        wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        var scrolled_box = new Gtk.ScrolledWindow (null, null);
-        scrolled_box.hscrollbar_policy = Gtk.PolicyType.NEVER;
-        scrolled_box.max_content_height = 512;
-        scrolled_box.propagate_natural_height = true;
+        var scrolled_box = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            max_content_height = 512,
+            propagate_natural_height = true
+        };
         scrolled_box.add (wifi_list);
 
         revealer = new Gtk.Revealer ();
         revealer.add (scrolled_box);
+
+        orientation = Gtk.Orientation.VERTICAL;
+        pack_start (wifi_item);
         pack_start (revealer);
     }
 
