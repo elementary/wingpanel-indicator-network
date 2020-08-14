@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017 elementary LLC. (http://launchpad.net/elementary)
+ * Copyright 2017-2020 elementary, Inc. (http://launchpad.net/elementary)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -91,12 +91,14 @@ public class Network.VpnInterface : Network.AbstractVpnInterface {
             update ();
             return;
         }
+
         debug ("Deactivating VPN : %s", active_vpn_connection.get_id ());
         try {
             nm_client.deactivate_connection (active_vpn_connection);
         } catch (Error e) {
             warning (e.message);
         }
+
         Idle.add (() => { update (); return false; });
     }
 }
