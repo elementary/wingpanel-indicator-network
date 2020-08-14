@@ -53,7 +53,7 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
         vpn_list = new Gtk.ListBox () {
             activate_on_single_click = false,
             visible = true
-        }
+        };
     }
 
     public override void update_name (int count) {
