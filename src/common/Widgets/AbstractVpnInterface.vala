@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -49,10 +49,11 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        vpn_list = new Gtk.ListBox ();
         // Single click is disabled because it's being handled by VpnMenuItem
-        vpn_list.activate_on_single_click = false;
-        vpn_list.visible = true;
+        vpn_list = new Gtk.ListBox () {
+            activate_on_single_click = false,
+            visible = true
+        };
     }
 
     public override void update_name (int count) {
