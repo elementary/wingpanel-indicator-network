@@ -51,8 +51,8 @@ public abstract class Network.AbstractVpnInterface : Network.WidgetNMInterface {
     construct {
         // Single click is disabled because it's being handled by VpnMenuItem
         vpn_list = new Gtk.ListBox () {
-            activate_on_single_click = false;
-            visible = true;
+            activate_on_single_click = false,
+            visible = true
         }
     }
 
