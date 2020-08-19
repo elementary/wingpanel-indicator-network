@@ -1,6 +1,5 @@
-// -*- Mode: vala; indent-tabs-mode: nil; tab-width: 4 -*-
 /*-
- * Copyright (c) 2017 elementary LLC. (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -18,7 +17,7 @@
  * Authored by: David Hewitt <davidmhewitt@gmail.com>
  */
 
-public class Network.ModemInterface : Network.AbstractModemInterface {
+public class Network.ModemInterface : Network.WidgetNMInterface {
     private Wingpanel.Widgets.Switch modem_item;
     private DBusObjectManagerClient? modem_manager;
 
@@ -76,6 +75,22 @@ public class Network.ModemInterface : Network.AbstractModemInterface {
 
         device.state_changed.connect (() => { update (); });
         prepare.begin ();
+    }
+
+    public override void update_name (int count) {
+        var name = device.get_description ();
+        if (count > 1) {
+            display_title = _("Mobile Broadband: %s").printf (name);
+        } else {
+            display_title = _("Mobile Broadband");
+        }
+
+        if (device is NM.DeviceModem) {
+            var capabilities = (device as NM.DeviceModem).get_current_capabilities ();
+            if (NM.DeviceModemCapabilities.POTS in capabilities) {
+                display_title = _("Modem");
+            }
+        }
     }
 
     public override void update () {
