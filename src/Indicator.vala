@@ -26,8 +26,6 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     public Indicator (bool is_in_session) {
         Object (code_name: Wingpanel.Indicator.NETWORK,
-                display_name: _("Network"),
-                description: _("Network indicator"),
                 is_in_session: is_in_session,
                 visible: true);
 

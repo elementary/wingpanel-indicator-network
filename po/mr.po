@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-12-18 00:02+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://weblate.elementary.io/projects/wingpanel/"
@@ -14,14 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 3.0.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "नेटवर्क"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "नेटवर्क निर्देशक"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -106,3 +98,9 @@ msgstr "लपविलेल्या नेटवर्कशी कनेक�
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज …"
+
+#~ msgid "Network"
+#~ msgstr "नेटवर्क"
+
+#~ msgid "Network indicator"
+#~ msgstr "नेटवर्क निर्देशक"

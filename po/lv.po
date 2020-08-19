@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2015-11-21 12:57+0000\n"
 "Last-Translator: Ar2 <arturss5@inbox.lv>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,14 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Tīkls"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr ""
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -109,6 +101,9 @@ msgstr ""
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Tīkla iestatījumi..."
+
+#~ msgid "Network"
+#~ msgstr "Tīkls"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Šajā diapazonā nav pieejami bezvadu piekļuves punkti."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2018-06-13 15:48+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/wingpanel/"
@@ -14,14 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Jaringan"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Indikator Jaringan"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -107,6 +99,12 @@ msgstr "Menyambung ke Jaringan Tersembunyi…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Pengaturan Jaringan…"
+
+#~ msgid "Network"
+#~ msgstr "Jaringan"
+
+#~ msgid "Network indicator"
+#~ msgstr "Indikator Jaringan"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Tidak ada titik akses nirkabel dalam jangkauan."

@@ -195,6 +195,10 @@ public abstract class Network.AbstractWifiInterface : Network.WidgetNMInterface 
 
     private void access_point_removed_cb (Object ap_) {
         NM.AccessPoint ap = (NM.AccessPoint)ap_;
+        if (ap.ssid == null) {
+          update ();
+          return;
+        }
 
         WifiMenuItem found_item = null;
 

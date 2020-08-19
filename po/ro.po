@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-26 22:47+0200\n"
+"POT-Creation-Date: 2020-07-14 15:50+0000\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,14 +15,6 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-01-27 06:18+0000\n"
-
-#: src/Indicator.vala:29
-msgid "Network"
-msgstr "Rețea"
-
-#: src/Indicator.vala:30
-msgid "Network indicator"
-msgstr "Indicator reţea"
 
 #: src/common/Widgets/AbstractEtherInterface.vala:25
 #, c-format
@@ -113,6 +105,12 @@ msgstr "Conectare la o rețea ascunsă…"
 #: src/Widgets/PopoverWidget.vala:64
 msgid "Network Settings…"
 msgstr "Setări de reţea…"
+
+#~ msgid "Network"
+#~ msgstr "Rețea"
+
+#~ msgid "Network indicator"
+#~ msgstr "Indicator reţea"
 
 #~ msgid "There are no wireless access points within range."
 #~ msgstr "Nu există nici un punct de acces fără fir în rază."

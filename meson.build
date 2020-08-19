@@ -1,7 +1,7 @@
 project(
     'network',
     'vala', 'c',
-    version: '2.2.2'
+    version: '2.2.4'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -53,4 +53,5 @@ shared_module(
     install_dir : wingpanel_indicatorsdir
 )
 
+subdir('data')
 subdir('po')
