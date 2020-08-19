@@ -18,6 +18,8 @@
 public class Network.VpnMenuItem : Gtk.ListBoxRow {
     private static unowned Gtk.RadioButton? blank_button = null;
 
+    private bool checking_vpn_connectivity = false;
+
     public signal void user_action ();
     public NM.RemoteConnection? connection { get; private set; }
     public string id {
@@ -92,6 +94,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
                 if (!radio_button.active) {
                     critical ("An VPN is being connected but not active.");
                 }
+                check_vpn_connectivity ();
                 break;
         }
     }
@@ -109,5 +112,32 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         w.visible = false;
         w.no_show_all = !w.visible;
         w.hide ();
+    }
+
+    private async void nap (uint interval, int priority = GLib.Priority.DEFAULT) {
+      GLib.Timeout.add (interval, () => {
+          nap.callback ();
+          return false;
+        }, priority);
+        yield;
+    }
+
+    /**
+    * Uses a timeout to check VPN connectivity
+    **/
+    private async void check_vpn_connectivity () {
+        if (!checking_vpn_connectivity) {
+
+            checking_vpn_connectivity = true;
+
+            for (int i = 0; i < 20; i++) {
+                if (vpn_state == State.CONNECTED_VPN) {
+                    hide_item (spinner);
+                    checking_vpn_connectivity = false;
+                    return;
+                }
+                yield nap (500);
+            }
+        }
     }
 }
