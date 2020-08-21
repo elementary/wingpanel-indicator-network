@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017-2018 elementary LLC (https://elementary.io)
+ * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -16,58 +16,65 @@
  */
 
 public class Network.VpnMenuItem : Gtk.ListBoxRow {
-    private static unowned Gtk.RadioButton? blank_button = null;
-
-    private bool checking_vpn_connectivity = false;
-
     public signal void user_action ();
-    public NM.RemoteConnection? connection { get; private set; }
+
+    public Gtk.RadioButton radio_button { get; private set; }
+    public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
+    public NM.RemoteConnection? connection { get; construct; }
+
     public string id {
         get {
             return connection.get_id ();
         }
     }
-    public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
 
-    public Gtk.RadioButton radio_button { get; private set; }
-    Gtk.Spinner spinner;
-    Gtk.Image error_img;
+    private static unowned Gtk.RadioButton? blank_button = null;
 
-    public VpnMenuItem (NM.RemoteConnection? _connection) {
-        connection = _connection;
+    private bool checking_vpn_connectivity = false;
+    private Gtk.Image error_img;
+    private Gtk.Spinner spinner;
+
+    public VpnMenuItem (NM.RemoteConnection? connection) {
+        Object (connection: connection);
+    }
+
+    construct {
         connection.changed.connect (update);
-
-        var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        main_box.margin_start = main_box.margin_end = 6;
 
         radio_button = new Gtk.RadioButton (null);
         if (blank_button != null) {
             radio_button.join_group (blank_button);
         }
 
-        radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
-            return false;
-        });
+        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
+            margin_start = 6,
+            tooltip_text = _("This Virtual Private Network could not be connected to.")
+        };
 
-        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU);
-        error_img.margin_start = 6;
-        error_img.set_tooltip_text (_("This Virtual Private Network could not be connected to."));
-
-        spinner = new Gtk.Spinner ();
+        spinner = new Gtk.Spinner () {
+            no_show_all = true,
+            visible = false
+        };
         spinner.start ();
-        spinner.visible = false;
-        spinner.no_show_all = !spinner.visible;
 
+        var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
+            margin_start = 6,
+            margin_end = 6
+        };
         main_box.pack_start (radio_button, true, true);
         main_box.pack_start (spinner, false, false);
         main_box.pack_start (error_img, false, false);
 
+        add (main_box);
+        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
+
         notify["vpn_state"].connect (update);
         radio_button.notify["active"].connect (update);
 
-        add (main_box);
-        get_style_context ().add_class ("menuitem");
+        radio_button.button_release_event.connect ((b, ev) => {
+            user_action ();
+            return false;
+        });
 
         update ();
     }
@@ -103,12 +110,12 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         radio_button.set_active (active);
     }
 
-    void show_item (Gtk.Widget w) {
+    private void show_item (Gtk.Widget w) {
         w.visible = true;
         w.no_show_all = w.visible;
     }
 
-    void hide_item (Gtk.Widget w) {
+    private void hide_item (Gtk.Widget w) {
         w.visible = false;
         w.no_show_all = !w.visible;
         w.hide ();
