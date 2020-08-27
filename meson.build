@@ -28,7 +28,6 @@ shared_module(
     'src/common/Widgets/AbstractEtherInterface.vala',
     'src/common/Widgets/AbstractModemInterface.vala',
     'src/common/Widgets/AbstractVpnInterface.vala',
-    'src/common/Widgets/AbstractWifiInterface.vala',
     'src/common/Widgets/NMVisualizer.vala',
     'src/common/Widgets/VpnMenuItem.vala',
     'src/common/Widgets/WidgetNMInterface.vala',
