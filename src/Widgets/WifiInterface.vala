@@ -56,8 +56,31 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     construct {
+        var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
+
+        var spinner = new Gtk.Spinner () {
+            visible = true,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER
+        };
+        spinner.start ();
+
+        var scanning = construct_placeholder_label (_("Scanning for Access Points…"), true);
+
+        var scanning_box = new Gtk.Grid () {
+            column_spacing = 6,
+            halign = Gtk.Align.CENTER,
+            valign = Gtk.Align.CENTER,
+            visible = true
+        };
+        scanning_box.add (scanning);
+        scanning_box.add (spinner);
+
         placeholder = new Gtk.Stack ();
         placeholder.visible = true;
+        placeholder.add_named (no_aps, "no-aps");
+        placeholder.add_named (scanning_box, "scanning");
+        placeholder.visible_child_name = "no-aps";
 
         wifi_list = new Gtk.ListBox ();
         wifi_list.set_sort_func (sort_func);
@@ -96,36 +119,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         blank_item = new WifiMenuItem.blank ();
         active_wifi_item = null;
 
-        var no_aps_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 6);
-        no_aps_box.visible = true;
-        no_aps_box.valign = Gtk.Align.CENTER;
-
-        var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
-
-        no_aps_box.add (no_aps);
-
-        var wireless_off_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        wireless_off_box.visible = true;
-        wireless_off_box.valign = Gtk.Align.CENTER;
-
-        var spinner = new Gtk.Spinner ();
-        spinner.visible = true;
-        spinner.halign = spinner.valign = Gtk.Align.CENTER;
-        spinner.start ();
-
-        var scanning_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 5);
-        var scanning = construct_placeholder_label (_("Scanning for Access Points…"), true);
-
-        scanning_box.add (scanning);
-        scanning_box.add (spinner);
-        scanning_box.visible = true;
-        scanning_box.valign = Gtk.Align.CENTER;
-
-        placeholder.add_named (no_aps_box, "no-aps");
-        placeholder.add_named (wireless_off_box, "wireless-off");
-        placeholder.add_named (scanning_box, "scanning");
-        placeholder.visible_child_name = "no-aps";
-
         /* Monitor killswitch status */
         rfkill = new RFKillManager ();
         rfkill.open ();
@@ -161,7 +154,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         case NM.DeviceState.DEACTIVATING:
         case NM.DeviceState.UNAVAILABLE:
             cancel_scan ();
-            placeholder.visible_child_name = "wireless-off";
             state = State.DISCONNECTED;
             break;
         case NM.DeviceState.DISCONNECTED:
