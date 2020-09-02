@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 15:15+0000\n"
 "PO-Revision-Date: 2018-12-06 05:05+0000\n"
 "Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
@@ -25,21 +25,8 @@ msgstr "شبكة وهمية: s%"
 msgid "Wired"
 msgstr "سلكي"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "نطاق عريض محمول: s%"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "نطاق عريض محمول"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "مودم"
-
 #: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
+#: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "شبكة خاصة إفتراضية"
 
@@ -55,7 +42,7 @@ msgstr "جاري البحث عن نقاط ولوج…"
 msgid "Wireless"
 msgstr "لاسلكي"
 
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "لا يمكن الإتصال بهذه الشبكة الإفتراضية الخاصة."
 
@@ -72,25 +59,38 @@ msgstr "نوع غير معروف: %s "
 msgid "This wireless network could not be connected to."
 msgstr "لا يمكن الإتصال بهذه الشبكة اللاسلكية."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "هذه الشبكة تستعمل 40/64-بت WEP للتشفير"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "هذه الشبكة تستعمل 104/128-بت WEP للتشفير"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "هذه الشبكة تستعمل WPA للتشفير"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "هذه الشبكة تستعمل التشفير"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "هذه الشبكة غير مؤمنة"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "نطاق عريض محمول: s%"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "نطاق عريض محمول"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "مودم"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
