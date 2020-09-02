@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:48+0000\n"
+"POT-Creation-Date: 2020-09-02 17:14+0000\n"
 "PO-Revision-Date: 2018-05-02 11:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,15 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:25
-#, c-format
-msgid "Virtual network: %s"
-msgstr ""
-
-#: src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr ""
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -63,6 +54,15 @@ msgstr ""
 msgid "This network is unsecured"
 msgstr ""
 
+#: src/Widgets/EtherInterface.vala:57
+#, c-format
+msgid "Virtual network: %s"
+msgstr ""
+
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr ""
+
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
@@ -92,10 +92,10 @@ msgstr ""
 msgid "Wireless"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:61
 msgid "Network Settings…"
 msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:48+0000\n"
+"POT-Creation-Date: 2020-09-02 17:14+0000\n"
 "PO-Revision-Date: 2016-10-15 17:51+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: \n"
@@ -12,15 +12,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:25
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtualna mreža: %s"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "Žična mreža"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -65,6 +56,15 @@ msgstr "Ova mreža koristi šifriranje."
 msgid "This network is unsecured"
 msgstr "Ova mreža koristi šifriranje."
 
+#: src/Widgets/EtherInterface.vala:57
+#, c-format
+msgid "Virtual network: %s"
+msgstr "Virtualna mreža: %s"
+
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Žična mreža"
+
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
@@ -94,11 +94,11 @@ msgstr "Pretraživanje pristupnih točaka..."
 msgid "Wireless"
 msgstr "Bežična mreža"
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
 msgstr "Poveži se na skrivenu mrežu..."
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:61
 msgid "Network Settings…"
 msgstr "Mrežne postavke..."
 

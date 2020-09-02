@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:48+0000\n"
+"POT-Creation-Date: 2020-09-02 17:14+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -13,15 +13,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:25
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Wirtualny nec: %s"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "Drōtowe"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -60,6 +51,15 @@ msgstr "Tyn nec używo szyfrowanio"
 msgid "This network is unsecured"
 msgstr "Tyn nec je niyzabezpieczōny"
 
+#: src/Widgets/EtherInterface.vala:57
+#, c-format
+msgid "Virtual network: %s"
+msgstr "Wirtualny nec: %s"
+
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Drōtowe"
+
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
@@ -89,11 +89,11 @@ msgstr "Szukanie pōnktōw dotympu…"
 msgid "Wireless"
 msgstr "Nec bezdrōtowy"
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:61
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
 

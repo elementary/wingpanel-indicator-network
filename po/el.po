@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:48+0000\n"
+"POT-Creation-Date: 2020-09-02 17:14+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -14,15 +14,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-02-14 06:03+0000\n"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:25
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Εικονικό δίκτυο: %s"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "Ενσύρματο"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -67,6 +58,15 @@ msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφ
 msgid "This network is unsecured"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση."
 
+#: src/Widgets/EtherInterface.vala:57
+#, c-format
+msgid "Virtual network: %s"
+msgstr "Εικονικό δίκτυο: %s"
+
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Ενσύρματο"
+
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
@@ -97,11 +97,11 @@ msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
 msgid "Wireless"
 msgstr "Ασύρματο"
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
 msgstr "Σύνδεση σε κρυφό δίκτυο..."
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:61
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου..."
 

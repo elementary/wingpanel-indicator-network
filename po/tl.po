@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:48+0000\n"
+"POT-Creation-Date: 2020-09-02 17:14+0000\n"
 "PO-Revision-Date: 2016-06-30 20:45+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
@@ -17,15 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
-
-#: src/common/Widgets/AbstractEtherInterface.vala:25
-#, c-format
-msgid "Virtual network: %s"
-msgstr ""
-
-#: src/common/Widgets/AbstractEtherInterface.vala:28
-msgid "Wired"
-msgstr "De-kable"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -70,6 +61,15 @@ msgstr "Ang network na ito ay gumagamet ng encryption."
 msgid "This network is unsecured"
 msgstr "Ang network na ito ay gumagamet ng encryption."
 
+#: src/Widgets/EtherInterface.vala:57
+#, c-format
+msgid "Virtual network: %s"
+msgstr ""
+
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "De-kable"
+
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
@@ -99,11 +99,11 @@ msgstr "Nag-iiscan ng mga Access Point"
 msgid "Wireless"
 msgstr "Wireless"
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:57
 msgid "Connect to Hidden Network…"
 msgstr "Kumonekta sa Nakatagong Network"
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:61
 msgid "Network Settings…"
 msgstr "Setting sa Network..."
 
