@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2018-05-09 19:35+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/wingpanel/"
@@ -25,37 +25,12 @@ msgstr "Sieć wirtualna: %s"
 msgid "Wired"
 msgstr "Przewodowe"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Szerokopasmowy bezprzewodowy: %s"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "Szerokopasmowy bezprzewodowy"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "Modem"
-
 #: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
+#: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "VPN"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Brak dostępnych punktów dostępu"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Szukanie punktów dostępowych…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Bezprzewodowe"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Nie można nawiązać połączenia z tą prywatną siecią wirtualną."
 
@@ -72,25 +47,50 @@ msgstr "Nieznany rodzaj: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Nie można nawiązać połączenia z tą siecią bezprzewodową."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Ta sieć używa szyfrowania WEP 40/64-bitowego"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Ta sieć używa szyfrowania WEP 104/128-bitowego"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "Ta sieć używa szyfrowania WPA"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "Ta sieć używa szyfrowania"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "Ta sieć jest niezabezpieczona"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "Szerokopasmowy bezprzewodowy: %s"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "Szerokopasmowy bezprzewodowy"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "Modem"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Brak dostępnych punktów dostępu"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Szukanie punktów dostępowych…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Bezprzewodowe"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

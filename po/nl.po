@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2020-03-05 14:09+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -24,37 +24,12 @@ msgstr "Virtueel netwerk: %s"
 msgid "Wired"
 msgstr "Bekabeld"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobiele breedbandverbinding: %s"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "Mobiele breedbandverbinding"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "Modem"
-
 #: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
+#: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "VPN"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Geen Toegangspunten Beschikbaar"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Scannen naar toegangspunten…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Draadloos"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Kon geen verbinding maken met dit Virtueel Privaat Netwerk."
 
@@ -71,25 +46,50 @@ msgstr "Onbekend type: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Kan geen verbinding met dit wifi-netwerk maken."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Dit netwerk gebruikt 40/64-bits WEP-encryptie"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Dit netwerk gebruikt 104/128-bits WEP-encryptie"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "Dit netwerk gebruikt WPA-encryptie"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "Dit netwerk gebruikt encryptie"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "Dit netwerk is onbeveiligd"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "Mobiele breedbandverbinding: %s"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "Mobiele breedbandverbinding"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "Modem"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Geen Toegangspunten Beschikbaar"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Scannen naar toegangspunten…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Draadloos"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

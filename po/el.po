@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -24,38 +24,13 @@ msgstr "Εικονικό δίκτυο: %s"
 msgid "Wired"
 msgstr "Ενσύρματο"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr ""
-
 #: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
+#: src/common/Widgets/AbstractVpnInterface.vala:60
 #, fuzzy
 msgid "VPN"
 msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
 
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Μη διαθέσιμα σημεία πρόσβασης"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Ασύρματο"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το εικονικό ιδιωτικό δίκτυο (VPN)."
@@ -73,30 +48,55 @@ msgstr "Άγνωστος τύπος: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το ασύρματο δίκτυο."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 #, fuzzy
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 40/64 bit."
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 104/128 bit."
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 #, fuzzy
 msgid "This network uses WPA encryption"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WPA."
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 #, fuzzy
 msgid "This network uses encryption"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση."
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 #, fuzzy
 msgid "This network is unsecured"
 msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση."
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr ""
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr ""
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Μη διαθέσιμα σημεία πρόσβασης"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Ασύρματο"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
