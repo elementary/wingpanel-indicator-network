@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:37+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -22,11 +22,6 @@ msgstr "Wirtualny nec: %s"
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Drōtowe"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:60
-msgid "VPN"
-msgstr "VPN"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -77,6 +72,10 @@ msgstr "Mobilny nec"
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr "Modym"
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr "VPN"
 
 #: src/Widgets/WifiInterface.vala:59
 msgid "No Access Points Available"
