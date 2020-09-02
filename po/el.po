@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -29,18 +29,6 @@ msgstr "Ενσύρματο"
 #, fuzzy
 msgid "VPN"
 msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Μη διαθέσιμα σημεία πρόσβασης"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Ασύρματο"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -97,6 +85,18 @@ msgstr ""
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Μη διαθέσιμα σημεία πρόσβασης"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Ασύρματο"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

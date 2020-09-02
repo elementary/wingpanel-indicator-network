@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2018-05-02 11:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -28,18 +28,6 @@ msgstr ""
 #: src/common/Widgets/AbstractVpnInterface.vala:36
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
-msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
 msgstr ""
 
 #: src/common/Widgets/VpnMenuItem.vala:51
@@ -90,6 +78,18 @@ msgstr ""
 
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
+msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr ""
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr ""
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
 msgstr ""
 
 #: src/Widgets/PopoverWidget.vala:60
