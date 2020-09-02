@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 15:15+0000\n"
 "PO-Revision-Date: 2018-09-22 00:11+0000\n"
 "Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
@@ -24,21 +24,8 @@ msgstr "Rede virtual: %s"
 msgid "Wired"
 msgstr "Com fio"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Operadora Móvel: %s"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "Operadora Móvel"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "Modem"
-
 #: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
+#: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "VPN"
 
@@ -54,7 +41,7 @@ msgstr "Procurando por pontos de acesso…"
 msgid "Wireless"
 msgstr "Rede sem fio"
 
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Não foi possível conectar-se a esta VPN."
 
@@ -71,25 +58,38 @@ msgstr "Tipo desconhecido: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Não foi possivel conectar-se a esta rede sem fio."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Esta rede usa criptografia 40/64-bit WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Esta rede usa criptografia 104/128-bit WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "Esta rede usa criptografia WPA"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "Esta rede usa criptografia"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "Esta rede é insegura"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "Operadora Móvel: %s"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "Operadora Móvel"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "Modem"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
