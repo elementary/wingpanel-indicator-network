@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2018-12-02 06:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://weblate.elementary.io/projects/wingpanel/"
@@ -24,37 +24,7 @@ msgstr "仮想ネットワーク: %s"
 msgid "Wired"
 msgstr "有線接続"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "モバイルブロードバンド: %s"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "モバイルブロードバンド"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "モデム"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
-msgid "VPN"
-msgstr "VPN"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "利用できるアクセスポイントがありません"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "アクセスポイントを探しています…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "無線接続"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "この仮想プライベートネットワークに接続できませんでした。"
 
@@ -71,25 +41,54 @@ msgstr "不明な種類: %s "
 msgid "This wireless network could not be connected to."
 msgstr "この無線ネットワークに接続できませんでした。"
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "このネットワークは 40/64 ビット WEP 暗号化を使用しています"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "このネットワークは 104/128 ビット WEP 暗号化を使用しています"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "このネットワークは WPA 暗号化を使用しています"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "このネットワークは暗号化を使用しています"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "このネットワークは安全ではありません"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "モバイルブロードバンド: %s"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "モバイルブロードバンド"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "モデム"
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "利用できるアクセスポイントがありません"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "アクセスポイントを探しています…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "無線接続"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2017-04-26 15:48+0000\n"
 "Last-Translator: Володимир Білошицький <volbilnexus@gmail.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
@@ -25,37 +25,7 @@ msgstr "Віртуальна мережа: %s"
 msgid "Wired"
 msgstr "Дротова"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr ""
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
-msgid "VPN"
-msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Відсутні точки доступу"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Сканування точок доступу…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Бездротова мережа"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Неможливо підключитись до цієї мережі."
@@ -73,30 +43,59 @@ msgstr "Невідомий тип: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Неможливо підключитись до цієї мережі."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 #, fuzzy
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Ця мережа використовує 40/60-бітне WEP кодування."
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Ця мережа використовує 104/128-бітне WEP кодування."
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 #, fuzzy
 msgid "This network uses WPA encryption"
 msgstr "Ця мережа використовує WPA кодування."
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 #, fuzzy
 msgid "This network uses encryption"
 msgstr "Ця мережа використовую кодування."
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 #, fuzzy
 msgid "This network is unsecured"
 msgstr "Ця мережа використовую кодування."
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr ""
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr ""
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr ""
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Відсутні точки доступу"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Сканування точок доступу…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Бездротова мережа"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

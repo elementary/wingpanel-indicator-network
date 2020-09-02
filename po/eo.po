@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2018-10-26 01:48+0000\n"
 "Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/wingpanel/"
@@ -24,37 +24,7 @@ msgstr "Virtuala reto: %s"
 msgid "Wired"
 msgstr "Drata"
 
-#: src/common/Widgets/AbstractModemInterface.vala:25
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Portebla larĝkapacita konekto: %s"
-
-#: src/common/Widgets/AbstractModemInterface.vala:27
-msgid "Mobile Broadband"
-msgstr "Portebla larĝkapacita konekto"
-
-#: src/common/Widgets/AbstractModemInterface.vala:33
-msgid "Modem"
-msgstr "Modemo"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:59
-msgid "VPN"
-msgstr "VPR"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Neniuj disponeblaj retkaptejoj"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Skanante por retkaptejoj…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Sendrata"
-
-#: src/common/Widgets/VpnMenuItem.vala:53
+#: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Ĉi Virtuala Privata Reto ne povis konektiĝi."
 
@@ -71,25 +41,54 @@ msgstr "Nekonata speco: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Ĉi sendrata reto ne povis konektiĝi."
 
-#: src/common/Widgets/WifiMenuItem.vala:132
+#: src/common/Widgets/WifiMenuItem.vala:133
 msgid "This network uses 40/64-bit WEP encryption"
 msgstr "Ĉi reto uzas 40/64-bitan WEP-ĉifradon"
 
-#: src/common/Widgets/WifiMenuItem.vala:135
+#: src/common/Widgets/WifiMenuItem.vala:136
 msgid "This network uses 104/128-bit WEP encryption"
 msgstr "Ĉi reto uzas 104/128-bitan WEP-ĉifradon"
 
-#: src/common/Widgets/WifiMenuItem.vala:138
+#: src/common/Widgets/WifiMenuItem.vala:139
 msgid "This network uses WPA encryption"
 msgstr "Ĉi reto uzas WPA-ĉifradon"
 
-#: src/common/Widgets/WifiMenuItem.vala:141
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "This network uses encryption"
 msgstr "Ĉi reto uzas ĉifradon"
 
-#: src/common/Widgets/WifiMenuItem.vala:143
+#: src/common/Widgets/WifiMenuItem.vala:144
 msgid "This network is unsecured"
 msgstr "Ĉi reto ne uzas ĉifradon"
+
+#: src/Widgets/ModemInterface.vala:83
+#, c-format
+msgid "Mobile Broadband: %s"
+msgstr "Portebla larĝkapacita konekto: %s"
+
+#: src/Widgets/ModemInterface.vala:85
+msgid "Mobile Broadband"
+msgstr "Portebla larĝkapacita konekto"
+
+#: src/Widgets/ModemInterface.vala:91
+msgid "Modem"
+msgstr "Modemo"
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr "VPR"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Neniuj disponeblaj retkaptejoj"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Skanante por retkaptejoj…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Sendrata"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
