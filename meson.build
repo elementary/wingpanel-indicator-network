@@ -25,7 +25,6 @@ shared_module(
     'src/Indicator.vala',
     'src/Utils.vala',
     'src/common/rfkill.vala',
-    'src/common/Widgets/AbstractEtherInterface.vala',
     'src/common/Widgets/VpnMenuItem.vala',
     'src/common/Widgets/WidgetNMInterface.vala',
     'src/common/Widgets/WifiMenuItem.vala',

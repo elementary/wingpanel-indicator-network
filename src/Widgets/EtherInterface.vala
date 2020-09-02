@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2017 elementary LLC (http://launchpad.net/wingpanel-indicator-network)
+* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -16,7 +16,7 @@
 *
 */
 
-public class Network.EtherInterface : Network.AbstractEtherInterface {
+public class Network.EtherInterface : Network.WidgetNMInterface {
     private Wingpanel.Widgets.Switch ethernet_item;
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
@@ -47,6 +47,21 @@ public class Network.EtherInterface : Network.AbstractEtherInterface {
         add (ethernet_item);
 
         device.state_changed.connect (() => { update (); });
+    }
+
+    public override void update_name (int count) {
+        var name = device.get_description ();
+
+        /* At least for docker related interfaces, which can be fairly common */
+        if (name.has_prefix ("veth")) {
+            display_title = _("Virtual network: %s").printf (name);
+        } else {
+            if (count <= 1) {
+                display_title = _("Wired");
+            } else {
+                display_title = name;
+            }
+        }
     }
 
     public override void update () {
