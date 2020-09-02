@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:37+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -23,12 +23,6 @@ msgstr "Εικονικό δίκτυο: %s"
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Ενσύρματο"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:60
-#, fuzzy
-msgid "VPN"
-msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -85,6 +79,11 @@ msgstr ""
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr ""
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+#, fuzzy
+msgid "VPN"
+msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
 
 #: src/Widgets/WifiInterface.vala:59
 msgid "No Access Points Available"

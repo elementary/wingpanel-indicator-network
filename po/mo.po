@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:37+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2018-05-31 08:26+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -27,11 +27,6 @@ msgstr "Rețea virtuală: %s 1"
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Prin cablu"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:60
-msgid "VPN"
-msgstr "VPN"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -82,6 +77,10 @@ msgstr "Banda transmisie mobila"
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr "Modemul"
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr "VPN"
 
 #: src/Widgets/WifiInterface.vala:59
 msgid "No Access Points Available"

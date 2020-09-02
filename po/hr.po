@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:37+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2016-10-15 17:51+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: \n"
@@ -21,11 +21,6 @@ msgstr "Virtualna mreža: %s"
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Žična mreža"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:60
-msgid "VPN"
-msgstr ""
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -81,6 +76,10 @@ msgstr ""
 
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
+msgstr ""
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
 msgstr ""
 
 #: src/Widgets/WifiInterface.vala:59

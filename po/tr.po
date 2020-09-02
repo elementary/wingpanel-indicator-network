@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:37+0000\n"
+"POT-Creation-Date: 2020-09-02 16:48+0000\n"
 "PO-Revision-Date: 2019-04-09 21:53+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -23,11 +23,6 @@ msgstr "Sanal ağ: %s"
 #: src/common/Widgets/AbstractEtherInterface.vala:28
 msgid "Wired"
 msgstr "Kablolu"
-
-#: src/common/Widgets/AbstractVpnInterface.vala:36
-#: src/common/Widgets/AbstractVpnInterface.vala:60
-msgid "VPN"
-msgstr "VPN"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -78,6 +73,10 @@ msgstr "Mobil Geniş Bant"
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr "Modem"
+
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+msgid "VPN"
+msgstr "VPN"
 
 #: src/Widgets/WifiInterface.vala:59
 msgid "No Access Points Available"
