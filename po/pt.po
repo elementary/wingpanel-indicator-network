@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2019-11-14 15:24+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -28,18 +28,6 @@ msgstr "Com fios"
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "VPN"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Sem pontos de acesso disponivel"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "À procura de Pontos de acesso…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Sem fios"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -90,6 +78,18 @@ msgstr "Banda larga móvel"
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr "Modem"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Sem pontos de acesso disponivel"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "À procura de Pontos de acesso…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Sem fios"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

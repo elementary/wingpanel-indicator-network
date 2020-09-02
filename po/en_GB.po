@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2018-05-05 09:38+0000\n"
 "Last-Translator: Ciaran Ainsworth <cda@whistlingkappa.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
@@ -28,18 +28,6 @@ msgstr "Wired"
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr "VPN"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "No Access Points Available"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Scanning for Access Points…"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Wireless"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 msgid "This Virtual Private Network could not be connected to."
@@ -90,6 +78,18 @@ msgstr "Mobile Broadband"
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr "Modem"
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "No Access Points Available"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Scanning for Access Points…"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Wireless"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

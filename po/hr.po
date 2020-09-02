@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2016-10-15 17:51+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: \n"
@@ -26,18 +26,6 @@ msgstr "Žična mreža"
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Nema dostupnih pristupnih točaka"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Pretraživanje pristupnih točaka..."
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Bežična mreža"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -94,6 +82,18 @@ msgstr ""
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Nema dostupnih pristupnih točaka"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Pretraživanje pristupnih točaka..."
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Bežična mreža"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

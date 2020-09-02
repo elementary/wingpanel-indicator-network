@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2016-08-11 12:58+0000\n"
 "Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,18 +26,6 @@ msgstr "Жична"
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "Няма налична точка за достъп"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "Търсене на точки за достъп"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "Безжична мрежа"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -94,6 +82,18 @@ msgstr ""
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "Няма налична точка за достъп"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "Търсене на точки за достъп"
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "Безжична мрежа"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"

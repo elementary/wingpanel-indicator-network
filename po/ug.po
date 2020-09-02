@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 15:15+0000\n"
+"POT-Creation-Date: 2020-09-02 16:37+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -31,18 +31,6 @@ msgstr "سىملىق تور"
 #: src/common/Widgets/AbstractVpnInterface.vala:60
 msgid "VPN"
 msgstr ""
-
-#: src/common/Widgets/AbstractWifiInterface.vala:46
-msgid "No Access Points Available"
-msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى يوق"
-
-#: src/common/Widgets/AbstractWifiInterface.vala:60
-msgid "Scanning for Access Points…"
-msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
-
-#: src/common/Widgets/AbstractWifiInterface.vala:103
-msgid "Wireless"
-msgstr "سىمسىز تور"
 
 #: src/common/Widgets/VpnMenuItem.vala:51
 #, fuzzy
@@ -99,6 +87,18 @@ msgstr ""
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
 msgstr ""
+
+#: src/Widgets/WifiInterface.vala:59
+msgid "No Access Points Available"
+msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى يوق"
+
+#: src/Widgets/WifiInterface.vala:61
+msgid "Scanning for Access Points…"
+msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
+
+#: src/Widgets/WifiInterface.vala:104
+msgid "Wireless"
+msgstr "سىمسىز تور"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Connect to Hidden Network…"
