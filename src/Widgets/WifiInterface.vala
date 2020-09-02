@@ -56,9 +56,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        var no_aps = construct_placeholder_label (_("No Access Points Available"), true);
+        var no_aps = new PlaceholderLabel (_("No Access Points Available"));
 
-        var scanning = construct_placeholder_label (_("Scanning for Access Points…"), true);
+        var scanning = new PlaceholderLabel (_("Scanning for Access Points…"));
 
         var spinner = new Gtk.Spinner ();
         spinner.start ();
@@ -316,16 +316,19 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         hidden_dialog.destroy ();
     }
 
-    private Gtk.Label construct_placeholder_label (string text, bool title) {
-        var label = new Gtk.Label (text);
-        label.visible = true;
-        label.use_markup = true;
-        label.wrap = true;
-        label.wrap_mode = Pango.WrapMode.WORD_CHAR;
-        label.max_width_chars = 30;
-        label.justify = Gtk.Justification.CENTER;
+    private class PlaceholderLabel : Gtk.Label {
+        public PlaceholderLabel (string label) {
+            Object (label: label);
+        }
 
-        return label;
+        construct {
+            justify = Gtk.Justification.CENTER;
+            max_width_chars = 30;
+            use_markup = true;
+            visible = true;
+            wrap_mode = Pango.WrapMode.WORD_CHAR;
+            wrap = true;
+        }
     }
 
     private void access_point_added_cb (Object ap_) {
