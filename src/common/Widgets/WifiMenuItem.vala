@@ -93,7 +93,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         });
 
         add (grid);
-        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+
     }
 
     /**
@@ -101,6 +101,10 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
      **/
     public WifiMenuItem.blank () {
         radio_button = new Gtk.RadioButton (null);
+    }
+
+    construct {
+        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
     }
 
     private void update_tmp_ap () {
