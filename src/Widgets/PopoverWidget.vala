@@ -29,7 +29,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     private Gtk.Box other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
-    private Gtk.ModelButton show_settings_button;
     private Gtk.ModelButton hidden_item;
 
     public bool is_in_session { get; construct; }
@@ -57,11 +56,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             hidden_item.text = _("Connect to Hidden Network…");
             hidden_item.no_show_all = true;
 
-            show_settings_button = new Gtk.ModelButton ();
+            var show_settings_button = new Gtk.ModelButton ();
             show_settings_button.text = _("Network Settings…");
 
             add (hidden_item);
             add (show_settings_button);
+
+            show_settings_button.clicked.connect (show_settings);
         }
 
         /* Monitor network manager */
@@ -90,7 +91,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         show_all ();
         update_vpn_connection ();
-        show_settings_button.clicked.connect (show_settings);
 
         hidden_item.clicked.connect (() => {
             bool found = false;
@@ -158,7 +158,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
     }
 
-    void show_settings () {
+    private void show_settings () {
         if (is_in_session) {
             try {
                 AppInfo.launch_default_for_uri ("settings://network", null);
