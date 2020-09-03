@@ -17,6 +17,8 @@
 */
 
 public class Network.WifiInterface : Network.WidgetNMInterface {
+    public NM.Client nm_client { get; construct; }
+
     public NM.DeviceWifi? wifi_device;
     public bool hidden_sensitivity { get; set; default = true; }
 
@@ -26,7 +28,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private RFKillManager rfkill;
     private NM.AccessPoint? active_ap;
     private Gtk.ListBox wifi_list;
-    private NM.Client nm_client;
     private WifiMenuItem? active_wifi_item;
     private WifiMenuItem? blank_item = null;
     private Gtk.Stack placeholder;
@@ -39,7 +40,32 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private Cancellable wifi_scan_cancellable = new Cancellable ();
 
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
-        init_wifi_interface (nm_client, _device);
+        Object (nm_client: nm_client);
+
+        device = _device;
+
+        wifi_device = (NM.DeviceWifi) device;
+        blank_item = new WifiMenuItem.blank ();
+        active_wifi_item = null;
+
+        /* Monitor killswitch status */
+        rfkill = new RFKillManager ();
+        rfkill.open ();
+        rfkill.device_added.connect (update);
+        rfkill.device_changed.connect (update);
+        rfkill.device_deleted.connect (update);
+
+        wifi_device.notify["active-access-point"].connect (update);
+        wifi_device.access_point_added.connect (access_point_added_cb);
+        wifi_device.access_point_removed.connect (access_point_removed_cb);
+        wifi_device.state_changed.connect (update);
+
+        var aps = wifi_device.get_access_points ();
+        if (aps != null && aps.length > 0) {
+            aps.foreach (access_point_added_cb);
+        }
+
+        update ();
 
         wifi_item.caption = display_title;
         notify["display-title"].connect ( () => {
@@ -105,33 +131,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         } else {
             display_title = device.get_description ();
         }
-    }
-
-    private void init_wifi_interface (NM.Client nm_client, NM.Device? _device) {
-        this.nm_client = nm_client;
-        device = _device;
-        wifi_device = (NM.DeviceWifi)device;
-        blank_item = new WifiMenuItem.blank ();
-        active_wifi_item = null;
-
-        /* Monitor killswitch status */
-        rfkill = new RFKillManager ();
-        rfkill.open ();
-        rfkill.device_added.connect (update);
-        rfkill.device_changed.connect (update);
-        rfkill.device_deleted.connect (update);
-
-        wifi_device.notify["active-access-point"].connect (update);
-        wifi_device.access_point_added.connect (access_point_added_cb);
-        wifi_device.access_point_removed.connect (access_point_removed_cb);
-        wifi_device.state_changed.connect (update);
-
-        var aps = wifi_device.get_access_points ();
-        if (aps != null && aps.length > 0) {
-            aps.foreach (access_point_added_cb);
-        }
-
-        update ();
     }
 
     public override void update () {
