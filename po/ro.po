@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-01-27 06:18+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Nu se poate conecta la această rețea fără fir."
@@ -34,30 +34,27 @@ msgstr "Tip necunoscut: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Nu se poate conecta la această rețea fără fir."
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-#, fuzzy
-msgid "This network uses 40/64-bit WEP encryption"
-msgstr "Această rețea folosește cripare WEP 40/64-bit."
-
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
-msgid "This network uses 104/128-bit WEP encryption"
-msgstr "Această rețea folosește cripare WEP 105/128-bit."
+msgid "40/64-bit WEP encrypted"
+msgstr "Această rețea folosește cripare WEP 40/64-bit."
 
 #: src/common/Widgets/WifiMenuItem.vala:139
 #, fuzzy
-msgid "This network uses WPA encryption"
-msgstr "Această rețea folosește cripare WPA."
+msgid "104/128-bit WEP encrypted"
+msgstr "Această rețea folosește cripare WEP 105/128-bit."
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "This network uses encryption"
-msgstr "Această rețea folosește cripare."
+msgid "WPA encrypted"
+msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-#, fuzzy
-msgid "This network is unsecured"
-msgstr "Această rețea folosește cripare."
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
+msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -85,25 +82,37 @@ msgstr ""
 msgid "VPN"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr "Nici un punct de acces valabil"
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr "Se caută punctele de acces…"
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr "Fără fir"
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr "Conectare la o rețea ascunsă…"
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Setări de reţea…"
+
+#, fuzzy
+#~ msgid "This network uses WPA encryption"
+#~ msgstr "Această rețea folosește cripare WPA."
+
+#, fuzzy
+#~ msgid "This network uses encryption"
+#~ msgstr "Această rețea folosește cripare."
+
+#, fuzzy
+#~ msgid "This network is unsecured"
+#~ msgstr "Această rețea folosește cripare."
 
 #~ msgid "Network"
 #~ msgstr "Rețea"

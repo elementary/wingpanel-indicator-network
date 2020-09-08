@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,7 +14,7 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
 
@@ -31,25 +31,29 @@ msgstr "Niyznōmy typ: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Z tym bezkablowym necym niy szło sie skuplować."
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses 40/64-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
-msgid "This network uses 104/128-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
 msgstr "Tyn nec używo 104/128-bitowego szyfrowanio WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
-msgid "This network uses WPA encryption"
-msgstr "Tyn nec używo szyfrowanio WPA"
-
 #: src/common/Widgets/WifiMenuItem.vala:142
-msgid "This network uses encryption"
-msgstr "Tyn nec używo szyfrowanio"
+msgid "WPA encrypted"
+msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-msgid "This network is unsecured"
-msgstr "Tyn nec je niyzabezpieczōny"
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
+msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -77,25 +81,34 @@ msgstr "Modym"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr "Niy ma żodnych pōnktōw dostympu"
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr "Szukanie pōnktōw dotympu…"
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr "Nec bezdrōtowy"
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
+
+#~ msgid "This network uses WPA encryption"
+#~ msgstr "Tyn nec używo szyfrowanio WPA"
+
+#~ msgid "This network uses encryption"
+#~ msgstr "Tyn nec używo szyfrowanio"
+
+#~ msgid "This network is unsecured"
+#~ msgstr "Tyn nec je niyzabezpieczōny"
 
 #~ msgid "Network"
 #~ msgstr "Nec"

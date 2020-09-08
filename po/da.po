@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2017-03-19 06:49+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Der Kunne Ikke Forbindes Til Dette Virtuelle Private Netværk."
 
@@ -32,25 +32,29 @@ msgstr "Ukendt type: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Der kunne ikke etableres forbindelse til dette trådløse netværk."
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses 40/64-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
 msgstr "Dette netværk bruger 40/64-bit WEP-kryptering"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
-msgid "This network uses 104/128-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
 msgstr "Dette netværk bruger 104/128-bit WEP-kryptering"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
-msgid "This network uses WPA encryption"
-msgstr "Dette netværk bruger WPA-kryptering"
-
 #: src/common/Widgets/WifiMenuItem.vala:142
-msgid "This network uses encryption"
-msgstr "Dette netværk bruger kryptering"
+msgid "WPA encrypted"
+msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-msgid "This network is unsecured"
-msgstr "Dette netværk er usikret"
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
+msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -78,25 +82,34 @@ msgstr "Modem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr "Ingen tilgængelige netværk"
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr "Søger efter netværk…"
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr "Trådløs"
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr "Opret forbindelse til skjult netværk…"
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Netværksindstillinger…"
+
+#~ msgid "This network uses WPA encryption"
+#~ msgstr "Dette netværk bruger WPA-kryptering"
+
+#~ msgid "This network uses encryption"
+#~ msgstr "Dette netværk bruger kryptering"
+
+#~ msgid "This network is unsecured"
+#~ msgstr "Dette netværk er usikret"
 
 #~ msgid "Network"
 #~ msgstr "Netværk"

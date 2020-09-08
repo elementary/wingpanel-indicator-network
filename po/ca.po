@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: 2018-05-08 00:13+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-12-20 05:12+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
 msgstr "No s'ha pogut connectar amb aquesta xarxa privada virtual."
 
@@ -32,25 +32,29 @@ msgstr "Tipus desconegut: %s "
 msgid "This wireless network could not be connected to."
 msgstr "No s'ha pogut connectar amb aquesta xarxa sense fil."
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses 40/64-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:136
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
 msgstr "Aquesta xarxa usa encriptació WEP de 40 / 64 bits."
 
-#: src/common/Widgets/WifiMenuItem.vala:136
-msgid "This network uses 104/128-bit WEP encryption"
+#: src/common/Widgets/WifiMenuItem.vala:139
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
 msgstr "Aquesta xarxa usa encriptació WEP de 104 / 128 bits."
 
-#: src/common/Widgets/WifiMenuItem.vala:139
-msgid "This network uses WPA encryption"
-msgstr "Aquesta xarxa usa encriptació WPA."
-
 #: src/common/Widgets/WifiMenuItem.vala:142
-msgid "This network uses encryption"
-msgstr "Aquesta xarxa usa encriptació."
+msgid "WPA encrypted"
+msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-msgid "This network is unsecured"
-msgstr "Aquesta xarxa no té seguretat."
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
+msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -78,25 +82,34 @@ msgstr "Mòdem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr "No hi ha punts d'accés disponibles"
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr "S'explora si hi ha punts d'accés…"
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr "Sense fil"
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr "Connecta't a una xarxa oculta…"
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Paràmetres de la xarxa…"
+
+#~ msgid "This network uses WPA encryption"
+#~ msgstr "Aquesta xarxa usa encriptació WPA."
+
+#~ msgid "This network uses encryption"
+#~ msgstr "Aquesta xarxa usa encriptació."
+
+#~ msgid "This network is unsecured"
+#~ msgstr "Aquesta xarxa no té seguretat."
 
 #~ msgid "Network"
 #~ msgstr "Xarxa"
