@@ -266,11 +266,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
             // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
             // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
-            // behind switchboard, so we spawn our own
-            var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false);
-            wifi_dialog.deletable = false;
+            // so we spawn our own
+            var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false) {
+                deletable = false
+            };
             wifi_dialog.transient_for = (Gtk.Window) get_toplevel ();
-            wifi_dialog.window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
             wifi_dialog.response.connect ((response) => {
                 if (response == Gtk.ResponseType.OK) {
                     connect_to_network.begin (wifi_dialog);
@@ -322,10 +323,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     public void connect_to_hidden () {
-        var hidden_dialog = new NMA.WifiDialog.for_other (nm_client);
-        hidden_dialog.deletable = false;
+        var hidden_dialog = new NMA.WifiDialog.for_other (nm_client) {
+            deletable = false
+        };
         hidden_dialog.transient_for = (Gtk.Window) get_toplevel ();
-        hidden_dialog.window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
                 connect_to_network.begin (hidden_dialog);
