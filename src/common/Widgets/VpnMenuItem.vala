@@ -33,6 +33,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     private bool checking_vpn_connectivity = false;
     private Gtk.Image error_img;
     private Gtk.Spinner spinner;
+    private Gtk.Label label;
 
     public VpnMenuItem (NM.RemoteConnection? connection) {
         Object (connection: connection);
@@ -45,7 +46,13 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     construct {
         connection.changed.connect (update);
 
+        label = new Gtk.Label (null) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE
+        };
+
         radio_button = new Gtk.RadioButton (null);
+        radio_button.add (label);
+
         if (blank_button != null) {
             radio_button.join_group (blank_button);
         }
@@ -91,7 +98,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     }
 
     private void update () {
-        radio_button.label = connection.get_id ();
+        label.label = connection.get_id ();
         hide_item (error_img);
         hide_item (spinner);
 
