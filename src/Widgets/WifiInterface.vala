@@ -217,32 +217,82 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     private void wifi_activate_cb (WifiMenuItem i) {
+        if (device == null) {
+            return;
+        }
+
+        /* Do not activate connection if it is already activated */
+        if (wifi_device.get_active_access_point () == i.ap) {
+            return;
+        }
+
+        // See if we already have a connection configured for this AP and try connecting if so
         var connections = nm_client.get_connections ();
         var device_connections = wifi_device.filter_connections (connections);
         var ap_connections = i.ap.filter_connections (device_connections);
 
-        bool already_connected = ap_connections.length > 0;
+        var valid_connection = get_valid_connection (i.ap, ap_connections);
+        if (valid_connection != null) {
+            nm_client.activate_connection_async.begin (valid_connection, wifi_device, i.ap.get_path (), null, null);
+            return;
+        }
 
-        if (already_connected) {
-            nm_client.activate_connection_async.begin (ap_connections.get (0),
-                                                       wifi_device,
-                                                       i.ap.get_path (),
-                                                       null,
-                                                       null);
-        } else {
-            debug ("Trying to connect to %s", NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ()));
+        var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
+        if (flags == NM.@80211ApSecurityFlags.NONE) {
+            var connection = NM.SimpleConnection.new ();
+            var s_con = new NM.SettingConnection ();
+            s_con.uuid = NM.Utils.uuid_generate ();
+            connection.add_setting (s_con);
 
-            if (i.ap.get_wpa_flags () == NM.@80211ApSecurityFlags.NONE) {
-                debug ("Directly, as it is an insecure network.");
-                nm_client.add_and_activate_connection_async.begin (NM.SimpleConnection.new (),
-                                                                   device,
-                                                                   i.ap.get_path (),
-                                                                   null,
-                                                                   null);
-            } else {
-                debug ("Needs a password or a certificate, let's open switchboard.");
-                need_settings ();
+            var s_wifi = new NM.SettingWireless ();
+            s_wifi.ssid = i.ap.get_ssid ();
+            connection.add_setting (s_wifi);
+
+            // If the AP is WPA[2]-Enterprise then we need to set up a minimal 802.1x setting before
+            // prompting the user to configure the authentication, otherwise, the dialog works out
+            // what sort of credentials to prompt for automatically
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in i.ap.get_rsn_flags () ||
+                NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in i.ap.get_wpa_flags ()
+            ) {
+                var s_wsec = new NM.SettingWirelessSecurity ();
+                s_wsec.key_mgmt = "wpa-eap";
+                connection.add_setting (s_wsec);
+
+                var s_8021x = new NM.Setting8021x ();
+                s_8021x.add_eap_method ("ttls");
+                s_8021x.phase2_auth = "mschapv2";
+                connection.add_setting (s_8021x);
             }
+
+            // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
+            // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
+            // behind switchboard, so we spawn our own
+            var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false);
+            wifi_dialog.deletable = false;
+            wifi_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            wifi_dialog.window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
+            wifi_dialog.response.connect ((response) => {
+                if (response == Gtk.ResponseType.OK) {
+                    connect_to_network.begin (wifi_dialog);
+                }
+            });
+
+            wifi_dialog.run ();
+            wifi_dialog.destroy ();
+        } else {
+            nm_client.add_and_activate_connection_async.begin (
+                NM.SimpleConnection.new (),
+                wifi_device,
+                i.ap.get_path (),
+                null,
+                (obj, res) => {
+                    try {
+                        nm_client.add_and_activate_connection_async.end (res);
+                    } catch (Error error) {
+                        warning (error.message);
+                    }
+                }
+            );
         }
 
         /* Do an update at the next iteration of the main loop, so as every
@@ -260,59 +310,77 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_scan_cancellable.cancel ();
     }
 
+    private NM.Connection? get_valid_connection (NM.AccessPoint ap, GenericArray<NM.Connection> ap_connections) {
+        for (int i = 0; i < ap_connections.length; i++) {
+            weak NM.Connection connection = ap_connections.get (i);
+            if (ap.connection_valid (connection)) {
+                return connection;
+            }
+        }
+
+        return null;
+    }
+
     public void connect_to_hidden () {
         var hidden_dialog = new NMA.WifiDialog.for_other (nm_client);
         hidden_dialog.deletable = false;
         hidden_dialog.transient_for = (Gtk.Window) get_toplevel ();
-
+        hidden_dialog.window_position = Gtk.WindowPosition.CENTER_ON_PARENT;
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
-                NM.Connection? fuzzy = null;
-                NM.Device dialog_device;
-                NM.AccessPoint? dialog_ap = null;
-                var dialog_connection = hidden_dialog.get_connection (out dialog_device, out dialog_ap);
-
-                nm_client.get_connections ().foreach ((possible) => {
-                    if (dialog_connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
-                        fuzzy = possible;
-                    }
-                });
-
-                string? path = null;
-                if (dialog_ap != null) {
-                    path = dialog_ap.get_path ();
-                }
-
-                if (fuzzy != null) {
-                    nm_client.activate_connection_async.begin (fuzzy, wifi_device, path, null, null);
-                } else {
-                    var connection_setting = dialog_connection.get_setting (typeof (NM.Setting));
-
-                    string? mode = null;
-                    var setting_wireless = (NM.SettingWireless) dialog_connection.get_setting (typeof (NM.SettingWireless));
-                    if (setting_wireless != null) {
-                        mode = setting_wireless.get_mode ();
-                    }
-
-                    if (mode == "adhoc") {
-                        if (connection_setting == null) {
-                            connection_setting = new NM.SettingConnection ();
-                        }
-
-                        dialog_connection.add_setting (connection_setting);
-                    }
-
-                    nm_client.add_and_activate_connection_async.begin (dialog_connection,
-                                                                       dialog_device,
-                                                                       path,
-                                                                       null,
-                                                                       null);
-                }
+                connect_to_network.begin (hidden_dialog);
             }
         });
 
         hidden_dialog.run ();
         hidden_dialog.destroy ();
+    }
+
+    private async void connect_to_network (NMA.WifiDialog wifi_dialog) {
+        NM.Connection? fuzzy = null;
+        NM.Device dialog_device;
+        NM.AccessPoint? dialog_ap = null;
+        var dialog_connection = wifi_dialog.get_connection (out dialog_device, out dialog_ap);
+
+        nm_client.get_connections ().foreach ((possible) => {
+            if (dialog_connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
+                fuzzy = possible;
+            }
+        });
+
+        string? path = null;
+        if (dialog_ap != null) {
+            path = dialog_ap.get_path ();
+        }
+
+        if (fuzzy != null) {
+            try {
+                yield nm_client.activate_connection_async (fuzzy, wifi_device, path, null);
+            } catch (Error error) {
+                critical (error.message);
+            }
+        } else {
+            string? mode = null;
+            unowned NM.SettingWireless setting_wireless = dialog_connection.get_setting_wireless ();
+            if (setting_wireless != null) {
+                mode = setting_wireless.get_mode ();
+            }
+
+            if (mode == "adhoc") {
+                NM.SettingConnection connection_setting = dialog_connection.get_setting_connection ();
+                if (connection_setting == null) {
+                    connection_setting = new NM.SettingConnection ();
+                }
+
+                dialog_connection.add_setting (connection_setting);
+            }
+
+            try {
+                yield nm_client.add_and_activate_connection_async (dialog_connection, dialog_device, path, null);
+            } catch (Error error) {
+                critical (error.message);
+            }
+        }
     }
 
     private class PlaceholderLabel : Gtk.Label {
