@@ -38,6 +38,10 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         Object (connection: connection);
     }
 
+    class construct {
+        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+    }
+
     construct {
         connection.changed.connect (update);
 
@@ -66,7 +70,6 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         main_box.pack_start (error_img, false, false);
 
         add (main_box);
-        get_style_context ().add_class (Gtk.STYLE_CLASS_MENUITEM);
 
         notify["vpn_state"].connect (update);
         radio_button.notify["active"].connect (update);

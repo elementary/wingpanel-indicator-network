@@ -103,7 +103,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         radio_button = new Gtk.RadioButton (null);
     }
 
-    construct {
+    class construct {
         set_css_name (Gtk.STYLE_CLASS_MENUITEM);
     }
 
