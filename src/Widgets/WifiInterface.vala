@@ -238,7 +238,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
 
         var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
-        if (flags == NM.@80211ApSecurityFlags.NONE) {
+        if (flags != NM.@80211ApSecurityFlags.NONE) {
             var connection = NM.SimpleConnection.new ();
             var s_con = new NM.SettingConnection ();
             s_con.uuid = NM.Utils.uuid_generate ();
