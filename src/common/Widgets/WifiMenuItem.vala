@@ -129,23 +129,22 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         img_strength.icon_name = get_strength_symbolic_icon ();
         img_strength.show_all ();
 
-        var flags = ap.get_wpa_flags ();
+        var flags = ap.get_wpa_flags () | ap.get_rsn_flags ();
         var is_secured = false;
-
-        if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP40) != 0) {
+        if (NM.@80211ApSecurityFlags.GROUP_WEP40 in flags) {
             is_secured = true;
-            tooltip_text = _("This network uses 40/64-bit WEP encryption");
-        } else if ((flags & NM.@80211ApSecurityFlags.GROUP_WEP104) != 0) {
+            tooltip_text = _("40/64-bit WEP encrypted");
+        } else if (NM.@80211ApSecurityFlags.GROUP_WEP104 in flags) {
             is_secured = true;
-            tooltip_text = _("This network uses 104/128-bit WEP encryption");
-        } else if ((flags & NM.@80211ApSecurityFlags.KEY_MGMT_PSK) != 0) {
+            tooltip_text = _("104/128-bit WEP encrypted");
+        } else if (NM.@80211ApSecurityFlags.KEY_MGMT_PSK in flags) {
             is_secured = true;
-            tooltip_text = _("This network uses WPA encryption");
-        } else if (flags != NM.@80211ApSecurityFlags.NONE || ap.get_rsn_flags () != NM.@80211ApSecurityFlags.NONE) {
+            tooltip_text = _("WPA encrypted");
+        } else if (flags != NM.@80211ApSecurityFlags.NONE) {
             is_secured = true;
-            tooltip_text = _("This network uses encryption");
+            tooltip_text = _("Encrypted");
         } else {
-            tooltip_text = _("This network is unsecured");
+            tooltip_text = _("Unsecured");
         }
 
         lock_img.visible = !is_secured;
