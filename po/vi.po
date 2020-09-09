@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: 2017-12-27 16:20+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Không thể kết nối tới mạng riêng ảo này."
 
@@ -32,30 +32,27 @@ msgstr "Loại không xác định: %s "
 msgid "This wireless network could not be connected to."
 msgstr "Không thể kết nối đến mạng không dây này."
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-#, fuzzy
-msgid "This network uses 40/64-bit WEP encryption"
-msgstr "Mạng này sử dụng mã hóa WEP 40/64-bit."
-
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
-msgid "This network uses 104/128-bit WEP encryption"
-msgstr "Mạng này sử dụng mã hóa WEP 104/128-bit."
+msgid "40/64-bit WEP encrypted"
+msgstr "Mạng này sử dụng mã hóa WEP 40/64-bit."
 
 #: src/common/Widgets/WifiMenuItem.vala:139
 #, fuzzy
-msgid "This network uses WPA encryption"
-msgstr "Mạng này sử dụng mã hóa WPA."
+msgid "104/128-bit WEP encrypted"
+msgstr "Mạng này sử dụng mã hóa WEP 104/128-bit."
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "This network uses encryption"
-msgstr "Mạng này sử dụng mã hóa."
+msgid "WPA encrypted"
+msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-#, fuzzy
-msgid "This network is unsecured"
-msgstr "Mạng này sử dụng mã hóa."
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
+msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -83,25 +80,37 @@ msgstr ""
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr "Không có điểm truy cập khả dụng"
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr "Đang quét các điểm truy cập…"
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr "Không dây"
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr "Kết nối đến mạng ẩn…"
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Cài đặt Mạng…"
+
+#, fuzzy
+#~ msgid "This network uses WPA encryption"
+#~ msgstr "Mạng này sử dụng mã hóa WPA."
+
+#, fuzzy
+#~ msgid "This network uses encryption"
+#~ msgstr "Mạng này sử dụng mã hóa."
+
+#, fuzzy
+#~ msgid "This network is unsecured"
+#~ msgstr "Mạng này sử dụng mã hóa."
 
 #~ msgid "Network"
 #~ msgstr "Mạng"
