@@ -61,7 +61,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
 
         error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
-            tooltip_text = _("Unable to connect");
+            tooltip_text = _("Unable to connect")
         };
 
         spinner = new Gtk.Spinner () {
