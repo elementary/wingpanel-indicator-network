@@ -23,9 +23,6 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
 
     public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
 
-    public signal void show_dialog (Gtk.Widget w);
-    public signal void need_settings ();
-
     public bool is_device (NM.Device device) {
         return device == this.device;
     }
