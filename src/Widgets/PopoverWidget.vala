@@ -138,8 +138,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         container_box.pack_end (widget_interface);
-
-        widget_interface.need_settings.connect (show_settings);
     }
 
     public void opened () {
