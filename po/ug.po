@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -32,9 +32,9 @@ msgstr "نامەلۇم ئۈسكۈنە"
 msgid "Unknown type: %s "
 msgstr "نامەلۇم تېپ: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -103,6 +103,9 @@ msgstr "يوشۇرۇن تورغا ئۇلاش"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "تور تەڭشەكلىرى"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"

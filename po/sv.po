@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-10-19 18:05+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/wingpanel/"
@@ -28,9 +28,9 @@ msgstr "Okänd enhet"
 msgid "Unknown type: %s "
 msgstr "Okänd typ: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Kunde inte ansluta till detta trådlösa nätverk."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -101,6 +101,9 @@ msgstr "Anslut till dolt nätverk…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Nätverksinställningar…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Kunde inte ansluta till detta trådlösa nätverk."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "Detta nätverk använder WPA-kryptering"

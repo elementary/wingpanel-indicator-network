@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2017-12-20 20:07+0000\n"
 "Last-Translator: Marcio <marcio.pelegrini@gmail.com>\n"
 "Language-Team: French (Canada) <https://weblate.elementary.io/projects/"
@@ -28,9 +28,9 @@ msgstr "Périphérique inconnu"
 msgid "Unknown type: %s "
 msgstr "Type inconnu : %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Impossible de se connecter à ce réseau sans fil."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -99,6 +99,9 @@ msgstr "Se connecter à une réseau invisible…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Impossible de se connecter à ce réseau sans fil."
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"
