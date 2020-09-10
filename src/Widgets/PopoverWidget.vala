@@ -103,11 +103,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         });
     }
 
-    private void remove_interface (WidgetNMInterface widget_interface) {
-        widget_interface.sep.destroy ();
-        widget_interface.destroy ();
-    }
-
     private void add_interface (WidgetNMInterface widget_interface) {
         Gtk.Box container_box = other_box;
 
@@ -175,8 +170,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             if (widget_interface.is_device (device)) {
                 network_interface.remove (widget_interface);
 
-                // Implementation call
-                remove_interface (widget_interface);
+                widget_interface.sep.destroy ();
+                widget_interface.destroy ();
                 break;
             }
         }
@@ -235,15 +230,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         update_interfaces_names ();
-        update_all ();
-        update_state ();
-        show_all ();
-    }
 
-    private void update_all () {
         foreach (var inter in network_interface) {
             inter.update ();
         }
+
+        update_state ();
+        show_all ();
     }
 
     private void update_state () {
