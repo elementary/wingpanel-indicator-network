@@ -251,9 +251,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             // If the AP is WPA[2]-Enterprise then we need to set up a minimal 802.1x setting before
             // prompting the user to configure the authentication, otherwise, the dialog works out
             // what sort of credentials to prompt for automatically
-            if (NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in i.ap.get_rsn_flags () ||
-                NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in i.ap.get_wpa_flags ()
-            ) {
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in flags) {
                 var s_wsec = new NM.SettingWirelessSecurity ();
                 s_wsec.key_mgmt = "wpa-eap";
                 connection.add_setting (s_wsec);
