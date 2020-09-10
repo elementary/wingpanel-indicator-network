@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2016-06-30 20:45+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
@@ -32,9 +32,9 @@ msgstr "Hindi matukoy na aparato"
 msgid "Unknown type: %s "
 msgstr "Hindi matukoy na type: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Hindi makakonekta sa wireless network na ito"
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -103,6 +103,9 @@ msgstr "Kumonekta sa Nakatagong Network"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Setting sa Network..."
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Hindi makakonekta sa wireless network na ito"
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-12-06 05:05+0000\n"
 "Last-Translator: Mohelm97 <mohelm97@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.elementary.io/projects/wingpanel/"
@@ -29,9 +29,9 @@ msgstr "جهاز غير معروف"
 msgid "Unknown type: %s "
 msgstr "نوع غير معروف: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "لا يمكن الإتصال بهذه الشبكة اللاسلكية."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -102,6 +102,9 @@ msgstr "الإتصال بشبكة مخفية…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "إعدادات الشبكة…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "لا يمكن الإتصال بهذه الشبكة اللاسلكية."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "هذه الشبكة تستعمل WPA للتشفير"

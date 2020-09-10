@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2020-03-05 14:09+0000\n"
 "Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -28,9 +28,9 @@ msgstr "Onbekend apparaat"
 msgid "Unknown type: %s "
 msgstr "Onbekend type: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Kan geen verbinding met dit wifi-netwerk maken."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -101,6 +101,9 @@ msgstr "Verbind met onzichtbaar netwerk…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Kan geen verbinding met dit wifi-netwerk maken."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "Dit netwerk gebruikt WPA-encryptie"

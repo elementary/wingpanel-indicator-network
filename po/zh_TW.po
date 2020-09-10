@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-02-07 03:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -28,9 +28,9 @@ msgstr "未知裝置"
 msgid "Unknown type: %s "
 msgstr "未知類型：%s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "無法連到這個無線網路。"
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -99,6 +99,9 @@ msgstr "連接到隱藏的網路…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "網路設定值…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "無法連到這個無線網路。"
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"

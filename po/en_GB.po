@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-05-05 09:38+0000\n"
 "Last-Translator: Ciaran Ainsworth <cda@whistlingkappa.com>\n"
 "Language-Team: English (United Kingdom) <https://weblate.elementary.io/"
@@ -28,9 +28,9 @@ msgstr "Unknown device"
 msgid "Unknown type: %s "
 msgstr "Unknown type: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "This wireless network could not be connected to."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -101,6 +101,9 @@ msgstr "Connect to Hidden Network…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Network Settings…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "This wireless network could not be connected to."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "This network uses WPA encryption"

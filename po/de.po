@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-06-02 19:59+0000\n"
 "Last-Translator: Jörg Arnold <j.ar@mailbox.org>\n"
 "Language-Team: German <https://weblate.elementary.io/projects/wingpanel/"
@@ -30,9 +30,9 @@ msgstr "Unbekanntes Gerät"
 msgid "Unknown type: %s "
 msgstr "Unbekannter Typ: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Es konnte keine Verbindung zum Drahtlosnetzwerk aufgebaut werden."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -103,6 +103,9 @@ msgstr "Mit einem versteckten Netzwerk verbinden…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Netzwerkeinstellungen…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Es konnte keine Verbindung zum Drahtlosnetzwerk aufgebaut werden."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "Dieses Netzwerk verwendet eine WPA-Verschlüsselung"

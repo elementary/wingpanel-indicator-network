@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2018-07-03 19:06+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/wingpanel/"
@@ -29,9 +29,9 @@ msgstr "Neznana naprava"
 msgid "Unknown type: %s "
 msgstr "Neznan tip: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Na to omrežje se ni bilo mogoče povezati."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -102,6 +102,9 @@ msgstr "Poveži se na skrito omrežje…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Omrežne nastavitve…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Na to omrežje se ni bilo mogoče povezati."
 
 #~ msgid "This network uses WPA encryption"
 #~ msgstr "To omrežje uporablja WPA šifriranje"
