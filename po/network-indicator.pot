@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 17:14+0000\n"
+"POT-Creation-Date: 2020-09-08 22:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:51
+#: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
 msgstr ""
 
@@ -34,24 +34,24 @@ msgstr ""
 msgid "This wireless network could not be connected to."
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:133
-msgid "This network uses 40/64-bit WEP encryption"
-msgstr ""
-
 #: src/common/Widgets/WifiMenuItem.vala:136
-msgid "This network uses 104/128-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
 msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-msgid "This network uses WPA encryption"
+msgid "104/128-bit WEP encrypted"
 msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-msgid "This network uses encryption"
+msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:144
-msgid "This network is unsecured"
+#: src/common/Widgets/WifiMenuItem.vala:145
+msgid "Encrypted"
+msgstr ""
+
+#: src/common/Widgets/WifiMenuItem.vala:147
+msgid "Unsecured"
 msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
@@ -80,22 +80,22 @@ msgstr ""
 msgid "VPN"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:59
+#: src/Widgets/WifiInterface.vala:85
 msgid "No Access Points Available"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:61
+#: src/Widgets/WifiInterface.vala:87
 msgid "Scanning for Access Points…"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:104
+#: src/Widgets/WifiInterface.vala:130
 msgid "Wireless"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:57
+#: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:61
+#: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr ""
