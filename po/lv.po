@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2015-11-21 12:57+0000\n"
 "Last-Translator: Ar2 <arturss5@inbox.lv>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,8 +26,8 @@ msgstr ""
 msgid "Unknown type: %s "
 msgstr "Nezināms tips: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
 msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
