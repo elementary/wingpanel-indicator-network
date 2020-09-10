@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2016-08-11 12:58+0000\n"
 "Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,9 +27,9 @@ msgstr "Неизвестно устройство"
 msgid "Unknown type: %s "
 msgstr "Неизвестен тип:  %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Свързването към тази безжична мрежа бе неуспешно."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -98,6 +98,9 @@ msgstr "Свързване към скрита мрежа"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Настройки на мрежата"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Свързването към тази безжична мрежа бе неуспешно."
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"

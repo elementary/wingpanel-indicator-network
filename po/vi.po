@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 22:46+0000\n"
+"POT-Creation-Date: 2020-09-10 19:56+0000\n"
 "PO-Revision-Date: 2017-12-27 16:20+0000\n"
 "Last-Translator: Hải Hồ <hochihai1997@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.elementary.io/projects/wingpanel/"
@@ -28,9 +28,9 @@ msgstr "Thiết bị không xác định"
 msgid "Unknown type: %s "
 msgstr "Loại không xác định: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:65
-msgid "This wireless network could not be connected to."
-msgstr "Không thể kết nối đến mạng không dây này."
+#: src/common/Widgets/WifiMenuItem.vala:64
+msgid "Unable to connect"
+msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:136
 #, fuzzy
@@ -99,6 +99,9 @@ msgstr "Kết nối đến mạng ẩn…"
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
 msgstr "Cài đặt Mạng…"
+
+#~ msgid "This wireless network could not be connected to."
+#~ msgstr "Không thể kết nối đến mạng không dây này."
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"
