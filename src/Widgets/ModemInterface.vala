@@ -86,7 +86,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         }
 
         if (device is NM.DeviceModem) {
-            var capabilities = (device as NM.DeviceModem).get_current_capabilities ();
+            var capabilities = ((NM.DeviceModem)device).get_current_capabilities ();
             if (NM.DeviceModemCapabilities.POTS in capabilities) {
                 display_title = _("Modem");
             }

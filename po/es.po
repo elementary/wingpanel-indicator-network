@@ -3,21 +3,21 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 19:56+0000\n"
-"PO-Revision-Date: 2018-05-05 23:29+0000\n"
-"Last-Translator: febrezo <felixbrezo@gmail.com>\n"
-"Language-Team: Spanish <https://weblate.elementary.io/projects/wingpanel/"
+"PO-Revision-Date: 2020-09-16 14:14+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-12-09 05:42+0000\n"
 
 #: src/common/Widgets/VpnMenuItem.vala:55
 msgid "This Virtual Private Network could not be connected to."
-msgstr "No se pudo conectar con esta red VPN."
+msgstr "No se pudo conectar con esta red privada virtual."
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
@@ -30,31 +30,27 @@ msgstr "Tipo desconocido: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "Unable to connect"
-msgstr ""
+msgstr "No se puede conectar"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Esta red utiliza un cifrado WEP de 40/64 bits"
+msgstr "Cifrado WEP de 40/64 bits"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Esta red utiliza un cifrado WEP de 104/128 bits"
+msgstr "Cifrado WEP de 104/128 bits"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Cifrado WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
 msgid "Encrypted"
-msgstr ""
+msgstr "Cifrada"
 
 #: src/common/Widgets/WifiMenuItem.vala:147
 msgid "Unsecured"
-msgstr ""
+msgstr "No segura"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -68,11 +64,11 @@ msgstr "Cableada"
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr "Banda Ancha Móvil: %s"
+msgstr "Banda ancha móvil: %s"
 
 #: src/Widgets/ModemInterface.vala:85
 msgid "Mobile Broadband"
-msgstr "Banda Ancha Móvil"
+msgstr "Banda ancha móvil"
 
 #: src/Widgets/ModemInterface.vala:91
 msgid "Modem"
@@ -96,7 +92,7 @@ msgstr "Conexión inalámbrica"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
-msgstr "Conectarse a una red oculta…"
+msgstr "Conectar con una red oculta…"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
