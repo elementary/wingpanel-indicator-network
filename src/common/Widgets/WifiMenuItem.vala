@@ -44,11 +44,17 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private Gtk.Image lock_img;
     private Gtk.Image error_img;
     private Gtk.Spinner spinner;
+    private Gtk.Label label;
 
     public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
+        label = new Gtk.Label (null) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE
+        };
+
         radio_button = new Gtk.RadioButton (null) {
             hexpand = true
         };
+        radio_button.add (label);
 
         if (previous != null) {
             radio_button.set_group (previous.get_group ());
@@ -124,7 +130,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     private void update () {
-        radio_button.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
+        label.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
 
         img_strength.icon_name = get_strength_symbolic_icon ();
         img_strength.show_all ();
