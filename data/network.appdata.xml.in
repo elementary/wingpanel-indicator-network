@@ -6,6 +6,16 @@
   <name>Network Indicator</name>
   <summary>Connect to wireless networks and manage VPNs</summary>
   <releases>
+    <release version="2.2.5" date="2020-10-08" urgency="medium">
+      <description>
+        <p>Minor updates</p>
+        <ul>
+          <li>Improve detection and labeling of encryption types</li>
+          <li>Improve reliability of connection dialog</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.2.4" date="2020-05-28" urgency="medium">
       <description>
         <p>Updated translations</p>
