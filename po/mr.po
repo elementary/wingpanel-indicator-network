@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 19:56+0000\n"
-"PO-Revision-Date: 2018-12-18 00:02+0000\n"
+"PO-Revision-Date: 2020-10-11 18:14+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
-"Language-Team: Marathi <https://weblate.elementary.io/projects/wingpanel/"
+"Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/mr/>\n"
 "Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/common/Widgets/VpnMenuItem.vala:55
@@ -30,31 +30,27 @@ msgstr "अज्ञात प्रकारः%s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "Unable to connect"
-msgstr ""
+msgstr "कनेक्ट करण्यात अक्षम"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "हे नेटवर्क 40/64-bit WEP एन्क्रिप्शन वापरते"
+msgstr "40/64-बिट डब्ल्यूईपी कूटबद्ध"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "हे नेटवर्क 104/128-bit WEP एन्क्रिप्शन वापरते"
+msgstr "104/128-बिट डब्ल्यूईपी कूटबद्ध"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
 msgid "WPA encrypted"
-msgstr ""
+msgstr "डब्ल्यूपीए कूटबद्ध"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
 msgid "Encrypted"
-msgstr ""
+msgstr "कूटबद्ध"
 
 #: src/common/Widgets/WifiMenuItem.vala:147
 msgid "Unsecured"
-msgstr ""
+msgstr "असुरक्षित"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
