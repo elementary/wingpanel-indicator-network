@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-10 19:56+0000\n"
-"PO-Revision-Date: 2018-12-11 11:03+0000\n"
+"PO-Revision-Date: 2020-10-27 10:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
-"Language-Team: Italian <https://weblate.elementary.io/projects/wingpanel/"
+"Language-Team: Italian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/common/Widgets/VpnMenuItem.vala:55
@@ -30,31 +30,27 @@ msgstr "Tipo sconosciuto: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:64
 msgid "Unable to connect"
-msgstr ""
+msgstr "Impossibile connetersi"
 
 #: src/common/Widgets/WifiMenuItem.vala:136
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Questa rete usa crittografia WEP a 40/64-bit"
+msgstr "Questa rete usa la crittografia WEP a 40/64-bit"
 
 #: src/common/Widgets/WifiMenuItem.vala:139
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Questa rete usa crittografia WEP a 104/128-bit"
+msgstr "Questa rete usa la crittografia WEP a 104/128-bit"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Questa rete usa la crittografia WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
 msgid "Encrypted"
-msgstr ""
+msgstr "Crittografata"
 
 #: src/common/Widgets/WifiMenuItem.vala:147
 msgid "Unsecured"
-msgstr ""
+msgstr "Non sicura"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
