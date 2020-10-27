@@ -5,6 +5,7 @@
   <extends>io.elementary.wingpanel</extends>
   <name>Network Indicator</name>
   <summary>Connect to wireless networks and manage VPNs</summary>
+  <icon type="stock">preferences-system-network</icon>
   <releases>
     <release version="2.2.4" date="2020-05-28" urgency="medium">
       <description>
