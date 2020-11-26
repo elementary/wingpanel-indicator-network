@@ -1,5 +1,5 @@
 # Wingpanel Network Indicator
-[![l10n](https://l10n.elementary.io/widgets/wingpanel/wingpanel-indicator-network/svg-badge.svg)](https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-network)
+[![Translation status](https://l10n.elementary.io/widgets/wingpanel/-/wingpanel-indicator-network/svg-badge.svg)](https://l10n.elementary.io/engage/wingpanel/?utm_source=widget)
 
 ![Screenshot](data/screenshot.png?raw=true)
 
