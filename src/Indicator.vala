@@ -37,6 +37,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
+        update_tooltip ();
         on_state_changed ();
         start_monitor ();
     }
@@ -85,6 +86,11 @@ public class Network.Indicator : Wingpanel.Indicator {
         if (popover_widget != null) {
             popover_widget.closed ();
         }
+    }
+
+    private void update_tooltip () {
+        
+        display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to: "));
     }
 }
 
