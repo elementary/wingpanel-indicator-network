@@ -37,7 +37,6 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
-        update_tooltip ();
         on_state_changed ();
         start_monitor ();
     }
@@ -90,11 +89,13 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
+        string active_network_name = "some network";
+
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
             case Network.State.CONNECTING_WIFI:
             case Network.State.CONNECTING_MOBILE:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to: " + "some WiFi network"));
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to: " + active_network_name));
                 break;
             case Network.State.CONNECTED_WIRED:
             case Network.State.CONNECTED_WIFI:
@@ -106,7 +107,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_OK:
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to: " + "some WiFi network"));
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to: " + active_network_name));
                 break;
             case Network.State.FAILED_WIRED:
             case Network.State.FAILED_WIFI:
