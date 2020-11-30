@@ -55,6 +55,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (display_widget != null);
 
         display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
+        update_tooltip ();
     }
 
     private void start_monitor () {
@@ -89,8 +90,38 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
-        
-        display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to: "));
+        switch (popover_widget.state) {
+            case Network.State.CONNECTING_WIRED:
+            case Network.State.CONNECTING_WIFI:
+            case Network.State.CONNECTING_MOBILE:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to: " + "some WiFi network"));
+                break;
+            case Network.State.CONNECTED_WIRED:
+            case Network.State.CONNECTED_WIFI:
+            case Network.State.CONNECTED_WIFI_WEAK:
+            case Network.State.CONNECTED_WIFI_OK:
+            case Network.State.CONNECTED_WIFI_GOOD:
+            case Network.State.CONNECTED_WIFI_EXCELLENT:
+            case Network.State.CONNECTED_MOBILE_WEAK:
+            case Network.State.CONNECTED_MOBILE_OK:
+            case Network.State.CONNECTED_MOBILE_GOOD:
+            case Network.State.CONNECTED_MOBILE_EXCELLENT:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to: " + "some WiFi network"));
+                break;
+            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED_WIFI:
+            case Network.State.FAILED_VPN:
+            case Network.State.FAILED_MOBILE:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Failed to connect"));
+                break;
+            case Network.State.DISCONNECTED_WIRED:
+            case Network.State.DISCONNECTED_AIRPLANE_MODE:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Disconnected"));
+                break;
+            default:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Not connected"));
+                break;
+        }
     }
 }
 
