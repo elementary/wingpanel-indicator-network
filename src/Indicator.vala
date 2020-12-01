@@ -89,7 +89,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
-        string active_network_name = "some network";
+        string active_network_name = get_active_network_name ();
 
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
@@ -123,6 +123,18 @@ public class Network.Indicator : Wingpanel.Indicator {
                 display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Not connected"));
                 break;
         }
+    }
+
+    private string get_active_network_name () {
+        string active_network_name = "...";
+
+        popover_widget.wifi_box.get_children ().foreach ((child) => {
+            if (child is Network.WifiInterface) {
+                active_network_name = ((Network.WifiInterface) child).get_active_ap ();
+            }
+        });
+
+        return active_network_name;
     }
 }
 
