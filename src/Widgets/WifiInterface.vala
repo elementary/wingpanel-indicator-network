@@ -472,6 +472,24 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
     }
 
+    public string get_active_ap () {
+        debug ("Get active AP");
+
+        active_ap = wifi_device.get_active_access_point ();
+
+        if (active_ap == null) {
+            debug ("No active AP");
+            return "";
+        } else {
+            unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
+            string active_ap = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
+
+            debug ("Active ap: %s", active_ap);
+
+            return active_ap;
+        }
+    }
+
     private void access_point_removed_cb (Object ap_) {
         NM.AccessPoint ap = (NM.AccessPoint)ap_;
         if (ap.ssid == null) {
