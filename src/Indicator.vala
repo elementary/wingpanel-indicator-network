@@ -126,7 +126,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_network_name () {
-        string active_network_name = "...";
+        string active_network_name = "\u2026";
 
         popover_widget.wifi_box.get_children ().foreach ((child) => {
             if (child is Network.WifiInterface) {
