@@ -91,7 +91,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
-        string active_network_name = get_active_network_name ();
+        string active_network_name = "\u2026";
 
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
@@ -127,16 +127,36 @@ public class Network.Indicator : Wingpanel.Indicator {
         }
     }
 
-    private string get_active_network_name () {
-        string active_network_name = "\u2026";
+    private string get_active_wired_name () {
+        string active_wired_name = "";
+        bool found = false;
 
-        popover_widget.wifi_box.get_children ().foreach ((child) => {
-            if (child is Network.WifiInterface) {
-                active_network_name = ((Network.WifiInterface) child).active_ap_name;
+        popover_widget.other_box.get_children ().foreach ((child) => {
+            if ((child is Network.EtherInterface) && !found) {
+                found = true;
+                active_wired_name = ((Network.EtherInterface) child).active_wired_name;
+
+                debug ("Active network (Wired): %s".printf(active_wired_name));
             }
         });
 
-        return active_network_name;
+        return active_wired_name;
+    }
+
+    private string get_active_wifi_name () {
+        string active_wifi_name = "";
+        bool found = false;
+
+        popover_widget.wifi_box.get_children ().foreach ((child) => {
+            if ((child is Network.WifiInterface) && !found) {
+                found = true;
+                active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
+
+                debug ("Active network (WiFi): %s".printf(active_wifi_name));
+            }
+        });
+
+        return active_wifi_name;
     }
 }
 
