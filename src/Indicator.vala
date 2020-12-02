@@ -91,15 +91,17 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
-        string active_network_name = "\u2026";
-
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wired_name ())));
+                break;
             case Network.State.CONNECTING_WIFI:
             case Network.State.CONNECTING_MOBILE:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (active_network_name)));
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wifi_name ())));
                 break;
             case Network.State.CONNECTED_WIRED:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wired_name ())));
+                break;
             case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
@@ -109,7 +111,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_OK:
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (active_network_name)));
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wifi_name ())));
                 break;
             case Network.State.FAILED_WIRED:
             case Network.State.FAILED_WIFI:
@@ -136,7 +138,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 found = true;
                 active_wired_name = ((Network.EtherInterface) child).active_wired_name;
 
-                debug ("Active network (Wired): %s".printf(active_wired_name));
+                debug ("Active network (Wired): %s".printf (active_wired_name));
             }
         });
 
@@ -152,7 +154,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 found = true;
                 active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
 
-                debug ("Active network (WiFi): %s".printf(active_wifi_name));
+                debug ("Active network (WiFi): %s".printf (active_wifi_name));
             }
         });
 
