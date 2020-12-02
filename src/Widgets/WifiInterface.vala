@@ -22,6 +22,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public NM.DeviceWifi? wifi_device;
     public bool hidden_sensitivity { get; set; default = true; }
 
+    public string active_ap_name;
+
     private Wingpanel.Widgets.Switch wifi_item;
     private Gtk.Revealer revealer;
 
@@ -451,7 +453,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             blank_item.set_active (true);
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
-            debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ()));
+            active_ap_name = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
+            debug ("Active ap: %s", active_ap_name);
 
             bool found = false;
             foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
@@ -469,24 +472,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             if (!found) {
                 debug ("Active AP not added");
             }
-        }
-    }
-
-    public string get_active_ap () {
-        debug ("Get active AP");
-
-        active_ap = wifi_device.get_active_access_point ();
-
-        if (active_ap == null) {
-            debug ("No active AP");
-            return "";
-        } else {
-            unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
-            string active_ap = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
-
-            debug ("Active ap: %s", active_ap);
-
-            return active_ap;
         }
     }
 

@@ -130,7 +130,7 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         popover_widget.wifi_box.get_children ().foreach ((child) => {
             if (child is Network.WifiInterface) {
-                active_network_name = ((Network.WifiInterface) child).get_active_ap ();
+                active_network_name = ((Network.WifiInterface) child).active_ap_name;
             }
         });
 
