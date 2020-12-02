@@ -26,7 +26,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    private Gtk.Box other_box;
+    public Gtk.Box other_box;
     public Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
