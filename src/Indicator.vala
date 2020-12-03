@@ -93,14 +93,32 @@ public class Network.Indicator : Wingpanel.Indicator {
     private void update_tooltip () {
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wired_name ())));
+                /* If there's only one active ethernet connection,
+                we get back the string "Wired". We won't want to
+                show the user Connecting to "Wired" so we'll have
+                to show them something else if we get back
+                "Wired" from get_active_wired_name () */
+
+                string active_wired_name = get_active_wired_name ();
+
+                if (active_wired_name == "Wired") {
+                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to wired network"));
+                } else {
+                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wired_name ())));
+                }
                 break;
             case Network.State.CONNECTING_WIFI:
             case Network.State.CONNECTING_MOBILE:
                 display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wifi_name ())));
                 break;
             case Network.State.CONNECTED_WIRED:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wired_name ())));
+                string active_wired_name = get_active_wired_name ();
+
+                if (active_wired_name == "Wired") {
+                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to wired network"));
+                } else {
+                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wired_name ())));
+                }
                 break;
             case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
