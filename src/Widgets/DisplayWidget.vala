@@ -98,10 +98,10 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         };
         extra_info_revealer.add (extra_info_label);
 
-        add (cellular_revealer);
         add (vpn_revealer);
-        add (wifi_revealer);
         add (wired_revealer);
+        add (wifi_revealer);
+        add (cellular_revealer);
         add (network_revealer);
         add (extra_info_revealer);
 
@@ -253,6 +253,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             wifi_connected = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
+        case Network.State.FAILED_WIRED:
         case Network.State.WIRED_UNPLUGGED:
             wired_image.icon_name = "network-wired-offline-symbolic";
             wired_connected = ConnectionState.DISCONNECTED;
