@@ -75,7 +75,7 @@ public enum Network.State {
         }
     }
 
-    public string to_string() {
+    public string to_string () {
         switch (this) {
             case Network.State.DISCONNECTED:
                 return "DISCONNECTED";
