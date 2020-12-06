@@ -125,6 +125,13 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         }
 
         switch (state) {
+        case Network.State.DISCONNECTED:
+            network_image.icon_name = "network-offline-symbolic";
+            cellular_connected = ConnectionState.DISCONNECTED;
+            wifi_connected = ConnectionState.DISCONNECTED;
+            wired_connected = ConnectionState.DISCONNECTED;
+            update_icons ();
+            break;
         case Network.State.DISCONNECTED_AIRPLANE_MODE:
             network_image.icon_name = "airplane-mode-symbolic";
             cellular_connected = ConnectionState.DISCONNECTED;
@@ -242,7 +249,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             update_icons ();
             break;
         case Network.State.FAILED_WIFI:
-        case Network.State.DISCONNECTED:
             wifi_image.icon_name = "network-wireless-offline-symbolic";
             wifi_connected = ConnectionState.DISCONNECTED;
             update_icons ();
