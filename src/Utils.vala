@@ -74,4 +74,57 @@ public enum Network.State {
                 return 8;
         }
     }
+
+    public string to_string() {
+        switch (this) {
+            case Network.State.DISCONNECTED:
+                return "DISCONNECTED";
+            case Network.State.WIRED_UNPLUGGED:
+                return "WIRED_UNPLUGGED";
+            case Network.State.DISCONNECTED_WIRED:
+                return "DISCONNECTED_WIRED";
+            case Network.State.DISCONNECTED_AIRPLANE_MODE:
+                return "DISCONNECTED_AIRPLANE_MODE";
+            case Network.State.CONNECTED_WIRED:
+                return "CONNECTED_WIRED";
+            case Network.State.CONNECTED_VPN:
+                return "CONNECTED_VPN";
+            case Network.State.CONNECTED_WIFI:
+                return "CONNECTED_WIFI";
+            case Network.State.CONNECTED_WIFI_WEAK:
+                return "CONNECTED_WIFI_WEAK";
+            case Network.State.CONNECTED_WIFI_OK:
+                return "CONNECTED_WIFI_OK";
+            case Network.State.CONNECTED_WIFI_GOOD:
+                return "CONNECTED_WIFI_GOOD";
+            case Network.State.CONNECTED_WIFI_EXCELLENT:
+                return "CONNECTED_WIFI_EXCELLENT";
+            case Network.State.CONNECTED_MOBILE_WEAK:
+                return "CONNECTED_MOBILE_WEAK";
+            case Network.State.CONNECTED_MOBILE_OK:
+                return "CONNECTED_MOBILE_OK";
+            case Network.State.CONNECTED_MOBILE_GOOD:
+                return "CONNECTED_MOBILE_GOOD";
+            case Network.State.CONNECTED_MOBILE_EXCELLENT:
+                return "CONNECTED_MOBILE_EXCELLENT";
+            case Network.State.CONNECTING_WIFI:
+                return "CONNECTING_WIFI";
+            case Network.State.CONNECTING_MOBILE:
+                return "CONNECTING_MOBILE";
+            case Network.State.CONNECTING_WIRED:
+                return "CONNECTING_WIRED";
+            case Network.State.CONNECTING_VPN:
+                return "CONNECTING_VPN";
+            case Network.State.FAILED_WIRED:
+                return "FAILED_WIRED";
+            case Network.State.FAILED_WIFI:
+                return "FAILED_WIFI";
+            case Network.State.FAILED_MOBILE:
+                return "FAILED_MOBILE";
+            case Network.State.FAILED_VPN:
+                return "FAILED_VPN";
+        }
+
+        return "UNKNOWN";
+    }
 }
