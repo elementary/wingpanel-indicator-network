@@ -22,7 +22,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public NM.DeviceWifi? wifi_device;
     public bool hidden_sensitivity { get; set; default = true; }
 
-    public string active_ap_name  { get; private set; }
+    public string active_ap_name { get; private set; }
 
     private Wingpanel.Widgets.Switch wifi_item;
     private Gtk.Revealer revealer;
