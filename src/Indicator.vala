@@ -102,9 +102,9 @@ public class Network.Indicator : Wingpanel.Indicator {
                 string active_wired_name = get_active_wired_name ();
 
                 if (active_wired_name == "Wired") {
-                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to wired network"));
+                    display_widget.tooltip_markup = _("Connecting to wired network");
                 } else {
-                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wired_name ())));
+                    display_widget.tooltip_markup = _("Connecting to “%s”").printf (get_active_wired_name ());
                 }
                 break;
             case Network.State.CONNECTING_WIFI:
@@ -115,9 +115,9 @@ public class Network.Indicator : Wingpanel.Indicator {
                 string active_wired_name = get_active_wired_name ();
 
                 if (active_wired_name == "Wired") {
-                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to wired network"));
+                    display_widget.tooltip_markup = _("Connected to wired network");
                 } else {
-                    display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wired_name ())));
+                    display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wired_name ());
                 }
                 break;
             case Network.State.CONNECTED_WIFI:
@@ -129,20 +129,20 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_OK:
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connected to “%s”".printf (get_active_wifi_name ())));
+                display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
                 break;
             case Network.State.FAILED_WIRED:
             case Network.State.FAILED_WIFI:
             case Network.State.FAILED_VPN:
             case Network.State.FAILED_MOBILE:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Failed to connect"));
+                display_widget.tooltip_markup = _("Failed to connect");
                 break;
             case Network.State.DISCONNECTED_WIRED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Disconnected"));
+                display_widget.tooltip_markup = _("Disconnected");
                 break;
             default:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Not connected"));
+                display_widget.tooltip_markup = _("Not connected");
                 break;
         }
     }

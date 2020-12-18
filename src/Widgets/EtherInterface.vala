@@ -19,7 +19,7 @@
 public class Network.EtherInterface : Network.WidgetNMInterface {
     private Wingpanel.Widgets.Switch ethernet_item;
 
-    public string active_wired_name;
+    public string active_wired_name { get; private set; }
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
