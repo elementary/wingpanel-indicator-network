@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,7 +16,46 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr ""
+
+#: src/Indicator.vala:105
+msgid "Connecting to wired network"
+msgstr ""
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, c-format
+msgid "Connecting to “%s”"
+msgstr ""
+
+#: src/Indicator.vala:118
+msgid "Connected to wired network"
+msgstr ""
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, c-format
+msgid "Connected to “%s”"
+msgstr ""
+
+#: src/Indicator.vala:138
+msgid "Failed to connect"
+msgstr ""
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr ""
+
+#: src/Indicator.vala:145
+msgid "Not connected"
+msgstr ""
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr ""
 
@@ -24,42 +63,38 @@ msgstr ""
 msgid "Unknown device"
 msgstr ""
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "40/64-bit WEP encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 msgid "104/128-bit WEP encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr ""
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
 msgid "Virtual network: %s"
-msgstr ""
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
 msgstr ""
 
 #: src/Widgets/ModemInterface.vala:83
@@ -79,15 +114,15 @@ msgstr ""
 msgid "VPN"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr ""
 

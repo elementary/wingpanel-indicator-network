@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2018-05-09 19:35+0000\n"
 "Last-Translator: Piotr Strebski <strebski@gmail.com>\n"
 "Language-Team: Polish <https://weblate.elementary.io/projects/wingpanel/"
@@ -16,7 +16,54 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Przewodowe"
+
+#: src/Indicator.vala:105
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connecting to wired network"
+msgstr "Połącz z ukrytą siecią…"
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, fuzzy, c-format
+#| msgid "Connecting"
+msgid "Connecting to “%s”"
+msgstr "Łączenie"
+
+#: src/Indicator.vala:118
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connected to wired network"
+msgstr "Połącz z ukrytą siecią…"
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, fuzzy, c-format
+#| msgid "Connected"
+msgid "Connected to “%s”"
+msgstr "Połączony"
+
+#: src/Indicator.vala:138
+msgid "Failed to connect"
+msgstr ""
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "Rozłączony"
+
+#: src/Indicator.vala:145
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Połączony"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Nie można nawiązać połączenia z tą prywatną siecią wirtualną."
 
@@ -24,36 +71,36 @@ msgstr "Nie można nawiązać połączenia z tą prywatną siecią wirtualną."
 msgid "Unknown device"
 msgstr "Nieznane urządzenie"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Nieznany rodzaj: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
 msgstr "Ta sieć używa szyfrowania WEP 40/64-bitowego"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 #, fuzzy
 #| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
 msgstr "Ta sieć używa szyfrowania WEP 104/128-bitowego"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr ""
 
@@ -61,10 +108,6 @@ msgstr ""
 #, c-format
 msgid "Virtual network: %s"
 msgstr "Sieć wirtualna: %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "Przewodowe"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -83,15 +126,15 @@ msgstr "Modem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "Brak dostępnych punktów dostępu"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Szukanie punktów dostępowych…"
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "Bezprzewodowe"
 
@@ -139,17 +182,8 @@ msgstr "Ustawienia sieci…"
 #~ msgid "Hotspot %s"
 #~ msgstr "Hotspot %s"
 
-#~ msgid "Disconnected"
-#~ msgstr "Rozłączony"
-
-#~ msgid "Connected"
-#~ msgstr "Połączony"
-
 #~ msgid "Failed"
 #~ msgstr "Niepowodzenie"
-
-#~ msgid "Connecting"
-#~ msgstr "Łączenie"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Kabel odłączony"

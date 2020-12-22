@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2020-11-17 22:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,56 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Com cabo"
+
+#: src/Indicator.vala:105
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connecting to wired network"
+msgstr "Ligar a rede oculta…"
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, fuzzy, c-format
+#| msgid "Connecting"
+msgid "Connecting to “%s”"
+msgstr "A ligar"
+
+#: src/Indicator.vala:118
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connected to wired network"
+msgstr "Ligar a rede oculta…"
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, fuzzy, c-format
+#| msgid "Connected"
+msgid "Connected to “%s”"
+msgstr "Ligado"
+
+#: src/Indicator.vala:138
+#, fuzzy
+#| msgid "Unable to connect"
+msgid "Failed to connect"
+msgstr "Incapaz de ligar"
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "Desligado"
+
+#: src/Indicator.vala:145
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Ligado"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Não é possível ligar a esta VPN."
 
@@ -23,32 +72,32 @@ msgstr "Não é possível ligar a esta VPN."
 msgid "Unknown device"
 msgstr "Dispositivo desconhecido"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Tipo desconhecido: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Incapaz de ligar"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "40/64-bit WEP encrypted"
 msgstr "Encriptação WEP 40/64-bit"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 msgid "104/128-bit WEP encrypted"
 msgstr "Encriptação WEP 104/128-bit"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr "WPA encriptada"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr "Encriptada"
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr "Insegura"
 
@@ -56,10 +105,6 @@ msgstr "Insegura"
 #, c-format
 msgid "Virtual network: %s"
 msgstr "Rede virtual: %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "Com cabo"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -78,15 +123,15 @@ msgstr "Modem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "Sem pontos de acesso disponíveis"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "À procura de pontos de acesso…"
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "Sem fios"
 
@@ -134,17 +179,8 @@ msgstr "Definições de Rede…"
 #~ msgid "Hotspot %s"
 #~ msgstr "Hotspot %s"
 
-#~ msgid "Disconnected"
-#~ msgstr "Desligado"
-
-#~ msgid "Connected"
-#~ msgstr "Ligado"
-
 #~ msgid "Failed"
 #~ msgstr "Sem sucesso"
-
-#~ msgid "Connecting"
-#~ msgstr "A ligar"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Cabo desligado"

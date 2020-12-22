@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2020-09-16 14:14+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,56 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-12-09 05:42+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Cableada"
+
+#: src/Indicator.vala:105
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connecting to wired network"
+msgstr "Conectar con una red oculta…"
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, fuzzy, c-format
+#| msgid "Connecting"
+msgid "Connecting to “%s”"
+msgstr "Conectando"
+
+#: src/Indicator.vala:118
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connected to wired network"
+msgstr "Conectar con una red oculta…"
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, fuzzy, c-format
+#| msgid "Connected"
+msgid "Connected to “%s”"
+msgstr "Conectado"
+
+#: src/Indicator.vala:138
+#, fuzzy
+#| msgid "Unable to connect"
+msgid "Failed to connect"
+msgstr "No se puede conectar"
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "Desconectado"
+
+#: src/Indicator.vala:145
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Conectado"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr "No se pudo conectar con esta red privada virtual."
 
@@ -23,32 +72,32 @@ msgstr "No se pudo conectar con esta red privada virtual."
 msgid "Unknown device"
 msgstr "Dispositivo desconocido"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Tipo desconocido: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "No se puede conectar"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "40/64-bit WEP encrypted"
 msgstr "Cifrado WEP de 40/64 bits"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 msgid "104/128-bit WEP encrypted"
 msgstr "Cifrado WEP de 104/128 bits"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr "Cifrado WPA"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr "Cifrada"
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr "No segura"
 
@@ -56,10 +105,6 @@ msgstr "No segura"
 #, c-format
 msgid "Virtual network: %s"
 msgstr "Red virtual: %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "Cableada"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -78,15 +123,15 @@ msgstr "Módem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "No hay puntos de acceso disponibles"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Buscando puntos de acceso…"
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "Conexión inalámbrica"
 
@@ -136,17 +181,8 @@ msgstr "Configuración de red…"
 #~ msgid "Hotspot %s"
 #~ msgstr "Punto de acceso %s"
 
-#~ msgid "Disconnected"
-#~ msgstr "Desconectado"
-
-#~ msgid "Connected"
-#~ msgstr "Conectado"
-
 #~ msgid "Failed"
 #~ msgstr "Falló"
-
-#~ msgid "Connecting"
-#~ msgstr "Conectando"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Cable desconectado"

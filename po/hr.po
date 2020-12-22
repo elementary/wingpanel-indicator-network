@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2016-10-15 17:51+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: \n"
@@ -13,7 +13,54 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Žična mreža"
+
+#: src/Indicator.vala:105
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connecting to wired network"
+msgstr "Poveži se na skrivenu mrežu..."
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, fuzzy, c-format
+#| msgid "Connecting"
+msgid "Connecting to “%s”"
+msgstr "Povezivanje"
+
+#: src/Indicator.vala:118
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connected to wired network"
+msgstr "Poveži se na skrivenu mrežu..."
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, fuzzy, c-format
+#| msgid "Connected"
+msgid "Connected to “%s”"
+msgstr "Povezano"
+
+#: src/Indicator.vala:138
+msgid "Failed to connect"
+msgstr ""
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "Povezivanje prekinuto"
+
+#: src/Indicator.vala:145
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Povezano"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 #, fuzzy
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Ne može se povezati s bežičnom mrežom."
@@ -22,34 +69,34 @@ msgstr "Ne može se povezati s bežičnom mrežom."
 msgid "Unknown device"
 msgstr "Nepoznat uređaj"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Nepoznata vrsta: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 #, fuzzy
 msgid "40/64-bit WEP encrypted"
 msgstr "Ova mreža koristi 40/64-bit WEP šifriranje."
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 #, fuzzy
 msgid "104/128-bit WEP encrypted"
 msgstr "Ova mreža koristi 104/128-bit WEP šifriranje."
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr ""
 
@@ -57,10 +104,6 @@ msgstr ""
 #, c-format
 msgid "Virtual network: %s"
 msgstr "Virtualna mreža: %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "Žična mreža"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -79,15 +122,15 @@ msgstr ""
 msgid "VPN"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "Nema dostupnih pristupnih točaka"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Pretraživanje pristupnih točaka..."
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "Bežična mreža"
 
@@ -141,17 +184,8 @@ msgstr "Mrežne postavke..."
 #~ msgid "Hotspot %s"
 #~ msgstr "Pristupna točka %s"
 
-#~ msgid "Disconnected"
-#~ msgstr "Povezivanje prekinuto"
-
-#~ msgid "Connected"
-#~ msgstr "Povezano"
-
 #~ msgid "Failed"
 #~ msgstr "Neuspjelo"
-
-#~ msgid "Connecting"
-#~ msgstr "Povezivanje"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Kabel je odspojen"
