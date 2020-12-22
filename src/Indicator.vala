@@ -104,7 +104,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 if (active_wired_name == _("Wired")) {
                     display_widget.tooltip_markup = _("Connecting to wired network");
                 } else {
-                    display_widget.tooltip_markup = _("Connecting to “%s”").printf (get_active_wired_name ());
+                    display_widget.tooltip_markup = _("Connecting to “%s”").printf (active_wired_name);
                 }
                 break;
             case Network.State.CONNECTING_WIFI:
@@ -117,7 +117,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 if (active_wired_name == _("Wired")) {
                     display_widget.tooltip_markup = _("Connected to wired network");
                 } else {
-                    display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wired_name ());
+                    display_widget.tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
                 }
                 break;
             case Network.State.CONNECTED_WIFI:
