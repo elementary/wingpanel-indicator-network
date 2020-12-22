@@ -136,7 +136,7 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.FAILED_MOBILE:
                 display_widget.tooltip_markup = _("Failed to connect");
                 break;
-            case Network.State.DISCONNECTED_WIRED:
+            case Network.State.DISCONNECTED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
                 display_widget.tooltip_markup = _("Disconnected");
                 break;

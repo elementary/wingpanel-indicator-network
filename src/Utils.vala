@@ -19,7 +19,6 @@
 public enum Network.State {
     DISCONNECTED,
     WIRED_UNPLUGGED,
-    DISCONNECTED_WIRED, //Deprecated
     DISCONNECTED_AIRPLANE_MODE,
     CONNECTED_WIRED,
     CONNECTED_VPN,
@@ -65,7 +64,6 @@ public enum Network.State {
             case Network.State.FAILED_WIFI:
             case Network.State.FAILED_MOBILE:
                 return 6;
-            case Network.State.DISCONNECTED_WIRED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
                 return 7;
             default:
