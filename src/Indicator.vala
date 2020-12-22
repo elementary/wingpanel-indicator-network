@@ -131,9 +131,8 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
                 display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
                 break;
-            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED:
             case Network.State.FAILED_WIFI:
-            case Network.State.FAILED_VPN:
             case Network.State.FAILED_MOBILE:
                 display_widget.tooltip_markup = _("Failed to connect");
                 break;

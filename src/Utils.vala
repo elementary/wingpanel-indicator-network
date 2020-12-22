@@ -36,10 +36,9 @@ public enum Network.State {
     CONNECTING_MOBILE,
     CONNECTING_WIRED,
     CONNECTING_VPN,
-    FAILED_WIRED,
+    FAILED,
     FAILED_WIFI,
-    FAILED_MOBILE,
-    FAILED_VPN;
+    FAILED_MOBILE;
 
     public int get_priority () {
         switch (this) {
@@ -62,9 +61,8 @@ public enum Network.State {
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
                 return 5;
-            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED:
             case Network.State.FAILED_WIFI:
-            case Network.State.FAILED_VPN:
             case Network.State.FAILED_MOBILE:
                 return 6;
             case Network.State.DISCONNECTED_WIRED:

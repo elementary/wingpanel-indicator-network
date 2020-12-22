@@ -108,7 +108,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                     item = get_item_by_uuid (active_vpn_connection.get_uuid ());
                     break;
                 case NM.VpnConnectionState.FAILED:
-                    vpn_state = State.FAILED_VPN;
+                    vpn_state = State.FAILED;
                     active_vpn_item = null;
                     break;
                 case NM.VpnConnectionState.ACTIVATED:
