@@ -154,7 +154,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 debug ("Active network (Wired): %s".printf (active_wired_name));
                 return active_wired_name;
             }
-        };
+        }
 
         return _("unknown network");
     }
@@ -166,7 +166,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 debug ("Active network (WiFi): %s".printf (active_wifi_name));
                 return active_wifi_name;
             }
-        };
+        }
 
         return _("unknown network");
     }
