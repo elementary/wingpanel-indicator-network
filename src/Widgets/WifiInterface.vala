@@ -84,20 +84,25 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     construct {
         var no_aps = new PlaceholderLabel (_("No Access Points Available"));
 
-        var scanning = new PlaceholderLabel (_("Scanning for Access Points…"));
+        var scanning = new PlaceholderLabel (_("Scanning for Access Points…")) {
+            halign = Gtk.Align.START,
+            hexpand = true
+        };
 
         var spinner = new Gtk.Spinner ();
         spinner.start ();
 
         var scanning_box = new Gtk.Grid () {
             column_spacing = 6,
-            halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER
         };
         scanning_box.add (scanning);
         scanning_box.add (spinner);
 
-        placeholder = new Gtk.Stack ();
+        placeholder = new Gtk.Stack () {
+            margin_end = 12,
+            margin_start = 12
+        };
         placeholder.add_named (no_aps, "no-aps");
         placeholder.add_named (scanning_box, "scanning");
         placeholder.visible_child_name = "no-aps";
