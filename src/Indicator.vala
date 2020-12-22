@@ -150,7 +150,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     private string get_active_wired_name () {
         foreach (unowned Gtk.Widget child in popover_widget.other_box.get_children ()) {
             if (child is Network.EtherInterface) {
-                var active_wired_name = ((Network.EtherInterface) child).active_wired_name;
+                var active_wired_name = ((Network.EtherInterface) child).display_title;
                 debug ("Active network (Wired): %s".printf (active_wired_name));
                 return active_wired_name;
             }

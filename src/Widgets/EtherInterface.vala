@@ -19,8 +19,6 @@
 public class Network.EtherInterface : Network.WidgetNMInterface {
     private Wingpanel.Widgets.Switch ethernet_item;
 
-    public string active_wired_name { get; private set; }
-
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
         ethernet_item = new Wingpanel.Widgets.Switch (display_title);
@@ -64,7 +62,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
                 display_title = name;
             }
         }
-        active_wired_name = display_title;
     }
 
     public override void update () {
