@@ -37,6 +37,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
+        update_tooltip ();
         on_state_changed ();
         start_monitor ();
     }
@@ -72,6 +73,8 @@ public class Network.Indicator : Wingpanel.Indicator {
                     warning ("%s\n", e.message);
                 }
             }
+
+            update_tooltip ();
         });
     }
 
@@ -85,6 +88,87 @@ public class Network.Indicator : Wingpanel.Indicator {
         if (popover_widget != null) {
             popover_widget.closed ();
         }
+    }
+
+    private void update_tooltip () {
+        switch (popover_widget.state) {
+            case Network.State.CONNECTING_WIRED:
+                /* If there's only one active ethernet connection,
+                we get back the string "Wired". We won't want to
+                show the user Connecting to "Wired" so we'll have
+                to show them something else if we get back
+                "Wired" from get_active_wired_name () */
+
+                string active_wired_name = get_active_wired_name ();
+
+                if (active_wired_name == _("Wired")) {
+                    display_widget.tooltip_markup = _("Connecting to wired network");
+                } else {
+                    display_widget.tooltip_markup = _("Connecting to “%s”").printf (active_wired_name);
+                }
+                break;
+            case Network.State.CONNECTING_WIFI:
+            case Network.State.CONNECTING_MOBILE:
+                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wifi_name ())));
+                break;
+            case Network.State.CONNECTED_WIRED:
+                string active_wired_name = get_active_wired_name ();
+
+                if (active_wired_name == _("Wired")) {
+                    display_widget.tooltip_markup = _("Connected to wired network");
+                } else {
+                    display_widget.tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
+                }
+                break;
+            case Network.State.CONNECTED_WIFI:
+            case Network.State.CONNECTED_WIFI_WEAK:
+            case Network.State.CONNECTED_WIFI_OK:
+            case Network.State.CONNECTED_WIFI_GOOD:
+            case Network.State.CONNECTED_WIFI_EXCELLENT:
+            case Network.State.CONNECTED_MOBILE_WEAK:
+            case Network.State.CONNECTED_MOBILE_OK:
+            case Network.State.CONNECTED_MOBILE_GOOD:
+            case Network.State.CONNECTED_MOBILE_EXCELLENT:
+                display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
+                break;
+            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED_WIFI:
+            case Network.State.FAILED_VPN:
+            case Network.State.FAILED_MOBILE:
+                display_widget.tooltip_markup = _("Failed to connect");
+                break;
+            case Network.State.DISCONNECTED_WIRED:
+            case Network.State.DISCONNECTED_AIRPLANE_MODE:
+                display_widget.tooltip_markup = _("Disconnected");
+                break;
+            default:
+                display_widget.tooltip_markup = _("Not connected");
+                break;
+        }
+    }
+
+    private string get_active_wired_name () {
+        foreach (unowned Gtk.Widget child in popover_widget.other_box.get_children ()) {
+            if (child is Network.EtherInterface) {
+                var active_wired_name = ((Network.EtherInterface) child).display_title;
+                debug ("Active network (Wired): %s".printf (active_wired_name));
+                return active_wired_name;
+            }
+        }
+
+        return _("unknown network");
+    }
+
+    private string get_active_wifi_name () {
+        foreach (unowned Gtk.Widget child in popover_widget.wifi_box.get_children ()) {
+            if (child is Network.WifiInterface) {
+                var active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
+                debug ("Active network (WiFi): %s".printf (active_wifi_name));
+                return active_wifi_name;
+            }
+        }
+
+        return _("unknown network");
     }
 }
 
