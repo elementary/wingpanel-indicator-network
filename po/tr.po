@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2020-09-12 23:11+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,56 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "Kablolu"
+
+#: src/Indicator.vala:105
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connecting to wired network"
+msgstr "Gizli Ağa Bağlan…"
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, fuzzy, c-format
+#| msgid "Connecting"
+msgid "Connecting to “%s”"
+msgstr "Bağlanıyor"
+
+#: src/Indicator.vala:118
+#, fuzzy
+#| msgid "Connect to Hidden Network…"
+msgid "Connected to wired network"
+msgstr "Gizli Ağa Bağlan…"
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, fuzzy, c-format
+#| msgid "Connected"
+msgid "Connected to “%s”"
+msgstr "Bağlı"
+
+#: src/Indicator.vala:138
+#, fuzzy
+#| msgid "Unable to connect"
+msgid "Failed to connect"
+msgstr "Bağlantı kurulamıyor"
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "Bağlı değil"
+
+#: src/Indicator.vala:145
+#, fuzzy
+#| msgid "Connected"
+msgid "Not connected"
+msgstr "Bağlı"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr ""
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Bu Sanal Özel Ağ (VPN) ile bağlantı kurulamadı."
 
@@ -23,32 +72,32 @@ msgstr "Bu Sanal Özel Ağ (VPN) ile bağlantı kurulamadı."
 msgid "Unknown device"
 msgstr "Bilinmeyen aygıt"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Bilinmeyen tür: %s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Bağlantı kurulamıyor"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64-bit WEP şifreli"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128-bit WEP şifreli"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr "WPA şifreli"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr "Şifreli"
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr "Güvenli değil"
 
@@ -56,10 +105,6 @@ msgstr "Güvenli değil"
 #, c-format
 msgid "Virtual network: %s"
 msgstr "Sanal ağ: %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "Kablolu"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -78,15 +123,15 @@ msgstr "Modem"
 msgid "VPN"
 msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "Kullanılabilir Erişim Noktası Yok"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Erişim Noktaları Taranıyor…"
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "Kablosuz"
 
@@ -136,17 +181,8 @@ msgstr "Ağ Ayarları…"
 #~ msgid "Hotspot %s"
 #~ msgstr "Hotspot %s"
 
-#~ msgid "Disconnected"
-#~ msgstr "Bağlı değil"
-
-#~ msgid "Connected"
-#~ msgstr "Bağlı"
-
 #~ msgid "Failed"
 #~ msgstr "Başarısız"
-
-#~ msgid "Connecting"
-#~ msgstr "Bağlanıyor"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Kablo takılı değil"

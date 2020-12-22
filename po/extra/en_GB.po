@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2020-04-06 15:10+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -27,14 +27,14 @@ msgstr "Network Indicator"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connect to wireless networks and manage VPNs"
 
-#: data/network.appdata.xml.in:11 data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:18
 msgid "Updated translations"
 msgstr "Updated translations"
 
-#: data/network.appdata.xml.in:16
+#: data/network.appdata.xml.in:17
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Prevent panel icon from showing in the dock"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:27
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
