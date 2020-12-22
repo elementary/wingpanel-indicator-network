@@ -148,7 +148,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_wired_name () {
-        string active_wired_name = "";
+        string active_wired_name = _("unknown network");
         bool found = false;
 
         popover_widget.other_box.get_children ().foreach ((child) => {
@@ -164,7 +164,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_wifi_name () {
-        string active_wifi_name = "";
+        string active_wifi_name = _("unknown network");
         bool found = false;
 
         popover_widget.wifi_box.get_children ().foreach ((child) => {
