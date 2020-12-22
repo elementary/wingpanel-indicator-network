@@ -148,35 +148,27 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_wired_name () {
-        string active_wired_name = _("unknown network");
-        bool found = false;
-
-        popover_widget.other_box.get_children ().foreach ((child) => {
-            if ((child is Network.EtherInterface) && !found) {
-                found = true;
-                active_wired_name = ((Network.EtherInterface) child).active_wired_name;
-
+        foreach (unowned Gtk.Widget child in popover_widget.other_box.get_children ()) {
+            if (child is Network.EtherInterface) {
+                var active_wired_name = ((Network.EtherInterface) child).active_wired_name;
                 debug ("Active network (Wired): %s".printf (active_wired_name));
+                return active_wired_name;
             }
-        });
+        };
 
-        return active_wired_name;
+        return _("unknown network");
     }
 
     private string get_active_wifi_name () {
-        string active_wifi_name = _("unknown network");
-        bool found = false;
-
-        popover_widget.wifi_box.get_children ().foreach ((child) => {
-            if ((child is Network.WifiInterface) && !found) {
-                found = true;
-                active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
-
+        foreach (unowned Gtk.Widget child in popover_widget.wifi_box.get_children ()) {
+            if (child is Network.WifiInterface) {
+                var active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
                 debug ("Active network (WiFi): %s".printf (active_wifi_name));
+                return active_wifi_name;
             }
-        });
+        };
 
-        return active_wifi_name;
+        return _("unknown network");
     }
 }
 
