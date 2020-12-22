@@ -22,7 +22,6 @@ public enum Network.State {
     DISCONNECTED_AIRPLANE_MODE,
     CONNECTED_WIRED,
     CONNECTED_VPN,
-    CONNECTED_WIFI,
     CONNECTED_WIFI_WEAK,
     CONNECTED_WIFI_OK,
     CONNECTED_WIFI_GOOD,
@@ -49,7 +48,6 @@ public enum Network.State {
                 return 2;
             case Network.State.CONNECTED_WIRED:
                 return 3;
-            case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
             case Network.State.CONNECTED_WIFI_GOOD:

@@ -120,7 +120,6 @@ public class Network.Indicator : Wingpanel.Indicator {
                     display_widget.tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
                 }
                 break;
-            case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
             case Network.State.CONNECTED_WIFI_GOOD:
