@@ -109,7 +109,7 @@ public class Network.Indicator : Wingpanel.Indicator {
                 break;
             case Network.State.CONNECTING_WIFI:
             case Network.State.CONNECTING_MOBILE:
-                display_widget.tooltip_markup = Granite.markup_accel_tooltip ({}, _("Connecting to “%s”".printf (get_active_wifi_name ())));
+                display_widget.tooltip_markup = _("Connecting to “%s”").printf (get_active_wifi_name ());
                 break;
             case Network.State.CONNECTED_WIRED:
                 string active_wired_name = get_active_wired_name ();
