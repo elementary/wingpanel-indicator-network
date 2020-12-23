@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-10-11 18:14+0000\n"
+"PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/mr/>\n"
@@ -21,46 +21,38 @@ msgid "Wired"
 msgstr "वायर्ड"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "लपविलेल्या नेटवर्कशी कनेक्ट करा …"
+msgstr "वायर्ड नेटवर्कशी कनेक्ट करत आहे"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
 #, c-format
 msgid "Connecting to “%s”"
-msgstr ""
+msgstr "“%s” शी कनेक्ट करत आहे"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "लपविलेल्या नेटवर्कशी कनेक्ट करा …"
+msgstr "वायर्ड नेटवर्कशी कनेक्ट केले"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
 #, c-format
 msgid "Connected to “%s”"
-msgstr ""
+msgstr "“%s” शी कनेक्ट केले"
 
 #: src/Indicator.vala:138
-#, fuzzy
-#| msgid "Unable to connect"
 msgid "Failed to connect"
-msgstr "कनेक्ट करण्यात अक्षम"
+msgstr "कनेक्ट करण्यात अयशस्वी"
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
-msgstr ""
+msgstr "डिस्कनेक्ट केले"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Unable to connect"
 msgid "Not connected"
-msgstr "कनेक्ट करण्यात अक्षम"
+msgstr "कनेक्ट नाही केले"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "अज्ञात नेटवर्क"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
