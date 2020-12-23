@@ -250,7 +250,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 if (score < best_score) {
                     next_state = inter.state;
                     best_score = score;
-                    extra_info = inter.extra_info;
+                    if (inter is Network.ModemInterface) {
+                        extra_info = ((Network.ModemInterface) inter).extra_info;
+                    }
                 }
             }
 
