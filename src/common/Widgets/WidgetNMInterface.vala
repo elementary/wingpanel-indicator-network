@@ -18,7 +18,6 @@
 public abstract class Network.WidgetNMInterface : Gtk.Box {
     protected NM.Device? device;
     public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
-    public string? extra_info { protected set; get; default = null; }
     public string display_title { get; protected set; default = _("Unknown device"); }
 
     public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }

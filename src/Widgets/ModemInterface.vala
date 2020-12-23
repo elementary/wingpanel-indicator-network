@@ -18,6 +18,8 @@
  */
 
 public class Network.ModemInterface : Network.WidgetNMInterface {
+    public string? extra_info { get; private set; default = null; }
+
     private Wingpanel.Widgets.Switch modem_item;
     private DBusObjectManagerClient? modem_manager;
 
