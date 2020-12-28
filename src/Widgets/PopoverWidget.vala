@@ -26,8 +26,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    private Gtk.Box other_box;
-    private Gtk.Box wifi_box;
+    public Gtk.Box other_box { get; private set; }
+    public Gtk.Box wifi_box { get; private set; }
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
 
@@ -250,7 +250,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 if (score < best_score) {
                     next_state = inter.state;
                     best_score = score;
-                    extra_info = inter.extra_info;
+                    if (inter is Network.ModemInterface) {
+                        extra_info = ((Network.ModemInterface) inter).extra_info;
+                    }
                 }
             }
 

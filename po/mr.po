@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-10 19:56+0000\n"
-"PO-Revision-Date: 2020-10-11 18:14+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/mr/>\n"
@@ -15,7 +15,46 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/common/Widgets/VpnMenuItem.vala:55
+#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Widgets/EtherInterface.vala:60
+msgid "Wired"
+msgstr "वायर्ड"
+
+#: src/Indicator.vala:105
+msgid "Connecting to wired network"
+msgstr "वायर्ड नेटवर्कशी कनेक्ट करत आहे"
+
+#: src/Indicator.vala:107 src/Indicator.vala:112
+#, c-format
+msgid "Connecting to “%s”"
+msgstr "“%s” शी कनेक्ट करत आहे"
+
+#: src/Indicator.vala:118
+msgid "Connected to wired network"
+msgstr "वायर्ड नेटवर्कशी कनेक्ट केले"
+
+#: src/Indicator.vala:120 src/Indicator.vala:132
+#, c-format
+msgid "Connected to “%s”"
+msgstr "“%s” शी कनेक्ट केले"
+
+#: src/Indicator.vala:138
+msgid "Failed to connect"
+msgstr "कनेक्ट करण्यात अयशस्वी"
+
+#: src/Indicator.vala:142
+msgid "Disconnected"
+msgstr "डिस्कनेक्ट केले"
+
+#: src/Indicator.vala:145
+msgid "Not connected"
+msgstr "कनेक्ट नाही केले"
+
+#: src/Indicator.vala:159 src/Indicator.vala:171
+msgid "unknown network"
+msgstr "अज्ञात नेटवर्क"
+
+#: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
 msgstr "व्हर्च्युअल प्रायव्हेट नेटवर्क कनेक्ट केले जाऊ शकत नाही."
 
@@ -23,32 +62,32 @@ msgstr "व्हर्च्युअल प्रायव्हेट ने�
 msgid "Unknown device"
 msgstr "अज्ञात उपकरण"
 
-#: src/common/Widgets/WidgetNMInterface.vala:37
+#: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
 msgid "Unknown type: %s "
 msgstr "अज्ञात प्रकारः%s "
 
-#: src/common/Widgets/WifiMenuItem.vala:64
+#: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "कनेक्ट करण्यात अक्षम"
 
-#: src/common/Widgets/WifiMenuItem.vala:136
+#: src/common/Widgets/WifiMenuItem.vala:142
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64-बिट डब्ल्यूईपी कूटबद्ध"
 
-#: src/common/Widgets/WifiMenuItem.vala:139
+#: src/common/Widgets/WifiMenuItem.vala:145
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128-बिट डब्ल्यूईपी कूटबद्ध"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
 msgstr "डब्ल्यूपीए कूटबद्ध"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
 msgstr "कूटबद्ध"
 
-#: src/common/Widgets/WifiMenuItem.vala:147
+#: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
 msgstr "असुरक्षित"
 
@@ -56,10 +95,6 @@ msgstr "असुरक्षित"
 #, c-format
 msgid "Virtual network: %s"
 msgstr "व्हर्च्युअल नेटवर्कः %s"
-
-#: src/Widgets/EtherInterface.vala:60
-msgid "Wired"
-msgstr "वायर्ड"
 
 #: src/Widgets/ModemInterface.vala:83
 #, c-format
@@ -78,15 +113,15 @@ msgstr "मोडेम"
 msgid "VPN"
 msgstr "व्हीपीएन"
 
-#: src/Widgets/WifiInterface.vala:85
+#: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
 msgstr "कोणतेही प्रवेश पॉईंट्स उपलब्ध नाहीत"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "प्रवेश पॉइंटसाठी स्कॅन करत आहे …"
 
-#: src/Widgets/WifiInterface.vala:130
+#: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
 msgstr "वायरलेस"
 

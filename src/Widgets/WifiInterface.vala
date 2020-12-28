@@ -22,6 +22,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public NM.DeviceWifi? wifi_device;
     public bool hidden_sensitivity { get; set; default = true; }
 
+    public string active_ap_name { get; private set; }
+
     private Wingpanel.Widgets.Switch wifi_item;
     private Gtk.Revealer revealer;
 
@@ -84,20 +86,25 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     construct {
         var no_aps = new PlaceholderLabel (_("No Access Points Available"));
 
-        var scanning = new PlaceholderLabel (_("Scanning for Access Points…"));
+        var scanning = new PlaceholderLabel (_("Scanning for Access Points…")) {
+            halign = Gtk.Align.START,
+            hexpand = true
+        };
 
         var spinner = new Gtk.Spinner ();
         spinner.start ();
 
         var scanning_box = new Gtk.Grid () {
             column_spacing = 6,
-            halign = Gtk.Align.CENTER,
             valign = Gtk.Align.CENTER
         };
         scanning_box.add (scanning);
         scanning_box.add (spinner);
 
-        placeholder = new Gtk.Stack ();
+        placeholder = new Gtk.Stack () {
+            margin_end = 12,
+            margin_start = 12
+        };
         placeholder.add_named (no_aps, "no-aps");
         placeholder.add_named (scanning_box, "scanning");
         placeholder.visible_child_name = "no-aps";
@@ -451,7 +458,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             blank_item.set_active (true);
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
-            debug ("Active ap: %s", NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ()));
+            active_ap_name = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
+            debug ("Active ap: %s", active_ap_name);
 
             bool found = false;
             foreach (weak Gtk.Widget w in wifi_list.get_children ()) {

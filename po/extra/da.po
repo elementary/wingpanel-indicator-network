@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-14 15:50+0000\n"
+"POT-Creation-Date: 2020-12-22 22:19+0000\n"
 "PO-Revision-Date: 2020-05-27 12:11+0000\n"
 "Last-Translator: Rantyrant <diseasemonger@gmail.com>\n"
 "Language-Team: Danish <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,14 +27,14 @@ msgstr "Netværks Indikator"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Opret forbindelse til trådløse netværk og administrer VPN'er"
 
-#: data/network.appdata.xml.in:11 data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:18
 msgid "Updated translations"
 msgstr "Opdaterede oversættelser"
 
-#: data/network.appdata.xml.in:16
+#: data/network.appdata.xml.in:17
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Undgå, at panelikonet vises i dokken"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:27
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
