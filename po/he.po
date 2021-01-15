@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-10-04 13:14+0000\n"
+"PO-Revision-Date: 2020-12-29 08:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/he/>\n"
@@ -21,48 +21,38 @@ msgid "Wired"
 msgstr "קווי"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "התחברות לרשת נסתרת…"
+msgstr "התחברות לרשת קווית"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "בהתחברות"
+msgstr "בהתחברות אל „%s”"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "התחברות לרשת נסתרת…"
+msgstr "יש חיבור לרשת קווית"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "יש חיבור"
+msgstr "יש חיבור אל „%s”"
 
 #: src/Indicator.vala:138
-#, fuzzy
-#| msgid "Unable to connect"
 msgid "Failed to connect"
-msgstr "לא ניתן להתחבר"
+msgstr "ההתחברות נכשלה"
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
-msgstr "אין חיבור"
+msgstr "החיבור מנותק"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "יש חיבור"
+msgstr "אין חיבור"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "רשת בלתי ידועה"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
