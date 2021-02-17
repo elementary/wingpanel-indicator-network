@@ -17,7 +17,7 @@ add_project_arguments(
     language: 'vala'
 )
 
-wingpanel_dep = dependency('wingpanel-2.0')
+wingpanel_dep = dependency('wingpanel')
 wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
 
 shared_module(
