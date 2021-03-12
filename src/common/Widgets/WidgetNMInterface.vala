@@ -20,7 +20,14 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
     public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
     public string display_title { get; protected set; default = _("Unknown device"); }
 
-    public Wingpanel.Widgets.Separator sep { get; private set; default = new Wingpanel.Widgets.Separator (); }
+    public Gtk.Separator sep { get; construct; }
+
+    construct {
+        sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+    }
 
     public bool is_device (NM.Device device) {
         return device == this.device;
