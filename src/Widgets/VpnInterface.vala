@@ -29,7 +29,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     private VpnMenuItem? active_vpn_item;
     private VpnMenuItem? blank_item = null;
 
-    private Wingpanel.Widgets.Switch vpn_item;
+    private Granite.SwitchModelButton vpn_item;
     private Gtk.Revealer revealer;
 
     public VpnInterface (NM.Client nm_client) {
@@ -49,7 +49,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         };
         vpn_list.add (blank_item);
 
-        vpn_item = new Wingpanel.Widgets.Switch (display_title);
+        vpn_item = new Granite.SwitchModelButton (display_title);
         vpn_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null);
