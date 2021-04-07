@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-09-12 23:11+0000\n"
+"PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/uk/>\n"
@@ -11,8 +11,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
@@ -22,32 +22,24 @@ msgid "Wired"
 msgstr "Дротова"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Зʼєднатися з прихованою мережею…"
+msgstr "Підʼєднатися до провідної мережі"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "З'єднання"
+msgstr "З'єднання з «%s»"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Зʼєднатися з прихованою мережею…"
+msgstr "Підʼєднано до провідної мережі"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "З'єднано"
+msgstr "З'єднано з «%s»"
 
 #: src/Indicator.vala:138
-#, fuzzy
-#| msgid "Unable to connect"
 msgid "Failed to connect"
 msgstr "Не вдалося з'єднатися"
 
@@ -56,14 +48,12 @@ msgid "Disconnected"
 msgstr "Роз'єднано"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "З'єднано"
+msgstr "Не під'єднано"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "невідома мережа"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."

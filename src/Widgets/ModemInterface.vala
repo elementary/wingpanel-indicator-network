@@ -1,5 +1,5 @@
 /*-
- * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
+ * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -20,7 +20,7 @@
 public class Network.ModemInterface : Network.WidgetNMInterface {
     public string? extra_info { get; private set; default = null; }
 
-    private Wingpanel.Widgets.Switch modem_item;
+    private Granite.SwitchModelButton modem_item;
     private DBusObjectManagerClient? modem_manager;
 
     private uint32 _signal_quality;
@@ -58,10 +58,10 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
 
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
-        modem_item = new Wingpanel.Widgets.Switch (display_title);
+        modem_item = new Granite.SwitchModelButton (display_title);
 
         notify["display-title"].connect (() => {
-            modem_item.caption = display_title;
+            modem_item.text = display_title;
         });
 
         modem_item.get_style_context ().add_class ("h4");

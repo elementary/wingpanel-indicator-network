@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-12-23 00:49+0000\n"
+"PO-Revision-Date: 2021-02-19 01:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:104 src/Indicator.vala:117
@@ -27,7 +27,7 @@ msgstr "有線ネットワークに接続試行中"
 #: src/Indicator.vala:107 src/Indicator.vala:112
 #, c-format
 msgid "Connecting to “%s”"
-msgstr "“%s”に接続試行中"
+msgstr "“%s” に接続試行中"
 
 #: src/Indicator.vala:118
 msgid "Connected to wired network"
@@ -36,7 +36,7 @@ msgstr "有線ネットワークに接続済み"
 #: src/Indicator.vala:120 src/Indicator.vala:132
 #, c-format
 msgid "Connected to “%s”"
-msgstr "“%s”に接続済み"
+msgstr "“%s” に接続済み"
 
 #: src/Indicator.vala:138
 msgid "Failed to connect"

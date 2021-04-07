@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-07-17 07:12+0000\n"
-"Last-Translator: Sinan Decron <intenfinitia@gmail.com>\n"
+"PO-Revision-Date: 2021-03-05 00:17+0000\n"
+"Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -33,7 +33,7 @@ msgstr "Çeviriler güncellendi"
 
 #: data/network.appdata.xml.in:17
 msgid "Prevent panel icon from showing in the dock"
-msgstr "Panel simgesinin başlatıcı üzerinde görünmesini engelle"
+msgstr "Panel simgesinin dock üzerinde görünmesini engelle"
 
 #: data/network.appdata.xml.in:27
 msgid "elementary, Inc."

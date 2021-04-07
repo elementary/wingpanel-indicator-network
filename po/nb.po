@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2018-07-21 18:32+0000\n"
-"Last-Translator: Nils K <slx@nilsk.net>\n"
-"Language-Team: Norwegian Bokmål <https://weblate.elementary.io/projects/"
+"PO-Revision-Date: 2021-02-14 05:24+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/nb/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2017-04-05 07:45+0000\n"
 
 #: src/Indicator.vala:104 src/Indicator.vala:117
@@ -24,43 +24,37 @@ msgstr "Kablet"
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Koble til skjult nettverk…"
+msgstr "Tilkobling til kablet nettverk"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Kobler til"
+msgstr "Kobler til «%s»"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Koble til skjult nettverk…"
+msgstr "Koblet til kablet nettverk"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Tilkoblet"
+msgstr "Koblet til «%s»"
 
 #: src/Indicator.vala:138
 msgid "Failed to connect"
-msgstr ""
+msgstr "Klarte ikke å koble til"
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
 msgstr "Frakoblet"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Tilkoblet"
+msgstr "Ikke tilkoblet"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "ukjent nettverk"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
@@ -77,31 +71,27 @@ msgstr "Ukjent type: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Klarte ikke å koble til"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Dette nettverket bruker 40/64-biters WEP-kryptering"
+msgstr "40/64-biters WEP-kryptering"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Dette nettverket bruker 104/128-biters WEP-kryptering"
+msgstr "104/128-biters WEP-kryptering"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "WPA-kryptert"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Kryptert"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Usikret"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format

@@ -1,5 +1,5 @@
 /*
-* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
+* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -24,7 +24,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
     public string active_ap_name { get; private set; }
 
-    private Wingpanel.Widgets.Switch wifi_item;
+    private Granite.SwitchModelButton wifi_item;
     private Gtk.Revealer revealer;
 
     private RFKillManager rfkill;
@@ -69,9 +69,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         update ();
 
-        wifi_item.caption = display_title;
+        wifi_item.text = display_title;
         notify["display-title"].connect ( () => {
-            wifi_item.caption = display_title;
+            wifi_item.text = display_title;
         });
 
         wifi_item.notify["active"].connect (() => {
@@ -114,7 +114,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_list.set_sort_func (sort_func);
         wifi_list.set_placeholder (placeholder);
 
-        wifi_item = new Wingpanel.Widgets.Switch ("");
+        wifi_item = new Granite.SwitchModelButton ("");
         wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null) {

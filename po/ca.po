@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2020-09-12 17:14+0000\n"
+"PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ca/>\n"
@@ -21,48 +21,38 @@ msgid "Wired"
 msgstr "Amb fil"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Connecta't a una xarxa oculta…"
+msgstr "Es connecta a una xarxa amb fil"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Connectant"
+msgstr "Es connecta a %s"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Connecta't a una xarxa oculta…"
+msgstr "Connectat a una xarxa amb fil"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Connectat"
+msgstr "Connectat a %s"
 
 #: src/Indicator.vala:138
-#, fuzzy
-#| msgid "Unable to connect"
 msgid "Failed to connect"
-msgstr "No es pot connectar."
+msgstr "Ha fallat la connexió."
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
 msgstr "Desconnectat"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Connectat"
+msgstr "No connectat"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "xarxa desconeguda"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
