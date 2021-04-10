@@ -281,12 +281,14 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
 
     private class ConnectionRevealer : Gtk.Revealer {
         public Gtk.Image image { get; construct set; }
+        private string _icon_name;
 
         public ConnectionRevealer.from_icon_name (string icon_name) {
-            image = new Gtk.Image.from_icon_name (icon_name, Gtk.IconSize.LARGE_TOOLBAR);
+            _icon_name = icon_name;
         }
 
         construct {
+            image = new Gtk.Image.from_icon_name (_icon_name, Gtk.IconSize.LARGE_TOOLBAR);
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
             add (image);
