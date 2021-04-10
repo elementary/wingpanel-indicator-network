@@ -50,7 +50,9 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
 
         wired_revealer = new ConnectionRevealer.from_icon_name ("network-wired-offline-symbolic");
 
-        network_revealer = new ConnectionRevealer.from_icon_name ("network-offline-symbolic");
+        network_revealer = new ConnectionRevealer.from_icon_name ("network-offline-symbolic") {
+            reveal_child = true
+        };
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
@@ -286,7 +288,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
 
         construct {
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
-            reveal_child = true;
 
             add (image);
         }
