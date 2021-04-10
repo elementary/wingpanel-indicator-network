@@ -104,6 +104,11 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             wired_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
+        case Network.State.DISCONNECTED_WIRED:
+            wired_revealer.image.icon_name = "network-wired-disconnected";
+            wired_connection_state = ConnectionState.DISCONNECTED;
+            update_icons ();
+            break;
         case Network.State.CONNECTED_VPN:
             vpn_revealer.reveal_child = true;
             break;
