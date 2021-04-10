@@ -1,5 +1,5 @@
 /*
-* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
+* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -17,14 +17,14 @@
 */
 
 public class Network.EtherInterface : Network.WidgetNMInterface {
-    private Wingpanel.Widgets.Switch ethernet_item;
+    private Granite.SwitchModelButton ethernet_item;
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
-        ethernet_item = new Wingpanel.Widgets.Switch (display_title);
+        ethernet_item = new Granite.SwitchModelButton (display_title);
 
         notify["display-title"].connect (() => {
-            ethernet_item.caption = display_title;
+            ethernet_item.text = display_title;
         });
 
         ethernet_item.get_style_context ().add_class ("h4");

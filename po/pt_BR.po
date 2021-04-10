@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2018-09-22 00:11+0000\n"
-"Last-Translator: Rodrigo Oliveira <rod.oliveira@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://weblate.elementary.io/projects/"
+"PO-Revision-Date: 2021-03-12 20:18+0000\n"
+"Last-Translator: Leonardo <leonardo@elementary.io>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 3.0.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:104 src/Indicator.vala:117
@@ -21,46 +21,38 @@ msgid "Wired"
 msgstr "Com fio"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Conectar à rede oculta…"
+msgstr "Conectando à rede com fio"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Conectando"
+msgstr "Conectando a \"%s\""
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Conectar à rede oculta…"
+msgstr "Conectado à rede com fio"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Conectado"
+msgstr "Conectado a \"%s\""
 
 #: src/Indicator.vala:138
 msgid "Failed to connect"
-msgstr ""
+msgstr "Falha ao conectar"
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
 msgstr "Desconectado"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Conectado"
+msgstr "Desconectado"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "rede desconhecida"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
@@ -77,31 +69,27 @@ msgstr "Tipo desconhecido: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Não é possível conectar"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
 msgstr "Esta rede usa criptografia 40/64-bit WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
 msgstr "Esta rede usa criptografia 104/128-bit WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Esta rede usa WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Criptografado"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Inseguro"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
