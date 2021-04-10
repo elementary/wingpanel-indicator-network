@@ -46,9 +46,9 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         CONNECTED = 2
     }
 
-    private ConnectionState cellular_connected = ConnectionState.DISCONNECTED;
-    private ConnectionState wifi_connected = ConnectionState.DISCONNECTED;
-    private ConnectionState wired_connected = ConnectionState.DISCONNECTED;
+    private ConnectionState cellular_connection_state = ConnectionState.DISCONNECTED;
+    private ConnectionState wifi_connection_state = ConnectionState.DISCONNECTED;
+    private ConnectionState wired_connection_state = ConnectionState.DISCONNECTED;
 
     construct {
         cellular_image = new Gtk.Image.from_icon_name ("network-cellular-offline-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
@@ -127,16 +127,16 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         switch (state) {
         case Network.State.DISCONNECTED:
             network_image.icon_name = "network-offline-symbolic";
-            cellular_connected = ConnectionState.DISCONNECTED;
-            wifi_connected = ConnectionState.DISCONNECTED;
-            wired_connected = ConnectionState.DISCONNECTED;
+            cellular_connection_state = ConnectionState.DISCONNECTED;
+            wifi_connection_state = ConnectionState.DISCONNECTED;
+            wired_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
         case Network.State.DISCONNECTED_AIRPLANE_MODE:
             network_image.icon_name = "airplane-mode-symbolic";
-            cellular_connected = ConnectionState.DISCONNECTED;
-            wifi_connected = ConnectionState.DISCONNECTED;
-            wired_connected = ConnectionState.DISCONNECTED;
+            cellular_connection_state = ConnectionState.DISCONNECTED;
+            wifi_connection_state = ConnectionState.DISCONNECTED;
+            wired_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_VPN:
@@ -147,37 +147,37 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             break;
         case Network.State.CONNECTING_WIRED:
             wired_image.icon_name = "network-wired-acquiring-symbolic";
-            wired_connected = ConnectionState.CONNECTING;
+            wired_connection_state = ConnectionState.CONNECTING;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIRED:
             wired_image.icon_name = "network-wired-%ssymbolic".printf (secure? "secure-" : "");
-            wired_connected = ConnectionState.CONNECTED;
+            wired_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIFI:
             wifi_image.icon_name = "network-wireless-connected-symbolic";
-            wifi_connected = ConnectionState.CONNECTED;
+            wifi_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIFI_WEAK:
             wifi_image.icon_name = "network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
-            wifi_connected = ConnectionState.CONNECTED;
+            wifi_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIFI_OK:
             wifi_image.icon_name = "network-wireless-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
-            wifi_connected = ConnectionState.CONNECTED;
+            wifi_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIFI_GOOD:
             wifi_image.icon_name = "network-wireless-signal-good-%ssymbolic".printf (secure? "secure-" : "");
-            wifi_connected = ConnectionState.CONNECTED;
+            wifi_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_WIFI_EXCELLENT:
             wifi_image.icon_name = "network-wireless-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
-            wifi_connected = ConnectionState.CONNECTED;
+            wifi_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTING_WIFI:
@@ -199,29 +199,29 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
                     break;
                 }
                 wifi_image.icon_name = "network-wireless-signal-" + strength + (secure? "-secure" : "") + "-symbolic";
-                wifi_connected = ConnectionState.CONNECTING;
+                wifi_connection_state = ConnectionState.CONNECTING;
                 update_icons ();
                 return true;
             });
             break;
         case Network.State.CONNECTED_MOBILE_WEAK:
             cellular_image.icon_name = "network-cellular-signal-weak-%ssymbolic".printf (secure ? "secure-" : "");
-            cellular_connected = ConnectionState.CONNECTED;
+            cellular_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_MOBILE_OK:
             cellular_image.icon_name = "network-cellular-signal-ok-%ssymbolic".printf (secure ? "secure-" : "");
-            cellular_connected = ConnectionState.CONNECTED;
+            cellular_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_MOBILE_GOOD:
             cellular_image.icon_name = "network-cellular-signal-good-%ssymbolic".printf (secure ? "secure-" : "");
-            cellular_connected = ConnectionState.CONNECTED;
+            cellular_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTED_MOBILE_EXCELLENT:
             cellular_image.icon_name = "network-cellular-signal-excellent-%ssymbolic".printf (secure ? "secure-" : "");
-            cellular_connected = ConnectionState.CONNECTED;
+            cellular_connection_state = ConnectionState.CONNECTED;
             update_icons ();
             break;
         case Network.State.CONNECTING_MOBILE:
@@ -244,32 +244,32 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
                 }
 
                 cellular_image.icon_name = "network-cellular-signal-" + strength + (secure ? "secure-" : "") + "-symbolic";
-                cellular_connected = ConnectionState.CONNECTING;
+                cellular_connection_state = ConnectionState.CONNECTING;
                 update_icons ();
                 return true;
             });
             break;
         case Network.State.FAILED_MOBILE:
             cellular_image.icon_name = "network-cellular-offline-symbolic";
-            cellular_connected = ConnectionState.DISCONNECTED;
+            cellular_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
         case Network.State.FAILED_WIFI:
             wifi_image.icon_name = "network-wireless-offline-symbolic";
-            wifi_connected = ConnectionState.DISCONNECTED;
+            wifi_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
         case Network.State.FAILED_WIRED:
         case Network.State.WIRED_UNPLUGGED:
             wired_image.icon_name = "network-wired-offline-symbolic";
-            wired_connected = ConnectionState.DISCONNECTED;
+            wired_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             break;
         default:
             network_image.icon_name = "network-offline-symbolic";
-            cellular_connected = ConnectionState.DISCONNECTED;
-            wifi_connected = ConnectionState.DISCONNECTED;
-            wired_connected = ConnectionState.DISCONNECTED;
+            cellular_connection_state = ConnectionState.DISCONNECTED;
+            wifi_connection_state = ConnectionState.DISCONNECTED;
+            wired_connection_state = ConnectionState.DISCONNECTED;
             update_icons ();
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
@@ -277,7 +277,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     }
 
     private void update_icons () {
-        if ((cellular_connected + wifi_connected + wired_connected) > 0) {
+        if ((cellular_connection_state + wifi_connection_state + wired_connection_state) > 0) {
             network_revealer.reveal_child = false;
         } else {
             cellular_revealer.reveal_child = false;
@@ -288,19 +288,19 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             return;
         }
 
-        if (cellular_connected > 0) {
+        if (cellular_connection_state > 0) {
             cellular_revealer.reveal_child = true;
         } else {
             cellular_revealer.reveal_child = false;
         }
 
-        if (wifi_connected > 0) {
+        if (wifi_connection_state > 0) {
             wifi_revealer.reveal_child = true;
         } else {
             wifi_revealer.reveal_child = false;
         }
 
-        if (wired_connected > 0) {
+        if (wired_connection_state > 0) {
             wired_revealer.reveal_child = true;
         } else {
             wired_revealer.reveal_child = false;
