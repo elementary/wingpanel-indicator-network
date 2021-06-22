@@ -68,9 +68,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         case Network.State.CONNECTED_WIRED:
             image.icon_name = "network-wired-%ssymbolic".printf (secure? "secure-" : "");
             break;
-        case Network.State.CONNECTED_WIFI:
-            image.icon_name = "network-wireless-connected-symbolic";
-            break;
         case Network.State.CONNECTED_WIFI_WEAK:
             image.icon_name = "network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
             break;

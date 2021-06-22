@@ -120,7 +120,6 @@ public class Network.Indicator : Wingpanel.Indicator {
                     display_widget.tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
                 }
                 break;
-            case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
             case Network.State.CONNECTED_WIFI_GOOD:
@@ -131,13 +130,12 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
                 display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
                 break;
-            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED:
             case Network.State.FAILED_WIFI:
-            case Network.State.FAILED_VPN:
             case Network.State.FAILED_MOBILE:
                 display_widget.tooltip_markup = _("Failed to connect");
                 break;
-            case Network.State.DISCONNECTED_WIRED:
+            case Network.State.DISCONNECTED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
                 display_widget.tooltip_markup = _("Disconnected");
                 break;

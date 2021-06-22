@@ -19,11 +19,9 @@
 public enum Network.State {
     DISCONNECTED,
     WIRED_UNPLUGGED,
-    DISCONNECTED_WIRED, //Deprecated
     DISCONNECTED_AIRPLANE_MODE,
     CONNECTED_WIRED,
     CONNECTED_VPN,
-    CONNECTED_WIFI,
     CONNECTED_WIFI_WEAK,
     CONNECTED_WIFI_OK,
     CONNECTED_WIFI_GOOD,
@@ -36,10 +34,9 @@ public enum Network.State {
     CONNECTING_MOBILE,
     CONNECTING_WIRED,
     CONNECTING_VPN,
-    FAILED_WIRED,
+    FAILED,
     FAILED_WIFI,
-    FAILED_MOBILE,
-    FAILED_VPN;
+    FAILED_MOBILE;
 
     public int get_priority () {
         switch (this) {
@@ -51,7 +48,6 @@ public enum Network.State {
                 return 2;
             case Network.State.CONNECTED_WIRED:
                 return 3;
-            case Network.State.CONNECTED_WIFI:
             case Network.State.CONNECTED_WIFI_WEAK:
             case Network.State.CONNECTED_WIFI_OK:
             case Network.State.CONNECTED_WIFI_GOOD:
@@ -62,12 +58,10 @@ public enum Network.State {
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
                 return 5;
-            case Network.State.FAILED_WIRED:
+            case Network.State.FAILED:
             case Network.State.FAILED_WIFI:
-            case Network.State.FAILED_VPN:
             case Network.State.FAILED_MOBILE:
                 return 6;
-            case Network.State.DISCONNECTED_WIRED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
                 return 7;
             default:

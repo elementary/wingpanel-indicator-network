@@ -72,7 +72,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         case NM.DeviceState.FAILED:
             ethernet_item.sensitive = false;
             ethernet_item.active = false;
-            state = State.FAILED_WIRED;
+            state = State.FAILED;
             break;
 
         case NM.DeviceState.UNAVAILABLE:

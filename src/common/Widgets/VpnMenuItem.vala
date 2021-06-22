@@ -103,7 +103,7 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         hide_item (spinner);
 
         switch (vpn_state) {
-            case State.FAILED_VPN:
+            case State.FAILED:
                 show_item (error_img);
                 break;
             case State.CONNECTING_VPN:
