@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-22 22:19+0000\n"
-"PO-Revision-Date: 2021-03-05 00:17+0000\n"
+"PO-Revision-Date: 2021-07-11 16:10+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@pm.me>\n"
 "Language-Team: Sinhala <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/si/>\n"
@@ -21,46 +21,38 @@ msgid "Wired"
 msgstr "රැහැන් සහිත"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "සැඟවුණු ජාලයකට සම්බන්ධ වන්න..."
+msgstr "රැහැන් සහිත ජාලයට සම්බන්ධ වෙමින්"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "සම්බන්ධ වෙමින්"
+msgstr "“%s” වෙත සම්බන්ධ වෙමින්"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "සැඟවුණු ජාලයකට සම්බන්ධ වන්න..."
+msgstr "රැහැන් සහිත ජාලයට සම්බන්ධයි"
 
 #: src/Indicator.vala:120 src/Indicator.vala:132
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "සම්බන්ධ විය"
+msgstr "“%s” ට සම්බන්ධයි"
 
 #: src/Indicator.vala:138
 msgid "Failed to connect"
-msgstr ""
+msgstr "සම්බන්ධ වීමට අසමත් විය"
 
 #: src/Indicator.vala:142
 msgid "Disconnected"
-msgstr "විසන්ධි විය"
+msgstr "විසන්ධි යි"
 
 #: src/Indicator.vala:145
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "සම්බන්ධ විය"
+msgstr "සම්බන්ධ වී නැත"
 
 #: src/Indicator.vala:159 src/Indicator.vala:171
 msgid "unknown network"
-msgstr ""
+msgstr "නොදන්නා ජාලය කි"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
@@ -68,7 +60,7 @@ msgstr ""
 
 #: src/common/Widgets/WidgetNMInterface.vala:22
 msgid "Unknown device"
-msgstr "නොදන්නා උපාංගයක්"
+msgstr "නොදන්නා උපාංගය කි"
 
 #: src/common/Widgets/WidgetNMInterface.vala:34
 #, c-format
@@ -135,11 +127,11 @@ msgstr "‍රැහැන් රහිත"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
-msgstr "සැඟවුණු ජාලයකට සම්බන්ධ වන්න..."
+msgstr "සැඟවුණු ජාලයකට සම්බන්ධ වන්න…"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "ජාල සැකසුම්..."
+msgstr "ජාල සැකසුම්…"
 
 #~ msgid "Network"
 #~ msgstr "ජාලය"
