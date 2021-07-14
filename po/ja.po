@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2021-02-19 01:23+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -33,24 +33,24 @@ msgstr "“%s” に接続試行中"
 msgid "Connected to wired network"
 msgstr "有線ネットワークに接続済み"
 
-#: src/Indicator.vala:120 src/Indicator.vala:132
+#: src/Indicator.vala:120 src/Indicator.vala:131
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” に接続済み"
 
-#: src/Indicator.vala:138
+#: src/Indicator.vala:136
 msgid "Failed to connect"
 msgstr "接続に失敗"
 
-#: src/Indicator.vala:142
+#: src/Indicator.vala:140
 msgid "Disconnected"
 msgstr "未接続"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:143
 msgid "Not connected"
 msgstr "接続していません"
 
-#: src/Indicator.vala:159 src/Indicator.vala:171
+#: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
 msgstr "不明なネットワーク"
 
@@ -58,11 +58,11 @@ msgstr "不明なネットワーク"
 msgid "This Virtual Private Network could not be connected to."
 msgstr "この仮想プライベートネットワークに接続できませんでした。"
 
-#: src/common/Widgets/WidgetNMInterface.vala:22
+#: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "不明なデバイス"
 
-#: src/common/Widgets/WidgetNMInterface.vala:34
+#: src/common/Widgets/WidgetNMInterface.vala:40
 #, c-format
 msgid "Unknown type: %s "
 msgstr "不明な種類: %s "
@@ -96,16 +96,16 @@ msgstr "安全ではありません"
 msgid "Virtual network: %s"
 msgstr "仮想ネットワーク: %s"
 
-#: src/Widgets/ModemInterface.vala:83
+#: src/Widgets/ModemInterface.vala:85
 #, c-format
 msgid "Mobile Broadband: %s"
 msgstr "モバイルブロードバンド: %s"
 
-#: src/Widgets/ModemInterface.vala:85
+#: src/Widgets/ModemInterface.vala:87
 msgid "Mobile Broadband"
 msgstr "モバイルブロードバンド"
 
-#: src/Widgets/ModemInterface.vala:91
+#: src/Widgets/ModemInterface.vala:93
 msgid "Modem"
 msgstr "モデム"
 

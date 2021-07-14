@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -33,24 +33,24 @@ msgstr "Es connecta a %s"
 msgid "Connected to wired network"
 msgstr "Connectat a una xarxa amb fil"
 
-#: src/Indicator.vala:120 src/Indicator.vala:132
+#: src/Indicator.vala:120 src/Indicator.vala:131
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Connectat a %s"
 
-#: src/Indicator.vala:138
+#: src/Indicator.vala:136
 msgid "Failed to connect"
 msgstr "Ha fallat la connexió."
 
-#: src/Indicator.vala:142
+#: src/Indicator.vala:140
 msgid "Disconnected"
 msgstr "Desconnectat"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:143
 msgid "Not connected"
 msgstr "No connectat"
 
-#: src/Indicator.vala:159 src/Indicator.vala:171
+#: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
 msgstr "xarxa desconeguda"
 
@@ -58,11 +58,11 @@ msgstr "xarxa desconeguda"
 msgid "This Virtual Private Network could not be connected to."
 msgstr "No s'ha pogut connectar amb aquesta xarxa privada virtual."
 
-#: src/common/Widgets/WidgetNMInterface.vala:22
+#: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "Dispositiu desconegut"
 
-#: src/common/Widgets/WidgetNMInterface.vala:34
+#: src/common/Widgets/WidgetNMInterface.vala:40
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Tipus desconegut: %s "
@@ -96,16 +96,16 @@ msgstr "Sense seguretat"
 msgid "Virtual network: %s"
 msgstr "Xarxa virtual: %s"
 
-#: src/Widgets/ModemInterface.vala:83
+#: src/Widgets/ModemInterface.vala:85
 #, c-format
 msgid "Mobile Broadband: %s"
 msgstr "Banda ampla mòbil: %s"
 
-#: src/Widgets/ModemInterface.vala:85
+#: src/Widgets/ModemInterface.vala:87
 msgid "Mobile Broadband"
 msgstr "Banda ampla mòbil"
 
-#: src/Widgets/ModemInterface.vala:91
+#: src/Widgets/ModemInterface.vala:93
 msgid "Modem"
 msgstr "Mòdem"
 

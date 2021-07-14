@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -36,24 +36,24 @@ msgstr ""
 msgid "Connected to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:120 src/Indicator.vala:132
+#: src/Indicator.vala:120 src/Indicator.vala:131
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:138
+#: src/Indicator.vala:136
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:142
+#: src/Indicator.vala:140
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:143
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:159 src/Indicator.vala:171
+#: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
 msgstr ""
 
@@ -61,11 +61,11 @@ msgstr ""
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
 
-#: src/common/Widgets/WidgetNMInterface.vala:22
+#: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "Niyznōmo maszina"
 
-#: src/common/Widgets/WidgetNMInterface.vala:34
+#: src/common/Widgets/WidgetNMInterface.vala:40
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Niyznōmy typ: %s "
@@ -103,16 +103,16 @@ msgstr ""
 msgid "Virtual network: %s"
 msgstr "Wirtualny nec: %s"
 
-#: src/Widgets/ModemInterface.vala:83
+#: src/Widgets/ModemInterface.vala:85
 #, c-format
 msgid "Mobile Broadband: %s"
 msgstr "Mobilny nec: %s"
 
-#: src/Widgets/ModemInterface.vala:85
+#: src/Widgets/ModemInterface.vala:87
 msgid "Mobile Broadband"
 msgstr "Mobilny nec"
 
-#: src/Widgets/ModemInterface.vala:91
+#: src/Widgets/ModemInterface.vala:93
 msgid "Modem"
 msgstr "Modym"
 

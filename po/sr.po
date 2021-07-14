@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2021-02-16 01:08+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/wingpanel/"
@@ -34,24 +34,24 @@ msgstr "Повезујем се на „%s“"
 msgid "Connected to wired network"
 msgstr "Повезани сте на жичану мрежу"
 
-#: src/Indicator.vala:120 src/Indicator.vala:132
+#: src/Indicator.vala:120 src/Indicator.vala:131
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Повезани сте на „%s“"
 
-#: src/Indicator.vala:138
+#: src/Indicator.vala:136
 msgid "Failed to connect"
 msgstr "Нисам успео да се повежем"
 
-#: src/Indicator.vala:142
+#: src/Indicator.vala:140
 msgid "Disconnected"
 msgstr "Неповезан"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:143
 msgid "Not connected"
 msgstr "Нисте повезани"
 
-#: src/Indicator.vala:159 src/Indicator.vala:171
+#: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
 msgstr "непозната мрежа"
 
@@ -59,11 +59,11 @@ msgstr "непозната мрежа"
 msgid "This Virtual Private Network could not be connected to."
 msgstr "Није могуће повезивање на ову приватну виртуелну мрежу."
 
-#: src/common/Widgets/WidgetNMInterface.vala:22
+#: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "Непознати уређај"
 
-#: src/common/Widgets/WidgetNMInterface.vala:34
+#: src/common/Widgets/WidgetNMInterface.vala:40
 #, c-format
 msgid "Unknown type: %s "
 msgstr "Непозната врста: %s "
@@ -97,16 +97,16 @@ msgstr "Небезбедна"
 msgid "Virtual network: %s"
 msgstr "Виртуелна мрежа: %s"
 
-#: src/Widgets/ModemInterface.vala:83
+#: src/Widgets/ModemInterface.vala:85
 #, c-format
 msgid "Mobile Broadband: %s"
 msgstr "Мобилна широкопојасна: %s"
 
-#: src/Widgets/ModemInterface.vala:85
+#: src/Widgets/ModemInterface.vala:87
 msgid "Mobile Broadband"
 msgstr "Мобилна широкопојасна"
 
-#: src/Widgets/ModemInterface.vala:91
+#: src/Widgets/ModemInterface.vala:93
 msgid "Modem"
 msgstr "Модем"
 
