@@ -1,3 +1,47 @@
+wingpanel-indicator-network (2.3.0) bionic; urgency=medium
+
+  * Release 2.3.0 (#227)
+  * Utils: combine/remove unused states (#203)
+  * Define log domain (#224)
+  * Use Granite.SwitchModelButton and Gtk.Separator (#216)
+  * Update for libwingpanel transition (#213)
+  * LINGUAS: sort, remove en_US
+  * Update translation files
+  * Move extra_info to ModemInterface (#204)
+  * Indicator: Fix gettext syntax and use plain tooltip (#205)
+  * Update translation template
+  * Add tooltip indicator (#199)
+  * WifiInterface: justify scanning placeholder (#202)
+  * AppData: Add icon name (#194)
+  * Release Action: Retarget to Odin
+  * Ellipsize labels in radiobuttons (#185)
+  * Fix compiler warnings (#192)
+  * PopoverWidget: get rid of single-use methods (#191)
+  * WidgetNMInterface: Remove unused signals (#189)
+  * WifiMenuItem: Update error tooltip text (#190)
+  * WifiInterface: Update to match switchboard (#187)
+  * WifiMenuItem: Improve encryption detection (#186)
+  * Set CSS name in class construct (#184)
+  * WifiMenuitem: move css_name to construct (#181)
+  * PopoverWidget: Reduce scope of settings button (#182)
+  * WifiInterface: Remove single-use init (#180)
+  * WifiInterface: make PlaceholderLabel a private class (#179)
+  * Combine EtherInterface and AbstractEtherInterface (#173)
+  * Combine PopoverWidget and NMVisualizer (#175)
+  * Combine VpnInterface and AbstractVpnInterface (#176)
+  * Combine WifiInterface and AbstractWifiInterface (#178)
+  * Combine AbstractModemInterface and ModemInterface (#174)
+  * WifiMenuitem: misc cleanup (#167)
+  * VpnMenuItem: misc cleanup (#177)
+  * fix for vpn spinner spinning after connection (#104)
+  * DisplayWidget: misc cleanup (#172)
+  * AbstractVpnInterface: misc cleanup (#170)
+  * WifiInterface: misc cleanup (#166)
+  * AbstractModemInterface: Bump copyright header (#169)
+  * Indicator: Remove deprecated display_name and description (#162)
+
+ -- Cody Garver <cody@elementary.io>  Wed, 14 Jul 2021 21:23:09 +0000
+
 wingpanel-indicator-network (2.2.4) bionic; urgency=medium
 
   * Fix extra releases tag (#154)
