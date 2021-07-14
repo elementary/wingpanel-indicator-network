@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2020-09-12 17:14+0000\n"
+"PO-Revision-Date: 2021-07-15 06:10+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -30,27 +30,28 @@ msgstr "Зʼєднуйтеся з бездротовими мережами та
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "Виправлення:"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
 msgstr ""
+"Виправлено продовження анімації обертання піктограми VPN після під'єднання"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Вдосконалено виявлення типу мережевого шифрування"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
-msgstr ""
+msgstr "Незначні оновлення:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Довгі назви мережі скорочуються"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Додано підказку під час наведення"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
