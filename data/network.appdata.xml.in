@@ -7,6 +7,15 @@
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
   <releases>
+    <release version="2.3.0" date="2021-07-14" urgency="medium">
+      <description>
+        <p>Improve detecting network encryption type</p>
+        <p>Ellipsize long network names</p>
+        <p>fix VPN spinning after connecting</p>
+        <p>Show tooltip on hover</p>
+        <p>Updated translations</p>
+      </description>
+    </release>
     <release version="2.2.4" date="2020-05-28" urgency="medium">
       <description>
         <p>Updated translations</p>
