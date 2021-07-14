@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 22:19+0000\n"
+"POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2020-03-30 18:09+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,16 +27,41 @@ msgstr "Indicateur Réseau"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:18
+#: data/network.appdata.xml.in:12
+msgid "Fixes:"
+msgstr ""
+
+#: data/network.appdata.xml.in:14
+msgid "Fix VPN spinning after connecting"
+msgstr ""
+
+#: data/network.appdata.xml.in:15
+msgid "Improve detecting network encryption type"
+msgstr ""
+
+#: data/network.appdata.xml.in:17
+msgid "Minor updates:"
+msgstr ""
+
+#: data/network.appdata.xml.in:19
+msgid "Ellipsize long network names"
+msgstr ""
+
+#: data/network.appdata.xml.in:20
+msgid "Show tooltip on hover"
+msgstr ""
+
+#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:33
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:32
 msgid "Prevent panel icon from showing in the dock"
 msgstr ""
 "Nous avons fait en sorte que l'icône du panneau ne s'affiche plus dans le "
 "dock"
 
-#: data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:42
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
