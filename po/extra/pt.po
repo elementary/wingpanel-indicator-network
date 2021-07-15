@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2020-03-30 18:09+0000\n"
+"PO-Revision-Date: 2021-07-15 18:49+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pt/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -29,27 +29,27 @@ msgstr "Ligar-se a redes sem fio e gerir VPNs"
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "Correções:"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "Corrige a rotação da VPN após a ligação"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Melhora a deteção do tipo de encriptação de rede"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
-msgstr ""
+msgstr "Pequenas atualizações:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Elipsar nomes longos de rede"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Mostra dica ao pairar o rato"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
