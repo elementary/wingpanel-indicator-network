@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-15 06:10+0000\n"
+"PO-Revision-Date: 2021-07-16 00:30+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/uk/>\n"
@@ -51,7 +51,7 @@ msgstr "Довгі назви мережі скорочуються"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr "Додано підказку під час наведення"
+msgstr "Показ підказок під час наведення"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
