@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2020-04-06 15:10+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@posteo.net>\n"
+"PO-Revision-Date: 2021-07-18 04:52+0000\n"
+"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -29,27 +29,27 @@ msgstr "Connect to wireless networks and manage VPNs"
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "Fixes:"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "Fix VPN spinning after connecting"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Improve detecting network encryption type"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
-msgstr ""
+msgstr "Minor updates:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Ellipsise long network names"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Show tooltip on hover"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
