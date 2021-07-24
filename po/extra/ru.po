@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-22 13:59+0000\n"
+"PO-Revision-Date: 2021-07-24 19:23+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ru/>\n"
@@ -30,15 +30,15 @@ msgstr "Соединяйтесь с беспроводными сетями и �
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "Исправления:"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "Исправлено продолжение анимации вращения значка VPN после подключения"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Улучшено определение типа шифрования сети"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
@@ -46,7 +46,7 @@ msgstr "Незначительные обновления:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Длинные названия сети сокращаются"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
