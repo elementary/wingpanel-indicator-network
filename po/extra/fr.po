@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-29 15:21+0000\n"
-"Last-Translator: Corentin Noël <tintou@noel.tf>\n"
+"PO-Revision-Date: 2021-07-30 20:31+0000\n"
+"Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
 "Language: fr\n"
@@ -29,15 +29,15 @@ msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "Corrections :"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "Correction de l'icône de chargement du VPN après la connexion"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Amélioration de la détection du type de chiffrement des réseaux"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Affichage d'une infobulle au survol"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
