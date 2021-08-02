@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-30 20:31+0000\n"
+"PO-Revision-Date: 2021-08-02 19:43+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
@@ -45,7 +45,7 @@ msgstr "Mises à jour mineures :"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Les noms trop longs sont désormais tronqués"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
