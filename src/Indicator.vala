@@ -25,6 +25,9 @@ public class Network.Indicator : Wingpanel.Indicator {
     public bool is_in_session { get; set; default = false; }
 
     public Indicator (bool is_in_session) {
+        GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
+        GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+
         Object (code_name: Wingpanel.Indicator.NETWORK,
                 is_in_session: is_in_session,
                 visible: true);
