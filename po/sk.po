@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
 "PO-Revision-Date: 2021-08-20 01:13+0000\n"
-"Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@tutanota.de>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/sk/>\n"
 "Language: sk\n"
@@ -127,11 +127,11 @@ msgstr "Bezdrôtové siete"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
-msgstr "Pripojiť sa k skrytej sieti..."
+msgstr "Pripojiť sa k skrytej sieti…"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
-msgstr "Nastavenia siete..."
+msgstr "Nastavenia siete…"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "K tejto bezdrôtovej sieti sa nejde pripojiť."
