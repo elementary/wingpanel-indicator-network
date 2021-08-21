@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-15 06:10+0000\n"
+"PO-Revision-Date: 2021-08-21 15:34+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/nb/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
-msgstr ""
+msgstr "Småoppdateringer:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
@@ -49,7 +49,7 @@ msgstr ""
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Vis verktøytips ved pekersveving"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
