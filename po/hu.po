@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2018-05-29 00:15+0000\n"
-"Last-Translator: Majer Tamás <mtamas@disroot.org>\n"
-"Language-Team: Hungarian <https://weblate.elementary.io/projects/wingpanel/"
+"PO-Revision-Date: 2021-08-23 19:43+0000\n"
+"Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
+"Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:104 src/Indicator.vala:117
@@ -21,51 +21,42 @@ msgid "Wired"
 msgstr "Vezetékes"
 
 #: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Csatlakozás a rejtett hálózathoz…"
+msgstr "Csatlakozás rejtett hálózathoz"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
 #, c-format
 msgid "Connecting to “%s”"
-msgstr ""
+msgstr "Csatlakozás: “%s”"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Csatlakozás a rejtett hálózathoz…"
+msgstr "Csatlakozva rejtett hálózathoz"
 
 #: src/Indicator.vala:120 src/Indicator.vala:131
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Kapcsolatban"
+msgstr "Csatlakozva: “%s”"
 
 #: src/Indicator.vala:136
 msgid "Failed to connect"
-msgstr ""
+msgstr "Nem sikerült csatlakozni"
 
 #: src/Indicator.vala:140
-#, fuzzy
-#| msgid "Connected"
 msgid "Disconnected"
-msgstr "Kapcsolatban"
+msgstr "Leválasztva"
 
 #: src/Indicator.vala:143
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Kapcsolatban"
+msgstr "Nincs csatlakoztatva"
 
 #: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
-msgstr ""
+msgstr "ismeretlen hálózat"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Nem lehet csatlakozni a virtuális magánhálózathoz."
+msgstr "Nem lehet csatlakozni a virtuális magánhálózathoz (VPN)."
 
 #: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -78,31 +69,27 @@ msgstr "Ismeretlen típus: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Nem sikerült csatlakozni"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Ez a hálózat 40/64-bites WEP titkosítást használ"
+msgstr "40/64-bites WEP titkosítás"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Ez a hálózat 104/128-bites WEP titkosítást használ"
+msgstr "104/128-bites WEP titkosítás"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "WPA titkosítás"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Titkosítva"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Nincs titkosítva"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -140,7 +127,7 @@ msgstr "Vezeték nélküli"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
-msgstr "Csatlakozás a rejtett hálózathoz…"
+msgstr "Csatlakozás rejtett hálózathoz…"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
