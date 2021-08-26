@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2020-01-12 04:07+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"PO-Revision-Date: 2021-08-26 22:37+0000\n"
+"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ar/>\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -42,7 +42,7 @@ msgstr ""
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
-msgstr ""
+msgstr "تحديثات طفيفة:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
@@ -55,7 +55,7 @@ msgstr ""
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
 msgid "Updated translations"
-msgstr ""
+msgstr "تحديثات على الترجمة"
 
 #: data/network.appdata.xml.in:32
 msgid "Prevent panel icon from showing in the dock"
@@ -63,4 +63,4 @@ msgstr ""
 
 #: data/network.appdata.xml.in:42
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
