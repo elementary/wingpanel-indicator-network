@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-08-26 22:37+0000\n"
+"PO-Revision-Date: 2021-08-27 11:29+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ar/>\n"
@@ -26,19 +26,19 @@ msgstr "مؤشر الشبكة"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "اتصل بشبكات لاسلكية وقم بإدارة الشبكات الخاصة الافتراضية"
 
 #: data/network.appdata.xml.in:12
 msgid "Fixes:"
-msgstr ""
+msgstr "الإصلاحات:"
 
 #: data/network.appdata.xml.in:14
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "إصلاح عجلة التحميل بعد الاتصال بشبكة خاصة افتراضية"
 
 #: data/network.appdata.xml.in:15
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "تحسين اكتشاف نوع تشفير الشبكة"
 
 #: data/network.appdata.xml.in:17
 msgid "Minor updates:"
@@ -46,11 +46,11 @@ msgstr "تحديثات طفيفة:"
 
 #: data/network.appdata.xml.in:19
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "اختصار أسماء الشبكات الطويلة"
 
 #: data/network.appdata.xml.in:20
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "إظهار تلميح عند التمرير"
 
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
@@ -59,7 +59,7 @@ msgstr "تحديثات على الترجمة"
 
 #: data/network.appdata.xml.in:32
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "منع أيقونة اللوحة من الظهور في المرسى"
 
 #: data/network.appdata.xml.in:42
 msgid "elementary, Inc."
