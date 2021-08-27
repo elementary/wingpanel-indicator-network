@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-04-26 17:52+0000\n"
-"Last-Translator: nasserbinlaboun <nasser1990com@gmail.com>\n"
+"PO-Revision-Date: 2021-08-27 11:29+0000\n"
+"Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ar/>\n"
 "Language: ar\n"
@@ -23,43 +23,41 @@ msgstr "سلكي"
 
 #: src/Indicator.vala:105
 msgid "Connecting to wired network"
-msgstr "الإتصال بشبكة سلكية"
+msgstr "قيد الاتصال بشبكة سلكية"
 
 #: src/Indicator.vala:107 src/Indicator.vala:112
 #, c-format
 msgid "Connecting to “%s”"
-msgstr ""
+msgstr "قيد الاتصال ب ”%s“"
 
 #: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "الإتصال بشبكة مخفية…"
+msgstr "تم الاتصال بشبكة سلكية"
 
 #: src/Indicator.vala:120 src/Indicator.vala:131
 #, c-format
 msgid "Connected to “%s”"
-msgstr ""
+msgstr "تم الاتصال ب ”%s“"
 
 #: src/Indicator.vala:136
 msgid "Failed to connect"
-msgstr ""
+msgstr "فشل الاتصال"
 
 #: src/Indicator.vala:140
 msgid "Disconnected"
-msgstr ""
+msgstr "تم قطع الاتصال"
 
 #: src/Indicator.vala:143
 msgid "Not connected"
-msgstr ""
+msgstr "غير متصل"
 
 #: src/Indicator.vala:157 src/Indicator.vala:169
 msgid "unknown network"
-msgstr ""
+msgstr "شبكة غير معروفة"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
-msgstr "لا يمكن الإتصال بهذه الشبكة الإفتراضية الخاصة."
+msgstr "لا يمكن الاتصال بهذه الشبكة الخاصة الافتراضية."
 
 #: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -72,45 +70,41 @@ msgstr "نوع غير معروف: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "غير قادر على الاتصال"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "هذه الشبكة تستعمل 40/64-بت WEP للتشفير"
+msgstr "مشفرة باستخدام WEP من نوع 40/64-بت"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "هذه الشبكة تستعمل 104/128-بت WEP للتشفير"
+msgstr "مشفرة باستخدام WEP من نوع 104/128-بت"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "مشفرة باستخدام WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "مشفرة"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "غير آمنة"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
 msgid "Virtual network: %s"
-msgstr "شبكة وهمية: s%"
+msgstr "شبكة خاصة افتراضية: %s"
 
 #: src/Widgets/ModemInterface.vala:85
 #, c-format
 msgid "Mobile Broadband: %s"
-msgstr "نطاق عريض محمول: s%"
+msgstr "شبكة محمولة: %s"
 
 #: src/Widgets/ModemInterface.vala:87
 msgid "Mobile Broadband"
-msgstr "نطاق عريض محمول"
+msgstr "شبكة محمولة"
 
 #: src/Widgets/ModemInterface.vala:93
 msgid "Modem"
@@ -118,15 +112,15 @@ msgstr "مودم"
 
 #: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
 msgid "VPN"
-msgstr "شبكة خاصة إفتراضية"
+msgstr "شبكة خاصة افتراضية"
 
 #: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
-msgstr "لا نقاط ولوج متاحة"
+msgstr "لا يوجد نقاط وصول متاحة"
 
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
-msgstr "جاري البحث عن نقاط ولوج…"
+msgstr "قيد البحث عن نقاط وصول…"
 
 #: src/Widgets/WifiInterface.vala:137
 msgid "Wireless"
@@ -134,7 +128,7 @@ msgstr "لاسلكي"
 
 #: src/Widgets/PopoverWidget.vala:56
 msgid "Connect to Hidden Network…"
-msgstr "الإتصال بشبكة مخفية…"
+msgstr "اتصل بشبكة مخفية…"
 
 #: src/Widgets/PopoverWidget.vala:60
 msgid "Network Settings…"
