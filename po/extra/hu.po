@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-08-28 22:49+0000\n"
+"PO-Revision-Date: 2021-09-02 21:53+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -54,7 +54,7 @@ msgstr ""
 #: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:33
 msgid "Updated translations"
-msgstr "Fordítási frissítések"
+msgstr "Frissített fordítások"
 
 #: data/network.appdata.xml.in:32
 msgid "Prevent panel icon from showing in the dock"
