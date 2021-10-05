@@ -40,6 +40,21 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
+        if (is_in_session) {
+            display_widget.button_press_event.connect ((event) => {
+                if (event.button == Gdk.BUTTON_MIDDLE) {
+                    try {
+                        popover_widget.nm_client.networking_set_enabled (!popover_widget.nm_client.networking_get_enabled ());
+                        return true;
+                    } catch (Error e) {
+                        warning ("Error setting airplane mode: %s", e.message);
+                    }
+                }
+
+                return false;
+            });
+        }
+
         update_tooltip ();
         on_state_changed ();
         start_monitor ();
@@ -94,6 +109,7 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private void update_tooltip () {
+        var tooltip_markup = "";
         switch (popover_widget.state) {
             case Network.State.CONNECTING_WIRED:
                 /* If there's only one active ethernet connection,
@@ -105,22 +121,22 @@ public class Network.Indicator : Wingpanel.Indicator {
                 string active_wired_name = get_active_wired_name ();
 
                 if (active_wired_name == _("Wired")) {
-                    display_widget.tooltip_markup = _("Connecting to wired network");
+                    tooltip_markup = _("Connecting to wired network");
                 } else {
-                    display_widget.tooltip_markup = _("Connecting to “%s”").printf (active_wired_name);
+                    tooltip_markup = _("Connecting to “%s”").printf (active_wired_name);
                 }
                 break;
             case Network.State.CONNECTING_WIFI:
             case Network.State.CONNECTING_MOBILE:
-                display_widget.tooltip_markup = _("Connecting to “%s”").printf (get_active_wifi_name ());
+                tooltip_markup = _("Connecting to “%s”").printf (get_active_wifi_name ());
                 break;
             case Network.State.CONNECTED_WIRED:
                 string active_wired_name = get_active_wired_name ();
 
                 if (active_wired_name == _("Wired")) {
-                    display_widget.tooltip_markup = _("Connected to wired network");
+                    tooltip_markup = _("Connected to wired network");
                 } else {
-                    display_widget.tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
+                    tooltip_markup = _("Connected to “%s”").printf (active_wired_name);
                 }
                 break;
             case Network.State.CONNECTED_WIFI_WEAK:
@@ -131,20 +147,33 @@ public class Network.Indicator : Wingpanel.Indicator {
             case Network.State.CONNECTED_MOBILE_OK:
             case Network.State.CONNECTED_MOBILE_GOOD:
             case Network.State.CONNECTED_MOBILE_EXCELLENT:
-                display_widget.tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
+                tooltip_markup = _("Connected to “%s”").printf (get_active_wifi_name ());
                 break;
             case Network.State.FAILED:
             case Network.State.FAILED_WIFI:
             case Network.State.FAILED_MOBILE:
-                display_widget.tooltip_markup = _("Failed to connect");
+                tooltip_markup = _("Failed to connect");
                 break;
             case Network.State.DISCONNECTED:
             case Network.State.DISCONNECTED_AIRPLANE_MODE:
-                display_widget.tooltip_markup = _("Disconnected");
+                tooltip_markup = _("Disconnected");
                 break;
             default:
-                display_widget.tooltip_markup = _("Not connected");
+                tooltip_markup = _("Not connected");
                 break;
+        }
+
+        if (is_in_session) {
+            var middle_click_markup = popover_widget.state == Network.State.DISCONNECTED_AIRPLANE_MODE ?
+                                    _("Middle-click to turn airplane mode off") :
+                                    _("Middle-click to turn airplane mode on");
+
+            display_widget.tooltip_markup = "%s\n%s".printf (
+                tooltip_markup,
+                Granite.TOOLTIP_SECONDARY_TEXT_MARKUP.printf (middle_click_markup)
+            );
+        } else {
+            display_widget.tooltip_markup = tooltip_markup;
         }
     }
 

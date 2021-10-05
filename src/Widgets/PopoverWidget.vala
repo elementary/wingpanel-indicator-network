@@ -17,7 +17,7 @@
 */
 
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
-    private NM.Client nm_client;
+    public NM.Client nm_client { get; construct; }
     private NM.VpnConnection? active_vpn_connection = null;
 
     private GLib.List<WidgetNMInterface>? network_interface;
@@ -51,6 +51,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         add (wifi_box);
         add (vpn_box);
 
+        try {
+            nm_client = new NM.Client ();
+        } catch (Error e) {
+            critical (e.message);
+        }
+
         if (is_in_session) {
             hidden_item = new Gtk.ModelButton ();
             hidden_item.text = _("Connect to Hidden Network…");
@@ -59,19 +65,35 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             var show_settings_button = new Gtk.ModelButton ();
             show_settings_button.text = _("Network Settings…");
 
+            var airplane_switch = new Granite.SwitchModelButton (_("Airplane Mode"));
+            airplane_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+
+            var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+                margin_top = 3,
+                margin_bottom = 3
+            };
+
             add (hidden_item);
             add (show_settings_button);
+            add (sep);
+            add (airplane_switch);
 
             show_settings_button.clicked.connect (show_settings);
+
+            airplane_switch.notify["active"].connect (() => {
+                try {
+                    nm_client.networking_set_enabled (!airplane_switch.active);
+                } catch (Error e) {
+                    warning (e.message);
+                }
+            });
+
+            if (!airplane_switch.get_active () && !nm_client.networking_get_enabled ()) {
+                airplane_switch.activate ();
+            }
         }
 
         /* Monitor network manager */
-        try {
-            nm_client = new NM.Client ();
-        } catch (Error e) {
-            critical (e.message);
-        }
-
         nm_client.notify["active-connections"].connect (update_vpn_connection);
 
         nm_client.device_added.connect (device_added_cb);
