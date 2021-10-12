@@ -68,12 +68,12 @@ public class Network.Indicator : Wingpanel.Indicator {
                 return;
             }
 
-            if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
+            if (network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
                 try {
-                    var appinfo = new DesktopAppInfo ("io.elementary.capnet-assist");
+                    var appinfo = new DesktopAppInfo ("io.elementary.capnet-assist.desktop");
                     appinfo.launch (null, null);
                 } catch (Error e) {
-                    warning ("%s\n", e.message);
+                    warning (e.message);
                 }
             }
 
