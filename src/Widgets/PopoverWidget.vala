@@ -47,9 +47,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        add (other_box);
-        add (wifi_box);
-        add (vpn_box);
 
         try {
             nm_client = new NM.Client ();
@@ -58,13 +55,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            hidden_item = new Gtk.ModelButton ();
-            hidden_item.text = _("Connect to Hidden Network…");
-            hidden_item.no_show_all = true;
-
-            var show_settings_button = new Gtk.ModelButton ();
-            show_settings_button.text = _("Network Settings…");
-
             var airplane_switch = new Granite.SwitchModelButton (_("Airplane Mode"));
             airplane_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
@@ -73,12 +63,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 margin_bottom = 3
             };
 
-            add (hidden_item);
-            add (show_settings_button);
-            add (sep);
             add (airplane_switch);
-
-            show_settings_button.clicked.connect (show_settings);
+            add (sep);
 
             airplane_switch.notify["active"].connect (() => {
                 try {
@@ -91,6 +77,26 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             if (!airplane_switch.get_active () && !nm_client.networking_get_enabled ()) {
                 airplane_switch.activate ();
             }
+        }
+
+        add (other_box);
+        add (wifi_box);
+        add (vpn_box);
+
+        if (is_in_session) {
+            hidden_item = new Gtk.ModelButton ();
+            hidden_item.text = _("Connect to Hidden Network…");
+            hidden_item.no_show_all = true;
+
+            var show_settings_button = new Gtk.ModelButton ();
+            show_settings_button.text = _("Network Settings…");
+
+            add (hidden_item);
+            add (show_settings_button);
+
+            show_settings_button.clicked.connect (show_settings);
+
+
         }
 
         /* Monitor network manager */
