@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
 "PO-Revision-Date: 2021-07-19 09:55+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,39 +27,43 @@ msgstr "Indicador de la xarxa"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connecteu amb xarxes sense fil i gestioneu XPV."
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 msgid "Fixes:"
 msgstr "Correccions:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
-msgstr "Correcció del gir de XPV després de connectar-vos-hi"
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr "Millora de la detecció del tipus d'encriptació de xarxa"
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
 msgid "Minor updates:"
 msgstr "Actualitzacions menors:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr "El·lipsi dels noms de xarxa llargs"
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr "Mostra la descripció emergent en passar-hi"
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
+#: data/network.appdata.xml.in:26
+msgid "Fix VPN spinning after connecting"
+msgstr "Correcció del gir de XPV després de connectar-vos-hi"
+
+#: data/network.appdata.xml.in:27
+msgid "Improve detecting network encryption type"
+msgstr "Millora de la detecció del tipus d'encriptació de xarxa"
+
+#: data/network.appdata.xml.in:31
+msgid "Ellipsize long network names"
+msgstr "El·lipsi dels noms de xarxa llargs"
+
 #: data/network.appdata.xml.in:32
+msgid "Show tooltip on hover"
+msgstr "Mostra la descripció emergent en passar-hi"
+
+#: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
 msgstr "S'evita que la icona del plafó es vegi a l'acoblador."
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:54
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

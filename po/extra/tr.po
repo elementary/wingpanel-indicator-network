@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
 "PO-Revision-Date: 2021-07-20 11:25+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,39 +27,43 @@ msgstr "Ağ Göstergesi"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Kablosuz ağlara bağlanın ve VPN'leri yönetin"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 msgid "Fixes:"
 msgstr "Düzeltmeler:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
-msgstr "VPN simgesinin bağlandıktan sonra dönmeye devam etmesi düzeltildi"
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr "Ağ şifreleme türü algılaması iyileştirildi"
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
 msgid "Minor updates:"
 msgstr "Küçük güncellemeler:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr "Uzun ağ adları kisaltildi"
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr "Üzerine gelindiğinde araç ipucunu göster"
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
 msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
+#: data/network.appdata.xml.in:26
+msgid "Fix VPN spinning after connecting"
+msgstr "VPN simgesinin bağlandıktan sonra dönmeye devam etmesi düzeltildi"
+
+#: data/network.appdata.xml.in:27
+msgid "Improve detecting network encryption type"
+msgstr "Ağ şifreleme türü algılaması iyileştirildi"
+
+#: data/network.appdata.xml.in:31
+msgid "Ellipsize long network names"
+msgstr "Uzun ağ adları kisaltildi"
+
 #: data/network.appdata.xml.in:32
+msgid "Show tooltip on hover"
+msgstr "Üzerine gelindiğinde araç ipucunu göster"
+
+#: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Panel simgesinin dock üzerinde görünmesini engelle"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:54
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
