@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-16 00:30+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
+"PO-Revision-Date: 2021-10-13 20:25+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/uk/>\n"
@@ -28,40 +28,46 @@ msgstr "Індикатор мережі"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Зʼєднуйтеся з бездротовими мережами та керуйте VPN"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 msgid "Fixes:"
 msgstr "Виправлення:"
 
 #: data/network.appdata.xml.in:14
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
+"Помічник з'єднання з мережею не більше запускається, якщо з'єднання "
+"встановлено"
+
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
+msgid "Minor updates:"
+msgstr "Незначні оновлення:"
+
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/network.appdata.xml.in:26
 msgid "Fix VPN spinning after connecting"
 msgstr ""
 "Виправлено продовження анімації обертання піктограми VPN після під'єднання"
 
-#: data/network.appdata.xml.in:15
+#: data/network.appdata.xml.in:27
 msgid "Improve detecting network encryption type"
 msgstr "Вдосконалено виявлення типу мережевого шифрування"
 
-#: data/network.appdata.xml.in:17
-msgid "Minor updates:"
-msgstr "Незначні оновлення:"
-
-#: data/network.appdata.xml.in:19
+#: data/network.appdata.xml.in:31
 msgid "Ellipsize long network names"
 msgstr "Довгі назви мережі скорочуються"
 
-#: data/network.appdata.xml.in:20
+#: data/network.appdata.xml.in:32
 msgid "Show tooltip on hover"
 msgstr "Показ підказок під час наведення"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Запобігайте показу піктограм панелі у док-панелі"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:54
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

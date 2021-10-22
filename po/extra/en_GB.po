@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
 "PO-Revision-Date: 2021-07-18 04:52+0000\n"
 "Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
@@ -27,39 +27,43 @@ msgstr "Network Indicator"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connect to wireless networks and manage VPNs"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 msgid "Fixes:"
 msgstr "Fixes:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
-msgstr "Fix VPN spinning after connecting"
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr "Improve detecting network encryption type"
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
 msgid "Minor updates:"
 msgstr "Minor updates:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr "Ellipsise long network names"
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr "Show tooltip on hover"
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
 msgid "Updated translations"
 msgstr "Updated translations"
 
+#: data/network.appdata.xml.in:26
+msgid "Fix VPN spinning after connecting"
+msgstr "Fix VPN spinning after connecting"
+
+#: data/network.appdata.xml.in:27
+msgid "Improve detecting network encryption type"
+msgstr "Improve detecting network encryption type"
+
+#: data/network.appdata.xml.in:31
+msgid "Ellipsize long network names"
+msgstr "Ellipsise long network names"
+
 #: data/network.appdata.xml.in:32
+msgid "Show tooltip on hover"
+msgstr "Show tooltip on hover"
+
+#: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Prevent panel icon from showing in the dock"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:54
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

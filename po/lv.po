@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
 "PO-Revision-Date: 2015-11-21 12:57+0000\n"
 "Last-Translator: Ar2 <arturss5@inbox.lv>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,42 +13,42 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 
-#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Indicator.vala:107 src/Indicator.vala:120
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr ""
 
-#: src/Indicator.vala:105
+#: src/Indicator.vala:108
 msgid "Connecting to wired network"
 msgstr ""
 
-#: src/Indicator.vala:107 src/Indicator.vala:112
+#: src/Indicator.vala:110 src/Indicator.vala:115
 #, c-format
 msgid "Connecting to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:118
+#: src/Indicator.vala:121
 msgid "Connected to wired network"
 msgstr ""
 
-#: src/Indicator.vala:120 src/Indicator.vala:131
+#: src/Indicator.vala:123 src/Indicator.vala:134
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:136
+#: src/Indicator.vala:139
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:140
+#: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:146
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:157 src/Indicator.vala:169
+#: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
 msgstr ""
 
