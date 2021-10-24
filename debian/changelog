@@ -1,3 +1,13 @@
+wingpanel-indicator-network (2.3.1) bionic; urgency=medium
+
+  * Release 2.3.1 (#238)
+  * Update translation files
+  * Update translation template
+  * Indicator: create Capnet App Info from ID (#237)
+  * l10n: Correctly setup the locales (#228)
+
+ -- Cody Garver <cody@elementary.io>  Sun, 24 Oct 2021 19:36:48 +0000
+
 wingpanel-indicator-network (2.3.0) bionic; urgency=medium
 
   * Release 2.3.0 (#227)
