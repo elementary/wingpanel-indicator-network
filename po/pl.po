@@ -31,34 +31,29 @@ msgid "Connecting to “%s”"
 msgstr "Łączenie z \"%s\""
 
 #: src/Indicator.vala:121
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Połącz z ukrytą siecią…"
+msgstr "Połączono z siecią przewodową"
 
 #: src/Indicator.vala:123 src/Indicator.vala:134
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Połączony"
+msgstr "Połączono z \"%s\""
 
 #: src/Indicator.vala:139
 msgid "Failed to connect"
-msgstr ""
+msgstr "Nie można połączyć"
 
 #: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr "Rozłączony"
 
 #: src/Indicator.vala:146
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Połączony"
+msgstr "Bez połączenia"
 
 #: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
-msgstr ""
+msgstr "Nieznana sieć"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
