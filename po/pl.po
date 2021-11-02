@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-13 18:06+0000\n"
 "PO-Revision-Date: 2021-11-02 09:17+0000\n"
-"Last-Translator: DarkKnightComes <darkknightcomes@gmail.com>\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/pl/>\n"
 "Language: pl\n"
@@ -53,7 +53,7 @@ msgstr "Bez połączenia"
 
 #: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
-msgstr "Nieznana sieć"
+msgstr "nieznana sieć"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
