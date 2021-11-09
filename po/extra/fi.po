@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-08-16 07:29+0000\n"
+"POT-Creation-Date: 2021-10-13 18:06+0000\n"
+"PO-Revision-Date: 2021-10-08 17:10+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fi/>\n"
@@ -27,39 +27,43 @@ msgstr "Verkkoilmaisin"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Yhdistä langattomiin verkkoihin ja hallitse erillisverkkoja"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 msgid "Fixes:"
 msgstr "Korjaukset:"
 
 #: data/network.appdata.xml.in:14
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
+
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
+msgid "Minor updates:"
+msgstr "Pieniä päivityksiä:"
+
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
+msgid "Updated translations"
+msgstr "Päivitetyt kielikäännökset"
+
+#: data/network.appdata.xml.in:26
 msgid "Fix VPN spinning after connecting"
 msgstr ""
 
-#: data/network.appdata.xml.in:15
+#: data/network.appdata.xml.in:27
 msgid "Improve detecting network encryption type"
 msgstr ""
 
-#: data/network.appdata.xml.in:17
-msgid "Minor updates:"
-msgstr "Pienet päivitykset:"
-
-#: data/network.appdata.xml.in:19
+#: data/network.appdata.xml.in:31
 msgid "Ellipsize long network names"
 msgstr ""
 
-#: data/network.appdata.xml.in:20
+#: data/network.appdata.xml.in:32
 msgid "Show tooltip on hover"
 msgstr "Näytä työkaluvihje osoittaessa"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
-msgid "Updated translations"
-msgstr "Päivitetyt käännökset"
-
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
 msgstr ""
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:54
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
