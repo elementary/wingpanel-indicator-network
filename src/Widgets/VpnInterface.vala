@@ -135,8 +135,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         check_vpn_availability ();
         if (active_vpn_item != null) {
             vpn_item.active = true;
-        }
-        else{
+        } else {
             vpn_item.active = false;
         }
 
@@ -240,8 +239,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                         menu_item.set_active (true);
                         active_vpn_item = menu_item;
                         active_vpn_item.vpn_state = vpn_state;
-                    }
-                    else{
+                    } else {
                         menu_item.set_active (false);
                     }
                 }
