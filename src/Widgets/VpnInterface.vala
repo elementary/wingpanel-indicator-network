@@ -133,11 +133,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         }
 
         check_vpn_availability ();
-        if (active_vpn_item != null) {
-            vpn_item.active = true;
-        } else {
-            vpn_item.active = false;
-        }
+        vpn_item.active = active_vpn_item != null;
 
         base.update ();
     }
