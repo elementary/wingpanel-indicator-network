@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-13 18:06+0000\n"
-"PO-Revision-Date: 2021-11-03 07:04+0000\n"
+"PO-Revision-Date: 2021-11-10 16:21+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
@@ -59,7 +59,7 @@ msgstr ""
 
 #: data/network.appdata.xml.in:32
 msgid "Show tooltip on hover"
-msgstr ""
+msgstr "Przy najechaniu pokazywany jest tooltip"
 
 #: data/network.appdata.xml.in:44
 msgid "Prevent panel icon from showing in the dock"
