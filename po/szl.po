@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 18:06+0000\n"
+"POT-Creation-Date: 2021-11-11 11:11+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -116,7 +116,7 @@ msgstr "Mobilny nec"
 msgid "Modem"
 msgstr "Modym"
 
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
 msgid "VPN"
 msgstr "VPN"
 
