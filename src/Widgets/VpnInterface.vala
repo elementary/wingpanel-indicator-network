@@ -41,6 +41,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         display_title = _("VPN");
 
         blank_item = new VpnMenuItem.blank ();
+        blank_item.no_show_all = true;
 
         // Single click is disabled because it's being handled by VpnMenuItem
         vpn_list = new Gtk.ListBox () {
@@ -132,9 +133,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         }
 
         check_vpn_availability ();
-        if (active_vpn_item != null) {
-            vpn_item.active = true;
-        }
+        vpn_item.active = active_vpn_item != null;
 
         base.update ();
     }
@@ -236,6 +235,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                         menu_item.set_active (true);
                         active_vpn_item = menu_item;
                         active_vpn_item.vpn_state = vpn_state;
+                    } else {
+                        menu_item.set_active (false);
                     }
                 }
             }
