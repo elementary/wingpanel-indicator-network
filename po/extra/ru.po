@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 18:06+0000\n"
+"POT-Creation-Date: 2021-11-11 11:11+0000\n"
 "PO-Revision-Date: 2021-10-14 10:33+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -29,43 +29,50 @@ msgid "Connect to wireless networks and manage VPNs"
 msgstr "Соединяйтесь с беспроводными сетями и управляйте VPN"
 
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
 msgstr "Исправления:"
 
 #: data/network.appdata.xml.in:14
-msgid "Don't launch Captive Network Assistent with full connectivity"
+msgid "Prevent blank lines in VPN list"
 msgstr ""
-"Помощник соединения с сетью более не запускается, если соединение установлено"
 
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
 msgid "Minor updates:"
 msgstr "Незначительные обновления:"
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
 msgid "Updated translations"
 msgstr "Обновлены переводы"
 
 #: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr ""
+"Помощник соединения с сетью более не запускается, если соединение установлено"
+
+#: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
 msgstr "Исправлено продолжение анимации вращения значка VPN после подключения"
 
-#: data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39
 msgid "Improve detecting network encryption type"
 msgstr "Улучшено определение типа шифрования сети"
 
-#: data/network.appdata.xml.in:31
+#: data/network.appdata.xml.in:43
 msgid "Ellipsize long network names"
 msgstr "Длинные названия сети сокращаются"
 
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:44
 msgid "Show tooltip on hover"
 msgstr "Появление всплывающих подсказкок при наведении"
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Избегайте отображения пиктограмм панели в доке"
 
-#: data/network.appdata.xml.in:54
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

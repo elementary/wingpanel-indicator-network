@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-13 18:06+0000\n"
+"POT-Creation-Date: 2021-11-11 11:11+0000\n"
 "PO-Revision-Date: 2021-10-18 23:19+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -28,42 +28,49 @@ msgid "Connect to wireless networks and manage VPNs"
 msgstr "Kablosuz ağlara bağlanın ve VPN'leri yönetin"
 
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
 msgstr "Düzeltmeler:"
 
 #: data/network.appdata.xml.in:14
-msgid "Don't launch Captive Network Assistent with full connectivity"
-msgstr " "
+msgid "Prevent blank lines in VPN list"
+msgstr ""
 
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
 msgid "Minor updates:"
 msgstr "Küçük güncellemeler:"
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:33
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:45
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
 msgid "Updated translations"
 msgstr "Çeviriler güncellendi"
 
 #: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistent with full connectivity"
+msgstr " "
+
+#: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
 msgstr "VPN simgesinin bağlandıktan sonra dönmeye devam etmesi düzeltildi"
 
-#: data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39
 msgid "Improve detecting network encryption type"
 msgstr "Ağ şifreleme türü algılaması iyileştirildi"
 
-#: data/network.appdata.xml.in:31
+#: data/network.appdata.xml.in:43
 msgid "Ellipsize long network names"
 msgstr "Uzun ağ adları kisaltildi"
 
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:44
 msgid "Show tooltip on hover"
 msgstr "Üzerine gelindiğinde araç ipucunu göster"
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Panel simgesinin dock üzerinde görünmesini engelle"
 
-#: data/network.appdata.xml.in:54
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
