@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-11 11:11+0000\n"
-"PO-Revision-Date: 2021-11-10 16:21+0000\n"
+"PO-Revision-Date: 2021-11-12 18:05+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 #: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Poprawki:"
 
 #: data/network.appdata.xml.in:14
 msgid "Prevent blank lines in VPN list"
