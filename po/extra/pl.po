@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-11 11:11+0000\n"
-"PO-Revision-Date: 2021-11-12 18:05+0000\n"
+"PO-Revision-Date: 2021-11-14 17:40+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
@@ -22,11 +22,11 @@ msgstr ""
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
-msgstr ""
+msgstr "Wskaźnik sieci"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "Łącz się z bezprzewodowymi sieciami i zarządzaj VPNami"
 
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 #: data/network.appdata.xml.in:36
@@ -35,7 +35,7 @@ msgstr "Poprawki:"
 
 #: data/network.appdata.xml.in:14
 msgid "Prevent blank lines in VPN list"
-msgstr ""
+msgstr "Zapobiegnięto pustym liniom w liście VPN"
 
 #: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
 #: data/network.appdata.xml.in:41
@@ -50,19 +50,19 @@ msgstr "Zaktualizowano tłumaczenia"
 
 #: data/network.appdata.xml.in:26
 msgid "Don't launch Captive Network Assistent with full connectivity"
-msgstr ""
+msgstr "Nie uruchamiaj Asystenta Sieci Podrzędnej z pełną łącznością"
 
 #: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgstr "Naprawiono problem z VPN obracającym się po połączeniu"
 
 #: data/network.appdata.xml.in:39
 msgid "Improve detecting network encryption type"
-msgstr ""
+msgstr "Ulepszono wykrywanie typu szyfrowania sieci"
 
 #: data/network.appdata.xml.in:43
 msgid "Ellipsize long network names"
-msgstr ""
+msgstr "Przycięto długie nazwy sieci"
 
 #: data/network.appdata.xml.in:44
 msgid "Show tooltip on hover"
@@ -70,7 +70,7 @@ msgstr "Przy najechaniu pokazywany jest tooltip"
 
 #: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Zapobiegnięto ikonie panelu pokazującej się w doku"
 
 #: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
