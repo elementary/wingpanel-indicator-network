@@ -1,3 +1,13 @@
+wingpanel-indicator-network (2.3.2) bionic; urgency=medium
+
+  * Release 2.3.2 (#240)
+  * Update translation files
+  * Update translation template
+  * Fixed an issue with a blank line in the VPN list in the indicator
+    (#230)
+
+ -- Cody Garver <cody@elementary.io>  Tue, 23 Nov 2021 17:50:42 +0000
+
 wingpanel-indicator-network (2.3.1) bionic; urgency=medium
 
   * Release 2.3.1 (#238)
