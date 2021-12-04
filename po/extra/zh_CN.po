@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-11-11 11:11+0000\n"
-"PO-Revision-Date: 2021-11-21 02:09+0000\n"
-"Last-Translator: luke lai <lukeforall@live.com>\n"
+"PO-Revision-Date: 2021-12-04 10:54+0000\n"
+"Last-Translator: Yuchen Deng <loaden@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,7 +30,7 @@ msgstr "连接到无线网络并管理 VPN"
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 #: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr "修复:"
+msgstr "修复："
 
 #: data/network.appdata.xml.in:14
 msgid "Prevent blank lines in VPN list"
@@ -49,7 +49,7 @@ msgstr "更新翻译"
 
 #: data/network.appdata.xml.in:26
 msgid "Don't launch Captive Network Assistent with full connectivity"
-msgstr "不要在连接状态下启动专属网络助理"
+msgstr "网络连接通畅时，不要启用认证网络助理"
 
 #: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
