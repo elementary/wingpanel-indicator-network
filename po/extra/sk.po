@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 11:11+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2021-11-30 20:22+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
@@ -48,7 +48,9 @@ msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
 #: data/network.appdata.xml.in:26
-msgid "Don't launch Captive Network Assistent with full connectivity"
+#, fuzzy
+#| msgid "Don't launch Captive Network Assistent with full connectivity"
+msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr "Nespúšťať Asistenta prihlasovania do sietí so silným pripojením"
 
 #: data/network.appdata.xml.in:38

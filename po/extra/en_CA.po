@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-11 11:11+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2019-11-07 12:50-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -46,7 +46,7 @@ msgid "Updated translations"
 msgstr "Updated translations"
 
 #: data/network.appdata.xml.in:26
-msgid "Don't launch Captive Network Assistent with full connectivity"
+msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 
 #: data/network.appdata.xml.in:38
