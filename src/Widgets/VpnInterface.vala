@@ -40,7 +40,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         active_vpn_item = null;
         display_title = _("VPN");
 
-        blank_item = new VpnMenuItem.blank ();
+        blank_item = new VpnMenuItem ();
         blank_item.no_show_all = true;
 
         // Single click is disabled because it's being handled by VpnMenuItem
@@ -184,7 +184,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         switch (vpn.get_connection_type ()) {
             case NM.SettingVpn.SETTING_NAME:
                 // Add the item to vpn_list
-                var item = new VpnMenuItem (vpn);
+                var item = new VpnMenuItem (blank_item, vpn);
                 item.set_visible (true);
                 item.user_action.connect (vpn_activate_cb);
 
@@ -204,8 +204,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
     private VpnMenuItem? get_item_by_uuid (string uuid) {
         VpnMenuItem? item = null;
-        foreach (var child in vpn_list.get_children ()) {
-            var _item = (VpnMenuItem)child;
+        foreach (unowned var child in vpn_list.get_children ()) {
+            unowned var _item = (VpnMenuItem)child;
             if (_item.connection != null && _item.connection.get_uuid () == uuid && item == null) {
                 item = (VpnMenuItem)child;
             }
@@ -225,8 +225,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                 active_vpn_connection = (NM.VpnConnection)ac;
                 active_vpn_connection.vpn_state_changed.connect (update);
 
-                foreach (var v in vpn_list.get_children ()) {
-                    var menu_item = (VpnMenuItem) v;
+                foreach (unowned var v in vpn_list.get_children ()) {
+                    unowned var menu_item = (VpnMenuItem) v;
 
                     if (menu_item.connection == null)
                         continue;

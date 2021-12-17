@@ -28,15 +28,17 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         }
     }
 
-    private static unowned Gtk.RadioButton? blank_button = null;
-
     private bool checking_vpn_connectivity = false;
     private Gtk.Image error_img;
     private Gtk.Spinner spinner;
     private Gtk.Label label;
 
-    public VpnMenuItem (NM.RemoteConnection? connection) {
+    public VpnMenuItem (VpnMenuItem? other = null, NM.RemoteConnection? connection = null) {
         Object (connection: connection);
+
+        if (other != null) {
+            radio_button.join_group (other.radio_button);
+        }
     }
 
     class construct {
@@ -44,7 +46,9 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
     }
 
     construct {
-        connection.changed.connect (update);
+        if (connection != null) {
+            connection.changed.connect (update);
+        }
 
         label = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.MIDDLE
@@ -52,10 +56,6 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
 
         radio_button = new Gtk.RadioButton (null);
         radio_button.add (label);
-
-        if (blank_button != null) {
-            radio_button.join_group (blank_button);
-        }
 
         error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
             margin_start = 6,
@@ -89,15 +89,11 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         update ();
     }
 
-    /**
-    * Only used for an item which is not displayed: hacky way to have no radio button selected.
-    **/
-    public VpnMenuItem.blank () {
-        radio_button = new Gtk.RadioButton (null);
-        blank_button = radio_button;
-    }
-
     private void update () {
+        if (connection == null) {
+            return;
+        }
+
         label.label = connection.get_id ();
         hide_item (error_img);
         hide_item (spinner);
