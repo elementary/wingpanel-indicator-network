@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2021-11-12 18:05+0000\n"
+"PO-Revision-Date: 2021-12-18 18:30+0000\n"
 "Last-Translator: DartDeaDia <dartdeadia@protonmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ru/>\n"
@@ -49,11 +49,10 @@ msgid "Updated translations"
 msgstr "Обновлены переводы"
 
 #: data/network.appdata.xml.in:26
-#, fuzzy
-#| msgid "Don't launch Captive Network Assistent with full connectivity"
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
-"Помощник соединения с сетью более не запускается, если соединение установлено"
+"Помощник соединения с сетью больше не запускается, если соединение "
+"установлено"
 
 #: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
