@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2021-10-28 00:08+0000\n"
+"PO-Revision-Date: 2021-12-19 14:27+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -69,7 +69,7 @@ msgstr "Tipp megjelenítése a kurzor felé mozgatásakor"
 
 #: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Ne jelenjen meg az állapotsor a dokkon"
 
 #: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
