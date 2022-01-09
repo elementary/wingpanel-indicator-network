@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2022-01-10 01:06+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/cs/>\n"
 "Language: cs\n"
@@ -25,10 +25,9 @@ msgid "Connecting to wired network"
 msgstr "Připojování k drátové síti"
 
 #: src/Indicator.vala:110 src/Indicator.vala:115
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Připojování"
+msgstr "Připojování k „%s“"
 
 #: src/Indicator.vala:121
 msgid "Connected to wired network"
