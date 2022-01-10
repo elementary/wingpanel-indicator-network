@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2022-01-10 01:06+0000\n"
-"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
+"PO-Revision-Date: 2022-01-10 17:06+0000\n"
+"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/cs/>\n"
 "Language: cs\n"
@@ -40,21 +40,19 @@ msgstr "Připojeno k „%s“"
 
 #: src/Indicator.vala:139
 msgid "Failed to connect"
-msgstr ""
+msgstr "Nepodařilo se připojit"
 
 #: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr "Odpojeno"
 
 #: src/Indicator.vala:146
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Připojeno"
+msgstr "Nepřipojeno"
 
 #: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
-msgstr ""
+msgstr "neznámá síť"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
@@ -71,31 +69,27 @@ msgstr "Neznámý typ: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Nepodařilo se připojit"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Tato síť používá 40/64-bitové WEP šifrování"
+msgstr "Šifrované 40/64-bitové WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Tato síť používá 104/128-bitové WEP šifrování"
+msgstr "Šifrované 104/128-bitové WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Šifrované WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Šifrované"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Nezabezpečené"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
