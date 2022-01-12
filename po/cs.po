@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2022-01-10 17:06+0000\n"
-"Last-Translator: Michal Grňo <m93a.cz@gmail.com>\n"
+"PO-Revision-Date: 2022-01-12 19:06+0000\n"
+"Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/cs/>\n"
 "Language: cs\n"
@@ -56,7 +56,7 @@ msgstr "neznámá síť"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Nedaří se připojit k této Virtuální privátní síti."
+msgstr "Nedaří se připojit k této virtuální soukromé síti (VPN)."
 
 #: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -115,7 +115,7 @@ msgstr "VPN"
 
 #: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
-msgstr "Žádné přístupové body k dispozici"
+msgstr "Nejsou k dispozici žádné přístupové body"
 
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
