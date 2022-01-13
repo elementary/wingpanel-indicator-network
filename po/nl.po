@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2020-03-05 14:09+0000\n"
-"Last-Translator: Jaimie85 <alsemgeest@gmail.com>\n"
+"PO-Revision-Date: 2022-01-13 20:43+0000\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
 "Language: nl\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:107 src/Indicator.vala:120
@@ -27,16 +27,13 @@ msgid "Connecting to wired network"
 msgstr "Verbind met onzichtbaar netwerk…"
 
 #: src/Indicator.vala:110 src/Indicator.vala:115
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Verbinding maken"
+msgstr "Verbinding maken met “%s”"
 
 #: src/Indicator.vala:121
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Verbind met onzichtbaar netwerk…"
+msgstr "Verbinden met bekabeld netwerk"
 
 #: src/Indicator.vala:123 src/Indicator.vala:134
 #, fuzzy, c-format
