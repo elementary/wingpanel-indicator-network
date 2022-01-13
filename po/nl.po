@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2022-01-13 21:09+0000\n"
-"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
+"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
 "Language: nl\n"
@@ -31,7 +31,7 @@ msgstr "Verbinding maken met “%s”"
 
 #: src/Indicator.vala:121
 msgid "Connected to wired network"
-msgstr "Verbinden met bekabeld netwerk"
+msgstr "Verbonden met bekabeld netwerk"
 
 #: src/Indicator.vala:123 src/Indicator.vala:134
 #, c-format
@@ -47,14 +47,12 @@ msgid "Disconnected"
 msgstr "Niet verbonden"
 
 #: src/Indicator.vala:146
-#, fuzzy
-#| msgid "Connected"
 msgid "Not connected"
-msgstr "Verbonden"
+msgstr "Niet verbonden"
 
 #: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
-msgstr ""
+msgstr "Onbekend netwerk"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
@@ -74,20 +72,16 @@ msgid "Unable to connect"
 msgstr "Niet in staat te verbinden"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Dit netwerk gebruikt 40/64-bits WEP-encryptie"
+msgstr "40/64-bits WEP-versleuteling"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Dit netwerk gebruikt 104/128-bits WEP-encryptie"
+msgstr "104/128-bits WEP-versleuteling"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "WPA-versleuteling"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
