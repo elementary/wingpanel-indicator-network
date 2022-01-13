@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2022-01-13 20:43+0000\n"
-"Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
+"PO-Revision-Date: 2022-01-13 21:09+0000\n"
+"Last-Translator: Niels Van Laerhoven <niels1995@gmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
 "Language: nl\n"
@@ -34,14 +34,13 @@ msgid "Connected to wired network"
 msgstr "Verbinden met bekabeld netwerk"
 
 #: src/Indicator.vala:123 src/Indicator.vala:134
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Verbonden"
+msgstr "Verbonden met “%s”"
 
 #: src/Indicator.vala:139
 msgid "Failed to connect"
-msgstr ""
+msgstr "Verbinden mislukt"
 
 #: src/Indicator.vala:143
 msgid "Disconnected"
@@ -72,7 +71,7 @@ msgstr "Onbekend type: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Niet in staat te verbinden"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
 #, fuzzy
@@ -92,11 +91,11 @@ msgstr ""
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Versleuteld"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Onbeveiligd"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
