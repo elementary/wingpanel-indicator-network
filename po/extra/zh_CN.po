@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2022-01-28 09:02+0000\n"
+"PO-Revision-Date: 2022-01-28 09:03+0000\n"
 "Last-Translator: luke lai <lukeforall@live.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/zh_Hans/>\n"
@@ -39,7 +39,7 @@ msgstr ""
 #: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
 #: data/network.appdata.xml.in:41
 msgid "Minor updates:"
-msgstr "次要更新："
+msgstr "次要更新"
 
 #: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
 #: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
