@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2022-01-28 09:03+0000\n"
-"Last-Translator: luke lai <lukeforall@live.com>\n"
+"Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/zh_Hans/>\n"
 "Language: zh_CN\n"
@@ -30,7 +30,7 @@ msgstr "连接到无线网线和管理 VPN"
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 #: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr "修复"
+msgstr "修复："
 
 #: data/network.appdata.xml.in:14
 msgid "Prevent blank lines in VPN list"
