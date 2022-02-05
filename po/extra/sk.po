@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2021-11-30 20:22+0000\n"
+"PO-Revision-Date: 2022-02-05 20:44+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/sk/>\n"
@@ -48,10 +48,10 @@ msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
 #: data/network.appdata.xml.in:26
-#, fuzzy
-#| msgid "Don't launch Captive Network Assistent with full connectivity"
 msgid "Don't launch Captive Network Assistant with full connectivity"
-msgstr "Nespúšťať Asistenta prihlasovania do sietí so silným pripojením"
+msgstr ""
+"Nespúšťať Asistenta prihlasovania do sietí, ak je k dispozícii silné "
+"pripojenie"
 
 #: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
