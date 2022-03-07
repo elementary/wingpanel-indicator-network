@@ -7,6 +7,30 @@
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
   <releases>
+    <release version="2.3.2" date="2021-11-23" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent blank lines in VPN list</li>
+        </ul>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    <release version="2.3.1" date="2021-10-22" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Don't launch Captive Network Assistant with full connectivity</li>
+        </ul>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.3.0" date="2021-07-14" urgency="medium">
       <description>
         <p>Fixes:</p>

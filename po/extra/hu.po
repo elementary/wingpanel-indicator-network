@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-09-02 21:53+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"PO-Revision-Date: 2021-12-26 01:10+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -27,39 +27,50 @@ msgstr "Hálózatkijelzés"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Csatlakozás vezeték nélküli hálózathoz és VPN-ek kezelése"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Javítások:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
+msgid "Prevent blank lines in VPN list"
 msgstr ""
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr ""
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
 msgid "Minor updates:"
-msgstr ""
+msgstr "Apróbb frissítések:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr ""
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr ""
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/network.appdata.xml.in:32
-msgid "Prevent panel icon from showing in the dock"
+#: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:38
+msgid "Fix VPN spinning after connecting"
+msgstr ""
+
+#: data/network.appdata.xml.in:39
+msgid "Improve detecting network encryption type"
+msgstr ""
+
+#: data/network.appdata.xml.in:43
+msgid "Ellipsize long network names"
+msgstr ""
+
+#: data/network.appdata.xml.in:44
+msgid "Show tooltip on hover"
+msgstr "Tipp megjelenítése a kurzor felé mozgatásakor"
+
+#: data/network.appdata.xml.in:56
+msgid "Prevent panel icon from showing in the dock"
+msgstr "Ne jelenjen meg az állapotsor a dokkon"
+
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

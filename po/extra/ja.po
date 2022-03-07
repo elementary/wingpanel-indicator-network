@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2021-07-15 18:49+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"PO-Revision-Date: 2021-12-14 11:38+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -27,39 +27,50 @@ msgstr "ネットワークインジケーター"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "無線ネットワークに接続したり VPN を管理したりします"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
 msgstr "修正点:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
-msgstr "VPN への接続後もスピンナーが表示される不具合を修正"
+msgid "Prevent blank lines in VPN list"
+msgstr "VPN の一覧に名前のない VPN が表示される不具合を修正"
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr "ネットワーク暗号化の種類の検知に関する改善"
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
 msgid "Minor updates:"
 msgstr "軽微なアップデート:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr "ネットワーク名が長い場合は省略表示するように修正"
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr "ホバー時にツールチップを表示するように変更"
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistant with full connectivity"
+msgstr "インターネットに接続できている場合は、キャプティブネットワークアシスタントを起動しないように修正"
+
+#: data/network.appdata.xml.in:38
+msgid "Fix VPN spinning after connecting"
+msgstr "VPN への接続後もスピンナーが表示される不具合を修正"
+
+#: data/network.appdata.xml.in:39
+msgid "Improve detecting network encryption type"
+msgstr "ネットワーク暗号化の種類の検知に関する改善"
+
+#: data/network.appdata.xml.in:43
+msgid "Ellipsize long network names"
+msgstr "ネットワーク名が長い場合は省略表示するように修正"
+
+#: data/network.appdata.xml.in:44
+msgid "Show tooltip on hover"
+msgstr "ホバー時にツールチップを表示するように変更"
+
+#: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
 msgstr "パネルのアイコンがドックに表示される不具合を修正"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

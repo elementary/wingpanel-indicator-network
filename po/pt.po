@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,42 +15,42 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Indicator.vala:107 src/Indicator.vala:120
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Com cabo"
 
-#: src/Indicator.vala:105
+#: src/Indicator.vala:108
 msgid "Connecting to wired network"
 msgstr "A ligar à rede por cabo"
 
-#: src/Indicator.vala:107 src/Indicator.vala:112
+#: src/Indicator.vala:110 src/Indicator.vala:115
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "A ligar a \"%s\""
 
-#: src/Indicator.vala:118
+#: src/Indicator.vala:121
 msgid "Connected to wired network"
 msgstr "Ligado à rede por cabo"
 
-#: src/Indicator.vala:120 src/Indicator.vala:131
+#: src/Indicator.vala:123 src/Indicator.vala:134
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Ligado a \"%s\""
 
-#: src/Indicator.vala:136
+#: src/Indicator.vala:139
 msgid "Failed to connect"
 msgstr "Falha na ligação"
 
-#: src/Indicator.vala:140
+#: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr "Desligado"
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:146
 msgid "Not connected"
 msgstr "Não ligado"
 
-#: src/Indicator.vala:157 src/Indicator.vala:169
+#: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
 msgstr "rede desconhecida"
 
@@ -109,7 +109,7 @@ msgstr "Banda larga móvel"
 msgid "Modem"
 msgstr "Modem"
 
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
 msgid "VPN"
 msgstr "VPN"
 

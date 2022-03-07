@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2020-06-07 20:11+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"PO-Revision-Date: 2022-01-12 19:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/cs/>\n"
@@ -12,59 +12,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Indicator.vala:107 src/Indicator.vala:120
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Drátová síť"
 
-#: src/Indicator.vala:105
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
+#: src/Indicator.vala:108
 msgid "Connecting to wired network"
-msgstr "Připojit ke skryté síti…"
+msgstr "Připojování k drátové síti"
 
-#: src/Indicator.vala:107 src/Indicator.vala:112
-#, fuzzy, c-format
-#| msgid "Connecting"
+#: src/Indicator.vala:110 src/Indicator.vala:115
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Připojování"
+msgstr "Připojování k „%s“"
 
-#: src/Indicator.vala:118
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
+#: src/Indicator.vala:121
 msgid "Connected to wired network"
-msgstr "Připojit ke skryté síti…"
+msgstr "Připojeno k drátové síti"
 
-#: src/Indicator.vala:120 src/Indicator.vala:131
-#, fuzzy, c-format
-#| msgid "Connected"
+#: src/Indicator.vala:123 src/Indicator.vala:134
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Připojeno"
+msgstr "Připojeno k „%s“"
 
-#: src/Indicator.vala:136
+#: src/Indicator.vala:139
 msgid "Failed to connect"
-msgstr ""
+msgstr "Nepodařilo se připojit"
 
-#: src/Indicator.vala:140
+#: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr "Odpojeno"
 
-#: src/Indicator.vala:143
-#, fuzzy
-#| msgid "Connected"
+#: src/Indicator.vala:146
 msgid "Not connected"
-msgstr "Připojeno"
+msgstr "Nepřipojeno"
 
-#: src/Indicator.vala:157 src/Indicator.vala:169
+#: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
-msgstr ""
+msgstr "neznámá síť"
 
 #: src/common/Widgets/VpnMenuItem.vala:62
 msgid "This Virtual Private Network could not be connected to."
-msgstr "Nedaří se připojit k této Virtuální privátní síti."
+msgstr "Nedaří se připojit k této virtuální soukromé síti (VPN)."
 
 #: src/common/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -77,31 +69,27 @@ msgstr "Neznámý typ: %s "
 
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
-msgstr ""
+msgstr "Nepodařilo se připojit"
 
 #: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
-msgstr "Tato síť používá 40/64-bitové WEP šifrování"
+msgstr "Šifrované 40/64-bitové WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
-msgstr "Tato síť používá 104/128-bitové WEP šifrování"
+msgstr "Šifrované 104/128-bitové WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Šifrované WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "Encrypted"
-msgstr ""
+msgstr "Šifrované"
 
 #: src/common/Widgets/WifiMenuItem.vala:153
 msgid "Unsecured"
-msgstr ""
+msgstr "Nezabezpečené"
 
 #: src/Widgets/EtherInterface.vala:57
 #, c-format
@@ -121,13 +109,13 @@ msgstr "Mobilní širokopásmové připojení"
 msgid "Modem"
 msgstr "Modem"
 
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
 msgid "VPN"
 msgstr "VPN"
 
 #: src/Widgets/WifiInterface.vala:87
 msgid "No Access Points Available"
-msgstr "Žádné přístupové body k dispozici"
+msgstr "Nejsou k dispozici žádné přístupové body"
 
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"

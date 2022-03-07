@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2017-12-17 19:27+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,50 +15,50 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-03-05 06:27+0000\n"
 
-#: src/Indicator.vala:104 src/Indicator.vala:117
+#: src/Indicator.vala:107 src/Indicator.vala:120
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Simli"
 
-#: src/Indicator.vala:105
+#: src/Indicator.vala:108
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Gizli şəbəkəyə qoşul..."
 
-#: src/Indicator.vala:107 src/Indicator.vala:112
+#: src/Indicator.vala:110 src/Indicator.vala:115
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Qoşulur"
 
-#: src/Indicator.vala:118
+#: src/Indicator.vala:121
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Gizli şəbəkəyə qoşul..."
 
-#: src/Indicator.vala:120 src/Indicator.vala:131
+#: src/Indicator.vala:123 src/Indicator.vala:134
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Qoşulub"
 
-#: src/Indicator.vala:136
+#: src/Indicator.vala:139
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:140
+#: src/Indicator.vala:143
 msgid "Disconnected"
 msgstr "Qoşulu deyil"
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:146
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Qoşulub"
 
-#: src/Indicator.vala:157 src/Indicator.vala:169
+#: src/Indicator.vala:160 src/Indicator.vala:172
 msgid "unknown network"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Modem"
 msgstr ""
 
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:89
+#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
 msgid "VPN"
 msgstr "VPN"
 

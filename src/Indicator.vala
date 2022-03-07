@@ -83,12 +83,12 @@ public class Network.Indicator : Wingpanel.Indicator {
                 return;
             }
 
-            if (network_monitor.get_connectivity () == NetworkConnectivity.FULL || network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
+            if (network_monitor.get_connectivity () == NetworkConnectivity.PORTAL) {
                 try {
-                    var appinfo = AppInfo.create_from_commandline ("io.elementary.capnet-assist", null, AppInfoCreateFlags.NONE);
+                    var appinfo = new DesktopAppInfo ("io.elementary.capnet-assist.desktop");
                     appinfo.launch (null, null);
                 } catch (Error e) {
-                    warning ("%s\n", e.message);
+                    warning (e.message);
                 }
             }
 

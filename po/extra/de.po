@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
 "PO-Revision-Date: 2021-07-21 03:37+0000\n"
 "Last-Translator: felixpoessnecker <felix@felixpoessnecker.de>\n"
 "Language-Team: German <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,41 +27,52 @@ msgstr "Netzwerkanzeige"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Mit Drahtlosnetzwerken verbinden und VPNs verwalten"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
 msgstr "Fehlerbehebungen:"
 
 #: data/network.appdata.xml.in:14
+msgid "Prevent blank lines in VPN list"
+msgstr ""
+
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
+msgid "Minor updates:"
+msgstr "Kleinere Aktualisierungen:"
+
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
+msgid "Updated translations"
+msgstr "Aktualisierte Übersetzungen"
+
+#: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistant with full connectivity"
+msgstr ""
+
+#: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
 msgstr ""
 "Behebt einen Fehler, bei dem das Symbol für die VPN-Verbindung nicht "
 "aufhörte die Drehanimation zu zeigen"
 
-#: data/network.appdata.xml.in:15
+#: data/network.appdata.xml.in:39
 msgid "Improve detecting network encryption type"
 msgstr "Verbesserungen beim Erkennen der verwendeten Netzwerksverschlüsselung"
 
-#: data/network.appdata.xml.in:17
-msgid "Minor updates:"
-msgstr "Kleinere Aktualisierungen:"
-
-#: data/network.appdata.xml.in:19
+#: data/network.appdata.xml.in:43
 msgid "Ellipsize long network names"
 msgstr "Lange Netzwerknamen auslaufen lassen (...)"
 
-#: data/network.appdata.xml.in:20
+#: data/network.appdata.xml.in:44
 msgid "Show tooltip on hover"
 msgstr "Zeige Tooltip beim Darüberfahren"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
-msgid "Updated translations"
-msgstr "Aktualisierte Übersetzungen"
-
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Panel Icon nicht im Dock anzeigen"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

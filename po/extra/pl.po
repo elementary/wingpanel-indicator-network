@@ -7,58 +7,71 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-14 21:23+0000\n"
-"PO-Revision-Date: 2019-11-07 12:50-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"PO-Revision-Date: 2021-12-15 08:16+0000\n"
+"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
+"indicator-network-extra/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
-msgstr ""
+msgstr "Wskaźnik sieci"
 
 #: data/network.appdata.xml.in:7
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "Łącz się z bezprzewodowymi sieciami i zarządzaj VPNami"
 
-#: data/network.appdata.xml.in:12
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "Poprawki:"
 
 #: data/network.appdata.xml.in:14
-msgid "Fix VPN spinning after connecting"
-msgstr ""
+msgid "Prevent blank lines in VPN list"
+msgstr "Zapobiegnięto pustym liniom w liście VPN"
 
-#: data/network.appdata.xml.in:15
-msgid "Improve detecting network encryption type"
-msgstr ""
-
-#: data/network.appdata.xml.in:17
+#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:41
 msgid "Minor updates:"
-msgstr ""
+msgstr "Mniejsze aktualizacje:"
 
-#: data/network.appdata.xml.in:19
-msgid "Ellipsize long network names"
-msgstr ""
-
-#: data/network.appdata.xml.in:20
-msgid "Show tooltip on hover"
-msgstr ""
-
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:33
+#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
+#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:57
 msgid "Updated translations"
-msgstr ""
+msgstr "Zaktualizowano tłumaczenia"
 
-#: data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:26
+msgid "Don't launch Captive Network Assistant with full connectivity"
+msgstr "Nie uruchamiaj Asystenta Sieci Podrzędnej z pełną łącznością"
+
+#: data/network.appdata.xml.in:38
+msgid "Fix VPN spinning after connecting"
+msgstr "Naprawiono problem z VPN obracającym się po połączeniu"
+
+#: data/network.appdata.xml.in:39
+msgid "Improve detecting network encryption type"
+msgstr "Ulepszono wykrywanie typu szyfrowania sieci"
+
+#: data/network.appdata.xml.in:43
+msgid "Ellipsize long network names"
+msgstr "Przycięto długie nazwy sieci"
+
+#: data/network.appdata.xml.in:44
+msgid "Show tooltip on hover"
+msgstr "Przy najechaniu pokazywany jest tooltip"
+
+#: data/network.appdata.xml.in:56
 msgid "Prevent panel icon from showing in the dock"
-msgstr ""
+msgstr "Zapobiegnięto ikonie panelu pokazującej się w doku"
 
-#: data/network.appdata.xml.in:42
+#: data/network.appdata.xml.in:66
 msgid "elementary, Inc."
-msgstr ""
+msgstr "elementary, Inc."
