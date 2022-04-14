@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2019-11-07 12:50-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2022-04-14 22:06+0000\n"
+"Last-Translator: Pikhosh <pikhosh@gmail.com>\n"
+"Language-Team: Persian <https://l10n.elementary.io/projects/wingpanel/"
+"indicator-network-extra/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.4.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -27,7 +30,7 @@ msgstr ""
 #: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
 #: data/network.appdata.xml.in:36
 msgid "Fixes:"
-msgstr ""
+msgstr "رفع اشکالات:"
 
 #: data/network.appdata.xml.in:14
 msgid "Prevent blank lines in VPN list"
@@ -36,13 +39,13 @@ msgstr ""
 #: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
 #: data/network.appdata.xml.in:41
 msgid "Minor updates:"
-msgstr ""
+msgstr "بروزرسانی های جزئی:"
 
 #: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
 #: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
 #: data/network.appdata.xml.in:57
 msgid "Updated translations"
-msgstr ""
+msgstr "ترجمه های بروز شده"
 
 #: data/network.appdata.xml.in:26
 msgid "Don't launch Captive Network Assistant with full connectivity"
