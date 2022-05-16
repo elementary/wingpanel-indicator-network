@@ -143,6 +143,9 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         } else if (NM.@80211ApSecurityFlags.GROUP_WEP104 in flags) {
             is_secured = true;
             tooltip_text = _("104/128-bit WEP encrypted");
+        } else if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
+            is_secured = true;
+            tooltip_text = _("WPA3 encrypted");
         } else if (NM.@80211ApSecurityFlags.KEY_MGMT_PSK in flags) {
             is_secured = true;
             tooltip_text = _("WPA encrypted");
