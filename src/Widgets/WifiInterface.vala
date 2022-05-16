@@ -251,6 +251,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             s_con.uuid = NM.Utils.uuid_generate ();
             connection.add_setting (s_con);
 
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
+                var s_wsec = new NM.SettingWirelessSecurity ();
+                s_wsec.key_mgmt = "sae";
+                connection.add_setting (s_wsec);
+            }
+
             var s_wifi = new NM.SettingWireless ();
             s_wifi.ssid = i.ap.get_ssid ();
             connection.add_setting (s_wifi);
