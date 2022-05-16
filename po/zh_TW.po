@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-05-16 07:48+0000\n"
 "PO-Revision-Date: 2018-02-07 03:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -90,14 +90,19 @@ msgid "104/128-bit WEP encrypted"
 msgstr "這個網路使用 104/128 位元 WEP 加密。"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "這個網路使用 40/64 位元 WEP 加密。"
+
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr ""
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-05-16 07:48+0000\n"
 "PO-Revision-Date: 2021-03-12 20:18+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -80,14 +80,20 @@ msgid "104/128-bit WEP encrypted"
 msgstr "Esta rede usa criptografia 104/128-bit WEP"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA encrypted"
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "WPA3 encrypted"
 msgstr "Esta rede usa WPA"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "Esta rede usa WPA"
+
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr "Criptografado"
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Inseguro"
 

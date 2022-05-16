@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-05-16 07:48+0000\n"
 "PO-Revision-Date: 2021-01-29 01:14+0000\n"
 "Last-Translator: Ozgur Baskin <bebeto_baskin@yahoo.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -80,14 +80,20 @@ msgid "104/128-bit WEP encrypted"
 msgstr "104/128-bit WEP şifreli"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA encrypted"
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "WPA3 encrypted"
 msgstr "WPA şifreli"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "WPA şifreli"
+
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr "Şifreli"
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Güvenli değil"
 
