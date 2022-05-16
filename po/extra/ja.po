@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-05-16 07:48+0000\n"
 "PO-Revision-Date: 2022-04-09 01:03+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -49,7 +49,9 @@ msgstr "翻訳の更新"
 
 #: data/network.appdata.xml.in:26
 msgid "Don't launch Captive Network Assistant with full connectivity"
-msgstr "インターネットに接続できている場合は、キャプティブネットワークアシスタントを起動しないように修正"
+msgstr ""
+"インターネットに接続できている場合は、キャプティブネットワークアシスタントを"
+"起動しないように修正"
 
 #: data/network.appdata.xml.in:38
 msgid "Fix VPN spinning after connecting"
