@@ -58,6 +58,8 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (display_widget != null);
 
         display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
+
+        update_tooltip ();
     }
 
     private void start_monitor () {
