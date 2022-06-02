@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-16 07:48+0000\n"
-"PO-Revision-Date: 2021-02-09 14:06+0000\n"
+"PO-Revision-Date: 2022-06-02 23:40+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/fi/>\n"
@@ -80,10 +80,8 @@ msgid "104/128-bit WEP encrypted"
 msgstr "104-/128-bittinen WEP-salaus"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
-msgstr "WPA-salattu"
+msgstr "WPA3-salattu"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
