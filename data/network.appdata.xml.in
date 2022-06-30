@@ -7,6 +7,20 @@
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
   <releases>
+    <release version="2.3.3" date="2022-07-29" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Ensure correct tooltip on system start</li>
+          <li>Prevent connecting to invalid VPNs</li>
+          <li>Show correct info for WPA3 networks</li>
+        </ul>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.3.2" date="2021-11-23" urgency="medium">
       <description>
         <p>Fixes:</p>
