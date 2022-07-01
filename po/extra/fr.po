@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 22:17+0000\n"
-"PO-Revision-Date: 2021-12-14 11:38+0000\n"
+"PO-Revision-Date: 2022-07-01 13:03+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
@@ -35,14 +35,16 @@ msgstr "Corrections :"
 #: data/network.appdata.xml.in:14
 msgid "Ensure correct tooltip on system start"
 msgstr ""
+"Nous nous sommes assurés d'afficher une infobulle correcte au démarrage du "
+"système"
 
 #: data/network.appdata.xml.in:15
 msgid "Prevent connecting to invalid VPNs"
-msgstr ""
+msgstr "Nous nous sommes assurés d'empêcher la connexion à des VPN invalides"
 
 #: data/network.appdata.xml.in:16
 msgid "Show correct info for WPA3 networks"
-msgstr ""
+msgstr "Affichage des informations correctes pour les réseaux WPA3"
 
 #: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:55
