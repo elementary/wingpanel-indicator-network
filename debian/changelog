@@ -1,3 +1,16 @@
+wingpanel-indicator-network (2.3.3) bionic; urgency=medium
+
+  * Release 2.3.3
+  * Update translation files
+  * Update translation template
+  * Fix tooltip showing stale disconnected lable on first boot (#249)
+  * Add WPA3 support (#248)
+  * VpnMenuItem: Avoid to call method of a possibly null connection
+    object (#243)
+  * AppData: Fix a typo (#242)
+
+ -- Cody Garver <cody@elementary.io>  Fri, 01 Jul 2022 05:49:33 +0000
+
 wingpanel-indicator-network (2.3.2) bionic; urgency=medium
 
   * Release 2.3.2 (#240)
