@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 07:48+0000\n"
+"POT-Creation-Date: 2022-06-30 22:17+0000\n"
 "PO-Revision-Date: 2021-03-05 00:17+0000\n"
 "Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,42 +16,42 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:107 src/Indicator.vala:120
+#: src/Indicator.vala:109 src/Indicator.vala:122
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Проводное"
 
-#: src/Indicator.vala:108
+#: src/Indicator.vala:110
 msgid "Connecting to wired network"
 msgstr "Подключение к проводной сети"
 
-#: src/Indicator.vala:110 src/Indicator.vala:115
+#: src/Indicator.vala:112 src/Indicator.vala:117
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Подключение к «%s»"
 
-#: src/Indicator.vala:121
+#: src/Indicator.vala:123
 msgid "Connected to wired network"
 msgstr "Подключено к проводной сети"
 
-#: src/Indicator.vala:123 src/Indicator.vala:134
+#: src/Indicator.vala:125 src/Indicator.vala:136
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Подключено к «%s»"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:141
 msgid "Failed to connect"
 msgstr "Не удалось подключиться"
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:145
 msgid "Disconnected"
 msgstr "Отключено"
 
-#: src/Indicator.vala:146
+#: src/Indicator.vala:148
 msgid "Not connected"
 msgstr "Не подключено"
 
-#: src/Indicator.vala:160 src/Indicator.vala:172
+#: src/Indicator.vala:162 src/Indicator.vala:174
 msgid "unknown network"
 msgstr "неизвестная сеть"
 

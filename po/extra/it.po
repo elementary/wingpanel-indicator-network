@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-16 07:48+0000\n"
+"POT-Creation-Date: 2022-06-30 22:17+0000\n"
 "PO-Revision-Date: 2020-10-27 10:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,50 +27,62 @@ msgstr "Indicatore di rete"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connettiti alle reti wireless e gestisci le VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
-#: data/network.appdata.xml.in:36
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:38 data/network.appdata.xml.in:50
 msgid "Fixes:"
 msgstr ""
 
 #: data/network.appdata.xml.in:14
-msgid "Prevent blank lines in VPN list"
+msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
-#: data/network.appdata.xml.in:41
-msgid "Minor updates:"
+#: data/network.appdata.xml.in:15
+msgid "Prevent connecting to invalid VPNs"
+msgstr ""
+
+#: data/network.appdata.xml.in:16
+msgid "Show correct info for WPA3 networks"
 msgstr ""
 
 #: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
-#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:57
+#: data/network.appdata.xml.in:42 data/network.appdata.xml.in:55
+msgid "Minor updates:"
+msgstr ""
+
+#: data/network.appdata.xml.in:20 data/network.appdata.xml.in:32
+#: data/network.appdata.xml.in:44 data/network.appdata.xml.in:59
+#: data/network.appdata.xml.in:65 data/network.appdata.xml.in:71
 msgid "Updated translations"
 msgstr "Traduzioni aggiornate"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:28
+msgid "Prevent blank lines in VPN list"
+msgstr ""
+
+#: data/network.appdata.xml.in:40
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 
-#: data/network.appdata.xml.in:38
+#: data/network.appdata.xml.in:52
 msgid "Fix VPN spinning after connecting"
 msgstr ""
 
-#: data/network.appdata.xml.in:39
+#: data/network.appdata.xml.in:53
 msgid "Improve detecting network encryption type"
 msgstr ""
 
-#: data/network.appdata.xml.in:43
+#: data/network.appdata.xml.in:57
 msgid "Ellipsize long network names"
 msgstr ""
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:58
 msgid "Show tooltip on hover"
 msgstr ""
 
-#: data/network.appdata.xml.in:56
+#: data/network.appdata.xml.in:70
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Impedisce all'icona del pannello di apparire nella dock"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:80
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
