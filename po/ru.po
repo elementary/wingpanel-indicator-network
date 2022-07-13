@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 22:17+0000\n"
-"PO-Revision-Date: 2021-03-05 00:17+0000\n"
-"Last-Translator: DartDeaDia <jorydit@gmail.com>\n"
+"PO-Revision-Date: 2022-07-13 07:26+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ru/>\n"
 "Language: ru\n"
@@ -81,10 +81,8 @@ msgid "104/128-bit WEP encrypted"
 msgstr "104/128-битное WEP-шифрование"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
-msgstr "Шифрованние WPA"
+msgstr "Шифрованние WPA3"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
