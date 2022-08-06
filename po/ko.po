@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 22:17+0000\n"
-"PO-Revision-Date: 2022-08-06 10:54+0000\n"
+"PO-Revision-Date: 2022-08-06 20:28+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ko/>\n"
@@ -89,7 +89,7 @@ msgstr "WPA 암호화"
 
 #: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
-msgstr "암호화 됨"
+msgstr "암호화"
 
 #: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
