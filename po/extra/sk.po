@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-30 22:17+0000\n"
-"PO-Revision-Date: 2022-02-05 20:44+0000\n"
+"PO-Revision-Date: 2022-09-30 22:56+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/sk/>\n"
@@ -34,15 +34,15 @@ msgstr "Opravy:"
 
 #: data/network.appdata.xml.in:14
 msgid "Ensure correct tooltip on system start"
-msgstr ""
+msgstr "Zabezpečenie správneho popisu pri spustení systému"
 
 #: data/network.appdata.xml.in:15
 msgid "Prevent connecting to invalid VPNs"
-msgstr ""
+msgstr "Zabránenie pripojeniu k neplatným sieťam VPN"
 
 #: data/network.appdata.xml.in:16
 msgid "Show correct info for WPA3 networks"
-msgstr ""
+msgstr "Zobrazenie správnych informácií pre siete WPA3"
 
 #: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:55
