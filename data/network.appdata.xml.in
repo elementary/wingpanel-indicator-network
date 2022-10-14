@@ -7,7 +7,7 @@
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
   <releases>
-    <release version="2.3.4" date="2022-10-14" urgency="medium">
+    <release version="2.3.4" date="2022-10-15" urgency="medium">
       <description>
         <p>Minor updates:</p>
         <ul>
