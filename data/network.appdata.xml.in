@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2019 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2019-2022 elementary, Inc. <contact@elementary.io> -->
 <component type="addon">
   <id>io.elementary.wingpanel.network</id>
   <extends>io.elementary.wingpanel</extends>
@@ -7,6 +7,15 @@
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
   <releases>
+    <release version="2.3.4" date="2022-10-14" urgency="medium">
+      <description>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="2.3.3" date="2022-06-30" urgency="medium">
       <description>
         <p>Fixes:</p>
