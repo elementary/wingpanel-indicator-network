@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-30 22:17+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
 "PO-Revision-Date: 2022-07-01 13:03+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,69 +27,71 @@ msgstr "Indicateur Réseau"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:26
-#: data/network.appdata.xml.in:38 data/network.appdata.xml.in:50
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:64
+msgid "Minor updates:"
+msgstr "Mises à jour mineures :"
+
+#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
+#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
+#: data/network.appdata.xml.in:80
+msgid "Updated translations"
+msgstr "Mise à jour des traductions"
+
+#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
+#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
 msgid "Fixes:"
 msgstr "Corrections :"
 
-#: data/network.appdata.xml.in:14
+#: data/network.appdata.xml.in:23
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 "Nous nous sommes assurés d'afficher une infobulle correcte au démarrage du "
 "système"
 
-#: data/network.appdata.xml.in:15
+#: data/network.appdata.xml.in:24
 msgid "Prevent connecting to invalid VPNs"
 msgstr "Nous nous sommes assurés d'empêcher la connexion à des VPN invalides"
 
-#: data/network.appdata.xml.in:16
+#: data/network.appdata.xml.in:25
 msgid "Show correct info for WPA3 networks"
 msgstr "Affichage des informations correctes pour les réseaux WPA3"
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
-#: data/network.appdata.xml.in:42 data/network.appdata.xml.in:55
-msgid "Minor updates:"
-msgstr "Mises à jour mineures :"
-
-#: data/network.appdata.xml.in:20 data/network.appdata.xml.in:32
-#: data/network.appdata.xml.in:44 data/network.appdata.xml.in:59
-#: data/network.appdata.xml.in:65 data/network.appdata.xml.in:71
-msgid "Updated translations"
-msgstr "Mise à jour des traductions"
-
-#: data/network.appdata.xml.in:28
+#: data/network.appdata.xml.in:37
 msgid "Prevent blank lines in VPN list"
 msgstr ""
 "Nous avons empêché l'apparition de lignes vierges dans la liste des VPN"
 
-#: data/network.appdata.xml.in:40
+#: data/network.appdata.xml.in:49
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 "L'assistant au réseau captif ne se lance désormais plus en cas de connexion "
 "fonctionnelle"
 
-#: data/network.appdata.xml.in:52
+#: data/network.appdata.xml.in:61
 msgid "Fix VPN spinning after connecting"
 msgstr "Correction de l'icône de chargement du VPN après la connexion"
 
-#: data/network.appdata.xml.in:53
+#: data/network.appdata.xml.in:62
 msgid "Improve detecting network encryption type"
 msgstr "Amélioration de la détection du type de chiffrement des réseaux"
 
-#: data/network.appdata.xml.in:57
+#: data/network.appdata.xml.in:66
 msgid "Ellipsize long network names"
 msgstr "Les noms trop longs sont désormais tronqués"
 
-#: data/network.appdata.xml.in:58
+#: data/network.appdata.xml.in:67
 msgid "Show tooltip on hover"
 msgstr "Affichage d'une infobulle au survol"
 
-#: data/network.appdata.xml.in:70
+#: data/network.appdata.xml.in:79
 msgid "Prevent panel icon from showing in the dock"
 msgstr ""
 "Nous avons fait en sorte que l'icône du panneau ne s'affiche plus dans le "
 "dock"
 
-#: data/network.appdata.xml.in:80
+#: data/network.appdata.xml.in:89
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
