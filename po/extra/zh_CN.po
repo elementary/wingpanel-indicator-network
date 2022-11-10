@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
 "PO-Revision-Date: 2022-01-28 10:29+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -27,52 +27,66 @@ msgstr "网络指示器"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "连接到无线网线和管理 VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
-#: data/network.appdata.xml.in:36
-msgid "Fixes:"
-msgstr "修复："
-
-#: data/network.appdata.xml.in:14
-msgid "Prevent blank lines in VPN list"
-msgstr ""
-
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
-#: data/network.appdata.xml.in:41
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:64
 msgid "Minor updates:"
 msgstr "次要更新："
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
-#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:57
+#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
+#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
+#: data/network.appdata.xml.in:80
 msgid "Updated translations"
 msgstr "更新翻译"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
+#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+msgid "Fixes:"
+msgstr "修复："
+
+#: data/network.appdata.xml.in:23
+msgid "Ensure correct tooltip on system start"
+msgstr ""
+
+#: data/network.appdata.xml.in:24
+msgid "Prevent connecting to invalid VPNs"
+msgstr ""
+
+#: data/network.appdata.xml.in:25
+msgid "Show correct info for WPA3 networks"
+msgstr ""
+
+#: data/network.appdata.xml.in:37
+msgid "Prevent blank lines in VPN list"
+msgstr ""
+
+#: data/network.appdata.xml.in:49
 #, fuzzy
 #| msgid "Don't launch Captive Network Assistent with full connectivity"
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr "网络连接通畅时，不要启用认证网络助理"
 
-#: data/network.appdata.xml.in:38
+#: data/network.appdata.xml.in:61
 msgid "Fix VPN spinning after connecting"
 msgstr "修复连接后 VPN 刷新"
 
-#: data/network.appdata.xml.in:39
+#: data/network.appdata.xml.in:62
 msgid "Improve detecting network encryption type"
 msgstr "改进检测网络加密类型"
 
-#: data/network.appdata.xml.in:43
+#: data/network.appdata.xml.in:66
 msgid "Ellipsize long network names"
 msgstr "省略长网络名"
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:67
 msgid "Show tooltip on hover"
 msgstr "悬停时显示工具提示"
 
-#: data/network.appdata.xml.in:56
+#: data/network.appdata.xml.in:79
 msgid "Prevent panel icon from showing in the dock"
 msgstr "避免面板图标显示在 Dock 中"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:89
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

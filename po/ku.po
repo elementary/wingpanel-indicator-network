@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
 "PO-Revision-Date: 2018-06-01 00:11+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel/"
@@ -20,50 +20,50 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2017-04-08 06:10+0000\n"
 
-#: src/Indicator.vala:107 src/Indicator.vala:120
+#: src/Indicator.vala:109 src/Indicator.vala:122
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Bêtêl"
 
-#: src/Indicator.vala:108
+#: src/Indicator.vala:110
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "le girê dan bo Tore veşartinê…"
 
-#: src/Indicator.vala:110 src/Indicator.vala:115
+#: src/Indicator.vala:112 src/Indicator.vala:117
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Girêdide"
 
-#: src/Indicator.vala:121
+#: src/Indicator.vala:123
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "le girê dan bo Tore veşartinê…"
 
-#: src/Indicator.vala:123 src/Indicator.vala:134
+#: src/Indicator.vala:125 src/Indicator.vala:136
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Hate girêdan"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:141
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:145
 msgid "Disconnected"
 msgstr "Girêdan Tune"
 
-#: src/Indicator.vala:146
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Hate girêdan"
 
-#: src/Indicator.vala:160 src/Indicator.vala:172
+#: src/Indicator.vala:162 src/Indicator.vala:174
 msgid "unknown network"
 msgstr ""
 
@@ -97,14 +97,20 @@ msgid "104/128-bit WEP encrypted"
 msgstr "Ev Torê kilîdê 104/128-bit WEP bi kar dike"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "Ev Torê kilîdê 40/64-bit WEP bi kar dike"
+
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
 "PO-Revision-Date: 2016-06-30 20:45+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
@@ -18,50 +18,50 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 "X-Generator: Launchpad (build 18282)\n"
 
-#: src/Indicator.vala:107 src/Indicator.vala:120
+#: src/Indicator.vala:109 src/Indicator.vala:122
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "De-kable"
 
-#: src/Indicator.vala:108
+#: src/Indicator.vala:110
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Kumonekta sa Nakatagong Network"
 
-#: src/Indicator.vala:110 src/Indicator.vala:115
+#: src/Indicator.vala:112 src/Indicator.vala:117
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Kumokonekta"
 
-#: src/Indicator.vala:121
+#: src/Indicator.vala:123
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Kumonekta sa Nakatagong Network"
 
-#: src/Indicator.vala:123 src/Indicator.vala:134
+#: src/Indicator.vala:125 src/Indicator.vala:136
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Nakakonektado"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:141
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:145
 msgid "Disconnected"
 msgstr "Hindi konektado"
 
-#: src/Indicator.vala:146
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Nakakonektado"
 
-#: src/Indicator.vala:160 src/Indicator.vala:172
+#: src/Indicator.vala:162 src/Indicator.vala:174
 msgid "unknown network"
 msgstr ""
 
@@ -94,14 +94,19 @@ msgid "104/128-bit WEP encrypted"
 msgstr "Ang network na ito ay gumagamet ng 104/128-bit WEP encryption."
 
 #: src/common/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "Ang network na ito ay gumagamet ng 40/64-bit WEP encryption."
+
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr ""
 

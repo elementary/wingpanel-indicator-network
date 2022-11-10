@@ -1,7 +1,7 @@
 project(
     'network',
     'vala', 'c',
-    version: '2.3.2'
+    version: '2.3.4'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -51,7 +51,7 @@ shared_module(
         dependency('gobject-2.0'),
         dependency('granite'),
         dependency('gtk+-3.0'),
-        dependency('libnm'),
+        dependency('libnm', version: '>=1.20.6'),
         dependency('libnma'),
         meson.get_compiler('vala').find_library('posix'),
         wingpanel_dep

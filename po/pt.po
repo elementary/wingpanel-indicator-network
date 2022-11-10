@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2020-12-25 10:16+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
+"PO-Revision-Date: 2022-05-24 18:54+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/pt/>\n"
@@ -12,45 +12,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.9.1\n"
+"X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:107 src/Indicator.vala:120
+#: src/Indicator.vala:109 src/Indicator.vala:122
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Com cabo"
 
-#: src/Indicator.vala:108
+#: src/Indicator.vala:110
 msgid "Connecting to wired network"
 msgstr "A ligar à rede por cabo"
 
-#: src/Indicator.vala:110 src/Indicator.vala:115
+#: src/Indicator.vala:112 src/Indicator.vala:117
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "A ligar a \"%s\""
 
-#: src/Indicator.vala:121
+#: src/Indicator.vala:123
 msgid "Connected to wired network"
 msgstr "Ligado à rede por cabo"
 
-#: src/Indicator.vala:123 src/Indicator.vala:134
+#: src/Indicator.vala:125 src/Indicator.vala:136
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Ligado a \"%s\""
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:141
 msgid "Failed to connect"
 msgstr "Falha na ligação"
 
-#: src/Indicator.vala:143
+#: src/Indicator.vala:145
 msgid "Disconnected"
 msgstr "Desligado"
 
-#: src/Indicator.vala:146
+#: src/Indicator.vala:148
 msgid "Not connected"
 msgstr "Não ligado"
 
-#: src/Indicator.vala:160 src/Indicator.vala:172
+#: src/Indicator.vala:162 src/Indicator.vala:174
 msgid "unknown network"
 msgstr "rede desconhecida"
 
@@ -80,14 +80,18 @@ msgid "104/128-bit WEP encrypted"
 msgstr "Encriptação WEP 104/128-bit"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "WPA3 encriptada"
+
+#: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
 msgstr "WPA encriptada"
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/common/Widgets/WifiMenuItem.vala:154
 msgid "Encrypted"
 msgstr "Encriptada"
 
-#: src/common/Widgets/WifiMenuItem.vala:153
+#: src/common/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Insegura"
 

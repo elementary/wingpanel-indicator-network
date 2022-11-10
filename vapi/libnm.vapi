@@ -4930,7 +4930,8 @@ namespace NM {
         GROUP_TKIP,
         GROUP_CCMP,
         KEY_MGMT_PSK,
-        KEY_MGMT_802_1X
+        KEY_MGMT_802_1X,
+        KEY_MGMT_SAE
     }
     [CCode (cheader_filename = "NetworkManager.h", cprefix = "NM_802_11_MODE_", type_id = "nm_802_11_mode_get_type ()")]
     public enum @80211Mode {

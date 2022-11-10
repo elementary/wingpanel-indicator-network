@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2022-02-05 20:44+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
+"PO-Revision-Date: 2022-09-30 22:56+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/sk/>\n"
@@ -27,52 +27,66 @@ msgstr "Indikátor siete"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Pripojte sa k bezdrôtovým sieťam a spravujte VPN pripojenia"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
-#: data/network.appdata.xml.in:36
-msgid "Fixes:"
-msgstr "Opravy:"
-
-#: data/network.appdata.xml.in:14
-msgid "Prevent blank lines in VPN list"
-msgstr "Zabránenie prázdnym riadkom v zozname VPN"
-
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
-#: data/network.appdata.xml.in:41
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:64
 msgid "Minor updates:"
 msgstr "Menšie aktualizácie:"
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
-#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:57
+#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
+#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
+#: data/network.appdata.xml.in:80
 msgid "Updated translations"
 msgstr "Aktualizované preklady"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
+#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+msgid "Fixes:"
+msgstr "Opravy:"
+
+#: data/network.appdata.xml.in:23
+msgid "Ensure correct tooltip on system start"
+msgstr "Zabezpečenie správneho popisu pri spustení systému"
+
+#: data/network.appdata.xml.in:24
+msgid "Prevent connecting to invalid VPNs"
+msgstr "Zabránenie pripojeniu k neplatným sieťam VPN"
+
+#: data/network.appdata.xml.in:25
+msgid "Show correct info for WPA3 networks"
+msgstr "Zobrazenie správnych informácií pre siete WPA3"
+
+#: data/network.appdata.xml.in:37
+msgid "Prevent blank lines in VPN list"
+msgstr "Zabránenie prázdnym riadkom v zozname VPN"
+
+#: data/network.appdata.xml.in:49
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 "Nespúšťať Asistenta prihlasovania do sietí, ak je k dispozícii silné "
 "pripojenie"
 
-#: data/network.appdata.xml.in:38
+#: data/network.appdata.xml.in:61
 msgid "Fix VPN spinning after connecting"
 msgstr "Opravené načítavanie VPN po pripojení"
 
-#: data/network.appdata.xml.in:39
+#: data/network.appdata.xml.in:62
 msgid "Improve detecting network encryption type"
 msgstr "Vylepšená detekcia typu šifrovania siete"
 
-#: data/network.appdata.xml.in:43
+#: data/network.appdata.xml.in:66
 msgid "Ellipsize long network names"
 msgstr "Elipsovať dlhé názvy sietí"
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:67
 msgid "Show tooltip on hover"
 msgstr "Zobrazovať popis po umiestnení kurzora"
 
-#: data/network.appdata.xml.in:56
+#: data/network.appdata.xml.in:79
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Zabránené zobrazovaniu ikony v doku"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:89
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

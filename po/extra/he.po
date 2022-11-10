@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-14 08:06+0000\n"
-"PO-Revision-Date: 2021-12-14 21:37+0000\n"
+"POT-Creation-Date: 2022-10-14 18:40+0000\n"
+"PO-Revision-Date: 2022-10-19 09:57+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/he/>\n"
@@ -27,50 +27,64 @@ msgstr "מחוון רשת"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:24
-#: data/network.appdata.xml.in:36
-msgid "Fixes:"
-msgstr "תיקונים:"
-
-#: data/network.appdata.xml.in:14
-msgid "Prevent blank lines in VPN list"
-msgstr "נמנעו שורות ריקות ברשימת חיבורי ה־VPN"
-
-#: data/network.appdata.xml.in:16 data/network.appdata.xml.in:28
-#: data/network.appdata.xml.in:41
+#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
+#: data/network.appdata.xml.in:64
 msgid "Minor updates:"
 msgstr "עדכונים משניים:"
 
-#: data/network.appdata.xml.in:18 data/network.appdata.xml.in:30
-#: data/network.appdata.xml.in:45 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:57
+#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
+#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
+#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
+#: data/network.appdata.xml.in:80
 msgid "Updated translations"
-msgstr "התרגומים עודכנו"
+msgstr "עודכנו התרגומים"
 
-#: data/network.appdata.xml.in:26
+#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
+#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+msgid "Fixes:"
+msgstr "תיקונים:"
+
+#: data/network.appdata.xml.in:23
+msgid "Ensure correct tooltip on system start"
+msgstr "מתבצע וידוא שמופיעה העצה הנכונה עם הפעלת המערכת"
+
+#: data/network.appdata.xml.in:24
+msgid "Prevent connecting to invalid VPNs"
+msgstr "מניעת התחברות עם VPNים שגויים"
+
+#: data/network.appdata.xml.in:25
+msgid "Show correct info for WPA3 networks"
+msgstr "הצגת המידע הנכון לרשתות WPA3"
+
+#: data/network.appdata.xml.in:37
+msgid "Prevent blank lines in VPN list"
+msgstr "נמנעו שורות ריקות ברשימת חיבורי ה־VPN"
+
+#: data/network.appdata.xml.in:49
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr "לא להפעיל את מסייע שובה הרשת עם קישוריות מלאה"
 
-#: data/network.appdata.xml.in:38
+#: data/network.appdata.xml.in:61
 msgid "Fix VPN spinning after connecting"
 msgstr "תיקון שבשבת VPN מסתובבת לאחר החיבור"
 
-#: data/network.appdata.xml.in:39
+#: data/network.appdata.xml.in:62
 msgid "Improve detecting network encryption type"
 msgstr "שיפור זיהוי סוג הצפנת רשת"
 
-#: data/network.appdata.xml.in:43
+#: data/network.appdata.xml.in:66
 msgid "Ellipsize long network names"
 msgstr "קיצור שמות רשתות ארוכים"
 
-#: data/network.appdata.xml.in:44
+#: data/network.appdata.xml.in:67
 msgid "Show tooltip on hover"
 msgstr "נוספה חלונית עצה בעת מעבר עם העכבר"
 
-#: data/network.appdata.xml.in:56
+#: data/network.appdata.xml.in:79
 msgid "Prevent panel icon from showing in the dock"
 msgstr "למנוע מסמל בלוח מלהופיע במעגן"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:89
 msgid "elementary, Inc."
 msgstr "elementary בע״מ"
