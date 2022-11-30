@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-30 20:23+0000\n"
-"PO-Revision-Date: 2022-05-19 12:26+0000\n"
+"PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/hu/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
@@ -52,11 +52,11 @@ msgstr "Nincs csatlakoztatva"
 
 #: src/Indicator.vala:170
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "Középső kattintás a repülőgépes mód kikapcsolásához"
 
 #: src/Indicator.vala:171
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "Középső kattintás a repülőgépes mód bekapcsolásához"
 
 #: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
@@ -139,7 +139,7 @@ msgstr "Vezeték nélküli"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
-msgstr ""
+msgstr "Repülőgépes mód"
 
 #: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
