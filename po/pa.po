@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 18:40+0000\n"
+"POT-Creation-Date: 2022-11-30 20:23+0000\n"
 "PO-Revision-Date: 2021-08-01 17:35+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/wingpanel/"
@@ -19,42 +19,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Indicator.vala:109 src/Indicator.vala:122
+#: src/Indicator.vala:125 src/Indicator.vala:138
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "ਤਾਰ ਵਾਲ਼ਾ"
 
-#: src/Indicator.vala:110
+#: src/Indicator.vala:126
 msgid "Connecting to wired network"
 msgstr "ਤਾਰ ਵਾਲ਼ੇ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜਿਆ ਜਾ ਰਿਹੈ"
 
-#: src/Indicator.vala:112 src/Indicator.vala:117
+#: src/Indicator.vala:128 src/Indicator.vala:133
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” ਨਾਲ਼ ਜੁੜ ਰਿਹੈ"
 
-#: src/Indicator.vala:123
+#: src/Indicator.vala:139
 msgid "Connected to wired network"
 msgstr "ਤਾਰ ਵਾਲ਼ੇ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜਿਆ ਹੈ"
 
-#: src/Indicator.vala:125 src/Indicator.vala:136
+#: src/Indicator.vala:141 src/Indicator.vala:152
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” ਨਾਲ਼ ਜੁੜਿਆ ਹੈ"
 
-#: src/Indicator.vala:141
+#: src/Indicator.vala:157
 msgid "Failed to connect"
 msgstr "ਕਨੈਕਸ਼ਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:161
 msgid "Disconnected"
 msgstr "ਕਨੈਕਸ਼ਨ ਟੁੱਟ ਗਿਆ"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:164
 msgid "Not connected"
 msgstr "ਜੁੜਿਆ ਨਹੀਂ ਹੋਇਆ"
 
-#: src/Indicator.vala:162 src/Indicator.vala:174
+#: src/Indicator.vala:170
+msgid "Middle-click to turn airplane mode off"
+msgstr ""
+
+#: src/Indicator.vala:171
+msgid "Middle-click to turn airplane mode on"
+msgstr ""
+
+#: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
 msgstr "ਅਣਜਾਣ ਨੈੱਟਵਰਕ"
 
@@ -133,10 +141,14 @@ msgstr ""
 msgid "Wireless"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:56
+#: src/Widgets/PopoverWidget.vala:58
+msgid "Airplane Mode"
+msgstr ""
+
+#: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr ""

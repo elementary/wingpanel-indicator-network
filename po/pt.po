@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 18:40+0000\n"
+"POT-Creation-Date: 2022-11-30 20:23+0000\n"
 "PO-Revision-Date: 2022-05-24 18:54+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,42 +15,50 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:109 src/Indicator.vala:122
+#: src/Indicator.vala:125 src/Indicator.vala:138
 #: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Com cabo"
 
-#: src/Indicator.vala:110
+#: src/Indicator.vala:126
 msgid "Connecting to wired network"
 msgstr "A ligar à rede por cabo"
 
-#: src/Indicator.vala:112 src/Indicator.vala:117
+#: src/Indicator.vala:128 src/Indicator.vala:133
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "A ligar a \"%s\""
 
-#: src/Indicator.vala:123
+#: src/Indicator.vala:139
 msgid "Connected to wired network"
 msgstr "Ligado à rede por cabo"
 
-#: src/Indicator.vala:125 src/Indicator.vala:136
+#: src/Indicator.vala:141 src/Indicator.vala:152
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Ligado a \"%s\""
 
-#: src/Indicator.vala:141
+#: src/Indicator.vala:157
 msgid "Failed to connect"
 msgstr "Falha na ligação"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:161
 msgid "Disconnected"
 msgstr "Desligado"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:164
 msgid "Not connected"
 msgstr "Não ligado"
 
-#: src/Indicator.vala:162 src/Indicator.vala:174
+#: src/Indicator.vala:170
+msgid "Middle-click to turn airplane mode off"
+msgstr ""
+
+#: src/Indicator.vala:171
+msgid "Middle-click to turn airplane mode on"
+msgstr ""
+
+#: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
 msgstr "rede desconhecida"
 
@@ -129,11 +137,17 @@ msgstr "À procura de pontos de acesso…"
 msgid "Wireless"
 msgstr "Sem fios"
 
-#: src/Widgets/PopoverWidget.vala:56
+#: src/Widgets/PopoverWidget.vala:58
+#, fuzzy
+#| msgid "Airplane mode enabled"
+msgid "Airplane Mode"
+msgstr "Modo avião ativo"
+
+#: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
 msgstr "Ligar a rede oculta…"
 
-#: src/Widgets/PopoverWidget.vala:60
+#: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Definições de Rede…"
 
@@ -178,9 +192,6 @@ msgstr "Definições de Rede…"
 
 #~ msgid "Cable unplugged"
 #~ msgstr "Cabo desligado"
-
-#~ msgid "Airplane mode enabled"
-#~ msgstr "Modo avião ativo"
 
 #~ msgid "Unknown"
 #~ msgstr "Desconhecido"
