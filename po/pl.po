@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-30 20:23+0000\n"
-"PO-Revision-Date: 2022-05-17 07:13+0000\n"
+"PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/pl/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
@@ -53,11 +53,11 @@ msgstr "Bez połączenia"
 
 #: src/Indicator.vala:170
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "Kliknij środkowym przyciskiem myszy by wyłączyć tryb samolotowy"
 
 #: src/Indicator.vala:171
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "Kliknij środkowym przyciskiem myszy by włączyć tryb samolotowy"
 
 #: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
@@ -139,10 +139,8 @@ msgid "Wireless"
 msgstr "Bezprzewodowe"
 
 #: src/Widgets/PopoverWidget.vala:58
-#, fuzzy
-#| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
-msgstr "Włączono tryb samolotowy"
+msgstr "Tryb samolotowy"
 
 #: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
