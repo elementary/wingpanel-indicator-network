@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-30 20:23+0000\n"
-"PO-Revision-Date: 2022-07-21 09:52+0000\n"
+"PO-Revision-Date: 2022-12-10 05:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/zh_Hans/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
@@ -52,11 +52,11 @@ msgstr "未连接"
 
 #: src/Indicator.vala:170
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "点击鼠标中键关闭飞行模式"
 
 #: src/Indicator.vala:171
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "点击鼠标中键开启飞行模式"
 
 #: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
@@ -138,10 +138,8 @@ msgid "Wireless"
 msgstr "无线网络"
 
 #: src/Widgets/PopoverWidget.vala:58
-#, fuzzy
-#| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
-msgstr "飞行模式已启用"
+msgstr "飞行模式"
 
 #: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
