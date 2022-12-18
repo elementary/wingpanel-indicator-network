@@ -245,11 +245,21 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
 
         var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
+        var is_secured = true;
+
+        var connection = NM.SimpleConnection.new ();
+
         if (flags != NM.@80211ApSecurityFlags.NONE) {
-            var connection = NM.SimpleConnection.new ();
             var s_con = new NM.SettingConnection ();
             s_con.uuid = NM.Utils.uuid_generate ();
             connection.add_setting (s_con);
+
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags) {
+                var s_wsec = new NM.SettingWirelessSecurity ();
+                s_wsec.key_mgmt = "owe";
+                connection.add_setting (s_wsec);
+                is_secured = false;
+            }
 
             if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
                 var s_wsec = new NM.SettingWirelessSecurity ();
@@ -274,7 +284,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 s_8021x.phase2_auth = "mschapv2";
                 connection.add_setting (s_8021x);
             }
+        }
 
+        if (is_secured) {
             // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
             // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
             // so we spawn our own
@@ -293,7 +305,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             wifi_dialog.destroy ();
         } else {
             nm_client.add_and_activate_connection_async.begin (
-                NM.SimpleConnection.new (),
+                connection,
                 wifi_device,
                 i.ap.get_path (),
                 null,
