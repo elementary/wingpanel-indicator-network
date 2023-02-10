@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-11-30 20:23+0000\n"
-"PO-Revision-Date: 2022-08-14 04:44+0000\n"
+"PO-Revision-Date: 2023-02-11 14:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
@@ -52,11 +52,11 @@ msgstr "Niet verbonden"
 
 #: src/Indicator.vala:170
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "Middelklik om vliegtuigmodus uit te schakelen"
 
 #: src/Indicator.vala:171
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "Middelklik om vliegtuigmodus in te schakelen"
 
 #: src/Indicator.vala:191 src/Indicator.vala:203
 msgid "unknown network"
@@ -138,10 +138,8 @@ msgid "Wireless"
 msgstr "Draadloos"
 
 #: src/Widgets/PopoverWidget.vala:58
-#, fuzzy
-#| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
-msgstr "Vliegtuigmodus ingeschakeld"
+msgstr "Vliegtuigmodus"
 
 #: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
