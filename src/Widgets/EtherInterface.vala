@@ -65,7 +65,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         add (ethernet_item);
         add (label);
 
-        device.state_changed.connect (() => { update (); });
+        device.state_changed.connect (update);
     }
 
     public override void update_name (int count) {
