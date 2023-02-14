@@ -41,6 +41,12 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         };
         label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
+        hexpand = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 3;
+        add (ethernet_item);
+        add (label);
+
         bind_property ("display-title", label, "label");
 
         ethernet_item.toggled.connect (() => {
@@ -58,12 +64,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
                 device.disconnect_async.begin (null, () => { debug ("Successfully disconnected."); });
             }
         });
-
-        hexpand = true;
-        orientation = Gtk.Orientation.VERTICAL;
-        spacing = 3;
-        add (ethernet_item);
-        add (label);
 
         device.state_changed.connect (update);
     }
