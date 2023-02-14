@@ -44,7 +44,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         orientation = Gtk.Orientation.VERTICAL;
 
-        other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        other_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
+            homogeneous = true,
+            margin_top = 6,
+            margin_end = 12,
+            margin_bottom = 6,
+            margin_start = 12
+        };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
@@ -55,31 +61,45 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            var airplane_switch = new Granite.SwitchModelButton (_("Airplane Mode"));
-            airplane_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
 
-            var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
-                margin_top = 3,
-                margin_bottom = 3
+            var airplane_toggle = new Gtk.ToggleButton () {
+                halign = Gtk.Align.CENTER,
+                image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
             };
+            airplane_toggle.get_style_context ().add_class ("circular");
+            airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            add (airplane_switch);
-            add (sep);
+            var airplane_label = new Gtk.Label (_("Airplane Mode"));
+            airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-            airplane_switch.notify["active"].connect (() => {
+            var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            airplane_box.add (airplane_toggle);
+            airplane_box.add (airplane_label);
+
+            other_box.add (airplane_box);
+
+            airplane_toggle.toggled.connect (() => {
                 try {
-                    nm_client.networking_set_enabled (!airplane_switch.active);
+                    nm_client.networking_set_enabled (!airplane_toggle.active);
                 } catch (Error e) {
                     warning (e.message);
                 }
             });
 
-            if (!airplane_switch.get_active () && !nm_client.networking_get_enabled ()) {
-                airplane_switch.activate ();
+            if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
+                airplane_toggle.activate ();
             }
         }
 
+        var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
         add (other_box);
+        add (sep);
         add (wifi_box);
         add (vpn_box);
 
@@ -132,7 +152,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        Gtk.Box container_box = other_box;
+        var container_box = other_box;
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
@@ -156,7 +176,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             container_box = vpn_box;
         }
 
-        if (is_in_session && get_children ().length () > 0) {
+        if (!(widget_interface is EtherInterface) && is_in_session && get_children ().length () > 0) {
             container_box.pack_end (widget_interface.sep);
         }
 
