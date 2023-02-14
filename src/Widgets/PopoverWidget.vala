@@ -152,7 +152,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        var container_box = other_box;
+        if (widget_interface is EtherInterface) {
+            other_box.add (widget_interface);
+            return;
+        }
+
+        var container_box = wifi_box;
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
@@ -176,7 +181,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             container_box = vpn_box;
         }
 
-        if (!(widget_interface is EtherInterface) && is_in_session && get_children ().length () > 0) {
+        if (is_in_session && get_children ().length () > 0) {
             container_box.pack_end (widget_interface.sep);
         }
 

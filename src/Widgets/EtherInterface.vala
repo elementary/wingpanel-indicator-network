@@ -43,10 +43,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         };
         label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
-        airplane_box.add (ethernet_item);
-        airplane_box.add (label);
-
         notify["display-title"].connect (() => {
             label.label = display_title;
         });
@@ -67,7 +63,11 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             }
         });
 
-        add (airplane_box);
+        hexpand = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 3;
+        add (ethernet_item);
+        add (label);
 
         device.state_changed.connect (() => { update (); });
     }
