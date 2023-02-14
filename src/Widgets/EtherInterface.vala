@@ -37,7 +37,10 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         ethernet_item.get_style_context ().add_class ("circular");
         ethernet_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        var label = new Gtk.Label (display_title);
+        var label = new Gtk.Label (display_title) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            max_width_chars = 16
+        };
         label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
