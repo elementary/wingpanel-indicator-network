@@ -18,7 +18,6 @@
 
 public class Network.EtherInterface : Network.WidgetNMInterface {
     private Gtk.ToggleButton ethernet_item;
-
     private static Gtk.CssProvider provider;
 
     static construct {
@@ -28,7 +27,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
-
 
         ethernet_item = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
@@ -43,9 +41,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         };
         label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        notify["display-title"].connect (() => {
-            label.label = display_title;
-        });
+        bind_property ("display-title", label, "label");
 
         ethernet_item.toggled.connect (() => {
             debug ("update");
