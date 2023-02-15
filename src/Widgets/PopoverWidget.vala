@@ -207,19 +207,15 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void update_interfaces_names () {
-        var count_type = new Gee.HashMap<string, int?> ();
-        foreach (var iface in network_interface) {
-            var type = iface.get_type ().name ();
-            if (count_type.has_key (type)) {
-                count_type[type] = count_type[type] + 1;
-            } else {
-                count_type[type] = 1;
-            }
+        NM.Device[] devices = {};
+        foreach (unowned var iface in network_interface) {
+            devices += iface.device;
         }
 
-        foreach (var iface in network_interface) {
-            var type = iface.get_type ().name ();
-            iface.update_name (count_type [type]);
+        var names = NM.Device.disambiguate_names (devices);
+
+        for (int i = 0; i < network_interface.length (); i++) {
+            network_interface.nth_data (i).display_title = names[i];
         }
     }
 
