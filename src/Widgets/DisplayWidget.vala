@@ -236,6 +236,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private class WifiItem : Gtk.Revealer {
         public NM.DeviceWifi device { get; construct; }
         private Gtk.Image image;
+        private uint animation_timeout;
+        private int animation_state = 0;
 
         public WifiItem (NM.DeviceWifi device) {
             Object (device: device);
@@ -243,43 +245,71 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         construct {
             image = new Gtk.Image () {
-                pixel_size = 24
+                use_fallback = true
             };
 
             add (image);
 
             update_state ();
             device.state_changed.connect (update_state);
+            device.notify["active-access-point"].connect (update_state);
         }
 
         private void update_state () {
+            if (animation_timeout > 0) {
+                Source.remove (animation_timeout);
+                animation_timeout = 0;
+            }
+
             switch (device.state) {
                 case NM.DeviceState.DISCONNECTED:
                 case NM.DeviceState.UNAVAILABLE:
                     reveal_child = false;
                     break;
+                case NM.DeviceState.CONFIG:
+                case NM.DeviceState.DEACTIVATING:
+                case NM.DeviceState.IP_CHECK:
+                case NM.DeviceState.IP_CONFIG:
+                case NM.DeviceState.NEED_AUTH:
+                case NM.DeviceState.PREPARE:
+                case NM.DeviceState.SECONDARIES:
+                    animate_icon ();
+                    reveal_child = true;
+                    break;
                 default:
+                    image.icon_name = get_icon_name ();
                     reveal_child = true;
                     break;
             }
+        }
 
-            image.icon_name = get_icon_name ();
+        private void animate_icon () {
+            animation_timeout = Timeout.add (300, () => {
+                animation_state = (animation_state + 1) % 4;
+                string strength = "";
+                switch (animation_state) {
+                    case 0:
+                        strength = "weak";
+                        break;
+                    case 1:
+                        strength = "ok";
+                        break;
+                    case 2:
+                        strength = "good";
+                        break;
+                    case 3:
+                        strength = "excellent";
+                        break;
+                }
+                image.icon_name = "network-wireless-signal-%s-symbolic".printf (strength);
+                return true;
+            });
         }
 
         private string get_icon_name () {
             string icon_name = "network-wireless";
 
             switch (device.state) {
-                case NM.DeviceState.ACTIVATED:
-                    break;
-                case NM.DeviceState.CONFIG:
-                case NM.DeviceState.DEACTIVATING:
-                case NM.DeviceState.IP_CHECK:
-                case NM.DeviceState.IP_CONFIG:
-                case NM.DeviceState.PREPARE:
-                case NM.DeviceState.SECONDARIES:
-                    icon_name += "-acquiring";
-                    break;
                 case NM.DeviceState.DISCONNECTED:
                 case NM.DeviceState.UNAVAILABLE:
                     icon_name += "-offline";
@@ -291,6 +321,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                 case NM.DeviceState.UNKNOWN:
                 case NM.DeviceState.UNMANAGED:
                     icon_name += "-no-route";
+                    break;
+                default:
                     break;
             }
 
