@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "वायर्ड"
 
@@ -70,11 +69,6 @@ msgstr "व्हर्च्युअल प्रायव्हेट ने�
 msgid "Unknown device"
 msgstr "अज्ञात उपकरण"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "अज्ञात प्रकारः%s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "कनेक्ट करण्यात अक्षम"
@@ -105,25 +99,7 @@ msgstr "कूटबद्ध"
 msgid "Unsecured"
 msgstr "असुरक्षित"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "व्हर्च्युअल नेटवर्कः %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "मोबाइल ब्रॉडबँड: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "मोबाइल ब्रॉडबँड"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "मोडेम"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "व्हीपीएन"
 
@@ -134,10 +110,6 @@ msgstr "कोणतेही प्रवेश पॉईंट्स उपल
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "प्रवेश पॉइंटसाठी स्कॅन करत आहे …"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "वायरलेस"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -150,6 +122,27 @@ msgstr "लपविलेल्या नेटवर्कशी कनेक�
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज …"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "अज्ञात प्रकारः%s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "व्हर्च्युअल नेटवर्कः %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "मोबाइल ब्रॉडबँड: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "मोबाइल ब्रॉडबँड"
+
+#~ msgid "Modem"
+#~ msgstr "मोडेम"
+
+#~ msgid "Wireless"
+#~ msgstr "वायरलेस"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "हे वायरलेस नेटवर्क कनेक्ट केले जाऊ शकत नाही."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2018-05-05 08:30+0000\n"
 "Last-Translator: Moo <hazap@hotmail.com>\n"
 "Language-Team: Lithuanian <https://weblate.elementary.io/projects/wingpanel/"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Laidinis"
 
@@ -79,11 +78,6 @@ msgstr "Nepavyko prisijungti prie šio Virtualiojo Privačiojo Tinklo."
 msgid "Unknown device"
 msgstr "Nežinomas įrenginys"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Nežinomas tipas: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -118,25 +112,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtualus tinklas: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobilusis plačiajuostis: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobilusis plačiajuostis"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modemas"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -147,10 +123,6 @@ msgstr "Nėra prieinamų prieigos taškų"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Ieškoma prieigos taškų…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Belaidis"
 
 #: src/Widgets/PopoverWidget.vala:58
 #, fuzzy
@@ -165,6 +137,27 @@ msgstr "Prisijungti prie paslėpto tinklo…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Tinklo nustatymai…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Nežinomas tipas: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtualus tinklas: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobilusis plačiajuostis: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobilusis plačiajuostis"
+
+#~ msgid "Modem"
+#~ msgstr "Modemas"
+
+#~ msgid "Wireless"
+#~ msgstr "Belaidis"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Prie šio belaidžio tinklo prisijungti nepavyko."

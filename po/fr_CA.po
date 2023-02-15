@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2017-12-20 20:07+0000\n"
 "Last-Translator: Marcio <marcio.pelegrini@gmail.com>\n"
 "Language-Team: French (Canada) <https://weblate.elementary.io/projects/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Filaire"
 
@@ -78,11 +77,6 @@ msgstr "Impossible de se connecter à ce VPN."
 msgid "Unknown device"
 msgstr "Périphérique inconnu"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Type inconnu : %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -114,25 +108,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Réseau virtuel : %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -143,10 +119,6 @@ msgstr "Aucun point d'accès disponible"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "En recherche d'un point d'accès…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Sans fil"
 
 #: src/Widgets/PopoverWidget.vala:58
 #, fuzzy
@@ -161,6 +133,17 @@ msgstr "Se connecter à une réseau invisible…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Type inconnu : %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Réseau virtuel : %s"
+
+#~ msgid "Wireless"
+#~ msgstr "Sans fil"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Impossible de se connecter à ce réseau sans fil."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2016-06-30 20:45+0000\n"
 "Last-Translator: yavinfour <anjelo.passionist@gmail.com>\n"
 "Language-Team: Tagalog <tl@li.org>\n"
@@ -19,7 +19,6 @@ msgstr ""
 "X-Generator: Launchpad (build 18282)\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "De-kable"
 
@@ -82,11 +81,6 @@ msgstr "Hindi makakonekta sa wireless network na ito"
 msgid "Unknown device"
 msgstr "Hindi matukoy na aparato"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Hindi matukoy na type: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -118,25 +112,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -147,10 +123,6 @@ msgstr "Walang Access Point na makita"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Nag-iiscan ng mga Access Point"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Wireless"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -163,6 +135,13 @@ msgstr "Kumonekta sa Nakatagong Network"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Setting sa Network..."
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Hindi matukoy na type: %s "
+
+#~ msgid "Wireless"
+#~ msgstr "Wireless"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Hindi makakonekta sa wireless network na ito"

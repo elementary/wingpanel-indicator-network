@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Vezetékes"
 
@@ -70,11 +69,6 @@ msgstr "Nem lehet csatlakozni a virtuális magánhálózathoz (VPN)."
 msgid "Unknown device"
 msgstr "Ismeretlen eszköz"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Ismeretlen típus: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Nem sikerült csatlakozni"
@@ -103,25 +97,7 @@ msgstr "Titkosítva"
 msgid "Unsecured"
 msgstr "Nincs titkosítva"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtuális hálózat: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobil szélessáv: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobil szélessáv"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -132,10 +108,6 @@ msgstr "Nincs elérhető hozzáférési pont"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Hozzáférési pontok keresése…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Vezeték nélküli"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -148,6 +120,27 @@ msgstr "Csatlakozás rejtett hálózathoz…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Ismeretlen típus: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtuális hálózat: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobil szélessáv: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobil szélessáv"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Vezeték nélküli"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Nem sikerült csatlakozni a vezeték nélküli hálózathoz."

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2021-03-02 04:42+0000\n"
 "Last-Translator: david <dcardelleg@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-12-09 05:42+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Cableada"
 
@@ -70,11 +69,6 @@ msgstr "No se pudo conectar con esta red privada virtual."
 msgid "Unknown device"
 msgstr "Dispositivo desconocido"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Tipo desconocido: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "No se puede conectar"
@@ -105,25 +99,7 @@ msgstr "Cifrada"
 msgid "Unsecured"
 msgstr "No segura"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Red virtual: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Banda ancha móvil: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Banda ancha móvil"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Módem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -134,10 +110,6 @@ msgstr "No hay puntos de acceso disponibles"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Buscando puntos de acceso…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Conexión inalámbrica"
 
 #: src/Widgets/PopoverWidget.vala:58
 #, fuzzy
@@ -152,6 +124,27 @@ msgstr "Conectar con una red oculta…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Configuración de red…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Tipo desconocido: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Red virtual: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Banda ancha móvil: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Banda ancha móvil"
+
+#~ msgid "Modem"
+#~ msgstr "Módem"
+
+#~ msgid "Wireless"
+#~ msgstr "Conexión inalámbrica"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "No se pudo conectar con esta red inalámbrica."
