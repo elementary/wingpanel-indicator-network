@@ -30,6 +30,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public Gtk.Box wifi_box { get; private set; }
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
+    private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
 
@@ -93,13 +94,19 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             }
         }
 
-        var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+        var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             margin_top = 3,
             margin_bottom = 3
         };
 
-        add (other_box);
-        add (sep);
+        var toggle_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        toggle_box.add (other_box);
+        toggle_box.add (other_sep);
+
+        toggle_revealer = new Gtk.Revealer ();
+        toggle_revealer.add (toggle_box);
+
+        add (toggle_revealer);
         add (wifi_box);
         add (vpn_box);
 
@@ -137,6 +144,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         add_interface (widget_interface);
         widget_interface.notify["state"].connect (update_state);
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         show_all ();
         update_vpn_connection ();
 
@@ -227,6 +235,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             }
         }
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -282,6 +291,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             inter.update ();
         }
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();
         show_all ();
     }
