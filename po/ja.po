@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "有線接続"
 
@@ -70,11 +69,6 @@ msgstr "この仮想プライベートネットワークに接続できません
 msgid "Unknown device"
 msgstr "不明なデバイス"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "不明な種類: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "接続できません"
@@ -103,25 +97,7 @@ msgstr "暗号化"
 msgid "Unsecured"
 msgstr "安全ではありません"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "仮想ネットワーク: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "モバイルブロードバンド: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "モバイルブロードバンド"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "モデム"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -132,10 +108,6 @@ msgstr "利用できるアクセスポイントがありません"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "アクセスポイントを探しています…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "無線接続"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -148,6 +120,27 @@ msgstr "非公開のネットワークに接続…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "ネットワークの設定…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "不明な種類: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "仮想ネットワーク: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "モバイルブロードバンド: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "モバイルブロードバンド"
+
+#~ msgid "Modem"
+#~ msgstr "モデム"
+
+#~ msgid "Wireless"
+#~ msgstr "無線接続"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "この無線ネットワークに接続できませんでした。"

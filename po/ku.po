@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2018-06-01 00:11+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel/"
@@ -21,7 +21,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-08 06:10+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Bêtêl"
 
@@ -83,11 +82,6 @@ msgstr "Ev torê bêtêl na dikarî bi girêdayî."
 msgid "Unknown device"
 msgstr "Amûra nenas"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Cûre nenas: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -122,25 +116,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Torê mecazî: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -151,10 +127,6 @@ msgstr "na nuqte dergeh kêrhatî"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "sehkirin bo nuqte dergeh…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Bêtêl"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -167,6 +139,17 @@ msgstr "le girê dan bo Tore veşartinê…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Mîhenge torê…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Cûre nenas: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Torê mecazî: %s"
+
+#~ msgid "Wireless"
+#~ msgstr "Bêtêl"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "ev torê bêtêl na dikarî bi girêdayî."

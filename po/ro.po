@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-01-27 06:18+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Cu fir"
 
@@ -80,11 +79,6 @@ msgstr "Nu se poate conecta la această rețea fără fir."
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Tip necunoscut: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -116,25 +110,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Rețea virtuală: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -145,10 +121,6 @@ msgstr "Nici un punct de acces valabil"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Se caută punctele de acces…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Fără fir"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -161,6 +133,17 @@ msgstr "Conectare la o rețea ascunsă…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Setări de reţea…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Tip necunoscut: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Rețea virtuală: %s"
+
+#~ msgid "Wireless"
+#~ msgstr "Fără fir"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Nu se poate conecta la această rețea fără fir."
