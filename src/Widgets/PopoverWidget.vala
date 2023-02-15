@@ -20,14 +20,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
     private NM.VpnConnection? active_vpn_connection = null;
 
-    private GLib.List<WidgetNMInterface>? network_interface;
+    public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
     public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    public Gtk.Box other_box { get; private set; }
-    public Gtk.Box wifi_box { get; private set; }
+    private Gtk.Box other_box;
+    private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
 
