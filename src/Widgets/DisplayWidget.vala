@@ -90,6 +90,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             };
 
             add (image);
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
             update_state ();
             device.state_changed.connect (update_state);
@@ -158,6 +159,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     //         };
 
     //         add (image);
+    //         transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
     //         update_state ();
     //         device.state_changed.connect (update_state);
@@ -196,6 +198,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             };
 
             add (image);
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
             update_state ();
             device.state_changed.connect (update_state);
@@ -236,6 +239,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             };
 
             add (image);
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
             update_state ();
             device.state_changed.connect (update_state);
