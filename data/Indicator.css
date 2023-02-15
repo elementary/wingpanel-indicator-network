@@ -17,3 +17,7 @@
     background: @selected_bg_color;
     color: @selected_fg_color;
 }
+
+.image-button:disabled.circular {
+    background: @insensitive_bg_color;
+}
