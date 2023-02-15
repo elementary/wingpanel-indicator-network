@@ -92,17 +92,20 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             sensitive = false;
             ethernet_item.active = false;
             state = State.FAILED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-error-symbolic";
             break;
 
         case NM.DeviceState.UNAVAILABLE:
             sensitive = false;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-no-route-symbolic";
             break;
         case NM.DeviceState.DISCONNECTED:
             sensitive = true;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-offline-symbolic";
             break;
 
         case NM.DeviceState.PREPARE:
@@ -114,19 +117,15 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTING_WIRED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-acquiring-symbolic";
             break;
 
         case NM.DeviceState.ACTIVATED:
             sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTED_WIRED;
-            break;
-        }
-
-        if (ethernet_item.active) {
             ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-symbolic";
-        } else {
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-disconnected-symbolic";
+            break;
         }
     }
 }
