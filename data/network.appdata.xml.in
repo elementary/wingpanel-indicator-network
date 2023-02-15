@@ -16,7 +16,7 @@
         </ul>
       </description>
       <issues>
-        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/152">Network adapter names aren't truncated</issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/152">Network adapter names aren't truncated</issue>
       </issues>
     </release>
 
