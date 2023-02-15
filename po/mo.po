@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2018-05-31 08:26+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -20,7 +20,6 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Prin cablu"
 
@@ -78,11 +77,6 @@ msgstr "Această rețea privată virtuală nu a putut fi conectată."
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Tip necunoscut: %s 1 "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -117,25 +111,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Rețea virtuală: %s 1"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Banda transmisie mobila: %s 1"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Banda transmisie mobila"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modemul"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -146,10 +122,6 @@ msgstr "Nu există puncte de acces disponibile"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Scanarea punctelor de acces …"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Fără fir"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -162,6 +134,27 @@ msgstr "Conectați-vă la rețeaua ascunsă …"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Setări de rețea…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Tip necunoscut: %s 1 "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Rețea virtuală: %s 1"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Banda transmisie mobila: %s 1"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Banda transmisie mobila"
+
+#~ msgid "Modem"
+#~ msgstr "Modemul"
+
+#~ msgid "Wireless"
+#~ msgstr "Fără fir"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Această rețea fără fir nu a putut fi conectată la."

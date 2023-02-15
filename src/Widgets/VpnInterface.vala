@@ -86,10 +86,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
     }
 
-    public override void update_name (int count) {
-        display_title = _("VPN");
-    }
-
     public override void update () {
         update_active_connection ();
 

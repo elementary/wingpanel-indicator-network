@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -19,7 +19,6 @@ msgstr ""
 "X-Generator: Launchpad (build 18298)\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "سىملىق تور"
 
@@ -82,11 +81,6 @@ msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
 msgid "Unknown device"
 msgstr "نامەلۇم ئۈسكۈنە"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "نامەلۇم تېپ: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -118,25 +112,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "مەۋھۇم تور: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -147,10 +123,6 @@ msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى ي
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "سىمسىز تور"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -163,6 +135,17 @@ msgstr "يوشۇرۇن تورغا ئۇلاش"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "تور تەڭشەكلىرى"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "نامەلۇم تېپ: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "مەۋھۇم تور: %s"
+
+#~ msgid "Wireless"
+#~ msgstr "سىمسىز تور"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."

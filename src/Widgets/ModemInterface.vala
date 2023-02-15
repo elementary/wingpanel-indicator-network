@@ -79,22 +79,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         prepare.begin ();
     }
 
-    public override void update_name (int count) {
-        var name = device.get_description ();
-        if (count > 1) {
-            display_title = _("Mobile Broadband: %s").printf (name);
-        } else {
-            display_title = _("Mobile Broadband");
-        }
-
-        if (device is NM.DeviceModem) {
-            var capabilities = ((NM.DeviceModem)device).get_current_capabilities ();
-            if (NM.DeviceModemCapabilities.POTS in capabilities) {
-                display_title = _("Modem");
-            }
-        }
-    }
-
     public override void update () {
         switch (device.state) {
             case NM.DeviceState.UNKNOWN:

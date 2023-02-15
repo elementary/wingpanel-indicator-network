@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Проводное"
 
@@ -71,11 +70,6 @@ msgstr "Эта виртуальная приватная сеть не може�
 msgid "Unknown device"
 msgstr "Неизвестное устройство"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Неизвестный тип: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Не удалось подключиться"
@@ -104,25 +98,7 @@ msgstr "Зашифровано"
 msgid "Unsecured"
 msgstr "Небезопасный"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Виртуальная сеть: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Мобильная сеть: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Мобильная сеть"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Модем"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -133,10 +109,6 @@ msgstr "Нет доступных подключений Wi-Fi"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Сканирование доступных точек…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Беспроводная сеть"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -149,6 +121,27 @@ msgstr "Подключиться к скрытой сети…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Параметры сети…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Неизвестный тип: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Виртуальная сеть: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Мобильная сеть: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Мобильная сеть"
+
+#~ msgid "Modem"
+#~ msgstr "Модем"
+
+#~ msgid "Wireless"
+#~ msgstr "Беспроводная сеть"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Эта беспроводная сеть не может быть подключена."

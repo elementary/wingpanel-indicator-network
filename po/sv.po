@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2018-10-19 18:05+0000\n"
 "Last-Translator: Fredrik B <frbo9002@gmail.com>\n"
 "Language-Team: Swedish <https://weblate.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Trådbundet"
 
@@ -78,11 +77,6 @@ msgstr "Kunde inte ansluta till VPN-nätverket."
 msgid "Unknown device"
 msgstr "Okänd enhet"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Okänd typ: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -117,25 +111,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtuellt nätverk: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobilt bredband: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobilt bredband"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -146,10 +122,6 @@ msgstr "Inga åtkomstpunkter tillgängliga"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Söker efter åtkomstpunkter…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Trådlöst"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -162,6 +134,27 @@ msgstr "Anslut till dolt nätverk…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Nätverksinställningar…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Okänd typ: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtuellt nätverk: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobilt bredband: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobilt bredband"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Trådlöst"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Kunde inte ansluta till detta trådlösa nätverk."

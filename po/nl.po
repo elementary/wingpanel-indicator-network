@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2023-02-11 14:25+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Bedraad"
 
@@ -70,11 +69,6 @@ msgstr "Kon geen verbinding maken met dit Virtueel Privaat Netwerk."
 msgid "Unknown device"
 msgstr "Onbekend apparaat"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Onbekend type: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Niet in staat te verbinden"
@@ -103,25 +97,7 @@ msgstr "Versleuteld"
 msgid "Unsecured"
 msgstr "Onbeveiligd"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtueel netwerk: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobiele breedbandverbinding: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobiele breedbandverbinding"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -132,10 +108,6 @@ msgstr "Geen Toegangspunten Beschikbaar"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Scannen naar toegangspunten…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Draadloos"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -148,6 +120,27 @@ msgstr "Verbind met onzichtbaar netwerk…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Onbekend type: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtueel netwerk: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobiele breedbandverbinding: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobiele breedbandverbinding"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Draadloos"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Kan geen verbinding met dit wifi-netwerk maken."
