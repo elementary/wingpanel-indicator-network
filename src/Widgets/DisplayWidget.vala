@@ -55,13 +55,13 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             case NM.DeviceType.ETHERNET:
             case NM.DeviceType.MODEM:
             case NM.DeviceType.WIFI:
-            case NM.DeviceType.WIFI_P2P:
-            case NM.DeviceType.WIMAX:
+            // case NM.DeviceType.WIFI_P2P:
                 list_store.append (device);
                 break;
             default:
-               break;
+                break;
        }
+
     }
 
     private void device_removed_cb (NM.Device device) {
@@ -75,92 +75,228 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Widget create_widget_func (Object object) {
         var device = (NM.Device) object;
 
-        var image = new Gtk.Image.from_icon_name (get_icon_name (device), Gtk.IconSize.MENU) {
-            use_fallback = true
-        };
-
-        var revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-        revealer.add (image);
-
-        switch (device.state) {
-            case NM.DeviceState.DISCONNECTED:
-            case NM.DeviceState.UNAVAILABLE:
-                revealer.reveal_child = false;
-                break;
+        switch (device.device_type) {
+            case NM.DeviceType.ETHERNET:
+                return new EthernetItem ((NM.DeviceEthernet) device);
+            case NM.DeviceType.MODEM:
+                return new ModemItem ((NM.DeviceModem) device);
+            case NM.DeviceType.WIFI:
+                return new WifiItem ((NM.DeviceWifi) device);
+            // case NM.DeviceType.WIFI_P2P:
+            //     return new HotSpotItem ((NM.DeviceWifiP2P) device);
             default:
-                revealer.reveal_child = true;
-                break;
+                return new Gtk.Label ("");
+       }
+    }
+
+    private class EthernetItem : Gtk.Revealer {
+        public NM.DeviceEthernet device { get; construct; }
+        private Gtk.Image image;
+
+        public EthernetItem (NM.DeviceEthernet device) {
+            Object (device: device);
         }
 
-        device.state_changed.connect (() => {
+        construct {
+            image = new Gtk.Image () {
+                pixel_size = 24
+            };
+
+            add (image);
+
+            update_state ();
+            device.state_changed.connect (update_state);
+        }
+
+        private void update_state () {
             switch (device.state) {
                 case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.NEED_AUTH:
                 case NM.DeviceState.UNAVAILABLE:
-                    revealer.reveal_child = false;
+                case NM.DeviceState.UNKNOWN:
+                case NM.DeviceState.UNMANAGED:
+                    reveal_child = false;
                     break;
                 default:
-                    revealer.reveal_child = true;
+                    reveal_child = true;
                     break;
             }
 
-            image.icon_name = get_icon_name (device);
-        });
+            image.icon_name = get_icon_name ();
+        }
 
-        return revealer;
+        private string get_icon_name () {
+            string icon_name = "network-wired";
+
+            switch (device.state) {
+                case NM.DeviceState.ACTIVATED:
+                    break;
+                case NM.DeviceState.CONFIG:
+                case NM.DeviceState.DEACTIVATING:
+                case NM.DeviceState.IP_CHECK:
+                case NM.DeviceState.IP_CONFIG:
+                case NM.DeviceState.PREPARE:
+                case NM.DeviceState.SECONDARIES:
+                    icon_name += "-acquiring";
+                    break;
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    icon_name += "-disconnected";
+                    break;
+                case NM.DeviceState.FAILED:
+                    icon_name += "-error";
+                    break;
+                case NM.DeviceState.NEED_AUTH:
+                case NM.DeviceState.UNKNOWN:
+                case NM.DeviceState.UNMANAGED:
+                    icon_name += "-no-route";
+                    break;
+            }
+
+            return icon_name += "-symbolic";
+        }
     }
 
-    private string get_icon_name (NM.Device device) {
-        string icon_name = "network";
+    // private class HotSpotItem : Gtk.Revealer {
+    //     public NM.DeviceWifiP2P device { get; construct; }
+    //     private Gtk.Image image;
 
-        switch (device.device_type) {
-            case NM.DeviceType.ETHERNET:
-                icon_name += "-wired";
-                break;
-            case NM.DeviceType.MODEM:
-                icon_name += "-cellular";
-                break;
-            case NM.DeviceType.WIFI:
-            case NM.DeviceType.WIMAX:
-                icon_name += "-wireless";
-                break;
-            case NM.DeviceType.WIFI_P2P:
-                icon_name += "-wireless-hotspot";
-                break;
-            default:
-                break;
+    //     public HotSpotItem (NM.DeviceWifiP2P device) {
+    //         Object (device: device);
+    //     }
+
+    //     construct {
+    //         image = new Gtk.Image () {
+    //             pixel_size = 24
+    //         };
+
+    //         add (image);
+
+    //         update_state ();
+    //         device.state_changed.connect (update_state);
+    //     }
+
+    //     private void update_state () {
+    //         switch (device.state) {
+    //             case NM.DeviceState.DISCONNECTED:
+    //             case NM.DeviceState.UNAVAILABLE:
+    //                 reveal_child = false;
+    //                 break;
+    //             default:
+    //                 reveal_child = true;
+    //                 break;
+    //         }
+
+    //         image.icon_name = get_icon_name ();
+    //     }
+
+    //     private string get_icon_name () {
+    //         return "network-wireless-hotspot-symbolic";
+    //     }
+    // }
+
+    private class ModemItem : Gtk.Revealer {
+        public NM.DeviceModem device { get; construct; }
+        private Gtk.Image image;
+
+        public ModemItem (NM.DeviceModem device) {
+            Object (device: device);
         }
 
-        switch (device.state) {
-            case NM.DeviceState.ACTIVATED:
-                break;
-            case NM.DeviceState.CONFIG:
-            case NM.DeviceState.DEACTIVATING:
-            case NM.DeviceState.PREPARE:
-            case NM.DeviceState.IP_CONFIG:
-            case NM.DeviceState.IP_CHECK:
-                icon_name += "-acquiring";
-                break;
-            case NM.DeviceState.DISCONNECTED:
-            case NM.DeviceState.UNAVAILABLE:
-                icon_name += "-disconnected";
-                break;
-            case NM.DeviceState.FAILED:
-                icon_name += "-error";
-                break;
-            case NM.DeviceState.NEED_AUTH:
-            case NM.DeviceState.UNKNOWN:
-            case NM.DeviceState.UNMANAGED:
-                icon_name += "-no-route";
-                break;
+        construct {
+            image = new Gtk.Image () {
+                pixel_size = 24
+            };
+
+            add (image);
+
+            update_state ();
+            device.state_changed.connect (update_state);
         }
 
-        if (device.device_type == NM.DeviceType.WIFI) {
-            var wifi_device = (NM.DeviceWifi) device;
+        private void update_state () {
+            switch (device.state) {
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    reveal_child = false;
+                    break;
+                default:
+                    reveal_child = true;
+                    break;
+            }
 
-            if (wifi_device.get_active_access_point () != null) {
-                var strength = wifi_device.get_active_access_point ().get_strength ();
+            image.icon_name = get_icon_name ();
+        }
+
+        private string get_icon_name () {
+            return "network-cellular-signal-excellent-symbolic";
+        }
+    }
+
+    private class WifiItem : Gtk.Revealer {
+        public NM.DeviceWifi device { get; construct; }
+        private Gtk.Image image;
+
+        public WifiItem (NM.DeviceWifi device) {
+            Object (device: device);
+        }
+
+        construct {
+            image = new Gtk.Image () {
+                pixel_size = 24
+            };
+
+            add (image);
+
+            update_state ();
+            device.state_changed.connect (update_state);
+        }
+
+        private void update_state () {
+            switch (device.state) {
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    reveal_child = false;
+                    break;
+                default:
+                    reveal_child = true;
+                    break;
+            }
+
+            image.icon_name = get_icon_name ();
+        }
+
+        private string get_icon_name () {
+            string icon_name = "network-wireless";
+
+            switch (device.state) {
+                case NM.DeviceState.ACTIVATED:
+                    break;
+                case NM.DeviceState.CONFIG:
+                case NM.DeviceState.DEACTIVATING:
+                case NM.DeviceState.IP_CHECK:
+                case NM.DeviceState.IP_CONFIG:
+                case NM.DeviceState.PREPARE:
+                case NM.DeviceState.SECONDARIES:
+                    icon_name += "-acquiring";
+                    break;
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    icon_name += "-offline";
+                    break;
+                case NM.DeviceState.FAILED:
+                    icon_name += "-error";
+                    break;
+                case NM.DeviceState.NEED_AUTH:
+                case NM.DeviceState.UNKNOWN:
+                case NM.DeviceState.UNMANAGED:
+                    icon_name += "-no-route";
+                    break;
+            }
+
+            var active_access_point = device.get_active_access_point ();
+            if (active_access_point != null) {
+                var strength = active_access_point.get_strength ();
 
                 if (strength < 30) {
                     icon_name += "-signal-weak";
@@ -172,10 +308,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     icon_name += "-signal-excellent";
                 }
             }
+
+            return icon_name += "-symbolic";
         }
-
-        icon_name += "-symbolic";
-
-        return icon_name;
     }
 }
