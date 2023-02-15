@@ -16,141 +16,166 @@
 *
 */
 
-public class Network.Widgets.DisplayWidget : Gtk.Grid {
-    private Gtk.Image image;
-    private Gtk.Label extra_info_label;
-    private Gtk.Revealer extra_info_revealer;
-
-    private uint wifi_animation_timeout;
-    private int wifi_animation_state = 0;
-    private uint cellular_animation_timeout;
-    private int cellular_animation_state = 0;
+public class Network.Widgets.DisplayWidget : Gtk.Box {
+    private ListStore list_store;
+    private NM.Client nm_client;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("network-wired-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        list_store = new ListStore (typeof (NM.Device));
 
-        extra_info_label = new Gtk.Label (null) {
-            margin_start = 4,
-            valign = Gtk.Align.CENTER,
-            vexpand = true
+        var flowbox = new Gtk.FlowBox () {
+            column_spacing = 6,
+            selection_mode = Gtk.SelectionMode.NONE
         };
+        flowbox.bind_model (list_store, create_widget_func);
 
-        extra_info_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
-        };
-        extra_info_revealer.add (extra_info_label);
+        add (flowbox);
 
-        add (image);
-        add (extra_info_revealer);
+        list_store.items_changed.connect (() => {
+            flowbox.min_children_per_line = list_store.get_n_items ();
+            flowbox.max_children_per_line = list_store.get_n_items () * 2;
+            show_all ();
+        });
+
+        try {
+            nm_client = new NM.Client ();
+            foreach (unowned var device in nm_client.devices) {
+                device_added_cb (device);
+            }
+
+            nm_client.device_added.connect (device_added_cb);
+            nm_client.device_removed.connect (device_removed_cb);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
-    public void update_state (Network.State state, bool secure, string? extra_info = null) {
-        extra_info_revealer.reveal_child = extra_info != null;
-        extra_info_label.label = extra_info;
+    private void device_added_cb (NM.Device device) {
+        switch (device.device_type) {
+            case NM.DeviceType.ETHERNET:
+            case NM.DeviceType.MODEM:
+            case NM.DeviceType.WIFI:
+            case NM.DeviceType.WIFI_P2P:
+            case NM.DeviceType.WIMAX:
+                list_store.append (device);
+                break;
+            default:
+               break;
+       }
+    }
 
-        if (wifi_animation_timeout > 0) {
-            Source.remove (wifi_animation_timeout);
-            wifi_animation_timeout = 0;
+    private void device_removed_cb (NM.Device device) {
+        uint pos = -1;
+        list_store.find (device, out pos);
+        if (pos != -1) {
+            list_store.remove (pos);
+        }
+    }
+
+    private Gtk.Widget create_widget_func (Object object) {
+        var device = (NM.Device) object;
+
+        var image = new Gtk.Image.from_icon_name (get_icon_name (device), Gtk.IconSize.MENU) {
+            use_fallback = true
+        };
+
+        var revealer = new Gtk.Revealer () {
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+        };
+        revealer.add (image);
+
+        switch (device.state) {
+            case NM.DeviceState.DISCONNECTED:
+            case NM.DeviceState.UNAVAILABLE:
+                revealer.reveal_child = false;
+                break;
+            default:
+                revealer.reveal_child = true;
+                break;
         }
 
-        if (cellular_animation_timeout > 0) {
-            Source.remove (cellular_animation_timeout);
-            cellular_animation_timeout = 0;
+        device.state_changed.connect (() => {
+            switch (device.state) {
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    revealer.reveal_child = false;
+                    break;
+                default:
+                    revealer.reveal_child = true;
+                    break;
+            }
+
+            image.icon_name = get_icon_name (device);
+        });
+
+        return revealer;
+    }
+
+    private string get_icon_name (NM.Device device) {
+        string icon_name = "network";
+
+        switch (device.device_type) {
+            case NM.DeviceType.ETHERNET:
+                icon_name += "-wired";
+                break;
+            case NM.DeviceType.MODEM:
+                icon_name += "-cellular";
+                break;
+            case NM.DeviceType.WIFI:
+            case NM.DeviceType.WIMAX:
+                icon_name += "-wireless";
+                break;
+            case NM.DeviceType.WIFI_P2P:
+                icon_name += "-wireless-hotspot";
+                break;
+            default:
+                break;
         }
 
-        switch (state) {
-        case Network.State.DISCONNECTED_AIRPLANE_MODE:
-            image.icon_name = "airplane-mode-symbolic";
-            break;
-        case Network.State.CONNECTING_WIRED:
-            image.icon_name = "network-wired-acquiring-symbolic";
-            break;
-        case Network.State.CONNECTED_WIRED:
-            image.icon_name = "network-wired-%ssymbolic".printf (secure? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_WIFI_WEAK:
-            image.icon_name = "network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_WIFI_OK:
-            image.icon_name = "network-wireless-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_WIFI_GOOD:
-            image.icon_name = "network-wireless-signal-good-%ssymbolic".printf (secure? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_WIFI_EXCELLENT:
-            image.icon_name = "network-wireless-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
-            break;
-        case Network.State.CONNECTING_WIFI:
-            wifi_animation_timeout = Timeout.add (300, () => {
-                wifi_animation_state = (wifi_animation_state + 1) % 4;
-                string strength = "";
-                switch (wifi_animation_state) {
-                case 0:
-                    strength = "weak";
-                    break;
-                case 1:
-                    strength = "ok";
-                    break;
-                case 2:
-                    strength = "good";
-                    break;
-                case 3:
-                    strength = "excellent";
-                    break;
+        switch (device.state) {
+            case NM.DeviceState.ACTIVATED:
+                break;
+            case NM.DeviceState.CONFIG:
+            case NM.DeviceState.DEACTIVATING:
+            case NM.DeviceState.PREPARE:
+            case NM.DeviceState.IP_CONFIG:
+            case NM.DeviceState.IP_CHECK:
+                icon_name += "-acquiring";
+                break;
+            case NM.DeviceState.DISCONNECTED:
+            case NM.DeviceState.UNAVAILABLE:
+                icon_name += "-disconnected";
+                break;
+            case NM.DeviceState.FAILED:
+                icon_name += "-error";
+                break;
+            case NM.DeviceState.NEED_AUTH:
+            case NM.DeviceState.UNKNOWN:
+            case NM.DeviceState.UNMANAGED:
+                icon_name += "-no-route";
+                break;
+        }
+
+        if (device.device_type == NM.DeviceType.WIFI) {
+            var wifi_device = (NM.DeviceWifi) device;
+
+            if (wifi_device.get_active_access_point () != null) {
+                var strength = wifi_device.get_active_access_point ().get_strength ();
+
+                if (strength < 30) {
+                    icon_name += "-signal-weak";
+                } else if (strength < 55) {
+                    icon_name += "-signal-ok";
+                } else if (strength < 80) {
+                    icon_name += "-signal-good";
+                } else {
+                    icon_name += "-signal-excellent";
                 }
-                image.icon_name = "network-wireless-signal-" + strength + (secure? "-secure" : "") + "-symbolic";
-                return true;
-            });
-            break;
-        case Network.State.CONNECTED_MOBILE_WEAK:
-            image.icon_name = "network-cellular-signal-weak-%ssymbolic".printf (secure ? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_MOBILE_OK:
-            image.icon_name = "network-cellular-signal-ok-%ssymbolic".printf (secure ? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_MOBILE_GOOD:
-            image.icon_name = "network-cellular-signal-good-%ssymbolic".printf (secure ? "secure-" : "");
-            break;
-        case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            image.icon_name = "network-cellular-signal-excellent-%ssymbolic".printf (secure ? "secure-" : "");
-            break;
-        case Network.State.CONNECTING_MOBILE:
-            cellular_animation_timeout = Timeout.add (300, () => {
-                cellular_animation_state = (cellular_animation_state + 1) % 4;
-                string strength = "";
-                switch (cellular_animation_state) {
-                case 0:
-                    strength = "weak";
-                    break;
-                case 1:
-                    strength = "ok";
-                    break;
-                case 2:
-                    strength = "good";
-                    break;
-                case 3:
-                    strength = "excellent";
-                    break;
-                }
-
-                image.icon_name = "network-cellular-signal-" + strength + (secure ? "secure-" : "") + "-symbolic";
-                return true;
-            });
-            break;
-        case Network.State.FAILED_MOBILE:
-            image.icon_name = "network-cellular-offline-symbolic";
-            break;
-        case Network.State.FAILED_WIFI:
-        case Network.State.DISCONNECTED:
-            image.icon_name = "network-wireless-offline-symbolic";
-            break;
-        case Network.State.WIRED_UNPLUGGED:
-            image.icon_name = "network-wired-offline-symbolic";
-            break;
-        default:
-            image.icon_name = "network-offline-symbolic";
-            critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
-            break;
+            }
         }
+
+        icon_name += "-symbolic";
+
+        return icon_name;
     }
 }

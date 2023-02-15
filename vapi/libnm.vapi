@@ -5160,6 +5160,7 @@ namespace NM {
         UNKNOWN,
         ETHERNET,
         WIFI,
+        WIFI_P2P,
         UNUSED1,
         UNUSED2,
         BT,

@@ -72,8 +72,6 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (popover_widget != null);
         assert (display_widget != null);
 
-        display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
-
         update_tooltip ();
     }
 
