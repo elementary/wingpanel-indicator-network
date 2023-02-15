@@ -6,7 +6,8 @@
 .image-button.circular {
     border: none;
     box-shadow: none;
-    padding: 0.75rem;
+    min-height: 2.666rem; /* 32px */
+    min-width: 2.666rem; /* 32px */
 }
 
 .image-button:not(:focus).circular {
