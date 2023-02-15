@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2019-01-03 18:11+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-04-19 06:41+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Kabla"
 
@@ -78,11 +77,6 @@ msgstr "Klarer ikkje å kople til dette virtuelle private nettverket."
 msgid "Unknown device"
 msgstr "Ukjend eining"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Ukjend type: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -117,25 +111,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtuelt nettverk: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobilt breiband: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobilt breiband"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -146,10 +122,6 @@ msgstr "Ingen åpne trådlause nettverk tilgjengeleg"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Sjekkar etter åpne trådlause nettverk…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Trådlaust"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -162,6 +134,27 @@ msgstr "Kople til skjult nettverk…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Nettverksinnstillingar…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Ukjend type: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtuelt nettverk: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobilt breiband: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobilt breiband"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Trådlaust"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Dette trådlause nettverket kan ikkje koplast til."

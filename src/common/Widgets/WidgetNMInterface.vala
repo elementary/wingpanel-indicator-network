@@ -16,9 +16,9 @@
  */
 
 public abstract class Network.WidgetNMInterface : Gtk.Box {
-    protected NM.Device? device;
+    public NM.Device? device { get; protected set; }
     public Network.State state { get; protected set; default = Network.State.DISCONNECTED; }
-    public string display_title { get; protected set; default = _("Unknown device"); }
+    public string display_title { get; set; default = _("Unknown device"); }
 
     public Gtk.Separator sep { get; construct; }
 
@@ -34,9 +34,5 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
     }
 
     public virtual void update () {
-    }
-
-    public virtual void update_name (int count) {
-        display_title = _("Unknown type: %s ").printf (device.get_description ());
     }
 }

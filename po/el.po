@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2017-02-14 06:03+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Ενσύρματο"
 
@@ -79,11 +78,6 @@ msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το ει
 msgid "Unknown device"
 msgstr "Άγνωστη συσκευή"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Άγνωστος τύπος: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -115,25 +109,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Εικονικό δίκτυο: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 #, fuzzy
 msgid "VPN"
 msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
@@ -145,10 +121,6 @@ msgstr "Μη διαθέσιμα σημεία πρόσβασης"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Ασύρματο"
 
 #: src/Widgets/PopoverWidget.vala:58
 #, fuzzy
@@ -163,6 +135,17 @@ msgstr "Σύνδεση σε κρυφό δίκτυο..."
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου..."
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Άγνωστος τύπος: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Εικονικό δίκτυο: %s"
+
+#~ msgid "Wireless"
+#~ msgstr "Ασύρματο"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το ασύρματο δίκτυο."

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,7 +15,6 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Drōtowe"
 
@@ -73,11 +72,6 @@ msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
 msgid "Unknown device"
 msgstr "Niyznōmo maszina"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Niyznōmy typ: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -112,25 +106,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Wirtualny nec: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobilny nec: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobilny nec"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modym"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -141,10 +117,6 @@ msgstr "Niy ma żodnych pōnktōw dostympu"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Szukanie pōnktōw dotympu…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Nec bezdrōtowy"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -157,6 +129,27 @@ msgstr "Skupluj ze skrytym necym…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Niyznōmy typ: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Wirtualny nec: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobilny nec: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobilny nec"
+
+#~ msgid "Modem"
+#~ msgstr "Modym"
+
+#~ msgid "Wireless"
+#~ msgstr "Nec bezdrōtowy"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Z tym bezkablowym necym niy szło sie skuplować."

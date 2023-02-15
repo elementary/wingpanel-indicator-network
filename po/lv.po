@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2015-11-21 12:57+0000\n"
 "Last-Translator: Ar2 <arturss5@inbox.lv>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,6 @@ msgstr ""
 "X-Generator: Launchpad (build 18282)\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr ""
 
@@ -68,11 +67,6 @@ msgstr ""
 msgid "Unknown device"
 msgstr ""
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Nezināms tips: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -104,25 +98,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtuālais tīkls %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -132,10 +108,6 @@ msgstr "Piekļuves punkti nav pieejami"
 
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
-msgstr ""
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
 msgstr ""
 
 #: src/Widgets/PopoverWidget.vala:58
@@ -149,6 +121,14 @@ msgstr ""
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Tīkla iestatījumi..."
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Nezināms tips: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtuālais tīkls %s"
 
 #, fuzzy
 #~ msgid "This network uses WPA encryption"

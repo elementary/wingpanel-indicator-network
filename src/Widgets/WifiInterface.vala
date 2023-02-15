@@ -132,14 +132,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         pack_start (revealer);
     }
 
-    public override void update_name (int count) {
-        if (count <= 1) {
-            display_title = _("Wireless");
-        } else {
-            display_title = device.get_description ();
-        }
-    }
-
     public override void update () {
         switch (wifi_device.state) {
         case NM.DeviceState.UNKNOWN:

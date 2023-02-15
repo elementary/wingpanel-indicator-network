@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2018-11-04 22:23+0000\n"
 "Last-Translator: Elvis Mujanović <elvis.mujanovic@gmail.com>\n"
 "Language-Team: Bosnian <https://weblate.elementary.io/projects/wingpanel/"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Žičana mreža"
 
@@ -75,11 +74,6 @@ msgstr "Nemoguće povezivanje s ovom virtuelnom privatnom mrežom (VPN)."
 msgid "Unknown device"
 msgstr "Nepoznat uređaj"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Nepoznat tip: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -114,25 +108,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtuelna mreža: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Mobilna širokopojasna mreža: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Mobilna širokopojasna mreža"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -143,10 +119,6 @@ msgstr "Nema dostupnih pristupnih tačaka"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Pretraživanje pristupnih tačaka…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Bežična mreža"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -159,6 +131,27 @@ msgstr "Poveži sa skrivenom mrežom…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Podešavanja mreže…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Nepoznat tip: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtuelna mreža: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Mobilna širokopojasna mreža: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Mobilna širokopojasna mreža"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Bežična mreža"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Nemoguće povezivanje s ovom bežičnom mrežom."

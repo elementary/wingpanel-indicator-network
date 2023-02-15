@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
@@ -17,7 +17,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Połączenie przewodowe"
 
@@ -71,11 +70,6 @@ msgstr "Nie można nawiązać połączenia z tą prywatną siecią wirtualną."
 msgid "Unknown device"
 msgstr "Nieznane urządzenie"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Nieznany rodzaj: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "Nie można połączyć"
@@ -104,25 +98,7 @@ msgstr "Zaszyfrowana"
 msgid "Unsecured"
 msgstr "Niezabezpieczona"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Sieć wirtualna: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "Szerokopasmowy bezprzewodowy: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "Szerokopasmowy bezprzewodowy"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "Modem"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "VPN"
 
@@ -133,10 +109,6 @@ msgstr "Brak dostępnych punktów dostępu"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Szukanie punktów dostępowych…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Bezprzewodowe"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -149,6 +121,27 @@ msgstr "Połącz z ukrytą siecią…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Ustawienia sieci…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Nieznany rodzaj: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Sieć wirtualna: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "Szerokopasmowy bezprzewodowy: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "Szerokopasmowy bezprzewodowy"
+
+#~ msgid "Modem"
+#~ msgstr "Modem"
+
+#~ msgid "Wireless"
+#~ msgstr "Bezprzewodowe"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Nie można nawiązać połączenia z tą siecią bezprzewodową."

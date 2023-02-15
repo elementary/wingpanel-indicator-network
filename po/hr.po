@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2016-10-15 17:51+0000\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: \n"
@@ -14,7 +14,6 @@ msgstr ""
 "X-Generator: Launchpad (build 18282)\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "Žična mreža"
 
@@ -77,11 +76,6 @@ msgstr "Ne može se povezati s bežičnom mrežom."
 msgid "Unknown device"
 msgstr "Nepoznat uređaj"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "Nepoznata vrsta: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr ""
@@ -113,25 +107,7 @@ msgstr ""
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "Virtualna mreža: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr ""
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr ""
 
@@ -142,10 +118,6 @@ msgstr "Nema dostupnih pristupnih točaka"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "Pretraživanje pristupnih točaka..."
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "Bežična mreža"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -158,6 +130,17 @@ msgstr "Poveži se na skrivenu mrežu..."
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "Mrežne postavke..."
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "Nepoznata vrsta: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "Virtualna mreža: %s"
+
+#~ msgid "Wireless"
+#~ msgstr "Bežična mreža"
 
 #~ msgid "This wireless network could not be connected to."
 #~ msgstr "Ne može se povezati s bežičnom mrežom."

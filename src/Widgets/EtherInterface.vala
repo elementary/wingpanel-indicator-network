@@ -68,21 +68,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         device.state_changed.connect (update);
     }
 
-    public override void update_name (int count) {
-        var name = device.get_description ();
-
-        /* At least for docker related interfaces, which can be fairly common */
-        if (name.has_prefix ("veth")) {
-            display_title = _("Virtual network: %s").printf (name);
-        } else {
-            if (count <= 1) {
-                display_title = _("Wired");
-            } else {
-                display_title = name;
-            }
-        }
-    }
-
     public override void update () {
         switch (device.get_state ()) {
         case NM.DeviceState.UNKNOWN:

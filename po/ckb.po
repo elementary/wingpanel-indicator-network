@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-30 20:23+0000\n"
+"POT-Creation-Date: 2023-02-15 08:27+0000\n"
 "PO-Revision-Date: 2022-09-21 06:14+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -16,7 +16,6 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
-#: src/Widgets/EtherInterface.vala:60
 msgid "Wired"
 msgstr "بە وەیار پەیوەستکراوە"
 
@@ -70,11 +69,6 @@ msgstr "ناتوانرێت پەیوەست بەم VPN ە ببێت."
 msgid "Unknown device"
 msgstr "ئامێری نەزانراو"
 
-#: src/common/Widgets/WidgetNMInterface.vala:40
-#, c-format
-msgid "Unknown type: %s "
-msgstr "جۆری نەزانراو: %s "
-
 #: src/common/Widgets/WifiMenuItem.vala:70
 msgid "Unable to connect"
 msgstr "نەتوانرا پەیوەست بێت"
@@ -103,25 +97,7 @@ msgstr "کۆدکراو"
 msgid "Unsecured"
 msgstr "بێ ئاسایش"
 
-#: src/Widgets/EtherInterface.vala:57
-#, c-format
-msgid "Virtual network: %s"
-msgstr "تۆڕی گریمانەیی: %s"
-
-#: src/Widgets/ModemInterface.vala:85
-#, c-format
-msgid "Mobile Broadband: %s"
-msgstr "برۆدباندی مۆبایل: %s"
-
-#: src/Widgets/ModemInterface.vala:87
-msgid "Mobile Broadband"
-msgstr "برۆدباندی مۆبایل"
-
-#: src/Widgets/ModemInterface.vala:93
-msgid "Modem"
-msgstr "مۆدێم"
-
-#: src/Widgets/VpnInterface.vala:41 src/Widgets/VpnInterface.vala:90
+#: src/Widgets/VpnInterface.vala:41
 msgid "VPN"
 msgstr "ڤی پی ئێن"
 
@@ -132,10 +108,6 @@ msgstr "هیچ خاڵکێکی دەستپێگەیشتن بەردەست نییە"
 #: src/Widgets/WifiInterface.vala:89
 msgid "Scanning for Access Points…"
 msgstr "گەڕان بەدوای خاڵەکانی دەستپێگەیشتن…"
-
-#: src/Widgets/WifiInterface.vala:137
-msgid "Wireless"
-msgstr "وایەرلێس"
 
 #: src/Widgets/PopoverWidget.vala:58
 msgid "Airplane Mode"
@@ -148,3 +120,24 @@ msgstr "پەیوەست بوون بە تۆڕێکی شارەوە…"
 #: src/Widgets/PopoverWidget.vala:92
 msgid "Network Settings…"
 msgstr "ڕێکخستنەکان…"
+
+#, c-format
+#~ msgid "Unknown type: %s "
+#~ msgstr "جۆری نەزانراو: %s "
+
+#, c-format
+#~ msgid "Virtual network: %s"
+#~ msgstr "تۆڕی گریمانەیی: %s"
+
+#, c-format
+#~ msgid "Mobile Broadband: %s"
+#~ msgstr "برۆدباندی مۆبایل: %s"
+
+#~ msgid "Mobile Broadband"
+#~ msgstr "برۆدباندی مۆبایل"
+
+#~ msgid "Modem"
+#~ msgstr "مۆدێم"
+
+#~ msgid "Wireless"
+#~ msgstr "وایەرلێس"
