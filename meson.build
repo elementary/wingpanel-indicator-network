@@ -5,6 +5,7 @@ project(
 )
 
 gettext_name = meson.project_name() + '-indicator'
+gnome = import('gnome')
 i18n = import('i18n')
 
 prefix = get_option('prefix')
@@ -31,6 +32,12 @@ config_file = configure_file(
     configuration: config_data
 )
 
+gresource = gnome.compile_resources(
+    'gresource',
+    'data' / 'network.gresource.xml',
+    source_dir: 'data'
+)
+
 shared_module(
     meson.project_name(),
     config_file,
@@ -46,6 +53,7 @@ shared_module(
     'src/Widgets/VpnInterface.vala',
     'src/Widgets/WifiInterface.vala',
     'src/Widgets/PopoverWidget.vala',
+    gresource,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
