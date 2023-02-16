@@ -15,13 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.VpnMenuItem : Gtk.Box {
-    public signal void user_action ();
-
-    private Gtk.ToggleButton toggle_button;
-    public Gtk.RadioButton radio_button { get; private set; }
+public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
     public NM.RemoteConnection? connection { get; construct; }
+
+    private Gtk.ToggleButton toggle_button;
 
     public string id {
         get {
@@ -31,8 +29,6 @@ public class Network.VpnMenuItem : Gtk.Box {
 
     private static Gtk.CssProvider provider;
     private bool checking_vpn_connectivity = false;
-    // private Gtk.Image error_img;
-    // private Gtk.Spinner spinner;
     private Gtk.Label label;
 
     public VpnMenuItem (NM.RemoteConnection? connection = null) {
@@ -63,25 +59,21 @@ public class Network.VpnMenuItem : Gtk.Box {
         };
         label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        hexpand = true;
-        orientation = Gtk.Orientation.VERTICAL;
-        spacing = 3;
-        add (toggle_button);
-        add (label);
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3) {
+            hexpand = true
+        };
+        box.add (toggle_button);
+        box.add (label);
 
-        bind_property ("display-title", label, "label");
+        can_focus = false;
+        add (box);
 
         toggle_button.toggled.connect (() => {
-            if (toggle_button.active) {
-                user_action ();
-            }
-
-            update ();
+            activate ();
         });
 
-        notify["vpn-state"].connect (update);
-
         update ();
+        notify["vpn-state"].connect (update);
     }
 
     private void update () {

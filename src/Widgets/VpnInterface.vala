@@ -65,6 +65,10 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         nm_client.connection_removed.connect (vpn_removed_cb);
 
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
+
+        vpn_list.child_activated.connect ((child) => {
+            vpn_activate_cb ((VpnMenuItem) child);
+        });
     }
 
     public override void update () {
@@ -124,11 +128,12 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void vpn_activate_cb (VpnMenuItem item) {
-        debug ("Connecting to VPN : %s", item.connection.get_id ());
-
         nm_client.activate_connection_async.begin (item.connection, null, null, null, null);
-        active_vpn_item = item;
-        Idle.add (() => { update (); return false; });
+
+        Idle.add (() => {
+            update ();
+            return false;
+        });
     }
 
     private void vpn_deactivate_cb () {
@@ -156,8 +161,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
             case NM.SettingVpn.SETTING_NAME:
                 // Add the item to vpn_list
                 var item = new VpnMenuItem (vpn);
-                item.user_action.connect (vpn_activate_cb);
-
                 vpn_list.add (item);
                 update ();
                 break;
@@ -175,7 +178,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     private VpnMenuItem? get_item_by_uuid (string uuid) {
         VpnMenuItem? item = null;
         foreach (unowned var child in vpn_list.get_children ()) {
-            unowned var menu_item = (VpnMenuItem) ((Gtk.FlowBoxChild) child).get_child ();
+            unowned var menu_item = (VpnMenuItem) child;
             if (menu_item.connection != null && menu_item.connection.get_uuid () == uuid && item == null) {
                 item = (VpnMenuItem)child;
             }
@@ -196,7 +199,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                 active_vpn_connection.vpn_state_changed.connect (update);
 
                 foreach (unowned var child in vpn_list.get_children ()) {
-                    unowned var menu_item = (VpnMenuItem) ((Gtk.FlowBoxChild) child).get_child ();
+                    unowned var menu_item = (VpnMenuItem) child;
 
                     if (menu_item.connection == null)
                         continue;
