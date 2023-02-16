@@ -11,7 +11,6 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         list_store = new ListStore (typeof (NM.Device));
 
         var flowbox = new Gtk.FlowBox () {
-            column_spacing = 6,
             selection_mode = Gtk.SelectionMode.NONE
         };
         flowbox.bind_model (list_store, create_widget_func);
@@ -86,6 +85,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         construct {
             image = new Gtk.Image () {
+                margin_start = 3,
+                margin_end = 3,
                 pixel_size = 24
             };
 
@@ -194,6 +195,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         construct {
             image = new Gtk.Image () {
+                margin_start = 3,
+                margin_end = 3,
                 pixel_size = 24
             };
 
@@ -235,6 +238,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         construct {
             image = new Gtk.Image () {
+                margin_start = 3,
+                margin_end = 3,
                 use_fallback = true
             };
 
