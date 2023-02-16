@@ -15,9 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class Network.VpnMenuItem : Gtk.ListBoxRow {
+public class Network.VpnMenuItem : Gtk.Box {
     public signal void user_action ();
 
+    private Gtk.ToggleButton toggle_button;
     public Gtk.RadioButton radio_button { get; private set; }
     public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
     public NM.RemoteConnection? connection { get; construct; }
@@ -28,21 +29,19 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         }
     }
 
+    private static Gtk.CssProvider provider;
     private bool checking_vpn_connectivity = false;
-    private Gtk.Image error_img;
-    private Gtk.Spinner spinner;
+    // private Gtk.Image error_img;
+    // private Gtk.Spinner spinner;
     private Gtk.Label label;
 
-    public VpnMenuItem (VpnMenuItem? other = null, NM.RemoteConnection? connection = null) {
+    public VpnMenuItem (NM.RemoteConnection? connection = null) {
         Object (connection: connection);
-
-        if (other != null) {
-            radio_button.join_group (other.radio_button);
-        }
     }
 
-    class construct {
-        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+    static construct {
+        provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
     }
 
     construct {
@@ -50,41 +49,37 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
             connection.changed.connect (update);
         }
 
+        toggle_button = new Gtk.ToggleButton () {
+            halign = Gtk.Align.CENTER,
+            image = new Gtk.Image.from_icon_name ("network-vpn-symbolic", Gtk.IconSize.MENU)
+        };
+        toggle_button.get_style_context ().add_class ("circular");
+        toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+
         label = new Gtk.Label (null) {
-            ellipsize = Pango.EllipsizeMode.MIDDLE
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            max_width_chars = 16
         };
+        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        radio_button = new Gtk.RadioButton (null);
-        radio_button.add (label);
+        hexpand = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 3;
+        add (toggle_button);
+        add (label);
 
-        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
-            margin_start = 6,
-            tooltip_text = _("This Virtual Private Network could not be connected to.")
-        };
+        bind_property ("display-title", label, "label");
 
-        spinner = new Gtk.Spinner () {
-            no_show_all = true,
-            visible = false
-        };
-        spinner.start ();
+        toggle_button.toggled.connect (() => {
+            if (toggle_button.active) {
+                user_action ();
+            }
 
-        var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-            margin_start = 6,
-            margin_end = 6
-        };
-        main_box.pack_start (radio_button, true, true);
-        main_box.pack_start (spinner, false, false);
-        main_box.pack_start (error_img, false, false);
-
-        add (main_box);
-
-        notify["vpn_state"].connect (update);
-        radio_button.notify["active"].connect (update);
-
-        radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
-            return false;
+            update ();
         });
+
+        notify["vpn-state"].connect (update);
 
         update ();
     }
@@ -95,36 +90,19 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
         }
 
         label.label = connection.get_id ();
-        hide_item (error_img);
-        hide_item (spinner);
 
         switch (vpn_state) {
             case State.FAILED:
-                show_item (error_img);
+
                 break;
             case State.CONNECTING_VPN:
-                show_item (spinner);
-                if (!radio_button.active) {
-                    critical ("An VPN is being connected but not active.");
-                }
                 check_vpn_connectivity.begin ();
                 break;
         }
     }
 
     public void set_active (bool active) {
-        radio_button.set_active (active);
-    }
-
-    private void show_item (Gtk.Widget w) {
-        w.visible = true;
-        w.no_show_all = w.visible;
-    }
-
-    private void hide_item (Gtk.Widget w) {
-        w.visible = false;
-        w.no_show_all = !w.visible;
-        w.hide ();
+        toggle_button.active = active;
     }
 
     private async void nap (uint interval, int priority = GLib.Priority.DEFAULT) {
@@ -145,7 +123,6 @@ public class Network.VpnMenuItem : Gtk.ListBoxRow {
 
             for (int i = 0; i < 20; i++) {
                 if (vpn_state == State.CONNECTED_VPN) {
-                    hide_item (spinner);
                     checking_vpn_connectivity = false;
                     return;
                 }
