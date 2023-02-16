@@ -26,7 +26,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    private Gtk.Box other_box;
+    private Gtk.FlowBox other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
@@ -45,12 +45,16 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         orientation = Gtk.Orientation.VERTICAL;
 
-        other_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 12) {
+        other_box = new Gtk.FlowBox () {
+            column_spacing = 6,
+            row_spacing = 12,
             homogeneous = true,
             margin_top = 6,
             margin_end = 12,
             margin_bottom = 6,
-            margin_start = 12
+            margin_start = 12,
+            max_children_per_line = 3,
+            selection_mode = Gtk.SelectionMode.NONE
         };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
