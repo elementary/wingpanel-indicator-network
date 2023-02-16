@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2018-06-01 00:11+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel/"
@@ -74,60 +74,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Ev torê bêtêl na dikarî bi girêdayî."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Amûra nenas"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "40/64-bit WEP encrypted"
-msgstr "Ev Torê kilîdê 40/64-bit WEP bi kar dike"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
-msgid "104/128-bit WEP encrypted"
-msgstr "Ev Torê kilîdê 104/128-bit WEP bi kar dike"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "WPA3 encrypted"
-msgstr "Ev Torê kilîdê 40/64-bit WEP bi kar dike"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr ""
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "na nuqte dergeh kêrhatî"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "sehkirin bo nuqte dergeh…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -139,6 +85,60 @@ msgstr "le girê dan bo Tore veşartinê…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Mîhenge torê…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr ""
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Ev torê bêtêl na dikarî bi girêdayî."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Amûra nenas"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "na nuqte dergeh kêrhatî"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "sehkirin bo nuqte dergeh…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
+msgstr "Ev Torê kilîdê 40/64-bit WEP bi kar dike"
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
+msgstr "Ev Torê kilîdê 104/128-bit WEP bi kar dike"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "Ev Torê kilîdê 40/64-bit WEP bi kar dike"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

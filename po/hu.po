@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
@@ -61,54 +61,6 @@ msgstr "Középső kattintás a repülőgépes mód bekapcsolásához"
 msgid "unknown network"
 msgstr "ismeretlen hálózat"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Nem lehet csatlakozni a virtuális magánhálózathoz (VPN)."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Ismeretlen eszköz"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "Nem sikerült csatlakozni"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "40/64-bites WEP titkosítás"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "104/128-bites WEP titkosítás"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "WPA3 titkosítás"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "WPA titkosítás"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "Titkosítva"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "Nincs titkosítva"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Nincs elérhető hozzáférési pont"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Hozzáférési pontok keresése…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Repülőgépes mód"
@@ -120,6 +72,54 @@ msgstr "Csatlakozás rejtett hálózathoz…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Nem lehet csatlakozni a virtuális magánhálózathoz (VPN)."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Ismeretlen eszköz"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Nincs elérhető hozzáférési pont"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Hozzáférési pontok keresése…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "Nem sikerült csatlakozni"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "40/64-bites WEP titkosítás"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "104/128-bites WEP titkosítás"
+
+#: src/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "WPA3 titkosítás"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "WPA titkosítás"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "Titkosítva"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "Nincs titkosítva"
 
 #, c-format
 #~ msgid "Unknown type: %s "

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2022-12-15 19:25+0000\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos@iki.fi>\n"
 "Language-Team: Finnish <https://l10n.elementary.io/projects/wingpanel/"
@@ -61,54 +61,6 @@ msgstr "Keskimmäisen napin napsautuksella lentokonetila päälle"
 msgid "unknown network"
 msgstr "tuntematon verkko"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Yhteys tähän VPN-verkkoon ei onnistu."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Tuntematon laite"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "Yhdistäminen ei onnistu"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "40-/64-bittinen WEP-salaus"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "104-/128-bittinen WEP-salaus"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "WPA3-salattu"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "WPA-salattu"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "Salattu"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "Salaamaton"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Tukiasemia ei ole käytettävissä"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Etsitään tukiasemia…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Lentokonetila"
@@ -120,6 +72,54 @@ msgstr "Yhdistä piilotettuun verkkoon…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Verkkoasetukset…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Yhteys tähän VPN-verkkoon ei onnistu."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Tuntematon laite"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Tukiasemia ei ole käytettävissä"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Etsitään tukiasemia…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "Yhdistäminen ei onnistu"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "40-/64-bittinen WEP-salaus"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "104-/128-bittinen WEP-salaus"
+
+#: src/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "WPA3-salattu"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "WPA-salattu"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "Salattu"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "Salaamaton"
 
 #, c-format
 #~ msgid "Unknown type: %s "

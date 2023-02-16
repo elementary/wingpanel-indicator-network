@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -62,54 +62,6 @@ msgstr "Намжите средней кнопкой мыши, чтобы вкл
 msgid "unknown network"
 msgstr "неизвестная сеть"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Эта виртуальная приватная сеть не может быть подключена."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Неизвестное устройство"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "Не удалось подключиться"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "40/64-битное WEP-шифрование"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "104/128-битное WEP-шифрование"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "Шифрованние WPA3"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "Шифрованние WPA"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "Зашифровано"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "Небезопасный"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Нет доступных подключений Wi-Fi"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Сканирование доступных точек…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Режим полёта"
@@ -121,6 +73,54 @@ msgstr "Подключиться к скрытой сети…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Параметры сети…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Эта виртуальная приватная сеть не может быть подключена."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Неизвестное устройство"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Нет доступных подключений Wi-Fi"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Сканирование доступных точек…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "Не удалось подключиться"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "40/64-битное WEP-шифрование"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "104/128-битное WEP-шифрование"
+
+#: src/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "Шифрованние WPA3"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "Шифрованние WPA"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "Зашифровано"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "Небезопасный"
 
 #, c-format
 #~ msgid "Unknown type: %s "

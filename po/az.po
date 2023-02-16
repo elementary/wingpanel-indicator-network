@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2017-12-17 19:27+0000\n"
 "Last-Translator: Вагиф Кязым <vaqif134@gmail.com>\n"
 "Language-Team: Azerbaijani <https://weblate.elementary.io/projects/wingpanel/"
@@ -69,57 +69,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Bu virtual məxfi şəbəkəyə qoşulmaq alınmadı."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Naməlum cihaz"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "40/64-bit WEP encrypted"
-msgstr "Bu şəbəkə 40/64-bit WEP şifrələməsini istifadə edir."
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-msgid "104/128-bit WEP encrypted"
-msgstr "Bu şəbəkə 104/128-bit WEP şifrələməsini istifadə edir."
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "Bu şəbəkə 40/64-bit WEP şifrələməsini istifadə edir."
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Mövcud simsiz şəbəkə yoxdur"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Giriş nöqtəsi axtarılır…"
-
 #: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
@@ -133,6 +82,57 @@ msgstr "Gizli şəbəkəyə qoşul..."
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Şəbəkə ayarları..."
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Bu virtual məxfi şəbəkəyə qoşulmaq alınmadı."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Naməlum cihaz"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Mövcud simsiz şəbəkə yoxdur"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Giriş nöqtəsi axtarılır…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+msgid "40/64-bit WEP encrypted"
+msgstr "Bu şəbəkə 40/64-bit WEP şifrələməsini istifadə edir."
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+msgid "104/128-bit WEP encrypted"
+msgstr "Bu şəbəkə 104/128-bit WEP şifrələməsini istifadə edir."
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "Bu şəbəkə 40/64-bit WEP şifrələməsini istifadə edir."
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

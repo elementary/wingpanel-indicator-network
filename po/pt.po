@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2022-12-20 23:25+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -61,54 +61,6 @@ msgstr "Clicar no botão do meio para ligar o modo de avião"
 msgid "unknown network"
 msgstr "rede desconhecida"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Não é possível ligar a esta VPN."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Dispositivo desconhecido"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "Incapaz de ligar"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "Encriptação WEP 40/64-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "Encriptação WEP 104/128-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "WPA3 encriptada"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "WPA encriptada"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "Encriptada"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "Insegura"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Sem pontos de acesso disponíveis"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "À procura de pontos de acesso…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Modo de avião"
@@ -120,6 +72,54 @@ msgstr "Ligar a rede oculta…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Definições de Rede…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Não é possível ligar a esta VPN."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Dispositivo desconhecido"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Sem pontos de acesso disponíveis"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "À procura de pontos de acesso…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "Incapaz de ligar"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "Encriptação WEP 40/64-bit"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "Encriptação WEP 104/128-bit"
+
+#: src/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "WPA3 encriptada"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "WPA encriptada"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "Encriptada"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "Insegura"
 
 #, c-format
 #~ msgid "Unknown type: %s "

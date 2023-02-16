@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2022-09-21 06:14+0000\n"
 "Last-Translator: Aga Ismael <agaesmaeel@gmail.com>\n"
 "Language-Team: Kurdish (Central) <https://l10n.elementary.io/projects/"
@@ -61,54 +61,6 @@ msgstr ""
 msgid "unknown network"
 msgstr "تۆڕێکی نەزانراو"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "ناتوانرێت پەیوەست بەم VPN ە ببێت."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "ئامێری نەزانراو"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "نەتوانرا پەیوەست بێت"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "کۆدکراوی WEPی ٤٠/٦٤-بیت"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "کۆدکراوی WEPی ١٠٤/١٢٨-بیت"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "کۆدکراوەی WPA3"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "کۆدکراوی WPA"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "کۆدکراو"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "بێ ئاسایش"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "ڤی پی ئێن"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "هیچ خاڵکێکی دەستپێگەیشتن بەردەست نییە"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "گەڕان بەدوای خاڵەکانی دەستپێگەیشتن…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -120,6 +72,54 @@ msgstr "پەیوەست بوون بە تۆڕێکی شارەوە…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "ڕێکخستنەکان…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "ڤی پی ئێن"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "ناتوانرێت پەیوەست بەم VPN ە ببێت."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "ئامێری نەزانراو"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "هیچ خاڵکێکی دەستپێگەیشتن بەردەست نییە"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "گەڕان بەدوای خاڵەکانی دەستپێگەیشتن…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "نەتوانرا پەیوەست بێت"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "کۆدکراوی WEPی ٤٠/٦٤-بیت"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "کۆدکراوی WEPی ١٠٤/١٢٨-بیت"
+
+#: src/Widgets/WifiMenuItem.vala:148
+msgid "WPA3 encrypted"
+msgstr "کۆدکراوەی WPA3"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "کۆدکراوی WPA"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "کۆدکراو"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "بێ ئاسایش"
 
 #, c-format
 #~ msgid "Unknown type: %s "

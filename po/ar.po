@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2021-08-27 11:29+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
@@ -62,56 +62,6 @@ msgstr ""
 msgid "unknown network"
 msgstr "شبكة غير معروفة"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "لا يمكن الاتصال بهذه الشبكة الخاصة الافتراضية."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "جهاز غير معروف"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "غير قادر على الاتصال"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "مشفرة باستخدام WEP من نوع 40/64-بت"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "مشفرة باستخدام WEP من نوع 104/128-بت"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "WPA encrypted"
-msgid "WPA3 encrypted"
-msgstr "مشفرة باستخدام WPA"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "مشفرة باستخدام WPA"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "مشفرة"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "غير آمنة"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "شبكة خاصة افتراضية"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "لا يوجد نقاط وصول متاحة"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "قيد البحث عن نقاط وصول…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -123,6 +73,56 @@ msgstr "اتصل بشبكة مخفية…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "إعدادات الشبكة…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "شبكة خاصة افتراضية"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "لا يمكن الاتصال بهذه الشبكة الخاصة الافتراضية."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "جهاز غير معروف"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "لا يوجد نقاط وصول متاحة"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "قيد البحث عن نقاط وصول…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr "غير قادر على الاتصال"
+
+#: src/Widgets/WifiMenuItem.vala:142
+msgid "40/64-bit WEP encrypted"
+msgstr "مشفرة باستخدام WEP من نوع 40/64-بت"
+
+#: src/Widgets/WifiMenuItem.vala:145
+msgid "104/128-bit WEP encrypted"
+msgstr "مشفرة باستخدام WEP من نوع 104/128-بت"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "WPA3 encrypted"
+msgstr "مشفرة باستخدام WPA"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr "مشفرة باستخدام WPA"
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr "مشفرة"
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr "غير آمنة"
 
 #, c-format
 #~ msgid "Unknown type: %s "

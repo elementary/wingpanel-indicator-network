@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -72,58 +72,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-#, fuzzy
-msgid "This Virtual Private Network could not be connected to."
-msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "نامەلۇم ئۈسكۈنە"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "40/64-bit WEP encrypted"
-msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-msgid "104/128-bit WEP encrypted"
-msgstr "بۇ تور 104/128-bit WEP ئۇسۇلىدا شېفىرلانغان."
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr ""
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى يوق"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -135,6 +83,58 @@ msgstr "يوشۇرۇن تورغا ئۇلاش"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "تور تەڭشەكلىرى"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr ""
+
+#: src/Widgets/VpnMenuItem.vala:62
+#, fuzzy
+msgid "This Virtual Private Network could not be connected to."
+msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "نامەلۇم ئۈسكۈنە"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى يوق"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+msgid "40/64-bit WEP encrypted"
+msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+msgid "104/128-bit WEP encrypted"
+msgstr "بۇ تور 104/128-bit WEP ئۇسۇلىدا شېفىرلانغان."
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -64,60 +64,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Niyznōmo maszina"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "40/64-bit WEP encrypted"
-msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
-msgid "104/128-bit WEP encrypted"
-msgstr "Tyn nec używo 104/128-bitowego szyfrowanio WEP"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "WPA3 encrypted"
-msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Niy ma żodnych pōnktōw dostympu"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Szukanie pōnktōw dotympu…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -129,6 +75,60 @@ msgstr "Skupluj ze skrytym necym…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Niyznōmo maszina"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Niy ma żodnych pōnktōw dostympu"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Szukanie pōnktōw dotympu…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
+msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
+msgstr "Tyn nec używo 104/128-bitowego szyfrowanio WEP"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

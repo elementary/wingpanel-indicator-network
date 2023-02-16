@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2016-08-11 12:58+0000\n"
 "Last-Translator: Stanislav <stunito0o0o0@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,58 +67,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-#, fuzzy
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Свързването към тази безжична мрежа бе неуспешно."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Неизвестно устройство"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "40/64-bit WEP encrypted"
-msgstr "Тази мрежа използва 40/64-битово WEP криптиране."
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-msgid "104/128-bit WEP encrypted"
-msgstr "Тази мрежа използва 104/128-битово WEP криптиране."
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "Тази мрежа използва 40/64-битово WEP криптиране."
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr ""
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Няма налична точка за достъп"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Търсене на точки за достъп"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -130,6 +78,58 @@ msgstr "Свързване към скрита мрежа"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Настройки на мрежата"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr ""
+
+#: src/Widgets/VpnMenuItem.vala:62
+#, fuzzy
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Свързването към тази безжична мрежа бе неуспешно."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Неизвестно устройство"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Няма налична точка за достъп"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Търсене на точки за достъп"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+msgid "40/64-bit WEP encrypted"
+msgstr "Тази мрежа използва 40/64-битово WEP криптиране."
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+msgid "104/128-bit WEP encrypted"
+msgstr "Тази мрежа използва 104/128-битово WEP криптиране."
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "Тази мрежа използва 40/64-битово WEP криптиране."
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

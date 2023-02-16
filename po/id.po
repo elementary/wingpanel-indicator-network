@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2018-06-13 15:48+0000\n"
 "Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
 "Language-Team: Indonesian <https://weblate.elementary.io/projects/wingpanel/"
@@ -69,61 +69,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr ""
-"Jaringan Pribadi Virtual (Virtual Private Network) ini tidak dapat terhubung."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Perangkat tak dikenal"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "40/64-bit WEP encrypted"
-msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
-msgid "104/128-bit WEP encrypted"
-msgstr "Jaringan ini menggunakan enkripsi WEP 104/128-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "WPA3 encrypted"
-msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Tidak ada Titik Akses yang Tersedia"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Memindai Titik Akses…"
-
 #: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
@@ -137,6 +82,61 @@ msgstr "Menyambung ke Jaringan Tersembunyi…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Pengaturan Jaringan…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr ""
+"Jaringan Pribadi Virtual (Virtual Private Network) ini tidak dapat terhubung."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Perangkat tak dikenal"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Tidak ada Titik Akses yang Tersedia"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Memindai Titik Akses…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
+msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
+msgstr "Jaringan ini menggunakan enkripsi WEP 104/128-bit"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

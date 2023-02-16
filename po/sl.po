@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2018-07-03 19:06+0000\n"
 "Last-Translator: Jernej Virag <jernej@virag.si>\n"
 "Language-Team: Slovenian <https://weblate.elementary.io/projects/wingpanel/"
@@ -70,60 +70,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Na to VPN omrežje se ni bilo mogoče povezati."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Neznana naprava"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "40/64-bit WEP encrypted"
-msgstr "To omrežje uporablja 40/64 bitno WEP šifriranje"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
-msgid "104/128-bit WEP encrypted"
-msgstr "To omrežje uporablja 104/128 bitno WEP šifriranje"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "WPA3 encrypted"
-msgstr "To omrežje uporablja 40/64 bitno WEP šifriranje"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Ni brezžičnih omrežij"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Iščem dostopne točke…"
-
 #: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
@@ -137,6 +83,60 @@ msgstr "Poveži se na skrito omrežje…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Omrežne nastavitve…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPN"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Na to VPN omrežje se ni bilo mogoče povezati."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Neznana naprava"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Ni brezžičnih omrežij"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Iščem dostopne točke…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
+msgstr "To omrežje uporablja 40/64 bitno WEP šifriranje"
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
+msgstr "To omrežje uporablja 104/128 bitno WEP šifriranje"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "To omrežje uporablja 40/64 bitno WEP šifriranje"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

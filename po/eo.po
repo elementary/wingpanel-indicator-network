@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2018-10-26 01:48+0000\n"
 "Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/wingpanel/"
@@ -65,60 +65,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Ĉi Virtuala Privata Reto ne povis konektiĝi."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Nekonata aparato"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "40/64-bit WEP encrypted"
-msgstr "Ĉi reto uzas 40/64-bitan WEP-ĉifradon"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-#| msgid "This network uses 104/128-bit WEP encryption"
-msgid "104/128-bit WEP encrypted"
-msgstr "Ĉi reto uzas 104/128-bitan WEP-ĉifradon"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "This network uses 40/64-bit WEP encryption"
-msgid "WPA3 encrypted"
-msgstr "Ĉi reto uzas 40/64-bitan WEP-ĉifradon"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPR"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Neniuj disponeblaj retkaptejoj"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Skanante por retkaptejoj…"
-
 #: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
@@ -130,6 +76,60 @@ msgstr "Konekti al kaŝita reto…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Retagordoj…"
+
+#: src/Widgets/VpnInterface.vala:41
+msgid "VPN"
+msgstr "VPR"
+
+#: src/Widgets/VpnMenuItem.vala:62
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Ĉi Virtuala Privata Reto ne povis konektiĝi."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Nekonata aparato"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Neniuj disponeblaj retkaptejoj"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Skanante por retkaptejoj…"
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "40/64-bit WEP encrypted"
+msgstr "Ĉi reto uzas 40/64-bitan WEP-ĉifradon"
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+#| msgid "This network uses 104/128-bit WEP encryption"
+msgid "104/128-bit WEP encrypted"
+msgstr "Ĉi reto uzas 104/128-bitan WEP-ĉifradon"
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "WPA3 encrypted"
+msgstr "Ĉi reto uzas 40/64-bitan WEP-ĉifradon"
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "

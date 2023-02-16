@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:23+0000\n"
+"POT-Creation-Date: 2023-02-16 21:34+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -69,59 +69,6 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-#, fuzzy
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το εικονικό ιδιωτικό δίκτυο (VPN)."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Άγνωστη συσκευή"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "40/64-bit WEP encrypted"
-msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 40/64 bit."
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-msgid "104/128-bit WEP encrypted"
-msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 104/128 bit."
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 40/64 bit."
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-#, fuzzy
-msgid "VPN"
-msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Μη διαθέσιμα σημεία πρόσβασης"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
-
 #: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
@@ -135,6 +82,59 @@ msgstr "Σύνδεση σε κρυφό δίκτυο..."
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου..."
+
+#: src/Widgets/VpnInterface.vala:41
+#, fuzzy
+msgid "VPN"
+msgstr "Εικονικό ιδιωτικό δίκτυο (VPN)"
+
+#: src/Widgets/VpnMenuItem.vala:62
+#, fuzzy
+msgid "This Virtual Private Network could not be connected to."
+msgstr "Δεν είναι εφικτή η σύνδεση σε αυτό το εικονικό ιδιωτικό δίκτυο (VPN)."
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Άγνωστη συσκευή"
+
+#: src/Widgets/WifiInterface.vala:87
+msgid "No Access Points Available"
+msgstr "Μη διαθέσιμα σημεία πρόσβασης"
+
+#: src/Widgets/WifiInterface.vala:89
+msgid "Scanning for Access Points…"
+msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
+
+#: src/Widgets/WifiMenuItem.vala:70
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:142
+#, fuzzy
+msgid "40/64-bit WEP encrypted"
+msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 40/64 bit."
+
+#: src/Widgets/WifiMenuItem.vala:145
+#, fuzzy
+msgid "104/128-bit WEP encrypted"
+msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 104/128 bit."
+
+#: src/Widgets/WifiMenuItem.vala:148
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "Αυτό το δίκτυο χρησιμοποιεί κρυπτογράφηση WEP 40/64 bit."
+
+#: src/Widgets/WifiMenuItem.vala:151
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:154
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:156
+msgid "Unsecured"
+msgstr ""
 
 #, c-format
 #~ msgid "Unknown type: %s "
