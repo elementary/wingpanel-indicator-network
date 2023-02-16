@@ -41,7 +41,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             case NM.DeviceType.ETHERNET:
             case NM.DeviceType.MODEM:
             case NM.DeviceType.WIFI:
-            // case NM.DeviceType.WIFI_P2P:
+            case NM.DeviceType.WIFI_P2P:
                 list_store.append (device);
                 break;
             default:
