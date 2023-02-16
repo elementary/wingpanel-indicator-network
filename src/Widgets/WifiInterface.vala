@@ -139,7 +139,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         case NM.DeviceState.FAILED:
             state = State.FAILED_WIFI;
             if (active_wifi_item != null) {
-                active_wifi_item.state = state;
+                active_wifi_item.state = wifi_device.state;
             }
             cancel_scan ();
             break;
@@ -445,8 +445,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         active_ap = wifi_device.get_active_access_point ();
 
         if (active_wifi_item != null) {
-            if (active_wifi_item.state == Network.State.CONNECTING_WIFI) {
-                active_wifi_item.state = Network.State.DISCONNECTED;
+            if (active_wifi_item.state == NM.DeviceState.CONFIG) {
+                active_wifi_item.state = NM.DeviceState.DISCONNECTED;
             }
             active_wifi_item = null;
         }
@@ -467,7 +467,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                     found = true;
                     menu_item.set_active (true);
                     active_wifi_item = menu_item;
-                    active_wifi_item.state = state;
+                    active_wifi_item.state = device.state;
                 }
             }
 

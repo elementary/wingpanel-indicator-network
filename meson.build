@@ -70,3 +70,7 @@ shared_module(
 
 subdir('data')
 subdir('po')
+vapigen = find_program('vapigen', required: false)
+if vapigen.found()
+    subdir('vapi')
+endif
