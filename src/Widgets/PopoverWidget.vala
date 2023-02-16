@@ -233,6 +233,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             if (widget_interface.is_device (device)) {
                 network_interface.remove (widget_interface);
 
+                var flowbox = (Gtk.FlowBox) widget_interface.get_ancestor (typeof (Gtk.FlowBox));
+                if (flowbox != null) {
+                    flowbox.remove (widget_interface);
+                }
+
                 widget_interface.sep.destroy ();
                 widget_interface.destroy ();
                 break;
