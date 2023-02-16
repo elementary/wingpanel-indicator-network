@@ -147,6 +147,55 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private class ModemItem : Gtk.Revealer {
         public NM.DeviceModem device { get; construct; }
         private Gtk.Image image;
+        private Gtk.Label label;
+
+        [Flags]
+        private enum ModemAccessTechnology {
+            UNKNOWN,
+            POTS,
+            GSM,
+            GSM_COMPACT,
+            GPRS,
+            EDGE,
+            UMTS,
+            HSDPA,
+            HSUPA,
+            HSPA,
+            HSPA_PLUS,
+            1XRTT,
+            EVDO0,
+            EVDOA,
+            EVDOB,
+            LTE,
+            ANY;
+
+            public unowned string to_string () {
+                switch (this) {
+                    case ModemAccessTechnology.GSM:
+                    case ModemAccessTechnology.GSM_COMPACT:
+                    case ModemAccessTechnology.GPRS:
+                    case ModemAccessTechnology.1XRTT:
+                        return "G";
+                    case ModemAccessTechnology.EDGE:
+                        return "E";
+                    case ModemAccessTechnology.UMTS:
+                    case ModemAccessTechnology.EVDO0:
+                    case ModemAccessTechnology.EVDOA:
+                    case ModemAccessTechnology.EVDOB:
+                        return "3G";
+                    case ModemAccessTechnology.HSDPA:
+                    case ModemAccessTechnology.HSUPA:
+                    case ModemAccessTechnology.HSPA:
+                        return "H";
+                    case ModemAccessTechnology.HSPA_PLUS:
+                        return "H+";
+                    case ModemAccessTechnology.LTE:
+                        return "LTE";
+                    default:
+                        return null;
+                }
+            }
+        }
 
         public ModemItem (NM.DeviceModem device) {
             Object (device: device);
@@ -154,16 +203,25 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         construct {
             image = new Gtk.Image () {
-                margin_start = 3,
-                margin_end = 3,
                 pixel_size = 24
             };
 
-            add (image);
+            label = new Gtk.Label ("");
+
+            var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3) {
+                margin_start = 3,
+                margin_end = 3,
+            };
+            box.add (image);
+            box.add (label);
+
+            add (box);
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
             update_state ();
             device.state_changed.connect (update_state);
+
+            prepare.begin ();
         }
 
         private void update_state () {
@@ -176,12 +234,87 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     reveal_child = true;
                     break;
             }
-
-            image.icon_name = get_icon_name ();
         }
 
-        private string get_icon_name () {
-            return "network-cellular-signal-excellent-symbolic";
+        private async void prepare () {
+            try {
+                var modem_manager = yield new DBusObjectManagerClient.for_bus (
+                    BusType.SYSTEM,
+                    DBusObjectManagerClientFlags.NONE,
+                    "org.freedesktop.ModemManager1",
+                    "/org/freedesktop/ModemManager1",
+                    null
+                );
+
+                modem_manager.interface_proxy_properties_changed.connect ((obj_proxy, interface_proxy, changed, invalidated) => {
+                    if (interface_proxy.g_object_path == device.get_udi ()) {
+                        device_properties_changed (changed);
+                    }
+                });
+            } catch (Error e) {
+                critical ("Unable to connect to ModemManager1 to check cellular internet signal quality: %s", e.message);
+                return;
+            }
+        }
+
+        private void device_properties_changed (Variant variant) {
+            var signal_variant = variant.lookup_value ("SignalQuality", VariantType.TUPLE);
+            if (signal_variant != null) {
+                bool recent;
+                uint32 quality;
+                signal_variant.get ("(ub)", out quality, out recent);
+                get_icon_name (quality);
+            }
+
+            var access_technologies_variant = variant.lookup_value ("AccessTechnologies", VariantType.UINT32);
+            if (access_technologies_variant != null) {
+                uint32 access_type;
+                access_technologies_variant.get ("u", out access_type);
+                label.label = ((ModemAccessTechnology) access_type).to_string ();
+            }
+        }
+
+        private string get_icon_name (uint32 strength) {
+            string icon_name = "network-cellular";
+
+            switch (device.state) {
+                case NM.DeviceState.ACTIVATED:
+                    break;
+                case NM.DeviceState.CONFIG:
+                case NM.DeviceState.DEACTIVATING:
+                case NM.DeviceState.IP_CHECK:
+                case NM.DeviceState.IP_CONFIG:
+                case NM.DeviceState.PREPARE:
+                case NM.DeviceState.SECONDARIES:
+                    icon_name += "-acquiring";
+                    break;
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    icon_name += "-offline";
+                    break;
+                case NM.DeviceState.FAILED:
+                    icon_name += "-error";
+                    break;
+                case NM.DeviceState.NEED_AUTH:
+                case NM.DeviceState.UNKNOWN:
+                case NM.DeviceState.UNMANAGED:
+                    icon_name += "-no-route";
+                    break;
+                default:
+                    break;
+            }
+
+            if (strength < 30) {
+                icon_name += "-signal-weak";
+            } else if (strength < 55) {
+                icon_name += "-signal-ok";
+            } else if (strength < 80) {
+                icon_name += "-signal-good";
+            } else {
+                icon_name += "-signal-excellent";
+            }
+
+            return icon_name += "-symbolic";
         }
     }
 
