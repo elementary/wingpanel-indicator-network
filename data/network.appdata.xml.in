@@ -16,6 +16,7 @@
         </ul>
       </description>
       <issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/134">VPN switch jumps due to WiFi list height change</issue>
         <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/152">Network adapter names aren't truncated</issue>
       </issues>
     </release>
