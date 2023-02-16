@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2022-12-20 23:25+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://l10n.elementary.io/projects/wingpanel/"
@@ -109,15 +109,15 @@ msgstr "Sem pontos de acesso disponíveis"
 msgid "Scanning for Access Points…"
 msgstr "À procura de pontos de acesso…"
 
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Modo de avião"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:119
 msgid "Connect to Hidden Network…"
 msgstr "Ligar a rede oculta…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Definições de Rede…"
 

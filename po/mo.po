@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2018-05-31 08:26+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -123,15 +123,15 @@ msgstr "Nu există puncte de acces disponibile"
 msgid "Scanning for Access Points…"
 msgstr "Scanarea punctelor de acces …"
 
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:119
 msgid "Connect to Hidden Network…"
 msgstr "Conectați-vă la rețeaua ascunsă …"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Setări de rețea…"
 

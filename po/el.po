@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -122,17 +122,17 @@ msgstr "Μη διαθέσιμα σημεία πρόσβασης"
 msgid "Scanning for Access Points…"
 msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
 
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Η λειτουργία πτήσης είναι ενεργοποιημένη"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:119
 msgid "Connect to Hidden Network…"
 msgstr "Σύνδεση σε κρυφό δίκτυο..."
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου..."
 

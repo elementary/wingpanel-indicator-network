@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2022-08-06 20:28+0000\n"
 "Last-Translator: Jung-Kyu Park <bagjunggyu@gmail.com>\n"
 "Language-Team: Korean <https://l10n.elementary.io/projects/wingpanel/"
@@ -109,17 +109,17 @@ msgstr "사용 가능한 연결 지점 없음"
 msgid "Scanning for Access Points…"
 msgstr "접근 포인트 검색하기…"
 
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "비행기 모드 사용"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:119
 msgid "Connect to Hidden Network…"
 msgstr "숨겨진 네트워크에 연결하기…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "네트워크 설정…"
 

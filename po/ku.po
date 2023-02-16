@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2018-06-01 00:11+0000\n"
 "Last-Translator: Rokar <mail@rokar.de>\n"
 "Language-Team: Kurdish <https://weblate.elementary.io/projects/wingpanel/"
@@ -128,15 +128,15 @@ msgstr "na nuqte dergeh kêrhatî"
 msgid "Scanning for Access Points…"
 msgstr "sehkirin bo nuqte dergeh…"
 
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:119
 msgid "Connect to Hidden Network…"
 msgstr "le girê dan bo Tore veşartinê…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Mîhenge torê…"
 

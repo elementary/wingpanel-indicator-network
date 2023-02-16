@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2022-07-01 07:43+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,64 +27,72 @@ msgstr "Indicador de la xarxa"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connecteu amb xarxes sense fil i gestioneu XPV."
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:64
-msgid "Minor updates:"
-msgstr "Actualitzacions menors:"
+#: data/network.appdata.xml.in:12
+msgid "Improvements:"
+msgstr ""
 
-#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
-#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
-#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
-#: data/network.appdata.xml.in:80
+#: data/network.appdata.xml.in:14
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr ""
+
+#: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
+#: data/network.appdata.xml.in:66 data/network.appdata.xml.in:81
+#: data/network.appdata.xml.in:87 data/network.appdata.xml.in:93
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
-#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+#: data/network.appdata.xml.in:25 data/network.appdata.xml.in:40
+#: data/network.appdata.xml.in:52 data/network.appdata.xml.in:64
+#: data/network.appdata.xml.in:77
+msgid "Minor updates:"
+msgstr "Actualitzacions menors:"
+
+#: data/network.appdata.xml.in:34 data/network.appdata.xml.in:48
+#: data/network.appdata.xml.in:60 data/network.appdata.xml.in:72
 msgid "Fixes:"
 msgstr "Correccions:"
 
-#: data/network.appdata.xml.in:23
+#: data/network.appdata.xml.in:36
 msgid "Ensure correct tooltip on system start"
 msgstr "S'assegura el suggeriment correcte a l'inici del sistema."
 
-#: data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:37
 msgid "Prevent connecting to invalid VPNs"
 msgstr "Evita la connexió a VPN no vàlides."
 
-#: data/network.appdata.xml.in:25
+#: data/network.appdata.xml.in:38
 msgid "Show correct info for WPA3 networks"
 msgstr "Mostra la informació correcta per a xarxes WPA3."
 
-#: data/network.appdata.xml.in:37
+#: data/network.appdata.xml.in:50
 msgid "Prevent blank lines in VPN list"
 msgstr "S'evita línies en blanc a la llista de VPN."
 
-#: data/network.appdata.xml.in:49
+#: data/network.appdata.xml.in:62
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr "No s'inicia l'assistent de xarxa captiva amb connectivitat plena."
 
-#: data/network.appdata.xml.in:61
+#: data/network.appdata.xml.in:74
 msgid "Fix VPN spinning after connecting"
 msgstr "Correcció del gir de XPV després de connectar-vos-hi"
 
-#: data/network.appdata.xml.in:62
+#: data/network.appdata.xml.in:75
 msgid "Improve detecting network encryption type"
 msgstr "Millora de la detecció del tipus d'encriptació de xarxa"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:79
 msgid "Ellipsize long network names"
 msgstr "El·lipsi dels noms de xarxa llargs"
 
-#: data/network.appdata.xml.in:67
+#: data/network.appdata.xml.in:80
 msgid "Show tooltip on hover"
 msgstr "Mostra la descripció emergent en passar-hi"
 
-#: data/network.appdata.xml.in:79
+#: data/network.appdata.xml.in:92
 msgid "Prevent panel icon from showing in the dock"
 msgstr "S'evita que la icona del plafó es vegi a l'acoblador."
 
-#: data/network.appdata.xml.in:89
+#: data/network.appdata.xml.in:102
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
