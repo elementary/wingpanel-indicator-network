@@ -1,4 +1,3 @@
-g_ir_dep = dependency('gobject-introspection-1.0')
 gir_dir = g_ir_dep.get_pkgconfig_variable('girdir')
 
 libnm_target = custom_target('libnm',
