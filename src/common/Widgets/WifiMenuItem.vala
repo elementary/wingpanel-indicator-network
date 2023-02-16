@@ -24,7 +24,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
     }
 
-    public Network.State state { get; set; default=Network.State.DISCONNECTED; }
+    public NM.DeviceState state { get; set; default = NM.DeviceState.DISCONNECTED; }
 
     public uint8 strength {
         get {
@@ -163,15 +163,20 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         hide_item (spinner);
 
         switch (state) {
-        case State.FAILED_WIFI:
-            show_item (error_img);
-            break;
-        case State.CONNECTING_WIFI:
-            show_item (spinner);
-            if (!radio_button.active) {
-                critical ("An access point is being connected but not active.");
-            }
-            break;
+            case NM.DeviceState.FAILED:
+                show_item (error_img);
+                break;
+            case NM.DeviceState.PREPARE:
+            case NM.DeviceState.CONFIG:
+            case NM.DeviceState.NEED_AUTH:
+            case NM.DeviceState.IP_CONFIG:
+            case NM.DeviceState.IP_CHECK:
+            case NM.DeviceState.SECONDARIES:
+                show_item (spinner);
+                if (!radio_button.active) {
+                    critical ("An access point is being connected but not active.");
+                }
+                break;
         }
     }
 
