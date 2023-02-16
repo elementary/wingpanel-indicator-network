@@ -23,17 +23,13 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     public Network.State vpn_state { get; private set; default = Network.State.DISCONNECTED; }
     public NM.Client nm_client { get; construct; }
 
-    private NM.VpnConnection? active_vpn_connection = null;
     private Gtk.FlowBox vpn_list;
-
-    private VpnMenuItem? active_vpn_item;
 
     public VpnInterface (NM.Client nm_client) {
         Object (nm_client: nm_client);
     }
 
     construct {
-        active_vpn_item = null;
         display_title = _("VPN");
 
         vpn_list = new Gtk.FlowBox () {
@@ -50,17 +46,20 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
         add (vpn_list);
 
+        nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
+        nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
+
         update ();
         notify["vpn-state"].connect (update);
 
         vpn_list.add.connect (check_vpn_availability);
         vpn_list.remove.connect (check_vpn_availability);
 
-        nm_client.notify["active-connections"].connect (update);
         nm_client.connection_added.connect (vpn_added_cb);
         nm_client.connection_removed.connect (vpn_removed_cb);
 
-        nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
+        nm_client.active_connection_added.connect (active_connected_added_cb);
+        nm_client.active_connection_removed.connect (active_connected_removed_cb);
 
         vpn_list.child_activated.connect ((child) => {
             vpn_activate_cb ((VpnMenuItem) child);
@@ -68,47 +67,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     public override void update () {
-        update_active_connection ();
-
-        // VpnMenuItem? item = null;
-
-        // if (active_vpn_connection != null) {
-        //     switch (active_vpn_connection.vpn_state) {
-        //         case NM.VpnConnectionState.UNKNOWN:
-        //         case NM.VpnConnectionState.DISCONNECTED:
-        //             vpn_state = State.DISCONNECTED;
-        //             active_vpn_item = null;
-        //             break;
-        //         case NM.VpnConnectionState.PREPARE:
-        //         case NM.VpnConnectionState.IP_CONFIG_GET:
-        //         case NM.VpnConnectionState.CONNECT:
-        //             vpn_state = State.CONNECTING_VPN;
-        //             item = get_item_by_uuid (active_vpn_connection.get_uuid ());
-        //             break;
-        //         case NM.VpnConnectionState.FAILED:
-        //             vpn_state = State.FAILED;
-        //             active_vpn_item = null;
-        //             break;
-        //         case NM.VpnConnectionState.ACTIVATED:
-        //             vpn_state = State.CONNECTED_VPN;
-        //             item = get_item_by_uuid (active_vpn_connection.get_uuid ());
-        //             sensitive = true;
-        //             break;
-        //         }
-        // } else {
-        //     vpn_state = State.DISCONNECTED;
-        // }
-
-        // if (item == null) {
-        //     blank_item.set_active (true);
-
-        //     if (active_vpn_item != null) {
-        //         active_vpn_item.no_show_all = false;
-        //         active_vpn_item.visible = true;
-        //         active_vpn_item.vpn_state = vpn_state;
-        //     }
-        // }
-
         check_vpn_availability ();
 
         base.update ();
@@ -123,27 +81,35 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         visible = sep.visible = show;
     }
 
+    private void active_connected_added_cb (NM.ActiveConnection active_connection) {
+        var menu_item = get_item_by_uuid (active_connection.get_uuid ());
+        if (menu_item != null) {
+            menu_item.vpn_connection = (NM.VpnConnection) active_connection;
+        }
+    }
+
+    private void active_connected_removed_cb (NM.ActiveConnection active_connection) {
+        var menu_item = get_item_by_uuid (active_connection.get_uuid ());
+        if (menu_item != null) {
+            menu_item.vpn_connection = null;
+        }
+    }
+
     private void vpn_activate_cb (VpnMenuItem item) {
-        nm_client.activate_connection_async.begin (item.connection, null, null, null, null);
+        if (item.vpn_connection != null) {
+            try {
+                nm_client.deactivate_connection (item.vpn_connection);
+            } catch (Error e) {
+                critical (e.message);
+            }
+        } else {
+            nm_client.activate_connection_async.begin (item.remote_connection, null, null, null, null);
+        }
 
         Idle.add (() => {
             update ();
             return false;
         });
-    }
-
-    private void vpn_deactivate_cb () {
-        if (active_vpn_connection == null) {
-            update ();
-            return;
-        }
-        debug ("Deactivating VPN : %s", active_vpn_connection.get_id ());
-        try {
-            nm_client.deactivate_connection (active_vpn_connection);
-        } catch (Error e) {
-            warning (e.message);
-        }
-        Idle.add (() => { update (); return false; });
     }
 
     /**
@@ -152,16 +118,12 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
       * then we filter the connection that make sense for us.
     */
     private void vpn_added_cb (Object obj) {
-        var vpn = (NM.RemoteConnection)obj;
-        switch (vpn.get_connection_type ()) {
-            case NM.SettingVpn.SETTING_NAME:
-                // Add the item to vpn_list
-                var item = new VpnMenuItem (vpn);
-                vpn_list.add (item);
-                update ();
-                break;
-            default:
-                break;
+        var remote_connection = (NM.RemoteConnection) obj;
+
+        if (remote_connection.get_connection_type () == NM.SettingVpn.SETTING_NAME) {
+            var item = new VpnMenuItem (remote_connection);
+            vpn_list.add (item);
+            update ();
         }
     }
 
@@ -169,40 +131,18 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     private void vpn_removed_cb (NM.RemoteConnection vpn_) {
         // var item = get_item_by_uuid (vpn_.get_uuid ());
         // item.destroy ();
+        update ();
     }
 
     private VpnMenuItem? get_item_by_uuid (string uuid) {
         VpnMenuItem? item = null;
         foreach (unowned var child in vpn_list.get_children ()) {
             unowned var menu_item = (VpnMenuItem) child;
-            if (menu_item.connection != null && menu_item.connection.get_uuid () == uuid && item == null) {
+            if (menu_item.remote_connection.get_uuid () == uuid && item == null) {
                 item = (VpnMenuItem)child;
             }
         }
 
         return item;
-    }
-
-    /**
-     * Loop through each active connection to find out the vpn.
-    */
-    private void update_active_connection () {
-        active_vpn_connection = null;
-
-        nm_client.get_active_connections ().foreach ((ac) => {
-            if (ac.get_vpn () && active_vpn_connection == null) {
-                active_vpn_connection = (NM.VpnConnection) ac;
-                active_vpn_connection.vpn_state_changed.connect (update);
-
-                foreach (unowned var child in vpn_list.get_children ()) {
-                    unowned var menu_item = (VpnMenuItem) child;
-                    if (menu_item.connection.get_uuid () == active_vpn_connection.uuid) {
-                        menu_item.set_active (true);
-                    } else {
-                        menu_item.set_active (false);
-                    }
-                }
-            }
-        });
     }
 }
