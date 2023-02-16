@@ -68,8 +68,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                 return new ModemItem ((NM.DeviceModem) device);
             case NM.DeviceType.WIFI:
                 return new WifiItem ((NM.DeviceWifi) device);
-            // case NM.DeviceType.WIFI_P2P:
-            //     return new HotSpotItem ((NM.DeviceWifiP2P) device);
+            case NM.DeviceType.WIFI_P2P:
+                return new HotSpotItem ((NM.DeviceWifiP2P) device);
             default:
                 return new Gtk.Label ("");
        }
@@ -146,44 +146,44 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         }
     }
 
-    // private class HotSpotItem : Gtk.Revealer {
-    //     public NM.DeviceWifiP2P device { get; construct; }
-    //     private Gtk.Image image;
+    private class HotSpotItem : Gtk.Revealer {
+        public NM.DeviceWifiP2P device { get; construct; }
+        private Gtk.Image image;
 
-    //     public HotSpotItem (NM.DeviceWifiP2P device) {
-    //         Object (device: device);
-    //     }
+        public HotSpotItem (NM.DeviceWifiP2P device) {
+            Object (device: device);
+        }
 
-    //     construct {
-    //         image = new Gtk.Image () {
-    //             pixel_size = 24
-    //         };
+        construct {
+            image = new Gtk.Image () {
+                pixel_size = 24
+            };
 
-    //         add (image);
-    //         transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
+            add (image);
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT;
 
-    //         update_state ();
-    //         device.state_changed.connect (update_state);
-    //     }
+            update_state ();
+            device.state_changed.connect (update_state);
+        }
 
-    //     private void update_state () {
-    //         switch (device.state) {
-    //             case NM.DeviceState.DISCONNECTED:
-    //             case NM.DeviceState.UNAVAILABLE:
-    //                 reveal_child = false;
-    //                 break;
-    //             default:
-    //                 reveal_child = true;
-    //                 break;
-    //         }
+        private void update_state () {
+            switch (device.state) {
+                case NM.DeviceState.DISCONNECTED:
+                case NM.DeviceState.UNAVAILABLE:
+                    reveal_child = false;
+                    break;
+                default:
+                    reveal_child = true;
+                    break;
+            }
 
-    //         image.icon_name = get_icon_name ();
-    //     }
+            image.icon_name = get_icon_name ();
+        }
 
-    //     private string get_icon_name () {
-    //         return "network-wireless-hotspot-symbolic";
-    //     }
-    // }
+        private string get_icon_name () {
+            return "network-wireless-hotspot-symbolic";
+        }
+    }
 
     private class ModemItem : Gtk.Revealer {
         public NM.DeviceModem device { get; construct; }
