@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-15 08:27+0000\n"
-"PO-Revision-Date: 2021-02-14 15:57+0000\n"
-"Last-Translator: Ciarán Ainsworth <ciaranainsworth@outlook.com>\n"
+"PO-Revision-Date: 2023-02-16 21:23+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/en_GB/>\n"
 "Language: en_GB\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:125 src/Indicator.vala:138
@@ -82,10 +82,8 @@ msgid "104/128-bit WEP encrypted"
 msgstr "104/128-bit WEP encrypted"
 
 #: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-#| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
-msgstr "WPA encrypted"
+msgstr "WPA3 encrypted"
 
 #: src/common/Widgets/WifiMenuItem.vala:151
 msgid "WPA encrypted"
@@ -112,10 +110,8 @@ msgid "Scanning for Access Points…"
 msgstr "Scanning for Access Points…"
 
 #: src/Widgets/PopoverWidget.vala:58
-#, fuzzy
-#| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
-msgstr "Airplane mode enabled"
+msgstr "Airplane Mode"
 
 #: src/Widgets/PopoverWidget.vala:88
 msgid "Connect to Hidden Network…"
