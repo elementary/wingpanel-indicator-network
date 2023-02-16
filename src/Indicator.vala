@@ -180,9 +180,9 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_wired_name () {
-        foreach (unowned Gtk.Widget child in popover_widget.other_box.get_children ()) {
-            if (child is Network.EtherInterface) {
-                var active_wired_name = ((Network.EtherInterface) child).display_title;
+        foreach (unowned var iface in popover_widget.network_interface) {
+            if (iface is Network.EtherInterface) {
+                var active_wired_name = iface.display_title;
                 debug ("Active network (Wired): %s".printf (active_wired_name));
                 return active_wired_name;
             }
@@ -192,9 +192,9 @@ public class Network.Indicator : Wingpanel.Indicator {
     }
 
     private string get_active_wifi_name () {
-        foreach (unowned Gtk.Widget child in popover_widget.wifi_box.get_children ()) {
-            if (child is Network.WifiInterface) {
-                var active_wifi_name = ((Network.WifiInterface) child).active_ap_name;
+        foreach (unowned var iface in popover_widget.network_interface) {
+            if (iface is WifiInterface) {
+                var active_wifi_name = ((Network.WifiInterface) iface).active_ap_name;
                 debug ("Active network (WiFi): %s".printf (active_wifi_name));
                 return active_wifi_name;
             }
