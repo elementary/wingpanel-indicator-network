@@ -20,16 +20,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
     private NM.VpnConnection? active_vpn_connection = null;
 
-    private GLib.List<WidgetNMInterface>? network_interface;
+    public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
     public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    public Gtk.Box other_box { get; private set; }
-    public Gtk.Box wifi_box { get; private set; }
+    private Gtk.FlowBox other_box;
+    private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
+    private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
 
@@ -44,7 +45,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         orientation = Gtk.Orientation.VERTICAL;
 
-        other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        other_box = new Gtk.FlowBox () {
+            column_spacing = 6,
+            row_spacing = 12,
+            homogeneous = true,
+            margin_top = 6,
+            margin_end = 12,
+            margin_bottom = 6,
+            margin_start = 12,
+            max_children_per_line = 3,
+            selection_mode = Gtk.SelectionMode.NONE
+        };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
@@ -55,31 +66,51 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            var airplane_switch = new Granite.SwitchModelButton (_("Airplane Mode"));
-            airplane_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
 
-            var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
-                margin_top = 3,
-                margin_bottom = 3
+            var airplane_toggle = new Gtk.ToggleButton () {
+                halign = Gtk.Align.CENTER,
+                image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
             };
+            airplane_toggle.get_style_context ().add_class ("circular");
+            airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            add (airplane_switch);
-            add (sep);
+            var airplane_label = new Gtk.Label (_("Airplane Mode"));
+            airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-            airplane_switch.notify["active"].connect (() => {
+            var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            airplane_box.add (airplane_toggle);
+            airplane_box.add (airplane_label);
+
+            other_box.add (airplane_box);
+
+            airplane_toggle.toggled.connect (() => {
                 try {
-                    nm_client.networking_set_enabled (!airplane_switch.active);
+                    nm_client.networking_set_enabled (!airplane_toggle.active);
                 } catch (Error e) {
                     warning (e.message);
                 }
             });
 
-            if (!airplane_switch.get_active () && !nm_client.networking_get_enabled ()) {
-                airplane_switch.activate ();
+            if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
+                airplane_toggle.activate ();
             }
         }
 
-        add (other_box);
+        var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
+        var toggle_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        toggle_box.add (other_box);
+        toggle_box.add (other_sep);
+
+        toggle_revealer = new Gtk.Revealer ();
+        toggle_revealer.add (toggle_box);
+
+        add (toggle_revealer);
         add (wifi_box);
         add (vpn_box);
 
@@ -117,22 +148,28 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         add_interface (widget_interface);
         widget_interface.notify["state"].connect (update_state);
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         show_all ();
         update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
             bool found = false;
-            wifi_box.get_children ().foreach ((child) => {
-                if (child is Network.WifiInterface && ((Network.WifiInterface) child).hidden_sensitivity && !found) {
-                    ((Network.WifiInterface) child).connect_to_hidden ();
+            foreach (unowned var iface in network_interface) {
+                if (iface is WifiInterface && ((WifiInterface) iface).hidden_sensitivity && !found) {
+                    ((WifiInterface) iface).connect_to_hidden ();
                     found = true;
                 }
-            });
+            }
         });
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        Gtk.Box container_box = other_box;
+        if (widget_interface is EtherInterface) {
+            other_box.add (widget_interface);
+            return;
+        }
+
+        var container_box = wifi_box;
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
@@ -142,13 +179,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
 
-                wifi_box.get_children ().foreach ((child) => {
-                    if (child is Network.WifiInterface) {
-                        hidden_sensitivity = hidden_sensitivity || ((Network.WifiInterface) child).hidden_sensitivity;
+                foreach (unowned var iface in network_interface) {
+                    if (iface is WifiInterface) {
+                        hidden_sensitivity = hidden_sensitivity || ((WifiInterface) iface ).hidden_sensitivity;
                     }
 
                     hidden_item.sensitive = hidden_sensitivity;
-                });
+                }
             });
         }
 
@@ -164,17 +201,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     public void opened () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).start_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).start_scanning ();
             }
         }
     }
 
     public void closed () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).cancel_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).cancel_scanning ();
             }
         }
     }
@@ -196,12 +233,18 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             if (widget_interface.is_device (device)) {
                 network_interface.remove (widget_interface);
 
+                unowned var parent = widget_interface.get_parent ();
+                if (parent is Gtk.FlowBoxChild) {
+                    parent.destroy ();
+                }
+
                 widget_interface.sep.destroy ();
                 widget_interface.destroy ();
                 break;
             }
         }
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -257,6 +300,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             inter.update ();
         }
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();
         show_all ();
     }

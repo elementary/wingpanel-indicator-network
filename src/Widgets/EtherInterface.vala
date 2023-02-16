@@ -17,18 +17,39 @@
 */
 
 public class Network.EtherInterface : Network.WidgetNMInterface {
-    private Granite.SwitchModelButton ethernet_item;
+    private Gtk.ToggleButton ethernet_item;
+    private static Gtk.CssProvider provider;
+
+    static construct {
+        provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
+    }
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
-        ethernet_item = new Granite.SwitchModelButton (display_title);
 
-        notify["display-title"].connect (() => {
-            ethernet_item.text = display_title;
-        });
+        ethernet_item = new Gtk.ToggleButton () {
+            halign = Gtk.Align.CENTER,
+            image = new Gtk.Image.from_icon_name ("network-wired-symbolic", Gtk.IconSize.MENU)
+        };
+        ethernet_item.get_style_context ().add_class ("circular");
+        ethernet_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        ethernet_item.get_style_context ().add_class ("h4");
-        ethernet_item.notify["active"].connect (() => {
+        var label = new Gtk.Label (display_title) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            max_width_chars = 16
+        };
+        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        hexpand = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 3;
+        add (ethernet_item);
+        add (label);
+
+        bind_property ("display-title", label, "label");
+
+        ethernet_item.toggled.connect (() => {
             debug ("update");
             if (ethernet_item.active && device.get_state () == NM.DeviceState.DISCONNECTED) {
                 var connection = NM.SimpleConnection.new ();
@@ -44,9 +65,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             }
         });
 
-        add (ethernet_item);
-
-        device.state_changed.connect (() => { update (); });
+        device.state_changed.connect (update);
     }
 
     public override void update () {
@@ -55,20 +74,23 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         case NM.DeviceState.UNMANAGED:
         case NM.DeviceState.DEACTIVATING:
         case NM.DeviceState.FAILED:
-            ethernet_item.sensitive = false;
+            sensitive = false;
             ethernet_item.active = false;
             state = State.FAILED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-error-symbolic";
             break;
 
         case NM.DeviceState.UNAVAILABLE:
-            ethernet_item.sensitive = false;
+            sensitive = false;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-no-route-symbolic";
             break;
         case NM.DeviceState.DISCONNECTED:
-            ethernet_item.sensitive = true;
+            sensitive = true;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-offline-symbolic";
             break;
 
         case NM.DeviceState.PREPARE:
@@ -77,15 +99,17 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         case NM.DeviceState.IP_CONFIG:
         case NM.DeviceState.IP_CHECK:
         case NM.DeviceState.SECONDARIES:
-            ethernet_item.sensitive = true;
+            sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTING_WIRED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-acquiring-symbolic";
             break;
 
         case NM.DeviceState.ACTIVATED:
-            ethernet_item.sensitive = true;
+            sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTED_WIRED;
+            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-symbolic";
             break;
         }
     }
