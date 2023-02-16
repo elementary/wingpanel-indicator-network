@@ -23,7 +23,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     private GLib.List<WidgetNMInterface>? network_interface;
 
     public bool secure { private set; get; default = false; }
-    public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
     public Gtk.Box other_box { get; private set; }
@@ -247,8 +246,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             network_interface.append (widget_interface);
             add_interface (widget_interface);
             widget_interface.notify["state"].connect (update_state);
-            widget_interface.notify["extra-info"].connect (update_state);
-
         }
 
         update_interfaces_names ();
@@ -274,9 +271,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 if (score < best_score) {
                     next_state = inter.state;
                     best_score = score;
-                    if (inter is Network.ModemInterface) {
-                        extra_info = ((Network.ModemInterface) inter).extra_info;
-                    }
                 }
             }
 
