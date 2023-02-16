@@ -18,8 +18,6 @@
  */
 
 public class Network.ModemInterface : Network.WidgetNMInterface {
-    public string? extra_info { get; private set; default = null; }
-
     private Granite.SwitchModelButton modem_item;
     private DBusObjectManagerClient? modem_manager;
 
@@ -34,26 +32,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 state = strength_to_state (value);
             }
         }
-    }
-
-    enum ModemAccessTechnology {
-        UNKNOWN = 0,
-        POTS = 1 << 0,
-        GSM = 1 << 1,
-        GSM_COMPACT = 1 << 2,
-        GPRS = 1 << 3,
-        EDGE = 1 << 4,
-        UMTS = 1 << 5,
-        HSDPA = 1 << 6,
-        HSUPA = 1 << 7,
-        HSPA = 1 << 8,
-        HSPA_PLUS = 1 << 9,
-        1XRTT = 1 << 10,
-        EVDO0 = 1 << 11,
-        EVDOA = 1 << 12,
-        EVDOB = 1 << 13,
-        LTE = 1 << 14,
-        ANY = 0xFFFFFFFF
     }
 
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
@@ -125,37 +103,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         }
     }
 
-    private string? access_technology_to_string (ModemAccessTechnology tech) {
-        switch (tech) {
-            case ModemAccessTechnology.UNKNOWN:
-            case ModemAccessTechnology.POTS:
-            case ModemAccessTechnology.ANY:
-                return null;
-            case ModemAccessTechnology.GSM:
-            case ModemAccessTechnology.GSM_COMPACT:
-            case ModemAccessTechnology.GPRS:
-            case ModemAccessTechnology.1XRTT:
-                return "G";
-            case ModemAccessTechnology.EDGE:
-                return "E";
-            case ModemAccessTechnology.UMTS:
-            case ModemAccessTechnology.EVDO0:
-            case ModemAccessTechnology.EVDOA:
-            case ModemAccessTechnology.EVDOB:
-                return "3G";
-            case ModemAccessTechnology.HSDPA:
-            case ModemAccessTechnology.HSUPA:
-            case ModemAccessTechnology.HSPA:
-                return "H";
-            case ModemAccessTechnology.HSPA_PLUS:
-                return "H+";
-            case ModemAccessTechnology.LTE:
-                return "LTE";
-            default:
-                return null;
-        }
-    }
-
     private void device_properties_changed (Variant changed) {
         var signal_variant = changed.lookup_value ("SignalQuality", VariantType.TUPLE);
         if (signal_variant != null) {
@@ -163,13 +110,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
             uint32 quality;
             signal_variant.get ("(ub)", out quality, out recent);
             signal_quality = quality;
-        }
-
-        var access_technologies_variant = changed.lookup_value ("AccessTechnologies", VariantType.UINT32);
-        if (access_technologies_variant != null) {
-            uint32 access_type;
-            access_technologies_variant.get ("u", out access_type);
-            extra_info = access_technology_to_string ((ModemAccessTechnology)access_type);
         }
     }
 
