@@ -20,14 +20,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
     private NM.VpnConnection? active_vpn_connection = null;
 
-    private GLib.List<WidgetNMInterface>? network_interface;
+    public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
     public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    public Gtk.Box other_box { get; private set; }
-    public Gtk.Box wifi_box { get; private set; }
+    private Gtk.Box other_box;
+    private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
     private Gtk.Revealer toggle_revealer;
@@ -150,12 +150,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         hidden_item.clicked.connect (() => {
             bool found = false;
-            wifi_box.get_children ().foreach ((child) => {
-                if (child is Network.WifiInterface && ((Network.WifiInterface) child).hidden_sensitivity && !found) {
-                    ((Network.WifiInterface) child).connect_to_hidden ();
+            foreach (unowned var iface in network_interface) {
+                if (iface is WifiInterface && ((WifiInterface) iface).hidden_sensitivity && !found) {
+                    ((WifiInterface) iface).connect_to_hidden ();
                     found = true;
                 }
-            });
+            }
         });
     }
 
@@ -175,13 +175,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
 
-                wifi_box.get_children ().foreach ((child) => {
-                    if (child is Network.WifiInterface) {
-                        hidden_sensitivity = hidden_sensitivity || ((Network.WifiInterface) child).hidden_sensitivity;
+                foreach (unowned var iface in network_interface) {
+                    if (iface is WifiInterface) {
+                        hidden_sensitivity = hidden_sensitivity || ((WifiInterface) iface ).hidden_sensitivity;
                     }
 
                     hidden_item.sensitive = hidden_sensitivity;
-                });
+                }
             });
         }
 
@@ -197,17 +197,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     public void opened () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).start_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).start_scanning ();
             }
         }
     }
 
     public void closed () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).cancel_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).cancel_scanning ();
             }
         }
     }

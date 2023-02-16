@@ -71,6 +71,7 @@ shared_module(
 subdir('data')
 subdir('po')
 vapigen = find_program('vapigen', required: false)
-if vapigen.found()
+g_ir_dep = dependency('gobject-introspection-1.0', required: false)
+if vapigen.found() and g_ir_dep.found()
     subdir('vapi')
 endif
