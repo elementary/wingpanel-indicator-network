@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2020-07-17 07:12+0000\n"
 "Last-Translator: Martin Myrvold <myrvold.martin@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://l10n.elementary.io/projects/"
@@ -27,64 +27,72 @@ msgstr "Nettverk-indikator"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Kople til trådlause nettverk og handsam VPN-ar"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:64
-msgid "Minor updates:"
+#: data/network.appdata.xml.in:12
+msgid "Improvements:"
 msgstr ""
 
-#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
-#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
-#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
-#: data/network.appdata.xml.in:80
+#: data/network.appdata.xml.in:14
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr ""
+
+#: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
+#: data/network.appdata.xml.in:66 data/network.appdata.xml.in:81
+#: data/network.appdata.xml.in:87 data/network.appdata.xml.in:93
 msgid "Updated translations"
 msgstr "Oppdaterte oversettingar"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
-#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+#: data/network.appdata.xml.in:25 data/network.appdata.xml.in:40
+#: data/network.appdata.xml.in:52 data/network.appdata.xml.in:64
+#: data/network.appdata.xml.in:77
+msgid "Minor updates:"
+msgstr ""
+
+#: data/network.appdata.xml.in:34 data/network.appdata.xml.in:48
+#: data/network.appdata.xml.in:60 data/network.appdata.xml.in:72
 msgid "Fixes:"
 msgstr ""
 
-#: data/network.appdata.xml.in:23
+#: data/network.appdata.xml.in:36
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:37
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.appdata.xml.in:25
+#: data/network.appdata.xml.in:38
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.appdata.xml.in:37
+#: data/network.appdata.xml.in:50
 msgid "Prevent blank lines in VPN list"
 msgstr ""
 
-#: data/network.appdata.xml.in:49
+#: data/network.appdata.xml.in:62
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 
-#: data/network.appdata.xml.in:61
+#: data/network.appdata.xml.in:74
 msgid "Fix VPN spinning after connecting"
 msgstr ""
 
-#: data/network.appdata.xml.in:62
+#: data/network.appdata.xml.in:75
 msgid "Improve detecting network encryption type"
 msgstr ""
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:79
 msgid "Ellipsize long network names"
 msgstr ""
 
-#: data/network.appdata.xml.in:67
+#: data/network.appdata.xml.in:80
 msgid "Show tooltip on hover"
 msgstr ""
 
-#: data/network.appdata.xml.in:79
+#: data/network.appdata.xml.in:92
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Hindra at panelikonet visar i dokken"
 
-#: data/network.appdata.xml.in:89
+#: data/network.appdata.xml.in:102
 msgid "elementary, Inc."
 msgstr "elementary, Inc."

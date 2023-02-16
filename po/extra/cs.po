@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-02-16 21:23+0000\n"
 "PO-Revision-Date: 2022-01-10 17:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,66 +27,74 @@ msgstr "Indikátor sítě"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Připojování se k bezdrátovým sítím a správa VPN připojení"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:64
-msgid "Minor updates:"
-msgstr "Drobné aktualizace:"
+#: data/network.appdata.xml.in:12
+msgid "Improvements:"
+msgstr ""
 
-#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
-#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
-#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
-#: data/network.appdata.xml.in:80
+#: data/network.appdata.xml.in:14
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr ""
+
+#: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
+#: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
+#: data/network.appdata.xml.in:66 data/network.appdata.xml.in:81
+#: data/network.appdata.xml.in:87 data/network.appdata.xml.in:93
 msgid "Updated translations"
 msgstr "Aktualizovány překlady"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
-#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+#: data/network.appdata.xml.in:25 data/network.appdata.xml.in:40
+#: data/network.appdata.xml.in:52 data/network.appdata.xml.in:64
+#: data/network.appdata.xml.in:77
+msgid "Minor updates:"
+msgstr "Drobné aktualizace:"
+
+#: data/network.appdata.xml.in:34 data/network.appdata.xml.in:48
+#: data/network.appdata.xml.in:60 data/network.appdata.xml.in:72
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/network.appdata.xml.in:23
+#: data/network.appdata.xml.in:36
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.appdata.xml.in:24
+#: data/network.appdata.xml.in:37
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.appdata.xml.in:25
+#: data/network.appdata.xml.in:38
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.appdata.xml.in:37
+#: data/network.appdata.xml.in:50
 msgid "Prevent blank lines in VPN list"
 msgstr "Zabráněno prázdným řádkům v seznamu VPN"
 
-#: data/network.appdata.xml.in:49
+#: data/network.appdata.xml.in:62
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 "Nespouštěn pomocník pro uzavřené sítě, pokud je k dispozici neomezované "
 "připojení"
 
-#: data/network.appdata.xml.in:61
+#: data/network.appdata.xml.in:74
 msgid "Fix VPN spinning after connecting"
 msgstr "Opraveno, že se symbol VPN nepřestal po navázání spojení otáčet"
 
-#: data/network.appdata.xml.in:62
+#: data/network.appdata.xml.in:75
 msgid "Improve detecting network encryption type"
 msgstr "Vylepšeno zjišťování typu šifrování sítě"
 
-#: data/network.appdata.xml.in:66
+#: data/network.appdata.xml.in:79
 msgid "Ellipsize long network names"
 msgstr "Dlouhé názvy sítí jsou zkracovány výpustkou"
 
-#: data/network.appdata.xml.in:67
+#: data/network.appdata.xml.in:80
 msgid "Show tooltip on hover"
 msgstr "Při najetí ukazatelem zobrazit bublinovou nápovědu"
 
-#: data/network.appdata.xml.in:79
+#: data/network.appdata.xml.in:92
 msgid "Prevent panel icon from showing in the dock"
 msgstr "Zabráněno tomu, aby se ikona panelu objevovala v doku"
 
-#: data/network.appdata.xml.in:89
+#: data/network.appdata.xml.in:102
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
