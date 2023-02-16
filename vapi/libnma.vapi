@@ -2,6 +2,27 @@
 
 [CCode (cprefix = "NMA", gir_namespace = "NMA", gir_version = "1.0", lower_case_cprefix = "nma_")]
 namespace NMA {
+    [CCode (cheader_filename = "nma-bar-code.h", type_id = "nma_bar_code_get_type ()")]
+    public class BarCode : GLib.Object {
+        [CCode (has_construct_function = false)]
+        [Version (since = "1.8.22")]
+        public BarCode (string text);
+        [Version (since = "1.8.22")]
+        public void draw (Cairo.Context cr);
+        [Version (since = "1.8.22")]
+        public int get_size ();
+        [Version (since = "1.8.22")]
+        public void set_text (string text);
+        public int size { get; }
+        public string text { set; }
+    }
+    [CCode (cheader_filename = "nma-bar-code-widget.h", type_id = "nma_bar_code_widget_get_type ()")]
+    public class BarCodeWidget : Gtk.Box, Atk.Implementor, Gtk.Buildable, Gtk.Orientable {
+        [CCode (has_construct_function = false)]
+        protected BarCodeWidget ();
+        [NoAccessorMethod]
+        public NM.Connection connection { owned get; set; }
+    }
     [CCode (cheader_filename = "nma-cert-chooser.h", type_id = "nma_cert_chooser_get_type ()")]
     public class CertChooser : Gtk.Grid, Atk.Implementor, Gtk.Buildable, Gtk.Orientable {
         [CCode (has_construct_function = false, type = "GtkWidget*")]
@@ -10,21 +31,21 @@ namespace NMA {
         [Version (since = "1.8.0")]
         public void add_to_size_group (Gtk.SizeGroup group);
         [Version (since = "1.8.0")]
-        public string get_cert (out NM.Setting8021xCKScheme scheme);
+        public string? get_cert (out NM.Setting8021xCKScheme scheme);
         [Version (since = "1.8.0")]
         public unowned string get_cert_password ();
         [Version (since = "1.8.0")]
         public NM.SettingSecretFlags get_cert_password_flags ();
         [Version (since = "1.8.0")]
-        public string get_cert_uri ();
+        public string? get_cert_uri ();
         [Version (since = "1.8.0")]
-        public string get_key (out NM.Setting8021xCKScheme scheme);
+        public string? get_key (out NM.Setting8021xCKScheme scheme);
         [Version (since = "1.8.0")]
         public unowned string get_key_password ();
         [Version (since = "1.8.0")]
         public NM.SettingSecretFlags get_key_password_flags ();
         [Version (since = "1.8.0")]
-        public string get_key_uri ();
+        public string? get_key_uri ();
         [Version (since = "1.8.0")]
         public void set_cert (string value, NM.Setting8021xCKScheme scheme);
         [Version (since = "1.8.0")]
@@ -114,7 +135,7 @@ namespace NMA {
         public string service_providers { owned get; construct; }
     }
     [CCode (cheader_filename = "nma-mobile-wizard.h", type_id = "nma_mobile_wizard_get_type ()")]
-    public class MobileWizard : Gtk.Assistant, Atk.Implementor, Gtk.Buildable {
+    public class MobileWizard : GLib.Object {
         [CCode (has_construct_function = false)]
         protected MobileWizard ();
         public void destroy ();
@@ -151,10 +172,55 @@ namespace NMA {
         public WifiDialog.for_hidden (NM.Client client);
         [CCode (has_construct_function = false, type = "GtkWidget*")]
         public WifiDialog.for_other (NM.Client client);
+        [CCode (has_construct_function = false, type = "GtkWidget*")]
+        public WifiDialog.for_secrets (NM.Client client, NM.Connection connection, string secrets_setting_name, string secrets_hints);
         public NM.Connection get_connection (out NM.Device device, out NM.AccessPoint ap);
         public bool get_nag_ignored ();
         public Gtk.Widget nag_user ();
         public void set_nag_ignored (bool ignored);
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class Ws : GLib.Object {
+        [CCode (has_construct_function = false)]
+        protected Ws ();
+        public bool adhoc_compatible ();
+        public bool hotspot_compatible ();
+        public bool validate () throws GLib.Error;
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class Ws8021x : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected Ws8021x ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsDynamicWep : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsDynamicWep ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsLeap : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsLeap ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsSae : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsSae ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsWepKey : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsWepKey ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsWpaEap : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsWpaEap ();
+    }
+    [CCode (cheader_filename = "nma-ws.h", has_type_id = false)]
+    public class WsWpaPsk : NMA.Ws {
+        [CCode (has_construct_function = false)]
+        protected WsWpaPsk ();
     }
     [CCode (cheader_filename = "nma-mobile-wizard.h", has_type_id = false)]
     public struct MobileWizardAccessMethod {
@@ -171,7 +237,8 @@ namespace NMA {
         NONE,
         CERT,
         PASSWORDS,
-        PEM
+        PEM,
+        NO_PASSWORDS
     }
     [CCode (cheader_filename = "nma-mobile-providers.h", cprefix = "NMA_MOBILE_FAMILY_", has_type_id = false)]
     public enum MobileFamily {
