@@ -111,8 +111,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         toggle_revealer.add (toggle_box);
 
         add (toggle_revealer);
-        add (wifi_box);
         add (vpn_box);
+        add (wifi_box);
 
         if (is_in_session) {
             hidden_item = new Gtk.ModelButton ();
@@ -126,27 +126,16 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             add (show_settings_button);
 
             show_settings_button.clicked.connect (show_settings);
-
-
         }
 
-        /* Monitor network manager */
-        nm_client.notify["active-connections"].connect (update_vpn_connection);
-
-        nm_client.device_added.connect (device_added_cb);
-        nm_client.device_removed.connect (device_removed_cb);
-
-        nm_client.notify["networking-enabled"].connect (update_state);
+        var vpn_interface = new VpnInterface (nm_client);
+        network_interface.append (vpn_interface);
+        add_interface (vpn_interface);
 
         var devices = nm_client.get_devices ();
-        for (var i = 0; i < devices.length; i++)
+        for (var i = 0; i < devices.length; i++) {
             device_added_cb (devices.get (i));
-
-        // Vpn interface
-        WidgetNMInterface widget_interface = new VpnInterface (nm_client);
-        network_interface.append (widget_interface);
-        add_interface (widget_interface);
-        widget_interface.notify["state"].connect (update_state);
+        }
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
         show_all ();
@@ -161,6 +150,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 }
             }
         });
+
+        /* Monitor network manager */
+        nm_client.device_added.connect (device_added_cb);
+        nm_client.device_removed.connect (device_removed_cb);
+        nm_client.notify["active-connections"].connect (update_vpn_connection);
+        nm_client.notify["networking-enabled"].connect (update_state);
+
+        vpn_interface.notify["state"].connect (update_state);
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
