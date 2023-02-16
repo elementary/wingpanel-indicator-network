@@ -17,7 +17,7 @@
 
 public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
-    public NM.RemoteConnection? connection { get; construct; }
+    public NM.RemoteConnection connection { get; construct; }
 
     private Gtk.ToggleButton toggle_button;
 
@@ -31,7 +31,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     private bool checking_vpn_connectivity = false;
     private Gtk.Label label;
 
-    public VpnMenuItem (NM.RemoteConnection? connection = null) {
+    public VpnMenuItem (NM.RemoteConnection connection) {
         Object (connection: connection);
     }
 
@@ -41,10 +41,6 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     }
 
     construct {
-        if (connection != null) {
-            connection.changed.connect (update);
-        }
-
         toggle_button = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
             image = new Gtk.Image.from_icon_name ("network-vpn-symbolic", Gtk.IconSize.MENU)
@@ -73,22 +69,23 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
         });
 
         update ();
+        connection.changed.connect (update);
         notify["vpn-state"].connect (update);
     }
 
     private void update () {
-        if (connection == null) {
-            return;
-        }
-
         label.label = connection.get_id ();
 
         switch (vpn_state) {
             case State.FAILED:
-
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-error-symbolic";
                 break;
             case State.CONNECTING_VPN:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-acquiring-symbolic";
                 check_vpn_connectivity.begin ();
+                break;
+            default:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-symbolic";
                 break;
         }
     }

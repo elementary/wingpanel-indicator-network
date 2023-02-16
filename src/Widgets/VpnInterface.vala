@@ -27,7 +27,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     private Gtk.FlowBox vpn_list;
 
     private VpnMenuItem? active_vpn_item;
-    private VpnMenuItem? blank_item = null;
 
     public VpnInterface (NM.Client nm_client) {
         Object (nm_client: nm_client);
@@ -36,9 +35,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     construct {
         active_vpn_item = null;
         display_title = _("VPN");
-
-        blank_item = new VpnMenuItem ();
-        blank_item.no_show_all = true;
 
         vpn_list = new Gtk.FlowBox () {
             column_spacing = 6,
@@ -195,19 +191,13 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
         nm_client.get_active_connections ().foreach ((ac) => {
             if (ac.get_vpn () && active_vpn_connection == null) {
-                active_vpn_connection = (NM.VpnConnection)ac;
+                active_vpn_connection = (NM.VpnConnection) ac;
                 active_vpn_connection.vpn_state_changed.connect (update);
 
                 foreach (unowned var child in vpn_list.get_children ()) {
                     unowned var menu_item = (VpnMenuItem) child;
-
-                    if (menu_item.connection == null)
-                        continue;
-
                     if (menu_item.connection.get_uuid () == active_vpn_connection.uuid) {
                         menu_item.set_active (true);
-                        active_vpn_item = menu_item;
-                        active_vpn_item.vpn_state = vpn_state;
                     } else {
                         menu_item.set_active (false);
                     }
