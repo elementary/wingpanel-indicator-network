@@ -29,6 +29,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
                 _vpn_connection.vpn_state_changed.connect (update_state);
             } else {
                 _vpn_connection.vpn_state_changed.disconnect (update_state);
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconected-symbolic";
             }
             _vpn_connection = value;
         }
