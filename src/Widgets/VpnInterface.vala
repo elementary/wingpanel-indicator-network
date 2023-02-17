@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -30,8 +30,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        display_title = _("VPN");
-
         vpn_list = new Gtk.FlowBox () {
             column_spacing = 6,
             row_spacing = 12,
@@ -50,7 +48,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
 
         update ();
-        notify["vpn-state"].connect (update);
 
         vpn_list.add.connect (check_vpn_availability);
         vpn_list.remove.connect (check_vpn_availability);
@@ -68,7 +65,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
     public override void update () {
         check_vpn_availability ();
-
         base.update ();
     }
 
