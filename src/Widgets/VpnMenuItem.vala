@@ -26,9 +26,9 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
 
         set {
             if (value != null) {
-                _vpn_connection.vpn_state_changed.connect (update);
+                _vpn_connection.vpn_state_changed.connect (update_state);
             } else {
-                _vpn_connection.vpn_state_changed.disconnect (update);
+                _vpn_connection.vpn_state_changed.disconnect (update_state);
             }
             _vpn_connection = value;
         }
@@ -87,29 +87,29 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
 
     private void update () {
         label.label = remote_connection.get_id ();
+    }
 
-        if (vpn_connection != null) {
-            switch (vpn_connection.vpn_state) {
-                case NM.VpnConnectionState.CONNECT:
-                case NM.VpnConnectionState.IP_CONFIG_GET:
-                case NM.VpnConnectionState.NEED_AUTH:
-                case NM.VpnConnectionState.PREPARE:
-                    ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-acquiring-symbolic";
-                    break;
-                case NM.VpnConnectionState.ACTIVATED:
-                    ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-symbolic";
-                    toggle_button.active = true;
-                    break;
-                case NM.VpnConnectionState.DISCONNECTED:
-                    ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconected-symbolic";
-                    toggle_button.active = false;
-                    break;
-                case NM.VpnConnectionState.FAILED:
-                case NM.VpnConnectionState.UNKNOWN:
-                    ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-error-symbolic";
-                    toggle_button.active = false;
-                    break;
-            }
+    private void update_state () {
+        switch (vpn_connection.vpn_state) {
+            case NM.VpnConnectionState.CONNECT:
+            case NM.VpnConnectionState.IP_CONFIG_GET:
+            case NM.VpnConnectionState.NEED_AUTH:
+            case NM.VpnConnectionState.PREPARE:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-acquiring-symbolic";
+                break;
+            case NM.VpnConnectionState.ACTIVATED:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-symbolic";
+                toggle_button.active = true;
+                break;
+            case NM.VpnConnectionState.DISCONNECTED:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconected-symbolic";
+                toggle_button.active = false;
+                break;
+            case NM.VpnConnectionState.FAILED:
+            case NM.VpnConnectionState.UNKNOWN:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-error-symbolic";
+                toggle_button.active = false;
+                break;
         }
     }
 }
