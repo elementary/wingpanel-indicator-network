@@ -78,6 +78,10 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void active_connected_added_cb (NM.ActiveConnection active_connection) {
+        if (!active_connection.vpn) {
+            return;
+        }
+
         var menu_item = get_item_for_active_connection (active_connection);
         if (menu_item != null) {
             menu_item.vpn_connection = (NM.VpnConnection) active_connection;
@@ -101,11 +105,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         } else {
             nm_client.activate_connection_async.begin (item.remote_connection, null, null, null, null);
         }
-
-        Idle.add (() => {
-            update ();
-            return false;
-        });
     }
 
     /**
