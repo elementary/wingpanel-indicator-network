@@ -34,6 +34,8 @@ msgstr "Améliorations:"
 #: data/network.appdata.xml.in:14
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
+"Afficher Mode Avion et les appareils filaires comme boutons circulaires "
+"compacts"
 
 #: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
