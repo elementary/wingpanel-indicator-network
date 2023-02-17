@@ -35,9 +35,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         display_widget = new Widgets.DisplayWidget ();
 
         popover_widget = new Widgets.PopoverWidget (is_in_session);
-        popover_widget.notify["state"].connect (on_state_changed);
-        popover_widget.notify["secure"].connect (on_state_changed);
-        popover_widget.notify["extra-info"].connect (on_state_changed);
+        popover_widget.notify["state"].connect (update_tooltip);
         popover_widget.settings_shown.connect (() => { close (); });
 
         if (is_in_session) {
@@ -56,7 +54,6 @@ public class Network.Indicator : Wingpanel.Indicator {
         }
 
         update_tooltip ();
-        on_state_changed ();
         start_monitor ();
     }
 
@@ -66,15 +63,6 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     public override Gtk.Widget? get_widget () {
         return popover_widget;
-    }
-
-    void on_state_changed () {
-        assert (popover_widget != null);
-        assert (display_widget != null);
-
-        display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
-
-        update_tooltip ();
     }
 
     private void start_monitor () {
