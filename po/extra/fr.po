@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-16 21:34+0000\n"
-"PO-Revision-Date: 2023-02-17 12:17+0000\n"
+"PO-Revision-Date: 2023-02-18 14:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
@@ -34,7 +34,7 @@ msgstr "Améliorations :"
 #: data/network.appdata.xml.in:14
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
-"Afficher Mode Avion et les appareils filaires comme boutons circulaires "
+"Affichage du mode Avion et des appareils filaires comme boutons circulaires "
 "compacts"
 
 #: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
