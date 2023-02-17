@@ -32,7 +32,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
                 _vpn_connection.vpn_state_changed.disconnect (update_state);
                 _vpn_connection = null;
 
-                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconected-symbolic";
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconnected-symbolic";
                 toggle_button.active = false;
             }
 
@@ -55,7 +55,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     construct {
         toggle_button = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
-            image = new Gtk.Image.from_icon_name ("network-vpn-disconected-symbolic", Gtk.IconSize.MENU)
+            image = new Gtk.Image.from_icon_name ("network-vpn-disconnected-symbolic", Gtk.IconSize.MENU)
         };
         toggle_button.get_style_context ().add_class ("circular");
         toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -97,11 +97,11 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
                 ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-acquiring-symbolic";
                 break;
             case NM.VpnConnectionState.ACTIVATED:
-                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-symbolic";
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-connected-symbolic";
                 toggle_button.active = true;
                 break;
             case NM.VpnConnectionState.DISCONNECTED:
-                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconected-symbolic";
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconnected-symbolic";
                 toggle_button.active = false;
                 break;
             case NM.VpnConnectionState.FAILED:
