@@ -80,11 +80,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
     private void vpn_activate_cb (VpnMenuItem item) {
         if (item.vpn_connection != null) {
-            try {
-                nm_client.deactivate_connection (item.vpn_connection);
-            } catch (Error e) {
-                critical (e.message);
-            }
+            nm_client.deactivate_connection_async.begin (item.vpn_connection, null);
         } else {
             nm_client.activate_connection_async.begin (item.remote_connection, null, null, null, null);
         }
