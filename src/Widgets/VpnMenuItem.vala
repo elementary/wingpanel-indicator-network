@@ -23,7 +23,6 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
         get {
             return _vpn_connection;
         }
-
         set {
             if (value != null) {
                 _vpn_connection = value;
@@ -40,7 +39,6 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     }
 
     private static Gtk.CssProvider provider;
-    private Gtk.Label label;
     private Gtk.ToggleButton toggle_button;
 
     public VpnMenuItem (NM.RemoteConnection remote_connection) {
@@ -61,7 +59,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
         toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
 
-        label = new Gtk.Label (null) {
+        var label = new Gtk.Label (remote_connection.get_id ()) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
             max_width_chars = 16
         };
@@ -80,12 +78,9 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
             activate ();
         });
 
-        update ();
-        remote_connection.changed.connect (update);
-    }
-
-    private void update () {
-        label.label = remote_connection.get_id ();
+        remote_connection.changed.connect (() => {
+            label.label = remote_connection.get_id ();
+        });
     }
 
     private void update_state () {
