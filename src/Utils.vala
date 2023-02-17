@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2015-2018 elementary LLC (https://elementary.io)
+* Copyright 2015-2018 elementary, Inc. (https://elementary.io)
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Library General Public License as published by
@@ -21,7 +21,6 @@ public enum Network.State {
     WIRED_UNPLUGGED,
     DISCONNECTED_AIRPLANE_MODE,
     CONNECTED_WIRED,
-    CONNECTED_VPN,
     CONNECTED_WIFI_WEAK,
     CONNECTED_WIFI_OK,
     CONNECTED_WIFI_GOOD,
@@ -33,7 +32,6 @@ public enum Network.State {
     CONNECTING_WIFI,
     CONNECTING_MOBILE,
     CONNECTING_WIRED,
-    CONNECTING_VPN,
     FAILED,
     FAILED_WIFI,
     FAILED_MOBILE;
