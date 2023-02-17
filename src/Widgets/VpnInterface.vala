@@ -82,14 +82,14 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void active_connected_added_cb (NM.ActiveConnection active_connection) {
-        var menu_item = get_item_by_uuid (active_connection.get_uuid ());
+        var menu_item = get_item_for_active_connection (active_connection);
         if (menu_item != null) {
             menu_item.vpn_connection = (NM.VpnConnection) active_connection;
         }
     }
 
     private void active_connected_removed_cb (NM.ActiveConnection active_connection) {
-        var menu_item = get_item_by_uuid (active_connection.get_uuid ());
+        var menu_item = get_item_for_active_connection (active_connection);
         if (menu_item != null) {
             menu_item.vpn_connection = null;
         }
@@ -128,21 +128,26 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     // Removed vpn, from removed signal attached to connection when it get added.
-    private void vpn_removed_cb (NM.RemoteConnection vpn_) {
-        // var item = get_item_by_uuid (vpn_.get_uuid ());
-        // item.destroy ();
-        update ();
-    }
-
-    private VpnMenuItem? get_item_by_uuid (string uuid) {
-        VpnMenuItem? item = null;
+    private void vpn_removed_cb (NM.RemoteConnection connection) {
         foreach (unowned var child in vpn_list.get_children ()) {
             unowned var menu_item = (VpnMenuItem) child;
-            if (menu_item.remote_connection.get_uuid () == uuid && item == null) {
-                item = (VpnMenuItem)child;
+            if (menu_item.remote_connection == connection) {
+                menu_item.destroy ();
+                update ();
+                return;
+            }
+        }
+    }
+
+    private VpnMenuItem? get_item_for_active_connection (NM.ActiveConnection active_connection) {
+        var connection = active_connection.connection;
+        foreach (unowned var child in vpn_list.get_children ()) {
+            unowned var menu_item = (VpnMenuItem) child;
+            if (menu_item.remote_connection == connection) {
+                return menu_item;
             }
         }
 
-        return item;
+        return null;
     }
 }
