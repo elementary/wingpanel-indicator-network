@@ -16,11 +16,6 @@
  */
 
 public class Network.VpnInterface : Network.WidgetNMInterface {
-    /**
-     * If we want to add a visual feedback on DisplayWidget later,
-     * we just need to remove vpn_state and swap it to state on the code
-    **/
-    public Network.State vpn_state { get; private set; default = Network.State.DISCONNECTED; }
     public NM.Client nm_client { get; construct; }
 
     private Gtk.FlowBox vpn_list;
