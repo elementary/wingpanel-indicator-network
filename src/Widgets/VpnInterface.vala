@@ -107,14 +107,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         }
     }
 
-    /**
-      * The vpn_added_cb is called on new_connection signal,
-      * (we get the vpn connections from there)
-      * then we filter the connection that make sense for us.
-    */
     private void vpn_added_cb (Object obj) {
         var remote_connection = (NM.RemoteConnection) obj;
-
         if (remote_connection.get_connection_type () == NM.SettingVpn.SETTING_NAME) {
             var item = new VpnMenuItem (remote_connection);
             vpn_list.add (item);
@@ -122,7 +116,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         }
     }
 
-    // Removed vpn, from removed signal attached to connection when it get added.
     private void vpn_removed_cb (NM.RemoteConnection connection) {
         foreach (unowned var child in vpn_list.get_children ()) {
             unowned var menu_item = (VpnMenuItem) child;
