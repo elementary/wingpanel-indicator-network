@@ -111,10 +111,9 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private VpnMenuItem? get_item_for_active_connection (NM.ActiveConnection active_connection) {
-        var connection = active_connection.connection;
         foreach (unowned var child in vpn_list.get_children ()) {
             unowned var menu_item = (VpnMenuItem) child;
-            if (menu_item.remote_connection == connection) {
+            if (menu_item.remote_connection == active_connection.connection) {
                 return menu_item;
             }
         }
