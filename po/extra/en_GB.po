@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-16 21:34+0000\n"
-"PO-Revision-Date: 2022-04-20 09:02+0000\n"
-"Last-Translator: Joel Jose <joel750jose@gmail.com>\n"
+"PO-Revision-Date: 2023-02-18 14:25+0000\n"
+"Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/en_GB/>\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -29,11 +29,11 @@ msgstr "Connect to wireless networks and manage VPNs"
 
 #: data/network.appdata.xml.in:12
 msgid "Improvements:"
-msgstr ""
+msgstr "Improvements:"
 
 #: data/network.appdata.xml.in:14
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
-msgstr ""
+msgstr "Show Airplane Mode and wired devices as compact circle buttons"
 
 #: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
@@ -55,15 +55,15 @@ msgstr "Fixes:"
 
 #: data/network.appdata.xml.in:36
 msgid "Ensure correct tooltip on system start"
-msgstr ""
+msgstr "Ensure correct tooltip on system start"
 
 #: data/network.appdata.xml.in:37
 msgid "Prevent connecting to invalid VPNs"
-msgstr ""
+msgstr "Prevent connecting to invalid VPNs"
 
 #: data/network.appdata.xml.in:38
 msgid "Show correct info for WPA3 networks"
-msgstr ""
+msgstr "Show correct info for WPA3 networks"
 
 #: data/network.appdata.xml.in:50
 msgid "Prevent blank lines in VPN list"
