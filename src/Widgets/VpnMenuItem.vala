@@ -15,6 +15,7 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
             if (value != null) {
                 _vpn_connection = value;
                 _vpn_connection.vpn_state_changed.connect (update_state);
+                update_state ();
             } else {
                 _vpn_connection.vpn_state_changed.disconnect (update_state);
                 _vpn_connection = null;
