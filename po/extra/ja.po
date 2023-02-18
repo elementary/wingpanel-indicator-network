@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-16 21:34+0000\n"
-"PO-Revision-Date: 2022-07-02 04:51+0000\n"
+"PO-Revision-Date: 2023-02-18 14:25+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -29,11 +29,11 @@ msgstr "無線ネットワークに接続したり VPN を管理したりしま�
 
 #: data/network.appdata.xml.in:12
 msgid "Improvements:"
-msgstr ""
+msgstr "改善点:"
 
 #: data/network.appdata.xml.in:14
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
-msgstr ""
+msgstr "機内モードと有線デバイスをコンパクトな丸いボタンで表示するように変更"
 
 #: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
