@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-16 21:34+0000\n"
-"PO-Revision-Date: 2022-07-01 07:43+0000\n"
+"PO-Revision-Date: 2023-02-18 14:25+0000\n"
 "Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
 #: data/network.appdata.xml.in:6
 msgid "Network Indicator"
@@ -30,11 +30,13 @@ msgstr "Łącz się z bezprzewodowymi sieciami i zarządzaj VPNami"
 
 #: data/network.appdata.xml.in:12
 msgid "Improvements:"
-msgstr ""
+msgstr "Ulepszenia:"
 
 #: data/network.appdata.xml.in:14
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
+"Tryb samolotowy i urządzenie przewodowe są teraz pokazywane jako kompaktowe "
+"okrągłe przyciski"
 
 #: data/network.appdata.xml.in:15 data/network.appdata.xml.in:27
 #: data/network.appdata.xml.in:42 data/network.appdata.xml.in:54
