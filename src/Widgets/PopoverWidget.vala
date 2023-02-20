@@ -18,11 +18,9 @@
 
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
-    private NM.VpnConnection? active_vpn_connection = null;
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
-    public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
@@ -139,7 +137,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
         show_all ();
-        update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
             bool found = false;
@@ -154,7 +151,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         /* Monitor network manager */
         nm_client.device_added.connect (device_added_cb);
         nm_client.device_removed.connect (device_removed_cb);
-        nm_client.notify["active-connections"].connect (update_vpn_connection);
         nm_client.notify["networking-enabled"].connect (update_state);
 
         vpn_interface.notify["state"].connect (update_state);
@@ -323,20 +319,5 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
             state = next_state;
         }
-    }
-
-    private void update_vpn_connection () {
-        active_vpn_connection = null;
-
-        nm_client.get_active_connections ().foreach ((ac) => {
-            if (active_vpn_connection == null && ac.vpn) {
-                active_vpn_connection = (NM.VpnConnection) ac;
-
-                secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                active_vpn_connection.vpn_state_changed.connect (() => {
-                    secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                });
-            }
-        });
     }
 }
