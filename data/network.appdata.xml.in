@@ -12,6 +12,7 @@
         <p>Improvements:</p>
         <ul>
           <li>Show Airplane Mode and wired devices as compact circle buttons</li>
+          <li>Show VPN connections as circle buttons and allow connecting multiple at once</li>
           <li>Updated translations</li>
         </ul>
       </description>

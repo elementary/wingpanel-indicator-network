@@ -2,5 +2,9 @@
 <gresources>
   <gresource prefix="/io/elementary/wingpanel/network">
     <file compressed= "true">Indicator.css</file>
+    <file alias="16x16/status/network-vpn-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-acquiring-symbolic.svg</file>
+    <file alias="16x16/status/network-vpn-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-connected-symbolic.svg</file>
+    <file alias="16x16/status/network-vpn-disconnected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-disconnected-symbolic.svg</file>
+    <file alias="16x16/status/network-vpn-error-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-error-symbolic.svg</file>
   </gresource>
 </gresources>
