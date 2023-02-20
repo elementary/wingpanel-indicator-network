@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:34+0000\n"
+"POT-Creation-Date: 2023-02-20 17:12+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,49 +15,49 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:128 src/Indicator.vala:141
 msgid "Wired"
 msgstr "वायर्ड"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:129
 msgid "Connecting to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:131 src/Indicator.vala:136
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” शी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:142
 msgid "Connected to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट केले"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:144 src/Indicator.vala:155
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” शी कनेक्ट केले"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:160
 msgid "Failed to connect"
 msgstr "कनेक्ट करण्यात अयशस्वी"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:164
 msgid "Disconnected"
 msgstr "डिस्कनेक्ट केले"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:167
 msgid "Not connected"
 msgstr "कनेक्ट नाही केले"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:173
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:174
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:194 src/Indicator.vala:206
 msgid "unknown network"
 msgstr "अज्ञात नेटवर्क"
 
@@ -72,14 +72,6 @@ msgstr "लपविलेल्या नेटवर्कशी कनेक�
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज …"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "व्हीपीएन"
-
-#: src/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "व्हर्च्युअल प्रायव्हेट नेटवर्क कनेक्ट केले जाऊ शकत नाही."
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -122,6 +114,12 @@ msgstr "कूटबद्ध"
 #: src/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "असुरक्षित"
+
+#~ msgid "VPN"
+#~ msgstr "व्हीपीएन"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "व्हर्च्युअल प्रायव्हेट नेटवर्क कनेक्ट केले जाऊ शकत नाही."
 
 #, c-format
 #~ msgid "Unknown type: %s "

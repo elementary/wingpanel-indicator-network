@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:34+0000\n"
+"POT-Creation-Date: 2023-02-20 17:12+0000\n"
 "PO-Revision-Date: 2022-09-30 22:56+0000\n"
 "Last-Translator: JohnDumpling <john_dumpling@protonmail.com>\n"
 "Language-Team: Slovak <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,49 +15,49 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:128 src/Indicator.vala:141
 msgid "Wired"
 msgstr "Drôtové siete"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:129
 msgid "Connecting to wired network"
 msgstr "Pripája sa k drôtovej sieti"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:131 src/Indicator.vala:136
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Pripája sa k „%s“"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:142
 msgid "Connected to wired network"
 msgstr "Pripojené k drôtovej sieti"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:144 src/Indicator.vala:155
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Pripojené k „%s“"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:160
 msgid "Failed to connect"
 msgstr "Nepodarilo sa pripojiť"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:164
 msgid "Disconnected"
 msgstr "Odpojené"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:167
 msgid "Not connected"
 msgstr "Nepripojené"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:173
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:174
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:194 src/Indicator.vala:206
 msgid "unknown network"
 msgstr "neznáma sieť"
 
@@ -72,14 +72,6 @@ msgstr "Pripojiť sa k skrytej sieti…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Nastavenia siete…"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Nepodarilo sa pripojiť k tejto Virtuálnej súkromnej sieti (VPN)."
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -120,6 +112,12 @@ msgstr "Šifrované"
 #: src/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Nezabezpečené"
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Nepodarilo sa pripojiť k tejto Virtuálnej súkromnej sieti (VPN)."
 
 #, c-format
 #~ msgid "Unknown type: %s "

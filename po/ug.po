@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:34+0000\n"
+"POT-Creation-Date: 2023-02-20 17:12+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -18,57 +18,57 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-12-19 05:46+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:128 src/Indicator.vala:141
 msgid "Wired"
 msgstr "سىملىق تور"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:129
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "يوشۇرۇن تورغا ئۇلاش"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:131 src/Indicator.vala:136
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "ئۇلاۋاتىدۇ"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:142
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "يوشۇرۇن تورغا ئۇلاش"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:144 src/Indicator.vala:155
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "ئۇلاندى"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:160
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:164
 msgid "Disconnected"
 msgstr "ئۈزۈلدى"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:167
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "ئۇلاندى"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:173
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:174
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:194 src/Indicator.vala:206
 msgid "unknown network"
 msgstr ""
 
@@ -83,15 +83,6 @@ msgstr "يوشۇرۇن تورغا ئۇلاش"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "تور تەڭشەكلىرى"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr ""
-
-#: src/Widgets/VpnMenuItem.vala:62
-#, fuzzy
-msgid "This Virtual Private Network could not be connected to."
-msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -135,6 +126,10 @@ msgstr ""
 #: src/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr ""
+
+#, fuzzy
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "بۇ سىمسىز تورغا ئۇلىغىلى بولمىدى."
 
 #, c-format
 #~ msgid "Unknown type: %s "
