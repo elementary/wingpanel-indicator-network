@@ -78,7 +78,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             var active = wifi_item.active;
             if (active != !software_locked) {
                 rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
-                nm_client.wireless_set_enabled (active);
+                nm_client.dbus_set_property.begin (NM.DBUS_PATH, NM.DBUS_INTERFACE, "WirelessEnabled", active, -1, null);
             }
         });
     }
