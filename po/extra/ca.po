@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-20 17:12+0000\n"
-"PO-Revision-Date: 2023-02-18 14:25+0000\n"
+"PO-Revision-Date: 2023-02-20 18:56+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ca/>\n"
@@ -41,6 +41,8 @@ msgstr ""
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"Mostra les connexions de VPN com a botons de cercle i permet connectar-ne "
+"diverses alhora."
 
 #: data/network.appdata.xml.in:16 data/network.appdata.xml.in:29
 #: data/network.appdata.xml.in:44 data/network.appdata.xml.in:56
