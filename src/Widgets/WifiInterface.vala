@@ -132,7 +132,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         pack_start (revealer);
     }
 
-    public override void update () {
+    public void update () {
         switch (wifi_device.state) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:
@@ -199,7 +199,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         update_active_ap ();
 
-        base.update ();
+        update ();
 
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.active = !locked;
