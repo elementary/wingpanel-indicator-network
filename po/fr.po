@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:34+0000\n"
+"POT-Creation-Date: 2023-02-20 17:12+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,49 +15,49 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:128 src/Indicator.vala:141
 msgid "Wired"
 msgstr "Filaire"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:129
 msgid "Connecting to wired network"
 msgstr "Connexion au réseau filaire"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:131 src/Indicator.vala:136
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Connexion à « %s »"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:142
 msgid "Connected to wired network"
 msgstr "Connecté au réseau filaire"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:144 src/Indicator.vala:155
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Connecté à « %s »"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:160
 msgid "Failed to connect"
 msgstr "Impossible de se connecter"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:164
 msgid "Disconnected"
 msgstr "Déconnecté"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:167
 msgid "Not connected"
 msgstr "Non connecté"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:173
 msgid "Middle-click to turn airplane mode off"
 msgstr "Effectuez un clic central pour désactiver le mode avion"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:174
 msgid "Middle-click to turn airplane mode on"
 msgstr "Effectuez un clic central pour activer le mode avion"
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:194 src/Indicator.vala:206
 msgid "unknown network"
 msgstr "réseau inconnu"
 
@@ -72,14 +72,6 @@ msgstr "Se connecter à un réseau invisible…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Impossible de se connecter à ce VPN."
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -120,6 +112,12 @@ msgstr "Chiffré"
 #: src/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Non sécurisé"
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Impossible de se connecter à ce VPN."
 
 #, c-format
 #~ msgid "Unknown type: %s "

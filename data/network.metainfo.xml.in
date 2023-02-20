@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2019-2022 elementary, Inc. <contact@elementary.io> -->
+<!-- Copyright 2019-2023 elementary, Inc. <contact@elementary.io> -->
 <component type="addon">
   <id>io.elementary.wingpanel.network</id>
+  <translation type="gettext">io.elementary.appcenter</translation>
   <extends>io.elementary.wingpanel</extends>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
+
   <name>Network Indicator</name>
   <summary>Connect to wireless networks and manage VPNs</summary>
   <icon type="stock">preferences-system-network</icon>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/wingpanel-indicator-network/2.4.0/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">http://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/wingpanel-indicator-network/issues/new/choose</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/wingpanel-indicator-network/discussions/categories/q-a</url>
+  <url type="translate">https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-network/</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_at_elementary.io</update_contact>
+
   <releases>
     <release version="7.0.0" date="2023-02-27" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
           <li>Show Airplane Mode and wired devices as compact circle buttons</li>
+          <li>Show VPN connections as circle buttons and allow connecting multiple at once</li>
           <li>Updated translations</li>
         </ul>
       </description>
@@ -44,6 +67,7 @@
         </ul>
       </description>
     </release>
+
     <release version="2.3.2" date="2021-11-23" urgency="medium">
       <description>
         <p>Fixes:</p>
@@ -56,6 +80,7 @@
         </ul>
       </description>
     </release>
+
     <release version="2.3.1" date="2021-10-22" urgency="medium">
       <description>
         <p>Fixes:</p>
@@ -68,46 +93,9 @@
         </ul>
       </description>
     </release>
-    <release version="2.3.0" date="2021-07-14" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Fix VPN spinning after connecting</li>
-          <li>Improve detecting network encryption type</li>
-        </ul>
-        <p>Minor updates:</p>
-        <ul>
-          <li>Ellipsize long network names</li>
-          <li>Show tooltip on hover</li>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-    <release version="2.2.4" date="2020-05-28" urgency="medium">
-      <description>
-        <p>Updated translations</p>
-      </description>
-    </release>
-    <release version="2.2.3" date="2020-03-27" urgency="medium">
-      <description>
-        <p>Prevent panel icon from showing in the dock</p>
-        <p>Updated translations</p>
-      </description>
-    </release>
+
+    <release version="2.3.0" date="2021-07-14"/>
+    <release version="2.2.4" date="2020-05-28"/>
+    <release version="2.2.3" date="2020-03-27"/>
   </releases>
-  <screenshots>
-    <screenshot type="default">
-      <image>https://raw.githubusercontent.com/elementary/wingpanel-indicator-network/master/data/screenshot.png</image>
-    </screenshot>
-  </screenshots>
-  <developer_name>elementary, Inc.</developer_name>
-  <url type="homepage">https://elementary.io/</url>
-  <url type="bugtracker">https://github.com/elementary/wingpanel-indicator-network/issues/new/choose</url>
-  <url type="donation">https://elementary.io/get-involved#funding</url>
-  <url type="help">https://elementaryos.stackexchange.com/questions/tagged/wingpanel</url>
-  <url type="translate">https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-network/</url>
-  <update_contact>contact_AT_elementary.io</update_contact>
-  <metadata_license>CC0-1.0</metadata_license>
-  <project_group>elementary</project_group>
-  <project_license>GPL-3.0+</project_license>
 </component>

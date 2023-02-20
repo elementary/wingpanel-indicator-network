@@ -1,156 +1,98 @@
 /*
- * Copyright 2017-2020 elementary, Inc. (https://elementary.io)
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Library General Public License as published by
- * the Free Software Foundation, either version 2.1 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Library General Public License for more details.
- *
- * You should have received a copy of the GNU Library General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2017-2023 elementary, Inc. (https://elementary.io)
+*/
 
-public class Network.VpnMenuItem : Gtk.ListBoxRow {
-    public signal void user_action ();
+public class Network.VpnMenuItem : Gtk.FlowBoxChild {
+    public NM.RemoteConnection remote_connection { get; construct; }
 
-    public Gtk.RadioButton radio_button { get; private set; }
-    public Network.State vpn_state { get; set; default = Network.State.DISCONNECTED; }
-    public NM.RemoteConnection? connection { get; construct; }
-
-    public string id {
+    private NM.VpnConnection? _vpn_connection = null;
+    public NM.VpnConnection? vpn_connection {
         get {
-            return connection.get_id ();
+            return _vpn_connection;
+        }
+        set {
+            if (value != null) {
+                _vpn_connection = value;
+                _vpn_connection.vpn_state_changed.connect (update_state);
+                update_state ();
+            } else {
+                _vpn_connection.vpn_state_changed.disconnect (update_state);
+                _vpn_connection = null;
+
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconnected-symbolic";
+                toggle_button.active = false;
+            }
+
         }
     }
 
-    private bool checking_vpn_connectivity = false;
-    private Gtk.Image error_img;
-    private Gtk.Spinner spinner;
-    private Gtk.Label label;
+    private static Gtk.CssProvider provider;
+    private Gtk.ToggleButton toggle_button;
 
-    public VpnMenuItem (VpnMenuItem? other = null, NM.RemoteConnection? connection = null) {
-        Object (connection: connection);
-
-        if (other != null) {
-            radio_button.join_group (other.radio_button);
-        }
+    public VpnMenuItem (NM.RemoteConnection remote_connection) {
+        Object (remote_connection: remote_connection);
     }
 
-    class construct {
-        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+    static construct {
+        provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
     }
 
     construct {
-        if (connection != null) {
-            connection.changed.connect (update);
-        }
-
-        label = new Gtk.Label (null) {
-            ellipsize = Pango.EllipsizeMode.MIDDLE
+        toggle_button = new Gtk.ToggleButton () {
+            halign = Gtk.Align.CENTER,
+            image = new Gtk.Image.from_icon_name ("network-vpn-disconnected-symbolic", Gtk.IconSize.MENU)
         };
+        toggle_button.get_style_context ().add_class ("circular");
+        toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        radio_button = new Gtk.RadioButton (null);
-        radio_button.add (label);
 
-        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
-            margin_start = 6,
-            tooltip_text = _("This Virtual Private Network could not be connected to.")
+        var label = new Gtk.Label (remote_connection.get_id ()) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            max_width_chars = 16
         };
+        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-        spinner = new Gtk.Spinner () {
-            no_show_all = true,
-            visible = false
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3) {
+            hexpand = true
         };
-        spinner.start ();
+        box.add (toggle_button);
+        box.add (label);
 
-        var main_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6) {
-            margin_start = 6,
-            margin_end = 6
-        };
-        main_box.pack_start (radio_button, true, true);
-        main_box.pack_start (spinner, false, false);
-        main_box.pack_start (error_img, false, false);
+        can_focus = false;
+        add (box);
 
-        add (main_box);
-
-        notify["vpn_state"].connect (update);
-        radio_button.notify["active"].connect (update);
-
-        radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
-            return false;
+        toggle_button.toggled.connect (() => {
+            activate ();
         });
 
-        update ();
+        remote_connection.changed.connect (() => {
+            label.label = remote_connection.get_id ();
+        });
     }
 
-    private void update () {
-        if (connection == null) {
-            return;
-        }
-
-        label.label = connection.get_id ();
-        hide_item (error_img);
-        hide_item (spinner);
-
-        switch (vpn_state) {
-            case State.FAILED:
-                show_item (error_img);
+    private void update_state () {
+        switch (vpn_connection.vpn_state) {
+            case NM.VpnConnectionState.CONNECT:
+            case NM.VpnConnectionState.IP_CONFIG_GET:
+            case NM.VpnConnectionState.NEED_AUTH:
+            case NM.VpnConnectionState.PREPARE:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-acquiring-symbolic";
                 break;
-            case State.CONNECTING_VPN:
-                show_item (spinner);
-                if (!radio_button.active) {
-                    critical ("An VPN is being connected but not active.");
-                }
-                check_vpn_connectivity.begin ();
+            case NM.VpnConnectionState.ACTIVATED:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-connected-symbolic";
+                toggle_button.active = true;
                 break;
-        }
-    }
-
-    public void set_active (bool active) {
-        radio_button.set_active (active);
-    }
-
-    private void show_item (Gtk.Widget w) {
-        w.visible = true;
-        w.no_show_all = w.visible;
-    }
-
-    private void hide_item (Gtk.Widget w) {
-        w.visible = false;
-        w.no_show_all = !w.visible;
-        w.hide ();
-    }
-
-    private async void nap (uint interval, int priority = GLib.Priority.DEFAULT) {
-      GLib.Timeout.add (interval, () => {
-          nap.callback ();
-          return false;
-        }, priority);
-        yield;
-    }
-
-    /**
-    * Uses a timeout to check VPN connectivity
-    **/
-    private async void check_vpn_connectivity () {
-        if (!checking_vpn_connectivity) {
-
-            checking_vpn_connectivity = true;
-
-            for (int i = 0; i < 20; i++) {
-                if (vpn_state == State.CONNECTED_VPN) {
-                    hide_item (spinner);
-                    checking_vpn_connectivity = false;
-                    return;
-                }
-                yield nap (500);
-            }
+            case NM.VpnConnectionState.DISCONNECTED:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-disconnected-symbolic";
+                toggle_button.active = false;
+                break;
+            case NM.VpnConnectionState.FAILED:
+            case NM.VpnConnectionState.UNKNOWN:
+                ((Gtk.Image) toggle_button.image).icon_name = "network-vpn-error-symbolic";
+                toggle_button.active = false;
+                break;
         }
     }
 }

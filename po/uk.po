@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-16 21:34+0000\n"
+"POT-Creation-Date: 2023-02-20 17:12+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,49 +16,49 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:128 src/Indicator.vala:141
 msgid "Wired"
 msgstr "Дротова"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:129
 msgid "Connecting to wired network"
 msgstr "Підʼєднатися до провідної мережі"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:131 src/Indicator.vala:136
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "З'єднання з «%s»"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:142
 msgid "Connected to wired network"
 msgstr "Підʼєднано до провідної мережі"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:144 src/Indicator.vala:155
 #, c-format
 msgid "Connected to “%s”"
 msgstr "З'єднано з «%s»"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:160
 msgid "Failed to connect"
 msgstr "Не вдалося з'єднатися"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:164
 msgid "Disconnected"
 msgstr "Роз'єднано"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:167
 msgid "Not connected"
 msgstr "Не під'єднано"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:173
 msgid "Middle-click to turn airplane mode off"
 msgstr "Клацніть середньою кнопкою миші, щоб вимкнути режим польоту"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:174
 msgid "Middle-click to turn airplane mode on"
 msgstr "Клацніть середньою кнопкою миші, щоб увімкнути режим польоту"
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:194 src/Indicator.vala:206
 msgid "unknown network"
 msgstr "невідома мережа"
 
@@ -73,14 +73,6 @@ msgstr "Зʼєднатися з прихованою мережею…"
 #: src/Widgets/PopoverWidget.vala:123
 msgid "Network Settings…"
 msgstr "Налаштування мережі…"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Неможливо зʼєднатися з цією VPN мережею."
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
@@ -121,6 +113,12 @@ msgstr "Захищено"
 #: src/Widgets/WifiMenuItem.vala:156
 msgid "Unsecured"
 msgstr "Незахищено"
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Неможливо зʼєднатися з цією VPN мережею."
 
 #, c-format
 #~ msgid "Unknown type: %s "

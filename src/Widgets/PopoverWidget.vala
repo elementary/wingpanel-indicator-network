@@ -329,28 +329,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         active_vpn_connection = null;
 
         nm_client.get_active_connections ().foreach ((ac) => {
-            if (active_vpn_connection == null && ac.get_vpn ()) {
-                active_vpn_connection = (NM.VpnConnection)ac;
-                update_vpn_state (active_vpn_connection.get_vpn_state ());
+            if (active_vpn_connection == null && ac.vpn) {
+                active_vpn_connection = (NM.VpnConnection) ac;
+
+                secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
                 active_vpn_connection.vpn_state_changed.connect (() => {
-                    update_vpn_state (active_vpn_connection.get_vpn_state ());
+                    secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
                 });
             }
         });
-    }
-
-    private void update_vpn_state (NM.VpnConnectionState state) {
-        switch (state) {
-            case NM.VpnConnectionState.DISCONNECTED:
-            case NM.VpnConnectionState.PREPARE:
-            case NM.VpnConnectionState.IP_CONFIG_GET:
-            case NM.VpnConnectionState.CONNECT:
-            case NM.VpnConnectionState.FAILED:
-                secure = false;
-                break;
-            case NM.VpnConnectionState.ACTIVATED:
-                secure = true;
-                break;
-        }
     }
 }
