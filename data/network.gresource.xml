@@ -3,13 +3,9 @@
   <gresource prefix="/io/elementary/wingpanel/network">
     <file compressed= "true">Indicator.css</file>
 
-    <file alias="16x16/status/network-cellular-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-cellular-acquiring-symbolic.svg</file>
-    <file alias="16x16/status/network-cellular-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-cellular-connected-symbolic.svg</file>
     <file alias="16x16/status/network-cellular-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-cellular-no-route-symbolic.svg</file>
     <file alias="16x16/status/network-cellular-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-cellular-offline-symbolic.svg</file>
 
-    <file alias="24x24/status/network-cellular-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-acquiring-symbolic.svg</file>
-    <file alias="24x24/status/network-cellular-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-connected-symbolic.svg</file>
     <file alias="24x24/status/network-cellular-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-no-route-symbolic.svg</file>
     <file alias="24x24/status/network-cellular-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-offline-symbolic.svg</file>
 
