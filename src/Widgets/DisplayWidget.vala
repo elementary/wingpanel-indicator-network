@@ -27,7 +27,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("panel-network-wired-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
@@ -66,7 +66,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             image.icon_name = "panel-network-wired-acquiring-symbolic";
             break;
         case Network.State.CONNECTED_WIRED:
-            image.icon_name = "panel-network-wired-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "panel-network-wired-%ssymbolic".printf (secure? "secure-" : "connected-");
             break;
         case Network.State.CONNECTED_WIFI_WEAK:
             image.icon_name = "panel-network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
