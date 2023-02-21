@@ -30,7 +30,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
 
         ethernet_item = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
-            image = new Gtk.Image.from_icon_name ("network-wired-symbolic", Gtk.IconSize.MENU)
+            image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.MENU)
         };
         ethernet_item.get_style_context ().add_class ("circular");
         ethernet_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
@@ -77,20 +77,20 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             sensitive = false;
             ethernet_item.active = false;
             state = State.FAILED;
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-error-symbolic";
+            ((Gtk.Image ) ethernet_item.image).icon_name = "panel-network-wired-error-symbolic";
             break;
 
         case NM.DeviceState.UNAVAILABLE:
             sensitive = false;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-no-route-symbolic";
+            ((Gtk.Image ) ethernet_item.image).icon_name = "panel-network-wired-no-route-symbolic";
             break;
         case NM.DeviceState.DISCONNECTED:
             sensitive = true;
             ethernet_item.active = false;
             state = State.WIRED_UNPLUGGED;
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-offline-symbolic";
+            ((Gtk.Image ) ethernet_item.image).icon_name = "panel-network-wired-offline-symbolic";
             break;
 
         case NM.DeviceState.PREPARE:
@@ -102,14 +102,14 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTING_WIRED;
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-acquiring-symbolic";
+            ((Gtk.Image ) ethernet_item.image).icon_name = "panel-network-wired-acquiring-symbolic";
             break;
 
         case NM.DeviceState.ACTIVATED:
             sensitive = true;
             ethernet_item.active = true;
             state = State.CONNECTED_WIRED;
-            ((Gtk.Image ) ethernet_item.image).icon_name = "network-wired-symbolic";
+            ((Gtk.Image ) ethernet_item.image).icon_name = "panel-network-wired-connected-symbolic-symbolic";
             break;
         }
     }
