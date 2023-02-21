@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-20 18:56+0000\n"
-"PO-Revision-Date: 2023-02-18 14:25+0000\n"
+"PO-Revision-Date: 2023-02-22 11:25+0000\n"
 "Last-Translator: David Hewitt <davidmhewitt@gmail.com>\n"
 "Language-Team: English (United Kingdom) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/en_GB/>\n"
@@ -43,6 +43,8 @@ msgstr "Show Airplane Mode and wired devices as compact circle buttons"
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"Show VPN connections as circle buttons and allow connecting to multiple at "
+"once"
 
 #: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:51
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
