@@ -195,7 +195,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         update ();
     }
 
-    private const string BASE_ICON_NAME = "network-wireless-signal-";
+    private const string BASE_ICON_NAME = "panel-network-wireless-signal-";
     private const string SYMBOLIC = "-symbolic";
     private unowned string get_strength_symbolic_icon () {
         if (strength < 30) {
