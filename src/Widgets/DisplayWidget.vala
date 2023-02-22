@@ -176,17 +176,25 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     }
 
     private void update_vpn_connection () {
+        active_vpn_connection.vpn_state_changed.disconnect (reveal_vpn);
         active_vpn_connection = null;
 
         nm_client.get_active_connections ().foreach ((connection) => {
             if (active_vpn_connection == null && connection.vpn) {
                 active_vpn_connection = (NM.VpnConnection) connection;
-
-                vpn_revealer.reveal_child = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                active_vpn_connection.vpn_state_changed.connect (() => {
-                    vpn_revealer.reveal_child = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                });
+                active_vpn_connection.vpn_state_changed.connect (reveal_vpn);
             }
         });
+
+        reveal_vpn ();
+    }
+
+    private void reveal_vpn () {
+        if (active_vpn_connection != null && active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED) {
+            vpn_revealer.reveal_child = true;
+        } else {
+            vpn_revealer.reveal_child = false;
+        }
+
     }
 }
