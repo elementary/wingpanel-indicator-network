@@ -35,6 +35,18 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
     }
 
+    public unowned SList group {
+        get {
+            return radio_button.get_group ();
+        }
+    }
+
+    public bool active {
+        set {
+            radio_button.active = value;
+        }
+    }
+
     private Gtk.Image error_img;
     private Gtk.Image img_strength;
     private Gtk.Image lock_img;
@@ -54,7 +66,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         radio_button.add (label);
 
         if (previous != null) {
-            radio_button.set_group (previous.get_group ());
+            radio_button.set_group (previous.group);
         }
 
         img_strength = new Gtk.Image () {
@@ -76,19 +88,19 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         box.add (lock_img);
         box.add (img_strength);
 
+        add (box);
+
         ap_list = new List<NM.AccessPoint> ();
 
         /* Adding the access point triggers update */
         add_ap (ap);
-
-        add (box);
 
         notify["state"].connect (update);
 
         // We can't use clicked because we get in a weird loop state
         radio_button.button_release_event.connect ((b, ev) => {
             activate ();
-            return false;
+            return Gdk.EVENT_STOP;
         });
     }
 
@@ -109,14 +121,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             ap = strength > acess_point.get_strength () ? ap : acess_point;
             strength = uint8.max (strength, acess_point.get_strength ());
         }
-    }
-
-    public void set_active (bool active) {
-        radio_button.active = active;
-    }
-
-    private unowned SList get_group () {
-        return radio_button.get_group ();
     }
 
     private void update () {

@@ -467,7 +467,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (active_ap == null) {
             debug ("No active AP");
-            blank_item.set_active (true);
+            blank_item.active = true;
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
             active_ap_name = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
@@ -479,7 +479,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
                 if (active_ap_ssid.compare (menu_item.ssid) == 0) {
                     found = true;
-                    menu_item.set_active (true);
+                    menu_item.active = true;
                     active_wifi_item = menu_item;
                     active_wifi_item.state = device.state;
                 }
