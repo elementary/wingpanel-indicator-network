@@ -167,7 +167,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        if (widget_interface is EtherInterface) {
+        if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
             other_box.add (widget_interface);
             return;
         }

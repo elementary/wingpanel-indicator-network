@@ -1,5 +1,5 @@
 /*-
- * Copyright 2017-2021 elementary, Inc. (https://elementary.io)
+ * Copyright 2017-2023 elementary, Inc. (https://elementary.io)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Library General Public License as published by
@@ -20,9 +20,6 @@
 public class Network.ModemInterface : Network.WidgetNMInterface {
     public string? extra_info { get; private set; default = null; }
 
-    private Granite.SwitchModelButton modem_item;
-    private DBusObjectManagerClient? modem_manager;
-
     private uint32 _signal_quality;
     public uint32 signal_quality {
         get {
@@ -36,7 +33,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         }
     }
 
-    enum ModemAccessTechnology {
+    private enum ModemAccessTechnology {
         UNKNOWN = 0,
         POTS = 1 << 0,
         GSM = 1 << 1,
@@ -56,16 +53,40 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         ANY = 0xFFFFFFFF
     }
 
+    private DBusObjectManagerClient? modem_manager;
+    private Gtk.ToggleButton modem_item;
+    private static Gtk.CssProvider provider;
+
+    static construct {
+        provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
+    }
+
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
-        modem_item = new Granite.SwitchModelButton (display_title);
 
-        notify["display-title"].connect (() => {
-            modem_item.text = display_title;
-        });
+        modem_item = new Gtk.ToggleButton () {
+            halign = Gtk.Align.CENTER,
+            image = new Gtk.Image.from_icon_name ("panel-network-cellular-connected-symbolic", Gtk.IconSize.MENU)
+        };
+        modem_item.get_style_context ().add_class ("circular");
+        modem_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-        modem_item.get_style_context ().add_class ("h4");
-        modem_item.notify["active"].connect (() => {
+        var label = new Gtk.Label (display_title) {
+            ellipsize = Pango.EllipsizeMode.MIDDLE,
+            max_width_chars = 16
+        };
+        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        hexpand = true;
+        orientation = Gtk.Orientation.VERTICAL;
+        spacing = 3;
+        add (modem_item);
+        add (label);
+
+        bind_property ("display-title", label, "label");
+
+        modem_item.toggled.connect (() => {
             if (modem_item.active && device.state == NM.DeviceState.DISCONNECTED) {
                 nm_client.activate_connection_async.begin (null, device, null, null, null);
             } else if (!modem_item.active && device.state == NM.DeviceState.ACTIVATED) {
@@ -73,9 +94,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
             }
         });
 
-        add (modem_item);
-
-        device.state_changed.connect (() => { update (); });
+        device.state_changed.connect (update);
         prepare.begin ();
     }
 
@@ -85,30 +104,37 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
             case NM.DeviceState.UNMANAGED:
             case NM.DeviceState.UNAVAILABLE:
             case NM.DeviceState.FAILED:
-                modem_item.sensitive = false;
+                sensitive = false;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
+                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-error-symbolic";
                 break;
+
             case NM.DeviceState.DISCONNECTED:
             case NM.DeviceState.DEACTIVATING:
-                modem_item.sensitive = true;
+                sensitive = true;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
+                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-disconnected-symbolic";
                 break;
+
             case NM.DeviceState.PREPARE:
             case NM.DeviceState.CONFIG:
             case NM.DeviceState.NEED_AUTH:
             case NM.DeviceState.IP_CONFIG:
             case NM.DeviceState.IP_CHECK:
             case NM.DeviceState.SECONDARIES:
-                modem_item.sensitive = true;
+                sensitive = true;
                 modem_item.active = true;
                 state = State.CONNECTING_MOBILE;
+                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-acquiring-symbolic";
                 break;
+
             case NM.DeviceState.ACTIVATED:
-                modem_item.sensitive = true;
+                sensitive = true;
                 modem_item.active = true;
                 state = strength_to_state (signal_quality);
+                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-connected-symbolic-symbolic";
                 break;
         }
     }
