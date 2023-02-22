@@ -45,12 +45,18 @@ public class Network.Indicator : Wingpanel.Indicator {
         if (is_in_session) {
             display_widget.button_press_event.connect ((event) => {
                 if (event.button == Gdk.BUTTON_MIDDLE) {
-                    try {
-                        popover_widget.nm_client.networking_set_enabled (!popover_widget.nm_client.networking_get_enabled ());
-                        return true;
-                    } catch (Error e) {
-                        warning ("Error setting airplane mode: %s", e.message);
-                    }
+                    popover_widget.nm_client.dbus_set_property.begin (
+                        NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                        "Enable", !popover_widget.nm_client.networking_get_enabled (),
+                        -1, null, (obj, res) => {
+                            try {
+                                ((NM.Client) obj).dbus_set_property.end (res);
+                            } catch (Error e) {
+                                warning ("Error setting airplane mode: %s", e.message);
+                            }
+                        }
+                    );
+                    return true;
                 }
 
                 return false;
