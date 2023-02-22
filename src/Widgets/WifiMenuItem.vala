@@ -55,19 +55,15 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private Gtk.Spinner spinner;
     private List<NM.AccessPoint> ap_list;
 
-    public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
+    public WifiMenuItem (NM.AccessPoint ap, Gtk.RadioButton blank_radio) {
         label = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.MIDDLE
         };
 
-        radio_button = new Gtk.RadioButton (null) {
+        radio_button = new Gtk.RadioButton.from_widget (blank_radio) {
             hexpand = true
         };
         radio_button.add (label);
-
-        if (previous != null) {
-            radio_button.set_group (previous.group);
-        }
 
         img_strength = new Gtk.Image () {
             icon_size = Gtk.IconSize.MENU
@@ -102,13 +98,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             activate ();
             return Gdk.EVENT_STOP;
         });
-    }
-
-    /**
-     * Only used for an item which is not displayed: hacky way to have no radio button selected.
-     **/
-    public WifiMenuItem.blank () {
-        radio_button = new Gtk.RadioButton (null);
     }
 
     class construct {
