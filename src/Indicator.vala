@@ -49,7 +49,13 @@ public class Network.Indicator : Wingpanel.Indicator {
                     popover_widget.nm_client.dbus_set_property.begin (
                         NM.DBUS_PATH, NM.DBUS_INTERFACE,
                         "Enable", !popover_widget.nm_client.networking_get_enabled (),
-                        -1, null
+                        -1, null, (obj, res) => {
+                            try {
+                                ((NM.Client) obj).dbus_set_property.end (res);
+                            } catch (Error e) {
+                                warning ("Error setting airplane mode: %s", e.message);
+                            }
+                        }
                     );
                     return true;
                 }
