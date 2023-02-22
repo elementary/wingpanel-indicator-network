@@ -17,7 +17,6 @@
 
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private List<NM.AccessPoint> _ap;
-    public signal void user_action ();
     public GLib.Bytes ssid {
         get {
             return _tmp_ap.get_ssid ();
@@ -70,36 +69,30 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             tooltip_text = _("Unable to connect")
         };
 
-        spinner = new Gtk.Spinner () {
-            no_show_all = true,
-            visible = false
-        };
-        spinner.start ();
+        spinner = new Gtk.Spinner ();
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 6
-        };
-        grid.add (radio_button);
-        grid.add (spinner);
-        grid.add (error_img);
-        grid.add (lock_img);
-        grid.add (img_strength);
+        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        box.add (radio_button);
+        box.add (spinner);
+        box.add (error_img);
+        box.add (lock_img);
+        box.add (img_strength);
 
         _ap = new List<NM.AccessPoint> ();
 
         /* Adding the access point triggers update */
         add_ap (ap);
 
-        notify["state"].connect (update);
-        radio_button.notify["active"].connect (update);
+        add (box);
 
+        notify["state"].connect (update);
+        radio_button.toggled.connect (update);
+
+        // We can't use clicked because we get in a weird loop state
         radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
+            activate ();
             return false;
         });
-
-        add (grid);
-
     }
 
     /**
@@ -122,7 +115,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     public void set_active (bool active) {
-        radio_button.set_active (active);
+        radio_button.active = active;
     }
 
     private unowned SList get_group () {
@@ -160,7 +153,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         lock_img.no_show_all = !lock_img.visible;
 
         hide_item (error_img);
-        hide_item (spinner);
+        spinner.stop ();
 
         switch (state) {
             case NM.DeviceState.FAILED:
@@ -172,7 +165,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             case NM.DeviceState.IP_CONFIG:
             case NM.DeviceState.IP_CHECK:
             case NM.DeviceState.SECONDARIES:
-                show_item (spinner);
+                spinner.start ();
                 if (!radio_button.active) {
                     critical ("An access point is being connected but not active.");
                 }
