@@ -86,11 +86,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             other_box.add (airplane_box);
 
             airplane_toggle.toggled.connect (() => {
-                try {
-                    nm_client.networking_set_enabled (!airplane_toggle.active);
-                } catch (Error e) {
-                    warning (e.message);
-                }
+                nm_client.dbus_set_property.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", !airplane_toggle.active,
+                    -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
             });
 
             if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
@@ -227,7 +233,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     private void device_removed_cb (NM.Device device) {
         foreach (var widget_interface in network_interface) {
-            if (widget_interface.is_device (device)) {
+            if (widget_interface.device == device) {
                 network_interface.remove (widget_interface);
 
                 unowned var parent = widget_interface.get_parent ();
