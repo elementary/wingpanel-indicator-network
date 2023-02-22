@@ -31,7 +31,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private NM.AccessPoint? active_ap;
     private Gtk.ListBox wifi_list;
     private WifiMenuItem? active_wifi_item;
-    private WifiMenuItem? blank_item = null;
+    private Gtk.RadioButton blank_item;
     private Gtk.Stack placeholder;
 
     private bool locked;
@@ -47,7 +47,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         device = _device;
 
         wifi_device = (NM.DeviceWifi) device;
-        blank_item = new WifiMenuItem.blank ();
+
+        blank_item = new Gtk.RadioButton (null);
+
         active_wifi_item = null;
 
         /* Monitor killswitch status */
@@ -68,29 +70,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
 
         update ();
-
-        wifi_item.text = display_title;
-        notify["display-title"].connect ( () => {
-            wifi_item.text = display_title;
-        });
-
-        wifi_item.notify["active"].connect (() => {
-            var active = wifi_item.active;
-            if (active != !software_locked) {
-                rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
-                nm_client.dbus_set_property.begin (
-                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                    "WirelessEnabled", active,
-                    -1, null, (obj, res) => {
-                        try {
-                            ((NM.Client) obj).dbus_set_property.end (res);
-                        } catch (Error e) {
-                            warning ("Error activating wifi item: %s", e.message);
-                        }
-                    }
-                );
-            }
-        });
     }
 
     construct {
@@ -124,7 +103,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_list.set_sort_func (sort_func);
         wifi_list.set_placeholder (placeholder);
 
-        wifi_item = new Granite.SwitchModelButton ("");
+        wifi_item = new Granite.SwitchModelButton (display_title);
         wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null) {
@@ -140,6 +119,32 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         orientation = Gtk.Orientation.VERTICAL;
         pack_start (wifi_item);
         pack_start (revealer);
+
+        bind_property ("display-title", wifi_item, "text");
+
+        wifi_list.row_activated.connect ((row) => {
+            if (row is WifiMenuItem) {
+                wifi_activate_cb ((WifiMenuItem) row);
+            }
+        });
+
+        wifi_item.notify["active"].connect (() => {
+            var active = wifi_item.active;
+            if (active != !software_locked) {
+                rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
+                nm_client.dbus_set_property.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "WirelessEnabled", active,
+                    -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error activating wifi item: %s", e.message);
+                        }
+                    }
+                );
+            }
+        });
     }
 
     public override void update () {
@@ -415,7 +420,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
     private void access_point_added_cb (Object ap_) {
         NM.AccessPoint ap = (NM.AccessPoint)ap_;
-        WifiMenuItem? previous_wifi_item = blank_item;
         unowned GLib.Bytes ap_ssid = ap.ssid;
 
         bool found = false;
@@ -429,17 +433,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 menu_item.add_ap (ap);
                 break;
             }
-
-            previous_wifi_item = menu_item;
         }
 
         /* Sometimes network manager sends a (fake?) AP without a valid ssid. */
         if (!found && ap_ssid != null) {
-            var item = new WifiMenuItem (ap, previous_wifi_item);
-
-            previous_wifi_item = item;
-            item.set_visible (true);
-            item.user_action.connect (wifi_activate_cb);
+            var item = new WifiMenuItem (ap, blank_item);
 
             wifi_list.add (item);
             wifi_list.show_all ();
@@ -463,7 +461,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (active_ap == null) {
             debug ("No active AP");
-            blank_item.set_active (true);
+            blank_item.active = true;
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
             active_ap_name = NM.Utils.ssid_to_utf8 (active_ap_ssid.get_data ());
@@ -475,7 +473,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
                 if (active_ap_ssid.compare (menu_item.ssid) == 0) {
                     found = true;
-                    menu_item.set_active (true);
+                    menu_item.active = true;
                     active_wifi_item = menu_item;
                     active_wifi_item.state = device.state;
                 }
