@@ -35,12 +35,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
     }
 
-    public unowned SList group {
-        get {
-            return radio_button.get_group ();
-        }
-    }
-
     public bool active {
         set {
             radio_button.active = value;
