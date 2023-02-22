@@ -78,7 +78,17 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             var active = wifi_item.active;
             if (active != !software_locked) {
                 rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
-                nm_client.wireless_set_enabled (active);
+                nm_client.dbus_set_property.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "WirelessEnabled", active,
+                    -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error activating wifi item: %s", e.message);
+                        }
+                    }
+                );
             }
         });
     }
@@ -130,12 +140,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         orientation = Gtk.Orientation.VERTICAL;
         pack_start (wifi_item);
         pack_start (revealer);
-
-        wifi_list.row_activated.connect ((row) => {
-            if (row is WifiMenuItem) {
-                wifi_activate_cb ((WifiMenuItem) row);
-            }
-        });
     }
 
     public void update () {
@@ -435,6 +439,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
             previous_wifi_item = item;
             item.set_visible (true);
+            item.user_action.connect (wifi_activate_cb);
 
             wifi_list.add (item);
             wifi_list.show_all ();
