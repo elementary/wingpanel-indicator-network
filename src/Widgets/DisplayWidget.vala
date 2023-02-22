@@ -148,7 +148,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             image.icon_name = "panel-network-wired-offline-symbolic";
             break;
         default:
-            image.icon_name = "panel-network-offline-symbolic";
+            image.icon_name = "panel-network-wired-offline-symbolic";
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
         }
