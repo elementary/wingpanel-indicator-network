@@ -42,6 +42,8 @@
         <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/120">Separate VPN icon from network icon</issue>
         <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/134">VPN switch jumps due to WiFi list height change</issue>
         <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/152">Network adapter names aren't truncated</issue>
+        <issue url="https://github.com/elementary/icons/issues/719">Disabled wireless inconsistent</issue>
+        <issue url="https://github.com/elementary/icons/issues/1040">Consider making wifi button bigger</issue>
       </issues>
     </release>
 

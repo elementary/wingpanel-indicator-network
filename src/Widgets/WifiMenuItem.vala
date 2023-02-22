@@ -17,7 +17,6 @@
 
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private List<NM.AccessPoint> _ap;
-    public signal void user_action ();
     public GLib.Bytes ssid {
         get {
             return _tmp_ap.get_ssid ();
@@ -92,10 +91,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
         notify["state"].connect (update);
         radio_button.notify["active"].connect (update);
-
-        radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
-            return false;
+        radio_button.toggled.connect (() => {
+            activate ();
         });
 
         add (grid);
@@ -198,7 +195,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         update ();
     }
 
-    private const string BASE_ICON_NAME = "network-wireless-signal-";
+    private const string BASE_ICON_NAME = "panel-network-wireless-signal-";
     private const string SYMBOLIC = "-symbolic";
     private unowned string get_strength_symbolic_icon () {
         if (strength < 30) {

@@ -223,7 +223,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     private void device_removed_cb (NM.Device device) {
         foreach (var widget_interface in network_interface) {
-            if (widget_interface.is_device (device)) {
+            if (widget_interface.device == device) {
                 network_interface.remove (widget_interface);
 
                 unowned var parent = widget_interface.get_parent ();

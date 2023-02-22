@@ -30,7 +30,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("network-wired-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
@@ -84,22 +84,22 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             image.icon_name = "airplane-mode-symbolic";
             break;
         case Network.State.CONNECTING_WIRED:
-            image.icon_name = "network-wired-acquiring-symbolic";
+            image.icon_name = "panel-network-wired-acquiring-symbolic";
             break;
         case Network.State.CONNECTED_WIRED:
-            image.icon_name = "network-wired-symbolic";
+            image.icon_name = "panel-network-wired-connected-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_WEAK:
-            image.icon_name = "network-wireless-signal-weak-symbolic";
+            image.icon_name = "panel-network-wireless-signal-weak-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_OK:
-            image.icon_name = "network-wireless-signal-ok-symbolic";
+            image.icon_name = "panel-network-wireless-signal-ok-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_GOOD:
-            image.icon_name = "network-wireless-signal-good-symbolic";
+            image.icon_name = "panel-network-wireless-signal-good-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_EXCELLENT:
-            image.icon_name = "network-wireless-signal-excellent-symbolic";
+            image.icon_name = "panel-network-wireless-signal-excellent-symbolic";
             break;
         case Network.State.CONNECTING_WIFI:
             wifi_animation_timeout = Timeout.add (300, () => {
@@ -119,21 +119,21 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
                     strength = "excellent";
                     break;
                 }
-                image.icon_name = "network-wireless-signal-" + strength + "-symbolic";
+                image.icon_name = "panel-network-wireless-signal-%s-symbolic".printf (strength);
                 return true;
             });
             break;
         case Network.State.CONNECTED_MOBILE_WEAK:
-            image.icon_name = "network-cellular-signal-weak-symbolic";
+            image.icon_name = "panel-network-cellular-signal-weak-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_OK:
-            image.icon_name = "network-cellular-signal-ok-symbolic";
+            image.icon_name = "panel-network-cellular-signal-ok-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_GOOD:
-            image.icon_name = "network-cellular-signal-good-symbolic";
+            image.icon_name = "panel-network-cellular-signal-good-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            image.icon_name = "network-cellular-signal-excellent-symbolic";
+            image.icon_name = "panel-network-cellular-signal-excellent-symbolic";
             break;
         case Network.State.CONNECTING_MOBILE:
             cellular_animation_timeout = Timeout.add (300, () => {
@@ -154,22 +154,22 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
                     break;
                 }
 
-                image.icon_name = "network-cellular-signal-" + strength + "-symbolic";
+                image.icon_name = "panel-network-cellular-signal-%s-symbolic".printf (strength);
                 return true;
             });
             break;
         case Network.State.FAILED_MOBILE:
-            image.icon_name = "network-cellular-offline-symbolic";
+            image.icon_name = "panel-network-cellular-offline-symbolic";
             break;
         case Network.State.FAILED_WIFI:
         case Network.State.DISCONNECTED:
-            image.icon_name = "network-wireless-offline-symbolic";
+            image.icon_name = "panel-network-wireless-offline-symbolic";
             break;
         case Network.State.WIRED_UNPLUGGED:
-            image.icon_name = "network-wired-offline-symbolic";
+            image.icon_name = "panel-network-wired-offline-symbolic";
             break;
         default:
-            image.icon_name = "network-offline-symbolic";
+            image.icon_name = "panel-network-wired-offline-symbolic";
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
         }
