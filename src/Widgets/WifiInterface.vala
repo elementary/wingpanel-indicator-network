@@ -130,6 +130,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         orientation = Gtk.Orientation.VERTICAL;
         pack_start (wifi_item);
         pack_start (revealer);
+
+        wifi_list.row_activated.connect ((row) => {
+            if (row is WifiMenuItem) {
+                wifi_activate_cb ((WifiMenuItem) row);
+            }
+        });
     }
 
     public void update () {
@@ -429,7 +435,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
             previous_wifi_item = item;
             item.set_visible (true);
-            item.user_action.connect (wifi_activate_cb);
 
             wifi_list.add (item);
             wifi_list.show_all ();
