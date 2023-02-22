@@ -149,8 +149,17 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         lock_img.no_show_all = !lock_img.visible;
     }
 
+    private const string BASE_ICON_NAME = "panel-network-wireless-signal-%s-symbolic";
     private void update () {
-        img_strength.icon_name = get_strength_symbolic_icon ();
+        if (strength < 30) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("weak");
+        } else if (strength < 55) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("ok");
+        } else if (strength < 80) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("good");
+        } else {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("excellent");
+        }
 
         error_img.no_show_all = true;
         error_img.visible = false;
@@ -181,20 +190,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         ap_list.append (ap);
         update_ap ();
         update ();
-    }
-
-    private const string BASE_ICON_NAME = "panel-network-wireless-signal-";
-    private const string SYMBOLIC = "-symbolic";
-    private unowned string get_strength_symbolic_icon () {
-        if (strength < 30) {
-            return BASE_ICON_NAME + "weak" + SYMBOLIC;
-        } else if (strength < 55) {
-            return BASE_ICON_NAME + "ok" + SYMBOLIC;
-        } else if (strength < 80) {
-            return BASE_ICON_NAME + "good" + SYMBOLIC;
-        } else {
-            return BASE_ICON_NAME + "excellent" + SYMBOLIC;
-        }
     }
 
     public bool remove_ap (NM.AccessPoint ap) {
