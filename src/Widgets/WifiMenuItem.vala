@@ -121,13 +121,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             ap = strength > acess_point.get_strength () ? ap : acess_point;
             strength = uint8.max (strength, acess_point.get_strength ());
         }
-    }
 
-    private void update () {
         label.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
-
-        img_strength.icon_name = get_strength_symbolic_icon ();
-        img_strength.show_all ();
 
         var flags = ap.get_wpa_flags () | ap.get_rsn_flags ();
         var is_secured = false;
@@ -152,13 +147,21 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
         lock_img.visible = !is_secured;
         lock_img.no_show_all = !lock_img.visible;
+    }
 
-        hide_item (error_img);
+    private void update () {
+        img_strength.icon_name = get_strength_symbolic_icon ();
+
+        error_img.no_show_all = true;
+        error_img.visible = false;
+        error_img.hide ();
+
         spinner.stop ();
 
         switch (state) {
             case NM.DeviceState.FAILED:
-                show_item (error_img);
+                error_img.no_show_all = false;
+                error_img.visible = true;
                 break;
             case NM.DeviceState.PREPARE:
             case NM.DeviceState.CONFIG:
@@ -174,21 +177,9 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
     }
 
-    private void show_item (Gtk.Widget w) {
-        w.visible = true;
-        w.no_show_all = !w.visible;
-    }
-
-    private void hide_item (Gtk.Widget w) {
-        w.visible = false;
-        w.no_show_all = !w.visible;
-        w.hide ();
-    }
-
     public void add_ap (NM.AccessPoint ap) {
         ap_list.append (ap);
         update_ap ();
-
         update ();
     }
 
