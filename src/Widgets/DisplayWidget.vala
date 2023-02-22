@@ -195,6 +195,5 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         } else {
             vpn_revealer.reveal_child = false;
         }
-
     }
 }
