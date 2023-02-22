@@ -2,9 +2,53 @@
 <gresources>
   <gresource prefix="/io/elementary/wingpanel/network">
     <file compressed= "true">Indicator.css</file>
-    <file alias="16x16/status/network-vpn-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-acquiring-symbolic.svg</file>
-    <file alias="16x16/status/network-vpn-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-connected-symbolic.svg</file>
-    <file alias="16x16/status/network-vpn-disconnected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-disconnected-symbolic.svg</file>
-    <file alias="16x16/status/network-vpn-error-symbolic.svg" compressed="true" preprocess="xml-stripblanks">network-vpn-error-symbolic.svg</file>
+
+    <file alias="24x24/status/panel-network-cellular-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-no-route-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-offline-symbolic.svg</file>
+
+    <file alias="24x24/status/panel-network-cellular-signal-excellent-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-excellent-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-excellent-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-excellent-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-good-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-good-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-good-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-good-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-none-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-none-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-none-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-none-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-ok-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-ok-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-ok-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-ok-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-weak-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-weak-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-cellular-signal-weak-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-cellular-signal-weak-symbolic.svg</file>
+
+    <file alias="16x16/status/panel-network-vpn-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-vpn-acquiring-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-vpn-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-vpn-connected-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-vpn-disconnected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-vpn-disconnected-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-vpn-error-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-vpn-error-symbolic.svg</file>
+
+    <file alias="16x16/status/panel-network-wired-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wired-acquiring-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wired-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wired-connected-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wired-error-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wired-error-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wired-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wired-no-route-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wired-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wired-offline-symbolic.svg</file>
+
+    <file alias="24x24/status/panel-network-wired-acquiring-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wired-acquiring-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wired-connected-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wired-connected-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wired-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wired-no-route-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wired-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wired-offline-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wired-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wired-secure-symbolic.svg</file>
+
+    <file alias="24x24/status/panel-network-wireless-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-no-route-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-offline-symbolic.svg</file>
+
+    <file alias="16x16/status/panel-network-wireless-signal-excellent-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-excellent-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wireless-signal-good-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-good-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wireless-signal-ok-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-ok-symbolic.svg</file>
+    <file alias="16x16/status/panel-network-wireless-signal-weak-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-weak-symbolic.svg</file>
+
+    <file alias="24x24/status/panel-network-wireless-signal-excellent-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-excellent-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-excellent-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-excellent-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-good-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-good-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-good-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-good-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-ok-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-ok-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-ok-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-ok-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-weak-secure-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-weak-secure-symbolic.svg</file>
+    <file alias="24x24/status/panel-network-wireless-signal-weak-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-signal-weak-symbolic.svg</file>
   </gresource>
 </gresources>
