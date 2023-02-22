@@ -16,34 +16,32 @@
  */
 
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
-    private List<NM.AccessPoint> _ap;
+    public NM.AccessPoint ap { get; private set; }
+    public NM.DeviceState state { get; set; default = NM.DeviceState.DISCONNECTED; }
+
     public GLib.Bytes ssid {
         get {
-            return _tmp_ap.get_ssid ();
+            return ap.get_ssid ();
         }
     }
-
-    public NM.DeviceState state { get; set; default = NM.DeviceState.DISCONNECTED; }
 
     public uint8 strength {
         get {
             uint8 strength = 0;
-            foreach (var ap in _ap) {
+            foreach (unowned var ap in ap_list) {
                 strength = uint8.max (strength, ap.get_strength ());
             }
             return strength;
         }
     }
 
-    public NM.AccessPoint ap { get { return _tmp_ap; } }
-    private NM.AccessPoint _tmp_ap;
-
-    private Gtk.RadioButton radio_button;
+    private Gtk.Image error_img;
     private Gtk.Image img_strength;
     private Gtk.Image lock_img;
-    private Gtk.Image error_img;
-    private Gtk.Spinner spinner;
     private Gtk.Label label;
+    private Gtk.RadioButton radio_button;
+    private Gtk.Spinner spinner;
+    private List<NM.AccessPoint> ap_list;
 
     public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
         label = new Gtk.Label (null) {
@@ -78,7 +76,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         box.add (lock_img);
         box.add (img_strength);
 
-        _ap = new List<NM.AccessPoint> ();
+        ap_list = new List<NM.AccessPoint> ();
 
         /* Adding the access point triggers update */
         add_ap (ap);
@@ -106,11 +104,11 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         set_css_name (Gtk.STYLE_CLASS_MENUITEM);
     }
 
-    private void update_tmp_ap () {
+    private void update_ap () {
         uint8 strength = 0;
-        foreach (var ap in _ap) {
-            _tmp_ap = strength > ap.get_strength () ? _tmp_ap : ap;
-            strength = uint8.max (strength, ap.get_strength ());
+        foreach (unowned var acess_point in ap_list) {
+            ap = strength > acess_point.get_strength () ? ap : acess_point;
+            strength = uint8.max (strength, acess_point.get_strength ());
         }
     }
 
@@ -185,8 +183,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     public void add_ap (NM.AccessPoint ap) {
-        _ap.append (ap);
-        update_tmp_ap ();
+        ap_list.append (ap);
+        update_ap ();
 
         update ();
     }
@@ -206,8 +204,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     public bool remove_ap (NM.AccessPoint ap) {
-        _ap.remove (ap);
-        update_tmp_ap ();
-        return _ap.length () > 0;
+        ap_list.remove (ap);
+        update_ap ();
+        return ap_list.length () > 0;
     }
 }
