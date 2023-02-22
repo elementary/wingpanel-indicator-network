@@ -86,7 +86,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             other_box.add (airplane_box);
 
             airplane_toggle.toggled.connect (() => {
-                nm_client.dbus_set_property.begin (NM.DBUS_PATH, NM.DBUS_INTERFACE, "Enable", !airplane_toggle.active, -1, null);
+                nm_client.dbus_set_property.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", !airplane_toggle.active,
+                    -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
             });
 
             if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
