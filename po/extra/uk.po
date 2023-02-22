@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-20 18:56+0000\n"
-"PO-Revision-Date: 2023-02-18 14:25+0000\n"
+"PO-Revision-Date: 2023-02-22 11:25+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/uk/>\n"
@@ -46,6 +46,8 @@ msgstr ""
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"Показ VPN-з'єднання у вигляді круглих кнопок і можливість під'єднати кілька "
+"з'єднань одночасно"
 
 #: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:51
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
