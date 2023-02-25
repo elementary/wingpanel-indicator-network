@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-20 18:56+0000\n"
-"PO-Revision-Date: 2023-02-18 14:25+0000\n"
+"PO-Revision-Date: 2023-02-25 00:46+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -42,7 +42,7 @@ msgstr "機内モードと有線デバイスをコンパクトな丸いボタン
 #: data/network.metainfo.xml.in:37
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
-msgstr ""
+msgstr "VPN 接続を丸いボタンで表示し、同時に複数の VPN に接続できるように変更"
 
 #: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:51
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79

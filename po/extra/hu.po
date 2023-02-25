@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-02-20 18:56+0000\n"
-"PO-Revision-Date: 2023-02-17 12:17+0000\n"
+"PO-Revision-Date: 2023-02-25 00:46+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -44,6 +44,8 @@ msgstr ""
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"VPN-ek megjelenítése kör alakú gombként, többhöz való egyidejű csatlakozás "
+"lehetősége"
 
 #: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:51
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
