@@ -80,9 +80,21 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
     private void vpn_activate_cb (VpnMenuItem item) {
         if (item.vpn_connection != null) {
-            nm_client.deactivate_connection_async.begin (item.vpn_connection, null);
+            nm_client.deactivate_connection_async.begin (item.vpn_connection, null, (obj, res) => {
+                try {
+                    ((NM.Client) obj).deactivate_connection_async.end (res);
+                } catch (Error e) {
+                    critical ("Unable to activate VPN: %s", e.message);
+                }
+            });
         } else {
-            nm_client.activate_connection_async.begin (item.remote_connection, null, null, null, null);
+            nm_client.activate_connection_async.begin (item.remote_connection, null, null, null, (obj, res) => {
+                try {
+                    ((NM.Client) obj).activate_connection_async.end (res);
+                } catch (Error e) {
+                    critical ("Unable to activate VPN: %s", e.message);
+                }
+            });
         }
     }
 
