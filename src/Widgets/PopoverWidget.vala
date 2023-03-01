@@ -53,7 +53,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             margin_end = 12,
             margin_bottom = 6,
             margin_start = 12,
-            max_children_per_line = 3,
             selection_mode = Gtk.SelectionMode.NONE
         };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -164,6 +163,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         nm_client.notify["networking-enabled"].connect (update_state);
 
         vpn_interface.notify["state"].connect (update_state);
+
+        other_box.max_children_per_line = other_box.get_children ().length ();
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
