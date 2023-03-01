@@ -59,7 +59,7 @@ shared_module(
         dependency('gobject-2.0'),
         dependency('granite'),
         dependency('gtk+-3.0'),
-        dependency('libnm', version: '>=1.20.6'),
+        dependency('libnm', version: '>=1.24'),
         dependency('libnma'),
         meson.get_compiler('vala').find_library('posix'),
         wingpanel_dep
