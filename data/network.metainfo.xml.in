@@ -38,6 +38,7 @@
       </description>
       <issues>
         <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/283">Airplane mode button does not work</issue>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/284">Disconnecting VPN does not allow to connect again</issue>
       </issues>
     </release>
 
