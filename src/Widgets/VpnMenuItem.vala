@@ -5,6 +5,7 @@
 
 public class Network.VpnMenuItem : Gtk.FlowBoxChild {
     public NM.RemoteConnection remote_connection { get; construct; }
+    public Cancellable? cancellable = null;
 
     private NM.VpnConnection? _vpn_connection = null;
     public NM.VpnConnection? vpn_connection {
@@ -63,8 +64,10 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
         can_focus = false;
         add (box);
 
-        toggle_button.toggled.connect (() => {
+        // We can't use clicked because we get in a weird loop state
+        toggle_button.button_release_event.connect ((b, ev) => {
             activate ();
+            return Gdk.EVENT_STOP;
         });
 
         remote_connection.changed.connect (() => {

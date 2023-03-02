@@ -45,10 +45,10 @@ public class Network.Indicator : Wingpanel.Indicator {
         if (is_in_session) {
             display_widget.button_press_event.connect ((event) => {
                 if (event.button == Gdk.BUTTON_MIDDLE) {
-                    popover_widget.nm_client.dbus_set_property.begin (
+                    popover_widget.nm_client.dbus_call.begin (
                         NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                        "Enable", !popover_widget.nm_client.networking_get_enabled (),
-                        -1, null, (obj, res) => {
+                        "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
+                        null, -1, null, (obj, res) => {
                             try {
                                 ((NM.Client) obj).dbus_set_property.end (res);
                             } catch (Error e) {
