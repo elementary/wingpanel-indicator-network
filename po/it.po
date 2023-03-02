@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 18:56+0000\n"
+"POT-Creation-Date: 2023-03-01 17:49+0000\n"
 "PO-Revision-Date: 2020-10-27 10:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,59 +15,59 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:128 src/Indicator.vala:141
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "Cablata"
 
-#: src/Indicator.vala:129
+#: src/Indicator.vala:135
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Indicator.vala:131 src/Indicator.vala:136
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Connessione in corso"
 
-#: src/Indicator.vala:142
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Indicator.vala:144 src/Indicator.vala:155
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Connesso"
 
-#: src/Indicator.vala:160
+#: src/Indicator.vala:166
 #, fuzzy
 #| msgid "Unable to connect"
 msgid "Failed to connect"
 msgstr "Impossibile connetersi"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "Disconnesso"
 
-#: src/Indicator.vala:167
+#: src/Indicator.vala:173
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Connesso"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:174
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:194 src/Indicator.vala:206
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr ""
 
@@ -77,11 +77,11 @@ msgstr ""
 msgid "Airplane Mode"
 msgstr "Modalità Aereo attivata"
 
-#: src/Widgets/PopoverWidget.vala:119
+#: src/Widgets/PopoverWidget.vala:125
 msgid "Connect to Hidden Network…"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Widgets/PopoverWidget.vala:123
+#: src/Widgets/PopoverWidget.vala:129
 msgid "Network Settings…"
 msgstr "Impostazioni di rete…"
 
@@ -89,41 +89,41 @@ msgstr "Impostazioni di rete…"
 msgid "Unknown device"
 msgstr "Dispositivo sconosciuto"
 
-#: src/Widgets/WifiInterface.vala:87
+#: src/Widgets/WifiInterface.vala:76
 msgid "No Access Points Available"
 msgstr "Nessun punto di accesso disponibile"
 
-#: src/Widgets/WifiInterface.vala:89
+#: src/Widgets/WifiInterface.vala:78
 msgid "Scanning for Access Points…"
 msgstr "Ricerca di un punto di accesso…"
 
-#: src/Widgets/WifiMenuItem.vala:70
+#: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
 msgstr "Impossibile connetersi"
 
-#: src/Widgets/WifiMenuItem.vala:142
+#: src/Widgets/WifiMenuItem.vala:114
 msgid "40/64-bit WEP encrypted"
 msgstr "Questa rete usa la crittografia WEP a 40/64-bit"
 
-#: src/Widgets/WifiMenuItem.vala:145
+#: src/Widgets/WifiMenuItem.vala:117
 msgid "104/128-bit WEP encrypted"
 msgstr "Questa rete usa la crittografia WEP a 104/128-bit"
 
-#: src/Widgets/WifiMenuItem.vala:148
+#: src/Widgets/WifiMenuItem.vala:120
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
 msgstr "Questa rete usa la crittografia WPA"
 
-#: src/Widgets/WifiMenuItem.vala:151
+#: src/Widgets/WifiMenuItem.vala:123
 msgid "WPA encrypted"
 msgstr "Questa rete usa la crittografia WPA"
 
-#: src/Widgets/WifiMenuItem.vala:154
+#: src/Widgets/WifiMenuItem.vala:126
 msgid "Encrypted"
 msgstr "Crittografata"
 
-#: src/Widgets/WifiMenuItem.vala:156
+#: src/Widgets/WifiMenuItem.vala:128
 msgid "Unsecured"
 msgstr "Non sicura"
 
