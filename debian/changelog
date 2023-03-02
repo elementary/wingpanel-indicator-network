@@ -1,3 +1,9 @@
+wingpanel-indicator-network (7.0.1) jammy; urgency=medium
+
+  * New upstream release
+
+ -- Danielle Fore <danielle@elementary.io>  Wed, 01 Mar 2023 17:19:23 -0800
+
 wingpanel-indicator-network (7.0.0) jammy; urgency=medium
 
   * New upstream release
