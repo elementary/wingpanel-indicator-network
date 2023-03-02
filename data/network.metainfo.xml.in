@@ -29,6 +29,16 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="7.0.2" date="2023-03-01" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show cellular devices as compact circle buttons</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+    
     <release version="7.0.1" date="2023-03-01" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -46,7 +56,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
-          <li>Show Airplane Mode, cellular, and wired devices as compact circle buttons</li>
+          <li>Show Airplane Mode and wired devices as compact circle buttons</li>
           <li>Show VPN connections as circle buttons and allow connecting multiple at once</li>
           <li>Updated translations</li>
         </ul>
