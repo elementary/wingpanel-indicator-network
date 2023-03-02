@@ -108,19 +108,7 @@
       </description>
     </release>
 
-    <release version="2.3.1" date="2021-10-22" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Don't launch Captive Network Assistant with full connectivity</li>
-        </ul>
-        <p>Minor updates:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="2.3.1" date="2021-10-22"/>
     <release version="2.3.0" date="2021-07-14"/>
     <release version="2.2.4" date="2020-05-28"/>
     <release version="2.2.3" date="2020-03-27"/>

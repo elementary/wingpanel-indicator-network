@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2022-01-13 21:09+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -31,53 +31,48 @@ msgstr "Maak verbinding met draadloze netwerken en beheer VPNs"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:46
+#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
 msgid "Improvements:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
-#: data/network.metainfo.xml.in:65 data/network.metainfo.xml.in:80
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "Bijgewerkte vertalingen"
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:49
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:50
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 
-#: data/network.metainfo.xml.in:63 data/network.metainfo.xml.in:78
-#: data/network.metainfo.xml.in:91 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
 msgid "Minor updates:"
 msgstr "Kleine updates:"
 
-#: data/network.metainfo.xml.in:72 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
 msgid "Fixes:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:74
+#: data/network.metainfo.xml.in:75
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:76
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:77
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.metainfo.xml.in:89
+#: data/network.metainfo.xml.in:90
 msgid "Prevent blank lines in VPN list"
-msgstr ""
-
-#: data/network.metainfo.xml.in:102
-msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 
 #~ msgid "Prevent panel icon from showing in the dock"
