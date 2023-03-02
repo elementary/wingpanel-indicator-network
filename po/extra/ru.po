@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-20 18:56+0000\n"
+"POT-Creation-Date: 2023-03-01 17:49+0000\n"
 "PO-Revision-Date: 2023-02-22 11:25+0000\n"
 "Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -32,55 +32,55 @@ msgstr "Подключайтесь к беспроводным сетям и у�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:34
+#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:46
 msgid "Improvements:"
 msgstr "Улучшения:"
 
-#: data/network.metainfo.xml.in:36
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:65 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:106
+msgid "Updated translations"
+msgstr "Обновлены переводы"
+
+#: data/network.metainfo.xml.in:48
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Показ режима «В полёте» и проводных устройств как компактные круглые кнопки"
 
-#: data/network.metainfo.xml.in:37
+#: data/network.metainfo.xml.in:49
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 "VPN-подключения отображаются в виде круглых кнопок и позволяют подключиться "
 "к нескольким сетям одновременно"
 
-#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:51
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:92
-msgid "Updated translations"
-msgstr "Обновлены переводы"
-
-#: data/network.metainfo.xml.in:49 data/network.metainfo.xml.in:64
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:63 data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:91 data/network.metainfo.xml.in:104
 msgid "Minor updates:"
 msgstr "Незначительные обновления:"
 
-#: data/network.metainfo.xml.in:58 data/network.metainfo.xml.in:73
-#: data/network.metainfo.xml.in:86
+#: data/network.metainfo.xml.in:72 data/network.metainfo.xml.in:87
+#: data/network.metainfo.xml.in:100
 msgid "Fixes:"
 msgstr "Исправления:"
 
-#: data/network.metainfo.xml.in:60
+#: data/network.metainfo.xml.in:74
 msgid "Ensure correct tooltip on system start"
 msgstr "Правильная всплывающая подсказка при запуске системы"
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:75
 msgid "Prevent connecting to invalid VPNs"
 msgstr "Запрет подключения к недействительным VPN"
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:76
 msgid "Show correct info for WPA3 networks"
 msgstr "Корректное отображение информации о сетях с WPA3"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:89
 msgid "Prevent blank lines in VPN list"
 msgstr "Устранено появление пустых строк в списке VPN"
 
-#: data/network.metainfo.xml.in:88
+#: data/network.metainfo.xml.in:102
 msgid "Don't launch Captive Network Assistant with full connectivity"
 msgstr ""
 "Помощник соединения с сетью больше не запускается, если соединение "
