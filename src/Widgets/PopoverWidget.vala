@@ -169,8 +169,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         nm_client.notify["networking-enabled"].connect (update_state);
 
         vpn_interface.notify["state"].connect (update_state);
-
-        other_box.max_children_per_line = other_box.get_children ().length ();
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
@@ -183,6 +181,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             flowboxchild.add (widget_interface);
 
             other_box.add (flowboxchild);
+            other_box.max_children_per_line = other_box.get_children ().length ();
             return;
         }
 
@@ -253,6 +252,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 unowned var parent = widget_interface.get_parent ();
                 if (parent is Gtk.FlowBoxChild) {
                     parent.destroy ();
+                    other_box.max_children_per_line = other_box.get_children ().length ();
                 }
 
                 widget_interface.sep.destroy ();
