@@ -149,7 +149,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
             break;
         case Network.State.FAILED:
             image.icon_name = "panel-network-wired-error-symbolic";
-            break;            
+            break;
         default:
             image.icon_name = "panel-network-wired-offline-symbolic";
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
