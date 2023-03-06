@@ -83,7 +83,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             airplane_box.add (airplane_toggle);
             airplane_box.add (airplane_label);
 
-            other_box.add (airplane_box);
+            var airplane_child = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            airplane_child.add (airplane_box);
+
+            other_box.add (airplane_child);
 
             airplane_toggle.toggled.connect (() => {
                 nm_client.dbus_call.begin (
@@ -168,7 +174,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     private void add_interface (WidgetNMInterface widget_interface) {
         if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
-            other_box.add (widget_interface);
+
+            var flowboxchild = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            flowboxchild.add (widget_interface);
+
+            other_box.add (flowboxchild);
             return;
         }
 
