@@ -147,7 +147,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         });
     }
 
-    public void update () {
+    private void update () {
         switch (wifi_device.state) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:

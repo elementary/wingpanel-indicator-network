@@ -80,7 +80,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
         prepare.begin ();
     }
 
-    public void update () {
+    private void update () {
         switch (device.state) {
             case NM.DeviceState.UNKNOWN:
             case NM.DeviceState.UNMANAGED:
