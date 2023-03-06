@@ -29,10 +29,11 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
-    <release version="7.0.2" date="2023-03-01" urgency="medium">
+    <release version="7.0.2" date="2023-03-06" urgency="medium">
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Show cellular devices as compact circle buttons</li>
           <li>Updated translations</li>
         </ul>
       </description>
