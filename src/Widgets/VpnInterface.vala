@@ -30,7 +30,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
         nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
 
-        update ();
+        check_vpn_availability ();
 
         vpn_list.add.connect (check_vpn_availability);
         vpn_list.remove.connect (check_vpn_availability);
@@ -44,11 +44,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         vpn_list.child_activated.connect ((child) => {
             vpn_activate_cb ((VpnMenuItem) child);
         });
-    }
-
-    public override void update () {
-        check_vpn_availability ();
-        base.update ();
     }
 
     private void check_vpn_availability () {
@@ -111,7 +106,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         if (remote_connection.get_connection_type () == NM.SettingVpn.SETTING_NAME) {
             var item = new VpnMenuItem (remote_connection);
             vpn_list.add (item);
-            update ();
+            check_vpn_availability ();
         }
     }
 
@@ -120,7 +115,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
             unowned var menu_item = (VpnMenuItem) child;
             if (menu_item.remote_connection == connection) {
                 menu_item.destroy ();
-                update ();
+                check_vpn_availability ();
                 return;
             }
         }
