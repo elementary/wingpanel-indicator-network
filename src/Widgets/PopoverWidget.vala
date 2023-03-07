@@ -296,6 +296,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             debug ("Wired interface added");
         } else if (device is NM.DeviceModem) {
             widget_interface = new ModemInterface (nm_client, device);
+            widget_interface.notify["extra-info"].connect (update_state);
             debug ("Modem interface added");
         } else {
             debug ("Unknown device: %s\n", device.get_device_type ().to_string ());
@@ -306,15 +307,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             network_interface.append (widget_interface);
             add_interface (widget_interface);
             widget_interface.notify["state"].connect (update_state);
-            widget_interface.notify["extra-info"].connect (update_state);
-
         }
 
         update_interfaces_names ();
-
-        foreach (var inter in network_interface) {
-            inter.update ();
-        }
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();
