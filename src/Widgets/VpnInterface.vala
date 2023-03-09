@@ -12,9 +12,9 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         Object (nm_client: nm_client);
     }
 
-    public uint children_per_line_vpn { 
-        get {return vpn_list.get_max_children_per_line();}
-        set {vpn_list.set_max_children_per_line (value);}
+    public uint children_per_line_vpn {
+        get { return vpn_list.get_max_children_per_line (); }
+        set { vpn_list.set_max_children_per_line (value); }
     }
 
     construct {
