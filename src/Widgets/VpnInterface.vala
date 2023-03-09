@@ -12,6 +12,11 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         Object (nm_client: nm_client);
     }
 
+    public uint children_per_line_vpn { 
+        get {return vpn_list.get_max_children_per_line();}
+        set {vpn_list.set_max_children_per_line (value);}
+    }
+
     construct {
         vpn_list = new Gtk.FlowBox () {
             column_spacing = 6,
@@ -21,7 +26,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
             margin_end = 12,
             margin_bottom = 6,
             margin_start = 12,
-            max_children_per_line = 3,
+            max_children_per_line = children_per_line_vpn,
             selection_mode = Gtk.SelectionMode.NONE
         };
 
