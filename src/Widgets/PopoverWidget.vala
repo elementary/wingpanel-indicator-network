@@ -19,7 +19,7 @@
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
     private NM.VpnConnection? active_vpn_connection = null;
-    
+
     private VpnInterface vpn_interface;
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
@@ -37,8 +37,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public bool is_in_session { get; construct; }
 
     public uint children_per_line {
-        get {return other_box.get_max_children_per_line();}
-        set {other_box.set_max_children_per_line(value);}
+        get { return other_box.get_max_children_per_line (); }
+        set { other_box.set_max_children_per_line (value); }
     }
 
     public signal void settings_shown ();
@@ -190,7 +190,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
             other_box.add (flowboxchild);
 
-            children_per_line = other_box.get_children().length();
+            children_per_line = other_box.get_children ().length ();
             vpn_interface.children_per_line_vpn = children_per_line;
 
             return;
@@ -263,8 +263,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 unowned var parent = widget_interface.get_parent ();
                 if (parent is Gtk.FlowBoxChild) {
                     parent.destroy ();
-                    children_per_line = other_box.get_children().length();
-                    vpn_interface.children_per_line_vpn = children_per_line;                   
+                    children_per_line = other_box.get_children ().length ();
+                    vpn_interface.children_per_line_vpn = children_per_line;
                 }
 
                 widget_interface.sep.destroy ();
