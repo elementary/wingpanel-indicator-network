@@ -191,6 +191,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             other_box.add (flowboxchild);
 
             children_per_line = other_box.get_children ().length ();
+            if (children_per_line < 2) children_per_line = 2;
+            if (children_per_line > 3) children_per_line = 3;
             vpn_interface.children_per_line_vpn = children_per_line;
 
             return;
@@ -264,6 +266,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 if (parent is Gtk.FlowBoxChild) {
                     parent.destroy ();
                     children_per_line = other_box.get_children ().length ();
+                    if (children_per_line < 2) children_per_line = 2;
+                    if (children_per_line > 3) children_per_line = 3;
                     vpn_interface.children_per_line_vpn = children_per_line;
                 }
 
