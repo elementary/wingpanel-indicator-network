@@ -214,8 +214,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         update_active_ap ();
 
-        update ();
-
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.active = !locked;
 
