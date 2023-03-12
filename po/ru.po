@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-02 15:36+0000\n"
-"PO-Revision-Date: 2022-12-03 08:25+0000\n"
-"Last-Translator: lenemter <lenemter@gmail.com>\n"
+"PO-Revision-Date: 2023-03-11 11:25+0000\n"
+"Last-Translator: Camellan <camellan@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ru/>\n"
 "Language: ru\n"
@@ -56,7 +56,7 @@ msgstr "Нажмите средней кнопкой мыши, чтобы вык
 
 #: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
-msgstr "Намжите средней кнопкой мыши, чтобы включить режим полёта"
+msgstr "Нажмите средней кнопкой мыши, чтобы включить режим полёта"
 
 #: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
