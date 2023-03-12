@@ -12,7 +12,6 @@
 
 .image-button:focus.circular {
     background: alpha(@text_color, 0.1);
-    border-color: @selected_bg_color;
 }
 
 .image-button:checked.circular {
