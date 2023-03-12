@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2023-03-12 21:08+0000\n"
-"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Last-Translator: Cleiton Floss <cleitonfloss@tutanota.de>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ka/>\n"
 "Language: ka\n"
@@ -71,7 +71,7 @@ msgstr "დამალულ ქსელთან მიერთება…"
 
 #: src/Widgets/PopoverWidget.vala:129
 msgid "Network Settings…"
-msgstr "ქსელის მორგება…"
+msgstr "ქსელის პარამეტრები…"
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
