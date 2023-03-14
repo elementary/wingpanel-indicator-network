@@ -4,23 +4,16 @@
 */
 
 .image-button.circular {
+    background: alpha(@text_color, 0.1);
     border: none;
     box-shadow: none;
     min-height: 2.1666rem; /* 26px */
     min-width: 2.1666rem; /* 26px */
 }
 
-.image-button:not(:focus).circular {
-    background: alpha(@text_color, 0.1);
-}
-
 .image-button:checked.circular {
     background: @selected_bg_color;
     color: @selected_fg_color;
-}
-
-.image-button:not(:checked).circular {
-    background: alpha(@text_color, 0.1);
 }
 
 .image-button:disabled.circular {
