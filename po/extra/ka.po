@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-02 15:36+0000\n"
-"PO-Revision-Date: 2023-04-14 00:36+0000\n"
+"PO-Revision-Date: 2023-04-15 14:59+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ka/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
-msgstr ""
+msgstr "ქსელის ინდიკატორი"
 
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
@@ -33,7 +33,7 @@ msgstr "elementary, Inc."
 
 #: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
 msgid "Improvements:"
-msgstr ""
+msgstr "გაუმჯობესებები:"
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
@@ -57,7 +57,7 @@ msgstr "მცირე განახლებები:"
 
 #: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
 msgid "Fixes:"
-msgstr ""
+msgstr "შეცდომების გასწორებები:"
 
 #: data/network.metainfo.xml.in:75
 msgid "Ensure correct tooltip on system start"
