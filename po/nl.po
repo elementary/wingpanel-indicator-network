@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-03-02 15:36+0000\n"
-"PO-Revision-Date: 2023-02-11 14:25+0000\n"
+"PO-Revision-Date: 2023-05-07 01:06+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
@@ -12,16 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
-msgstr "Bedraad"
+msgstr "Bekabeld"
 
 #: src/Indicator.vala:135
 msgid "Connecting to wired network"
-msgstr "Verbinden met bedraad netwerk"
+msgstr "Verbinden met bekabeld netwerk"
 
 #: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
@@ -30,7 +30,7 @@ msgstr "Verbinding maken met “%s”"
 
 #: src/Indicator.vala:148
 msgid "Connected to wired network"
-msgstr "Verbonden met bedraad netwerk"
+msgstr "Verbonden met bekabeld netwerk"
 
 #: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
