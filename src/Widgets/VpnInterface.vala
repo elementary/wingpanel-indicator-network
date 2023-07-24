@@ -56,13 +56,14 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void active_connected_added_cb (NM.ActiveConnection active_connection) {
-        if (!active_connection.vpn) {
+        unowned string connection_type = active_connection.get_connection_type ();
+        if (connection_type != NM.SettingVpn.SETTING_NAME && connection_type != NM.SettingWireGuard.SETTING_NAME) {
             return;
         }
 
         var menu_item = get_item_for_active_connection (active_connection);
         if (menu_item != null) {
-            menu_item.vpn_connection = (NM.VpnConnection) active_connection;
+            menu_item.vpn_connection = active_connection;
         }
     }
 
@@ -80,13 +81,13 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
         item.cancellable = new Cancellable ();
 
-        if (item.vpn_connection != null && item.vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED) {
+        if (item.vpn_connection != null && item.vpn_connection.get_state () == NM.ActiveConnectionState.ACTIVATED) {
             nm_client.deactivate_connection_async.begin (item.vpn_connection, item.cancellable, (obj, res) => {
                 try {
                     ((NM.Client) obj).deactivate_connection_async.end (res);
                     item.cancellable = null;
                 } catch (Error e) {
-                    critical ("Unable to deactivate VPN: %s", e.message);
+                    critical ("Unable to deactivate VPN or Wireguard: %s", e.message);
                 }
             });
         } else {
@@ -95,7 +96,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
                     ((NM.Client) obj).activate_connection_async.end (res);
                     item.cancellable = null;
                 } catch (Error e) {
-                    critical ("Unable to activate VPN: %s", e.message);
+                    critical ("Unable to activate VPN or Wireguard: %s", e.message);
                 }
             });
         }
@@ -103,7 +104,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
 
     private void vpn_added_cb (Object obj) {
         var remote_connection = (NM.RemoteConnection) obj;
-        if (remote_connection.get_connection_type () == NM.SettingVpn.SETTING_NAME) {
+        unowned string connection_type = remote_connection.get_connection_type ();
+        if (connection_type == NM.SettingVpn.SETTING_NAME || connection_type == NM.SettingWireGuard.SETTING_NAME) {
             var item = new VpnMenuItem (remote_connection);
             vpn_list.add (item);
             check_vpn_availability ();
