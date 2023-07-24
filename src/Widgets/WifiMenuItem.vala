@@ -166,6 +166,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
                     critical ("An access point is being connected but not active.");
                 }
                 break;
+            default:
+                break;
         }
     }
 
