@@ -18,7 +18,6 @@
 
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
-    private NM.VpnConnection? active_vpn_connection = null;
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
@@ -340,16 +339,25 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void update_vpn_connection () {
-        active_vpn_connection = null;
-
+        /* Stupid heuristic for now: at least one connection must be secure to
+         * display the secure badge. */
+        // Reset the current status
+        secure = false;
         nm_client.get_active_connections ().foreach ((ac) => {
-            if (active_vpn_connection == null && ac.vpn) {
-                active_vpn_connection = (NM.VpnConnection) ac;
-
-                secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                active_vpn_connection.vpn_state_changed.connect (() => {
-                    secure = active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED;
-                });
+            unowned string connection_type = ac.get_connection_type ();
+            if (connection_type == NM.SettingVpn.SETTING_NAME) {
+                /* We cannot rely on the sole state_changed signal, as it will
+                 * silently ignore sub-vpn specific states, like tun/tap
+                 * interface connection etc. That's why we keep a separate
+                 * implementation for the signal handlers. */
+                var _connection = (NM.VpnConnection) ac;
+                secure = secure || (_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED);
+                _connection.vpn_state_changed.disconnect (update_vpn_connection);
+                _connection.vpn_state_changed.connect (update_vpn_connection);
+            } else if (connection_type == NM.SettingWireGuard.SETTING_NAME) {
+                secure = secure || (ac.get_state () == NM.ActiveConnectionState.ACTIVATED);
+                ac.state_changed.disconnect (update_vpn_connection);
+                ac.state_changed.connect (update_vpn_connection);
             }
         });
     }
