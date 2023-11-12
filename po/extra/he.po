@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
-"PO-Revision-Date: 2022-10-19 09:57+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"PO-Revision-Date: 2023-02-20 18:56+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/he/>\n"
@@ -17,74 +17,78 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 4.14.2\n"
 
-#: data/network.appdata.xml.in:6
+#: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
 msgstr "מחוון רשת"
 
-#: data/network.appdata.xml.in:7
+#: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:64
-msgid "Minor updates:"
-msgstr "עדכונים משניים:"
+#: data/network.metainfo.xml.in:27
+msgid "elementary, Inc."
+msgstr "elementary בע״מ"
 
-#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
-#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
-#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
-#: data/network.appdata.xml.in:80
+#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
+msgid "Improvements:"
+msgstr "שיפורים:"
+
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "עודכנו התרגומים"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
-#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+#: data/network.metainfo.xml.in:49
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr "מצב טיסה והתקנים קוויים מוצגים ככפתורים עגולים קטנים"
+
+#: data/network.metainfo.xml.in:50
+msgid ""
+"Show VPN connections as circle buttons and allow connecting multiple at once"
+msgstr "הצגת חיבורי VPN ככפתורים עגולים ולאפשר להתחבר לכמה במקביל"
+
+#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
+msgid "Minor updates:"
+msgstr "עדכונים משניים:"
+
+#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
 msgid "Fixes:"
 msgstr "תיקונים:"
 
-#: data/network.appdata.xml.in:23
+#: data/network.metainfo.xml.in:75
 msgid "Ensure correct tooltip on system start"
 msgstr "מתבצע וידוא שמופיעה העצה הנכונה עם הפעלת המערכת"
 
-#: data/network.appdata.xml.in:24
+#: data/network.metainfo.xml.in:76
 msgid "Prevent connecting to invalid VPNs"
 msgstr "מניעת התחברות עם VPNים שגויים"
 
-#: data/network.appdata.xml.in:25
+#: data/network.metainfo.xml.in:77
 msgid "Show correct info for WPA3 networks"
 msgstr "הצגת המידע הנכון לרשתות WPA3"
 
-#: data/network.appdata.xml.in:37
+#: data/network.metainfo.xml.in:90
 msgid "Prevent blank lines in VPN list"
 msgstr "נמנעו שורות ריקות ברשימת חיבורי ה־VPN"
 
-#: data/network.appdata.xml.in:49
-msgid "Don't launch Captive Network Assistant with full connectivity"
-msgstr "לא להפעיל את מסייע שובה הרשת עם קישוריות מלאה"
+#~ msgid "Don't launch Captive Network Assistant with full connectivity"
+#~ msgstr "לא להפעיל את מסייע שובה הרשת עם קישוריות מלאה"
 
-#: data/network.appdata.xml.in:61
-msgid "Fix VPN spinning after connecting"
-msgstr "תיקון שבשבת VPN מסתובבת לאחר החיבור"
+#~ msgid "Fix VPN spinning after connecting"
+#~ msgstr "תיקון שבשבת VPN מסתובבת לאחר החיבור"
 
-#: data/network.appdata.xml.in:62
-msgid "Improve detecting network encryption type"
-msgstr "שיפור זיהוי סוג הצפנת רשת"
+#~ msgid "Improve detecting network encryption type"
+#~ msgstr "שיפור זיהוי סוג הצפנת רשת"
 
-#: data/network.appdata.xml.in:66
-msgid "Ellipsize long network names"
-msgstr "קיצור שמות רשתות ארוכים"
+#~ msgid "Ellipsize long network names"
+#~ msgstr "קיצור שמות רשתות ארוכים"
 
-#: data/network.appdata.xml.in:67
-msgid "Show tooltip on hover"
-msgstr "נוספה חלונית עצה בעת מעבר עם העכבר"
+#~ msgid "Show tooltip on hover"
+#~ msgstr "נוספה חלונית עצה בעת מעבר עם העכבר"
 
-#: data/network.appdata.xml.in:79
-msgid "Prevent panel icon from showing in the dock"
-msgstr "למנוע מסמל בלוח מלהופיע במעגן"
-
-#: data/network.appdata.xml.in:89
-msgid "elementary, Inc."
-msgstr "elementary בע״מ"
+#~ msgid "Prevent panel icon from showing in the dock"
+#~ msgstr "למנוע מסמל בלוח מלהופיע במעגן"

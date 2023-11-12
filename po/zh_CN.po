@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2022-12-10 05:25+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -15,111 +15,109 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "有线网络"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 msgid "Connecting to wired network"
 msgstr "正在连接有线网络"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "正在连接 “%s”"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 msgid "Connected to wired network"
 msgstr "有线网络已连接"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” 已连接"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr "连接失败"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "已断开"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 msgid "Not connected"
 msgstr "未连接"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr "点击鼠标中键关闭飞行模式"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr "点击鼠标中键开启飞行模式"
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr "未知网络"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "无法连接到此 VPN。"
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "未知设备"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "无法连接"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "40/64-bit WEP 加密"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "104/128-bit WEP 加密"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "WPA3 加密"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "WPA 加密"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "已加密的"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "不安全的"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "无可用接入点"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "正在扫描接入点…"
-
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "飞行模式"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:125
 msgid "Connect to Hidden Network…"
 msgstr "连接隐藏网络…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:129
 msgid "Network Settings…"
 msgstr "网络设置…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "未知设备"
+
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "无可用接入点"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "正在扫描接入点…"
+
+#: src/Widgets/WifiMenuItem.vala:69
+msgid "Unable to connect"
+msgstr "无法连接"
+
+#: src/Widgets/WifiMenuItem.vala:114
+msgid "40/64-bit WEP encrypted"
+msgstr "40/64-bit WEP 加密"
+
+#: src/Widgets/WifiMenuItem.vala:117
+msgid "104/128-bit WEP encrypted"
+msgstr "104/128-bit WEP 加密"
+
+#: src/Widgets/WifiMenuItem.vala:120
+msgid "WPA3 encrypted"
+msgstr "WPA3 加密"
+
+#: src/Widgets/WifiMenuItem.vala:123
+msgid "WPA encrypted"
+msgstr "WPA 加密"
+
+#: src/Widgets/WifiMenuItem.vala:126
+msgid "Encrypted"
+msgstr "已加密的"
+
+#: src/Widgets/WifiMenuItem.vala:128
+msgid "Unsecured"
+msgstr "不安全的"
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "无法连接到此 VPN。"
 
 #, c-format
 #~ msgid "Unknown type: %s "

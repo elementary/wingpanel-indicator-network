@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2018-02-07 03:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -15,124 +15,122 @@ msgstr ""
 "X-Generator: Weblate 2.18\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "有線網路"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "連接到隱藏的網路…"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "連接中"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "連接到隱藏的網路…"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "已連線"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "已斷線"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "已連線"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "無法連到這個虛擬私用網路 (VPN)。"
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "未知裝置"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-#, fuzzy
-msgid "40/64-bit WEP encrypted"
-msgstr "這個網路使用 40/64 位元 WEP 加密。"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-#, fuzzy
-msgid "104/128-bit WEP encrypted"
-msgstr "這個網路使用 104/128 位元 WEP 加密。"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "這個網路使用 40/64 位元 WEP 加密。"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr ""
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr ""
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "沒有可用的存取點"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "掃描無線存取點…"
-
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "飛安模式已啟用"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:125
 msgid "Connect to Hidden Network…"
 msgstr "連接到隱藏的網路…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:129
 msgid "Network Settings…"
 msgstr "網路設定值…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "未知裝置"
+
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "沒有可用的存取點"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "掃描無線存取點…"
+
+#: src/Widgets/WifiMenuItem.vala:69
+msgid "Unable to connect"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:114
+#, fuzzy
+msgid "40/64-bit WEP encrypted"
+msgstr "這個網路使用 40/64 位元 WEP 加密。"
+
+#: src/Widgets/WifiMenuItem.vala:117
+#, fuzzy
+msgid "104/128-bit WEP encrypted"
+msgstr "這個網路使用 104/128 位元 WEP 加密。"
+
+#: src/Widgets/WifiMenuItem.vala:120
+#, fuzzy
+msgid "WPA3 encrypted"
+msgstr "這個網路使用 40/64 位元 WEP 加密。"
+
+#: src/Widgets/WifiMenuItem.vala:123
+msgid "WPA encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:126
+msgid "Encrypted"
+msgstr ""
+
+#: src/Widgets/WifiMenuItem.vala:128
+msgid "Unsecured"
+msgstr ""
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "無法連到這個虛擬私用網路 (VPN)。"
 
 #, c-format
 #~ msgid "Unknown type: %s "

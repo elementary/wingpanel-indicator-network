@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019-2023 elementary, Inc. <contact@elementary.io> -->
+<component type="addon">
+  <id>io.elementary.wingpanel.network</id>
+  <translation type="gettext">io.elementary.appcenter</translation>
+  <extends>io.elementary.wingpanel</extends>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <compulsory_for_desktop>Pantheon</compulsory_for_desktop>
+
+  <name>Network Indicator</name>
+  <summary>Connect to wireless networks and manage VPNs</summary>
+  <icon type="stock">preferences-system-network</icon>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/elementary/wingpanel-indicator-network/7.0.2/data/screenshot.png</image>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">http://elementary.io/</url>
+  <url type="bugtracker">https://github.com/elementary/wingpanel-indicator-network/issues/new/choose</url>
+  <url type="donation">https://elementary.io/get-involved#funding</url>
+  <url type="help">https://github.com/elementary/wingpanel-indicator-network/discussions/categories/q-a</url>
+  <url type="translate">https://l10n.elementary.io/projects/wingpanel/wingpanel-indicator-network/</url>
+
+  <developer_name>elementary, Inc.</developer_name>
+  <project_group>elementary</project_group>
+  <update_contact>contact_at_elementary.io</update_contact>
+
+  <releases>
+    <release version="7.0.2" date="2023-09-25" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/292">Grey rectangluar box in the airplane mode switch</issue>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/pull/308">Small icons on HiDPI displays</issue>
+      </issues>
+    </release>
+
+    <release version="7.0.1" date="2023-03-01" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/283">Airplane mode button does not work</issue>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/284">Disconnecting VPN does not allow to connect again</issue>
+      </issues>
+    </release>
+
+    <release version="7.0.0" date="2023-02-27" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Show Airplane Mode and wired devices as compact circle buttons</li>
+          <li>Show VPN connections as circle buttons and allow connecting multiple at once</li>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/134">VPN switch jumps due to WiFi list height change</issue>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/152">Network adapter names aren't truncated</issue>
+        <issue url="https://github.com/elementary/icons/issues/719">Disabled wireless inconsistent</issue>
+        <issue url="https://github.com/elementary/icons/issues/1040">Consider making wifi button bigger</issue>
+      </issues>
+    </release>
+
+    <release version="2.3.4" date="2022-10-15" urgency="medium">
+      <description>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="2.3.3" date="2022-06-30" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Ensure correct tooltip on system start</li>
+          <li>Prevent connecting to invalid VPNs</li>
+          <li>Show correct info for WPA3 networks</li>
+        </ul>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="2.3.2" date="2021-11-23" urgency="medium">
+      <description>
+        <p>Fixes:</p>
+        <ul>
+          <li>Prevent blank lines in VPN list</li>
+        </ul>
+        <p>Minor updates:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="2.3.1" date="2021-10-22"/>
+    <release version="2.3.0" date="2021-07-14"/>
+    <release version="2.2.4" date="2020-05-28"/>
+    <release version="2.2.3" date="2020-03-27"/>
+  </releases>
+</component>

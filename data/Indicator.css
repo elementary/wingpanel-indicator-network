@@ -1,0 +1,21 @@
+/*
+* SPDX-License-Identifier: GPL-2.0-or-later
+* SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
+*/
+
+.image-button.circular {
+    background: alpha(@text_color, 0.1);
+    border: none;
+    box-shadow: none;
+    min-height: 2.1666rem; /* 26px */
+    min-width: 2.1666rem; /* 26px */
+}
+
+.image-button:checked.circular {
+    background: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+.image-button:disabled.circular {
+    background: @insensitive_bg_color;
+}

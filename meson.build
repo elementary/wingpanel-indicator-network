@@ -1,10 +1,11 @@
 project(
     'network',
     'vala', 'c',
-    version: '2.3.4'
+    version: '7.0.2'
 )
 
 gettext_name = meson.project_name() + '-indicator'
+gnome = import('gnome')
 i18n = import('i18n')
 
 prefix = get_option('prefix')
@@ -31,21 +32,28 @@ config_file = configure_file(
     configuration: config_data
 )
 
+gresource = gnome.compile_resources(
+    'gresource',
+    'data' / 'network.gresource.xml',
+    source_dir: 'data'
+)
+
 shared_module(
     meson.project_name(),
     config_file,
     'src/Indicator.vala',
+    'src/rfkill.vala',
     'src/Utils.vala',
-    'src/common/rfkill.vala',
-    'src/common/Widgets/VpnMenuItem.vala',
-    'src/common/Widgets/WidgetNMInterface.vala',
-    'src/common/Widgets/WifiMenuItem.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/EtherInterface.vala',
     'src/Widgets/ModemInterface.vala',
-    'src/Widgets/VpnInterface.vala',
-    'src/Widgets/WifiInterface.vala',
     'src/Widgets/PopoverWidget.vala',
+    'src/Widgets/VpnInterface.vala',
+    'src/Widgets/VpnMenuItem.vala',
+    'src/Widgets/WidgetNMInterface.vala',
+    'src/Widgets/WifiInterface.vala',
+    'src/Widgets/WifiMenuItem.vala',
+    gresource,
     dependencies: [
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
@@ -62,3 +70,8 @@ shared_module(
 
 subdir('data')
 subdir('po')
+vapigen = find_program('vapigen', required: false)
+g_ir_dep = dependency('gobject-introspection-1.0', required: false)
+if vapigen.found() and g_ir_dep.found()
+    subdir('vapi')
+endif

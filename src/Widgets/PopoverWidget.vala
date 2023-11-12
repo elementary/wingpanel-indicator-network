@@ -18,18 +18,18 @@
 
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
-    private NM.VpnConnection? active_vpn_connection = null;
 
-    private GLib.List<WidgetNMInterface>? network_interface;
+    public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
     public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
-    public Gtk.Box other_box { get; private set; }
-    public Gtk.Box wifi_box { get; private set; }
+    private Gtk.FlowBox other_box;
+    private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
     private Gtk.ModelButton hidden_item;
+    private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
 
@@ -44,7 +44,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         orientation = Gtk.Orientation.VERTICAL;
 
-        other_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        other_box = new Gtk.FlowBox () {
+            column_spacing = 6,
+            row_spacing = 12,
+            homogeneous = true,
+            margin_top = 6,
+            margin_end = 12,
+            margin_bottom = 6,
+            margin_start = 12,
+            max_children_per_line = 3,
+            selection_mode = Gtk.SelectionMode.NONE
+        };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
@@ -55,33 +65,65 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            var airplane_switch = new Granite.SwitchModelButton (_("Airplane Mode"));
-            airplane_switch.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
 
-            var sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
-                margin_top = 3,
-                margin_bottom = 3
+            var airplane_toggle = new Gtk.ToggleButton () {
+                halign = Gtk.Align.CENTER,
+                image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
             };
+            airplane_toggle.get_style_context ().add_class ("circular");
+            airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            add (airplane_switch);
-            add (sep);
+            var airplane_label = new Gtk.Label (_("Airplane Mode"));
+            airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
-            airplane_switch.notify["active"].connect (() => {
-                try {
-                    nm_client.networking_set_enabled (!airplane_switch.active);
-                } catch (Error e) {
-                    warning (e.message);
-                }
+            var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
+            airplane_box.add (airplane_toggle);
+            airplane_box.add (airplane_label);
+
+            var airplane_child = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            airplane_child.add (airplane_box);
+
+            other_box.add (airplane_child);
+
+            airplane_toggle.toggled.connect (() => {
+                nm_client.dbus_call.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", new Variant.tuple ({new Variant.boolean (!airplane_toggle.active)}),
+                    null, -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
             });
 
-            if (!airplane_switch.get_active () && !nm_client.networking_get_enabled ()) {
-                airplane_switch.activate ();
+            if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
+                airplane_toggle.activate ();
             }
         }
 
-        add (other_box);
-        add (wifi_box);
+        var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+
+        var toggle_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        toggle_box.add (other_box);
+        toggle_box.add (other_sep);
+
+        toggle_revealer = new Gtk.Revealer ();
+        toggle_revealer.add (toggle_box);
+
+        add (toggle_revealer);
         add (vpn_box);
+        add (wifi_box);
 
         if (is_in_session) {
             hidden_item = new Gtk.ModelButton ();
@@ -95,44 +137,54 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             add (show_settings_button);
 
             show_settings_button.clicked.connect (show_settings);
-
-
         }
 
-        /* Monitor network manager */
-        nm_client.notify["active-connections"].connect (update_vpn_connection);
-
-        nm_client.device_added.connect (device_added_cb);
-        nm_client.device_removed.connect (device_removed_cb);
-
-        nm_client.notify["networking-enabled"].connect (update_state);
+        var vpn_interface = new VpnInterface (nm_client);
+        network_interface.append (vpn_interface);
+        add_interface (vpn_interface);
 
         var devices = nm_client.get_devices ();
-        for (var i = 0; i < devices.length; i++)
+        for (var i = 0; i < devices.length; i++) {
             device_added_cb (devices.get (i));
+        }
 
-        // Vpn interface
-        WidgetNMInterface widget_interface = new VpnInterface (nm_client);
-        network_interface.append (widget_interface);
-        add_interface (widget_interface);
-        widget_interface.notify["state"].connect (update_state);
-
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         show_all ();
         update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
             bool found = false;
-            wifi_box.get_children ().foreach ((child) => {
-                if (child is Network.WifiInterface && ((Network.WifiInterface) child).hidden_sensitivity && !found) {
-                    ((Network.WifiInterface) child).connect_to_hidden ();
+            foreach (unowned var iface in network_interface) {
+                if (iface is WifiInterface && ((WifiInterface) iface).hidden_sensitivity && !found) {
+                    ((WifiInterface) iface).connect_to_hidden ();
                     found = true;
                 }
-            });
+            }
         });
+
+        /* Monitor network manager */
+        nm_client.device_added.connect (device_added_cb);
+        nm_client.device_removed.connect (device_removed_cb);
+        nm_client.notify["active-connections"].connect (update_vpn_connection);
+        nm_client.notify["networking-enabled"].connect (update_state);
+
+        vpn_interface.notify["state"].connect (update_state);
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        Gtk.Box container_box = other_box;
+        if (widget_interface is EtherInterface) {
+
+            var flowboxchild = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            flowboxchild.add (widget_interface);
+
+            other_box.add (flowboxchild);
+            return;
+        }
+
+        var container_box = wifi_box;
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
@@ -142,13 +194,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
 
-                wifi_box.get_children ().foreach ((child) => {
-                    if (child is Network.WifiInterface) {
-                        hidden_sensitivity = hidden_sensitivity || ((Network.WifiInterface) child).hidden_sensitivity;
+                foreach (unowned var iface in network_interface) {
+                    if (iface is WifiInterface) {
+                        hidden_sensitivity = hidden_sensitivity || ((WifiInterface) iface ).hidden_sensitivity;
                     }
 
                     hidden_item.sensitive = hidden_sensitivity;
-                });
+                }
             });
         }
 
@@ -164,17 +216,17 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     public void opened () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).start_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).start_scanning ();
             }
         }
     }
 
     public void closed () {
-        foreach (var widget in wifi_box.get_children ()) {
-            if (widget is WifiInterface) {
-                ((WifiInterface)widget).cancel_scanning ();
+        foreach (unowned var iface in network_interface) {
+            if (iface is WifiInterface) {
+                ((WifiInterface) iface).cancel_scanning ();
             }
         }
     }
@@ -193,8 +245,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     private void device_removed_cb (NM.Device device) {
         foreach (var widget_interface in network_interface) {
-            if (widget_interface.is_device (device)) {
+            if (widget_interface.device == device) {
                 network_interface.remove (widget_interface);
+
+                unowned var parent = widget_interface.get_parent ();
+                if (parent is Gtk.FlowBoxChild) {
+                    parent.destroy ();
+                }
 
                 widget_interface.sep.destroy ();
                 widget_interface.destroy ();
@@ -202,6 +259,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             }
         }
 
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -237,6 +295,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             debug ("Wired interface added");
         } else if (device is NM.DeviceModem) {
             widget_interface = new ModemInterface (nm_client, device);
+            widget_interface.notify["extra-info"].connect (update_state);
             debug ("Modem interface added");
         } else {
             debug ("Unknown device: %s\n", device.get_device_type ().to_string ());
@@ -247,16 +306,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             network_interface.append (widget_interface);
             add_interface (widget_interface);
             widget_interface.notify["state"].connect (update_state);
-            widget_interface.notify["extra-info"].connect (update_state);
-
         }
 
         update_interfaces_names ();
 
-        foreach (var inter in network_interface) {
-            inter.update ();
-        }
-
+        toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();
         show_all ();
     }
@@ -285,31 +339,26 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void update_vpn_connection () {
-        active_vpn_connection = null;
-
+        /* Stupid heuristic for now: at least one connection must be secure to
+         * display the secure badge. */
+        // Reset the current status
+        secure = false;
         nm_client.get_active_connections ().foreach ((ac) => {
-            if (active_vpn_connection == null && ac.get_vpn ()) {
-                active_vpn_connection = (NM.VpnConnection)ac;
-                update_vpn_state (active_vpn_connection.get_vpn_state ());
-                active_vpn_connection.vpn_state_changed.connect (() => {
-                    update_vpn_state (active_vpn_connection.get_vpn_state ());
-                });
+            unowned string connection_type = ac.get_connection_type ();
+            if (connection_type == NM.SettingVpn.SETTING_NAME) {
+                /* We cannot rely on the sole state_changed signal, as it will
+                 * silently ignore sub-vpn specific states, like tun/tap
+                 * interface connection etc. That's why we keep a separate
+                 * implementation for the signal handlers. */
+                var _connection = (NM.VpnConnection) ac;
+                secure = secure || (_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED);
+                _connection.vpn_state_changed.disconnect (update_vpn_connection);
+                _connection.vpn_state_changed.connect (update_vpn_connection);
+            } else if (connection_type == NM.SettingWireGuard.SETTING_NAME) {
+                secure = secure || (ac.get_state () == NM.ActiveConnectionState.ACTIVATED);
+                ac.state_changed.disconnect (update_vpn_connection);
+                ac.state_changed.connect (update_vpn_connection);
             }
         });
-    }
-
-    private void update_vpn_state (NM.VpnConnectionState state) {
-        switch (state) {
-            case NM.VpnConnectionState.DISCONNECTED:
-            case NM.VpnConnectionState.PREPARE:
-            case NM.VpnConnectionState.IP_CONFIG_GET:
-            case NM.VpnConnectionState.CONNECT:
-            case NM.VpnConnectionState.FAILED:
-                secure = false;
-                break;
-            case NM.VpnConnectionState.ACTIVATED:
-                secure = true;
-                break;
-        }
     }
 }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,123 +16,118 @@ msgstr ""
 "X-Generator: Weblate 2.13-dev\n"
 "X-Launchpad-Export-Date: 2017-01-27 06:18+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "Cu fir"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Conectare la o rețea ascunsă…"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Conectare"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Conectare la o rețea ascunsă…"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Conectat"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "Deconectat"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Conectat"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-#, fuzzy
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Nu se poate conecta la această rețea fără fir."
+#: src/Widgets/PopoverWidget.vala:79
+msgid "Airplane Mode"
+msgstr ""
 
-#: src/common/Widgets/WidgetNMInterface.vala:21
+#: src/Widgets/PopoverWidget.vala:125
+msgid "Connect to Hidden Network…"
+msgstr "Conectare la o rețea ascunsă…"
+
+#: src/Widgets/PopoverWidget.vala:129
+msgid "Network Settings…"
+msgstr "Setări de reţea…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: src/common/Widgets/WifiMenuItem.vala:70
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "Nici un punct de acces valabil"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "Se caută punctele de acces…"
+
+#: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/Widgets/WifiMenuItem.vala:114
 #, fuzzy
 msgid "40/64-bit WEP encrypted"
 msgstr "Această rețea folosește cripare WEP 40/64-bit."
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/Widgets/WifiMenuItem.vala:117
 #, fuzzy
 msgid "104/128-bit WEP encrypted"
 msgstr "Această rețea folosește cripare WEP 105/128-bit."
 
-#: src/common/Widgets/WifiMenuItem.vala:148
+#: src/Widgets/WifiMenuItem.vala:120
 #, fuzzy
 msgid "WPA3 encrypted"
 msgstr "Această rețea folosește cripare WEP 40/64-bit."
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/Widgets/WifiMenuItem.vala:123
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:154
+#: src/Widgets/WifiMenuItem.vala:126
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:156
+#: src/Widgets/WifiMenuItem.vala:128
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr ""
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Nici un punct de acces valabil"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Se caută punctele de acces…"
-
-#: src/Widgets/PopoverWidget.vala:58
-msgid "Airplane Mode"
-msgstr ""
-
-#: src/Widgets/PopoverWidget.vala:88
-msgid "Connect to Hidden Network…"
-msgstr "Conectare la o rețea ascunsă…"
-
-#: src/Widgets/PopoverWidget.vala:92
-msgid "Network Settings…"
-msgstr "Setări de reţea…"
+#, fuzzy
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Nu se poate conecta la această rețea fără fir."
 
 #, c-format
 #~ msgid "Unknown type: %s "

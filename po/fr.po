@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,111 +15,109 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "Filaire"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 msgid "Connecting to wired network"
 msgstr "Connexion au réseau filaire"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Connexion à « %s »"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 msgid "Connected to wired network"
 msgstr "Connecté au réseau filaire"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Connecté à « %s »"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr "Impossible de se connecter"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "Déconnecté"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 msgid "Not connected"
 msgstr "Non connecté"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr "Effectuez un clic central pour désactiver le mode avion"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr "Effectuez un clic central pour activer le mode avion"
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr "réseau inconnu"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Impossible de se connecter à ce VPN."
-
-#: src/common/Widgets/WidgetNMInterface.vala:21
-msgid "Unknown device"
-msgstr "Périphérique inconnu"
-
-#: src/common/Widgets/WifiMenuItem.vala:70
-msgid "Unable to connect"
-msgstr "Impossible de se connecter"
-
-#: src/common/Widgets/WifiMenuItem.vala:142
-msgid "40/64-bit WEP encrypted"
-msgstr "Chiffré en WEP 40/64-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:145
-msgid "104/128-bit WEP encrypted"
-msgstr "Chiffré en WEP 104/128-bit"
-
-#: src/common/Widgets/WifiMenuItem.vala:148
-msgid "WPA3 encrypted"
-msgstr "Chiffré en WPA3"
-
-#: src/common/Widgets/WifiMenuItem.vala:151
-msgid "WPA encrypted"
-msgstr "Chiffré en WPA"
-
-#: src/common/Widgets/WifiMenuItem.vala:154
-msgid "Encrypted"
-msgstr "Chiffré"
-
-#: src/common/Widgets/WifiMenuItem.vala:156
-msgid "Unsecured"
-msgstr "Non sécurisé"
-
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
-
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Aucun point d’accès disponible"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Recherche d'un point d'accès…"
-
-#: src/Widgets/PopoverWidget.vala:58
+#: src/Widgets/PopoverWidget.vala:79
 msgid "Airplane Mode"
 msgstr "Mode avion"
 
-#: src/Widgets/PopoverWidget.vala:88
+#: src/Widgets/PopoverWidget.vala:125
 msgid "Connect to Hidden Network…"
 msgstr "Se connecter à un réseau invisible…"
 
-#: src/Widgets/PopoverWidget.vala:92
+#: src/Widgets/PopoverWidget.vala:129
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
+msgid "Unknown device"
+msgstr "Périphérique inconnu"
+
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "Aucun point d’accès disponible"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "Recherche d'un point d'accès…"
+
+#: src/Widgets/WifiMenuItem.vala:69
+msgid "Unable to connect"
+msgstr "Impossible de se connecter"
+
+#: src/Widgets/WifiMenuItem.vala:114
+msgid "40/64-bit WEP encrypted"
+msgstr "Chiffré en WEP 40/64-bit"
+
+#: src/Widgets/WifiMenuItem.vala:117
+msgid "104/128-bit WEP encrypted"
+msgstr "Chiffré en WEP 104/128-bit"
+
+#: src/Widgets/WifiMenuItem.vala:120
+msgid "WPA3 encrypted"
+msgstr "Chiffré en WPA3"
+
+#: src/Widgets/WifiMenuItem.vala:123
+msgid "WPA encrypted"
+msgstr "Chiffré en WPA"
+
+#: src/Widgets/WifiMenuItem.vala:126
+msgid "Encrypted"
+msgstr "Chiffré"
+
+#: src/Widgets/WifiMenuItem.vala:128
+msgid "Unsecured"
+msgstr "Non sécurisé"
+
+#~ msgid "VPN"
+#~ msgstr "VPN"
+
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Impossible de se connecter à ce VPN."
 
 #, c-format
 #~ msgid "Unknown type: %s "

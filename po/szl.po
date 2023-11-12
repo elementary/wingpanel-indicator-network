@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,121 +14,119 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "Drōtowe"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
 msgid "Connecting to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr ""
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
+#: src/Widgets/PopoverWidget.vala:79
+msgid "Airplane Mode"
+msgstr ""
 
-#: src/common/Widgets/WidgetNMInterface.vala:21
+#: src/Widgets/PopoverWidget.vala:125
+msgid "Connect to Hidden Network…"
+msgstr "Skupluj ze skrytym necym…"
+
+#: src/Widgets/PopoverWidget.vala:129
+msgid "Network Settings…"
+msgstr "Sztelōnki necu…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "Niyznōmo maszina"
 
-#: src/common/Widgets/WifiMenuItem.vala:70
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "Niy ma żodnych pōnktōw dostympu"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "Szukanie pōnktōw dotympu…"
+
+#: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/Widgets/WifiMenuItem.vala:114
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/Widgets/WifiMenuItem.vala:117
 #, fuzzy
 #| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
 msgstr "Tyn nec używo 104/128-bitowego szyfrowanio WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:148
+#: src/Widgets/WifiMenuItem.vala:120
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "WPA3 encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/Widgets/WifiMenuItem.vala:123
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:154
+#: src/Widgets/WifiMenuItem.vala:126
 msgid "Encrypted"
 msgstr ""
 
-#: src/common/Widgets/WifiMenuItem.vala:156
+#: src/Widgets/WifiMenuItem.vala:128
 msgid "Unsecured"
 msgstr ""
 
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "VPN"
+#~ msgid "VPN"
+#~ msgstr "VPN"
 
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "Niy ma żodnych pōnktōw dostympu"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "Szukanie pōnktōw dotympu…"
-
-#: src/Widgets/PopoverWidget.vala:58
-msgid "Airplane Mode"
-msgstr ""
-
-#: src/Widgets/PopoverWidget.vala:88
-msgid "Connect to Hidden Network…"
-msgstr "Skupluj ze skrytym necym…"
-
-#: src/Widgets/PopoverWidget.vala:92
-msgid "Network Settings…"
-msgstr "Sztelōnki necu…"
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "Z tym wirtualnym prywatnym necym niy szło sie skuplować."
 
 #, c-format
 #~ msgid "Unknown type: %s "

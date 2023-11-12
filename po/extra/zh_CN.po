@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2022-01-28 10:29+0000\n"
 "Last-Translator: colindemian <colindemian@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
@@ -19,74 +19,78 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: data/network.appdata.xml.in:6
+#: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
 msgstr "网络指示器"
 
-#: data/network.appdata.xml.in:7
+#: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "连接到无线网线和管理 VPN"
 
-#: data/network.appdata.xml.in:12 data/network.appdata.xml.in:27
-#: data/network.appdata.xml.in:39 data/network.appdata.xml.in:51
-#: data/network.appdata.xml.in:64
-msgid "Minor updates:"
-msgstr "次要更新："
+#: data/network.metainfo.xml.in:27
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
-#: data/network.appdata.xml.in:14 data/network.appdata.xml.in:29
-#: data/network.appdata.xml.in:41 data/network.appdata.xml.in:53
-#: data/network.appdata.xml.in:68 data/network.appdata.xml.in:74
-#: data/network.appdata.xml.in:80
+#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
+msgid "Improvements:"
+msgstr ""
+
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "更新翻译"
 
-#: data/network.appdata.xml.in:21 data/network.appdata.xml.in:35
-#: data/network.appdata.xml.in:47 data/network.appdata.xml.in:59
+#: data/network.metainfo.xml.in:49
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr ""
+
+#: data/network.metainfo.xml.in:50
+msgid ""
+"Show VPN connections as circle buttons and allow connecting multiple at once"
+msgstr ""
+
+#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
+msgid "Minor updates:"
+msgstr "次要更新："
+
+#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
 msgid "Fixes:"
 msgstr "修复："
 
-#: data/network.appdata.xml.in:23
+#: data/network.metainfo.xml.in:75
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.appdata.xml.in:24
+#: data/network.metainfo.xml.in:76
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.appdata.xml.in:25
+#: data/network.metainfo.xml.in:77
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.appdata.xml.in:37
+#: data/network.metainfo.xml.in:90
 msgid "Prevent blank lines in VPN list"
 msgstr ""
 
-#: data/network.appdata.xml.in:49
 #, fuzzy
-#| msgid "Don't launch Captive Network Assistent with full connectivity"
-msgid "Don't launch Captive Network Assistant with full connectivity"
-msgstr "网络连接通畅时，不要启用认证网络助理"
+#~| msgid "Don't launch Captive Network Assistent with full connectivity"
+#~ msgid "Don't launch Captive Network Assistant with full connectivity"
+#~ msgstr "网络连接通畅时，不要启用认证网络助理"
 
-#: data/network.appdata.xml.in:61
-msgid "Fix VPN spinning after connecting"
-msgstr "修复连接后 VPN 刷新"
+#~ msgid "Fix VPN spinning after connecting"
+#~ msgstr "修复连接后 VPN 刷新"
 
-#: data/network.appdata.xml.in:62
-msgid "Improve detecting network encryption type"
-msgstr "改进检测网络加密类型"
+#~ msgid "Improve detecting network encryption type"
+#~ msgstr "改进检测网络加密类型"
 
-#: data/network.appdata.xml.in:66
-msgid "Ellipsize long network names"
-msgstr "省略长网络名"
+#~ msgid "Ellipsize long network names"
+#~ msgstr "省略长网络名"
 
-#: data/network.appdata.xml.in:67
-msgid "Show tooltip on hover"
-msgstr "悬停时显示工具提示"
+#~ msgid "Show tooltip on hover"
+#~ msgstr "悬停时显示工具提示"
 
-#: data/network.appdata.xml.in:79
-msgid "Prevent panel icon from showing in the dock"
-msgstr "避免面板图标显示在 Dock 中"
-
-#: data/network.appdata.xml.in:89
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
+#~ msgid "Prevent panel icon from showing in the dock"
+#~ msgstr "避免面板图标显示在 Dock 中"

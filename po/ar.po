@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 08:27+0000\n"
+"POT-Creation-Date: 2023-03-02 15:36+0000\n"
 "PO-Revision-Date: 2021-08-27 11:29+0000\n"
 "Last-Translator: Muhammad Al-Jayyousi <m7md.j99@protonmail.com>\n"
 "Language-Team: Arabic <https://l10n.elementary.io/projects/wingpanel/"
@@ -16,113 +16,111 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:125 src/Indicator.vala:138
+#: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
 msgstr "سلكي"
 
-#: src/Indicator.vala:126
+#: src/Indicator.vala:135
 msgid "Connecting to wired network"
 msgstr "قيد الاتصال بشبكة سلكية"
 
-#: src/Indicator.vala:128 src/Indicator.vala:133
+#: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "قيد الاتصال ب ”%s“"
 
-#: src/Indicator.vala:139
+#: src/Indicator.vala:148
 msgid "Connected to wired network"
 msgstr "تم الاتصال بشبكة سلكية"
 
-#: src/Indicator.vala:141 src/Indicator.vala:152
+#: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
 msgid "Connected to “%s”"
 msgstr "تم الاتصال ب ”%s“"
 
-#: src/Indicator.vala:157
+#: src/Indicator.vala:166
 msgid "Failed to connect"
 msgstr "فشل الاتصال"
 
-#: src/Indicator.vala:161
+#: src/Indicator.vala:170
 msgid "Disconnected"
 msgstr "تم قطع الاتصال"
 
-#: src/Indicator.vala:164
+#: src/Indicator.vala:173
 msgid "Not connected"
 msgstr "غير متصل"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:191 src/Indicator.vala:203
+#: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
 msgstr "شبكة غير معروفة"
 
-#: src/common/Widgets/VpnMenuItem.vala:62
-msgid "This Virtual Private Network could not be connected to."
-msgstr "لا يمكن الاتصال بهذه الشبكة الخاصة الافتراضية."
+#: src/Widgets/PopoverWidget.vala:79
+msgid "Airplane Mode"
+msgstr ""
 
-#: src/common/Widgets/WidgetNMInterface.vala:21
+#: src/Widgets/PopoverWidget.vala:125
+msgid "Connect to Hidden Network…"
+msgstr "اتصل بشبكة مخفية…"
+
+#: src/Widgets/PopoverWidget.vala:129
+msgid "Network Settings…"
+msgstr "إعدادات الشبكة…"
+
+#: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
 msgstr "جهاز غير معروف"
 
-#: src/common/Widgets/WifiMenuItem.vala:70
+#: src/Widgets/WifiInterface.vala:76
+msgid "No Access Points Available"
+msgstr "لا يوجد نقاط وصول متاحة"
+
+#: src/Widgets/WifiInterface.vala:78
+msgid "Scanning for Access Points…"
+msgstr "قيد البحث عن نقاط وصول…"
+
+#: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
 msgstr "غير قادر على الاتصال"
 
-#: src/common/Widgets/WifiMenuItem.vala:142
+#: src/Widgets/WifiMenuItem.vala:114
 msgid "40/64-bit WEP encrypted"
 msgstr "مشفرة باستخدام WEP من نوع 40/64-بت"
 
-#: src/common/Widgets/WifiMenuItem.vala:145
+#: src/Widgets/WifiMenuItem.vala:117
 msgid "104/128-bit WEP encrypted"
 msgstr "مشفرة باستخدام WEP من نوع 104/128-بت"
 
-#: src/common/Widgets/WifiMenuItem.vala:148
+#: src/Widgets/WifiMenuItem.vala:120
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
 msgstr "مشفرة باستخدام WPA"
 
-#: src/common/Widgets/WifiMenuItem.vala:151
+#: src/Widgets/WifiMenuItem.vala:123
 msgid "WPA encrypted"
 msgstr "مشفرة باستخدام WPA"
 
-#: src/common/Widgets/WifiMenuItem.vala:154
+#: src/Widgets/WifiMenuItem.vala:126
 msgid "Encrypted"
 msgstr "مشفرة"
 
-#: src/common/Widgets/WifiMenuItem.vala:156
+#: src/Widgets/WifiMenuItem.vala:128
 msgid "Unsecured"
 msgstr "غير آمنة"
 
-#: src/Widgets/VpnInterface.vala:41
-msgid "VPN"
-msgstr "شبكة خاصة افتراضية"
+#~ msgid "VPN"
+#~ msgstr "شبكة خاصة افتراضية"
 
-#: src/Widgets/WifiInterface.vala:87
-msgid "No Access Points Available"
-msgstr "لا يوجد نقاط وصول متاحة"
-
-#: src/Widgets/WifiInterface.vala:89
-msgid "Scanning for Access Points…"
-msgstr "قيد البحث عن نقاط وصول…"
-
-#: src/Widgets/PopoverWidget.vala:58
-msgid "Airplane Mode"
-msgstr ""
-
-#: src/Widgets/PopoverWidget.vala:88
-msgid "Connect to Hidden Network…"
-msgstr "اتصل بشبكة مخفية…"
-
-#: src/Widgets/PopoverWidget.vala:92
-msgid "Network Settings…"
-msgstr "إعدادات الشبكة…"
+#~ msgid "This Virtual Private Network could not be connected to."
+#~ msgstr "لا يمكن الاتصال بهذه الشبكة الخاصة الافتراضية."
 
 #, c-format
 #~ msgid "Unknown type: %s "

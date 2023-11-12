@@ -16,49 +16,48 @@
  */
 
 public class Network.WifiMenuItem : Gtk.ListBoxRow {
-    private List<NM.AccessPoint> _ap;
-    public signal void user_action ();
+    public NM.AccessPoint ap { get; private set; }
+    public NM.DeviceState state { get; set; default = NM.DeviceState.DISCONNECTED; }
+
     public GLib.Bytes ssid {
         get {
-            return _tmp_ap.get_ssid ();
+            return ap.get_ssid ();
         }
     }
-
-    public Network.State state { get; set; default=Network.State.DISCONNECTED; }
 
     public uint8 strength {
         get {
             uint8 strength = 0;
-            foreach (var ap in _ap) {
+            foreach (unowned var ap in ap_list) {
                 strength = uint8.max (strength, ap.get_strength ());
             }
             return strength;
         }
     }
 
-    public NM.AccessPoint ap { get { return _tmp_ap; } }
-    private NM.AccessPoint _tmp_ap;
+    public bool active {
+        set {
+            radio_button.active = value;
+        }
+    }
 
-    private Gtk.RadioButton radio_button;
+    private Gtk.Image error_img;
     private Gtk.Image img_strength;
     private Gtk.Image lock_img;
-    private Gtk.Image error_img;
-    private Gtk.Spinner spinner;
     private Gtk.Label label;
+    private Gtk.RadioButton radio_button;
+    private Gtk.Spinner spinner;
+    private List<NM.AccessPoint> ap_list;
 
-    public WifiMenuItem (NM.AccessPoint ap, WifiMenuItem? previous = null) {
+    public WifiMenuItem (NM.AccessPoint ap, Gtk.RadioButton blank_radio) {
         label = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.MIDDLE
         };
 
-        radio_button = new Gtk.RadioButton (null) {
+        radio_button = new Gtk.RadioButton.from_widget (blank_radio) {
             hexpand = true
         };
         radio_button.add (label);
-
-        if (previous != null) {
-            radio_button.set_group (previous.get_group ());
-        }
 
         img_strength = new Gtk.Image () {
             icon_size = Gtk.IconSize.MENU
@@ -70,70 +69,43 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             tooltip_text = _("Unable to connect")
         };
 
-        spinner = new Gtk.Spinner () {
-            no_show_all = true,
-            visible = false
-        };
-        spinner.start ();
+        spinner = new Gtk.Spinner ();
 
-        var grid = new Gtk.Grid () {
-            column_spacing = 6
-        };
-        grid.add (radio_button);
-        grid.add (spinner);
-        grid.add (error_img);
-        grid.add (lock_img);
-        grid.add (img_strength);
+        var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
+        box.add (radio_button);
+        box.add (spinner);
+        box.add (error_img);
+        box.add (lock_img);
+        box.add (img_strength);
 
-        _ap = new List<NM.AccessPoint> ();
+        add (box);
+
+        ap_list = new List<NM.AccessPoint> ();
 
         /* Adding the access point triggers update */
         add_ap (ap);
 
         notify["state"].connect (update);
-        radio_button.notify["active"].connect (update);
 
+        // We can't use clicked because we get in a weird loop state
         radio_button.button_release_event.connect ((b, ev) => {
-            user_action ();
-            return false;
+            activate ();
+            return Gdk.EVENT_STOP;
         });
-
-        add (grid);
-
-    }
-
-    /**
-     * Only used for an item which is not displayed: hacky way to have no radio button selected.
-     **/
-    public WifiMenuItem.blank () {
-        radio_button = new Gtk.RadioButton (null);
     }
 
     class construct {
         set_css_name (Gtk.STYLE_CLASS_MENUITEM);
     }
 
-    private void update_tmp_ap () {
+    private void update_ap () {
         uint8 strength = 0;
-        foreach (var ap in _ap) {
-            _tmp_ap = strength > ap.get_strength () ? _tmp_ap : ap;
-            strength = uint8.max (strength, ap.get_strength ());
+        foreach (unowned var acess_point in ap_list) {
+            ap = strength > acess_point.get_strength () ? ap : acess_point;
+            strength = uint8.max (strength, acess_point.get_strength ());
         }
-    }
 
-    public void set_active (bool active) {
-        radio_button.set_active (active);
-    }
-
-    private unowned SList get_group () {
-        return radio_button.get_group ();
-    }
-
-    private void update () {
         label.label = NM.Utils.ssid_to_utf8 (ap.get_ssid ().get_data ());
-
-        img_strength.icon_name = get_strength_symbolic_icon ();
-        img_strength.show_all ();
 
         var flags = ap.get_wpa_flags () | ap.get_rsn_flags ();
         var is_secured = false;
@@ -160,58 +132,56 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
         lock_img.visible = !is_secured;
         lock_img.no_show_all = !lock_img.visible;
+    }
 
-        hide_item (error_img);
-        hide_item (spinner);
+    private const string BASE_ICON_NAME = "panel-network-wireless-signal-%s-symbolic";
+    private void update () {
+        if (strength < 30) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("weak");
+        } else if (strength < 55) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("ok");
+        } else if (strength < 80) {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("good");
+        } else {
+            img_strength.icon_name = BASE_ICON_NAME.printf ("excellent");
+        }
+
+        error_img.no_show_all = true;
+        error_img.visible = false;
+        error_img.hide ();
+
+        spinner.stop ();
 
         switch (state) {
-        case State.FAILED_WIFI:
-            show_item (error_img);
-            break;
-        case State.CONNECTING_WIFI:
-            show_item (spinner);
-            if (!radio_button.active) {
-                critical ("An access point is being connected but not active.");
-            }
-            break;
+            case NM.DeviceState.FAILED:
+                error_img.no_show_all = false;
+                error_img.visible = true;
+                break;
+            case NM.DeviceState.PREPARE:
+            case NM.DeviceState.CONFIG:
+            case NM.DeviceState.NEED_AUTH:
+            case NM.DeviceState.IP_CONFIG:
+            case NM.DeviceState.IP_CHECK:
+            case NM.DeviceState.SECONDARIES:
+                spinner.start ();
+                if (!radio_button.active) {
+                    critical ("An access point is being connected but not active.");
+                }
+                break;
+            default:
+                break;
         }
-    }
-
-    private void show_item (Gtk.Widget w) {
-        w.visible = true;
-        w.no_show_all = !w.visible;
-    }
-
-    private void hide_item (Gtk.Widget w) {
-        w.visible = false;
-        w.no_show_all = !w.visible;
-        w.hide ();
     }
 
     public void add_ap (NM.AccessPoint ap) {
-        _ap.append (ap);
-        update_tmp_ap ();
-
+        ap_list.append (ap);
+        update_ap ();
         update ();
     }
 
-    private const string BASE_ICON_NAME = "network-wireless-signal-";
-    private const string SYMBOLIC = "-symbolic";
-    private unowned string get_strength_symbolic_icon () {
-        if (strength < 30) {
-            return BASE_ICON_NAME + "weak" + SYMBOLIC;
-        } else if (strength < 55) {
-            return BASE_ICON_NAME + "ok" + SYMBOLIC;
-        } else if (strength < 80) {
-            return BASE_ICON_NAME + "good" + SYMBOLIC;
-        } else {
-            return BASE_ICON_NAME + "excellent" + SYMBOLIC;
-        }
-    }
-
     public bool remove_ap (NM.AccessPoint ap) {
-        _ap.remove (ap);
-        update_tmp_ap ();
-        return _ap.length () > 0;
+        ap_list.remove (ap);
+        update_ap ();
+        return ap_list.length () > 0;
     }
 }
