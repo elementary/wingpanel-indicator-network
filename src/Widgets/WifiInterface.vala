@@ -259,11 +259,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             s_con.uuid = NM.Utils.uuid_generate ();
             connection.add_setting (s_con);
 
-            if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags) {
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags ||
+                NM.@80211ApSecurityFlags.KEY_MGMT_OWE_TM in flags) {
                 var s_wsec = new NM.SettingWirelessSecurity ();
                 s_wsec.key_mgmt = "owe";
                 connection.add_setting (s_wsec);
-                is_secured = false;
             }
 
             if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
