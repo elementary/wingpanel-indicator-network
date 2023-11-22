@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2023-11-22 06:21+0000\n"
 "PO-Revision-Date: 2023-03-11 11:25+0000\n"
 "Last-Translator: Camellan <camellan@yandex.ru>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
@@ -62,15 +62,15 @@ msgstr "Нажмите средней кнопкой мыши, чтобы вкл
 msgid "unknown network"
 msgstr "неизвестная сеть"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr "Режим полёта"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Подключиться к скрытой сети…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Параметры сети…"
 
@@ -106,11 +106,17 @@ msgstr "Шифрованние WPA3"
 msgid "WPA encrypted"
 msgstr "Шифрованние WPA"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "Passwordless encrypted"
+msgstr "Шифрованние WPA"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "Зашифровано"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "Небезопасный"
 
