@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2023-11-22 06:21+0000\n"
 "PO-Revision-Date: 2023-03-15 09:25+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -32,52 +32,53 @@ msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
 #: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
+#: data/network.metainfo.xml.in:60
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
-#: data/network.metainfo.xml.in:94
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:94 data/network.metainfo.xml.in:107
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:62
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Affichage du mode Avion et des appareils filaires comme boutons circulaires "
 "compacts"
 
-#: data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:63
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 "Affichage des connexions VPN sous forme de boutons circulaires et "
 "autorisation des connexions multiples en parallèle"
 
-#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:105
 msgid "Minor updates:"
 msgstr "Mises à jour mineures :"
 
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
+#: data/network.metainfo.xml.in:86 data/network.metainfo.xml.in:101
 msgid "Fixes:"
 msgstr "Corrections :"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:88
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 "Nous nous sommes assurés d'afficher une infobulle correcte au démarrage du "
 "système"
 
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:89
 msgid "Prevent connecting to invalid VPNs"
 msgstr "Nous nous sommes assurés d'empêcher la connexion à des VPN invalides"
 
-#: data/network.metainfo.xml.in:77
+#: data/network.metainfo.xml.in:90
 msgid "Show correct info for WPA3 networks"
 msgstr "Affichage des informations correctes pour les réseaux WPA3"
 
-#: data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:103
 msgid "Prevent blank lines in VPN list"
 msgstr ""
 "Nous avons empêché l'apparition de lignes vierges dans la liste des VPN"
