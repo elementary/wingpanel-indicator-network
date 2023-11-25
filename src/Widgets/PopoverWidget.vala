@@ -16,7 +16,7 @@
 *
 */
 
-public class Network.Widgets.PopoverWidget : Gtk.Grid {
+public class Network.Widgets.PopoverWidget : Gtk.Box {
     public NM.Client nm_client { get; construct; }
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
@@ -121,9 +121,20 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         toggle_revealer = new Gtk.Revealer ();
         toggle_revealer.add (toggle_box);
 
-        add (toggle_revealer);
-        add (vpn_box);
-        add (wifi_box);
+        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
+        box.add (toggle_revealer);
+        box.add (vpn_box);
+        box.add (wifi_box);
+
+        var scrolled_window = new Gtk.ScrolledWindow (null, null) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            max_content_height = 724, // 768 - 32px for panel height - 12px for margins
+            propagate_natural_height = true,
+            propagate_natural_width = true
+        };
+        scrolled_window.add (box);
+
+        add (scrolled_window);
 
         if (is_in_session) {
             hidden_item = new Gtk.ModelButton ();
@@ -149,6 +160,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
+
         show_all ();
         update_vpn_connection ();
 
