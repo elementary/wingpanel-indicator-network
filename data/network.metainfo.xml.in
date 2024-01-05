@@ -28,6 +28,20 @@
   <project_group>elementary</project_group>
   <update_contact>contact_at_elementary.io</update_contact>
 
+  <release version="7.1.0" date="2024-01-04" urgency="medium">
+    <description>
+      <p>New features</p>
+      <ul>
+        <li>WireGuard support</li>
+        <li>OWE support</li>
+      </ul>
+      <p>Minor updates</p>
+      <ul>
+        <li>Updated translations</li>
+      </ul>
+    </description>
+  </release>
+
   <releases>
     <release version="7.0.2" date="2023-09-25" urgency="medium">
       <description>
