@@ -17,6 +17,8 @@
 */
 
 public class Network.WifiInterface : Network.WidgetNMInterface {
+    private static Polkit.Permission? permission = null;
+
     public NM.Client nm_client { get; construct; }
 
     public NM.DeviceWifi? wifi_device;
@@ -236,6 +238,17 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         /* Do not activate connection if it is already activated */
         if (wifi_device.get_active_access_point () == i.ap) {
             return;
+        }
+
+        if (permission == null) {
+            try {
+                permission = new Polkit.Permission.sync (
+                    "io.elementary.wingpanel.network.administration",
+                    new Polkit.UnixProcess (Posix.getpid ())
+                );
+            } catch (Error e) {
+                warning ("Can't get permission to add Wi-Fi network without prompting for admin: %s", e.message);
+            }
         }
 
         // See if we already have a connection configured for this AP and try connecting if so
