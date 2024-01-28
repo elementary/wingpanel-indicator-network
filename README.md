@@ -11,6 +11,7 @@ You'll need the following dependencies:
 * libgranite-dev
 * libnm-dev
 * libnma-dev
+* libpolkit-gobject-1-dev
 * libwingpanel-dev
 * meson
 * valac
