@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-22 06:21+0000\n"
-"PO-Revision-Date: 2023-11-24 11:10+0000\n"
+"PO-Revision-Date: 2024-02-18 17:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
@@ -79,7 +79,7 @@ msgstr "不明なデバイス"
 
 #: src/Widgets/WifiInterface.vala:76
 msgid "No Access Points Available"
-msgstr "利用できるアクセスポイントがありません"
+msgstr "利用可能なアクセスポイントなし"
 
 #: src/Widgets/WifiInterface.vala:78
 msgid "Scanning for Access Points…"
