@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-11-22 06:21+0000\n"
-"PO-Revision-Date: 2023-05-07 01:06+0000\n"
+"PO-Revision-Date: 2024-04-25 16:13+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.17\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -106,10 +106,8 @@ msgid "WPA encrypted"
 msgstr "WPA-versleuteling"
 
 #: src/Widgets/WifiMenuItem.vala:127
-#, fuzzy
-#| msgid "WPA encrypted"
 msgid "Passwordless encrypted"
-msgstr "WPA-versleuteling"
+msgstr "Wachtwoordloos versleuteld"
 
 #: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
