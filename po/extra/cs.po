@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2022-01-10 17:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,54 +27,53 @@ msgstr "Indikátor sítě"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Připojování se k bezdrátovým sítím a správa VPN připojení"
 
-#: data/network.metainfo.xml.in:27
-msgid "elementary, Inc."
-msgstr "elementary, Inc."
-
-#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
-#: data/network.metainfo.xml.in:60
+#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:76
 msgid "Improvements:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:94 data/network.metainfo.xml.in:107
+#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
+#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
 msgid "Updated translations"
 msgstr "Aktualizovány překlady"
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:78
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:79
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:92
-#: data/network.metainfo.xml.in:105
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
+#: data/network.metainfo.xml.in:121
 msgid "Minor updates:"
 msgstr "Drobné aktualizace:"
 
-#: data/network.metainfo.xml.in:86 data/network.metainfo.xml.in:101
+#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
 msgid "Fixes:"
 msgstr "Opravy:"
 
-#: data/network.metainfo.xml.in:88
+#: data/network.metainfo.xml.in:104
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.metainfo.xml.in:89
+#: data/network.metainfo.xml.in:105
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:106
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:119
 msgid "Prevent blank lines in VPN list"
 msgstr "Zabráněno prázdným řádkům v seznamu VPN"
+
+#~ msgid "elementary, Inc."
+#~ msgstr "elementary, Inc."
 
 #~ msgid "Don't launch Captive Network Assistant with full connectivity"
 #~ msgstr ""
