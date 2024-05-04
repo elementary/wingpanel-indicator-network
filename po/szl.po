@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -80,11 +80,11 @@ msgstr "Sztelōnki necu…"
 msgid "Unknown device"
 msgstr "Niyznōmo maszina"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Niy ma żodnych pōnktōw dostympu"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Szukanie pōnktōw dotympu…"
 

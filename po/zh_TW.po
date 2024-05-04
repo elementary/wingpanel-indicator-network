@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2018-02-07 03:46+0000\n"
 "Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
@@ -87,11 +87,11 @@ msgstr "網路設定值…"
 msgid "Unknown device"
 msgstr "未知裝置"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "沒有可用的存取點"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "掃描無線存取點…"
 

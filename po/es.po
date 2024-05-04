@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2021-03-02 04:42+0000\n"
 "Last-Translator: david <dcardelleg@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
@@ -79,11 +79,11 @@ msgstr "Configuración de red…"
 msgid "Unknown device"
 msgstr "Dispositivo desconocido"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "No hay puntos de acceso disponibles"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Buscando puntos de acceso…"
 

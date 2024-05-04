@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2018-10-26 01:48+0000\n"
 "Last-Translator: Jesse ALTER <jesse@jessealter.com>\n"
 "Language-Team: Esperanto <https://weblate.elementary.io/projects/wingpanel/"
@@ -81,11 +81,11 @@ msgstr "Retagordoj…"
 msgid "Unknown device"
 msgstr "Nekonata aparato"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Neniuj disponeblaj retkaptejoj"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Skanante por retkaptejoj…"
 

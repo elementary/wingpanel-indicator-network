@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -87,11 +87,11 @@ msgstr "Ρυθμίσεις δικτύου..."
 msgid "Unknown device"
 msgstr "Άγνωστη συσκευή"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Μη διαθέσιμα σημεία πρόσβασης"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Γίνεται σάρωση για σημεία πρόσβασης..."
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2017-12-28 00:18+0000\n"
 "Last-Translator: Subhadeep Jasu <subhajasu@gmail.com>\n"
 "Language-Team: Bengali <https://weblate.elementary.io/projects/wingpanel/"
@@ -82,11 +82,11 @@ msgstr ""
 msgid "Unknown device"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr ""
 

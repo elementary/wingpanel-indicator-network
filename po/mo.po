@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 06:21+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2018-05-31 08:26+0000\n"
 "Last-Translator: Romanic Ion Nicușor <contact.romanic@gmail.com>\n"
 "Language-Team: Moldovan <https://weblate.elementary.io/projects/wingpanel/"
@@ -85,11 +85,11 @@ msgstr "Setări de rețea…"
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Nu există puncte de acces disponibile"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Scanarea punctelor de acces …"
 
