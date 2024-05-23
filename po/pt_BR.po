@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2021-03-12 20:18+0000\n"
 "Last-Translator: Leonardo <leonardo@elementary.io>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -61,17 +61,17 @@ msgstr ""
 msgid "unknown network"
 msgstr "rede desconhecida"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Modo Avião ativado"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Conectar à rede oculta…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Configurações de Rede…"
 
@@ -79,11 +79,11 @@ msgstr "Configurações de Rede…"
 msgid "Unknown device"
 msgstr "Dispositivo desconhecido"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Nenhum Ponto de Acesso Disponível"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Procurando por pontos de acesso…"
 
@@ -109,11 +109,17 @@ msgstr "Esta rede usa WPA"
 msgid "WPA encrypted"
 msgstr "Esta rede usa WPA"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "Passwordless encrypted"
+msgstr "Esta rede usa WPA"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "Criptografado"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "Inseguro"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2017-05-23 09:48+0000\n"
 "Last-Translator: Kristjan Vool <tictac7x@gmail.com>\n"
 "Language-Team: Estonian <https://l10n.elementary.io/projects/wingpanel/"
@@ -69,17 +69,17 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Lennurežiim lubatud"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Peidetud võrku ühendamine…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Võrgu seaded…"
 
@@ -87,11 +87,11 @@ msgstr "Võrgu seaded…"
 msgid "Unknown device"
 msgstr "Tundmatu seade"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Ühenduspunktid puuduvad"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Võrkude tuvastamine…"
 
@@ -118,11 +118,16 @@ msgstr "See võrk kasutab 40/64-bitist WEP krüpteeringut."
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+msgid "Passwordless encrypted"
+msgstr "See võrk kasutab 40/64-bitist WEP krüpteeringut."
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr ""
 

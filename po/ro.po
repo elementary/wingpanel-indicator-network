@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2017-04-27 14:41+0000\n"
 "Last-Translator: marius.a <marius.albina@gmail.com>\n"
 "Language-Team: Romanian <https://l10n.elementary.io/projects/wingpanel/"
@@ -70,15 +70,15 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Conectare la o rețea ascunsă…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Setări de reţea…"
 
@@ -86,11 +86,11 @@ msgstr "Setări de reţea…"
 msgid "Unknown device"
 msgstr "Dispozitiv necunoscut"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Nici un punct de acces valabil"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Se caută punctele de acces…"
 
@@ -117,11 +117,16 @@ msgstr "Această rețea folosește cripare WEP 40/64-bit."
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+msgid "Passwordless encrypted"
+msgstr "Această rețea folosește cripare WEP 40/64-bit."
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr ""
 

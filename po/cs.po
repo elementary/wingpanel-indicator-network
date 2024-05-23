@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2022-01-12 19:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
@@ -61,17 +61,17 @@ msgstr ""
 msgid "unknown network"
 msgstr "neznámá síť"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Aktivován režim letadla"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Připojit ke skryté síti…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Nastavení sítě…"
 
@@ -79,11 +79,11 @@ msgstr "Nastavení sítě…"
 msgid "Unknown device"
 msgstr "Neznámé zařízení"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Nejsou k dispozici žádné přístupové body"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Hledání přístupových bodů…"
 
@@ -109,11 +109,17 @@ msgstr "Šifrované WPA"
 msgid "WPA encrypted"
 msgstr "Šifrované WPA"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+#| msgid "WPA encrypted"
+msgid "Passwordless encrypted"
+msgstr "Šifrované WPA"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "Šifrované"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "Nezabezpečené"
 

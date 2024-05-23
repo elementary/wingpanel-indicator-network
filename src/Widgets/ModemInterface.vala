@@ -94,11 +94,12 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
             }
         });
 
+        update ();
         device.state_changed.connect (update);
         prepare.begin ();
     }
 
-    public override void update () {
+    private void update () {
         switch (device.state) {
             case NM.DeviceState.UNKNOWN:
             case NM.DeviceState.UNMANAGED:

@@ -17,6 +17,8 @@
 */
 
 public class Network.WifiInterface : Network.WidgetNMInterface {
+    private static Polkit.Permission? permission = null;
+
     public NM.Client nm_client { get; construct; }
 
     public NM.DeviceWifi? wifi_device;
@@ -147,7 +149,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         });
     }
 
-    public override void update () {
+    private void update () {
         switch (wifi_device.state) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:
@@ -214,8 +216,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         update_active_ap ();
 
-        base.update ();
-
         wifi_item.set_sensitive (!hardware_locked);
         wifi_item.active = !locked;
 
@@ -240,6 +240,17 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             return;
         }
 
+        if (permission == null) {
+            try {
+                permission = new Polkit.Permission.sync (
+                    "io.elementary.wingpanel.network.administration",
+                    new Polkit.UnixProcess (Posix.getpid ())
+                );
+            } catch (Error e) {
+                warning ("Can't get permission to add Wi-Fi network without prompting for admin: %s", e.message);
+            }
+        }
+
         // See if we already have a connection configured for this AP and try connecting if so
         var connections = nm_client.get_connections ();
         var device_connections = wifi_device.filter_connections (connections);
@@ -252,11 +263,21 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
 
         var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
+        var is_secured = true;
+
+        var connection = NM.SimpleConnection.new ();
+
         if (flags != NM.@80211ApSecurityFlags.NONE) {
-            var connection = NM.SimpleConnection.new ();
             var s_con = new NM.SettingConnection ();
             s_con.uuid = NM.Utils.uuid_generate ();
             connection.add_setting (s_con);
+
+            if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags ||
+                NM.@80211ApSecurityFlags.KEY_MGMT_OWE_TM in flags) {
+                var s_wsec = new NM.SettingWirelessSecurity ();
+                s_wsec.key_mgmt = "owe";
+                connection.add_setting (s_wsec);
+            }
 
             if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
                 var s_wsec = new NM.SettingWirelessSecurity ();
@@ -281,7 +302,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 s_8021x.phase2_auth = "mschapv2";
                 connection.add_setting (s_8021x);
             }
+        }
 
+        if (is_secured) {
             // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
             // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
             // so we spawn our own
@@ -300,7 +323,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             wifi_dialog.destroy ();
         } else {
             nm_client.add_and_activate_connection_async.begin (
-                NM.SimpleConnection.new (),
+                connection,
                 wifi_device,
                 i.ap.get_path (),
                 null,

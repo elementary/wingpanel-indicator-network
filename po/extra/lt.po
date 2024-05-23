@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2019-11-07 12:50-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=ASCII\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -26,50 +26,47 @@ msgstr ""
 msgid "Connect to wireless networks and manage VPNs"
 msgstr ""
 
-#: data/network.metainfo.xml.in:27
-msgid "elementary, Inc."
-msgstr ""
-
-#: data/network.metainfo.xml.in:34 data/network.metainfo.xml.in:47
+#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:76
 msgid "Improvements:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:51
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:81
-#: data/network.metainfo.xml.in:94
+#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
+#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
 msgid "Updated translations"
 msgstr ""
 
-#: data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:78
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:79
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 
-#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
+#: data/network.metainfo.xml.in:121
 msgid "Minor updates:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:88
+#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
 msgid "Fixes:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:104
 msgid "Ensure correct tooltip on system start"
 msgstr ""
 
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:105
 msgid "Prevent connecting to invalid VPNs"
 msgstr ""
 
-#: data/network.metainfo.xml.in:77
+#: data/network.metainfo.xml.in:106
 msgid "Show correct info for WPA3 networks"
 msgstr ""
 
-#: data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:119
 msgid "Prevent blank lines in VPN list"
 msgstr ""

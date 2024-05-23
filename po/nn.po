@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-02 15:36+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
 "PO-Revision-Date: 2019-01-03 18:11+0000\n"
 "Last-Translator: Simon Dagfinrud <semonje@gmail.com>\n"
 "Language-Team: Norwegian Nynorsk <https://weblate.elementary.io/projects/"
@@ -69,15 +69,15 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Kople til skjult nettverk…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Nettverksinnstillingar…"
 
@@ -85,11 +85,11 @@ msgstr "Nettverksinnstillingar…"
 msgid "Unknown device"
 msgstr "Ukjend eining"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Ingen åpne trådlause nettverk tilgjengeleg"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Sjekkar etter åpne trådlause nettverk…"
 
@@ -119,11 +119,17 @@ msgstr "Dette nettverket brukar 40/64-bits WEP-kryptering"
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "Passwordless encrypted"
+msgstr "Dette nettverket brukar 40/64-bits WEP-kryptering"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr ""
 
