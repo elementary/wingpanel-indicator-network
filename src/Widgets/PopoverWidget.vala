@@ -81,7 +81,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             airplane_box.add (airplane_toggle);
             airplane_box.add (airplane_label);
 
-            other_box.add (airplane_box);
+            var airplane_child = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            airplane_child.add (airplane_box);
+
+            other_box.add (airplane_child);
 
             airplane_toggle.toggled.connect (() => {
                 nm_client.dbus_call.begin (
@@ -164,7 +170,14 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     private void add_interface (WidgetNMInterface widget_interface) {
         if (widget_interface is EtherInterface) {
-            other_box.add (widget_interface);
+
+            var flowboxchild = new Gtk.FlowBoxChild () {
+                // Prevent weird double focus border
+                can_focus = false
+            };
+            flowboxchild.add (widget_interface);
+
+            other_box.add (flowboxchild);
             return;
         }
 
@@ -279,6 +292,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             debug ("Wired interface added");
         } else if (device is NM.DeviceModem) {
             widget_interface = new ModemInterface (nm_client, device);
+            widget_interface.notify["extra-info"].connect (update_state);
             debug ("Modem interface added");
         } else {
             debug ("Unknown device: %s\n", device.get_device_type ().to_string ());
@@ -289,15 +303,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             network_interface.append (widget_interface);
             add_interface (widget_interface);
             widget_interface.notify["state"].connect (update_state);
-            widget_interface.notify["extra-info"].connect (update_state);
-
         }
 
         update_interfaces_names ();
-
-        foreach (var inter in network_interface) {
-            inter.update ();
-        }
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();

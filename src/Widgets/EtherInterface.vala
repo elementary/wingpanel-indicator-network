@@ -65,10 +65,11 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             }
         });
 
+        update ();
         device.state_changed.connect (update);
     }
 
-    public override void update () {
+    private void update () {
         switch (device.get_state ()) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:

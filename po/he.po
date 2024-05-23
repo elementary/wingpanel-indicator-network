@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
-"PO-Revision-Date: 2022-12-03 08:25+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"PO-Revision-Date: 2023-11-24 11:10+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/he/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -61,15 +61,15 @@ msgstr "לחיצה כפולה תפעיל מצב טיסה"
 msgid "unknown network"
 msgstr "רשת בלתי ידועה"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr "מצב טיסה"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "התחברות לרשת נסתרת…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "הגדרות רשת…"
 
@@ -77,11 +77,11 @@ msgstr "הגדרות רשת…"
 msgid "Unknown device"
 msgstr "התקן לא ידוע"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "אין נקודות גישה זמינות"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "מתבצעת סריקה אחר נקודות גישה…"
 
@@ -105,11 +105,15 @@ msgstr "מוצפנת ב־WPA3"
 msgid "WPA encrypted"
 msgstr "מוצפנת ב־WPA"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+msgid "Passwordless encrypted"
+msgstr "מוצפנת ללא סיסמה"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "מוצפנת"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "בלתי מאובטחת"
 

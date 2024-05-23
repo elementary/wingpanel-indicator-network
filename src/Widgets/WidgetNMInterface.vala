@@ -28,7 +28,4 @@ public abstract class Network.WidgetNMInterface : Gtk.Box {
             margin_bottom = 3
         };
     }
-
-    public virtual void update () {
-    }
 }

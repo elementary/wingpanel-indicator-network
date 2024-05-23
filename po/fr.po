@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
-"PO-Revision-Date: 2022-12-03 08:25+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"PO-Revision-Date: 2023-12-02 11:10+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/fr/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -61,15 +61,15 @@ msgstr "Effectuez un clic central pour activer le mode avion"
 msgid "unknown network"
 msgstr "réseau inconnu"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr "Mode avion"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Se connecter à un réseau invisible…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Paramètres réseau…"
 
@@ -77,11 +77,11 @@ msgstr "Paramètres réseau…"
 msgid "Unknown device"
 msgstr "Périphérique inconnu"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Aucun point d’accès disponible"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Recherche d'un point d'accès…"
 
@@ -105,11 +105,15 @@ msgstr "Chiffré en WPA3"
 msgid "WPA encrypted"
 msgstr "Chiffré en WPA"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+msgid "Passwordless encrypted"
+msgstr "Chiffré sans mot de passe"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "Chiffré"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "Non sécurisé"
 

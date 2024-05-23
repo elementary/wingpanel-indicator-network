@@ -2,17 +2,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
-"PO-Revision-Date: 2018-06-13 15:48+0000\n"
-"Last-Translator: Eri Hidayat <eriwhidayat@gmail.com>\n"
-"Language-Team: Indonesian <https://weblate.elementary.io/projects/wingpanel/"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"PO-Revision-Date: 2023-06-02 08:07+0000\n"
+"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
+"io>\n"
+"Language-Team: Indonesian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/id/>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -20,28 +21,22 @@ msgid "Wired"
 msgstr "Kabel"
 
 #: src/Indicator.vala:135
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
-msgstr "Menyambung ke Jaringan Tersembunyi…"
+msgstr "Menghubungkan ke jaringan kabel"
 
 #: src/Indicator.vala:137 src/Indicator.vala:142
-#, fuzzy, c-format
-#| msgid "Connecting"
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "Menyambung"
+msgstr "Menyambung ke “%s”"
 
 #: src/Indicator.vala:148
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
-msgstr "Menyambung ke Jaringan Tersembunyi…"
+msgstr "Terhubung ke jaringan kabel"
 
 #: src/Indicator.vala:150 src/Indicator.vala:161
-#, fuzzy, c-format
-#| msgid "Connected"
+#, c-format
 msgid "Connected to “%s”"
-msgstr "Tersambung"
+msgstr "Tersambung ke “%s”"
 
 #: src/Indicator.vala:166
 msgid "Failed to connect"
@@ -69,17 +64,17 @@ msgstr ""
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Mode pesawat terbang diaktifkan"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Menyambung ke Jaringan Tersembunyi…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Pengaturan Jaringan…"
 
@@ -87,11 +82,11 @@ msgstr "Pengaturan Jaringan…"
 msgid "Unknown device"
 msgstr "Perangkat tak dikenal"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Tidak ada Titik Akses yang Tersedia"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Memindai Titik Akses…"
 
@@ -121,11 +116,17 @@ msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+#, fuzzy
+#| msgid "This network uses 40/64-bit WEP encryption"
+msgid "Passwordless encrypted"
+msgstr "Jaringan ini menggunakan enkripsi WEP 40/64-bit"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr ""
 

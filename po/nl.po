@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
-"PO-Revision-Date: 2023-02-11 14:25+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"PO-Revision-Date: 2024-04-25 16:13+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/nl/>\n"
@@ -12,16 +12,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
-msgstr "Bedraad"
+msgstr "Bekabeld"
 
 #: src/Indicator.vala:135
 msgid "Connecting to wired network"
-msgstr "Verbinden met bedraad netwerk"
+msgstr "Verbinden met bekabeld netwerk"
 
 #: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
@@ -30,7 +30,7 @@ msgstr "Verbinding maken met “%s”"
 
 #: src/Indicator.vala:148
 msgid "Connected to wired network"
-msgstr "Verbonden met bedraad netwerk"
+msgstr "Verbonden met bekabeld netwerk"
 
 #: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
@@ -61,15 +61,15 @@ msgstr "Middelklik om vliegtuigmodus in te schakelen"
 msgid "unknown network"
 msgstr "Onbekend netwerk"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr "Vliegtuigmodus"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "Verbind met onzichtbaar netwerk…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
 
@@ -77,11 +77,11 @@ msgstr "Netwerkinstellingen…"
 msgid "Unknown device"
 msgstr "Onbekend apparaat"
 
-#: src/Widgets/WifiInterface.vala:76
+#: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
 msgstr "Geen Toegangspunten Beschikbaar"
 
-#: src/Widgets/WifiInterface.vala:78
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "Scannen naar toegangspunten…"
 
@@ -105,11 +105,15 @@ msgstr "WPA3-versleuteling"
 msgid "WPA encrypted"
 msgstr "WPA-versleuteling"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+msgid "Passwordless encrypted"
+msgstr "Wachtwoordloos versleuteld"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "Versleuteld"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "Onbeveiligd"
 

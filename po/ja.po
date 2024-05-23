@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-01 17:49+0000\n"
-"PO-Revision-Date: 2022-12-03 08:25+0000\n"
+"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"PO-Revision-Date: 2024-02-18 17:57+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -61,15 +61,15 @@ msgstr "機内モードを有効にするには中クリックしてください
 msgid "unknown network"
 msgstr "不明なネットワーク"
 
-#: src/Widgets/PopoverWidget.vala:79
+#: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
 msgstr "機内モード"
 
-#: src/Widgets/PopoverWidget.vala:125
+#: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
 msgstr "非公開のネットワークに接続…"
 
-#: src/Widgets/PopoverWidget.vala:129
+#: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
 msgstr "ネットワークの設定…"
 
@@ -77,11 +77,11 @@ msgstr "ネットワークの設定…"
 msgid "Unknown device"
 msgstr "不明なデバイス"
 
-#: src/Widgets/WifiInterface.vala:76
-msgid "No Access Points Available"
-msgstr "利用できるアクセスポイントがありません"
-
 #: src/Widgets/WifiInterface.vala:78
+msgid "No Access Points Available"
+msgstr "利用可能なアクセスポイントなし"
+
+#: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
 msgstr "アクセスポイントを探しています…"
 
@@ -105,11 +105,15 @@ msgstr "WPA3 暗号化"
 msgid "WPA encrypted"
 msgstr "WPA 暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:126
+#: src/Widgets/WifiMenuItem.vala:127
+msgid "Passwordless encrypted"
+msgstr "パスワードなし暗号化"
+
+#: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
 msgstr "暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:128
+#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
 msgstr "安全ではありません"
 

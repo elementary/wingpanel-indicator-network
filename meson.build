@@ -1,7 +1,7 @@
 project(
     'network',
     'vala', 'c',
-    version: '7.0.1'
+    version: '7.1.0'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -38,6 +38,8 @@ gresource = gnome.compile_resources(
     source_dir: 'data'
 )
 
+polkit_dep = dependency ('polkit-gobject-1')
+
 shared_module(
     meson.project_name(),
     config_file,
@@ -61,6 +63,7 @@ shared_module(
         dependency('gtk+-3.0'),
         dependency('libnm', version: '>=1.24'),
         dependency('libnma'),
+        polkit_dep,
         meson.get_compiler('vala').find_library('posix'),
         wingpanel_dep
     ],
