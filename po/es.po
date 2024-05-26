@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2021-03-02 04:42+0000\n"
-"Last-Translator: david <dcardelleg@gmail.com>\n"
+"PO-Revision-Date: 2024-05-27 07:13+0000\n"
+"Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/es/>\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.2\n"
+"X-Generator: Weblate 5.5\n"
 "X-Launchpad-Export-Date: 2016-12-09 05:42+0000\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
@@ -39,7 +39,7 @@ msgstr "Conectado con «%s»"
 
 #: src/Indicator.vala:166
 msgid "Failed to connect"
-msgstr "No se pudo conectar"
+msgstr "Fallo de conexión"
 
 #: src/Indicator.vala:170
 msgid "Disconnected"
@@ -89,7 +89,7 @@ msgstr "Buscando puntos de acceso…"
 
 #: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
-msgstr "No se puede conectar"
+msgstr "No se pudo conectar"
 
 #: src/Widgets/WifiMenuItem.vala:114
 msgid "40/64-bit WEP encrypted"
