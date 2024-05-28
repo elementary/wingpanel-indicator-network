@@ -48,8 +48,8 @@ msgstr ""
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
-"Mostrar conexiones de VPN como botones circulares y permitir conectar "
-"múltiples VPNs a la vez"
+"Se muestran las conexiones de VPN como botones circulares y se puede "
+"conectar a múltiples redes VPN a la vez"
 
 #: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 #: data/network.metainfo.xml.in:121
