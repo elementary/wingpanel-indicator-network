@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2024-05-27 07:13+0000\n"
+"PO-Revision-Date: 2024-05-28 15:07+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/es/>\n"
@@ -51,7 +51,7 @@ msgstr "No conectado"
 
 #: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "Haga clic con el botón central del ratón para desactivar el modo avión"
 
 #: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
