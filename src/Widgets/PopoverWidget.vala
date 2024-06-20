@@ -172,7 +172,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        if (widget_interface is EtherInterface) {
+        if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
 
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
