@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-17 18:39+0000\n"
-"PO-Revision-Date: 2024-06-30 14:16+0000\n"
+"PO-Revision-Date: 2024-07-18 19:16+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <edwood.grant@gmail.com>\n"
 "Language-Team: Spanish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.5.5\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -40,21 +40,19 @@ msgstr "Traducciones actualizadas"
 
 #: data/network.metainfo.xml.in:48
 msgid "New features"
-msgstr ""
+msgstr "Nuevas características"
 
 #: data/network.metainfo.xml.in:50
 msgid "WireGuard support"
-msgstr ""
+msgstr "Se agregó compatibilidad con WireGuard"
 
 #: data/network.metainfo.xml.in:51
 msgid "OWE support"
-msgstr ""
+msgstr "Se agregó compatibilidad con OWE"
 
 #: data/network.metainfo.xml.in:53
-#, fuzzy
-#| msgid "Minor updates:"
 msgid "Minor updates"
-msgstr "Actualizaciones menores:"
+msgstr "Actualizaciones menores"
 
 #: data/network.metainfo.xml.in:90
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
