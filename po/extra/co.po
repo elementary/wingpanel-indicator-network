@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"POT-Creation-Date: 2024-07-17 18:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -24,47 +24,38 @@ msgstr ""
 msgid "Connect to wireless networks and manage VPNs"
 msgstr ""
 
-#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:75 data/network.metainfo.xml.in:88
 msgid "Improvements:"
 msgstr ""
 
-#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
-#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
-#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
+#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:55
+#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:77
+#: data/network.metainfo.xml.in:92
 msgid "Updated translations"
 msgstr ""
 
-#: data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:48
+msgid "New features"
+msgstr ""
+
+#: data/network.metainfo.xml.in:50
+msgid "WireGuard support"
+msgstr ""
+
+#: data/network.metainfo.xml.in:51
+msgid "OWE support"
+msgstr ""
+
+#: data/network.metainfo.xml.in:53
+msgid "Minor updates"
+msgstr ""
+
+#: data/network.metainfo.xml.in:90
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:91
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
-msgstr ""
-
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-#: data/network.metainfo.xml.in:121
-msgid "Minor updates:"
-msgstr ""
-
-#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
-msgid "Fixes:"
-msgstr ""
-
-#: data/network.metainfo.xml.in:104
-msgid "Ensure correct tooltip on system start"
-msgstr ""
-
-#: data/network.metainfo.xml.in:105
-msgid "Prevent connecting to invalid VPNs"
-msgstr ""
-
-#: data/network.metainfo.xml.in:106
-msgid "Show correct info for WPA3 networks"
-msgstr ""
-
-#: data/network.metainfo.xml.in:119
-msgid "Prevent blank lines in VPN list"
 msgstr ""
