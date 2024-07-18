@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-17 18:39+0000\n"
-"PO-Revision-Date: 2023-02-25 00:46+0000\n"
+"PO-Revision-Date: 2024-07-18 19:16+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -40,21 +40,19 @@ msgstr "翻訳の更新"
 
 #: data/network.metainfo.xml.in:48
 msgid "New features"
-msgstr ""
+msgstr "新機能"
 
 #: data/network.metainfo.xml.in:50
 msgid "WireGuard support"
-msgstr ""
+msgstr "WireGuard への対応"
 
 #: data/network.metainfo.xml.in:51
 msgid "OWE support"
-msgstr ""
+msgstr "OWE への対応"
 
 #: data/network.metainfo.xml.in:53
-#, fuzzy
-#| msgid "Minor updates:"
 msgid "Minor updates"
-msgstr "そのほかのアップデート:"
+msgstr "そのほかのアップデート"
 
 #: data/network.metainfo.xml.in:90
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
