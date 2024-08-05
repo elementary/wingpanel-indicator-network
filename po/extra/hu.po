@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-17 18:39+0000\n"
-"PO-Revision-Date: 2023-02-25 00:46+0000\n"
+"PO-Revision-Date: 2024-08-07 00:16+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -44,17 +44,15 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:50
 msgid "WireGuard support"
-msgstr ""
+msgstr "WireGuard-támogatás"
 
 #: data/network.metainfo.xml.in:51
 msgid "OWE support"
-msgstr ""
+msgstr "OWE-támogatás"
 
 #: data/network.metainfo.xml.in:53
-#, fuzzy
-#| msgid "Minor updates:"
 msgid "Minor updates"
-msgstr "Apróbb frissítések:"
+msgstr "Apróbb frissítések"
 
 #: data/network.metainfo.xml.in:90
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
