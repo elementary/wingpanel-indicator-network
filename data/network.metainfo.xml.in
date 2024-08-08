@@ -30,21 +30,33 @@
   <project_group>elementary</project_group>
   <update_contact>contact_at_elementary.io</update_contact>
 
-  <release version="7.1.0" date="2024-01-04" urgency="medium">
-    <description>
-      <p>New features</p>
-      <ul>
-        <li>WireGuard support</li>
-        <li>OWE support</li>
-      </ul>
-      <p>Minor updates</p>
-      <ul>
-        <li>Updated translations</li>
-      </ul>
-    </description>
-  </release>
-
   <releases>
+    <release version="7.1.1" date="2024-07-17" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/greeter/issues/615">New WiFi network prompts for password but cannot save it</issue>
+      </issues>
+    </release>
+
+    <release version="7.1.0" date="2024-01-04" urgency="medium">
+      <description>
+        <p>New features</p>
+        <ul>
+          <li>WireGuard support</li>
+          <li>OWE support</li>
+        </ul>
+        <p>Minor updates</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+    </release>
+
     <release version="7.0.2" date="2023-09-25" urgency="medium">
       <description>
         <p>Improvements:</p>
@@ -89,43 +101,9 @@
       </issues>
     </release>
 
-    <release version="2.3.4" date="2022-10-15" urgency="medium">
-      <description>
-        <p>Minor updates:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
-    <release version="2.3.3" date="2022-06-30" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Ensure correct tooltip on system start</li>
-          <li>Prevent connecting to invalid VPNs</li>
-          <li>Show correct info for WPA3 networks</li>
-        </ul>
-        <p>Minor updates:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
-    <release version="2.3.2" date="2021-11-23" urgency="medium">
-      <description>
-        <p>Fixes:</p>
-        <ul>
-          <li>Prevent blank lines in VPN list</li>
-        </ul>
-        <p>Minor updates:</p>
-        <ul>
-          <li>Updated translations</li>
-        </ul>
-      </description>
-    </release>
-
+    <release version="2.3.4" date="2022-10-15"/>
+    <release version="2.3.3" date="2022-06-30"/>
+    <release version="2.3.2" date="2021-11-23"/>
     <release version="2.3.1" date="2021-10-22"/>
     <release version="2.3.0" date="2021-07-14"/>
     <release version="2.2.4" date="2020-05-28"/>
