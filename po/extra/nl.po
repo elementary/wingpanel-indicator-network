@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-17 18:39+0000\n"
+"POT-Creation-Date: 2024-08-08 17:49+0000\n"
 "PO-Revision-Date: 2024-08-07 00:16+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -28,13 +28,13 @@ msgid "Connect to wireless networks and manage VPNs"
 msgstr "Maak verbinding met draadloze netwerken en beheer VPNs"
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:62
-#: data/network.metainfo.xml.in:75 data/network.metainfo.xml.in:88
+#: data/network.metainfo.xml.in:76 data/network.metainfo.xml.in:89
 msgid "Improvements:"
 msgstr ""
 
 #: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:55
-#: data/network.metainfo.xml.in:64 data/network.metainfo.xml.in:77
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:65 data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:93
 msgid "Updated translations"
 msgstr "Bijgewerkte vertalingen"
 
@@ -54,11 +54,15 @@ msgstr ""
 msgid "Minor updates"
 msgstr "Kleine updates"
 
-#: data/network.metainfo.xml.in:90
-msgid "Show Airplane Mode and wired devices as compact circle buttons"
+#: data/network.metainfo.xml.in:64
+msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 
 #: data/network.metainfo.xml.in:91
+msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgstr ""
+
+#: data/network.metainfo.xml.in:92
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
