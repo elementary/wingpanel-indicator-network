@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-08 17:49+0000\n"
-"PO-Revision-Date: 2024-07-18 19:16+0000\n"
-"Last-Translator: кубик круглый <megarainbow29@gmail.com>\n"
+"PO-Revision-Date: 2024-08-09 21:16+0000\n"
+"Last-Translator: lenemter <lenemter@gmail.com>\n"
 "Language-Team: Russian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ru/>\n"
 "Language: ru\n"
@@ -56,11 +56,8 @@ msgid "Minor updates"
 msgstr "Незначительные обновления"
 
 #: data/network.metainfo.xml.in:64
-#, fuzzy
-#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgid "Show cellular devices as compact circle buttons"
-msgstr ""
-"Показ режима «В полёте» и проводных устройств как компактные круглые кнопки"
+msgstr "Отображение сотовых устройств в виде компактных круглых кнопкок"
 
 #: data/network.metainfo.xml.in:91
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
