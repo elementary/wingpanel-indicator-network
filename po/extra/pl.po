@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-08 17:49+0000\n"
-"PO-Revision-Date: 2024-07-21 06:16+0000\n"
-"Last-Translator: Marcin Serwin <marcin.serwin0@protonmail.com>\n"
+"PO-Revision-Date: 2024-08-11 09:16+0000\n"
+"Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
 "Language: pl\n"
@@ -56,12 +56,9 @@ msgid "Minor updates"
 msgstr "Mniejsze aktualizacje"
 
 #: data/network.metainfo.xml.in:64
-#, fuzzy
-#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
-"Tryb samolotowy i urządzenie przewodowe są teraz pokazywane jako kompaktowe "
-"okrągłe przyciski"
+"Urządzenia komórkowe są teraz pokazywane jako kompaktowe okrągłe przyciski"
 
 #: data/network.metainfo.xml.in:91
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
