@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-08 17:49+0000\n"
-"PO-Revision-Date: 2024-08-17 10:16+0000\n"
+"PO-Revision-Date: 2024-08-18 15:16+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/nl/>\n"
@@ -40,15 +40,15 @@ msgstr "Bijgewerkte vertalingen"
 
 #: data/network.metainfo.xml.in:48
 msgid "New features"
-msgstr ""
+msgstr "Nieuwe functies"
 
 #: data/network.metainfo.xml.in:50
 msgid "WireGuard support"
-msgstr ""
+msgstr "WireGuard ondersteuning"
 
 #: data/network.metainfo.xml.in:51
 msgid "OWE support"
-msgstr ""
+msgstr "OWE ondersteuning"
 
 #: data/network.metainfo.xml.in:53
 msgid "Minor updates"
@@ -56,16 +56,19 @@ msgstr "Kleine updates"
 
 #: data/network.metainfo.xml.in:64
 msgid "Show cellular devices as compact circle buttons"
-msgstr ""
+msgstr "Geef cellulaire apparaten weer als compacte ronde knoppen"
 
 #: data/network.metainfo.xml.in:91
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
+"Geef vliegtuigmodus en bedrade apparaten weer als compacte ronde knoppen"
 
 #: data/network.metainfo.xml.in:92
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"Geef VPN-verbindingen weer als ronde knoppen en sta toe om met meerdere "
+"VPN's tegelijk te verbinden"
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary, Inc."
