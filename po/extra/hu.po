@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-08 17:49+0000\n"
+"POT-Creation-Date: 2024-08-21 18:22+0000\n"
 "PO-Revision-Date: 2024-08-14 20:38+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,43 +27,49 @@ msgstr "Hálózatkijelzés"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Csatlakozás vezeték nélküli hálózathoz és VPN-ek kezelése"
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:62
-#: data/network.metainfo.xml.in:76 data/network.metainfo.xml.in:89
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
 msgid "Improvements:"
 msgstr "Javítások:"
 
-#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:55
-#: data/network.metainfo.xml.in:65 data/network.metainfo.xml.in:78
-#: data/network.metainfo.xml.in:93
+#: data/network.metainfo.xml.in:38
+#, fuzzy
+#| msgid "Show cellular devices as compact circle buttons"
+msgid "Show Cellular Modems as Toggles"
+msgstr "A mobileszközök kör alakú gombként jelennek meg"
+
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:49
 msgid "New features"
 msgstr "Új funkciók"
 
-#: data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:51
 msgid "WireGuard support"
 msgstr "WireGuard-támogatás"
 
-#: data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:52
 msgid "OWE support"
 msgstr "OWE-támogatás"
 
-#: data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:54
 msgid "Minor updates"
 msgstr "Apróbb frissítések"
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:65
 msgid "Show cellular devices as compact circle buttons"
 msgstr "A mobileszközök kör alakú gombként jelennek meg"
 
-#: data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "A repülőgépes mód és a vezetékes hálózatok kör alakú gombként jelennek meg"
 
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:93
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
