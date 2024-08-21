@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2024-07-14 09:16+0000\n"
+"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"PO-Revision-Date: 2024-08-09 21:16+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/he/>\n"
@@ -27,50 +27,66 @@ msgstr "מחוון רשת"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "התחברות לרשתות אלחוטיות וניהול חיבור VPN"
 
-#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
 msgid "Improvements:"
 msgstr "שיפורים:"
 
-#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
-#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
-#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
+#: data/network.metainfo.xml.in:38
+#, fuzzy
+#| msgid "Show cellular devices as compact circle buttons"
+msgid "Show Cellular Modems as Toggles"
+msgstr "הצגת התקנים סלולריים ככפתורים עגולים קטנים"
+
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "תרגומים עודכנו"
 
-#: data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:49
+msgid "New features"
+msgstr "יכולות חדשות"
+
+#: data/network.metainfo.xml.in:51
+msgid "WireGuard support"
+msgstr "תמיכה ב־WireGuard"
+
+#: data/network.metainfo.xml.in:52
+msgid "OWE support"
+msgstr "תמיכה ב־OWE"
+
+#: data/network.metainfo.xml.in:54
+msgid "Minor updates"
+msgstr "עדכונים משניים"
+
+#: data/network.metainfo.xml.in:65
+msgid "Show cellular devices as compact circle buttons"
+msgstr "הצגת התקנים סלולריים ככפתורים עגולים קטנים"
+
+#: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr "מצב טיסה והתקנים קוויים מוצגים ככפתורים עגולים קטנים"
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:93
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr "הצגת חיבורי VPN ככפתורים עגולים ולאפשר להתחבר לכמה במקביל"
 
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-#: data/network.metainfo.xml.in:121
-msgid "Minor updates:"
-msgstr "עדכונים משניים:"
+#~ msgid "Fixes:"
+#~ msgstr "תיקונים:"
 
-#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
-msgid "Fixes:"
-msgstr "תיקונים:"
+#~ msgid "Ensure correct tooltip on system start"
+#~ msgstr "מתבצע וידוא שמופיעה העצה הנכונה עם הפעלת המערכת"
 
-#: data/network.metainfo.xml.in:104
-msgid "Ensure correct tooltip on system start"
-msgstr "מתבצע וידוא שמופיעה העצה הנכונה עם הפעלת המערכת"
+#~ msgid "Prevent connecting to invalid VPNs"
+#~ msgstr "מניעת התחברות עם VPNים שגויים"
 
-#: data/network.metainfo.xml.in:105
-msgid "Prevent connecting to invalid VPNs"
-msgstr "מניעת התחברות עם VPNים שגויים"
+#~ msgid "Show correct info for WPA3 networks"
+#~ msgstr "הצגת המידע הנכון לרשתות WPA3"
 
-#: data/network.metainfo.xml.in:106
-msgid "Show correct info for WPA3 networks"
-msgstr "הצגת המידע הנכון לרשתות WPA3"
-
-#: data/network.metainfo.xml.in:119
-msgid "Prevent blank lines in VPN list"
-msgstr "נמנעו שורות ריקות ברשימת חיבורי ה־VPN"
+#~ msgid "Prevent blank lines in VPN list"
+#~ msgstr "נמנעו שורות ריקות ברשימת חיבורי ה־VPN"
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary בע״מ"

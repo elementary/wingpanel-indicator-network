@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2024-07-14 09:16+0000\n"
+"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"PO-Revision-Date: 2024-08-11 09:16+0000\n"
 "Last-Translator: David M <rbndavid@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ca/>\n"
@@ -27,54 +27,70 @@ msgstr "Indicador de la xarxa"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connecteu amb xarxes sense fil i gestioneu XPV."
 
-#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
 msgid "Improvements:"
 msgstr "Millores:"
 
-#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
-#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
-#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
+#: data/network.metainfo.xml.in:38
+#, fuzzy
+#| msgid "Show cellular devices as compact circle buttons"
+msgid "Show Cellular Modems as Toggles"
+msgstr "Mostra els dispositius mòbils com a botons circulars compactes."
+
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "Traduccions actualitzades"
 
-#: data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:49
+msgid "New features"
+msgstr "Característiques noves"
+
+#: data/network.metainfo.xml.in:51
+msgid "WireGuard support"
+msgstr "Suport per a WireGuard"
+
+#: data/network.metainfo.xml.in:52
+msgid "OWE support"
+msgstr "Suport per a DEEM"
+
+#: data/network.metainfo.xml.in:54
+msgid "Minor updates"
+msgstr "Actualitzacions menors"
+
+#: data/network.metainfo.xml.in:65
+msgid "Show cellular devices as compact circle buttons"
+msgstr "Mostra els dispositius mòbils com a botons circulars compactes."
+
+#: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Mostra el mode d'avió i els dispositius amb fil com a botons circulars "
 "compactes."
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:93
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 "Mostra les connexions de VPN com a botons de cercle i permet connectar-ne "
 "diverses alhora."
 
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-#: data/network.metainfo.xml.in:121
-msgid "Minor updates:"
-msgstr "Actualitzacions menors:"
+#~ msgid "Fixes:"
+#~ msgstr "Correccions:"
 
-#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
-msgid "Fixes:"
-msgstr "Correccions:"
+#~ msgid "Ensure correct tooltip on system start"
+#~ msgstr "S'assegura el suggeriment correcte a l'inici del sistema."
 
-#: data/network.metainfo.xml.in:104
-msgid "Ensure correct tooltip on system start"
-msgstr "S'assegura el suggeriment correcte a l'inici del sistema."
+#~ msgid "Prevent connecting to invalid VPNs"
+#~ msgstr "Evita la connexió a VPN no vàlides."
 
-#: data/network.metainfo.xml.in:105
-msgid "Prevent connecting to invalid VPNs"
-msgstr "Evita la connexió a VPN no vàlides."
+#~ msgid "Show correct info for WPA3 networks"
+#~ msgstr "Mostra la informació correcta per a xarxes WPA3."
 
-#: data/network.metainfo.xml.in:106
-msgid "Show correct info for WPA3 networks"
-msgstr "Mostra la informació correcta per a xarxes WPA3."
-
-#: data/network.metainfo.xml.in:119
-msgid "Prevent blank lines in VPN list"
-msgstr "S'evita línies en blanc a la llista de VPN."
+#~ msgid "Prevent blank lines in VPN list"
+#~ msgstr "S'evita línies en blanc a la llista de VPN."
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary, Inc."

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2023-03-15 09:25+0000\n"
+"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"PO-Revision-Date: 2024-07-24 08:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.6.2\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -27,57 +27,80 @@ msgstr "Indicateur Réseau"
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 
-#: data/network.metainfo.xml.in:50 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/network.metainfo.xml.in:52 data/network.metainfo.xml.in:65
-#: data/network.metainfo.xml.in:80 data/network.metainfo.xml.in:95
-#: data/network.metainfo.xml.in:110 data/network.metainfo.xml.in:123
+#: data/network.metainfo.xml.in:38
+#, fuzzy
+#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgid "Show Cellular Modems as Toggles"
+msgstr ""
+"Affichage du mode Avion et des appareils filaires comme boutons circulaires "
+"compacts"
+
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:94
 msgid "Updated translations"
 msgstr "Mise à jour des traductions"
 
-#: data/network.metainfo.xml.in:78
+#: data/network.metainfo.xml.in:49
+msgid "New features"
+msgstr "Nouvelles fonctionnalités"
+
+#: data/network.metainfo.xml.in:51
+msgid "WireGuard support"
+msgstr "Prise en charge de WireGuard"
+
+#: data/network.metainfo.xml.in:52
+msgid "OWE support"
+msgstr "Prise en charge d'OWE"
+
+#: data/network.metainfo.xml.in:54
+msgid "Minor updates"
+msgstr "Mises à jour mineures"
+
+#: data/network.metainfo.xml.in:65
+#, fuzzy
+#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
+msgid "Show cellular devices as compact circle buttons"
+msgstr ""
+"Affichage du mode Avion et des appareils filaires comme boutons circulaires "
+"compacts"
+
+#: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Affichage du mode Avion et des appareils filaires comme boutons circulaires "
 "compacts"
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:93
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
 "Affichage des connexions VPN sous forme de boutons circulaires et "
 "autorisation des connexions multiples en parallèle"
 
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-#: data/network.metainfo.xml.in:121
-msgid "Minor updates:"
-msgstr "Mises à jour mineures :"
+#~ msgid "Fixes:"
+#~ msgstr "Corrections :"
 
-#: data/network.metainfo.xml.in:102 data/network.metainfo.xml.in:117
-msgid "Fixes:"
-msgstr "Corrections :"
+#~ msgid "Ensure correct tooltip on system start"
+#~ msgstr ""
+#~ "Nous nous sommes assurés d'afficher une infobulle correcte au démarrage "
+#~ "du système"
 
-#: data/network.metainfo.xml.in:104
-msgid "Ensure correct tooltip on system start"
-msgstr ""
-"Nous nous sommes assurés d'afficher une infobulle correcte au démarrage du "
-"système"
+#~ msgid "Prevent connecting to invalid VPNs"
+#~ msgstr ""
+#~ "Nous nous sommes assurés d'empêcher la connexion à des VPN invalides"
 
-#: data/network.metainfo.xml.in:105
-msgid "Prevent connecting to invalid VPNs"
-msgstr "Nous nous sommes assurés d'empêcher la connexion à des VPN invalides"
+#~ msgid "Show correct info for WPA3 networks"
+#~ msgstr "Affichage des informations correctes pour les réseaux WPA3"
 
-#: data/network.metainfo.xml.in:106
-msgid "Show correct info for WPA3 networks"
-msgstr "Affichage des informations correctes pour les réseaux WPA3"
-
-#: data/network.metainfo.xml.in:119
-msgid "Prevent blank lines in VPN list"
-msgstr ""
-"Nous avons empêché l'apparition de lignes vierges dans la liste des VPN"
+#~ msgid "Prevent blank lines in VPN list"
+#~ msgstr ""
+#~ "Nous avons empêché l'apparition de lignes vierges dans la liste des VPN"
 
 #~ msgid "elementary, Inc."
 #~ msgstr "elementary, Inc."
