@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-08-11 09:16+0000\n"
+"PO-Revision-Date: 2024-08-26 09:16+0000\n"
 "Last-Translator: Marcin Serwin <marcin@serwin.dev>\n"
 "Language-Team: Polish <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/pl/>\n"
@@ -34,11 +34,8 @@ msgid "Improvements:"
 msgstr "Ulepszenia:"
 
 #: data/network.metainfo.xml.in:38
-#, fuzzy
-#| msgid "Show cellular devices as compact circle buttons"
 msgid "Show Cellular Modems as Toggles"
-msgstr ""
-"Urządzenia komórkowe są teraz pokazywane jako kompaktowe okrągłe przyciski"
+msgstr "Modemy komórkowe są pokazywane jako przełączniki"
 
 #: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
