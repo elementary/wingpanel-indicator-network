@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-07-24 08:16+0000\n"
+"PO-Revision-Date: 2024-08-26 09:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/fr/>\n"
@@ -33,12 +33,8 @@ msgid "Improvements:"
 msgstr "Améliorations :"
 
 #: data/network.metainfo.xml.in:38
-#, fuzzy
-#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgid "Show Cellular Modems as Toggles"
-msgstr ""
-"Affichage du mode Avion et des appareils filaires comme boutons circulaires "
-"compacts"
+msgstr "Afficher les modems cellulaires sous forme d'interrupteurs"
 
 #: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
@@ -63,12 +59,9 @@ msgid "Minor updates"
 msgstr "Mises à jour mineures"
 
 #: data/network.metainfo.xml.in:65
-#, fuzzy
-#| msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
-"Affichage du mode Avion et des appareils filaires comme boutons circulaires "
-"compacts"
+"Afficher les modems cellulaires sous forme de boutons circulaires compacts"
 
 #: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
