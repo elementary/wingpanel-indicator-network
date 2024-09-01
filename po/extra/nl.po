@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-08-18 15:16+0000\n"
+"PO-Revision-Date: 2024-09-02 00:57+0000\n"
 "Last-Translator: DutchVipperloid <svenroelof@e.email>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/nl/>\n"
@@ -33,10 +33,8 @@ msgid "Improvements:"
 msgstr "Verbeteringen:"
 
 #: data/network.metainfo.xml.in:38
-#, fuzzy
-#| msgid "Show cellular devices as compact circle buttons"
 msgid "Show Cellular Modems as Toggles"
-msgstr "Geef cellulaire apparaten weer als compacte ronde knoppen"
+msgstr "Geef cellulaire modems weer als schakelaars"
 
 #: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
