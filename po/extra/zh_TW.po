@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-09-05 16:16+0000\n"
+"PO-Revision-Date: 2024-09-05 21:13+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "wingpanel/indicator-network-extra/zh_Hant/>\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
-msgstr ""
+msgstr "網路指示器"
 
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "連接至無線網路或管理 VPN"
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
 #: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
@@ -34,7 +34,7 @@ msgstr "改善項目："
 
 #: data/network.metainfo.xml.in:38
 msgid "Show Cellular Modems as Toggles"
-msgstr ""
+msgstr "用切換按鈕來顯示行動數據機"
 
 #: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
 #: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
@@ -48,11 +48,11 @@ msgstr "新功能"
 
 #: data/network.metainfo.xml.in:51
 msgid "WireGuard support"
-msgstr ""
+msgstr "WireGuard 支援"
 
 #: data/network.metainfo.xml.in:52
 msgid "OWE support"
-msgstr ""
+msgstr "OWE 支援"
 
 #: data/network.metainfo.xml.in:54
 msgid "Minor updates"
@@ -60,13 +60,13 @@ msgstr "小型更新"
 
 #: data/network.metainfo.xml.in:65
 msgid "Show cellular devices as compact circle buttons"
-msgstr ""
+msgstr "用簡潔的圓形按鈕來顯示行動裝置"
 
 #: data/network.metainfo.xml.in:92
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
-msgstr ""
+msgstr "用簡潔的圓形按鈕來顯示飛航模式與有線裝置"
 
 #: data/network.metainfo.xml.in:93
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
-msgstr ""
+msgstr "用圓形按鈕來顯示 VPN 連線，並允許同時連接多個 VPN"
