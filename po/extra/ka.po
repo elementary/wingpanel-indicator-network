@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-08-05 08:16+0000\n"
+"PO-Revision-Date: 2024-09-13 00:01+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
 "indicator-network-extra/ka/>\n"
@@ -44,15 +44,15 @@ msgstr "განახლებული თარგმანები"
 
 #: data/network.metainfo.xml.in:49
 msgid "New features"
-msgstr ""
+msgstr "ახალი თვისებები"
 
 #: data/network.metainfo.xml.in:51
 msgid "WireGuard support"
-msgstr ""
+msgstr "WireGuard-ის მხარდაჭერა"
 
 #: data/network.metainfo.xml.in:52
 msgid "OWE support"
-msgstr ""
+msgstr "OWE-ის მხარდაჭერა"
 
 #: data/network.metainfo.xml.in:54
 msgid "Minor updates"
