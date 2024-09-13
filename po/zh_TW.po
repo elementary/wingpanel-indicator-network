@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2024-09-05 21:13+0000\n"
+"PO-Revision-Date: 2024-09-14 02:16+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
 "wingpanel/wingpanel-indicator-network/zh_Hant/>\n"
@@ -115,7 +115,7 @@ msgstr "加密"
 
 #: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
-msgstr "不安全"
+msgstr "未受保護"
 
 #~ msgid "VPN"
 #~ msgstr "VPN"
