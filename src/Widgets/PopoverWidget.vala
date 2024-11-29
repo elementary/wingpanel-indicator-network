@@ -19,6 +19,8 @@
 public class Network.Widgets.PopoverWidget : Gtk.Grid {
     public NM.Client nm_client { get; construct; }
 
+    private VpnInterface vpn_interface;
+
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
     public bool secure { private set; get; default = false; }
@@ -32,6 +34,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
+
+    public uint children_per_line {
+        get { return other_box.get_max_children_per_line (); }
+        set { other_box.set_max_children_per_line (value); }
+    }
 
     public signal void settings_shown ();
 
@@ -52,7 +59,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             margin_end = 12,
             margin_bottom = 6,
             margin_start = 12,
-            max_children_per_line = 3,
+            max_children_per_line = children_per_line,
             selection_mode = Gtk.SelectionMode.NONE
         };
         wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
@@ -139,7 +146,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             show_settings_button.clicked.connect (show_settings);
         }
 
-        var vpn_interface = new VpnInterface (nm_client);
+        vpn_interface = new VpnInterface (nm_client);
         network_interface.append (vpn_interface);
         add_interface (vpn_interface);
 
@@ -181,6 +188,12 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             flowboxchild.add (widget_interface);
 
             other_box.add (flowboxchild);
+
+            children_per_line = other_box.get_children ().length ();
+            if (children_per_line < 2) children_per_line = 2;
+            if (children_per_line > 3) children_per_line = 3;
+            vpn_interface.children_per_line_vpn = children_per_line;
+
             return;
         }
 
@@ -251,6 +264,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
                 unowned var parent = widget_interface.get_parent ();
                 if (parent is Gtk.FlowBoxChild) {
                     parent.destroy ();
+                    children_per_line = other_box.get_children ().length ();
+                    if (children_per_line < 2) children_per_line = 2;
+                    if (children_per_line > 3) children_per_line = 3;
+                    vpn_interface.children_per_line_vpn = children_per_line;
                 }
 
                 widget_interface.sep.destroy ();
