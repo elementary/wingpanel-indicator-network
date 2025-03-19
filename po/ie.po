@@ -8,112 +8,115 @@ msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-21 18:22+0000\n"
-"PO-Revision-Date: 2018-05-02 11:10-0700\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-03-20 07:55+0000\n"
+"Last-Translator: Carmina16 <mistresssilvara@hotmail.com>\n"
+"Language-Team: Occidental <https://l10n.elementaryos.org/projects/wingpanel/"
+"wingpanel-indicator-network/ie/>\n"
 "Language: ie\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: src/Indicator.vala:134 src/Indicator.vala:147
 msgid "Wired"
-msgstr ""
+msgstr "Per fil"
 
 #: src/Indicator.vala:135
 msgid "Connecting to wired network"
-msgstr ""
+msgstr "Conexente al rete de fil"
 
 #: src/Indicator.vala:137 src/Indicator.vala:142
 #, c-format
 msgid "Connecting to “%s”"
-msgstr ""
+msgstr "Conexente a «%s»"
 
 #: src/Indicator.vala:148
 msgid "Connected to wired network"
-msgstr ""
+msgstr "Conexet al rete de fil"
 
 #: src/Indicator.vala:150 src/Indicator.vala:161
 #, c-format
 msgid "Connected to “%s”"
-msgstr ""
+msgstr "Conexet a «%s»"
 
 #: src/Indicator.vala:166
 msgid "Failed to connect"
-msgstr ""
+msgstr "Conexion ne successat"
 
 #: src/Indicator.vala:170
 msgid "Disconnected"
-msgstr ""
+msgstr "Deconexet"
 
 #: src/Indicator.vala:173
 msgid "Not connected"
-msgstr ""
+msgstr "Null conexion"
 
 #: src/Indicator.vala:179
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "Medial clic: deactivar li mode de avion"
 
 #: src/Indicator.vala:180
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "Medial clic: activar li mode de avion"
 
 #: src/Indicator.vala:200 src/Indicator.vala:212
 msgid "unknown network"
-msgstr ""
+msgstr "ínconosset rete"
 
 #: src/Widgets/PopoverWidget.vala:78
 msgid "Airplane Mode"
-msgstr ""
+msgstr "Mode de avion"
 
 #: src/Widgets/PopoverWidget.vala:130
 msgid "Connect to Hidden Network…"
-msgstr ""
+msgstr "Conexer a un celat rete…"
 
 #: src/Widgets/PopoverWidget.vala:134
 msgid "Network Settings…"
-msgstr ""
+msgstr "Parametres de rete…"
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
-msgstr ""
+msgstr "Ínconosset aparate"
 
 #: src/Widgets/WifiInterface.vala:78
 msgid "No Access Points Available"
-msgstr ""
+msgstr "Null punctus de accesse disponibil"
 
 #: src/Widgets/WifiInterface.vala:80
 msgid "Scanning for Access Points…"
-msgstr ""
+msgstr "Serchante por puctus de accesse…"
 
 #: src/Widgets/WifiMenuItem.vala:69
 msgid "Unable to connect"
-msgstr ""
+msgstr "Conexion ne successat"
 
 #: src/Widgets/WifiMenuItem.vala:114
 msgid "40/64-bit WEP encrypted"
-msgstr ""
+msgstr "Ciffre: 40/64-bit WEP"
 
 #: src/Widgets/WifiMenuItem.vala:117
 msgid "104/128-bit WEP encrypted"
-msgstr ""
+msgstr "Ciffre: 104/128-bit WEP"
 
 #: src/Widgets/WifiMenuItem.vala:120
 msgid "WPA3 encrypted"
-msgstr ""
+msgstr "Ciffre: WPA3"
 
 #: src/Widgets/WifiMenuItem.vala:123
 msgid "WPA encrypted"
-msgstr ""
+msgstr "Ciffre: WPA"
 
 #: src/Widgets/WifiMenuItem.vala:127
 msgid "Passwordless encrypted"
-msgstr ""
+msgstr "Ciffration sin contrasigne"
 
 #: src/Widgets/WifiMenuItem.vala:130
 msgid "Encrypted"
-msgstr ""
+msgstr "Ciffrat"
 
 #: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
-msgstr ""
+msgstr "Sin securitá"
