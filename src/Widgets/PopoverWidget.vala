@@ -149,7 +149,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             device_added_cb (devices.get (i));
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
@@ -207,7 +207,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             container_box = vpn_box;
         }
 
-        if (is_in_session && get_children ().length () > 0) {
+        if (is_in_session && get_first_child != null) {
             container_box.append (widget_interface.sep);
         }
 
@@ -258,7 +258,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             }
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -309,7 +309,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         update_interfaces_names ();
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_state ();
     }
 

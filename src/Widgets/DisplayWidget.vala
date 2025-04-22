@@ -1,20 +1,7 @@
 /*
-* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * SPDX-License-Identifier: GPL-2.1-or-later
+ * SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+ */
 
 public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
@@ -33,13 +20,13 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
-            valign = Gtk.Align.CENTER,
+            valign = CENTER,
             vexpand = true
         };
 
         extra_info_revealer = new Gtk.Revealer () {
             child = extra_info_label,
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            transition_type = SLIDE_LEFT
         };
 
         append (image);
