@@ -44,7 +44,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
         radio_button = new Gtk.RadioButton (null) {
             child = label,
-            group =  blank_radio,
+            group = blank_radio,
             hexpand = true
         };
 
