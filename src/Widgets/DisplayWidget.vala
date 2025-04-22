@@ -25,7 +25,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
         };
 
         extra_info_revealer = new Gtk.Revealer () {
-            child = extra_info_label
+            child = extra_info_label,
             transition_type = SLIDE_LEFT
         };
 
