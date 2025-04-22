@@ -59,26 +59,24 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         };
         radio_button.add (label);
 
-        img_strength = new Gtk.Image () {
-            icon_size = Gtk.IconSize.MENU
-        };
+        img_strength = new Gtk.Image ();
 
-        lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
+        lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic");
 
-        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
+        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic") {
             tooltip_text = _("Unable to connect")
         };
 
         spinner = new Gtk.Spinner ();
 
         var box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 6);
-        box.add (radio_button);
-        box.add (spinner);
-        box.add (error_img);
-        box.add (lock_img);
-        box.add (img_strength);
+        box.append (radio_button);
+        box.append (spinner);
+        box.append (error_img);
+        box.append (lock_img);
+        box.append (img_strength);
 
-        add (box);
+        child = box;
 
         ap_list = new List<NM.AccessPoint> ();
 

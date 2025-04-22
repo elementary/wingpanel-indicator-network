@@ -67,16 +67,16 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
 
         modem_item = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
-            image = new Gtk.Image.from_icon_name ("panel-network-cellular-connected-symbolic", Gtk.IconSize.MENU)
+            image = new Gtk.Image.from_icon_name ("panel-network-cellular-connected-symbolic")
         };
-        modem_item.get_style_context ().add_class ("circular");
+        modem_item.add_css_class ("circular");
         modem_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var label = new Gtk.Label (display_title) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
             max_width_chars = 16
         };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         hexpand = true;
         orientation = Gtk.Orientation.VERTICAL;

@@ -85,12 +85,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         var spinner = new Gtk.Spinner ();
         spinner.start ();
 
-        var scanning_box = new Gtk.Grid () {
-            column_spacing = 6,
+        var scanning_box = new Gtk.Box (HORIZONTAL, 6) {
             valign = Gtk.Align.CENTER
         };
-        scanning_box.add (scanning);
-        scanning_box.add (spinner);
+        scanning_box.append (scanning);
+        scanning_box.append (spinner);
 
         placeholder = new Gtk.Stack () {
             margin_end = 12,
@@ -99,28 +98,28 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         placeholder.add_named (no_aps, "no-aps");
         placeholder.add_named (scanning_box, "scanning");
         placeholder.visible_child_name = "no-aps";
-        placeholder.show_all ();
 
         wifi_list = new Gtk.ListBox ();
         wifi_list.set_sort_func (sort_func);
         wifi_list.set_placeholder (placeholder);
 
         wifi_item = new Granite.SwitchModelButton (display_title);
-        wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+        wifi_item.add_css_class (Granite.STYLE_CLASS_H4_LABEL);
 
-        var scrolled_box = new Gtk.ScrolledWindow (null, null) {
+        var scrolled_box = new Gtk.ScrolledWindow () {
+            child = wifi_list,
             hscrollbar_policy = Gtk.PolicyType.NEVER,
             max_content_height = 512,
             propagate_natural_height = true
         };
-        scrolled_box.add (wifi_list);
 
-        revealer = new Gtk.Revealer ();
-        revealer.add (scrolled_box);
+        revealer = new Gtk.Revealer () {
+            child = scrolled_box
+        };
 
         orientation = Gtk.Orientation.VERTICAL;
-        pack_start (wifi_item);
-        pack_start (revealer);
+        append (wifi_item);
+        append (revealer);
 
         bind_property ("display-title", wifi_item, "text");
 
@@ -311,7 +310,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false) {
                 deletable = false
             };
-            wifi_dialog.transient_for = (Gtk.Window) get_toplevel ();
+            wifi_dialog.transient_for = (Gtk.Window) get_root ();
 
             wifi_dialog.response.connect ((response) => {
                 if (response == Gtk.ResponseType.OK) {
@@ -319,8 +318,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 }
             });
 
-            wifi_dialog.run ();
-            wifi_dialog.destroy ();
+            wifi_dialog.present ();
+            wifi_dialog.response.connect (wifi_dialog.destroy);
         } else {
             nm_client.add_and_activate_connection_async.begin (
                 connection,
@@ -367,7 +366,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         var hidden_dialog = new NMA.WifiDialog.for_other (nm_client) {
             deletable = false
         };
-        hidden_dialog.transient_for = (Gtk.Window) get_toplevel ();
+        hidden_dialog.transient_for = (Gtk.Window) get_root ();
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
@@ -462,8 +461,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         if (!found && ap_ssid != null) {
             var item = new WifiMenuItem (ap, blank_item);
 
-            wifi_list.add (item);
-            wifi_list.show_all ();
+            wifi_list.append (item);
 
             update ();
         }

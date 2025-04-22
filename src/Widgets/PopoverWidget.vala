@@ -16,7 +16,7 @@
 *
 */
 
-public class Network.Widgets.PopoverWidget : Gtk.Grid {
+public class Network.Widgets.PopoverWidget : Gtk.Box {
     public NM.Client nm_client { get; construct; }
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
@@ -70,25 +70,25 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
             var airplane_toggle = new Gtk.ToggleButton () {
                 halign = Gtk.Align.CENTER,
-                image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
+                icon_name = "airplane-mode-symbolic"
             };
-            airplane_toggle.get_style_context ().add_class ("circular");
+            airplane_toggle.add_css_class ("circular");
             airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var airplane_label = new Gtk.Label (_("Airplane Mode"));
-            airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            airplane_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
             var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
-            airplane_box.add (airplane_toggle);
-            airplane_box.add (airplane_label);
+            airplane_box.append (airplane_toggle);
+            airplane_box.append (airplane_label);
 
             var airplane_child = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = airplane_box
             };
-            airplane_child.add (airplane_box);
 
-            other_box.add (airplane_child);
+            other_box.append (airplane_child);
 
             airplane_toggle.toggled.connect (() => {
                 nm_client.dbus_call.begin (
@@ -115,26 +115,27 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         };
 
         var toggle_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        toggle_box.add (other_box);
-        toggle_box.add (other_sep);
+        toggle_box.append (other_box);
+        toggle_box.append (other_sep);
 
-        toggle_revealer = new Gtk.Revealer ();
-        toggle_revealer.add (toggle_box);
+        toggle_revealer = new Gtk.Revealer () {
+            child = toggle_box
+        };
 
-        add (toggle_revealer);
-        add (vpn_box);
-        add (wifi_box);
+        append (toggle_revealer);
+        append (vpn_box);
+        append (wifi_box);
 
         if (is_in_session) {
             hidden_item = new PopoverMenuitem ();
             hidden_item.text = _("Connect to Hidden Network…");
-            hidden_item.no_show_all = true;
+            hidden_item.visible = false;
 
             var show_settings_button = new PopoverMenuitem ();
             show_settings_button.text = _("Network Settings…");
 
-            add (hidden_item);
-            add (show_settings_button);
+            append (hidden_item);
+            append (show_settings_button);
 
             show_settings_button.clicked.connect (show_settings);
         }
@@ -149,7 +150,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
-        show_all ();
         update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
@@ -180,7 +180,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             };
             flowboxchild.add (widget_interface);
 
-            other_box.add (flowboxchild);
+            other_box.append (flowboxchild);
             return;
         }
 
@@ -188,8 +188,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
-            hidden_item.no_show_all = false;
-            hidden_item.show_all ();
+            hidden_item.visible = true;
 
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
@@ -209,10 +208,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session && get_children ().length () > 0) {
-            container_box.pack_end (widget_interface.sep);
+            container_box.append (widget_interface.sep);
         }
 
-        container_box.pack_end (widget_interface);
+        container_box.append (widget_interface);
     }
 
     public void opened () {
@@ -312,7 +311,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         toggle_revealer.reveal_child = other_box.get_children () != null;
         update_state ();
-        show_all ();
     }
 
     private void update_state () {

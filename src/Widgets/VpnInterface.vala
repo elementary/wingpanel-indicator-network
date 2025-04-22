@@ -25,7 +25,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
             selection_mode = Gtk.SelectionMode.NONE
         };
 
-        add (vpn_list);
+        append (vpn_list);
 
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
         nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
