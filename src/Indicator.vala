@@ -22,6 +22,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     NetworkMonitor network_monitor;
 
+    private Gtk.GestureMultiPress gesture_click;
+
     public bool is_in_session { get; set; default = false; }
 
     public Indicator (bool is_in_session) {
@@ -53,23 +55,22 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.settings_shown.connect (() => { close (); });
 
         if (is_in_session) {
-            display_widget.button_press_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_MIDDLE) {
-                    popover_widget.nm_client.dbus_call.begin (
-                        NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                        "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
-                        null, -1, null, (obj, res) => {
-                            try {
-                                ((NM.Client) obj).dbus_set_property.end (res);
-                            } catch (Error e) {
-                                warning ("Error setting airplane mode: %s", e.message);
-                            }
-                        }
-                    );
-                    return true;
-                }
+            gesture_click = new Gtk.GestureMultiPress (display_widget) {
+                button = button = Gdk.BUTTON_MIDDLE
+            };
 
-                return false;
+            gesture_click.pressed.connect (() => {
+                popover_widget.nm_client.dbus_call.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
+                    null, -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
             });
         }
 
