@@ -447,8 +447,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         bool found = false;
 
-        foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-            var menu_item = (WifiMenuItem) w;
+        for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+            var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
             var menu_ssid = menu_item.ssid;
             if (menu_ssid != null && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
@@ -491,8 +491,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             debug ("Active ap: %s", active_ap_name);
 
             bool found = false;
-            foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-                var menu_item = (WifiMenuItem) w;
+
+            for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+                var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
                 if (active_ap_ssid.compare (menu_item.ssid) == 0) {
                     found = true;
@@ -518,8 +519,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         WifiMenuItem found_item = null;
 
-        foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-            var menu_item = (WifiMenuItem) w;
+        for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+            var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
             assert (menu_item != null);
 
