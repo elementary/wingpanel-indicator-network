@@ -53,23 +53,23 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.settings_shown.connect (() => { close (); });
 
         if (is_in_session) {
-            display_widget.button_press_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_MIDDLE) {
-                    popover_widget.nm_client.dbus_call.begin (
-                        NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                        "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
-                        null, -1, null, (obj, res) => {
-                            try {
-                                ((NM.Client) obj).dbus_set_property.end (res);
-                            } catch (Error e) {
-                                warning ("Error setting airplane mode: %s", e.message);
-                            }
-                        }
-                    );
-                    return true;
-                }
+            var gesture_click = new Gtk.GestureClick () {
+                button = Gdk.BUTTON_MIDDLE
+            };
+            display_widget.add_controller (gesture_click);
 
-                return false;
+            gesture_click.pressed.connect ((event) => {
+                popover_widget.nm_client.dbus_call.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
+                    null, -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
             });
         }
 
