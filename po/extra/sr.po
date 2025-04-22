@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2024-08-07 00:16+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Serbian <https://l10n.elementary.io/projects/wingpanel/"
@@ -27,6 +27,10 @@ msgstr "Указивач мреже"
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Повежите се на бежичне мреже и управљајте ВПН-има"
+
+#: data/network.metainfo.xml.in:28
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
 #: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
@@ -71,9 +75,6 @@ msgstr ""
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Prevent panel icon from showing in the dock"
 #~ msgstr "Спречите приказивање иконице панела у луци"

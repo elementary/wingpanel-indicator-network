@@ -1,22 +1,9 @@
 /*
-* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2021 elementary, Inc. (https://elementary.io)
 */
 
-public class Network.Widgets.PopoverWidget : Gtk.Grid {
+public class Network.Widgets.PopoverWidget : Gtk.Box {
     public NM.Client nm_client { get; construct; }
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
@@ -83,9 +70,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
             var airplane_child = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = airplane_box
             };
-            airplane_child.add (airplane_box);
 
             other_box.add (airplane_child);
 
@@ -117,8 +104,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         toggle_box.add (other_box);
         toggle_box.add (other_sep);
 
-        toggle_revealer = new Gtk.Revealer ();
-        toggle_revealer.add (toggle_box);
+        toggle_revealer = new Gtk.Revealer () {
+            child = toggle_box
+        };
 
         add (toggle_revealer);
         add (vpn_box);
@@ -175,9 +163,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = widget_interface
             };
-            flowboxchild.add (widget_interface);
 
             other_box.add (flowboxchild);
             return;

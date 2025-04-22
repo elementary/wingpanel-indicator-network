@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2024-08-26 09:16+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementary.io/projects/wingpanel/"
@@ -26,6 +26,10 @@ msgstr "Indicateur Réseau"
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
 msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
+
+#: data/network.metainfo.xml.in:28
+msgid "elementary, Inc."
+msgstr "elementary, Inc."
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
 #: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
@@ -94,9 +98,6 @@ msgstr ""
 #~ msgid "Prevent blank lines in VPN list"
 #~ msgstr ""
 #~ "Nous avons empêché l'apparition de lignes vierges dans la liste des VPN"
-
-#~ msgid "elementary, Inc."
-#~ msgstr "elementary, Inc."
 
 #~ msgid "Don't launch Captive Network Assistant with full connectivity"
 #~ msgstr ""
