@@ -45,16 +45,16 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private Gtk.Image img_strength;
     private Gtk.Image lock_img;
     private Gtk.Label label;
-    private Gtk.RadioButton radio_button;
+    private Gtk.CheckButton radio_button;
     private Gtk.Spinner spinner;
     private List<NM.AccessPoint> ap_list;
 
-    public WifiMenuItem (NM.AccessPoint ap, Gtk.RadioButton blank_radio) {
+    public WifiMenuItem (NM.AccessPoint ap, Gtk.CheckButton blank_radio) {
         label = new Gtk.Label (null) {
             ellipsize = Pango.EllipsizeMode.MIDDLE
         };
 
-        radio_button = new Gtk.RadioButton.from_widget (blank_radio) {
+        radio_button = new Gtk.CheckButton.from_widget (blank_radio) {
             hexpand = true
         };
         radio_button.add (label);

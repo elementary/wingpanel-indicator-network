@@ -33,7 +33,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private NM.AccessPoint? active_ap;
     private Gtk.ListBox wifi_list;
     private WifiMenuItem? active_wifi_item;
-    private Gtk.RadioButton blank_item;
+    private Gtk.CheckButton blank_item;
     private Gtk.Stack placeholder;
 
     private bool locked;
@@ -50,7 +50,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         wifi_device = (NM.DeviceWifi) device;
 
-        blank_item = new Gtk.RadioButton (null);
+        blank_item = new Gtk.CheckButton (null);
 
         active_wifi_item = null;
 
