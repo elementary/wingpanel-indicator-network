@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2025-03-20 07:55+0000\n"
 "Last-Translator: Carmina16 <mistresssilvara@hotmail.com>\n"
 "Language-Team: Occidental <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -25,6 +25,10 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
+msgstr ""
+
+#: data/network.metainfo.xml.in:28
+msgid "elementary, Inc."
 msgstr ""
 
 #: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
