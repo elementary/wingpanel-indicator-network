@@ -41,16 +41,10 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
         }
     }
 
-    private static Gtk.CssProvider provider;
     private Gtk.ToggleButton toggle_button;
 
     public VpnMenuItem (NM.RemoteConnection remote_connection) {
         Object (remote_connection: remote_connection);
-    }
-
-    static construct {
-        provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
     }
 
     construct {
@@ -58,9 +52,6 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
             halign = Gtk.Align.CENTER,
             image = new Gtk.Image.from_icon_name ("panel-network-vpn-disconnected-symbolic", Gtk.IconSize.MENU)
         };
-        toggle_button.get_style_context ().add_class ("circular");
-        toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
 
         var label = new Gtk.Label (remote_connection.get_id ()) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,

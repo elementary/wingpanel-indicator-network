@@ -3,19 +3,26 @@
 * SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
 */
 
-.image-button.circular {
-    background: alpha(@text_color, 0.1);
+network .image-button.toggle {
+    border-radius: 1em;
+}
+
+network .image-button {
     border: none;
     box-shadow: none;
     min-height: 2.1666rem; /* 26px */
     min-width: 2.1666rem; /* 26px */
 }
 
-.image-button:checked.circular {
+network .image-button {
+    background: alpha(@text_color, 0.1);
+}
+
+network .image-button:checked {
     background: @selected_bg_color;
     color: @selected_fg_color;
 }
 
-.image-button:disabled.circular {
+network .image-button:disabled {
     background: @insensitive_bg_color;
 }
