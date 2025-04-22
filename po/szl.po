@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,65 +14,65 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:144 src/Indicator.vala:157
 msgid "Wired"
 msgstr "Drōtowe"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:145
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:147 src/Indicator.vala:152
 #, c-format
 msgid "Connecting to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:158
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:160 src/Indicator.vala:171
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:176
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:180
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:183
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:189
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:190
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:210 src/Indicator.vala:222
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:64
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:117
 msgid "Connect to Hidden Network…"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:121
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
 
