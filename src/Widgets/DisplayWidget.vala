@@ -16,7 +16,7 @@
 *
 */
 
-public class Network.Widgets.DisplayWidget : Gtk.Grid {
+public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
     private Gtk.Label extra_info_label;
     private Gtk.Revealer extra_info_revealer;
@@ -27,7 +27,9 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic") {
+            pixel_size = 24
+        };
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
@@ -36,9 +38,9 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
         };
 
         extra_info_revealer = new Gtk.Revealer () {
+            child = extra_info_label,
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
-        extra_info_revealer.add (extra_info_label);
 
         add (image);
         add (extra_info_revealer);
