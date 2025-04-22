@@ -1,22 +1,9 @@
 /*
-* Copyright 2015-2020 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
-*/
+ * SPDX-License-Identifier: GPL-2.1-or-later
+ * SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
+ */
 
-public class Network.Widgets.DisplayWidget : Gtk.Grid {
+public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
     private Gtk.Label extra_info_label;
     private Gtk.Revealer extra_info_revealer;
@@ -27,18 +14,20 @@ public class Network.Widgets.DisplayWidget : Gtk.Grid {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR);
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR) {
+            pixel_size = 24
+        };
 
         extra_info_label = new Gtk.Label (null) {
             margin_start = 4,
-            valign = Gtk.Align.CENTER,
+            valign = CENTER,
             vexpand = true
         };
 
         extra_info_revealer = new Gtk.Revealer () {
-            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+            child = extra_info_label
+            transition_type = SLIDE_LEFT
         };
-        extra_info_revealer.add (extra_info_label);
 
         add (image);
         add (extra_info_revealer);
