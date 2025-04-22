@@ -55,12 +55,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
 
     private DBusObjectManagerClient? modem_manager;
     private Gtk.ToggleButton modem_item;
-    private static Gtk.CssProvider provider;
-
-    static construct {
-        provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
-    }
 
     public ModemInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
@@ -69,8 +63,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
             halign = Gtk.Align.CENTER,
             image = new Gtk.Image.from_icon_name ("panel-network-cellular-connected-symbolic", Gtk.IconSize.MENU)
         };
-        modem_item.get_style_context ().add_class ("circular");
-        modem_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var label = new Gtk.Label (display_title) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,

@@ -37,6 +37,15 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         display_widget = new Widgets.DisplayWidget ();
 
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
+
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+
         popover_widget = new Widgets.PopoverWidget (is_in_session);
         popover_widget.notify["state"].connect (on_state_changed);
         popover_widget.notify["secure"].connect (on_state_changed);

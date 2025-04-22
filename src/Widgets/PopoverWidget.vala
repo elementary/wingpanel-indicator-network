@@ -39,6 +39,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         Object (is_in_session: is_in_session);
     }
 
+    class construct {
+        set_css_name ("network");
+    }
+
     construct {
         network_interface = new GLib.List<WidgetNMInterface> ();
 
@@ -65,15 +69,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
-
             var airplane_toggle = new Gtk.ToggleButton () {
                 halign = Gtk.Align.CENTER,
                 image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
             };
-            airplane_toggle.get_style_context ().add_class ("circular");
-            airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var airplane_label = new Gtk.Label (_("Airplane Mode"));
             airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
