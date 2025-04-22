@@ -47,7 +47,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void check_vpn_availability () {
-        show_vpn (vpn_list.get_children ().length () > 0);
+        show_vpn (vpn_list.get_child_at_index (0) != null);
     }
 
     private void show_vpn (bool show) {
@@ -113,8 +113,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void vpn_removed_cb (NM.RemoteConnection connection) {
-        foreach (unowned var child in vpn_list.get_children ()) {
-            unowned var menu_item = (VpnMenuItem) child;
+        for (int i = 0; vpn_list.get_child_at_index (i) != null; i++) {
+            var menu_item = (VpnMenuItem) vpn_list.get_child_at_index (i);
             if (menu_item.remote_connection == connection) {
                 menu_item.destroy ();
                 check_vpn_availability ();
@@ -124,8 +124,8 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private VpnMenuItem? get_item_for_active_connection (NM.ActiveConnection active_connection) {
-        foreach (unowned var child in vpn_list.get_children ()) {
-            unowned var menu_item = (VpnMenuItem) child;
+        for (int i = 0; vpn_list.get_child_at_index (i) != null; i++) {
+            var menu_item = (VpnMenuItem) vpn_list.get_child_at_index (i);
             if (menu_item.remote_connection == active_connection.connection) {
                 return menu_item;
             }
