@@ -148,7 +148,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             device_added_cb (devices.get (i));
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         show_all ();
         update_vpn_connection ();
 
@@ -259,7 +259,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             }
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -310,7 +310,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         update_interfaces_names ();
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_state ();
         show_all ();
     }
