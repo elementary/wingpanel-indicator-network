@@ -28,7 +28,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-        unowned var icon_theme = Gtk.IconTheme.get_default ();
+        unowned var icon_theme = Gtk.IconTheme.get_for_display (Gdk.Display.get_default ());
         icon_theme.add_resource_path ("/io/elementary/wingpanel/network");
 
         Object (code_name: Wingpanel.Indicator.NETWORK,
@@ -40,8 +40,8 @@ public class Network.Indicator : Wingpanel.Indicator {
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
 
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
