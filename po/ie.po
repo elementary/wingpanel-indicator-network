@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2025-03-20 07:55+0000\n"
 "Last-Translator: Carmina16 <mistresssilvara@hotmail.com>\n"
 "Language-Team: Occidental <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -19,61 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.10.4\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:144 src/Indicator.vala:157
 msgid "Wired"
 msgstr "Per fil"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:145
 msgid "Connecting to wired network"
 msgstr "Conexente al rete de fil"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:147 src/Indicator.vala:152
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Conexente a «%s»"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:158
 msgid "Connected to wired network"
 msgstr "Conexet al rete de fil"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:160 src/Indicator.vala:171
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Conexet a «%s»"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:176
 msgid "Failed to connect"
 msgstr "Conexion ne successat"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:180
 msgid "Disconnected"
 msgstr "Deconexet"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:183
 msgid "Not connected"
 msgstr "Null conexion"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:189
 msgid "Middle-click to turn airplane mode off"
 msgstr "Medial clic: deactivar li mode de avion"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:190
 msgid "Middle-click to turn airplane mode on"
 msgstr "Medial clic: activar li mode de avion"
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:210 src/Indicator.vala:222
 msgid "unknown network"
 msgstr "ínconosset rete"
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:64
 msgid "Airplane Mode"
 msgstr "Mode de avion"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:117
 msgid "Connect to Hidden Network…"
 msgstr "Conexer a un celat rete…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:121
 msgid "Network Settings…"
 msgstr "Parametres de rete…"
 

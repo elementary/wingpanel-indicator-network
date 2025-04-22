@@ -1,19 +1,6 @@
 /*
-* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
 */
 
 public class Network.WifiInterface : Network.WidgetNMInterface {
@@ -78,7 +65,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         var no_aps = new PlaceholderLabel (_("No Access Points Available"));
 
         var scanning = new PlaceholderLabel (_("Scanning for Access Points…")) {
-            halign = Gtk.Align.START,
+            halign = START,
             hexpand = true
         };
 
@@ -86,7 +73,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         spinner.start ();
 
         var scanning_box = new Gtk.Box (HORIZONTAL, 6) {
-            valign = Gtk.Align.CENTER
+            valign = CENTER
         };
         scanning_box.append (scanning);
         scanning_box.append (spinner);
@@ -108,7 +95,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         var scrolled_box = new Gtk.ScrolledWindow () {
             child = wifi_list,
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            hscrollbar_policy = NEVER,
             max_content_height = 512,
             propagate_natural_height = true
         };
@@ -316,10 +303,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 if (response == Gtk.ResponseType.OK) {
                     connect_to_network.begin (wifi_dialog);
                 }
+
+                wifi_dialog.destroy ();
             });
 
             wifi_dialog.present ();
-            wifi_dialog.response.connect (wifi_dialog.destroy);
         } else {
             nm_client.add_and_activate_connection_async.begin (
                 connection,
@@ -377,6 +365,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             } else {
                 hidden_dialog.destroy ();
             }
+
+            hidden_dialog.destroy ();
         });
 
         hidden_dialog.present ();
