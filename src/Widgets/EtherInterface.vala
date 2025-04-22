@@ -18,12 +18,6 @@
 
 public class Network.EtherInterface : Network.WidgetNMInterface {
     private Gtk.ToggleButton ethernet_item;
-    private static Gtk.CssProvider provider;
-
-    static construct {
-        provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
-    }
 
     public EtherInterface (NM.Client nm_client, NM.Device? _device) {
         device = _device;
@@ -32,8 +26,6 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             halign = Gtk.Align.CENTER,
             icon_name = "panel-network-wired-connected-symbolic"
         };
-        ethernet_item.add_css_class ("circular");
-        ethernet_item.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
         var label = new Gtk.Label (display_title) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
