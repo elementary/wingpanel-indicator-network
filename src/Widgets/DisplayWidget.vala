@@ -42,8 +42,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
         };
 
-        add (image);
-        add (extra_info_revealer);
+        append (image);
+        append (extra_info_revealer);
     }
 
     public void update_state (Network.State state, bool secure, string? extra_info = null) {
