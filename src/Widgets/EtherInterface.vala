@@ -44,8 +44,8 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
         hexpand = true;
         orientation = Gtk.Orientation.VERTICAL;
         spacing = 3;
-        add (ethernet_item);
-        add (label);
+        append (ethernet_item);
+        append (label);
 
         bind_property ("display-title", label, "label");
 

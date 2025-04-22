@@ -51,7 +51,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void show_vpn (bool show) {
-        no_show_all = sep.no_show_all = !show;
         visible = sep.visible = show;
     }
 
@@ -107,7 +106,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         unowned string connection_type = remote_connection.get_connection_type ();
         if (connection_type == NM.SettingVpn.SETTING_NAME || connection_type == NM.SettingWireGuard.SETTING_NAME) {
             var item = new VpnMenuItem (remote_connection);
-            vpn_list.add (item);
+            vpn_list.append (item);
             check_vpn_availability ();
         }
     }

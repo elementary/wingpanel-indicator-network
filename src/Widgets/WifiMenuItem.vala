@@ -54,10 +54,11 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             ellipsize = Pango.EllipsizeMode.MIDDLE
         };
 
-        radio_button = new Gtk.CheckButton.from_widget (blank_radio) {
+        radio_button = new Gtk.CheckButton () {
+            child = label,
+            group = blank_radio,
             hexpand = true
         };
-        radio_button.add (label);
 
         img_strength = new Gtk.Image ();
 
@@ -93,7 +94,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     class construct {
-        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+        set_css_name (Granite.STYLE_CLASS_MENUITEM);
     }
 
     private void update_ap () {
@@ -131,7 +132,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
 
         lock_img.visible = !is_secured;
-        lock_img.no_show_all = !lock_img.visible;
     }
 
     private const string BASE_ICON_NAME = "panel-network-wireless-signal-%s-symbolic";
@@ -146,15 +146,12 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             img_strength.icon_name = BASE_ICON_NAME.printf ("excellent");
         }
 
-        error_img.no_show_all = true;
         error_img.visible = false;
-        error_img.hide ();
 
         spinner.stop ();
 
         switch (state) {
             case NM.DeviceState.FAILED:
-                error_img.no_show_all = false;
                 error_img.visible = true;
                 break;
             case NM.DeviceState.PREPARE:

@@ -176,9 +176,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = widget_interface
             };
-            flowboxchild.add (widget_interface);
 
             other_box.append (flowboxchild);
             return;
