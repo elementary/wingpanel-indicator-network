@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2020-10-27 10:15+0000\n"
 "Last-Translator: Fabio Zaramella <fabiozaramella@hotmail.it>\n"
 "Language-Team: Italian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,73 +15,73 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:144 src/Indicator.vala:157
 msgid "Wired"
 msgstr "Cablata"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:145
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:147 src/Indicator.vala:152
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Connessione in corso"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:158
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:160 src/Indicator.vala:171
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Connesso"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:176
 #, fuzzy
 #| msgid "Unable to connect"
 msgid "Failed to connect"
 msgstr "Impossibile connetersi"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:180
 msgid "Disconnected"
 msgstr "Disconnesso"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:183
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Connesso"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:189
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:190
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:210 src/Indicator.vala:222
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:64
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Modalità Aereo attivata"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:117
 msgid "Connect to Hidden Network…"
 msgstr "Connettiti a una rete nascosta…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:121
 msgid "Network Settings…"
 msgstr "Impostazioni di rete…"
 

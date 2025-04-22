@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2023-12-14 20:10+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:144 src/Indicator.vala:157
 msgid "Wired"
 msgstr "Vezetékes"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:145
 msgid "Connecting to wired network"
 msgstr "Csatlakozás rejtett hálózathoz"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:147 src/Indicator.vala:152
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Csatlakozás: “%s”"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:158
 msgid "Connected to wired network"
 msgstr "Csatlakozva rejtett hálózathoz"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:160 src/Indicator.vala:171
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Csatlakozva: “%s”"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:176
 msgid "Failed to connect"
 msgstr "Nem sikerült csatlakozni"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:180
 msgid "Disconnected"
 msgstr "Leválasztva"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:183
 msgid "Not connected"
 msgstr "Nincs csatlakoztatva"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:189
 msgid "Middle-click to turn airplane mode off"
 msgstr "Középső kattintás a repülőgépes mód kikapcsolásához"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:190
 msgid "Middle-click to turn airplane mode on"
 msgstr "Középső kattintás a repülőgépes mód bekapcsolásához"
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:210 src/Indicator.vala:222
 msgid "unknown network"
 msgstr "ismeretlen hálózat"
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:64
 msgid "Airplane Mode"
 msgstr "Repülőgépes mód"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:117
 msgid "Connect to Hidden Network…"
 msgstr "Csatlakozás rejtett hálózathoz…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:121
 msgid "Network Settings…"
 msgstr "Hálózati beállítások…"
 

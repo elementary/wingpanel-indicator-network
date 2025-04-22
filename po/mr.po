@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-21 18:22+0000\n"
+"POT-Creation-Date: 2025-04-22 18:38+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:144 src/Indicator.vala:157
 msgid "Wired"
 msgstr "वायर्ड"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:145
 msgid "Connecting to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:147 src/Indicator.vala:152
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” शी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:158
 msgid "Connected to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट केले"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:160 src/Indicator.vala:171
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” शी कनेक्ट केले"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:176
 msgid "Failed to connect"
 msgstr "कनेक्ट करण्यात अयशस्वी"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:180
 msgid "Disconnected"
 msgstr "डिस्कनेक्ट केले"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:183
 msgid "Not connected"
 msgstr "कनेक्ट नाही केले"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:189
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:190
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:210 src/Indicator.vala:222
 msgid "unknown network"
 msgstr "अज्ञात नेटवर्क"
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:64
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:117
 msgid "Connect to Hidden Network…"
 msgstr "लपविलेल्या नेटवर्कशी कनेक्ट करा …"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:121
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज …"
 
