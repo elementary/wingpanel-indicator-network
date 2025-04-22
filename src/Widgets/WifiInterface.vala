@@ -358,12 +358,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
-                connect_to_network.begin (hidden_dialog, ((obj, res) => {
-                    connect_to_network.end (res);
-                    hidden_dialog.destroy ();
-                }));
-            } else {
-                hidden_dialog.destroy ();
+                connect_to_network.begin (hidden_dialog);
             }
 
             hidden_dialog.destroy ();
