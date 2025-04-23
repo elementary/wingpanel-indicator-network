@@ -57,6 +57,7 @@ shared_module(
     'src/Widgets/WifiMenuItem.vala',
     gresource,
     dependencies: [
+        dependency('gio-2.0', version: '>=2.74'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('granite'),
