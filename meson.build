@@ -50,6 +50,7 @@ shared_module(
     'src/Widgets/EtherInterface.vala',
     'src/Widgets/ModemInterface.vala',
     'src/Widgets/PopoverWidget.vala',
+    'src/Widgets/SettingsToggle.vala',
     'src/Widgets/VpnInterface.vala',
     'src/Widgets/VpnMenuItem.vala',
     'src/Widgets/WidgetNMInterface.vala',
