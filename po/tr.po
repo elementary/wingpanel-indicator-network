@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 18:38+0000\n"
+"POT-Creation-Date: 2025-04-26 22:21+0000\n"
 "PO-Revision-Date: 2022-12-03 08:25+0000\n"
 "Last-Translator: Özgür Baskin <queeup@zoho.com>\n"
 "Language-Team: Turkish <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 4.14.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:144 src/Indicator.vala:157
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "Kablolu"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:158
 msgid "Connecting to wired network"
 msgstr "Kablolu ağa bağlanılıyor"
 
-#: src/Indicator.vala:147 src/Indicator.vala:152
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” bağlantısı kuruluyor"
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:171
 msgid "Connected to wired network"
 msgstr "Kablolu ağ bağlantısı yapıldı"
 
-#: src/Indicator.vala:160 src/Indicator.vala:171
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” bağlantısı yapıldı"
 
-#: src/Indicator.vala:176
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr "Bağlanılamadı"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "Bağlı değil"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:196
 msgid "Not connected"
 msgstr "Bağlı değil"
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr "Orta tıklatma ile uçak modunu kapat"
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr "Orta tıklatma ile uçak modunu aç"
 
-#: src/Indicator.vala:210 src/Indicator.vala:222
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr "bilinmeyen ağ"
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr "Uçak Modu"
 
-#: src/Widgets/PopoverWidget.vala:117
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "Gizli Ağa Bağlan…"
 
-#: src/Widgets/PopoverWidget.vala:121
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "Ağ Ayarları…"
 
@@ -77,45 +77,46 @@ msgstr "Ağ Ayarları…"
 msgid "Unknown device"
 msgstr "Bilinmeyen aygıt"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "Kullanılabilir Erişim Noktası Yok"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "Erişim Noktaları Taranıyor…"
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr "Bağlantı kurulamıyor"
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64-bit WEP şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128-bit WEP şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 msgid "WPA3 encrypted"
 msgstr "WPA3 şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr "WPA şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "Passwordless encrypted"
 msgstr "WPA şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr "Şifreli"
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr "Güvenli değil"
 
