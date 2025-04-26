@@ -22,6 +22,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     NetworkMonitor network_monitor;
 
+    private SimpleAction airplane_action;
+
     public bool is_in_session { get; set; default = false; }
 
     public Indicator (bool is_in_session) {
@@ -59,19 +61,29 @@ public class Network.Indicator : Wingpanel.Indicator {
             display_widget.add_controller (gesture_click);
 
             gesture_click.pressed.connect (() => {
-                popover_widget.nm_client.dbus_call.begin (
-                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                    "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
-                    null, -1, null, (obj, res) => {
-                        try {
-                            ((NM.Client) obj).dbus_set_property.end (res);
-                        } catch (Error e) {
-                            warning ("Error setting airplane mode: %s", e.message);
-                        }
-                    }
-                );
+                airplane_action.activate (null);
             });
         }
+
+        airplane_action = new SimpleAction.stateful ("airplane-mode", null, new Variant.boolean (popover_widget.nm_client.networking_get_enabled ()));
+        airplane_action.activate.connect (() => {
+            popover_widget.nm_client.dbus_call.begin (
+                NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
+                null, -1, null, (obj, res) => {
+                    try {
+                        ((NM.Client) obj).dbus_set_property.end (res);
+                    } catch (Error e) {
+                        warning ("Error setting airplane mode: %s", e.message);
+                    }
+                }
+            );
+        });
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (airplane_action);
+
+        popover_widget.insert_action_group ("network", action_group);
 
         update_tooltip ();
         on_state_changed ();
@@ -91,6 +103,8 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (display_widget != null);
 
         display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
+
+        airplane_action.set_state (new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ()));
 
         update_tooltip ();
     }

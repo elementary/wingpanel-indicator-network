@@ -50,6 +50,7 @@ shared_module(
     'src/Widgets/EtherInterface.vala',
     'src/Widgets/ModemInterface.vala',
     'src/Widgets/PopoverWidget.vala',
+    'src/Widgets/SettingsToggle.vala',
     'src/Widgets/VpnInterface.vala',
     'src/Widgets/VpnMenuItem.vala',
     'src/Widgets/WidgetNMInterface.vala',
@@ -57,6 +58,7 @@ shared_module(
     'src/Widgets/WifiMenuItem.vala',
     gresource,
     dependencies: [
+        dependency('gio-2.0', version: '>=2.74'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
         dependency('granite-7'),

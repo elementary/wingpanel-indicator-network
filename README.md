@@ -8,8 +8,9 @@
 You'll need the following dependencies:
 
 * gobject-introspection
+* libglib2.0-dev (>= 2.74)
 * libgranite-dev
-* libnm-dev
+* libnm-dev (>= 1.24)
 * libnma-dev
 * libpolkit-gobject-1-dev
 * libwingpanel-dev

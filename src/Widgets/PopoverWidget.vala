@@ -56,43 +56,20 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
 
         if (is_in_session) {
-            var airplane_toggle = new Gtk.ToggleButton () {
-                halign = Gtk.Align.CENTER,
-                icon_name = "airplane-mode-symbolic"
+            var airplane_toggle = new SettingsToggle () {
+                action_name = "network.airplane-mode",
+                icon_name = "airplane-mode-symbolic",
+                settings_uri = "settings://network",
+                text = _("Airplane Mode")
             };
-
-            var airplane_label = new Gtk.Label (_("Airplane Mode"));
-            airplane_label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
-
-            var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
-            airplane_box.append (airplane_toggle);
-            airplane_box.append (airplane_label);
 
             var airplane_child = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
                 can_focus = false,
-                child = airplane_box
+                child = airplane_toggle
             };
 
             other_box.append (airplane_child);
-
-            airplane_toggle.toggled.connect (() => {
-                nm_client.dbus_call.begin (
-                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                    "Enable", new Variant.tuple ({new Variant.boolean (!airplane_toggle.active)}),
-                    null, -1, null, (obj, res) => {
-                        try {
-                            ((NM.Client) obj).dbus_set_property.end (res);
-                        } catch (Error e) {
-                            warning ("Error setting airplane mode: %s", e.message);
-                        }
-                    }
-                );
-            });
-
-            if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
-                airplane_toggle.activate ();
-            }
         }
 
         var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
