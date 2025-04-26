@@ -75,9 +75,10 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         notify["state"].connect (update);
 
         // We can't use clicked because we get in a weird loop state
-        radio_button.button_release_event.connect ((b, ev) => {
-            activate ();
-            return Gdk.EVENT_STOP;
+        radio_button.notify["active"].connect (() => {
+            if (radio_button.active) {
+                activate ();
+            }
         });
     }
 
