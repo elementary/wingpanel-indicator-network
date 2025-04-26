@@ -62,11 +62,24 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        var no_aps = new PlaceholderLabel (_("No Access Points Available"));
+        var no_aps = new Gtk.Label (_("No Access Points Available")) {
+            justify = CENTER,
+            max_width_chars = 30,
+            use_markup = true,
+            visible = true,
+            wrap_mode = WORD_CHAR,
+            wrap = true
+        };
 
-        var scanning = new PlaceholderLabel (_("Scanning for Access Points…")) {
+        var scanning = new Gtk.Label (_("Scanning for Access Points…")) {
             halign = START,
-            hexpand = true
+            hexpand = true,
+            justify = CENTER,
+            max_width_chars = 30,
+            use_markup = true,
+            visible = true,
+            wrap_mode = WORD_CHAR,
+            wrap = true
         };
 
         var spinner = new Gtk.Spinner ();
@@ -411,21 +424,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             } catch (Error error) {
                 critical (error.message);
             }
-        }
-    }
-
-    private class PlaceholderLabel : Gtk.Label {
-        public PlaceholderLabel (string label) {
-            Object (label: label);
-        }
-
-        construct {
-            justify = Gtk.Justification.CENTER;
-            max_width_chars = 30;
-            use_markup = true;
-            visible = true;
-            wrap_mode = Pango.WrapMode.WORD_CHAR;
-            wrap = true;
         }
     }
 
