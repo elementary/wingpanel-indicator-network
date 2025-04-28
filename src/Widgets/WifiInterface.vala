@@ -62,6 +62,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     construct {
+        // FIXME: use Granite.Placeholder in GTK4
         var no_aps = new Gtk.Label (_("No Access Points Available")) {
             justify = CENTER,
             max_width_chars = 30,

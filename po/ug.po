@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: wingpanel-indicator-network\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 18:38+0000\n"
+"POT-Creation-Date: 2025-04-26 22:21+0000\n"
 "PO-Revision-Date: 2016-12-18 09:53+0000\n"
 "Last-Translator: ablimet <Unknown>\n"
 "Language-Team: Uyghur <ug@li.org>\n"
@@ -18,69 +18,69 @@ msgstr ""
 "X-Launchpad-Export-Date: 2016-12-19 05:46+0000\n"
 "X-Generator: Launchpad (build 18298)\n"
 
-#: src/Indicator.vala:144 src/Indicator.vala:157
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "سىملىق تور"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:158
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "يوشۇرۇن تورغا ئۇلاش"
 
-#: src/Indicator.vala:147 src/Indicator.vala:152
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "ئۇلاۋاتىدۇ"
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:171
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "يوشۇرۇن تورغا ئۇلاش"
 
-#: src/Indicator.vala:160 src/Indicator.vala:171
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "ئۇلاندى"
 
-#: src/Indicator.vala:176
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "ئۈزۈلدى"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:196
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "ئۇلاندى"
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:210 src/Indicator.vala:222
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:117
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "يوشۇرۇن تورغا ئۇلاش"
 
-#: src/Widgets/PopoverWidget.vala:121
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "تور تەڭشەكلىرى"
 
@@ -88,47 +88,48 @@ msgstr "تور تەڭشەكلىرى"
 msgid "Unknown device"
 msgstr "نامەلۇم ئۈسكۈنە"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "ئىشلەتكىلى بولىدىغان ئۇلىنىش نۇقتىسى يوق"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "ئۇلىنىش نۇقتىسىنى ئىزدەۋاتىدۇ...."
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 #, fuzzy
 msgid "40/64-bit WEP encrypted"
 msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 #, fuzzy
 msgid "104/128-bit WEP encrypted"
 msgstr "بۇ تور 104/128-bit WEP ئۇسۇلىدا شېفىرلانغان."
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 #, fuzzy
 msgid "WPA3 encrypted"
 msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 #, fuzzy
 msgid "Passwordless encrypted"
 msgstr "بۇ تور 40/64-bit WEP ئۇسۇلىدا شېفىرلانغان."
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr ""
 

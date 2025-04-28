@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 18:38+0000\n"
+"POT-Creation-Date: 2025-04-26 22:21+0000\n"
 "PO-Revision-Date: 2020-02-23 00:08+0000\n"
 "Last-Translator: gkkulik <g.kulik@o2.pl>\n"
 "Language-Team: Silesian <https://l10n.elementary.io/projects/wingpanel/"
@@ -14,65 +14,65 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.9.1\n"
 
-#: src/Indicator.vala:144 src/Indicator.vala:157
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "Drōtowe"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:158
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:147 src/Indicator.vala:152
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, c-format
 msgid "Connecting to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:171
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Indicator.vala:160 src/Indicator.vala:171
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:176
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:196
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:210 src/Indicator.vala:222
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:117
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "Skupluj ze skrytym necym…"
 
-#: src/Widgets/PopoverWidget.vala:121
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "Sztelōnki necu…"
 
@@ -80,51 +80,52 @@ msgstr "Sztelōnki necu…"
 msgid "Unknown device"
 msgstr "Niyznōmo maszina"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "Niy ma żodnych pōnktōw dostympu"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "Szukanie pōnktōw dotympu…"
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "40/64-bit WEP encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 #, fuzzy
 #| msgid "This network uses 104/128-bit WEP encryption"
 msgid "104/128-bit WEP encrypted"
 msgstr "Tyn nec używo 104/128-bitowego szyfrowanio WEP"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "WPA3 encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 #, fuzzy
 #| msgid "This network uses 40/64-bit WEP encryption"
 msgid "Passwordless encrypted"
 msgstr "Tyn nec używo 40/64-bitowego szyfrowanio WEP"
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr ""
 

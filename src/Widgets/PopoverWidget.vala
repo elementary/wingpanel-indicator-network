@@ -15,7 +15,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private Gtk.FlowBox other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
-    private PopoverMenuitem hidden_item;
+    private Wingpanel.PopoverMenuItem hidden_item;
     private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
@@ -90,11 +90,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         append (wifi_box);
 
         if (is_in_session) {
-            hidden_item = new PopoverMenuitem ();
+            hidden_item = new Wingpanel.PopoverMenuItem ();
             hidden_item.text = _("Connect to Hidden Network…");
             hidden_item.visible = false;
 
-            var show_settings_button = new PopoverMenuitem ();
+            var show_settings_button = new Wingpanel.PopoverMenuItem ();
             show_settings_button.text = _("Network Settings…");
 
             append (hidden_item);
@@ -321,32 +321,5 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 ac.state_changed.connect (update_vpn_connection);
             }
         });
-    }
-
-    private class PopoverMenuitem : Gtk.Button {
-        public string text {
-            set {
-                child = new Granite.AccelLabel (value) {
-                    action_name = this.action_name
-                };
-
-                update_property (Gtk.AccessibleProperty.LABEL, value, -1);
-            }
-        }
-
-        class construct {
-            set_css_name ("modelbutton");
-        }
-
-        construct {
-            accessible_role = MENU_ITEM;
-
-            clicked.connect (() => {
-                var popover = (Gtk.Popover) get_ancestor (typeof (Gtk.Popover));
-                if (popover != null) {
-                    popover.popdown ();
-                }
-            });
-        }
     }
 }

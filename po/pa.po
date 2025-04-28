@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 18:38+0000\n"
+"POT-Creation-Date: 2025-04-26 22:21+0000\n"
 "PO-Revision-Date: 2021-08-01 17:35+0000\n"
 "Last-Translator: elSolus <tumbleweed@tuta.io>\n"
 "Language-Team: Punjabi <https://l10n.elementary.io/projects/wingpanel/"
@@ -19,61 +19,61 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.4.2\n"
 
-#: src/Indicator.vala:144 src/Indicator.vala:157
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "ਤਾਰ ਵਾਲ਼ਾ"
 
-#: src/Indicator.vala:145
+#: src/Indicator.vala:158
 msgid "Connecting to wired network"
 msgstr "ਤਾਰ ਵਾਲ਼ੇ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜਿਆ ਜਾ ਰਿਹੈ"
 
-#: src/Indicator.vala:147 src/Indicator.vala:152
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” ਨਾਲ਼ ਜੁੜ ਰਿਹੈ"
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:171
 msgid "Connected to wired network"
 msgstr "ਤਾਰ ਵਾਲ਼ੇ ਨੈੱਟਵਰਕ ਨਾਲ਼ ਜੁੜਿਆ ਹੈ"
 
-#: src/Indicator.vala:160 src/Indicator.vala:171
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” ਨਾਲ਼ ਜੁੜਿਆ ਹੈ"
 
-#: src/Indicator.vala:176
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr "ਕਨੈਕਸ਼ਨ ਨਾਕਾਮ ਰਿਹਾ"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "ਕਨੈਕਸ਼ਨ ਟੁੱਟ ਗਿਆ"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:196
 msgid "Not connected"
 msgstr "ਜੁੜਿਆ ਨਹੀਂ ਹੋਇਆ"
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:210 src/Indicator.vala:222
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr "ਅਣਜਾਣ ਨੈੱਟਵਰਕ"
 
-#: src/Widgets/PopoverWidget.vala:64
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:117
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:121
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr ""
 
@@ -81,42 +81,43 @@ msgstr ""
 msgid "Unknown device"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr ""
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 msgid "40/64-bit WEP encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 msgid "104/128-bit WEP encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 msgid "WPA3 encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Passwordless encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr ""
