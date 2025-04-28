@@ -22,7 +22,6 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     NetworkMonitor network_monitor;
 
-    private Gtk.GestureMultiPress gesture_click;
     private SimpleAction airplane_action;
 
     public bool is_in_session { get; set; default = false; }
@@ -31,7 +30,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         GLib.Intl.bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
         GLib.Intl.bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 
-        unowned var icon_theme = Gtk.IconTheme.get_default ();
+        unowned var icon_theme = Gtk.IconTheme.get_for_display (Gdk.Display.get_default ());
         icon_theme.add_resource_path ("/io/elementary/wingpanel/network");
 
         Object (code_name: Wingpanel.Indicator.NETWORK,
@@ -43,8 +42,8 @@ public class Network.Indicator : Wingpanel.Indicator {
         var provider = new Gtk.CssProvider ();
         provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
 
-        Gtk.StyleContext.add_provider_for_screen (
-            Gdk.Screen.get_default (),
+        Gtk.StyleContext.add_provider_for_display (
+            Gdk.Display.get_default (),
             provider,
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         );
@@ -56,9 +55,10 @@ public class Network.Indicator : Wingpanel.Indicator {
         popover_widget.settings_shown.connect (() => { close (); });
 
         if (is_in_session) {
-            gesture_click = new Gtk.GestureMultiPress (display_widget) {
-                button = button = Gdk.BUTTON_MIDDLE
+            var gesture_click = new Gtk.GestureClick () {
+                button = Gdk.BUTTON_MIDDLE
             };
+            display_widget.add_controller (gesture_click);
 
             gesture_click.pressed.connect (() => {
                 airplane_action.activate (null);

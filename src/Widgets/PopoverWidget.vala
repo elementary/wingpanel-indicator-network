@@ -15,7 +15,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     private Gtk.FlowBox other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
-    private Gtk.ModelButton hidden_item;
+    private Wingpanel.PopoverMenuItem hidden_item;
     private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
@@ -69,7 +69,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 child = airplane_toggle
             };
 
-            other_box.add (airplane_child);
+            other_box.append (airplane_child);
         }
 
         var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
@@ -78,27 +78,27 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         };
 
         var toggle_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
-        toggle_box.add (other_box);
-        toggle_box.add (other_sep);
+        toggle_box.append (other_box);
+        toggle_box.append (other_sep);
 
         toggle_revealer = new Gtk.Revealer () {
             child = toggle_box
         };
 
-        add (toggle_revealer);
-        add (vpn_box);
-        add (wifi_box);
+        append (toggle_revealer);
+        append (vpn_box);
+        append (wifi_box);
 
         if (is_in_session) {
-            hidden_item = new Gtk.ModelButton ();
+            hidden_item = new Wingpanel.PopoverMenuItem ();
             hidden_item.text = _("Connect to Hidden Network…");
-            hidden_item.no_show_all = true;
+            hidden_item.visible = false;
 
-            var show_settings_button = new Gtk.ModelButton ();
+            var show_settings_button = new Wingpanel.PopoverMenuItem ();
             show_settings_button.text = _("Network Settings…");
 
-            add (hidden_item);
-            add (show_settings_button);
+            append (hidden_item);
+            append (show_settings_button);
 
             show_settings_button.clicked.connect (show_settings);
         }
@@ -113,7 +113,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
 
         toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
-        show_all ();
         update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
@@ -144,7 +143,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
                 child = widget_interface
             };
 
-            other_box.add (flowboxchild);
+            other_box.append (flowboxchild);
             return;
         }
 
@@ -152,8 +151,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         if (widget_interface is Network.WifiInterface) {
             container_box = wifi_box;
-            hidden_item.no_show_all = false;
-            hidden_item.show_all ();
+            hidden_item.visible = true;
 
             ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
                 bool hidden_sensitivity = false;
@@ -172,11 +170,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             container_box = vpn_box;
         }
 
-        if (is_in_session && get_children ().length () > 0) {
-            container_box.pack_end (widget_interface.sep);
+        if (is_in_session && get_first_child != null) {
+            container_box.append (widget_interface.sep);
         }
 
-        container_box.pack_end (widget_interface);
+        container_box.append (widget_interface);
     }
 
     public void opened () {
@@ -276,7 +274,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_state ();
-        show_all ();
     }
 
     private void update_state () {
