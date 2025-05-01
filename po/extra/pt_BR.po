@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-26 22:21+0000\n"
+"POT-Creation-Date: 2025-05-01 18:14+0000\n"
 "PO-Revision-Date: 2024-08-07 00:16+0000\n"
 "Last-Translator: anonymous <noreply@weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://l10n.elementary.io/projects/"
@@ -31,46 +31,51 @@ msgstr "Conecte-se a redes sem fio e gerencie VPNs"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
+#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
+#: data/network.metainfo.xml.in:100
 msgid "Improvements:"
 msgstr ""
 
 #: data/network.metainfo.xml.in:38
-msgid "Show Cellular Modems as Toggles"
+msgid "Jump to settings by middle-clicking on toggles"
 msgstr ""
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:94
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
 msgid "Updated translations"
 msgstr "Traduções atualizadas"
 
-#: data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:48
+msgid "Show Cellular Modems as Toggles"
+msgstr ""
+
+#: data/network.metainfo.xml.in:59
 msgid "New features"
 msgstr ""
 
-#: data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:61
 msgid "WireGuard support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:52
+#: data/network.metainfo.xml.in:62
 msgid "OWE support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:54
+#: data/network.metainfo.xml.in:64
 msgid "Minor updates"
 msgstr "Atualizações menores"
 
-#: data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:75
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:102
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:93
+#: data/network.metainfo.xml.in:103
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
