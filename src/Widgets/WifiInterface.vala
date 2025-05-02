@@ -132,7 +132,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         wifi_toggle = new SettingsToggle () {
             action_name = "wifi.toggle",
-            hexpand = true,
             icon_name = "network-wireless-no-route-symbolic",
             settings_uri = "settings://network/wifi",
             text = display_title,

@@ -51,7 +51,7 @@ public class Network.SettingsToggle : Gtk.Box {
             child = subtitle_label
         };
 
-        halign = CENTER;
+        hexpand = true;
         orientation = VERTICAL;
         add (button);
         add (label);
