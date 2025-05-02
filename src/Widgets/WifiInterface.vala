@@ -31,10 +31,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private uint timeout_scan = 0;
     private Cancellable wifi_scan_cancellable = new Cancellable ();
 
-    private Gtk.GestureMultiPress click_controller;
-    private Gtk.GestureLongPress long_press_controller;
-    private Gtk.EventControllerKey menu_key_controller;
-
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         Object (nm_client: nm_client);
 
@@ -110,13 +106,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_list.set_sort_func (sort_func);
         wifi_list.set_placeholder (placeholder);
 
-        wifi_toggle = new SettingsToggle () {
-            action_name = "wifi.toggle",
-            icon_name = "network-wireless-no-route-symbolic",
-            settings_uri = "settings://network/wifi",
-            text = display_title
-        };
-
         var scrolled_box = new Gtk.ScrolledWindow (null, null) {
             child = wifi_list,
             hscrollbar_policy = NEVER,
@@ -137,9 +126,16 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         menu_box.add (hidden_item);
         menu_box.show_all ();
 
-        var context_menu = new Gtk.Popover (wifi_toggle) {
-            child = menu_box,
-            position = RIGHT
+        var context_menu = new Gtk.Popover (null) {
+            child = menu_box
+        };
+
+        wifi_toggle = new SettingsToggle () {
+            action_name = "wifi.toggle",
+            icon_name = "network-wireless-no-route-symbolic",
+            settings_uri = "settings://network/wifi",
+            text = display_title,
+            popover = context_menu
         };
 
         add (wifi_toggle);
@@ -149,45 +145,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_list.row_activated.connect ((row) => {
             if (row is WifiMenuItem) {
                 wifi_activate_cb ((WifiMenuItem) row);
-            }
-        });
-
-        click_controller = new Gtk.GestureMultiPress (wifi_toggle) {
-            button = 0,
-            exclusive = true
-        };
-        click_controller.pressed.connect ((n_press, x, y) => {
-            var sequence = click_controller.get_current_sequence ();
-            var event = click_controller.get_last_event (sequence);
-
-            if (event.triggers_context_menu ()) {
-                context_menu.popup ();
-
-                click_controller.set_state (CLAIMED);
-                click_controller.reset ();
-            }
-        });
-
-        long_press_controller = new Gtk.GestureLongPress (wifi_toggle);
-        long_press_controller.pressed.connect (() => {
-            context_menu.popup ();
-        });
-
-        menu_key_controller = new Gtk.EventControllerKey (wifi_toggle);
-        menu_key_controller.key_released.connect ((keyval, keycode, state) => {
-            var mods = state & Gtk.accelerator_get_default_mod_mask ();
-            switch (keyval) {
-                case Gdk.Key.F10:
-                    if (mods == Gdk.ModifierType.SHIFT_MASK) {
-                        context_menu.popup ();
-                    }
-                    break;
-                case Gdk.Key.Menu:
-                case Gdk.Key.MenuKB:
-                    context_menu.popup ();
-                    break;
-                default:
-                    return;
             }
         });
 
