@@ -9,7 +9,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public NM.Client nm_client { get; construct; }
 
     public NM.DeviceWifi? wifi_device;
-    public bool hidden_sensitivity { get; set; default = true; }
 
     public string active_ap_name { get; private set; }
 
@@ -167,6 +166,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             );
         });
 
+        hidden_item.sensitive = toggle_action.get_state ().get_boolean ();
+        toggle_action.notify["state"].connect (() => {
+            hidden_item.sensitive = toggle_action.get_state ().get_boolean ();
+        });
+
         var action_group = new SimpleActionGroup ();
         action_group.add_action (toggle_action);
 
@@ -294,12 +298,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         toggle_action.set_state (new Variant.boolean (!locked));
 
         active_ap = wifi_device.get_active_access_point ();
-
-        if (wifi_device.state == NM.DeviceState.UNAVAILABLE || state == Network.State.FAILED_WIFI) {
-            hidden_sensitivity = false;
-        } else {
-            hidden_sensitivity = true;
-        }
     }
 
     private void wifi_activate_cb (WifiMenuItem i) {
