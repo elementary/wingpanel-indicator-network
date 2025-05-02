@@ -61,6 +61,8 @@
     <file alias="24x24/status/panel-network-wireless-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-no-route-symbolic.svg</file>
     <file alias="24x24/status/panel-network-wireless-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">24/network-wireless-offline-symbolic.svg</file>
 
+    <file alias="scalable/status/panel-network-wireless-no-route-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-no-route-symbolic.svg</file>
+    <file alias="scalable/status/panel-network-wireless-offline-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-offline-symbolic.svg</file>
     <file alias="scalable/status/panel-network-wireless-signal-excellent-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-excellent-symbolic.svg</file>
     <file alias="scalable/status/panel-network-wireless-signal-good-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-good-symbolic.svg</file>
     <file alias="scalable/status/panel-network-wireless-signal-ok-symbolic.svg" compressed="true" preprocess="xml-stripblanks">16/network-wireless-signal-ok-symbolic.svg</file>
