@@ -14,7 +14,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public string active_ap_name { get; private set; }
 
     private SettingsToggle wifi_toggle;
-    private Gtk.Revealer revealer;
 
     private SimpleAction toggle_action;
     private RFKillManager rfkill;
@@ -31,6 +30,10 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private uint wifi_animation_timeout;
     private uint timeout_scan = 0;
     private Cancellable wifi_scan_cancellable = new Cancellable ();
+
+    private Gtk.GestureMultiPress click_controller;
+    private Gtk.GestureLongPress long_press_controller;
+    private Gtk.EventControllerKey menu_key_controller;
 
     public WifiInterface (NM.Client nm_client, NM.Device? _device) {
         Object (nm_client: nm_client);
@@ -121,13 +124,25 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             propagate_natural_height = true
         };
 
-        revealer = new Gtk.Revealer () {
-            child = scrolled_box
+        var hidden_item = new Gtk.ModelButton () {
+            text = _("Connect to Hidden Network…")
         };
 
-        orientation = Gtk.Orientation.VERTICAL;
-        pack_start (wifi_toggle);
-        pack_start (revealer);
+        var menu_box = new Gtk.Box (VERTICAL, 3) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+        menu_box.add (scrolled_box);
+        menu_box.add (new Gtk.Separator (HORIZONTAL));
+        menu_box.add (hidden_item);
+        menu_box.show_all ();
+
+        var context_menu = new Gtk.Popover (wifi_toggle) {
+            child = menu_box,
+            position = RIGHT
+        };
+
+        add (wifi_toggle);
 
         bind_property ("display-title", wifi_toggle, "text");
 
@@ -136,6 +151,47 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 wifi_activate_cb ((WifiMenuItem) row);
             }
         });
+
+        click_controller = new Gtk.GestureMultiPress (wifi_toggle) {
+            button = 0,
+            exclusive = true
+        };
+        click_controller.pressed.connect ((n_press, x, y) => {
+            var sequence = click_controller.get_current_sequence ();
+            var event = click_controller.get_last_event (sequence);
+
+            if (event.triggers_context_menu ()) {
+                context_menu.popup ();
+
+                click_controller.set_state (CLAIMED);
+                click_controller.reset ();
+            }
+        });
+
+        long_press_controller = new Gtk.GestureLongPress (wifi_toggle);
+        long_press_controller.pressed.connect (() => {
+            context_menu.popup ();
+        });
+
+        menu_key_controller = new Gtk.EventControllerKey (wifi_toggle);
+        menu_key_controller.key_released.connect ((keyval, keycode, state) => {
+            var mods = state & Gtk.accelerator_get_default_mod_mask ();
+            switch (keyval) {
+                case Gdk.Key.F10:
+                    if (mods == Gdk.ModifierType.SHIFT_MASK) {
+                        context_menu.popup ();
+                    }
+                    break;
+                case Gdk.Key.Menu:
+                case Gdk.Key.MenuKB:
+                    context_menu.popup ();
+                    break;
+                default:
+                    return;
+            }
+        });
+
+        hidden_item.clicked.connect (connect_to_hidden);
 
         toggle_action = new SimpleAction.stateful ("toggle", null, new Variant.boolean (false));
         toggle_action.activate.connect (() => {
@@ -283,10 +339,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         active_ap = wifi_device.get_active_access_point ();
 
         if (wifi_device.state == NM.DeviceState.UNAVAILABLE || state == Network.State.FAILED_WIFI) {
-            revealer.reveal_child = false;
             hidden_sensitivity = false;
         } else {
-            revealer.reveal_child = true;
             hidden_sensitivity = true;
         }
     }
@@ -425,7 +479,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         return null;
     }
 
-    public void connect_to_hidden () {
+    private void connect_to_hidden () {
         var hidden_dialog = new NMA.WifiDialog.for_other (nm_client) {
             deletable = false
         };

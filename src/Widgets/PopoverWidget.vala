@@ -13,9 +13,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
     private Gtk.FlowBox other_box;
-    private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
-    private Gtk.ModelButton hidden_item;
     private Gtk.Revealer toggle_revealer;
 
     public bool is_in_session { get; construct; }
@@ -46,7 +44,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             max_children_per_line = 3,
             selection_mode = Gtk.SelectionMode.NONE
         };
-        wifi_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
         vpn_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 0);
 
         try {
@@ -87,17 +84,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         add (toggle_revealer);
         add (vpn_box);
-        add (wifi_box);
 
         if (is_in_session) {
-            hidden_item = new Gtk.ModelButton ();
-            hidden_item.text = _("Connect to Hidden Network…");
-            hidden_item.no_show_all = true;
-
             var show_settings_button = new Gtk.ModelButton ();
             show_settings_button.text = _("Network Settings…");
 
-            add (hidden_item);
             add (show_settings_button);
 
             show_settings_button.clicked.connect (show_settings);
@@ -116,16 +107,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         show_all ();
         update_vpn_connection ();
 
-        hidden_item.clicked.connect (() => {
-            bool found = false;
-            foreach (unowned var iface in network_interface) {
-                if (iface is WifiInterface && ((WifiInterface) iface).hidden_sensitivity && !found) {
-                    ((WifiInterface) iface).connect_to_hidden ();
-                    found = true;
-                }
-            }
-        });
-
         /* Monitor network manager */
         nm_client.device_added.connect (device_added_cb);
         nm_client.device_removed.connect (device_removed_cb);
@@ -136,8 +117,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
-
+        if (!(widget_interface is Network.VpnInterface)) {
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
                 can_focus = false,
@@ -148,35 +128,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             return;
         }
 
-        var container_box = wifi_box;
-
-        if (widget_interface is Network.WifiInterface) {
-            container_box = wifi_box;
-            hidden_item.no_show_all = false;
-            hidden_item.show_all ();
-
-            ((Network.WifiInterface) widget_interface).notify["hidden-sensitivity"].connect (() => {
-                bool hidden_sensitivity = false;
-
-                foreach (unowned var iface in network_interface) {
-                    if (iface is WifiInterface) {
-                        hidden_sensitivity = hidden_sensitivity || ((WifiInterface) iface ).hidden_sensitivity;
-                    }
-
-                    hidden_item.sensitive = hidden_sensitivity;
-                }
-            });
-        }
-
-        if (widget_interface is Network.VpnInterface) {
-            container_box = vpn_box;
-        }
-
         if (is_in_session && get_children ().length () > 0) {
-            container_box.pack_end (widget_interface.sep);
+            vpn_box.pack_end (widget_interface.sep);
         }
 
-        container_box.pack_end (widget_interface);
+        vpn_box.pack_end (widget_interface);
     }
 
     public void opened () {
