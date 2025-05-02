@@ -8,8 +8,11 @@ public class Network.SettingsToggle : Gtk.Box {
     public string icon_name { get; set; }
     public string text { get; set; }
     public string settings_uri { get; set; default = "settings://"; }
+    public string subtitle { get; set; default = ""; }
     public Gtk.Popover? popover { get; set; default = null; }
 
+    private Gtk.Label subtitle_label;
+    private Gtk.Revealer subtitle_revealer;
     private Gtk.ToggleButton button;
     private Gtk.GestureMultiPress click_controller;
     private Gtk.GestureLongPress long_press_controller;
@@ -34,13 +37,25 @@ public class Network.SettingsToggle : Gtk.Box {
             max_width_chars = 13,
             mnemonic_widget = button
         };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+
+        subtitle_label = new Gtk.Label (null) {
+            ellipsize = MIDDLE,
+            justify = CENTER,
+            lines = 1,
+            max_width_chars = 13
+        };
+        subtitle_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        subtitle_label.get_style_context ().add_class (Gtk.STYLE_CLASS_DIM_LABEL);
+
+        subtitle_revealer = new Gtk.Revealer () {
+            child = subtitle_label
+        };
 
         halign = CENTER;
         orientation = VERTICAL;
-        spacing = 3;
         add (button);
         add (label);
+        add (subtitle_revealer);
 
         bind_property ("action-name", button, "action-name");
         bind_property ("icon-name", image, "icon-name");
@@ -66,8 +81,6 @@ public class Network.SettingsToggle : Gtk.Box {
             }
 
             if (popover != null) {
-                critical ("popover isn't null");
-
                 var sequence = click_controller.get_current_sequence ();
                 var event = click_controller.get_last_event (sequence);
 
@@ -81,6 +94,7 @@ public class Network.SettingsToggle : Gtk.Box {
         });
 
         notify["popover"].connect (construct_menu);
+        notify["subtitle"].connect (construct_subtitle);
     }
 
     private void construct_menu () {
@@ -109,5 +123,10 @@ public class Network.SettingsToggle : Gtk.Box {
                     return;
             }
         });
+    }
+
+    private void construct_subtitle () {
+        subtitle_label.label = subtitle;
+        subtitle_revealer.reveal_child = subtitle != "";
     }
 }

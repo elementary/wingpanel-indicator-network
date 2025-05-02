@@ -543,6 +543,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (active_ap == null) {
             debug ("No active AP");
+            active_ap_name = "";
             blank_item.active = true;
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
@@ -567,6 +568,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 debug ("Active AP not added");
             }
         }
+
+        wifi_toggle.subtitle = active_ap_name;
     }
 
     private void access_point_removed_cb (Object ap_) {
