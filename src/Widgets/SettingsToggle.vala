@@ -128,5 +128,6 @@ public class Network.SettingsToggle : Gtk.Box {
     private void construct_subtitle () {
         subtitle_label.label = subtitle;
         subtitle_revealer.reveal_child = subtitle != "";
+        button.get_accessible ().accessible_description = subtitle;
     }
 }
