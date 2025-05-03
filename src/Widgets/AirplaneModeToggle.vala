@@ -5,15 +5,15 @@
 
 public class Network.AirplaneModeToggle : SettingsToggle {
     construct {
-        action_name = "network.airplane-mode";
+        action_name = "airplane-mode.toggle";
         icon_name = "airplane-mode-disabled-symbolic";
         settings_uri = "settings://network";
         text = _("Airplane Mode");
 
         map.connect (() => {
-            var action_group = (SimpleActionGroup) get_action_group ("network");
+            var action_group = (SimpleActionGroup) get_action_group ("airplane-mode");
             action_group.action_state_changed.connect ((action_name, state) => {
-                if (action_name == "airplane-mode") {
+                if (action_name == "toggle") {
                     if (state.get_boolean ()) {
                         icon_name = "airplane-mode-symbolic";
                     } else {

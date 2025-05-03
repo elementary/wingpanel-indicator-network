@@ -12,6 +12,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
+    private SimpleAction airplane_action;
     private Gtk.FlowBox other_box;
     private Gtk.Box wifi_box;
     private Gtk.Box vpn_box;
@@ -56,6 +57,26 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         }
 
         if (is_in_session) {
+            airplane_action = new SimpleAction.stateful ("toggle", null, new Variant.boolean (nm_client.networking_get_enabled ()));
+            airplane_action.activate.connect (() => {
+                nm_client.dbus_call.begin (
+                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                    "Enable", new Variant.tuple ({new Variant.boolean (!nm_client.networking_get_enabled ())}),
+                    null, -1, null, (obj, res) => {
+                        try {
+                            ((NM.Client) obj).dbus_set_property.end (res);
+                        } catch (Error e) {
+                            warning ("Error setting airplane mode: %s", e.message);
+                        }
+                    }
+                );
+            });
+
+            var action_group = new SimpleActionGroup ();
+            action_group.add_action (airplane_action);
+
+            insert_action_group ("airplane-mode", action_group);
+
             var airplane_toggle = new AirplaneModeToggle ();
 
             var airplane_child = new Gtk.FlowBoxChild () {
@@ -295,6 +316,8 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
             state = next_state;
         }
+
+        airplane_action.set_state (new Variant.boolean (!nm_client.networking_get_enabled ()));
     }
 
     private void update_vpn_connection () {
