@@ -116,6 +116,11 @@ public class RFKillManager : Object {
             set_software_lock (UWB, value);
             set_software_lock (WIMAX, value);
             set_software_lock (WMAN, value);
+
+            // Some hardware keys still turn off bluetooth
+            if (value) {
+                set_software_lock (BLUETOOTH, value);
+            }
         }
     }
 
