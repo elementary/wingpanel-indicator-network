@@ -69,13 +69,13 @@ public class Network.Indicator : Wingpanel.Indicator {
         rfkill = new RFKillManager ();
         rfkill.open ();
 
-        airplane_action = new SimpleAction.stateful ("airplane-mode", null, new Variant.boolean (rfkill.get_airplane_mode ()));
+        airplane_action = new SimpleAction.stateful ("airplane-mode", null, new Variant.boolean (rfkill.airplane_mode));
         airplane_action.activate.connect (() => {
-            rfkill.set_software_lock (ALL, !rfkill.get_airplane_mode ());
+            rfkill.airplane_mode = !rfkill.airplane_mode;
         });
 
         rfkill.device_changed.connect (() => {
-            airplane_action.set_state (new Variant.boolean (rfkill.get_airplane_mode ()));
+            airplane_action.set_state (new Variant.boolean (rfkill.airplane_mode));
         });
 
         var action_group = (SimpleActionGroup) popover_widget.get_action_group ("network");
