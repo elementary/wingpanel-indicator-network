@@ -117,9 +117,19 @@ public class RFKillManager : Object {
             set_software_lock (WIMAX, value);
             set_software_lock (WMAN, value);
 
-            // Some hardware keys still turn off bluetooth
+            /*
+             * Some hardware keys still turn off bluetooth so we iterate over
+             * devices to check if bluetooth was hardware locked and unlock it
+             * but we don't want to toggle it back on if it was manually disabled
+             * in software
+             */
             if (!value) {
-                set_software_lock (BLUETOOTH, false);
+                foreach (unowned var device in get_devices ()) {
+                    if (device.device_type == BLUETOOTH && device.hardware_lock) {
+                        set_software_lock (BLUETOOTH, false);
+                        break;
+                    }
+                }
             }
         }
     }
