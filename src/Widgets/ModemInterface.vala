@@ -100,7 +100,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = false;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-error-symbolic";
                 break;
 
             case NM.DeviceState.DISCONNECTED:
@@ -108,7 +107,6 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = true;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-disconnected-symbolic";
                 break;
 
             case NM.DeviceState.PREPARE:
@@ -120,16 +118,16 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = true;
                 modem_item.active = true;
                 state = State.CONNECTING_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-acquiring-symbolic";
                 break;
 
             case NM.DeviceState.ACTIVATED:
                 sensitive = true;
                 modem_item.active = true;
                 state = strength_to_state (signal_quality);
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-connected-symbolic-symbolic";
                 break;
         }
+
+        ((Gtk.Image ) modem_item.image).icon_name = get_icon_name (device.state, signal_quality);
     }
 
     private Network.State strength_to_state (uint32 strength) {
@@ -206,5 +204,50 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 device_properties_changed (changed);
             }
         });
+    }
+
+    private static string get_icon_name (NM.DeviceState state,  uint32 strength) {
+        var base_name = "panel-network-cellular";
+        var state_name =  "";
+        var signal_name = "";
+
+        switch (state) {
+            case ACTIVATED:
+                break;
+            case CONFIG:
+            case DEACTIVATING:
+            case IP_CHECK:
+            case IP_CONFIG:
+            case PREPARE:
+            case SECONDARIES:
+                state_name = "acquiring";
+                break;
+            case DISCONNECTED:
+            case UNAVAILABLE:
+                state_name = "offline";
+                break;
+            case FAILED:
+                state_name = "error";
+                break;
+            case NEED_AUTH:
+            case UNKNOWN:
+            case UNMANAGED:
+                state_name = "no-route";
+                break;
+            default:
+                break;
+        }
+
+        if (strength < 30) {
+            signal_name = "signal-weak";
+        } else if (strength < 55) {
+            signal_name = "signal-ok";
+        } else if (strength < 80) {
+            signal_name = "signal-good";
+        } else {
+            signal_name = "signal-excellent";
+        }
+
+        return string.joinv ("-", { base_name, state_name, signal_name, "symbolic" });
     }
 }

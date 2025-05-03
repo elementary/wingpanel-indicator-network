@@ -572,4 +572,39 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         return w2.strength - w1.strength;
     }
+
+    public static string get_icon_name (NM.DeviceState state,  uint32 strength) {
+        var base_name = "panel-network-wireless";
+        var state_name =  "";
+        var signal_name = "";
+
+        switch (state) {
+            case DISCONNECTED:
+            case UNAVAILABLE:
+                state_name = "offline";
+                break;
+            case FAILED:
+                state_name = "error";
+                break;
+            case NEED_AUTH:
+            case UNKNOWN:
+            case UNMANAGED:
+                state_name = "no-route";
+                break;
+            default:
+                break;
+        }
+
+        if (strength < 30) {
+            signal_name = "signal-weak";
+        } else if (strength < 55) {
+            signal_name = "signal-ok";
+        } else if (strength < 80) {
+            signal_name = "signal-good";
+        } else {
+            signal_name = "signal-excellent";
+        }
+
+        return string.joinv ("-", { base_name, state_name, signal_name, "symbolic" });
+    }
 }

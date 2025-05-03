@@ -68,20 +68,17 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             toggle_ethernet_action.set_state (new Variant.boolean (false));
             toggle_ethernet_action.set_enabled (false);
             state = State.FAILED;
-            ethernet_item.icon_name = "panel-network-wired-error-symbolic";
             break;
 
         case NM.DeviceState.UNAVAILABLE:
             toggle_ethernet_action.set_state (new Variant.boolean (false));
             toggle_ethernet_action.set_enabled (false);
             state = State.WIRED_UNPLUGGED;
-            ethernet_item.icon_name = "panel-network-wired-no-route-symbolic";
             break;
         case NM.DeviceState.DISCONNECTED:
             toggle_ethernet_action.set_state (new Variant.boolean (false));
             toggle_ethernet_action.set_enabled (true);
             state = State.WIRED_UNPLUGGED;
-            ethernet_item.icon_name = "panel-network-wired-offline-symbolic";
             break;
 
         case NM.DeviceState.PREPARE:
@@ -93,15 +90,51 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             toggle_ethernet_action.set_enabled (true);
             toggle_ethernet_action.set_state (new Variant.boolean (true));
             state = State.CONNECTING_WIRED;
-            ethernet_item.icon_name = "panel-network-wired-acquiring-symbolic";
             break;
 
         case NM.DeviceState.ACTIVATED:
             toggle_ethernet_action.set_enabled (true);
             toggle_ethernet_action.set_state (new Variant.boolean (true));
             state = State.CONNECTED_WIRED;
-            ethernet_item.icon_name = "panel-network-wired-connected-symbolic-symbolic";
             break;
         }
+
+        ethernet_item.icon_name = get_icon_name (device.get_state ());
+    }
+
+    private static string get_icon_name (NM.DeviceState state) {
+        var base_name = "panel-network-wired";
+        var state_name =  "";
+
+        switch (state) {
+            case UNKNOWN:
+            case UNMANAGED:
+            case DEACTIVATING:
+            case FAILED:
+                state_name = "error";
+                break;
+
+            case UNAVAILABLE:
+                state_name = "no-route";
+                break;
+            case DISCONNECTED:
+                state_name = "offline";
+                break;
+
+            case PREPARE:
+            case CONFIG:
+            case NEED_AUTH:
+            case IP_CONFIG:
+            case IP_CHECK:
+            case SECONDARIES:
+                state_name = "acquiring";
+                break;
+
+            case ACTIVATED:
+                state_name = "connected";
+                break;
+        }
+
+        return string.joinv ("-", { base_name, state_name, "symbolic" });
     }
 }
