@@ -80,8 +80,10 @@ public class Network.Indicator : Wingpanel.Indicator {
             );
         });
 
-        var action_group = (SimpleActionGroup) popover_widget.get_action_group ("network");
+        var action_group = new SimpleActionGroup ();
         action_group.add_action (airplane_action);
+
+        popover_widget.insert_action_group ("network", action_group);
 
         update_tooltip ();
         on_state_changed ();
