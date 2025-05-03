@@ -65,7 +65,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
             var action_group = new SimpleActionGroup ();
             action_group.action_state_changed.connect ((action_name, state) => {
-                critical ("got a state change");
                 if (action_name == "airplane-mode") {
                     if (state.get_boolean ()) {
                         airplane_toggle.icon_name = "airplane-mode-symbolic";

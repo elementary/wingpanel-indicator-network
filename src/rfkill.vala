@@ -80,6 +80,50 @@ public class RFKillManager : Object {
         return devices;
     }
 
+    /*
+    * Toggle Airplane Mode
+    *
+    * Modern mobile platforms don't disable Bluetooth, we skip it too
+    *
+    * Setting airplane mode from here does all software lock, whereas setting
+    * from a key press does all hardware lock. We need one of these two things—
+    * all devices to be locked somehow—to consider it Airplane Mode
+    */
+    public bool airplane_mode {
+        get {
+            var all_hardware_locked = true;
+            var all_software_locked = true;
+
+            foreach (unowned var device in get_devices ()) {
+                if (device.device_type == BLUETOOTH) {
+                    continue;
+                }
+
+                if (!device.software_lock) {
+                    all_software_locked = false;
+                }
+
+                if (!device.hardware_lock) {
+                    all_hardware_locked = false;
+                }
+            }
+
+            return all_hardware_locked || all_software_locked;
+        }
+
+        set {
+            set_software_lock (WLAN, value);
+            set_software_lock (UWB, value);
+            set_software_lock (WIMAX, value);
+            set_software_lock (WMAN, value);
+
+            // Some hardware keys still turn off bluetooth
+            if (!value) {
+                set_software_lock (BLUETOOTH, false);
+            }
+        }
+    }
+
     public void set_software_lock (RFKillDeviceType type, bool lock_enabled) {
         var event = RFKillEvent ();
         event.type = type;
