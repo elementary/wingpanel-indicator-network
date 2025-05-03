@@ -1,19 +1,6 @@
 /*
-* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2025 elementary, Inc. (https://elementary.io)
 */
 
 public class Network.WifiInterface : Network.WidgetNMInterface {
@@ -75,19 +62,32 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     }
 
     construct {
-        var no_aps = new PlaceholderLabel (_("No Access Points Available"));
+        // FIXME: use Granite.Placeholder in GTK4
+        var no_aps = new Gtk.Label (_("No Access Points Available")) {
+            justify = CENTER,
+            max_width_chars = 30,
+            use_markup = true,
+            visible = true,
+            wrap_mode = WORD_CHAR,
+            wrap = true
+        };
 
-        var scanning = new PlaceholderLabel (_("Scanning for Access Points…")) {
-            halign = Gtk.Align.START,
-            hexpand = true
+        var scanning = new Gtk.Label (_("Scanning for Access Points…")) {
+            halign = START,
+            hexpand = true,
+            justify = CENTER,
+            max_width_chars = 30,
+            use_markup = true,
+            visible = true,
+            wrap_mode = WORD_CHAR,
+            wrap = true
         };
 
         var spinner = new Gtk.Spinner ();
         spinner.start ();
 
-        var scanning_box = new Gtk.Grid () {
-            column_spacing = 6,
-            valign = Gtk.Align.CENTER
+        var scanning_box = new Gtk.Box (HORIZONTAL, 6) {
+            valign = CENTER
         };
         scanning_box.add (scanning);
         scanning_box.add (spinner);
@@ -109,14 +109,15 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
 
         var scrolled_box = new Gtk.ScrolledWindow (null, null) {
-            hscrollbar_policy = Gtk.PolicyType.NEVER,
+            child = wifi_list,
+            hscrollbar_policy = NEVER,
             max_content_height = 512,
             propagate_natural_height = true
         };
-        scrolled_box.add (wifi_list);
 
-        revealer = new Gtk.Revealer ();
-        revealer.add (scrolled_box);
+        revealer = new Gtk.Revealer () {
+            child = scrolled_box
+        };
 
         orientation = Gtk.Orientation.VERTICAL;
         pack_start (wifi_item);
@@ -317,10 +318,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 if (response == Gtk.ResponseType.OK) {
                     connect_to_network.begin (wifi_dialog);
                 }
+
+                wifi_dialog.destroy ();
             });
 
-            wifi_dialog.run ();
-            wifi_dialog.destroy ();
+            wifi_dialog.present ();
         } else {
             nm_client.add_and_activate_connection_async.begin (
                 connection,
@@ -373,10 +375,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             if (response == Gtk.ResponseType.OK) {
                 connect_to_network.begin (hidden_dialog);
             }
+
+            hidden_dialog.destroy ();
         });
 
-        hidden_dialog.run ();
-        hidden_dialog.destroy ();
+        hidden_dialog.present ();
     }
 
     private async void connect_to_network (NMA.WifiDialog wifi_dialog) {
@@ -426,29 +429,14 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
     }
 
-    private class PlaceholderLabel : Gtk.Label {
-        public PlaceholderLabel (string label) {
-            Object (label: label);
-        }
-
-        construct {
-            justify = Gtk.Justification.CENTER;
-            max_width_chars = 30;
-            use_markup = true;
-            visible = true;
-            wrap_mode = Pango.WrapMode.WORD_CHAR;
-            wrap = true;
-        }
-    }
-
     private void access_point_added_cb (Object ap_) {
         NM.AccessPoint ap = (NM.AccessPoint)ap_;
         unowned GLib.Bytes ap_ssid = ap.ssid;
 
         bool found = false;
 
-        foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-            var menu_item = (WifiMenuItem) w;
+        for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+            var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
             var menu_ssid = menu_item.ssid;
             if (menu_ssid != null && ap.ssid != null && ap.ssid.compare (menu_ssid) == 0) {
@@ -491,8 +479,9 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             debug ("Active ap: %s", active_ap_name);
 
             bool found = false;
-            foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-                var menu_item = (WifiMenuItem) w;
+
+            for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+                var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
                 if (active_ap_ssid.compare (menu_item.ssid) == 0) {
                     found = true;
@@ -518,8 +507,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         WifiMenuItem found_item = null;
 
-        foreach (weak Gtk.Widget w in wifi_list.get_children ()) {
-            var menu_item = (WifiMenuItem) w;
+        for (int i = 0; wifi_list.get_row_at_index (i) != null; i++) {
+            var menu_item = (WifiMenuItem) wifi_list.get_row_at_index (i);
 
             assert (menu_item != null);
 

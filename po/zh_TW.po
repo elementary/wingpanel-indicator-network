@@ -2,84 +2,74 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
-"PO-Revision-Date: 2018-02-07 03:46+0000\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://weblate.elementary.io/projects/"
-"wingpanel/wingpanel-indicator-network/zh_TW/>\n"
+"POT-Creation-Date: 2025-05-01 18:14+0000\n"
+"PO-Revision-Date: 2024-09-14 02:16+0000\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Chinese (Traditional) <https://l10n.elementary.io/projects/"
+"wingpanel/wingpanel-indicator-network/zh_Hant/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "有線網路"
 
-#: src/Indicator.vala:135
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
+#: src/Indicator.vala:158
 msgid "Connecting to wired network"
-msgstr "連接到隱藏的網路…"
+msgstr "正在連接到有線網路"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
-#, fuzzy, c-format
-#| msgid "Connecting"
+#: src/Indicator.vala:160 src/Indicator.vala:165
+#, c-format
 msgid "Connecting to “%s”"
-msgstr "連接中"
+msgstr "正在連接到「%s」"
 
-#: src/Indicator.vala:148
-#, fuzzy
-#| msgid "Connect to Hidden Network…"
+#: src/Indicator.vala:171
 msgid "Connected to wired network"
-msgstr "連接到隱藏的網路…"
+msgstr "已連接到有線網路"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
-#, fuzzy, c-format
-#| msgid "Connected"
+#: src/Indicator.vala:173 src/Indicator.vala:184
+#, c-format
 msgid "Connected to “%s”"
-msgstr "已連線"
+msgstr "已連接到「%s」"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:189
 msgid "Failed to connect"
-msgstr ""
+msgstr "連接失敗"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "已斷線"
 
-#: src/Indicator.vala:173
-#, fuzzy
-#| msgid "Connected"
+#: src/Indicator.vala:196
 msgid "Not connected"
-msgstr "已連線"
+msgstr "未連接"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
-msgstr ""
+msgstr "中鍵點擊來關閉飛航模式"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
-msgstr ""
+msgstr "中鍵點擊來開啟飛航模式"
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
-msgstr ""
+msgstr "未知的網路"
 
-#: src/Widgets/PopoverWidget.vala:78
-#, fuzzy
-#| msgid "Airplane mode enabled"
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
-msgstr "飛安模式已啟用"
+msgstr "飛航模式"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "連接到隱藏的網路…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "網路設定值…"
 
@@ -87,49 +77,46 @@ msgstr "網路設定值…"
 msgid "Unknown device"
 msgstr "未知裝置"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "沒有可用的存取點"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "掃描無線存取點…"
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
-msgstr ""
+msgstr "無法連接"
 
-#: src/Widgets/WifiMenuItem.vala:114
-#, fuzzy
+#: src/Widgets/WifiMenuItem.vala:102
 msgid "40/64-bit WEP encrypted"
-msgstr "這個網路使用 40/64 位元 WEP 加密。"
+msgstr "40/64 位元 WEP 加密"
 
-#: src/Widgets/WifiMenuItem.vala:117
-#, fuzzy
+#: src/Widgets/WifiMenuItem.vala:105
 msgid "104/128-bit WEP encrypted"
-msgstr "這個網路使用 104/128 位元 WEP 加密。"
+msgstr "104/128 位元 WEP 加密"
+
+#: src/Widgets/WifiMenuItem.vala:108
+msgid "WPA3 encrypted"
+msgstr "WPA3 加密"
+
+#: src/Widgets/WifiMenuItem.vala:111
+msgid "WPA encrypted"
+msgstr "WPA 加密"
+
+#: src/Widgets/WifiMenuItem.vala:115
+msgid "Passwordless encrypted"
+msgstr "無密碼加密"
+
+#: src/Widgets/WifiMenuItem.vala:118
+msgid "Encrypted"
+msgstr "加密"
 
 #: src/Widgets/WifiMenuItem.vala:120
-#, fuzzy
-msgid "WPA3 encrypted"
-msgstr "這個網路使用 40/64 位元 WEP 加密。"
-
-#: src/Widgets/WifiMenuItem.vala:123
-msgid "WPA encrypted"
-msgstr ""
-
-#: src/Widgets/WifiMenuItem.vala:127
-#, fuzzy
-msgid "Passwordless encrypted"
-msgstr "這個網路使用 40/64 位元 WEP 加密。"
-
-#: src/Widgets/WifiMenuItem.vala:130
-msgid "Encrypted"
-msgstr ""
-
-#: src/Widgets/WifiMenuItem.vala:132
 msgid "Unsecured"
-msgstr ""
+msgstr "未受保護"
 
 #~ msgid "VPN"
 #~ msgstr "VPN"

@@ -22,6 +22,9 @@ public class Network.Indicator : Wingpanel.Indicator {
 
     NetworkMonitor network_monitor;
 
+    private Gtk.GestureMultiPress gesture_click;
+    private SimpleAction airplane_action;
+
     public bool is_in_session { get; set; default = false; }
 
     public Indicator (bool is_in_session) {
@@ -37,31 +40,47 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         display_widget = new Widgets.DisplayWidget ();
 
+        var provider = new Gtk.CssProvider ();
+        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
+
+        Gtk.StyleContext.add_provider_for_screen (
+            Gdk.Screen.get_default (),
+            provider,
+            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+        );
+
         popover_widget = new Widgets.PopoverWidget (is_in_session);
         popover_widget.notify["state"].connect (on_state_changed);
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
         if (is_in_session) {
-            display_widget.button_press_event.connect ((event) => {
-                if (event.button == Gdk.BUTTON_MIDDLE) {
-                    popover_widget.nm_client.dbus_call.begin (
-                        NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                        "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
-                        null, -1, null, (obj, res) => {
-                            try {
-                                ((NM.Client) obj).dbus_set_property.end (res);
-                            } catch (Error e) {
-                                warning ("Error setting airplane mode: %s", e.message);
-                            }
-                        }
-                    );
-                    return true;
-                }
+            gesture_click = new Gtk.GestureMultiPress (display_widget) {
+                button = button = Gdk.BUTTON_MIDDLE
+            };
 
-                return false;
+            gesture_click.pressed.connect (() => {
+                airplane_action.activate (null);
             });
         }
+
+        airplane_action = new SimpleAction.stateful ("airplane-mode", null, new Variant.boolean (popover_widget.nm_client.networking_get_enabled ()));
+        airplane_action.activate.connect (() => {
+            popover_widget.nm_client.dbus_call.begin (
+                NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                "Enable", new Variant.tuple ({new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ())}),
+                null, -1, null, (obj, res) => {
+                    try {
+                        ((NM.Client) obj).dbus_set_property.end (res);
+                    } catch (Error e) {
+                        warning ("Error setting airplane mode: %s", e.message);
+                    }
+                }
+            );
+        });
+
+        var action_group = (SimpleActionGroup) popover_widget.get_action_group ("network");
+        action_group.add_action (airplane_action);
 
         update_tooltip ();
         on_state_changed ();
@@ -81,6 +100,8 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (display_widget != null);
 
         display_widget.update_state (popover_widget.state, popover_widget.extra_info);
+
+        airplane_action.set_state (new Variant.boolean (!popover_widget.nm_client.networking_get_enabled ()));
 
         update_tooltip ();
     }

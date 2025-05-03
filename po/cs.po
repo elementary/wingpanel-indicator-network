@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"POT-Creation-Date: 2025-05-01 18:14+0000\n"
 "PO-Revision-Date: 2022-01-12 19:06+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,63 +15,63 @@ msgstr ""
 "X-Generator: Weblate 4.4.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "Drátová síť"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:158
 msgid "Connecting to wired network"
 msgstr "Připojování k drátové síti"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Připojování k „%s“"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:171
 msgid "Connected to wired network"
 msgstr "Připojeno k drátové síti"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Připojeno k „%s“"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr "Nepodařilo se připojit"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "Odpojeno"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:196
 msgid "Not connected"
 msgstr "Nepřipojeno"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr "neznámá síť"
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:63
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Aktivován režim letadla"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "Připojit ke skryté síti…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "Nastavení sítě…"
 
@@ -79,47 +79,48 @@ msgstr "Nastavení sítě…"
 msgid "Unknown device"
 msgstr "Neznámé zařízení"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "Nejsou k dispozici žádné přístupové body"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "Hledání přístupových bodů…"
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr "Nepodařilo se připojit"
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 msgid "40/64-bit WEP encrypted"
 msgstr "Šifrované 40/64-bitové WEP"
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 msgid "104/128-bit WEP encrypted"
 msgstr "Šifrované 104/128-bitové WEP"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
 msgstr "Šifrované WPA"
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr "Šifrované WPA"
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "Passwordless encrypted"
 msgstr "Šifrované WPA"
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr "Šifrované"
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr "Nezabezpečené"
 

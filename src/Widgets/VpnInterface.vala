@@ -6,14 +6,17 @@
 public class Network.VpnInterface : Network.WidgetNMInterface {
     public NM.Client nm_client { get; construct; }
 
-    private Gtk.FlowBox vpn_list;
+    private GLib.ListStore vpn_list;
+    private Gtk.FlowBox flowbox;
 
     public VpnInterface (NM.Client nm_client) {
         Object (nm_client: nm_client);
     }
 
     construct {
-        vpn_list = new Gtk.FlowBox () {
+        vpn_list = new GLib.ListStore (typeof (NM.RemoteConnection));
+
+        flowbox = new Gtk.FlowBox () {
             column_spacing = 6,
             row_spacing = 12,
             homogeneous = true,
@@ -24,16 +27,16 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
             max_children_per_line = 3,
             selection_mode = Gtk.SelectionMode.NONE
         };
+        flowbox.bind_model (vpn_list, create_widget_func);
 
-        add (vpn_list);
+        add (flowbox);
 
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
         nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
 
         check_vpn_availability ();
 
-        vpn_list.add.connect (check_vpn_availability);
-        vpn_list.remove.connect (check_vpn_availability);
+        vpn_list.items_changed.connect (check_vpn_availability);
 
         nm_client.connection_added.connect (vpn_added_cb);
         nm_client.connection_removed.connect (vpn_removed_cb);
@@ -41,13 +44,17 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         nm_client.active_connection_added.connect (active_connected_added_cb);
         nm_client.active_connection_removed.connect (active_connected_removed_cb);
 
-        vpn_list.child_activated.connect ((child) => {
+        flowbox.child_activated.connect ((child) => {
             vpn_activate_cb ((VpnMenuItem) child);
         });
     }
 
+    private Gtk.Widget create_widget_func (Object object) {
+        return new VpnMenuItem ((NM.RemoteConnection) object);
+    }
+
     private void check_vpn_availability () {
-        show_vpn (vpn_list.get_children ().length () > 0);
+        show_vpn (vpn_list.n_items > 0);
     }
 
     private void show_vpn (bool show) {
@@ -106,26 +113,20 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         var remote_connection = (NM.RemoteConnection) obj;
         unowned string connection_type = remote_connection.get_connection_type ();
         if (connection_type == NM.SettingVpn.SETTING_NAME || connection_type == NM.SettingWireGuard.SETTING_NAME) {
-            var item = new VpnMenuItem (remote_connection);
-            vpn_list.add (item);
-            check_vpn_availability ();
+            vpn_list.append (remote_connection);
         }
     }
 
     private void vpn_removed_cb (NM.RemoteConnection connection) {
-        foreach (unowned var child in vpn_list.get_children ()) {
-            unowned var menu_item = (VpnMenuItem) child;
-            if (menu_item.remote_connection == connection) {
-                menu_item.destroy ();
-                check_vpn_availability ();
-                return;
-            }
+        uint pos = -1;
+        if (vpn_list.find (connection, out pos)) {
+            vpn_list.remove (pos);
         }
     }
 
     private VpnMenuItem? get_item_for_active_connection (NM.ActiveConnection active_connection) {
-        foreach (unowned var child in vpn_list.get_children ()) {
-            unowned var menu_item = (VpnMenuItem) child;
+        for (int i = 0; flowbox.get_child_at_index (i) != null; i++) {
+            var menu_item = (VpnMenuItem) flowbox.get_child_at_index (i);
             if (menu_item.remote_connection == active_connection.connection) {
                 return menu_item;
             }

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-04 08:34+0000\n"
+"POT-Creation-Date: 2025-05-01 18:14+0000\n"
 "PO-Revision-Date: 2024-04-25 16:13+0000\n"
 "Last-Translator: Dennis ten Hoove <dennistenhoove@protonmail.com>\n"
 "Language-Team: Dutch <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 5.0.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:134 src/Indicator.vala:147
+#: src/Indicator.vala:157 src/Indicator.vala:170
 msgid "Wired"
 msgstr "Bekabeld"
 
-#: src/Indicator.vala:135
+#: src/Indicator.vala:158
 msgid "Connecting to wired network"
 msgstr "Verbinden met bekabeld netwerk"
 
-#: src/Indicator.vala:137 src/Indicator.vala:142
+#: src/Indicator.vala:160 src/Indicator.vala:165
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Verbinding maken met “%s”"
 
-#: src/Indicator.vala:148
+#: src/Indicator.vala:171
 msgid "Connected to wired network"
 msgstr "Verbonden met bekabeld netwerk"
 
-#: src/Indicator.vala:150 src/Indicator.vala:161
+#: src/Indicator.vala:173 src/Indicator.vala:184
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Verbonden met “%s”"
 
-#: src/Indicator.vala:166
+#: src/Indicator.vala:189
 msgid "Failed to connect"
 msgstr "Verbinden mislukt"
 
-#: src/Indicator.vala:170
+#: src/Indicator.vala:193
 msgid "Disconnected"
 msgstr "Niet verbonden"
 
-#: src/Indicator.vala:173
+#: src/Indicator.vala:196
 msgid "Not connected"
 msgstr "Niet verbonden"
 
-#: src/Indicator.vala:179
+#: src/Indicator.vala:202
 msgid "Middle-click to turn airplane mode off"
 msgstr "Middelklik om vliegtuigmodus uit te schakelen"
 
-#: src/Indicator.vala:180
+#: src/Indicator.vala:203
 msgid "Middle-click to turn airplane mode on"
 msgstr "Middelklik om vliegtuigmodus in te schakelen"
 
-#: src/Indicator.vala:200 src/Indicator.vala:212
+#: src/Indicator.vala:223 src/Indicator.vala:235
 msgid "unknown network"
 msgstr "Onbekend netwerk"
 
-#: src/Widgets/PopoverWidget.vala:78
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr "Vliegtuigmodus"
 
-#: src/Widgets/PopoverWidget.vala:130
+#: src/Widgets/PopoverWidget.vala:94
 msgid "Connect to Hidden Network…"
 msgstr "Verbind met onzichtbaar netwerk…"
 
-#: src/Widgets/PopoverWidget.vala:134
+#: src/Widgets/PopoverWidget.vala:98
 msgid "Network Settings…"
 msgstr "Netwerkinstellingen…"
 
@@ -77,43 +77,44 @@ msgstr "Netwerkinstellingen…"
 msgid "Unknown device"
 msgstr "Onbekend apparaat"
 
-#: src/Widgets/WifiInterface.vala:78
+#. FIXME: use Granite.Placeholder in GTK4
+#: src/Widgets/WifiInterface.vala:66
 msgid "No Access Points Available"
 msgstr "Geen Toegangspunten Beschikbaar"
 
-#: src/Widgets/WifiInterface.vala:80
+#: src/Widgets/WifiInterface.vala:75
 msgid "Scanning for Access Points…"
 msgstr "Scannen naar toegangspunten…"
 
-#: src/Widgets/WifiMenuItem.vala:69
+#: src/Widgets/WifiMenuItem.vala:56
 msgid "Unable to connect"
 msgstr "Niet in staat te verbinden"
 
-#: src/Widgets/WifiMenuItem.vala:114
+#: src/Widgets/WifiMenuItem.vala:102
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64-bits WEP-versleuteling"
 
-#: src/Widgets/WifiMenuItem.vala:117
+#: src/Widgets/WifiMenuItem.vala:105
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128-bits WEP-versleuteling"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:108
 msgid "WPA3 encrypted"
 msgstr "WPA3-versleuteling"
 
-#: src/Widgets/WifiMenuItem.vala:123
+#: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
 msgstr "WPA-versleuteling"
 
-#: src/Widgets/WifiMenuItem.vala:127
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Passwordless encrypted"
 msgstr "Wachtwoordloos versleuteld"
 
-#: src/Widgets/WifiMenuItem.vala:130
+#: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
 msgstr "Versleuteld"
 
-#: src/Widgets/WifiMenuItem.vala:132
+#: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
 msgstr "Onbeveiligd"
 

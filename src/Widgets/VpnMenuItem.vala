@@ -36,62 +36,47 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
                 _vpn_connection = null;
             }
 
-            ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-disconnected-symbolic";
-            toggle_button.active = false;
+            toggle_button.icon_name = "panel-network-vpn-disconnected-symbolic";
+            toggle_action.set_state (new Variant.boolean (false));
         }
     }
 
-    private static Gtk.CssProvider provider;
-    private Gtk.ToggleButton toggle_button;
+    private SettingsToggle toggle_button;
+    private SimpleAction toggle_action;
 
     public VpnMenuItem (NM.RemoteConnection remote_connection) {
         Object (remote_connection: remote_connection);
     }
 
-    static construct {
-        provider = new Gtk.CssProvider ();
-        provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
-    }
-
     construct {
-        toggle_button = new Gtk.ToggleButton () {
-            halign = Gtk.Align.CENTER,
-            image = new Gtk.Image.from_icon_name ("panel-network-vpn-disconnected-symbolic", Gtk.IconSize.MENU)
+        toggle_button = new SettingsToggle () {
+            action_name = "vpn.toggle",
+            hexpand = true,
+            icon_name = "panel-network-vpn-disconnected-symbolic",
+            settings_uri = "settings://network/vpn",
+            text = remote_connection.get_id ()
         };
-        toggle_button.get_style_context ().add_class ("circular");
-        toggle_button.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-
-        var label = new Gtk.Label (remote_connection.get_id ()) {
-            ellipsize = Pango.EllipsizeMode.MIDDLE,
-            max_width_chars = 16
-        };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
-
-        var box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3) {
-            hexpand = true
-        };
-        box.add (toggle_button);
-        box.add (label);
 
         can_focus = false;
-        add (box);
+        child = toggle_button;
 
-        // We can't use clicked because we get in a weird loop state
-        toggle_button.button_release_event.connect ((b, ev) => {
-            activate ();
-            return Gdk.EVENT_STOP;
-        });
+        toggle_action = new SimpleAction.stateful ("toggle", null, new Variant.boolean (false));
+        toggle_action.activate.connect (() => activate ());
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (toggle_action);
+
+        insert_action_group ("vpn", action_group);
 
         remote_connection.changed.connect (() => {
-            label.label = remote_connection.get_id ();
+            toggle_button.text = remote_connection.get_id ();
         });
     }
 
     private void update_state () {
         if (_vpn_connection == null) {
-            ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-disconnected-symbolic";
-            toggle_button.active = false;
+            toggle_button.icon_name = "panel-network-vpn-disconnected-symbolic";
+            toggle_action.set_state (new Variant.boolean (false));
             return;
         }
         unowned string connection_type = _vpn_connection.get_connection_type ();
@@ -101,39 +86,41 @@ public class Network.VpnMenuItem : Gtk.FlowBoxChild {
                 case NM.VpnConnectionState.IP_CONFIG_GET:
                 case NM.VpnConnectionState.NEED_AUTH:
                 case NM.VpnConnectionState.PREPARE:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-acquiring-symbolic";
+                    toggle_button.icon_name = "panel-network-vpn-acquiring-symbolic";
+                    toggle_action.set_state (new Variant.boolean (true));
                     break;
                 case NM.VpnConnectionState.ACTIVATED:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-connected-symbolic";
-                    toggle_button.active = true;
+                    toggle_button.icon_name = "panel-network-vpn-connected-symbolic";
+                    toggle_action.set_state (new Variant.boolean (true));
                     break;
                 case NM.VpnConnectionState.DISCONNECTED:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-disconnected-symbolic";
-                    toggle_button.active = false;
+                    toggle_button.icon_name = "panel-network-vpn-disconnected-symbolic";
+                    toggle_action.set_state (new Variant.boolean (false));
                     break;
                 case NM.VpnConnectionState.FAILED:
                 case NM.VpnConnectionState.UNKNOWN:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-error-symbolic";
-                    toggle_button.active = false;
+                    toggle_button.icon_name = "panel-network-vpn-error-symbolic";
+                    toggle_action.set_state (new Variant.boolean (false));
                     break;
             }
         } else if (connection_type == NM.SettingWireGuard.SETTING_NAME) {
             switch (_vpn_connection.get_state ()) {
                 case NM.ActiveConnectionState.UNKNOWN:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-error-symbolic";
-                    toggle_button.active = false;
+                    toggle_button.icon_name = "panel-network-vpn-error-symbolic";
+                    toggle_action.set_state (new Variant.boolean (false));
                     break;
                 case NM.ActiveConnectionState.DEACTIVATED:
                 case NM.ActiveConnectionState.DEACTIVATING:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-disconnected-symbolic";
-                    toggle_button.active = false;
+                    toggle_button.icon_name = "panel-network-vpn-disconnected-symbolic";
+                    toggle_action.set_state (new Variant.boolean (false));
                     break;
                 case NM.ActiveConnectionState.ACTIVATING:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-acquiring-symbolic";
+                    toggle_button.icon_name = "panel-network-vpn-acquiring-symbolic";
+                    toggle_action.set_state (new Variant.boolean (true));
                     break;
                 case NM.ActiveConnectionState.ACTIVATED:
-                    ((Gtk.Image) toggle_button.image).icon_name = "panel-network-vpn-connected-symbolic";
-                    toggle_button.active = true;
+                    toggle_button.icon_name = "panel-network-vpn-connected-symbolic";
+                    toggle_action.set_state (new Variant.boolean (true));
                     break;
             }
         }

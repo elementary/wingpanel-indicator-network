@@ -1,22 +1,9 @@
 /*
-* Copyright 2015-2021 elementary, Inc. (https://elementary.io)
-*
-* This program is free software: you can redistribute it and/or modify
-* it under the terms of the GNU Library General Public License as published by
-* the Free Software Foundation, either version 2.1 of the License, or
-* (at your option) any later version.
-*
-* This program is distributed in the hope that it will be useful,
-* but WITHOUT ANY WARRANTY; without even the implied warranty of
-* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-* GNU Library General Public License for more details.
-*
-* You should have received a copy of the GNU Library General Public License
-* along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*
+* SPDX-License-Identifier: LGPL-2.1-or-later
+* SPDX-FileCopyrightText: 2015-2021 elementary, Inc. (https://elementary.io)
 */
 
-public class Network.Widgets.PopoverWidget : Gtk.Grid {
+public class Network.Widgets.PopoverWidget : Gtk.Box {
     public NM.Client nm_client { get; construct; }
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
@@ -36,6 +23,10 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
     public PopoverWidget (bool is_in_session) {
         Object (is_in_session: is_in_session);
+    }
+
+    class construct {
+        set_css_name ("network");
     }
 
     construct {
@@ -64,48 +55,34 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         }
 
         if (is_in_session) {
-            var provider = new Gtk.CssProvider ();
-            provider.load_from_resource ("io/elementary/wingpanel/network/Indicator.css");
-
-            var airplane_toggle = new Gtk.ToggleButton () {
-                halign = Gtk.Align.CENTER,
-                image = new Gtk.Image.from_icon_name ("airplane-mode-symbolic", Gtk.IconSize.MENU)
+            var airplane_toggle = new SettingsToggle () {
+                action_name = "network.airplane-mode",
+                icon_name = "airplane-mode-disabled-symbolic",
+                settings_uri = "settings://network",
+                text = _("Airplane Mode")
             };
-            airplane_toggle.get_style_context ().add_class ("circular");
-            airplane_toggle.get_style_context ().add_provider (provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
-            var airplane_label = new Gtk.Label (_("Airplane Mode"));
-            airplane_label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+            var action_group = new SimpleActionGroup ();
+            action_group.action_state_changed.connect ((action_name, state) => {
+                critical ("got a state change");
+                if (action_name == "airplane-mode") {
+                    if (state.get_boolean ()) {
+                        airplane_toggle.icon_name = "airplane-mode-symbolic";
+                    } else {
+                        airplane_toggle.icon_name = "airplane-mode-disabled-symbolic";
+                    }
+                }
+            });
 
-            var airplane_box = new Gtk.Box (Gtk.Orientation.VERTICAL, 3);
-            airplane_box.add (airplane_toggle);
-            airplane_box.add (airplane_label);
+            insert_action_group ("network", action_group);
 
             var airplane_child = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = airplane_toggle
             };
-            airplane_child.add (airplane_box);
 
             other_box.add (airplane_child);
-
-            airplane_toggle.toggled.connect (() => {
-                nm_client.dbus_call.begin (
-                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                    "Enable", new Variant.tuple ({new Variant.boolean (!airplane_toggle.active)}),
-                    null, -1, null, (obj, res) => {
-                        try {
-                            ((NM.Client) obj).dbus_set_property.end (res);
-                        } catch (Error e) {
-                            warning ("Error setting airplane mode: %s", e.message);
-                        }
-                    }
-                );
-            });
-
-            if (!airplane_toggle.active && !nm_client.networking_get_enabled ()) {
-                airplane_toggle.activate ();
-            }
         }
 
         var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
@@ -117,8 +94,9 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
         toggle_box.add (other_box);
         toggle_box.add (other_sep);
 
-        toggle_revealer = new Gtk.Revealer ();
-        toggle_revealer.add (toggle_box);
+        toggle_revealer = new Gtk.Revealer () {
+            child = toggle_box
+        };
 
         add (toggle_revealer);
         add (vpn_box);
@@ -147,7 +125,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             device_added_cb (devices.get (i));
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         show_all ();
 
         hidden_item.clicked.connect (() => {
@@ -169,13 +147,13 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
     }
 
     private void add_interface (WidgetNMInterface widget_interface) {
-        if (widget_interface is EtherInterface) {
+        if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
 
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
-                can_focus = false
+                can_focus = false,
+                child = widget_interface
             };
-            flowboxchild.add (widget_interface);
 
             other_box.add (flowboxchild);
             return;
@@ -256,7 +234,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
             }
         }
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_interfaces_names ();
         update_state ();
     }
@@ -307,7 +285,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Grid {
 
         update_interfaces_names ();
 
-        toggle_revealer.reveal_child = other_box.get_children () != null;
+        toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         update_state ();
         show_all ();
     }
