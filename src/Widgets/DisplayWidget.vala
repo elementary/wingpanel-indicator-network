@@ -4,9 +4,31 @@
  */
 
 public class Network.Widgets.DisplayWidget : Gtk.Box {
+    private NM.ActiveConnection _primary_connection = null;
+    public NM.ActiveConnection primary_connection {
+        get {
+            return _primary_connection;
+        }
+
+        set {
+            if (_primary_connection != null) {
+                _primary_connection.state_changed.disconnect (update_connection);
+                _primary_connection = null;
+            }
+
+            _primary_connection = value;
+            _primary_connection.state_changed.connect (update_connection);
+            update_connection ();
+        }
+    }
+
+    private NM.Client nm_client;
+
     private Gtk.Image image;
     private Gtk.Label extra_info_label;
     private Gtk.Revealer extra_info_revealer;
+
+    private Gtk.Image connection_image;
 
     private uint wifi_animation_timeout;
     private int wifi_animation_state = 0;
@@ -14,7 +36,18 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR) {
+        try {
+            nm_client = new NM.Client ();
+            nm_client.bind_property ("primary-connection", this, "primary-connection", SYNC_CREATE);
+        } catch (Error e) {
+            critical (e.message);
+        }
+
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-offline-symbolic", Gtk.IconSize.LARGE_TOOLBAR) {
+            pixel_size = 24
+        };
+
+        connection_image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR) {
             pixel_size = 24
         };
 
@@ -29,8 +62,54 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             transition_type = SLIDE_LEFT
         };
 
+        add (connection_image);
         add (image);
         add (extra_info_revealer);
+    }
+
+    private void update_connection () {
+        var device = primary_connection.get_master ();
+        if (device == null) {
+            var devices = primary_connection.get_devices ();
+            if (devices != null) {
+                device = devices[0];
+            }
+        }
+
+        if (device == null) {
+            connection_image.icon_name = "panel-network-wired-offline-symbolic".printf (type);
+            return;
+        }
+
+        switch (device.device_type) {
+            case MODEM:
+                connection_image.get_icon_name_for_cellular (device);
+                break;
+            case BT: //a Bluetooth device supporting PAN or DUN access protocols
+            case WIFI:
+            case WIMAX:
+                // type = "wireless";
+                break;
+            case ETHERNET:
+                connection_image.icon_name = get_icon_name_for_ethernet (device);
+                break;
+        }
+
+        switch (primary_connection.state) {
+            case ACTIVATED:
+                connection_image.icon_name = "panel-network-%s-connected-symbolic".printf (type);
+                break;
+            case ACTIVATING:
+                connection_image.icon_name = "panel-network-%s-acquiring-symbolic".printf (type);
+                break;
+            case DEACTIVATED:
+            case DEACTIVATING:
+                connection_image.icon_name = "panel-network-%s-offline-symbolic".printf (type);
+                break;
+            case UNKNOWN:
+                connection_image.icon_name = "panel-network-%s-no-route-symbolic".printf (type);
+                break;
+        }
     }
 
     public void update_state (Network.State state, bool secure, string? extra_info = null) {
@@ -142,5 +221,79 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
         }
+    }
+
+    private string get_icon_name_for_cellular () {
+        string icon_name = "network-cellular";
+
+        switch (device.state) {
+            case ACTIVATED:
+                break;
+            case CONFIG:
+            case DEACTIVATING:
+            case IP_CHECK:
+            case IP_CONFIG:
+            case PREPARE:
+            case SECONDARIES:
+                icon_name += "-acquiring";
+                break;
+            case DISCONNECTED:
+            case UNAVAILABLE:
+                icon_name += "-offline";
+                break;
+            case FAILED:
+                icon_name += "-error";
+                break;
+            case NEED_AUTH:
+            case UNKNOWN:
+            case UNMANAGED:
+                icon_name += "-no-route";
+                break;
+            default:
+                break;
+        }
+
+        // if (strength < 30) {
+        //     icon_name += "-signal-weak";
+        // } else if (strength < 55) {
+        //     icon_name += "-signal-ok";
+        // } else if (strength < 80) {
+            icon_name += "-signal-good";
+        // } else {
+        //     icon_name += "-signal-excellent";
+        // }
+
+        return icon_name += "-symbolic";
+    }
+
+    private string get_icon_name_for_ethernet (NM.DeviceEthernet device) {
+        string icon_name = "network-wired";
+
+        switch (device.state) {
+            case ACTIVATED:
+                break;
+            case CONFIG:
+            case DEACTIVATING:
+            case IP_CHECK:
+            case IP_CONFIG:
+            case PREPARE:
+            case SECONDARIES:
+                icon_name += "-acquiring";
+                break;
+            case DISCONNECTED:
+            case UNAVAILABLE:
+                icon_name += "-disconnected";
+                break;
+            case FAILED:
+                icon_name += "-error";
+                break;
+            case NEED_AUTH:
+            case UNKNOWN:
+            case UNMANAGED:
+                icon_name += "-no-route";
+                break;
+        }
+
+        return icon_name += "-symbolic";
     }
 }
