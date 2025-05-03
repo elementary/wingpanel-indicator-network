@@ -118,8 +118,8 @@ public class RFKillManager : Object {
             set_software_lock (WMAN, value);
 
             // Some hardware keys still turn off bluetooth
-            if (value) {
-                set_software_lock (BLUETOOTH, value);
+            if (!value) {
+                set_software_lock (BLUETOOTH, false);
             }
         }
     }
