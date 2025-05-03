@@ -46,6 +46,7 @@ shared_module(
     'src/Indicator.vala',
     'src/rfkill.vala',
     'src/Utils.vala',
+    'src/Widgets/AirplaneModeToggle.vala',
     'src/Widgets/DisplayWidget.vala',
     'src/Widgets/EtherInterface.vala',
     'src/Widgets/ModemInterface.vala',
