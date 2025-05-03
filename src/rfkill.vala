@@ -80,6 +80,29 @@ public class RFKillManager : Object {
         return devices;
     }
 
+    /*
+    * Checks for Airplane mode
+    * Setting airplane mode from here does all software lock, whereas setting
+    * from a key press does all hardware lock. We need one of these two things—
+    * all devices to be locked somehow—to consider it Airplane Mode
+    */
+    public bool get_airplane_mode () {
+        var all_hardware_locked = true;
+        var all_software_locked = true;
+
+        foreach (unowned var device in get_devices ()) {
+            if (!device.software_lock) {
+                all_software_locked = false;
+            }
+
+            if (!device.hardware_lock) {
+                all_hardware_locked = false;
+            }
+        }
+
+        return all_hardware_locked || all_software_locked;
+    }
+
     public void set_software_lock (RFKillDeviceType type, bool lock_enabled) {
         var event = RFKillEvent ();
         event.type = type;
