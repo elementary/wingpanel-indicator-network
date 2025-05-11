@@ -55,35 +55,33 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             critical (e.message);
         }
 
-        if (is_in_session) {
-            var airplane_toggle = new SettingsToggle () {
-                action_name = "network.airplane-mode",
-                icon_name = "airplane-mode-disabled-symbolic",
-                settings_uri = "settings://network",
-                text = _("Airplane Mode")
-            };
+        var airplane_toggle = new SettingsToggle () {
+            action_name = "network.airplane-mode",
+            icon_name = "airplane-mode-disabled-symbolic",
+            settings_uri = "settings://network",
+            text = _("Airplane Mode")
+        };
 
-            var action_group = new SimpleActionGroup ();
-            action_group.action_state_changed.connect ((action_name, state) => {
-                if (action_name == "airplane-mode") {
-                    if (state.get_boolean ()) {
-                        airplane_toggle.icon_name = "airplane-mode-symbolic";
-                    } else {
-                        airplane_toggle.icon_name = "airplane-mode-disabled-symbolic";
-                    }
+        var action_group = new SimpleActionGroup ();
+        action_group.action_state_changed.connect ((action_name, state) => {
+            if (action_name == "airplane-mode") {
+                if (state.get_boolean ()) {
+                    airplane_toggle.icon_name = "airplane-mode-symbolic";
+                } else {
+                    airplane_toggle.icon_name = "airplane-mode-disabled-symbolic";
                 }
-            });
+            }
+        });
 
-            insert_action_group ("network", action_group);
+        insert_action_group ("network", action_group);
 
-            var airplane_child = new Gtk.FlowBoxChild () {
-                // Prevent weird double focus border
-                can_focus = false,
-                child = airplane_toggle
-            };
+        var airplane_child = new Gtk.FlowBoxChild () {
+            // Prevent weird double focus border
+            can_focus = false,
+            child = airplane_toggle
+        };
 
-            other_box.add (airplane_child);
-        }
+        other_box.add (airplane_child);
 
         var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             margin_top = 3,
