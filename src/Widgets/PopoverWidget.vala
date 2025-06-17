@@ -148,7 +148,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
     private void add_interface (WidgetNMInterface widget_interface) {
         if (widget_interface is EtherInterface || widget_interface is ModemInterface) {
-
             var flowboxchild = new Gtk.FlowBoxChild () {
                 // Prevent weird double focus border
                 can_focus = false,
@@ -182,11 +181,11 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             container_box = vpn_box;
         }
 
+        container_box.append (widget_interface);
+
         if (is_in_session && get_first_child != null) {
             container_box.append (widget_interface.sep);
         }
-
-        container_box.append (widget_interface);
     }
 
     public void opened () {
