@@ -33,16 +33,17 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     private Gtk.Image img_strength;
     private Gtk.Image lock_img;
     private Gtk.Label label;
-    private Gtk.RadioButton radio_button;
+    private Gtk.CheckButton radio_button;
     private Gtk.Spinner spinner;
     private List<NM.AccessPoint> ap_list;
 
-    public WifiMenuItem (NM.AccessPoint ap, Gtk.RadioButton blank_radio) {
+    public WifiMenuItem (NM.AccessPoint ap, Gtk.CheckButton blank_radio) {
         label = new Gtk.Label (null) {
-            ellipsize = MIDDLE
+            ellipsize = MIDDLE,
+            margin_start = 6
         };
 
-        radio_button = new Gtk.RadioButton (null) {
+        radio_button = new Gtk.CheckButton () {
             child = label,
             group = blank_radio,
             hexpand = true
@@ -50,20 +51,20 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
         img_strength = new Gtk.Image ();
 
-        lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic", Gtk.IconSize.MENU);
+        lock_img = new Gtk.Image.from_icon_name ("channel-insecure-symbolic");
 
-        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic", Gtk.IconSize.MENU) {
+        error_img = new Gtk.Image.from_icon_name ("process-error-symbolic") {
             tooltip_text = _("Unable to connect")
         };
 
         spinner = new Gtk.Spinner ();
 
         var box = new Gtk.Box (HORIZONTAL, 6);
-        box.add (radio_button);
-        box.add (spinner);
-        box.add (error_img);
-        box.add (lock_img);
-        box.add (img_strength);
+        box.append (radio_button);
+        box.append (spinner);
+        box.append (error_img);
+        box.append (lock_img);
+        box.append (img_strength);
 
         child = box;
 
@@ -83,7 +84,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     class construct {
-        set_css_name (Gtk.STYLE_CLASS_MENUITEM);
+        set_css_name ("modelbutton");
     }
 
     private void update_ap () {
@@ -121,7 +122,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         }
 
         lock_img.visible = !is_secured;
-        lock_img.no_show_all = !lock_img.visible;
     }
 
     private const string BASE_ICON_NAME = "panel-network-wireless-signal-%s-symbolic";
@@ -136,15 +136,12 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
             img_strength.icon_name = BASE_ICON_NAME.printf ("excellent");
         }
 
-        error_img.no_show_all = true;
         error_img.visible = false;
-        error_img.hide ();
 
         spinner.stop ();
 
         switch (state) {
             case NM.DeviceState.FAILED:
-                error_img.no_show_all = false;
                 error_img.visible = true;
                 break;
             case NM.DeviceState.PREPARE:

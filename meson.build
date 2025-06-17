@@ -20,7 +20,7 @@ add_project_arguments(
 
 add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.network"', language:'c')
 
-wingpanel_dep = dependency('wingpanel')
+wingpanel_dep = dependency('wingpanel-8')
 wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
 
 config_data = configuration_data()
@@ -61,10 +61,10 @@ shared_module(
         dependency('gio-2.0', version: '>=2.74'),
         dependency('glib-2.0'),
         dependency('gobject-2.0'),
-        dependency('granite'),
-        dependency('gtk+-3.0'),
+        dependency('granite-7'),
+        dependency('gtk4'),
         dependency('libnm', version: '>=1.24'),
-        dependency('libnma'),
+        dependency('libnma-gtk4'),
         polkit_dep,
         meson.get_compiler('vala').find_library('posix'),
         wingpanel_dep
