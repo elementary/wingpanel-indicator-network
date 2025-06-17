@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-26 22:21+0000\n"
-"PO-Revision-Date: 2024-12-12 05:36+0000\n"
+"POT-Creation-Date: 2025-05-01 18:14+0000\n"
+"PO-Revision-Date: 2025-05-02 17:34+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
-"Language-Team: Japanese <https://l10n.elementary.io/projects/wingpanel/"
+"Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.4\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -31,46 +31,51 @@ msgstr "無線ネットワークに接続したり VPN を管理したりしま�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:63
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
+#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
+#: data/network.metainfo.xml.in:100
 msgid "Improvements:"
 msgstr "改善点:"
 
 #: data/network.metainfo.xml.in:38
-msgid "Show Cellular Modems as Toggles"
-msgstr "セルラーモデムをトグルボタンで表示するように変更"
+msgid "Jump to settings by middle-clicking on toggles"
+msgstr "トグルスイッチを中クリックすると、ネットワークの設定に遷移するように変更"
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:56
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:79
-#: data/network.metainfo.xml.in:94
+#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
+#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
-#: data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:48
+msgid "Show Cellular Modems as Toggles"
+msgstr "セルラーモデムをトグルボタンで表示するように変更"
+
+#: data/network.metainfo.xml.in:59
 msgid "New features"
 msgstr "新機能"
 
-#: data/network.metainfo.xml.in:51
+#: data/network.metainfo.xml.in:61
 msgid "WireGuard support"
 msgstr "WireGuard への対応"
 
-#: data/network.metainfo.xml.in:52
+#: data/network.metainfo.xml.in:62
 msgid "OWE support"
 msgstr "OWE への対応"
 
-#: data/network.metainfo.xml.in:54
+#: data/network.metainfo.xml.in:64
 msgid "Minor updates"
 msgstr "マイナーアップデート"
 
-#: data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:75
 msgid "Show cellular devices as compact circle buttons"
 msgstr "セルラーデバイスをコンパクトな丸いボタンで表示するように変更"
 
-#: data/network.metainfo.xml.in:92
+#: data/network.metainfo.xml.in:102
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr "機内モードと有線デバイスをコンパクトな丸いボタンで表示するように変更"
 
-#: data/network.metainfo.xml.in:93
+#: data/network.metainfo.xml.in:103
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr "VPN 接続を丸いボタンで表示し、同時に複数の VPN に接続できるように変更"

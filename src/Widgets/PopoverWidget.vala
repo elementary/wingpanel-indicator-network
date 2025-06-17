@@ -7,6 +7,7 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
     public NM.Client nm_client { get; construct; }
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
+    public SimpleActionGroup action_group { get; private set; }
 
     public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
@@ -55,22 +56,33 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
             critical (e.message);
         }
 
-        if (is_in_session) {
-            var airplane_toggle = new SettingsToggle () {
-                action_name = "network.airplane-mode",
-                icon_name = "airplane-mode-symbolic",
-                settings_uri = "settings://network",
-                text = _("Airplane Mode")
-            };
+        var airplane_toggle = new SettingsToggle () {
+            action_name = "network.airplane-mode",
+            icon_name = "airplane-mode-disabled-symbolic",
+            settings_uri = "settings://network",
+            text = _("Airplane Mode")
+        };
 
-            var airplane_child = new Gtk.FlowBoxChild () {
-                // Prevent weird double focus border
-                can_focus = false,
-                child = airplane_toggle
-            };
+        action_group = new SimpleActionGroup ();
+        action_group.action_state_changed.connect ((action_name, state) => {
+            if (action_name == "airplane-mode") {
+                if (state.get_boolean ()) {
+                    airplane_toggle.icon_name = "airplane-mode-symbolic";
+                } else {
+                    airplane_toggle.icon_name = "airplane-mode-disabled-symbolic";
+                }
+            }
+        });
 
-            other_box.append (airplane_child);
-        }
+        insert_action_group ("network", action_group);
+
+        var airplane_child = new Gtk.FlowBoxChild () {
+            // Prevent weird double focus border
+            can_focus = false,
+            child = airplane_toggle
+        };
+
+        other_box.append (airplane_child);
 
         var other_sep = new Gtk.Separator (Gtk.Orientation.HORIZONTAL) {
             margin_top = 3,
