@@ -39,7 +39,8 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
 
     public WifiMenuItem (NM.AccessPoint ap, Gtk.CheckButton blank_radio) {
         label = new Gtk.Label (null) {
-            ellipsize = MIDDLE
+            ellipsize = MIDDLE,
+            margin_start = 6
         };
 
         radio_button = new Gtk.CheckButton () {
@@ -83,7 +84,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
     }
 
     class construct {
-        set_css_name (Granite.STYLE_CLASS_MENUITEM);
+        set_css_name ("modelbutton");
     }
 
     private void update_ap () {
