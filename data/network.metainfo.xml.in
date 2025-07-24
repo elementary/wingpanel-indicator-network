@@ -35,6 +35,7 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Airplane mode disables networking radios, not bluetooth or wired networks</li>
           <li>Jump to settings by middle-clicking on toggles</li>
           <li>Updated translations</li>
         </ul>
