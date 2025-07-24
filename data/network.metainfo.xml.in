@@ -35,10 +35,14 @@
       <description>
         <p>Improvements:</p>
         <ul>
+          <li>Airplane mode disables networking radios, not bluetooth or wired networks</li>
           <li>Jump to settings by middle-clicking on toggles</li>
           <li>Updated translations</li>
         </ul>
       </description>
+      <issues>
+        <issue url="https://github.com/elementary/greeter/issues/310">Circular toggle button status unclear</issue>
+      </issues>
     </release>
 
     <release version="7.1.1" date="2024-07-17" urgency="medium">
