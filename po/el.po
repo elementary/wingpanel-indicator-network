@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
 "PO-Revision-Date: 2017-08-31 23:18+0000\n"
 "Last-Translator: Grammatopoulos Athanasios-Vasi <darkthanos.gr@gmail.com>\n"
 "Language-Team: Greek <https://weblate.elementary.io/projects/wingpanel/"
@@ -15,71 +15,71 @@ msgstr ""
 "X-Generator: Weblate 2.16\n"
 "X-Launchpad-Export-Date: 2017-02-14 06:03+0000\n"
 
-#: src/Indicator.vala:157 src/Indicator.vala:170
+#: src/Indicator.vala:151 src/Indicator.vala:164
 msgid "Wired"
 msgstr "Ενσύρματο"
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:152
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connecting to wired network"
 msgstr "Σύνδεση σε κρυφό δίκτυο..."
 
-#: src/Indicator.vala:160 src/Indicator.vala:165
+#: src/Indicator.vala:154 src/Indicator.vala:159
 #, fuzzy, c-format
 #| msgid "Connecting"
 msgid "Connecting to “%s”"
 msgstr "Γίνεται σύνδεση"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:165
 #, fuzzy
 #| msgid "Connect to Hidden Network…"
 msgid "Connected to wired network"
 msgstr "Σύνδεση σε κρυφό δίκτυο..."
 
-#: src/Indicator.vala:173 src/Indicator.vala:184
+#: src/Indicator.vala:167 src/Indicator.vala:178
 #, fuzzy, c-format
 #| msgid "Connected"
 msgid "Connected to “%s”"
 msgstr "Συνδεδεμένο"
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:183
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:193
+#: src/Indicator.vala:187
 msgid "Disconnected"
 msgstr "Αποσυνδεδεμένο"
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:190
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Συνδεδεμένο"
 
-#: src/Indicator.vala:202
+#: src/Indicator.vala:196
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:203
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:223 src/Indicator.vala:235
+#: src/Indicator.vala:217 src/Indicator.vala:229
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:63
+#: src/Widgets/PopoverWidget.vala:62
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Η λειτουργία πτήσης είναι ενεργοποιημένη"
 
-#: src/Widgets/PopoverWidget.vala:94
+#: src/Widgets/PopoverWidget.vala:105
 msgid "Connect to Hidden Network…"
 msgstr "Σύνδεση σε κρυφό δίκτυο..."
 
-#: src/Widgets/PopoverWidget.vala:98
+#: src/Widgets/PopoverWidget.vala:109
 msgid "Network Settings…"
 msgstr "Ρυθμίσεις δικτύου..."
 

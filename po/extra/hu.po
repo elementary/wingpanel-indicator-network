@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
-"PO-Revision-Date: 2025-05-07 14:37+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"PO-Revision-Date: 2025-07-31 00:55+0000\n"
 "Last-Translator: TomiOhl <ohlslager.tom@gmail.com>\n"
 "Language-Team: Hungarian <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/hu/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -31,52 +31,59 @@ msgstr "Csatlakozás vezeték nélküli hálózathoz és VPN-ek kezelése"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:104
 msgid "Improvements:"
 msgstr "Javítások:"
 
 #: data/network.metainfo.xml.in:38
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr ""
+"A repülőgépes mód letiltja a hálózati modulokat, de a Bluetooth-t vagy a "
+"vezetékes hálózatokat nem"
+
+#: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr "A beállításokhoz ugrás a kapcsolókon való középső kattintással"
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
-#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 msgid "Updated translations"
 msgstr "Frissített fordítások"
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
 msgstr "A mobileszközök megjelenése kapcsolóként"
 
-#: data/network.metainfo.xml.in:59
+#: data/network.metainfo.xml.in:63
 msgid "New features"
 msgstr "Új funkciók"
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
 msgstr "WireGuard-támogatás"
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:66
 msgid "OWE support"
 msgstr "OWE-támogatás"
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:68
 msgid "Minor updates"
 msgstr "Apróbb frissítések"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
 msgstr "A mobileszközök kör alakú gombként jelennek meg"
 
-#: data/network.metainfo.xml.in:102
+#: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "A repülőgépes mód és a vezetékes hálózatok kör alakú gombként jelennek meg"
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
