@@ -30,7 +30,7 @@ public class Network.EtherInterface : Network.WidgetNMInterface {
             text = display_title
         };
 
-        add (ethernet_item);
+        append (ethernet_item);
 
         bind_property ("display-title", ethernet_item, "text");
 

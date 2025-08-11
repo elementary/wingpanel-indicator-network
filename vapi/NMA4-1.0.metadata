@@ -15,23 +15,7 @@ MobileFamily cheader_filename="nma-mobile-providers.h"
 MobileWizardCallback cheader_filename="nma-mobile-wizard.h"
 utils_* cheader_filename="nma-ui-utils.h"
 mobile_providers_split_3gpp_mcc_mnc cheader_filename="nma-mobile-providers.h"
+Ws* cheader_filename="nma-ui-utils.h"
 BAR_CODE_SIZE skip
 BAR_CODE_TEXT skip
 BAR_CODE_WIDGET_CONNECTION skip
-Ws* cheader_filename="nma-ws.h"
-Ws compact=false base_type="GLib.Object"
-Ws8021x compact=false base_type="NMA.Ws"
-Ws8021xClass skip
-WsDynamicWep compact=false base_type="NMA.Ws"
-WsDynamicWepClass skip
-WsInterface skip
-WsLeap compact=false base_type="NMA.Ws"
-WsLeapClass skip
-WsSae compact=false base_type="NMA.Ws"
-WsSaeClass skip
-WsWepKey compact=false base_type="NMA.Ws"
-WsWepKeyClass skip
-WsWpaEap compact=false base_type="NMA.Ws"
-WsWpaEapClass skip
-WsWpaPsk compact=false base_type="NMA.Ws"
-WsWpaPskClass skip

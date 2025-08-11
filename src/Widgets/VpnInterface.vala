@@ -29,7 +29,7 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
         };
         flowbox.bind_model (vpn_list, create_widget_func);
 
-        add (flowbox);
+        append (flowbox);
 
         nm_client.get_connections ().foreach ((connection) => vpn_added_cb (connection));
         nm_client.get_active_connections ().foreach ((connection) => active_connected_added_cb (connection));
@@ -58,7 +58,6 @@ public class Network.VpnInterface : Network.WidgetNMInterface {
     }
 
     private void show_vpn (bool show) {
-        no_show_all = sep.no_show_all = !show;
         visible = sep.visible = show;
     }
 

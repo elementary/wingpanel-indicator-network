@@ -61,20 +61,20 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
 
         modem_item = new Gtk.ToggleButton () {
             halign = Gtk.Align.CENTER,
-            image = new Gtk.Image.from_icon_name ("panel-network-cellular-connected-symbolic", Gtk.IconSize.MENU)
+            icon_name = "panel-network-cellular-connected-symbolic"
         };
 
         var label = new Gtk.Label (display_title) {
             ellipsize = Pango.EllipsizeMode.MIDDLE,
             max_width_chars = 16
         };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         hexpand = true;
         orientation = Gtk.Orientation.VERTICAL;
         spacing = 3;
-        add (modem_item);
-        add (label);
+        append (modem_item);
+        append (label);
 
         bind_property ("display-title", label, "label");
 
@@ -100,7 +100,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = false;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-error-symbolic";
+                modem_item.icon_name = "panel-network-cellular-error-symbolic";
                 break;
 
             case NM.DeviceState.DISCONNECTED:
@@ -108,7 +108,7 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = true;
                 modem_item.active = false;
                 state = State.FAILED_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-disconnected-symbolic";
+                modem_item.icon_name = "panel-network-cellular-disconnected-symbolic";
                 break;
 
             case NM.DeviceState.PREPARE:
@@ -120,14 +120,14 @@ public class Network.ModemInterface : Network.WidgetNMInterface {
                 sensitive = true;
                 modem_item.active = true;
                 state = State.CONNECTING_MOBILE;
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-acquiring-symbolic";
+                modem_item.icon_name = "panel-network-cellular-acquiring-symbolic";
                 break;
 
             case NM.DeviceState.ACTIVATED:
                 sensitive = true;
                 modem_item.active = true;
                 state = strength_to_state (signal_quality);
-                ((Gtk.Image ) modem_item.image).icon_name = "panel-network-cellular-connected-symbolic-symbolic";
+                modem_item.icon_name = "panel-network-cellular-connected-symbolic-symbolic";
                 break;
         }
     }
