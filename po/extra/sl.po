@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
 "PO-Revision-Date: 2019-11-07 12:50-0800\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -30,51 +30,56 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:104
 msgid "Improvements:"
 msgstr ""
 
 #: data/network.metainfo.xml.in:38
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr ""
+
+#: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr ""
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
-#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 msgid "Updated translations"
 msgstr ""
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
 msgstr ""
 
-#: data/network.metainfo.xml.in:59
+#: data/network.metainfo.xml.in:63
 msgid "New features"
 msgstr ""
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:66
 msgid "OWE support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:68
 msgid "Minor updates"
 msgstr ""
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:102
+#: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""

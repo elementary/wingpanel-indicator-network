@@ -7,16 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
-"PO-Revision-Date: 2019-11-07 12:50-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"PO-Revision-Date: 2025-07-27 22:55+0000\n"
+"Last-Translator: lenify <lenify@tutanota.com>\n"
+"Language-Team: Belarusian <https://l10n.elementaryos.org/projects/wingpanel/"
+"indicator-network-extra/be/>\n"
 "Language: be\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=ASCII\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
@@ -30,51 +32,56 @@ msgstr ""
 msgid "elementary, Inc."
 msgstr ""
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:104
 msgid "Improvements:"
 msgstr ""
 
 #: data/network.metainfo.xml.in:38
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr ""
+
+#: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr ""
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
-#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 msgid "Updated translations"
 msgstr ""
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
 msgstr ""
 
-#: data/network.metainfo.xml.in:59
+#: data/network.metainfo.xml.in:63
 msgid "New features"
 msgstr ""
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:66
 msgid "OWE support"
 msgstr ""
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:68
 msgid "Minor updates"
-msgstr ""
+msgstr "Нязначныя абнаўленні"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:102
+#: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""

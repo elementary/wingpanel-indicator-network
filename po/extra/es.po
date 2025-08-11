@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
-"PO-Revision-Date: 2025-05-18 04:55+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"PO-Revision-Date: 2025-07-26 02:55+0000\n"
 "Last-Translator: Italo Felipe Capasso Ballesteros <italo@gp-mail.com>\n"
 "Language-Team: Spanish <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/es/>\n"
@@ -31,56 +31,63 @@ msgstr "Conéctese a redes inalámbricas y gestione redes VPN"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:104
 msgid "Improvements:"
 msgstr "Mejoras:"
 
 #: data/network.metainfo.xml.in:38
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr ""
+"El modo avión ahora deshabilita radios que usen redes de internet, mas no "
+"redes de bluetooth o redes cableadas"
+
+#: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr ""
 "Ahora se puede saltar a la configuración al hacer clic con el botón central "
 "en los botones de alternacia"
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
-#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 msgid "Updated translations"
 msgstr "Traducciones actualizadas"
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
 msgstr "Se muestran modems de celular como botones de alternancia"
 
-#: data/network.metainfo.xml.in:59
+#: data/network.metainfo.xml.in:63
 msgid "New features"
 msgstr "Nuevas características"
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
 msgstr "Se agregó compatibilidad con WireGuard"
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:66
 msgid "OWE support"
 msgstr "Se agregó compatibilidad con OWE"
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:68
 msgid "Minor updates"
 msgstr "Actualizaciones menores"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 "Ahora se muestran los dispositivos móviles como botones circulares compactos"
 
-#: data/network.metainfo.xml.in:102
+#: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Se muestra el modo avión y los dispositivos cableados como botones "
 "circulares compactos"
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
