@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-08-18 11:55+0000\n"
+"PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
 "wingpanel-indicator-network/ja/>\n"
@@ -71,7 +71,7 @@ msgstr "非公開ネットワークに接続…"
 
 #: src/Widgets/PopoverWidget.vala:109
 msgid "Network Settings…"
-msgstr "ネットワークの設定…"
+msgstr "ネットワーク設定…"
 
 #: src/Widgets/WidgetNMInterface.vala:21
 msgid "Unknown device"
