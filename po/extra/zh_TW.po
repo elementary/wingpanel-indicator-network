@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
-"PO-Revision-Date: 2025-06-03 03:55+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"PO-Revision-Date: 2025-08-22 15:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/wingpanel/indicator-network-extra/zh_Hant/>\n"
@@ -31,51 +31,56 @@ msgstr "連接至無線網路或管理 VPN"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:46
-#: data/network.metainfo.xml.in:73 data/network.metainfo.xml.in:87
-#: data/network.metainfo.xml.in:100
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
+#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
+#: data/network.metainfo.xml.in:104
 msgid "Improvements:"
 msgstr "改善項目："
 
 #: data/network.metainfo.xml.in:38
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr "讓飛航模式只停用無線網路，而不停用藍牙或有線網路"
+
+#: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr "中鍵點擊開關來前往設定"
 
-#: data/network.metainfo.xml.in:39 data/network.metainfo.xml.in:49
-#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:76
-#: data/network.metainfo.xml.in:89 data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
 msgid "Updated translations"
 msgstr "翻譯更新"
 
-#: data/network.metainfo.xml.in:48
+#: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
 msgstr "用切換按鈕來顯示行動數據機"
 
-#: data/network.metainfo.xml.in:59
+#: data/network.metainfo.xml.in:63
 msgid "New features"
 msgstr "新功能"
 
-#: data/network.metainfo.xml.in:61
+#: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
 msgstr "WireGuard 支援"
 
-#: data/network.metainfo.xml.in:62
+#: data/network.metainfo.xml.in:66
 msgid "OWE support"
 msgstr "OWE 支援"
 
-#: data/network.metainfo.xml.in:64
+#: data/network.metainfo.xml.in:68
 msgid "Minor updates"
 msgstr "小型更新"
 
-#: data/network.metainfo.xml.in:75
+#: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
 msgstr "用簡潔的圓形按鈕來顯示行動裝置"
 
-#: data/network.metainfo.xml.in:102
+#: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr "用簡潔的圓形按鈕來顯示飛航模式與有線裝置"
 
-#: data/network.metainfo.xml.in:103
+#: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr "用圓形按鈕來顯示 VPN 連線，並允許同時連接多個 VPN"

@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-01 18:14+0000\n"
+"POT-Creation-Date: 2025-07-24 17:03+0000\n"
 "PO-Revision-Date: 2023-06-02 08:07+0000\n"
-"Last-Translator: Faisal Rachmadin <frachmadin@users.noreply.l10n.elementary."
-"io>\n"
+"Last-Translator: Faisal Rachmadin "
+"<frachmadin@users.noreply.l10n.elementary.io>\n"
 "Language-Team: Indonesian <https://l10n.elementary.io/projects/wingpanel/"
 "wingpanel-indicator-network/id/>\n"
 "Language: id\n"
@@ -16,65 +16,65 @@ msgstr ""
 "X-Generator: Weblate 4.17\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:157 src/Indicator.vala:170
+#: src/Indicator.vala:151 src/Indicator.vala:164
 msgid "Wired"
 msgstr "Kabel"
 
-#: src/Indicator.vala:158
+#: src/Indicator.vala:152
 msgid "Connecting to wired network"
 msgstr "Menghubungkan ke jaringan kabel"
 
-#: src/Indicator.vala:160 src/Indicator.vala:165
+#: src/Indicator.vala:154 src/Indicator.vala:159
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "Menyambung ke “%s”"
 
-#: src/Indicator.vala:171
+#: src/Indicator.vala:165
 msgid "Connected to wired network"
 msgstr "Terhubung ke jaringan kabel"
 
-#: src/Indicator.vala:173 src/Indicator.vala:184
+#: src/Indicator.vala:167 src/Indicator.vala:178
 #, c-format
 msgid "Connected to “%s”"
 msgstr "Tersambung ke “%s”"
 
-#: src/Indicator.vala:189
+#: src/Indicator.vala:183
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:193
+#: src/Indicator.vala:187
 msgid "Disconnected"
 msgstr "Terputus"
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:190
 #, fuzzy
 #| msgid "Connected"
 msgid "Not connected"
 msgstr "Tersambung"
 
-#: src/Indicator.vala:202
+#: src/Indicator.vala:196
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:203
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:223 src/Indicator.vala:235
+#: src/Indicator.vala:217 src/Indicator.vala:229
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:63
+#: src/Widgets/PopoverWidget.vala:62
 #, fuzzy
 #| msgid "Airplane mode enabled"
 msgid "Airplane Mode"
 msgstr "Mode pesawat terbang diaktifkan"
 
-#: src/Widgets/PopoverWidget.vala:94
+#: src/Widgets/PopoverWidget.vala:105
 msgid "Connect to Hidden Network…"
 msgstr "Menyambung ke Jaringan Tersembunyi…"
 
-#: src/Widgets/PopoverWidget.vala:98
+#: src/Widgets/PopoverWidget.vala:109
 msgid "Network Settings…"
 msgstr "Pengaturan Jaringan…"
 
