@@ -1,3 +1,9 @@
+wingpanel-indicator-network (8.0.0) jammy; urgency=medium
+
+  * Release 8.0.0 (#345)
+
+ -- Cody Garver <cody@elementary.io>  Wed, 10 Sep 2025 16:51:49 +0000
+
 wingpanel-indicator-network (7.1.1) jammy; urgency=medium
 
   * Release 7.1.1 (#317)
