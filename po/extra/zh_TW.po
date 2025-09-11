@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-06-03 03:55+0000\n"
+"PO-Revision-Date: 2025-08-22 15:58+0000\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://"
 "l10n.elementaryos.org/projects/wingpanel/indicator-network-extra/zh_Hant/>\n"
@@ -40,7 +40,7 @@ msgstr "改善項目："
 #: data/network.metainfo.xml.in:38
 msgid ""
 "Airplane mode disables networking radios, not bluetooth or wired networks"
-msgstr ""
+msgstr "讓飛航模式只停用無線網路，而不停用藍牙或有線網路"
 
 #: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
