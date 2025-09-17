@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-07-27 22:55+0000\n"
+"PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/ja/>\n"
@@ -45,8 +45,7 @@ msgstr "機内モードが無線ネットワークのみ無効化する (Bluetoo
 
 #: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
-msgstr ""
-"トグルスイッチを中クリックすると、ネットワークの設定に遷移するように変更"
+msgstr "トグルスイッチを中クリックすると、ネットワーク設定に遷移するように変更"
 
 #: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
 #: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80

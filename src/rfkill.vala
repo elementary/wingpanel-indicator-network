@@ -28,7 +28,7 @@ public class RFKillDevice {
             event.idx = idx;
             event.op = RFKillOperation.CHANGE;
             event.soft = value ? 1 : 0;
-            if (Posix.write (manager.fd, &event, 8) != 8)
+            if (Posix.write (manager.fd, &event, sizeof (RFKillEvent)) != sizeof (RFKillEvent))
                 return;
         }
     }
@@ -139,7 +139,7 @@ public class RFKillManager : Object {
         event.type = type;
         event.op = RFKillOperation.CHANGE_ALL;
         event.soft = lock_enabled ? 1 : 0;
-        if (Posix.write (fd, &event, 8) != 8)
+        if (Posix.write (fd, &event, sizeof (RFKillEvent)) != sizeof (RFKillEvent))
             return;
     }
 
@@ -148,7 +148,7 @@ public class RFKillManager : Object {
 
     private bool read_event () {
         var event = RFKillEvent ();
-        if (Posix.read (fd, &event, 8) != 8)
+        if (Posix.read (fd, &event, sizeof (RFKillEvent)) != sizeof (RFKillEvent))
             return false;
 
         switch (event.op) {

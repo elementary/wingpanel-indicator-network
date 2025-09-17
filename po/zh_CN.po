@@ -3,16 +3,17 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2022-12-10 05:25+0000\n"
-"Last-Translator: colindemian <colindemian@outlook.com>\n"
-"Language-Team: Chinese (Simplified) <https://l10n.elementary.io/projects/"
-"wingpanel/wingpanel-indicator-network/zh_Hans/>\n"
+"PO-Revision-Date: 2025-08-10 04:55+0000\n"
+"Last-Translator: JieXu <xujie0739@qq.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://"
+"l10n.elementaryos.org/projects/wingpanel/wingpanel-indicator-network/zh_Hans/"
+">\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
+"X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
 #: src/Indicator.vala:151 src/Indicator.vala:164
@@ -107,10 +108,8 @@ msgid "WPA encrypted"
 msgstr "WPA 加密"
 
 #: src/Widgets/WifiMenuItem.vala:115
-#, fuzzy
-#| msgid "WPA encrypted"
 msgid "Passwordless encrypted"
-msgstr "WPA 加密"
+msgstr "无密码加密"
 
 #: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
