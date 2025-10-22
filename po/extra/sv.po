@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-10-22 09:24+0000\n"
+"PO-Revision-Date: 2025-10-22 09:58+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/sv/>\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:11
 msgid "Network Indicator"
-msgstr ""
+msgstr "Nätverksindikator"
 
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
-msgstr ""
+msgstr "Ansluta till trådlösa nätverk och hantera VPN"
 
 #: data/network.metainfo.xml.in:28
 msgid "elementary, Inc."
@@ -41,10 +41,12 @@ msgstr "Förbättringar:"
 msgid ""
 "Airplane mode disables networking radios, not bluetooth or wired networks"
 msgstr ""
+"Flygplansläget inaktiverar nätverksradio, inte Bluetooth eller kabelanslutna "
+"nätverk"
 
 #: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
-msgstr ""
+msgstr "Gå till inställningar genom att högerklicka på knapparna"
 
 #: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
 #: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
@@ -54,7 +56,7 @@ msgstr "Uppdaterade översättningar"
 
 #: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
-msgstr ""
+msgstr "Visa Cellular Modems som Toggles"
 
 #: data/network.metainfo.xml.in:63
 msgid "New features"
@@ -62,11 +64,11 @@ msgstr "Nya funktioner"
 
 #: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
-msgstr ""
+msgstr "Stöd för WireGuard"
 
 #: data/network.metainfo.xml.in:66
 msgid "OWE support"
-msgstr ""
+msgstr "Stöd för OWE"
 
 #: data/network.metainfo.xml.in:68
 msgid "Minor updates"
@@ -74,13 +76,15 @@ msgstr "Mindre uppdateringar"
 
 #: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
-msgstr ""
+msgstr "Visa mobila enheter som kompakta cirkelknappar"
 
 #: data/network.metainfo.xml.in:106
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
-msgstr ""
+msgstr "Visa flygplansläge och trådbundna enheter som kompakta cirkelknappar"
 
 #: data/network.metainfo.xml.in:107
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
+"Visa VPN-anslutningar som cirkelknappar och tillåt anslutning av flera "
+"samtidigt"
