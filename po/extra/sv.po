@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-10-22 05:31+0000\n"
+"PO-Revision-Date: 2025-10-22 09:24+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/sv/>\n"
@@ -58,7 +58,7 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:63
 msgid "New features"
-msgstr ""
+msgstr "Nya funktioner"
 
 #: data/network.metainfo.xml.in:65
 msgid "WireGuard support"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: data/network.metainfo.xml.in:68
 msgid "Minor updates"
-msgstr ""
+msgstr "Mindre uppdateringar"
 
 #: data/network.metainfo.xml.in:79
 msgid "Show cellular devices as compact circle buttons"
