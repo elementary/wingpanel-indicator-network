@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-10-22 05:31+0000\n"
+"PO-Revision-Date: 2025-10-22 08:08+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "wingpanel-indicator-network/sv/>\n"
@@ -21,7 +21,7 @@ msgstr "Trådbundet"
 
 #: src/Indicator.vala:152
 msgid "Connecting to wired network"
-msgstr "Ansluter till trådat nätverk"
+msgstr "Ansluter till trådbundet nätverk"
 
 #: src/Indicator.vala:154 src/Indicator.vala:159
 #, c-format
@@ -30,7 +30,7 @@ msgstr "Ansluter till \"%s\""
 
 #: src/Indicator.vala:165
 msgid "Connected to wired network"
-msgstr "Ansluten till trådat nätverk"
+msgstr "Ansluten till trådbundet nätverk"
 
 #: src/Indicator.vala:167 src/Indicator.vala:178
 #, c-format
@@ -55,7 +55,7 @@ msgstr "Mittenklicka för att stänga av flygplansläge"
 
 #: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode on"
-msgstr "Mittenklicka för att aktivera flygplatsläge"
+msgstr "Mittenklicka för att aktivera flygplansläge"
 
 #: src/Indicator.vala:217 src/Indicator.vala:229
 msgid "unknown network"
