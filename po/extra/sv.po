@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-10-22 09:58+0000\n"
+"PO-Revision-Date: 2025-10-31 11:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "indicator-network-extra/sv/>\n"
@@ -25,7 +25,7 @@ msgstr "Nätverksindikator"
 
 #: data/network.metainfo.xml.in:12
 msgid "Connect to wireless networks and manage VPNs"
-msgstr "Ansluta till trådlösa nätverk och hantera VPN"
+msgstr "Anslut till trådlösa nätverk och hantera VPN-anslutningar"
 
 #: data/network.metainfo.xml.in:28
 msgid "elementary, Inc."
@@ -41,12 +41,12 @@ msgstr "Förbättringar:"
 msgid ""
 "Airplane mode disables networking radios, not bluetooth or wired networks"
 msgstr ""
-"Flygplansläget inaktiverar nätverksradio, inte Bluetooth eller kabelanslutna "
+"Flygplansläget inaktiverar nätverksradio, inte Bluetooth eller trådbundna "
 "nätverk"
 
 #: data/network.metainfo.xml.in:39
 msgid "Jump to settings by middle-clicking on toggles"
-msgstr "Gå till inställningar genom att högerklicka på knapparna"
+msgstr "Hoppa till inställningar genom att mittenklicka på växlingar"
 
 #: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
 #: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
@@ -56,7 +56,7 @@ msgstr "Uppdaterade översättningar"
 
 #: data/network.metainfo.xml.in:52
 msgid "Show Cellular Modems as Toggles"
-msgstr "Visa Cellular Modems som Toggles"
+msgstr "Visa mobila modem som växlare"
 
 #: data/network.metainfo.xml.in:63
 msgid "New features"
