@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-24 17:03+0000\n"
-"PO-Revision-Date: 2025-10-22 08:08+0000\n"
+"PO-Revision-Date: 2025-10-31 11:55+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <https://l10n.elementaryos.org/projects/wingpanel/"
 "wingpanel-indicator-network/sv/>\n"
@@ -104,7 +104,7 @@ msgstr "WPA3-kryptering"
 
 #: src/Widgets/WifiMenuItem.vala:111
 msgid "WPA encrypted"
-msgstr "WPA-krypterat"
+msgstr "WPA-kryptering"
 
 #: src/Widgets/WifiMenuItem.vala:115
 msgid "Passwordless encrypted"
@@ -112,7 +112,7 @@ msgstr "Krypterat utan lösenord"
 
 #: src/Widgets/WifiMenuItem.vala:118
 msgid "Encrypted"
-msgstr "Krypterat"
+msgstr "Kryptering"
 
 #: src/Widgets/WifiMenuItem.vala:120
 msgid "Unsecured"
