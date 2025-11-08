@@ -127,7 +127,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         wifi_list.row_activated.connect ((row) => {
             if (row is WifiMenuItem) {
-                wifi_activate_cb ((WifiMenuItem) row);
+                wifi_activate_cb.begin ((WifiMenuItem) row);
             }
         });
 
@@ -231,7 +231,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
     }
 
-    private void wifi_activate_cb (WifiMenuItem i) {
+    private async void wifi_activate_cb (WifiMenuItem i) {
         if (device == null) {
             return;
         }
@@ -243,7 +243,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (permission == null) {
             try {
-                permission = new Polkit.Permission.sync (
+                permission = yield new Polkit.Permission (
                     "io.elementary.wingpanel.network.administration",
                     new Polkit.UnixProcess (Posix.getpid ())
                 );
