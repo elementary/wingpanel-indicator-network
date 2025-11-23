@@ -306,9 +306,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 s_8021x.phase2_auth = "mschapv2";
                 connection.add_setting (s_8021x);
             }
-        }
 
-        if (is_secured) {
             // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
             // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
             // so we spawn our own
