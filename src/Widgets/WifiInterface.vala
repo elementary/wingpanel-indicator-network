@@ -264,15 +264,22 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
 
         var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
-        var is_secured = true;
+        var is_secured = flags != NM.@80211ApSecurityFlags.NONE;
 
         var connection = NM.SimpleConnection.new ();
 
-        if (flags != NM.@80211ApSecurityFlags.NONE) {
-            var s_con = new NM.SettingConnection ();
-            s_con.uuid = NM.Utils.uuid_generate ();
-            connection.add_setting (s_con);
+        // Always create a proper connection and wireless setting for libnma
+        var s_con = new NM.SettingConnection ();
+        s_con.uuid = NM.Utils.uuid_generate ();
+        s_con.id = NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ());
+        s_con.type = NM.SettingWireless.SETTING_NAME;
+        connection.add_setting (s_con);
 
+        var s_wifi = new NM.SettingWireless ();
+        s_wifi.ssid = i.ap.get_ssid ();
+        connection.add_setting (s_wifi);
+
+        if (is_secured) {
             if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags ||
                 NM.@80211ApSecurityFlags.KEY_MGMT_OWE_TM in flags) {
                 var s_wsec = new NM.SettingWirelessSecurity ();
@@ -285,10 +292,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 s_wsec.key_mgmt = "sae";
                 connection.add_setting (s_wsec);
             }
-
-            var s_wifi = new NM.SettingWireless ();
-            s_wifi.ssid = i.ap.get_ssid ();
-            connection.add_setting (s_wifi);
 
             // If the AP is WPA[2]-Enterprise then we need to set up a minimal 802.1x setting before
             // prompting the user to configure the authentication, otherwise, the dialog works out
@@ -303,9 +306,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 s_8021x.phase2_auth = "mschapv2";
                 connection.add_setting (s_8021x);
             }
-        }
 
-        if (is_secured) {
             // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
             // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
             // so we spawn our own
