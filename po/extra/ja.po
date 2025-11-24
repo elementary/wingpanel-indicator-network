@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"POT-Creation-Date: 2025-11-24 18:01+0000\n"
 "PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -31,57 +31,59 @@ msgstr "無線ネットワークに接続したり VPN を管理したりしま�
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
-#: data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:63 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:104 data/network.metainfo.xml.in:117
 msgid "Improvements:"
 msgstr "改善点:"
 
-#: data/network.metainfo.xml.in:38
-msgid ""
-"Airplane mode disables networking radios, not bluetooth or wired networks"
-msgstr "機内モードが無線ネットワークのみ無効化する (Bluetooth "
-"や有線ネットワークは無効化しない) ように修正"
-
-#: data/network.metainfo.xml.in:39
-msgid "Jump to settings by middle-clicking on toggles"
-msgstr "トグルスイッチを中クリックすると、ネットワーク設定に遷移するように変更"
-
-#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
-#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
+#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:83
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:121
 msgid "Updated translations"
 msgstr "翻訳の更新"
 
+#: data/network.metainfo.xml.in:51
+msgid ""
+"Airplane mode disables networking radios, not bluetooth or wired networks"
+msgstr ""
+"機内モードが無線ネットワークのみ無効化する (Bluetooth や有線ネットワークは無"
+"効化しない) ように修正"
+
 #: data/network.metainfo.xml.in:52
+msgid "Jump to settings by middle-clicking on toggles"
+msgstr "トグルスイッチを中クリックすると、ネットワーク設定に遷移するように変更"
+
+#: data/network.metainfo.xml.in:65
 msgid "Show Cellular Modems as Toggles"
 msgstr "セルラーモデムをトグルボタンで表示するように変更"
 
-#: data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:76
 msgid "New features"
 msgstr "新機能"
 
-#: data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:78
 msgid "WireGuard support"
 msgstr "WireGuard への対応"
 
-#: data/network.metainfo.xml.in:66
+#: data/network.metainfo.xml.in:79
 msgid "OWE support"
 msgstr "OWE への対応"
 
-#: data/network.metainfo.xml.in:68
+#: data/network.metainfo.xml.in:81
 msgid "Minor updates"
 msgstr "マイナーアップデート"
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
 msgid "Show cellular devices as compact circle buttons"
 msgstr "セルラーデバイスをコンパクトな丸いボタンで表示するように変更"
 
-#: data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:119
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr "機内モードと有線デバイスをコンパクトな丸いボタンで表示するように変更"
 
-#: data/network.metainfo.xml.in:107
+#: data/network.metainfo.xml.in:120
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr "VPN 接続を丸いボタンで表示し、同時に複数の VPN に接続できるように変更"
