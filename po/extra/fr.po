@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"POT-Creation-Date: 2025-11-24 18:01+0000\n"
 "PO-Revision-Date: 2025-07-29 08:55+0000\n"
 "Last-Translator: Nathan <bonnemainsnathan@gmail.com>\n"
 "Language-Team: French <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -31,62 +31,63 @@ msgstr "Connectez-vous à des réseaux sans fil et gérez vos VPN"
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
-#: data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:63 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:104 data/network.metainfo.xml.in:117
 msgid "Improvements:"
 msgstr "Améliorations :"
 
-#: data/network.metainfo.xml.in:38
+#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:83
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:121
+msgid "Updated translations"
+msgstr "Mise à jour des traductions"
+
+#: data/network.metainfo.xml.in:51
 msgid ""
 "Airplane mode disables networking radios, not bluetooth or wired networks"
 msgstr ""
 "Le mode avion désactiver les réseaux radio, pas le bluetooth ou le réseau "
 "filaire"
 
-#: data/network.metainfo.xml.in:39
+#: data/network.metainfo.xml.in:52
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr ""
 "Accédez aux paramètres par un clic du milieu sur les boutons d'activation"
 
-#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
-#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-msgid "Updated translations"
-msgstr "Mise à jour des traductions"
-
-#: data/network.metainfo.xml.in:52
+#: data/network.metainfo.xml.in:65
 msgid "Show Cellular Modems as Toggles"
 msgstr "Afficher les modems cellulaires sous forme d'interrupteurs"
 
-#: data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:76
 msgid "New features"
 msgstr "Nouvelles fonctionnalités"
 
-#: data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:78
 msgid "WireGuard support"
 msgstr "Prise en charge de WireGuard"
 
-#: data/network.metainfo.xml.in:66
+#: data/network.metainfo.xml.in:79
 msgid "OWE support"
 msgstr "Prise en charge d'OWE"
 
-#: data/network.metainfo.xml.in:68
+#: data/network.metainfo.xml.in:81
 msgid "Minor updates"
 msgstr "Mises à jour mineures"
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
 msgid "Show cellular devices as compact circle buttons"
 msgstr ""
 "Afficher les modems cellulaires sous forme de boutons circulaires compacts"
 
-#: data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:119
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Affichage du mode Avion et des appareils filaires comme boutons circulaires "
 "compacts"
 
-#: data/network.metainfo.xml.in:107
+#: data/network.metainfo.xml.in:120
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""
