@@ -23,7 +23,7 @@ jobs:
       - name: Install Dependencies
         run: |
           apt update
-          apt install -y gobject-introspection libgranite-dev libnm-dev libnma-dev libwingpanel-dev libpolkit-gobject-1-dev meson valac
+          apt install -y gobject-introspection libgranite-7-dev libnm-dev libnma-gtk4-dev libwingpanel-8-dev libpolkit-gobject-1-dev meson valac
       - name: Build
         env:
           DESTDIR: out
