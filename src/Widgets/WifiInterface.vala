@@ -317,7 +317,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
             wifi_dialog.response.connect ((response) => {
                 if (response == Gtk.ResponseType.OK) {
-                    connect_to_network.begin (connection, wifi_device, i.ap);
+                    // Can't re-use connection because we need credentials etc
+                    NM.Device device;
+                    NM.AccessPoint? access_point = null;
+                    var dialog_connection = wifi_dialog.get_connection (out device, out access_point);
+
+                    connect_to_network.begin (dialog_connection, device, access_point);
                 }
 
                 wifi_dialog.destroy ();
