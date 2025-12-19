@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-24 17:03+0000\n"
+"POT-Creation-Date: 2025-11-24 18:01+0000\n"
 "PO-Revision-Date: 2025-07-31 00:55+0000\n"
 "Last-Translator: Ihor Hordiichuk <igor_ck@outlook.com>\n"
 "Language-Team: Ukrainian <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -32,60 +32,61 @@ msgstr "Зʼєднуйтеся з бездротовими мережами та
 msgid "elementary, Inc."
 msgstr "elementary, Inc."
 
-#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:50
-#: data/network.metainfo.xml.in:77 data/network.metainfo.xml.in:91
-#: data/network.metainfo.xml.in:104
+#: data/network.metainfo.xml.in:36 data/network.metainfo.xml.in:49
+#: data/network.metainfo.xml.in:63 data/network.metainfo.xml.in:90
+#: data/network.metainfo.xml.in:104 data/network.metainfo.xml.in:117
 msgid "Improvements:"
 msgstr "Удосконалення:"
 
-#: data/network.metainfo.xml.in:38
+#: data/network.metainfo.xml.in:38 data/network.metainfo.xml.in:53
+#: data/network.metainfo.xml.in:66 data/network.metainfo.xml.in:83
+#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:121
+msgid "Updated translations"
+msgstr "Оновлено переклади"
+
+#: data/network.metainfo.xml.in:51
 msgid ""
 "Airplane mode disables networking radios, not bluetooth or wired networks"
 msgstr ""
 "Режим польоту вимикає мережеві радіотрансляції, але не Bluetooth або дротові "
 "мережі"
 
-#: data/network.metainfo.xml.in:39
+#: data/network.metainfo.xml.in:52
 msgid "Jump to settings by middle-clicking on toggles"
 msgstr "Перехід до налаштувань натиском середньої кнопки миші на перемикачах"
 
-#: data/network.metainfo.xml.in:40 data/network.metainfo.xml.in:53
-#: data/network.metainfo.xml.in:70 data/network.metainfo.xml.in:80
-#: data/network.metainfo.xml.in:93 data/network.metainfo.xml.in:108
-msgid "Updated translations"
-msgstr "Оновлено переклади"
-
-#: data/network.metainfo.xml.in:52
+#: data/network.metainfo.xml.in:65
 msgid "Show Cellular Modems as Toggles"
 msgstr "Показ стільникових модемів у вигляді перемикачів"
 
-#: data/network.metainfo.xml.in:63
+#: data/network.metainfo.xml.in:76
 msgid "New features"
 msgstr "Нові можливості"
 
-#: data/network.metainfo.xml.in:65
+#: data/network.metainfo.xml.in:78
 msgid "WireGuard support"
 msgstr "Підтримка WireGuard"
 
-#: data/network.metainfo.xml.in:66
+#: data/network.metainfo.xml.in:79
 msgid "OWE support"
 msgstr "Підтримка OWE"
 
-#: data/network.metainfo.xml.in:68
+#: data/network.metainfo.xml.in:81
 msgid "Minor updates"
 msgstr "Незначні оновлення"
 
-#: data/network.metainfo.xml.in:79
+#: data/network.metainfo.xml.in:92
 msgid "Show cellular devices as compact circle buttons"
 msgstr "Показ стільникових пристроїв у вигляді компактних круглих кнопок"
 
-#: data/network.metainfo.xml.in:106
+#: data/network.metainfo.xml.in:119
 msgid "Show Airplane Mode and wired devices as compact circle buttons"
 msgstr ""
 "Показ режиму польоту та дротових пристроїв у вигляді компактних круглих "
 "кнопок"
 
-#: data/network.metainfo.xml.in:107
+#: data/network.metainfo.xml.in:120
 msgid ""
 "Show VPN connections as circle buttons and allow connecting multiple at once"
 msgstr ""

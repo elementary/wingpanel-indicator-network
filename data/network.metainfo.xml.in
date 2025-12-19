@@ -31,6 +31,19 @@
   <update_contact>contact_at_elementary.io</update_contact>
 
   <releases>
+    <release version="8.0.1" date="2025-11-24" urgency="medium">
+      <description>
+        <p>Improvements:</p>
+        <ul>
+          <li>Updated translations</li>
+        </ul>
+      </description>
+      <issues>
+        <issue url="https://github.com/elementary/wingpanel-indicator-network/issues/351">public train wifi crashes panel</issue>
+        <issue url="https://github.com/elementary/triage/issues/869">Authentication prompts in System Settings trigger not-responding dialogs</issue>
+      </issues>
+    </release>
+
     <release version="8.0.0" date="2025-09-09" urgency="medium">
       <description>
         <p>Improvements:</p>
