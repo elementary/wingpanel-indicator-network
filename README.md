@@ -9,11 +9,11 @@ You'll need the following dependencies:
 
 * gobject-introspection
 * libglib2.0-dev (>= 2.74)
-* libgranite-dev
+* libgranite-7-dev
 * libnm-dev (>= 1.24)
-* libnma-dev
+* libnma-gtk4-dev
 * libpolkit-gobject-1-dev
-* libwingpanel-dev
+* libwingpanel-8-dev
 * meson
 * valac
 

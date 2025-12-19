@@ -14,7 +14,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private int cellular_animation_state = 0;
 
     construct {
-        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic", Gtk.IconSize.LARGE_TOOLBAR) {
+        image = new Gtk.Image.from_icon_name ("panel-network-wired-connected-symbolic") {
             pixel_size = 24
         };
 
@@ -29,8 +29,8 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             transition_type = SLIDE_LEFT
         };
 
-        add (image);
-        add (extra_info_revealer);
+        append (image);
+        append (extra_info_revealer);
     }
 
     public void update_state (Network.State state, bool secure, string? extra_info = null) {

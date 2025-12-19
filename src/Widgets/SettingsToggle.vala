@@ -9,18 +9,13 @@ public class Network.SettingsToggle : Gtk.Box {
     public string text { get; set; }
     public string settings_uri { get; set; default = "settings://"; }
 
-    private Gtk.GestureMultiPress middle_click_gesture;
-
     class construct {
         set_css_name ("settings-toggle");
     }
 
     construct {
-        var image = new Gtk.Image ();
-
         var button = new Gtk.ToggleButton () {
-            halign = CENTER,
-            image = image
+            halign = CENTER
         };
 
         var label = new Gtk.Label (null) {
@@ -30,19 +25,19 @@ public class Network.SettingsToggle : Gtk.Box {
             max_width_chars = 13,
             mnemonic_widget = button
         };
-        label.get_style_context ().add_class (Granite.STYLE_CLASS_SMALL_LABEL);
+        label.add_css_class (Granite.STYLE_CLASS_SMALL_LABEL);
 
         halign = CENTER;
         orientation = VERTICAL;
         spacing = 3;
-        add (button);
-        add (label);
+        append (button);
+        append (label);
 
         bind_property ("action-name", button, "action-name");
-        bind_property ("icon-name", image, "icon-name");
+        bind_property ("icon-name", button, "icon-name");
         bind_property ("text", label, "label");
 
-        middle_click_gesture = new Gtk.GestureMultiPress (this) {
+        var middle_click_gesture = new Gtk.GestureClick () {
             button = Gdk.BUTTON_MIDDLE
         };
         middle_click_gesture.pressed.connect (() => {
@@ -55,5 +50,7 @@ public class Network.SettingsToggle : Gtk.Box {
                 critical ("Failed to open system settings: %s", e.message);
             }
         });
+
+        add_controller (middle_click_gesture);
     }
 }
