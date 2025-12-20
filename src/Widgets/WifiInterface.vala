@@ -320,7 +320,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
             wifi_dialog.response.connect ((response) => {
                 if (response == Gtk.ResponseType.OK) {
-                    connect_to_network.begin (wifi_dialog);
+                    // Can't re-use connection because we need credentials etc
+                    NM.Device device;
+                    NM.AccessPoint? access_point = null;
+                    var dialog_connection = wifi_dialog.get_connection (out device, out access_point);
+
+                    connect_to_network.begin (dialog_connection, device, access_point);
                 }
 
                 wifi_dialog.destroy ();
@@ -377,7 +382,11 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         hidden_dialog.response.connect ((response) => {
             if (response == Gtk.ResponseType.OK) {
-                connect_to_network.begin (hidden_dialog);
+                NM.Device device;
+                NM.AccessPoint? access_point = null;
+                var dialog_connection = hidden_dialog.get_connection (out device, out access_point);
+
+                connect_to_network.begin (dialog_connection, device, access_point);
             }
 
             hidden_dialog.destroy ();
@@ -386,22 +395,15 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         hidden_dialog.present ();
     }
 
-    private async void connect_to_network (NMA.WifiDialog wifi_dialog) {
+    private async void connect_to_network (NM.Connection connection, NM.Device device, NM.AccessPoint? access_point) {
         NM.Connection? fuzzy = null;
-        NM.Device dialog_device;
-        NM.AccessPoint? dialog_ap = null;
-        var dialog_connection = wifi_dialog.get_connection (out dialog_device, out dialog_ap);
-
         nm_client.get_connections ().foreach ((possible) => {
-            if (dialog_connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
+            if (connection.compare (possible, NM.SettingCompareFlags.FUZZY | NM.SettingCompareFlags.IGNORE_ID)) {
                 fuzzy = possible;
             }
         });
 
-        string? path = null;
-        if (dialog_ap != null) {
-            path = dialog_ap.get_path ();
-        }
+        string? path = access_point?.get_path ();
 
         if (fuzzy != null) {
             try {
@@ -409,27 +411,24 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             } catch (Error error) {
                 critical (error.message);
             }
-        } else {
-            string? mode = null;
-            unowned NM.SettingWireless setting_wireless = dialog_connection.get_setting_wireless ();
-            if (setting_wireless != null) {
-                mode = setting_wireless.get_mode ();
+
+            return;
+        }
+
+        unowned var setting_wireless = connection.get_setting_wireless ();
+        if (setting_wireless != null && setting_wireless.get_mode () == "adhoc") {
+            var connection_setting = connection.get_setting_connection ();
+            if (connection_setting == null) {
+                connection_setting = new NM.SettingConnection ();
             }
 
-            if (mode == "adhoc") {
-                NM.SettingConnection connection_setting = dialog_connection.get_setting_connection ();
-                if (connection_setting == null) {
-                    connection_setting = new NM.SettingConnection ();
-                }
+            connection.add_setting (connection_setting);
+        }
 
-                dialog_connection.add_setting (connection_setting);
-            }
-
-            try {
-                yield nm_client.add_and_activate_connection_async (dialog_connection, dialog_device, path, null);
-            } catch (Error error) {
-                critical (error.message);
-            }
+        try {
+            yield nm_client.add_and_activate_connection_async (connection, device, path, null);
+        } catch (Error error) {
+            critical (error.message);
         }
     }
 
