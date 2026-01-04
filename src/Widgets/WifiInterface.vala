@@ -231,11 +231,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         }
     }
 
-    private async void wifi_activate_cb (WifiMenuItem i) {
-        if (device == null) {
-            return;
-        }
-
+    private async void wifi_activate_cb (WifiMenuItem i) requires (device != null) {
         /* Do not activate connection if it is already activated */
         if (wifi_device.get_active_access_point () == i.ap) {
             return;
@@ -263,33 +259,37 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             return;
         }
 
-        var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
-        var is_secured = flags != NM.@80211ApSecurityFlags.NONE;
+        // Always create a proper connection and wireless setting for libnma
+        var s_con = new NM.SettingConnection () {
+            id = NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ()),
+            uuid = NM.Utils.uuid_generate (),
+            type = NM.SettingWireless.SETTING_NAME
+        };
+
+        var s_wifi = new NM.SettingWireless () {
+            ssid = i.ap.get_ssid ()
+        };
 
         var connection = NM.SimpleConnection.new ();
-
-        // Always create a proper connection and wireless setting for libnma
-        var s_con = new NM.SettingConnection ();
-        s_con.uuid = NM.Utils.uuid_generate ();
-        s_con.id = NM.Utils.ssid_to_utf8 (i.ap.get_ssid ().get_data ());
-        s_con.type = NM.SettingWireless.SETTING_NAME;
         connection.add_setting (s_con);
-
-        var s_wifi = new NM.SettingWireless ();
-        s_wifi.ssid = i.ap.get_ssid ();
         connection.add_setting (s_wifi);
 
-        if (is_secured) {
+        var flags = i.ap.get_wpa_flags () | i.ap.get_rsn_flags ();
+        if (flags != NM.@80211ApSecurityFlags.NONE) {
             if (NM.@80211ApSecurityFlags.KEY_MGMT_OWE in flags ||
                 NM.@80211ApSecurityFlags.KEY_MGMT_OWE_TM in flags) {
-                var s_wsec = new NM.SettingWirelessSecurity ();
-                s_wsec.key_mgmt = "owe";
+                var s_wsec = new NM.SettingWirelessSecurity () {
+                    key_mgmt = "owe"
+                };
+
                 connection.add_setting (s_wsec);
             }
 
             if (NM.@80211ApSecurityFlags.KEY_MGMT_SAE in flags) {
-                var s_wsec = new NM.SettingWirelessSecurity ();
-                s_wsec.key_mgmt = "sae";
+                var s_wsec = new NM.SettingWirelessSecurity () {
+                    key_mgmt = "sae"
+                };
+
                 connection.add_setting (s_wsec);
             }
 
@@ -297,13 +297,16 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             // prompting the user to configure the authentication, otherwise, the dialog works out
             // what sort of credentials to prompt for automatically
             if (NM.@80211ApSecurityFlags.KEY_MGMT_802_1X in flags) {
-                var s_wsec = new NM.SettingWirelessSecurity ();
-                s_wsec.key_mgmt = "wpa-eap";
-                connection.add_setting (s_wsec);
+                var s_wsec = new NM.SettingWirelessSecurity () {
+                    key_mgmt = "wpa-eap"
+                };
 
-                var s_8021x = new NM.Setting8021x ();
+                var s_8021x = new NM.Setting8021x () {
+                    phase2_auth = "mschapv2"
+                };
                 s_8021x.add_eap_method ("ttls");
-                s_8021x.phase2_auth = "mschapv2";
+
+                connection.add_setting (s_wsec);
                 connection.add_setting (s_8021x);
             }
 
