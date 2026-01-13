@@ -307,22 +307,17 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 connection.add_setting (s_8021x);
             }
 
-            // In theory, we could just activate normal WEP/WPA connections without spawning a WifiDialog
-            // and NM would create its own dialog, but Mutter's focus stealing prevention often hides it
-            // so we spawn our own
-            var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false) {
-                deletable = false
+            // var wifi_dialog = new NMA.WifiDialog (nm_client, connection, wifi_device, i.ap, false) {
+            var wifi_dialog = new WifiDialog () {
+                access_point = i.ap,
+                connection = connection,
+                transient_for = (Gtk.Window) get_toplevel ()
             };
-            wifi_dialog.transient_for = (Gtk.Window) get_toplevel ();
 
             wifi_dialog.response.connect ((response) => {
-                if (response == Gtk.ResponseType.OK) {
-                    // Can't re-use connection because we need credentials etc
-                    NM.Device device;
-                    NM.AccessPoint? access_point = null;
-                    var dialog_connection = wifi_dialog.get_connection (out device, out access_point);
-
-                    connect_to_network.begin (dialog_connection, device, access_point);
+                if (response == Gtk.ResponseType.ACCEPT) {
+                    // Make sure we use dialog connection because we need credentials etc
+                    connect_to_network.begin (wifi_dialog.connection, wifi_device, i.ap);
                 }
 
                 wifi_dialog.destroy ();
