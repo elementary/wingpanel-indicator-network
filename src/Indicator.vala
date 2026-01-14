@@ -58,11 +58,12 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         if (is_in_session) {
             gesture_click = new Gtk.GestureMultiPress (display_widget) {
-                button = button = Gdk.BUTTON_MIDDLE
+                button = Gdk.BUTTON_MIDDLE
             };
-
             gesture_click.pressed.connect (() => {
                 airplane_action.activate (null);
+                gesture_click.set_state (CLAIMED);
+                gesture_click.reset ();
             });
         }
 
