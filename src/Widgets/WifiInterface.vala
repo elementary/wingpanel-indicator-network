@@ -9,13 +9,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     public NM.Client nm_client { get; construct; }
 
     public NM.DeviceWifi? wifi_device;
-    public bool hidden_sensitivity { get; set; default = true; }
 
     public string active_ap_name { get; private set; }
 
-    private Granite.SwitchModelButton wifi_item;
-    private Gtk.Revealer revealer;
+    private SettingsToggle wifi_toggle;
 
+    private SimpleAction toggle_action;
     private RFKillManager rfkill;
     private NM.AccessPoint? active_ap;
     private Gtk.ListBox wifi_list;
@@ -27,6 +26,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
     private bool software_locked;
     private bool hardware_locked;
 
+    private uint wifi_animation_timeout;
     private uint timeout_scan = 0;
     private Cancellable wifi_scan_cancellable = new Cancellable ();
 
@@ -105,9 +105,6 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         wifi_list.set_sort_func (sort_func);
         wifi_list.set_placeholder (placeholder);
 
-        wifi_item = new Granite.SwitchModelButton (display_title);
-        wifi_item.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
-
         var scrolled_box = new Gtk.ScrolledWindow (null, null) {
             child = wifi_list,
             hscrollbar_policy = NEVER,
@@ -115,15 +112,34 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             propagate_natural_height = true
         };
 
-        revealer = new Gtk.Revealer () {
-            child = scrolled_box
+        var hidden_item = new Gtk.ModelButton () {
+            text = _("Connect to Hidden Network…")
         };
 
-        orientation = Gtk.Orientation.VERTICAL;
-        pack_start (wifi_item);
-        pack_start (revealer);
+        var menu_box = new Gtk.Box (VERTICAL, 3) {
+            margin_top = 3,
+            margin_bottom = 3
+        };
+        menu_box.add (scrolled_box);
+        menu_box.add (new Gtk.Separator (HORIZONTAL));
+        menu_box.add (hidden_item);
+        menu_box.show_all ();
 
-        bind_property ("display-title", wifi_item, "text");
+        var context_menu = new Gtk.Popover (null) {
+            child = menu_box
+        };
+
+        wifi_toggle = new SettingsToggle () {
+            action_name = "wifi.toggle",
+            icon_name = "network-wireless-no-route-symbolic",
+            settings_uri = "settings://network/wifi",
+            text = display_title,
+            popover = context_menu
+        };
+
+        add (wifi_toggle);
+
+        bind_property ("display-title", wifi_toggle, "text");
 
         wifi_list.row_activated.connect ((row) => {
             if (row is WifiMenuItem) {
@@ -131,31 +147,49 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             }
         });
 
-        wifi_item.notify["active"].connect (() => {
-            var active = wifi_item.active;
-            if (active != !software_locked) {
-                rfkill.set_software_lock (RFKillDeviceType.WLAN, !active);
-                nm_client.dbus_set_property.begin (
-                    NM.DBUS_PATH, NM.DBUS_INTERFACE,
-                    "WirelessEnabled", active,
-                    -1, null, (obj, res) => {
-                        try {
-                            ((NM.Client) obj).dbus_set_property.end (res);
-                        } catch (Error e) {
-                            warning ("Error activating wifi item: %s", e.message);
-                        }
+        hidden_item.clicked.connect (connect_to_hidden);
+
+        toggle_action = new SimpleAction.stateful ("toggle", null, new Variant.boolean (false));
+        toggle_action.activate.connect (() => {
+            var active = toggle_action.get_state ().get_boolean ();
+            rfkill.set_software_lock (RFKillDeviceType.WLAN, !software_locked);
+            nm_client.dbus_set_property.begin (
+                NM.DBUS_PATH, NM.DBUS_INTERFACE,
+                "WirelessEnabled", !active,
+                -1, null, (obj, res) => {
+                    try {
+                        ((NM.Client) obj).dbus_set_property.end (res);
+                    } catch (Error e) {
+                        warning ("Error activating wifi item: %s", e.message);
                     }
-                );
-            }
+                }
+            );
         });
+
+        hidden_item.sensitive = toggle_action.get_state ().get_boolean ();
+        toggle_action.notify["state"].connect (() => {
+            hidden_item.sensitive = toggle_action.get_state ().get_boolean ();
+        });
+
+        var action_group = new SimpleActionGroup ();
+        action_group.add_action (toggle_action);
+
+        insert_action_group ("wifi", action_group);
     }
 
     private void update () {
+        if (wifi_animation_timeout > 0) {
+            Source.remove (wifi_animation_timeout);
+            wifi_animation_timeout = 0;
+        }
+
         switch (wifi_device.state) {
         case NM.DeviceState.UNKNOWN:
         case NM.DeviceState.UNMANAGED:
         case NM.DeviceState.FAILED:
             state = State.FAILED_WIFI;
+            wifi_toggle.icon_name = "panel-network-wireless-offline-symbolic";
+
             if (active_wifi_item != null) {
                 active_wifi_item.state = wifi_device.state;
             }
@@ -166,10 +200,12 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         case NM.DeviceState.UNAVAILABLE:
             cancel_scan ();
             state = State.DISCONNECTED;
+            wifi_toggle.icon_name = "panel-network-wireless-offline-symbolic";
             break;
         case NM.DeviceState.DISCONNECTED:
             set_scan_placeholder ();
             state = State.DISCONNECTED;
+            wifi_toggle.icon_name = "panel-network-wireless-no-route-symbolic";
             break;
 
         case NM.DeviceState.PREPARE:
@@ -180,6 +216,28 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         case NM.DeviceState.SECONDARIES:
             set_scan_placeholder ();
             state = State.CONNECTING_WIFI;
+
+            var wifi_animation_state = 0;
+            wifi_animation_timeout = Timeout.add (300, () => {
+                wifi_animation_state = (wifi_animation_state + 1) % 4;
+                string strength = "";
+                switch (wifi_animation_state) {
+                case 0:
+                    strength = "weak";
+                    break;
+                case 1:
+                    strength = "ok";
+                    break;
+                case 2:
+                    strength = "good";
+                    break;
+                case 3:
+                    strength = "excellent";
+                    break;
+                }
+                wifi_toggle.icon_name = "panel-network-wireless-signal-" + strength + "-symbolic";
+                return true;
+            });
             break;
 
         case NM.DeviceState.ACTIVATED:
@@ -188,8 +246,27 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
             /* That can happen if active_ap has not been added yet, at startup. */
             if (active_ap != null) {
                 state = strength_to_state (active_ap.get_strength ());
+
+                switch (state) {
+                    case Network.State.CONNECTED_WIFI_WEAK:
+                        wifi_toggle.icon_name = "panel-network-wireless-signal-weak-symbolic";
+                        break;
+                    case Network.State.CONNECTED_WIFI_OK:
+                        wifi_toggle.icon_name = "panel-network-wireless-signal-ok-symbolic";
+                        break;
+                    case Network.State.CONNECTED_WIFI_GOOD:
+                        wifi_toggle.icon_name = "panel-network-wireless-signal-good-symbolic";
+                        break;
+                    case Network.State.CONNECTED_WIFI_EXCELLENT:
+                        wifi_toggle.icon_name = "panel-network-wireless-signal-excellent-symbolic";
+                        break;
+                    default:
+                        wifi_toggle.icon_name = "panel-network-wireless-no-route-symbolic";
+                        break;
+                }
             } else {
                 state = State.CONNECTED_WIFI_WEAK;
+                wifi_toggle.icon_name = "network-wireless-signal-weak-symbolic";
             }
             break;
         }
@@ -217,18 +294,10 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         update_active_ap ();
 
-        wifi_item.set_sensitive (!hardware_locked);
-        wifi_item.active = !locked;
+        toggle_action.set_enabled (!hardware_locked);
+        toggle_action.set_state (new Variant.boolean (!locked));
 
         active_ap = wifi_device.get_active_access_point ();
-
-        if (wifi_device.state == NM.DeviceState.UNAVAILABLE || state == Network.State.FAILED_WIFI) {
-            revealer.reveal_child = false;
-            hidden_sensitivity = false;
-        } else {
-            revealer.reveal_child = true;
-            hidden_sensitivity = true;
-        }
     }
 
     private async void wifi_activate_cb (WifiMenuItem i) requires (device != null) {
@@ -374,7 +443,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         return null;
     }
 
-    public void connect_to_hidden () {
+    private void connect_to_hidden () {
         var hidden_dialog = new NMA.WifiDialog.for_other (nm_client) {
             deletable = false
         };
@@ -475,6 +544,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (active_ap == null) {
             debug ("No active AP");
+            active_ap_name = "";
             blank_item.active = true;
         } else {
             unowned GLib.Bytes active_ap_ssid = active_ap.ssid;
@@ -499,6 +569,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
                 debug ("Active AP not added");
             }
         }
+
+        wifi_toggle.subtitle = active_ap_name;
     }
 
     private void access_point_removed_cb (Object ap_) {

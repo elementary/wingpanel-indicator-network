@@ -3,6 +3,10 @@
 * SPDX-FileCopyrightText: 2023 elementary, Inc. (https://elementary.io)
 */
 
+settings-toggle {
+    font-size: 0.85rem;
+}
+
 network .image-button.toggle,
 settings-toggle .image-button.toggle {
     border-radius: 1em;
@@ -14,6 +18,7 @@ settings-toggle .image-button {
     box-shadow: none;
     min-height: 2.1666rem; /* 26px */
     min-width: 2.1666rem; /* 26px */
+    margin-bottom: 0.3rem;
 }
 
 network .image-button,
