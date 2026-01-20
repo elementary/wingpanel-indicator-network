@@ -52,7 +52,6 @@ public class Network.Indicator : Wingpanel.Indicator {
 
         popover_widget = new Widgets.PopoverWidget (is_in_session);
         popover_widget.notify["state"].connect (on_state_changed);
-        popover_widget.notify["secure"].connect (on_state_changed);
         popover_widget.notify["extra-info"].connect (on_state_changed);
         popover_widget.settings_shown.connect (() => { close (); });
 
@@ -99,7 +98,7 @@ public class Network.Indicator : Wingpanel.Indicator {
         assert (popover_widget != null);
         assert (display_widget != null);
 
-        display_widget.update_state (popover_widget.state, popover_widget.secure, popover_widget.extra_info);
+        display_widget.update_state (popover_widget.state, popover_widget.extra_info);
 
         update_tooltip ();
     }

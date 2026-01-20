@@ -8,7 +8,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
     public GLib.List<WidgetNMInterface>? network_interface { get; private owned set; }
 
-    public bool secure { private set; get; default = false; }
     public string? extra_info { private set; get; default = null; }
     public Network.State state { private set; get; default = Network.State.CONNECTING_WIRED; }
 
@@ -125,7 +124,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
         toggle_revealer.reveal_child = other_box.get_child_at_index (0) != null;
         show_all ();
-        update_vpn_connection ();
 
         hidden_item.clicked.connect (() => {
             bool found = false;
@@ -140,7 +138,6 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
         /* Monitor network manager */
         nm_client.device_added.connect (device_added_cb);
         nm_client.device_removed.connect (device_removed_cb);
-        nm_client.notify["active-connections"].connect (update_vpn_connection);
         nm_client.notify["networking-enabled"].connect (update_state);
 
         vpn_interface.notify["state"].connect (update_state);
@@ -311,29 +308,5 @@ public class Network.Widgets.PopoverWidget : Gtk.Box {
 
             state = next_state;
         }
-    }
-
-    private void update_vpn_connection () {
-        /* Stupid heuristic for now: at least one connection must be secure to
-         * display the secure badge. */
-        // Reset the current status
-        secure = false;
-        nm_client.get_active_connections ().foreach ((ac) => {
-            unowned string connection_type = ac.get_connection_type ();
-            if (connection_type == NM.SettingVpn.SETTING_NAME) {
-                /* We cannot rely on the sole state_changed signal, as it will
-                 * silently ignore sub-vpn specific states, like tun/tap
-                 * interface connection etc. That's why we keep a separate
-                 * implementation for the signal handlers. */
-                var _connection = (NM.VpnConnection) ac;
-                secure = secure || (_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED);
-                _connection.vpn_state_changed.disconnect (update_vpn_connection);
-                _connection.vpn_state_changed.connect (update_vpn_connection);
-            } else if (connection_type == NM.SettingWireGuard.SETTING_NAME) {
-                secure = secure || (ac.get_state () == NM.ActiveConnectionState.ACTIVATED);
-                ac.state_changed.disconnect (update_vpn_connection);
-                ac.state_changed.connect (update_vpn_connection);
-            }
-        });
     }
 }

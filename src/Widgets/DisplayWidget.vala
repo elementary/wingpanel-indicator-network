@@ -7,6 +7,9 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
     private Gtk.Image image;
     private Gtk.Label extra_info_label;
     private Gtk.Revealer extra_info_revealer;
+    private Gtk.Revealer vpn_revealer;
+    private NM.Client nm_client;
+    private NM.VpnConnection? active_vpn_connection = null;
 
     private uint wifi_animation_timeout;
     private int wifi_animation_state = 0;
@@ -29,11 +32,29 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             transition_type = SLIDE_LEFT
         };
 
+        var vpn_image = new Gtk.Image.from_icon_name ("network-vpn-connected-symbolic", Gtk.IconSize.MENU) {
+            margin_start = 6
+        };
+
+        vpn_revealer = new Gtk.Revealer () {
+            transition_type = Gtk.RevealerTransitionType.SLIDE_LEFT
+        };
+        vpn_revealer.add (vpn_image);
+
         add (image);
         add (extra_info_revealer);
+
+        try {
+            nm_client = new NM.Client ();
+
+            update_vpn_connection ();
+            nm_client.notify["active-connections"].connect (update_vpn_connection);
+        } catch (Error e) {
+            critical (e.message);
+        }
     }
 
-    public void update_state (Network.State state, bool secure, string? extra_info = null) {
+    public void update_state (Network.State state, string? extra_info = null) {
         extra_info_revealer.reveal_child = extra_info != null;
         extra_info_label.label = extra_info;
 
@@ -55,19 +76,19 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             image.icon_name = "panel-network-wired-acquiring-symbolic";
             break;
         case Network.State.CONNECTED_WIRED:
-            image.icon_name = "panel-network-wired-%ssymbolic".printf (secure? "secure-" : "connected-");
+            image.icon_name = "panel-network-wired-connected-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_WEAK:
-            image.icon_name = "panel-network-wireless-signal-weak-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "panel-network-wireless-signal-weak-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_OK:
-            image.icon_name = "panel-network-wireless-signal-ok-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "panel-network-wireless-signal-ok-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_GOOD:
-            image.icon_name = "panel-network-wireless-signal-good-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "panel-network-wireless-signal-good-symbolic";
             break;
         case Network.State.CONNECTED_WIFI_EXCELLENT:
-            image.icon_name = "panel-network-wireless-signal-excellent-%ssymbolic".printf (secure? "secure-" : "");
+            image.icon_name = "panel-network-wireless-signal-excellent-symbolic";
             break;
         case Network.State.CONNECTING_WIFI:
             wifi_animation_timeout = Timeout.add (300, () => {
@@ -87,21 +108,21 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     strength = "excellent";
                     break;
                 }
-                image.icon_name = "panel-network-wireless-signal-" + strength + (secure? "-secure" : "") + "-symbolic";
+                image.icon_name = "panel-network-wireless-signal-%s-symbolic".printf (strength);
                 return true;
             });
             break;
         case Network.State.CONNECTED_MOBILE_WEAK:
-            image.icon_name = "panel-network-cellular-signal-weak-%ssymbolic".printf (secure ? "secure-" : "");
+            image.icon_name = "panel-network-cellular-signal-weak-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_OK:
-            image.icon_name = "panel-network-cellular-signal-ok-%ssymbolic".printf (secure ? "secure-" : "");
+            image.icon_name = "panel-network-cellular-signal-ok-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_GOOD:
-            image.icon_name = "panel-network-cellular-signal-good-%ssymbolic".printf (secure ? "secure-" : "");
+            image.icon_name = "panel-network-cellular-signal-good-symbolic";
             break;
         case Network.State.CONNECTED_MOBILE_EXCELLENT:
-            image.icon_name = "panel-network-cellular-signal-excellent-%ssymbolic".printf (secure ? "secure-" : "");
+            image.icon_name = "panel-network-cellular-signal-excellent-symbolic";
             break;
         case Network.State.CONNECTING_MOBILE:
             cellular_animation_timeout = Timeout.add (300, () => {
@@ -122,7 +143,7 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
                     break;
                 }
 
-                image.icon_name = "panel-network-cellular-signal-" + strength + (secure ? "secure-" : "") + "-symbolic";
+                image.icon_name = "panel-network-cellular-signal-%s-symbolic".printf (strength);
                 return true;
             });
             break;
@@ -141,6 +162,28 @@ public class Network.Widgets.DisplayWidget : Gtk.Box {
             image.icon_name = "panel-network-wired-offline-symbolic";
             critical ("Unknown network state, cannot show the good icon: %s", state.to_string ());
             break;
+        }
+    }
+
+    private void update_vpn_connection () {
+        active_vpn_connection.vpn_state_changed.disconnect (reveal_vpn);
+        active_vpn_connection = null;
+
+        nm_client.get_active_connections ().foreach ((connection) => {
+            if (active_vpn_connection == null && connection.vpn) {
+                active_vpn_connection = (NM.VpnConnection) connection;
+                active_vpn_connection.vpn_state_changed.connect (reveal_vpn);
+            }
+        });
+
+        reveal_vpn ();
+    }
+
+    private void reveal_vpn () {
+        if (active_vpn_connection != null && active_vpn_connection.get_vpn_state () == NM.VpnConnectionState.ACTIVATED) {
+            vpn_revealer.reveal_child = true;
+        } else {
+            vpn_revealer.reveal_child = false;
         }
     }
 }
