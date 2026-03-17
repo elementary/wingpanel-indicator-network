@@ -55,6 +55,7 @@ shared_module(
     'src/Widgets/VpnInterface.vala',
     'src/Widgets/VpnMenuItem.vala',
     'src/Widgets/WidgetNMInterface.vala',
+    'src/Widgets/WifiDialog.vala',
     'src/Widgets/WifiInterface.vala',
     'src/Widgets/WifiMenuItem.vala',
     gresource,
