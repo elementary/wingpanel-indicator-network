@@ -519,10 +519,8 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
 
         if (found_item == null) {
             critical ("Couldn't remove an access point which has not been added.");
-        } else {
-            if (!found_item.remove_ap (ap)) {
-                found_item.destroy ();
-            }
+        } else if (!found_item.remove_ap (ap)) {
+            wifi_list.remove (found_item);
         }
 
         update ();
