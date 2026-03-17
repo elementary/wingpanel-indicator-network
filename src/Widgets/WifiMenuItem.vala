@@ -44,6 +44,7 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         };
 
         radio_button = new Gtk.CheckButton () {
+            can_target = false,
             child = label,
             group = blank_radio,
             hexpand = true
@@ -74,13 +75,6 @@ public class Network.WifiMenuItem : Gtk.ListBoxRow {
         add_ap (ap);
 
         notify["state"].connect (update);
-
-        // We can't use clicked because we get in a weird loop state
-        radio_button.notify["active"].connect (() => {
-            if (radio_button.active) {
-                activate ();
-            }
-        });
     }
 
     class construct {

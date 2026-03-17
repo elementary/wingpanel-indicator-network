@@ -13,7 +13,7 @@ You'll need the following dependencies:
 * libnm-dev (>= 1.24)
 * libnma-gtk4-dev
 * libpolkit-gobject-1-dev
-* libwingpanel-8-dev
+* libwingpanel-9-dev
 * meson
 * valac
 

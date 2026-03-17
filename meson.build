@@ -20,7 +20,7 @@ add_project_arguments(
 
 add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.network"', language:'c')
 
-wingpanel_dep = dependency('wingpanel-8')
+wingpanel_dep = dependency('wingpanel-9')
 wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
 
 config_data = configuration_data()
