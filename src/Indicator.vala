@@ -63,6 +63,8 @@ public class Network.Indicator : Wingpanel.Indicator {
 
             gesture_click.pressed.connect (() => {
                 airplane_action.activate (null);
+                gesture_click.set_state (CLAIMED);
+                gesture_click.reset ();
             });
         }
 
