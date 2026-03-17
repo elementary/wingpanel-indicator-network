@@ -1,4 +1,4 @@
-gir_dir = g_ir_dep.get_pkgconfig_variable('girdir')
+gir_dir = g_ir_dep.get_variable('girdir', pkgconfig_define: ['prefix', prefix])
 
 libnma_target = custom_target('libnma-gtk4',
     command: [

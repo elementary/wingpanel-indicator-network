@@ -1,7 +1,8 @@
 project(
     'network',
     'vala', 'c',
-    version: '8.0.1'
+    version: '8.0.1',
+    meson_version: '>=0.58.0'
 )
 
 gettext_name = meson.project_name() + '-indicator'
@@ -21,7 +22,7 @@ add_project_arguments(
 add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.network"', language:'c')
 
 wingpanel_dep = dependency('wingpanel-9')
-wingpanel_indicatorsdir = wingpanel_dep.get_pkgconfig_variable('indicatorsdir', define_variable: ['libdir', libdir])
+wingpanel_indicatorsdir = wingpanel_dep.get_variable('indicatorsdir', pkgconfig_define: ['libdir', libdir])
 
 config_data = configuration_data()
 config_data.set_quoted('LOCALEDIR', join_paths(get_option('prefix'), get_option('localedir')))
