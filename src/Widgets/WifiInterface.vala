@@ -239,7 +239,7 @@ public class Network.WifiInterface : Network.WidgetNMInterface {
         if (permission == null) {
             try {
                 permission = yield new Polkit.Permission (
-                    "io.elementary.wingpanel.network.administration",
+                    "io.elementary.panel.network.administration",
                     new Polkit.UnixProcess (Posix.getpid ())
                 );
             } catch (Error e) {
