@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-indicator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-24 18:01+0000\n"
+"POT-Creation-Date: 2026-03-19 14:49+0000\n"
 "PO-Revision-Date: 2018-05-02 11:10-0700\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -16,61 +16,61 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Indicator.vala:151 src/Indicator.vala:164
+#: src/Indicator.vala:152 src/Indicator.vala:165
 msgid "Wired"
 msgstr ""
 
-#: src/Indicator.vala:152
+#: src/Indicator.vala:153
 msgid "Connecting to wired network"
 msgstr ""
 
-#: src/Indicator.vala:154 src/Indicator.vala:159
+#: src/Indicator.vala:155 src/Indicator.vala:160
 #, c-format
 msgid "Connecting to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:165
+#: src/Indicator.vala:166
 msgid "Connected to wired network"
 msgstr ""
 
-#: src/Indicator.vala:167 src/Indicator.vala:178
+#: src/Indicator.vala:168 src/Indicator.vala:179
 #, c-format
 msgid "Connected to “%s”"
 msgstr ""
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:184
 msgid "Failed to connect"
 msgstr ""
 
-#: src/Indicator.vala:187
+#: src/Indicator.vala:188
 msgid "Disconnected"
 msgstr ""
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:191
 msgid "Not connected"
 msgstr ""
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:197
+#: src/Indicator.vala:198
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:217 src/Indicator.vala:229
+#: src/Indicator.vala:218 src/Indicator.vala:230
 msgid "unknown network"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:62
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:105
+#: src/Widgets/PopoverWidget.vala:106
 msgid "Connect to Hidden Network…"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:109
+#: src/Widgets/PopoverWidget.vala:110
 msgid "Network Settings…"
 msgstr ""
 
@@ -87,34 +87,34 @@ msgstr ""
 msgid "Scanning for Access Points…"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:56
+#: src/Widgets/WifiMenuItem.vala:58
 msgid "Unable to connect"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:102
+#: src/Widgets/WifiMenuItem.vala:97
 msgid "40/64-bit WEP encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:105
+#: src/Widgets/WifiMenuItem.vala:100
 msgid "104/128-bit WEP encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:108
+#: src/Widgets/WifiMenuItem.vala:103
 msgid "WPA3 encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:111
+#: src/Widgets/WifiMenuItem.vala:106
 msgid "WPA encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:115
+#: src/Widgets/WifiMenuItem.vala:110
 msgid "Passwordless encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:118
+#: src/Widgets/WifiMenuItem.vala:113
 msgid "Encrypted"
 msgstr ""
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Unsecured"
 msgstr ""

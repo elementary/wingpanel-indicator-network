@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-24 18:01+0000\n"
+"POT-Creation-Date: 2026-03-19 14:49+0000\n"
 "PO-Revision-Date: 2025-08-30 22:55+0000\n"
 "Last-Translator: Ryo Nakano <ryonakaknock3@gmail.com>\n"
 "Language-Team: Japanese <https://l10n.elementaryos.org/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 5.11.4\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:151 src/Indicator.vala:164
+#: src/Indicator.vala:152 src/Indicator.vala:165
 msgid "Wired"
 msgstr "有線"
 
-#: src/Indicator.vala:152
+#: src/Indicator.vala:153
 msgid "Connecting to wired network"
 msgstr "有線ネットワークに接続試行中"
 
-#: src/Indicator.vala:154 src/Indicator.vala:159
+#: src/Indicator.vala:155 src/Indicator.vala:160
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s”に接続試行中"
 
-#: src/Indicator.vala:165
+#: src/Indicator.vala:166
 msgid "Connected to wired network"
 msgstr "有線ネットワークに接続済み"
 
-#: src/Indicator.vala:167 src/Indicator.vala:178
+#: src/Indicator.vala:168 src/Indicator.vala:179
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s”に接続済み"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:184
 msgid "Failed to connect"
 msgstr "接続に失敗"
 
-#: src/Indicator.vala:187
+#: src/Indicator.vala:188
 msgid "Disconnected"
 msgstr "未接続"
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:191
 msgid "Not connected"
 msgstr "接続していません"
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode off"
 msgstr "機内モードを無効にするには中クリックしてください"
 
-#: src/Indicator.vala:197
+#: src/Indicator.vala:198
 msgid "Middle-click to turn airplane mode on"
 msgstr "機内モードを有効にするには中クリックしてください"
 
-#: src/Indicator.vala:217 src/Indicator.vala:229
+#: src/Indicator.vala:218 src/Indicator.vala:230
 msgid "unknown network"
 msgstr "不明なネットワーク"
 
-#: src/Widgets/PopoverWidget.vala:62
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr "機内モード"
 
-#: src/Widgets/PopoverWidget.vala:105
+#: src/Widgets/PopoverWidget.vala:106
 msgid "Connect to Hidden Network…"
 msgstr "非公開ネットワークに接続…"
 
-#: src/Widgets/PopoverWidget.vala:109
+#: src/Widgets/PopoverWidget.vala:110
 msgid "Network Settings…"
 msgstr "ネットワーク設定…"
 
@@ -86,35 +86,35 @@ msgstr "利用可能なアクセスポイントなし"
 msgid "Scanning for Access Points…"
 msgstr "アクセスポイントを探しています…"
 
-#: src/Widgets/WifiMenuItem.vala:56
+#: src/Widgets/WifiMenuItem.vala:58
 msgid "Unable to connect"
 msgstr "接続できません"
 
-#: src/Widgets/WifiMenuItem.vala:102
+#: src/Widgets/WifiMenuItem.vala:97
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64 ビット WEP 暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:105
+#: src/Widgets/WifiMenuItem.vala:100
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128 ビット WEP 暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:108
+#: src/Widgets/WifiMenuItem.vala:103
 msgid "WPA3 encrypted"
 msgstr "WPA3 暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:111
+#: src/Widgets/WifiMenuItem.vala:106
 msgid "WPA encrypted"
 msgstr "WPA 暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:115
+#: src/Widgets/WifiMenuItem.vala:110
 msgid "Passwordless encrypted"
 msgstr "パスワードなし暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:118
+#: src/Widgets/WifiMenuItem.vala:113
 msgid "Encrypted"
 msgstr "暗号化"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Unsecured"
 msgstr "安全ではありません"
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-24 18:01+0000\n"
+"POT-Creation-Date: 2026-03-19 14:49+0000\n"
 "PO-Revision-Date: 2020-12-25 10:16+0000\n"
 "Last-Translator: Prachi Joshi <josprachi@yahoo.com>\n"
 "Language-Team: Marathi <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 3.9.1\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:151 src/Indicator.vala:164
+#: src/Indicator.vala:152 src/Indicator.vala:165
 msgid "Wired"
 msgstr "वायर्ड"
 
-#: src/Indicator.vala:152
+#: src/Indicator.vala:153
 msgid "Connecting to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:154 src/Indicator.vala:159
+#: src/Indicator.vala:155 src/Indicator.vala:160
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "“%s” शी कनेक्ट करत आहे"
 
-#: src/Indicator.vala:165
+#: src/Indicator.vala:166
 msgid "Connected to wired network"
 msgstr "वायर्ड नेटवर्कशी कनेक्ट केले"
 
-#: src/Indicator.vala:167 src/Indicator.vala:178
+#: src/Indicator.vala:168 src/Indicator.vala:179
 #, c-format
 msgid "Connected to “%s”"
 msgstr "“%s” शी कनेक्ट केले"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:184
 msgid "Failed to connect"
 msgstr "कनेक्ट करण्यात अयशस्वी"
 
-#: src/Indicator.vala:187
+#: src/Indicator.vala:188
 msgid "Disconnected"
 msgstr "डिस्कनेक्ट केले"
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:191
 msgid "Not connected"
 msgstr "कनेक्ट नाही केले"
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode off"
 msgstr ""
 
-#: src/Indicator.vala:197
+#: src/Indicator.vala:198
 msgid "Middle-click to turn airplane mode on"
 msgstr ""
 
-#: src/Indicator.vala:217 src/Indicator.vala:229
+#: src/Indicator.vala:218 src/Indicator.vala:230
 msgid "unknown network"
 msgstr "अज्ञात नेटवर्क"
 
-#: src/Widgets/PopoverWidget.vala:62
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr ""
 
-#: src/Widgets/PopoverWidget.vala:105
+#: src/Widgets/PopoverWidget.vala:106
 msgid "Connect to Hidden Network…"
 msgstr "लपविलेल्या नेटवर्कशी कनेक्ट करा …"
 
-#: src/Widgets/PopoverWidget.vala:109
+#: src/Widgets/PopoverWidget.vala:110
 msgid "Network Settings…"
 msgstr "नेटवर्क सेटिंग्ज …"
 
@@ -86,39 +86,39 @@ msgstr "कोणतेही प्रवेश पॉईंट्स उपल
 msgid "Scanning for Access Points…"
 msgstr "प्रवेश पॉइंटसाठी स्कॅन करत आहे …"
 
-#: src/Widgets/WifiMenuItem.vala:56
+#: src/Widgets/WifiMenuItem.vala:58
 msgid "Unable to connect"
 msgstr "कनेक्ट करण्यात अक्षम"
 
-#: src/Widgets/WifiMenuItem.vala:102
+#: src/Widgets/WifiMenuItem.vala:97
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64-बिट डब्ल्यूईपी कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:105
+#: src/Widgets/WifiMenuItem.vala:100
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128-बिट डब्ल्यूईपी कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:108
+#: src/Widgets/WifiMenuItem.vala:103
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "WPA3 encrypted"
 msgstr "डब्ल्यूपीए कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:111
+#: src/Widgets/WifiMenuItem.vala:106
 msgid "WPA encrypted"
 msgstr "डब्ल्यूपीए कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:115
+#: src/Widgets/WifiMenuItem.vala:110
 #, fuzzy
 #| msgid "WPA encrypted"
 msgid "Passwordless encrypted"
 msgstr "डब्ल्यूपीए कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:118
+#: src/Widgets/WifiMenuItem.vala:113
 msgid "Encrypted"
 msgstr "कूटबद्ध"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Unsecured"
 msgstr "असुरक्षित"
 

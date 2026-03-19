@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-24 18:01+0000\n"
+"POT-Creation-Date: 2026-03-19 14:49+0000\n"
 "PO-Revision-Date: 2024-09-13 00:01+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.elementary.io/projects/wingpanel/"
@@ -15,61 +15,61 @@ msgstr ""
 "X-Generator: Weblate 5.6.2\n"
 "X-Launchpad-Export-Date: 2016-11-29 05:01+0000\n"
 
-#: src/Indicator.vala:151 src/Indicator.vala:164
+#: src/Indicator.vala:152 src/Indicator.vala:165
 msgid "Wired"
 msgstr "მავთულით"
 
-#: src/Indicator.vala:152
+#: src/Indicator.vala:153
 msgid "Connecting to wired network"
 msgstr "მიერთება სადენიან ქსელთან"
 
-#: src/Indicator.vala:154 src/Indicator.vala:159
+#: src/Indicator.vala:155 src/Indicator.vala:160
 #, c-format
 msgid "Connecting to “%s”"
 msgstr "\"%s\"-სთან მიერთება"
 
-#: src/Indicator.vala:165
+#: src/Indicator.vala:166
 msgid "Connected to wired network"
 msgstr "სადენიანი ქსელი დაკავშირებულია"
 
-#: src/Indicator.vala:167 src/Indicator.vala:178
+#: src/Indicator.vala:168 src/Indicator.vala:179
 #, c-format
 msgid "Connected to “%s”"
 msgstr "მიერთებულია %s-თან"
 
-#: src/Indicator.vala:183
+#: src/Indicator.vala:184
 msgid "Failed to connect"
 msgstr "კავშირის შეცდომა"
 
-#: src/Indicator.vala:187
+#: src/Indicator.vala:188
 msgid "Disconnected"
 msgstr "გამოერთებული"
 
-#: src/Indicator.vala:190
+#: src/Indicator.vala:191
 msgid "Not connected"
 msgstr "დაკავშირებული არაა"
 
-#: src/Indicator.vala:196
+#: src/Indicator.vala:197
 msgid "Middle-click to turn airplane mode off"
 msgstr "შუა წკაპი თვითმფრინავის რეჟიმის გამოსართავად"
 
-#: src/Indicator.vala:197
+#: src/Indicator.vala:198
 msgid "Middle-click to turn airplane mode on"
 msgstr "შუა წკაპი თვითმფრინავის რეჟიმის ჩასართავად"
 
-#: src/Indicator.vala:217 src/Indicator.vala:229
+#: src/Indicator.vala:218 src/Indicator.vala:230
 msgid "unknown network"
 msgstr "უცნობი ქსელი"
 
-#: src/Widgets/PopoverWidget.vala:62
+#: src/Widgets/PopoverWidget.vala:63
 msgid "Airplane Mode"
 msgstr "თვითმფრინავის რეჟიმი"
 
-#: src/Widgets/PopoverWidget.vala:105
+#: src/Widgets/PopoverWidget.vala:106
 msgid "Connect to Hidden Network…"
 msgstr "დამალულ ქსელთან მიერთება…"
 
-#: src/Widgets/PopoverWidget.vala:109
+#: src/Widgets/PopoverWidget.vala:110
 msgid "Network Settings…"
 msgstr "ქსელის მორგება…"
 
@@ -86,35 +86,35 @@ msgstr "წვდომის წერტილები ხელმისა�
 msgid "Scanning for Access Points…"
 msgstr "წვდომის წეტილების სკანირება…"
 
-#: src/Widgets/WifiMenuItem.vala:56
+#: src/Widgets/WifiMenuItem.vala:58
 msgid "Unable to connect"
 msgstr "დაკავშირება შეუძლებელია"
 
-#: src/Widgets/WifiMenuItem.vala:102
+#: src/Widgets/WifiMenuItem.vala:97
 msgid "40/64-bit WEP encrypted"
 msgstr "40/64 ბიტიანი WEP დაშიფვრა"
 
-#: src/Widgets/WifiMenuItem.vala:105
+#: src/Widgets/WifiMenuItem.vala:100
 msgid "104/128-bit WEP encrypted"
 msgstr "104/128 ბიტიანი WEP დაშიფვრა"
 
-#: src/Widgets/WifiMenuItem.vala:108
+#: src/Widgets/WifiMenuItem.vala:103
 msgid "WPA3 encrypted"
 msgstr "WPA3-ით დაშიფრული"
 
-#: src/Widgets/WifiMenuItem.vala:111
+#: src/Widgets/WifiMenuItem.vala:106
 msgid "WPA encrypted"
 msgstr "WPA დაშიფვრა"
 
-#: src/Widgets/WifiMenuItem.vala:115
+#: src/Widgets/WifiMenuItem.vala:110
 msgid "Passwordless encrypted"
 msgstr "უპაროლოდ დაშიფრული"
 
-#: src/Widgets/WifiMenuItem.vala:118
+#: src/Widgets/WifiMenuItem.vala:113
 msgid "Encrypted"
 msgstr "დაშიფრული"
 
-#: src/Widgets/WifiMenuItem.vala:120
+#: src/Widgets/WifiMenuItem.vala:115
 msgid "Unsecured"
 msgstr "დაუცველი"
 
