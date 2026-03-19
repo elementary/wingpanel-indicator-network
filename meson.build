@@ -5,7 +5,7 @@ project(
     meson_version: '>=0.58.0'
 )
 
-gettext_name = meson.project_name() + '-indicator'
+gettext_name = 'io.elementary.panel.' + meson.project_name()
 gnome = import('gnome')
 i18n = import('i18n')
 
@@ -19,7 +19,7 @@ add_project_arguments(
     language: 'vala'
 )
 
-add_project_arguments('-DG_LOG_DOMAIN="io.elementary.wingpanel.network"', language:'c')
+add_project_arguments('-DG_LOG_DOMAIN="io.elementary.panel.network"', language:'c')
 
 wingpanel_dep = dependency('wingpanel-9')
 wingpanel_indicatorsdir = wingpanel_dep.get_variable('indicatorsdir', pkgconfig_define: ['libdir', libdir])
